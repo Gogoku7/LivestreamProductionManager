@@ -1,0 +1,123 @@
+﻿@using System.Text;
+@model LivestreamProductionManager.ViewModels.FightingGames.SuperSmashBros.SuperSmashBrosBaseViewModel
+
+@{
+    var characterOptionsStringBuilder = new StringBuilder();
+    foreach (var character in Model.Characters)
+    {
+        characterOptionsStringBuilder.AppendLine($"<option value='{character.CssValue}'>{character.CharacterName}</option>");
+    }
+
+    var portOptionsStringBuilder = new StringBuilder();
+    foreach (var port in Model.Ports)
+    {
+        portOptionsStringBuilder.AppendLine($"<option value='{port.CssValue}'>{port.PortName}</option>");
+    }
+
+    Layout = null;
+}
+
+<form action="/SuperSmashBros/UpdateCrews" method="post" id="manageCompetitorsForm">
+    <input type="hidden" name="Tournament" value="" />
+    <input type="hidden" name="Round" value="" />
+    <input type="hidden" name="BestOf" value="" />
+    <input type="hidden" name="Extra" value="" />
+    <input type="hidden" name="Series" value="@Model.Series" />
+    <input type="hidden" name="Game" value="@Model.Game" />
+    <input type="hidden" name="Format" value="@Model.Format" />
+    <input type="hidden" name="PathToSeries" value="@Model.PathToSeries" />
+    <input type="hidden" name="PathToGame" value="@Model.PathToGame" />
+    <input type="hidden" name="PathToFormat" value="@Model.PathToFormat" />
+
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <label>Crew 1</label>
+        </div>
+        <div class="col-md-6  text-center">
+            <label>Crew 2</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <label>Name</label>
+            <input type="text" class="form-control" name="Crew1.Name" id="crew1Name" />
+        </div>
+        <div class="col-md-6 text-center">
+            <label>Name</label>
+            <input type="text" class="form-control" name="Crew2.Name" id="crew2Name" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <label>Stocks left</label>
+            <input type="text" class="form-control" name="Crew1.StocksLeft" id="crew1StocksLeft" />
+        </div>
+        <div class="col-md-6 text-center">
+            <label>Stocks left</label>
+            <input type="text" class="form-control" name="Crew2.StocksLeft" id="crew2StocksLeft" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <label>Character</label>
+            <select class="form-control" name="Crew1.Character" id="crew1Character">
+                <option value="" selected disabled hidden>Choose character</option>
+                @Html.Raw(characterOptionsStringBuilder.ToString())
+            </select>
+        </div>
+        <div class="col-md-6 text-center">
+            <label>Character</label>
+            <select class="form-control" name="Crew2.Character" id="crew2Character">
+                <option value="" selected disabled hidden>Choose character</option>
+                @Html.Raw(characterOptionsStringBuilder.ToString())
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <label>Port</label>
+            <select class="form-control" name="crew1.Port" id="crew1Port">
+                <option value="" selected disabled hidden>Choose port</option>
+                @Html.Raw(portOptionsStringBuilder.ToString())
+            </select>
+        </div>
+        <div class="col-md-6 text-center">
+            <label>Port</label>
+            <select class="form-control" name="crew2.Port" id="crew1Port">
+                <option value="" selected disabled hidden>Choose port</option>
+                @Html.Raw(portOptionsStringBuilder.ToString())
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <label>How many players?</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">
+
+        </div>
+        <div class="col-md-2">
+            <input class="form-control" type="number" id="crewsCount" min="1" max="99" />
+        </div>
+        <div class="col-md-2">
+            <a class="btn btn-primary" id="crewsCountButton" onclick="GetCrewPlayers()">Update</a>
+        </div>
+        <div class="col-md-3">
+
+        </div>
+    </div>
+
+    <div id="crewPlayersContainer">
+        
+    </div>
+
+</form>
+

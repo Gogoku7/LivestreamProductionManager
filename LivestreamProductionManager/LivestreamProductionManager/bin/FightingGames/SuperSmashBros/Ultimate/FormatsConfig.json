@@ -1,0 +1,62 @@
+[
+  {
+    "FormatName": "Singles",
+    "FORMAT": "Singles",
+    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Ultimate/Singles",
+    "PathToFormat": "~/FightingGames/SuperSmashBros/Ultimate/Singles/"
+  },
+  {
+    "FormatName": "Doubles",
+    "FORMAT": "Doubles",
+    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Ultimate/Doubles",
+    "PathToFormat": "~/FightingGames/SuperSmashBros/Ultimate/Doubles/"
+  },
+  {
+    "FormatName": "Big Teams",
+    "FORMAT": "BigTeams",
+    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Ultimate/BigTeams",
+    "PathToFormat": "~/FightingGames/SuperSmashBros/Ultimate/BigTeams/"
+  },
+  {
+    "FormatName": "Crews",
+    "FORMAT": "Crews",
+    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Ultimate/Crews",
+    "PathToFormat": "~/FightingGames/SuperSmashBros/Ultimate/Crews/"
+  },
+  {
+    "FormatName": "Iron Man",
+    "FORMAT": "IronMan",
+    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Ultimate/IronMan",
+    "PathToFormat": "~/FightingGames/SuperSmashBros/Ultimate/IronMan/"
+  },
+  {
+    "FormatName": "Smashdown Singles",
+    "FORMAT": "SmashdownSingles",
+    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Ultimate/SmashdownSingles",
+    "PathToFormat": "~/FightingGames/SuperSmashBros/Ultimate/SmashdownSingles/"
+  },
+  {
+    "FormatName": "Smashdown Doubles",
+    "FORMAT": "SmashdownDoubles",
+    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Ultimate/SmashdownDoubles",
+    "PathToFormat": "~/FightingGames/SuperSmashBros/Ultimate/SmashdownDoubles/"
+  },
+  {
+    "FormatName": "Smashdown Big Teams",
+    "FORMAT": "SmashdownBigTeams",
+    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Ultimate/SmashdownBigTeams",
+    "PathToFormat": "~/FightingGames/SuperSmashBros/Ultimate/SmashdownBigTeams/"
+  },
+  {
+    "FormatName": "Squad Strike 3v3",
+    "FORMAT": "SquadStrike3v3",
+    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Ultimate/SquadStrike3v3",
+    "PathToFormat": "~/FightingGames/SuperSmashBros/Ultimate/SquadStrike3v3/"
+  },
+  {
+    "FormatName": "Squad Strike 5v5",
+    "FORMAT": "SquadStrike5v5",
+    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Ultimate/SquadStrike5v5",
+    "PathToFormat": "~/FightingGames/SuperSmashBros/Ultimate/SquadStrike5v5/"
+  }
+]

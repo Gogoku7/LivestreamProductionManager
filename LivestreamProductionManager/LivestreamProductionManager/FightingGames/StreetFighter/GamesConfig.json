@@ -1,0 +1,13 @@
+[
+  {
+    "GameName": "Street Fighter",
+    "GAME": "StreetFighter",
+    "PathToGame": "~/FightingGames/StreetFighter/SF"
+  },
+
+  {
+    "GameName": "Street Fighter II",
+    "GAME": "StreetFighter2",
+    "PathToGame": "~/FightingGames/StreetFighter/SF2"
+  }
+]

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<link rel="stylesheet" type="text/css" href="css/content.css">
+		<script src="javascript/jQuery.js"></script>
+		<script src="javascript/fitty.js"></script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div class="players">
+				<div class="player" id="player1">
+					<div class="playerBox" id="player1Box">
+						<div class="playerScoreBox" id="player1ScoreBox">
+							<p class="playerScore" id="player1ScoreText"></p>
+						</div>
+						<div class="playerPort" id="player1Port">
+							<div class="playerCharacter" id="player1Character"></div>
+						</div>
+						<div class="playerNameBox" id="player1NameBox">
+							<div class="playerNameContainer" id="player1NameContainer">
+								<p class="playerName" id="player1NameText"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="player" id="player2">
+					<div class="playerBox" id="player2Box">
+						<div class="playerScoreBox" id="player2ScoreBox">
+							<p class="playerScore" id="player2ScoreText"></p>
+						</div>
+						<div class="playerPort" id="player2Port">
+							<div class="playerCharacter" id="player2Character"></div>
+						</div>
+						<div class="playerNameBox" id="player2NameBox">
+							<div class="playerNameContainer" id="player2NameContainer">
+								<p class="playerName" id="player2NameText"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="tournamentInfo">
+				<div class="info" id="infoRound">
+					<div class="infoBox" id="infoRoundBox">
+						<span class="boxText">
+							<span id="roundText"></span>
+							<span> / </span>
+							<span id="bestOfText"></span>
+						</span>
+					</div>
+				</div>
+				
+				<div class="info" id="infoTournament">
+					<div class="infoBox" id="infoTournamentBox">
+						<span class="boxText">
+							<span id="tournamentText"></span>
+							<span> / </span>
+							<span id="extraText"></span>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+<script>
+	$( document ).ready(function() {
+		fitty('.playerName', { minSize: 8, maxSize: 40, multiLine: false });
+		fitty('.playerScore', { minSize: 8, maxSize: 25, multiLine: false });
+	});
+	
+	function onTimerTick() {
+        var queryString = '?reload=' + new Date().getTime();
+        $('link[rel="stylesheet"]').not('link[href="css/styles.css"]').each(function () {
+            this.href = this.href.replace(/\?.*|$/, queryString);
+        });
+		
+		fitty('.playerName', { minSize: 8, maxSize: 40, multiLine: false });
+		fitty('.playerScore', { minSize: 8, maxSize: 25, multiLine: false });
+    }
+
+    setInterval(function () {
+        onTimerTick();
+    }, 10000);
+</script>

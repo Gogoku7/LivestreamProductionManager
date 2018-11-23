@@ -1,0 +1,289 @@
+body
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+/* teams */
+
+.teams
+{
+	width: 1920px;
+	height: 80px;
+}
+
+/* teams END*/
+
+
+
+/* team */
+
+.team
+{
+	width: 960px;
+	height: 80px;
+}
+
+#team1
+{
+	float: left;
+}
+
+#team2
+{
+	float: right;
+}
+
+/* team END */
+
+
+
+/* teamBox */
+
+.teamBox
+{
+	width: 650px;
+	height: 50px;
+	margin-top: 30px;
+	overflow: hidden;
+	animation: showPlayerBox 1s;
+}
+
+#team1Box
+{
+	float: right;
+	background-image: url('..\\teamBackgrounds\\team1Background.png');
+}
+
+#team2Box
+{
+	float: left;
+	background-image: url('..\\teamBackgrounds\\team2Background.png');
+}
+
+/* teamBox END */
+
+
+
+/* teamScoreBox */
+
+.teamScoreBox
+{
+	width: 20px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+}
+
+#team1ScoreBox
+{
+	float: left;
+	margin-left: 10px;
+}
+
+#team2ScoreBox
+{
+	float: right;
+	margin-right: 10px;
+}
+
+/* teamScoreBox END */
+
+
+
+/* teamScore */
+
+.teamScore
+{
+	color: white;
+	margin: 0;
+}
+
+/* teamScore END */
+
+
+
+/* teamPlayer1Port */
+
+.teamPlayer1Port
+{
+	width: 90px;
+	height: 50px;
+	display:inline-block;
+	background-repeat: no-repeat;
+}
+
+#team1Player1Port
+{
+	float: left;
+	margin-left: 50px;
+}
+
+#team2Player1Port
+{
+	float: right;
+	margin-right: 50px;
+}
+
+/* teamPlayer1Port END */
+
+
+
+/* teamPlayerCharacter */
+
+.teamPlayerCharacter
+{
+	width: 90px;
+	height: 50px;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+/* teamPlayerCharacter */
+
+
+
+/* teamNameBox */
+
+.teamNameBox
+{
+	width: 250px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+}
+
+#team1NameBox
+{
+	float: left;
+	margin-left: 10px;
+}
+
+#team2NameBox
+{
+	float: right;
+	margin-right: 10px;
+}
+
+/* teamNameBox END */
+
+
+/* teamNames */
+
+.teamNames
+{
+	color: white;
+	margin: 0;
+}
+
+/* teamNames END*/
+
+
+
+/* teamPlayer2Port */
+
+.teamPlayer2Port
+{
+	width: 90px;
+	height: 50px;
+	display:inline-block;
+}
+
+#team1Player2Port
+{
+	float: left;
+	margin-left: 10px;
+}
+
+#team2Player2Port
+{
+	float: right;
+	margin-right: 10px;
+}
+
+/* teamPlayer2Port END */
+
+
+
+/* tournamentInfo */
+
+.tournamentInfo
+{
+	width: 1920px;
+	height: 18px;
+}
+
+/* tournamentInfo END */
+
+/* info */
+
+.info
+{
+	width: 960px;
+	height: 18px;
+}
+
+#infoRound
+{
+	float: left;
+}
+
+#infoTournament
+{
+	float: right;
+}
+
+/* info END */
+
+
+
+/* infoBox */
+
+.infoBox
+{
+	width: auto;
+	height: 18px;
+	padding-left: 40px;
+	padding-right: 40px;
+	text-align: center;
+	background-image: url('..\\boxBackground\\infoBoxBackground.png');
+}
+
+#infoRoundBox
+{
+	float: right;
+}
+
+#infoTournamentBox
+{
+	float: left;
+}
+
+/* infoBox END */
+
+
+
+/* boxText */
+
+.boxText
+{
+	width: auto;
+	margin: 0px;
+	white-space: nowrap;
+	color: white;
+}
+
+/* BoxText END */
+
+
+
+/* animations */
+
+@keyframes showPlayerBox
+{
+	0% {width:0%}
+	100% {width:67.70833333333333%}
+}
+
+/* animations END */

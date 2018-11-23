@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<link rel="stylesheet" type="text/css" href="css/content.css">
+		<script src="javascript/jQuery.js"></script>
+		<script src="javascript/fitty.js"></script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div class="teams">
+				<div class="team" id="team1">
+					<div class="teamBox" id="team1Box">
+						<div class="teamScoreBox" id="team1ScoreBox">
+							<p class="teamScore" id="team1ScoreText"></p>
+						</div>
+						<div class="teamPlayer1Port" id="team1Player1Port">
+							<div class="teamPlayerCharacter" id="team1Player1Character"></div>
+						</div>
+						<div class="teamNameBox" id="team1NameBox">
+							<span class="teamNames" id="team1Names">
+								<span id="team1Player1NameText"></span>
+								<span> + </span>
+								<span id="team1Player2NameText"></span>
+							</span>
+						</div>
+						<div class="teamPlayer2Port" id="team1Player2Port">
+							<div class="teamPlayerCharacter" id="team1Player2Character"></div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="team" id="team2">
+					<div class="teamBox" id="team2Box">
+						<div class="teamScoreBox" id="team2ScoreBox">
+							<p class="teamScore" id="team2ScoreText"></p>
+						</div>
+						<div class="teamPlayer1Port" id="team2Player1Port">
+							<div class="teamPlayerCharacter" id="team2Player1Character"></div>
+						</div>
+						<div class="teamNameBox" id="team2NameBox">
+							<span class="teamNames" id="team2Names">
+								<span id="team2Player2NameText"></span>
+								<span> + </span>
+								<span id="team2Player1NameText"></span>
+							</span>
+						</div>
+						<div class="teamPlayer2Port" id="team2Player2Port">
+							<div class="teamPlayerCharacter" id="team2Player2Character"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="tournamentInfo">
+				<div class="info" id="infoRound">
+					<div class="infoBox" id="infoRoundBox">
+						<span class="boxText" >
+							<span id="roundText"></span>
+							<span> / </span>
+							<span id="bestOfText"></span>
+						</span>
+					</div>
+				</div>
+				
+				<div class="info" id="infoTournament">
+					<div class="infoBox" id="infoTournamentBox">
+						<span class="boxText">
+							<span id="tournamentText"></span>
+							<span> / </span>
+							<span id="extraText"></span>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+<script>
+	$( document ).ready(function() {
+		fitty('.teamNames', { minSize: 8, maxSize: 40, multiLine: false });
+		fitty('.teamScore', { minSize: 8, maxSize: 25, multiLine: false });
+	});
+	
+	function onTimerTick() {
+        var queryString = '?reload=' + new Date().getTime();
+        $('link[rel="stylesheet"]').not('link[href="css/styles.css"]').each(function () {
+            this.href = this.href.replace(/\?.*|$/, queryString);
+        });
+		
+		fitty('.teamNames', { minSize: 8, maxSize: 40, multiLine: false });
+		fitty('.teamScore', { minSize: 8, maxSize: 25, multiLine: false });
+    }
+
+    setInterval(function () {
+        onTimerTick();
+    }, 10000);
+</script>

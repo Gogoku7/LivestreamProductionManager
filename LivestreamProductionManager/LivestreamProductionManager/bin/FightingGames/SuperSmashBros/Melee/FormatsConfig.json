@@ -1,0 +1,26 @@
+[
+  {
+    "FormatName": "Singles",
+    "FORMAT": "Singles",
+    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Melee/Singles",
+    "PathToFormat": "~/FightingGames/SuperSmashBros/Melee/Singles/"
+  },
+  {
+    "FormatName": "Doubles",
+    "FORMAT": "Doubles",
+    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Melee/Doubles",
+    "PathToFormat": "~/FightingGames/SuperSmashBros/Melee/Doubles/"
+  },
+  {
+    "FormatName": "Crews",
+    "FORMAT": "Crews",
+    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Melee/Crews",
+    "PathToFormat": "~/FightingGames/SuperSmashBros/Melee/Crews/"
+  },
+  {
+    "FormatName": "Iron Man",
+    "FORMAT": "IronMan",
+    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Melee/IronMan",
+    "PathToFormat": "~/FightingGames/SuperSmashBros/Melee/IronMan/"
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "CharacterName": "Captain Falcon",
+    "CssValue": "../../CharacterIcons/captainfalcon.png"
+  },
+  {
+    "CharacterName": "Donkey Kong",
+    "CssValue": "../../CharacterIcons/donkeykong.png"
+  },
+  {
+    "CharacterName": "Fox",
+    "CssValue": "../../CharacterIcons/fox.png"
+  },
+  {
+    "CharacterName": "Jigglypuff",
+    "CssValue": "../../CharacterIcons/jigglypuff.png"
+  },
+  {
+    "CharacterName": "Kirby",
+    "CssValue": "../../CharacterIcons/kirby.png"
+  },
+  {
+    "CharacterName": "Link",
+    "CssValue": "../../CharacterIcons/link.png"
+  },
+  {
+    "CharacterName": "Luigi",
+    "CssValue": "../../CharacterIcons/luigi.png"
+  },
+  {
+    "CharacterName": "Mario",
+    "CssValue": "../../CharacterIcons/mario.png"
+  },
+  {
+    "CharacterName": "Ness",
+    "CssValue": "../../CharacterIcons/ness.png"
+  },
+  {
+    "CharacterName": "Pikachu",
+    "CssValue": "../../CharacterIcons/pikachu.png"
+  },
+  {
+    "CharacterName": "Random",
+    "CssValue": "../../CharacterIcons/random.png"
+  },
+  {
+    "CharacterName": "Samus",
+    "CssValue": "../../CharacterIcons/samus.png"
+  },
+  {
+    "CharacterName": "Yoshi",
+    "CssValue": "../../CharacterIcons/yoshi.png"
+  }
+]

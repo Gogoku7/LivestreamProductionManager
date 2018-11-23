@@ -1,0 +1,34 @@
+[
+  {
+    "PortName": "Port 1",
+    "CssValue": "../../PlayerPorts/playerPort1.png"
+  },
+  {
+    "PortName": "Port 2",
+    "CssValue": "../../PlayerPorts/playerPort2.png"
+  },
+  {
+    "PortName": "Port 3",
+    "CssValue": "../../PlayerPorts/playerPort3.png"
+  },
+  {
+    "PortName": "Port 4",
+    "CssValue": "../../PlayerPorts/playerPort4.png"
+  },
+  {
+    "PortName": "Port 5",
+    "CssValue": "../../PlayerPorts/playerPort5.png"
+  },
+  {
+    "PortName": "Port 6",
+    "CssValue": "../../PlayerPorts/playerPort6.png"
+  },
+  {
+    "PortName": "Port 7",
+    "CssValue": "../../PlayerPorts/playerPort7.png"
+  },
+  {
+    "PortName": "Port 8",
+    "CssValue": "../../PlayerPorts/playerPort8.png"
+  }
+]

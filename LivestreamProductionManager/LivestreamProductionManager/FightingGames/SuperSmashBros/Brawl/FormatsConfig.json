@@ -1,0 +1,26 @@
+[
+  {
+    "FormatName": "Singles",
+    "FORMAT": "Singles",
+    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Brawl/Singles",
+    "PathToFormat": "~/FightingGames/SuperSmashBros/Brawl/Singles/"
+  },
+  {
+    "FormatName": "Doubles",
+    "FORMAT": "Doubles",
+    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Brawl/Doubles",
+    "PathToFormat": "~/FightingGames/SuperSmashBros/Brawl/Doubles/"
+  },
+  {
+    "FormatName": "Crews",
+    "FORMAT": "Crews",
+    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Brawl/Crews",
+    "PathToFormat": "~/FightingGames/SuperSmashBros/Brawl/Crews/"
+  },
+  {
+    "FormatName": "Iron Man",
+    "FORMAT": "IronMan",
+    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Brawl/IronMan",
+    "PathToFormat": "~/FightingGames/SuperSmashBros/Brawl/IronMan/"
+  }
+]

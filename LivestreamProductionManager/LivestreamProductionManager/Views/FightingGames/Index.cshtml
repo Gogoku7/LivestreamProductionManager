@@ -1,0 +1,359 @@
+﻿@{
+    ViewBag.Title = "Fighting Games";
+}
+
+<div class="row">
+    <!--Manage tournament-->
+    <div class="full-horizontal-width">
+        <div class="panel panel-warning">
+            <div class="panel-heading text-center">
+                <text>Manage tournament</text>
+            </div>
+            <div class="panel-body" id="manageTournament">
+                <div class="row" id="manageTournamentValues">
+                    <div class="col-md-3 form-group">
+                        <label>Tournament</label>
+                        <input type="text" class="form-control" id="tournament" />
+                    </div>
+                    <div class="col-md-3 form-group">
+                        <label>Round</label>
+                        <input type="text" class="form-control" id="round" />
+                    </div>
+                    <div class="col-md-3 form-group">
+                        <label>Best of</label>
+                        <input type="text" class="form-control" id="bestOf" />
+                    </div>
+                    <div class="col-md-3 form-group">
+                        <label>Extra</label>
+                        <input type="text" class="form-control" id="extra" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3 form-group">
+                        <label>Series</label>
+                        <select class="form-control" id="Series" name="Series"></select>
+                    </div>
+
+                    <div class="col-md-3 form-group">
+                        <label>Game</label>
+                        <select class="form-control" id="Game" name="Game"></select>
+                    </div>
+
+                    <div class="col-md-3 form-group">
+                        <label>Format</label>
+                        <select class="form-control" id="Format" name="Format"></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!--Manage players-->
+    <div class="half-horizontal-width" style="float: left">
+        <div class="panel panel-primary">
+            <div class="panel-heading text-center">
+                <div class="pull-left">
+                    <button class="btn btn-success" id="submitCompetitorsButton">Update</button>
+                </div>
+
+                <text>Manage competitors</text>
+            </div>
+            <div class="panel-body" id="manageCompetitors">
+            </div>
+        </div>
+    </div>
+
+    <!--Manage commentators-->
+    <div class="half-horizontal-width" style="float: right">
+        <div class="panel panel-success">
+            <div class="panel-heading text-center">
+                <div class="pull-left">
+                    <button class="btn btn-primary" id="submitCommentatorsButton">Update</button>
+                </div>
+                
+                <text>Manage commentators</text>
+
+                <div class="pull-right">
+                    <button class="btn btn-default" id="addCommentatorButton"><span class="glypicon glyphicon-plus"></span></button>
+                </div>
+            </div>
+            <div class="panel-body" id="manageCommentators">
+                <form action="/Commentators/UpdateCommentators" method="post" id="manageCommentatorsForm">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <label>Name</label>
+                        </div>
+                        <div class="col-md-5">
+                            <label>Twitter</label>
+                        </div>
+                        <div class="col-md-2">
+                            <label>Delete</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--TODO: GET THIS TO WORK-->
+@*<div class="row" >
+    <iframe src="file://D:\GitHubProjects\SmashUltimateSinglesOverlayStep1\gameOverlay.html" frameBorder="0" style="width:100%;height:200px"></iframe>
+</div>*@
+
+@section Scripts{
+<script type="text/javascript">
+    $(document).ready(function () {
+        GetSeries();
+    });
+
+    function GetSeries() {
+        $.ajax({
+            type: "GET",
+            url: "/FightingGames/GetSeries",
+            dataType: "json",
+            success: function (data) {
+                $("#Series").append("<option value='' selected disabled hidden>Choose series</option>");
+                for (var i = 0; i < data.length; i++) {
+                    $("#Series").append("<option data-series='" + data[i].SERIES + "' value='" + data[i].PathToSeries + "'>" + data[i].SeriesName + "</option>");
+                }
+            },
+            error: function () {
+                alert("failure");
+            }
+        });
+    }
+
+    //Tournament
+    $("#Series").change(function () {
+        var selectedSeries = $("#Series option:selected");
+        $.ajax({
+            type: "GET",
+            url: "/FightingGames/GetGames?pathToSeries=" + selectedSeries.attr("value"),
+            dataType: "json",
+            success: function (data) {
+                $("#Game").empty();
+                $("#Format").empty();
+                $("#Game").append("<option value='' selected disabled hidden>Choose game</option>");
+                for (var i = 0; i < data.length; i++) {
+                    $("#Game").append("<option data-game='" + data[i].GAME + "' value='" + data[i].PathToGame + "'>" + data[i].GameName + "</option>");
+                }
+            },
+            error: function (ex) {
+                alert(ex);
+            }
+        });
+    });
+
+    $("#Game").change(function () {
+        var selectedGame = $("#Game option:selected");
+        $.ajax({
+            type: "GET",
+            url: "/FightingGames/GetFormats?pathToGame=" + selectedGame.attr("value"),
+            dataType: "json",
+            success: function (data) {
+                $("#Format").empty();
+                $("#Format").append("<option value='' selected disabled hidden>Choose format</option>");
+                for (var i = 0; i < data.length; i++) {
+                    $("#Format").append("<option data-format='" + data[i].FORMAT + "' url='" + data[i].Url + "' value='" + data[i].PathToFormat + "'>" + data[i].FormatName + "</option>");
+                }
+            },
+            error: function (ex) {
+                alert(ex);
+            }
+        });
+    });
+
+    $("#Format").change(function () {
+        var selectedSeries = $("#Series option:selected");
+        var selectedGame = $("#Game option:selected");
+        var selectedFormat = $("#Format option:selected");
+        $.ajax({
+            type: "POST",
+            url: selectedFormat.attr("url"),
+            data: {
+                "series": selectedSeries.attr("data-series"),
+                "game": selectedGame.attr("data-game"),
+                "format": selectedFormat.attr("data-value"),
+                "pathToSeries": selectedSeries.attr("value"),
+                "pathToGame": selectedGame.attr("value"),
+                "pathToFormat": selectedFormat.attr("value")
+            },
+            dataType: "html",
+            success: function (data) {
+                $("#manageCompetitors").empty();
+                $("#manageCompetitors").append(data);
+            },
+            error: function (ex) {
+                alert(ex)
+            }
+        });
+    });
+
+    $("#manageTournamentValues").on("change input", "input", function () {
+        if (!$("#submitCompetitorsButton").hasClass("btn-danger")) {
+            $("#submitCompetitorsButton").removeClass("btn-success");
+            $("#submitCompetitorsButton").addClass("btn-danger");
+        }
+    });
+
+    //Competitors
+    $("#submitCompetitorsButton").click(function () {
+        $("input[name='Tournament']").val($("#tournament").val());
+        $("input[name='Round']").val($("#round").val());
+        $("input[name='BestOf']").val($("#bestOf").val());
+        $("input[name='Extra']").val($("#extra").val());
+        var manageCompetitorsForm = $("#manageCompetitorsForm");
+
+        if ($("#crewsCountButton").length == 1) {
+            if ($("input[name^='Crew1.Players['][name$='].Active']:checked").length > 1 ||
+                $("input[name^='Crew1.Players['][name$='].Active']:checked").length == 0 ||
+                $("input[name^='Crew2.Players['][name$='].Active']:checked").length > 1 ||
+                $("input[name^='Crew2.Players['][name$='].Active']:checked").length == 0) {
+                showSnackbar("One or both crews do not have the appropriate amount of one active player");
+                return;
+            }
+        }
+        
+        $.ajax({
+            type: "POST",
+            url: manageCompetitorsForm.attr("action"),
+            data: manageCompetitorsForm.serialize(),
+            dataType: "json",
+            success: function (data) {
+                showSnackbar(data.Message);
+
+                if (data.Success == "True") {
+                    if ($("#submitCompetitorsButton").hasClass("btn-danger")) {
+                        $("#submitCompetitorsButton").removeClass("btn-danger");
+                        $("#submitCompetitorsButton").addClass("btn-success");
+                    }
+                }
+                else {
+                    console.log(data.ErrorMessage);
+                }
+            },
+            error: function (ex) {
+                console.log(ex);
+            }
+        });
+    });
+
+    function GetCrewPlayers() {
+        if ($("#crewsCount").val() < 1) {
+            $("#crewsCount").val("1");
+        }
+        if ($("#crewsCount").val() > 99) {
+            $("#crewsCount").val("99");
+        }
+
+        if ($("#crewsCount").val() == null || $("#crewsCount").val() == undefined || $("#crewsCount").val() == "") {
+            showSnackbar("The player count value is not valid");
+        }
+        else {
+            $.ajax({
+                type: "POST",
+                url: "/SuperSmashBros/GetCrewPlayers",
+                data: {
+                    "count": $("#crewsCount").val(),
+                    "series": $("input[name = 'Series']").val(),
+                    "game": $("input[name='Game']").val(),
+                    "format": $("input[name='Format']").val()
+                },
+                dataType: "html",
+                success: function (data) {
+                    $("#crewPlayersContainer").empty();
+                    $("#crewPlayersContainer").append(data);
+                },
+                error: function (ex) {
+                    alert(ex);
+                }
+            });
+        }
+    }
+
+    $("body").on("change input", "#manageCompetitorsForm :input", function () {
+        if (!$("#submitCompetitorsButton").hasClass("btn-danger")) {
+            $("#submitCompetitorsButton").removeClass("btn-success");
+            $("#submitCompetitorsButton").addClass("btn-danger");
+        }
+    });
+
+    //Commentators
+    $("#addCommentatorButton").click(function () {
+        var id = $("div[id*='commentator-row-']").length;
+        $.ajax({
+            type: "GET",
+            url: "/Commentators/GetCommentatorRow/" + id,
+            dataType: "html",
+            success: function (data) {
+                $("#manageCommentatorsForm").append(data);
+
+                $("div[id*='commentator-row-']").each(function (index) {
+                    $(this).attr("id", "commentator-row-" + index);
+                    $(this).find("input[id*='_Name']").attr({ "name": "commentatorViewModels[" + index + "].Name", "id": "commentatorViewModels_" + index + "_Name" });
+                    $(this).find("input[id*='_Twitter']").attr({ "name": "commentatorViewModels[" + index + "].Twitter", "id": "commentatorViewModels_" + index + "_Twitter" });
+                    $(this).find("button[id*='deleteCommentator-']").attr({ "onclick": "removeCommentator(" + index + ")", "id": "deleteCommentator-" + index });
+                });
+            },
+            error: function (ex) {
+                console.log(ex);
+            }
+        });
+    });
+
+    function removeCommentator(id) {
+        $("#commentator-row-" + id).remove();
+
+        $("div[id*='commentator-row-']").each(function (index) {
+            $(this).attr("id", "commentator-row-" + index);
+            $(this).find("input[id*='_Name']").attr({ "name": "commentatorViewModels[" + index + "].Name", "id": "commentatorViewModels_" + index + "_Name" });
+            $(this).find("input[id*='_Twitter']").attr({ "name": "commentatorViewModels[" + index + "].Twitter", "id": "commentatorViewModels_" + index + "_Twitter" });
+            $(this).find("button[id*='deleteCommentator-']").attr({ "onclick": "removeCommentator(" + index + ")", "id": "deleteCommentator-" + index });
+        });
+    }
+
+    $("#submitCommentatorsButton").click(function () {
+        var manageCommentatorsForm = $("#manageCommentatorsForm");
+        $.ajax({
+            type: "POST",
+            url: manageCommentatorsForm.attr("action"),
+            data: manageCommentatorsForm.serialize(),
+            dataType: "json",
+            success: function (data) {
+                showSnackbar(data.Message);
+
+                if (data.Success == "True") {
+                    if ($("#submitCommentatorsButton").hasClass("btn-danger")) {
+                        $("#submitCommentatorsButton").removeClass("btn-danger");
+                        $("#submitCommentatorsButton").addClass("btn-primary");
+                    }
+                }
+                else {
+                    console.log(data.ErrorMessage);
+                }
+            },
+            error: function (ex) {
+                console.log(ex);
+            }
+        });
+    });
+
+    $("body").on("change input", "#manageCommentatorsForm :input", function () {
+        if (!$("#submitCommentatorsButton").hasClass("btn-danger")) {
+            $("#submitCommentatorsButton").removeClass("btn-primary");
+            $("#submitCommentatorsButton").addClass("btn-danger");
+        }
+    });
+
+    //Snackbar
+    function showSnackbar(message) {
+        $("#snackbar").html(message);
+        $("#snackbar").addClass("show");
+        setTimeout(function () { $("#snackbar").removeClass("show"); }, 3000);
+    }
+</script>
+}

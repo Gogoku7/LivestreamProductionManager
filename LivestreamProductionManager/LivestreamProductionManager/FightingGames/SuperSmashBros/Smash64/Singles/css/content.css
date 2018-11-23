@@ -1,0 +1,55 @@
+#player1NameText:before {
+    content: "C | Gogoku7";
+}
+
+#player1TwitterText:before {
+    content: "@gogoku7";
+}
+
+#player1ScoreText:before {
+    content: "0";
+}
+
+#player1Character {
+    background-image: url('../../CharacterIcons/fox.png');
+}
+
+#player1Port {
+    background-image: url('../../PlayerPorts/playerPort1.png');
+}
+
+#player2NameText:before {
+    content: "Tempo | ZeRo";
+}
+
+#player2TwitterText:before {
+    content: "@zerowondering";
+}
+
+#player2ScoreText:before {
+    content: "1";
+}
+
+#player2Character {
+    background-image: url('../../CharacterIcons/fox.png');
+}
+
+#player2Port {
+    background-image: url('../../PlayerPorts/playerPort2.png');
+}
+
+#tournamentText:before {
+    content: "Syndicate 2019";
+}
+
+#extraText:before {
+    content: "64 Singles";
+}
+
+#roundText:before {
+    content: "Winners Round 2";
+}
+
+#bestOfText:before {
+    content: "Best of 3";
+}

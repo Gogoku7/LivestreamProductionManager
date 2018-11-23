@@ -1,0 +1,70 @@
+﻿@model int
+
+@{
+    Layout = null;
+}
+
+<div class="row">
+    <div class="col-md-1 text-center">
+        <label>Dead</label>
+    </div>
+    <div class="col-md-1 text-center">
+        <label>Active</label>
+    </div>
+    <div class="col-md-2 text-center">
+        <label>Twitter</label>
+    </div>
+    <div class="col-md-2 text-center">
+        <label>Name</label>
+    </div>
+
+
+    <div class="col-md-2 text-center">
+        <label>Name</label>
+    </div>
+    <div class="col-md-2 text-center">
+        <label>Twitter</label>
+    </div>
+    <div class="col-md-1 text-center">
+        <label>Active</label>
+    </div>
+    <div class="col-md-1 text-center">
+        <label>Dead</label>
+    </div>
+</div>
+
+@for (var i = 0; i < Model; i++)
+{
+    <div class="row" id="crewPlayer-@Model">
+        <div class="col-md-1">
+            <input type="checkbox" class="checkbox-inline big-checkbox" value="true" name="Crew1.Players[@i].Eliminated" id="crew1_player@{@i} _Eliminated" />
+        </div>
+        <div class="col-md-1">
+            <input type="checkbox" class="checkbox-inline big-checkbox" value="true" name="Crew1.Players[@i].Active" id="crew1_player@{@i}_Active" />
+        </div>
+        <div class="col-md-2">
+            <input type="text" class="form-control" name="Crew1.Players[@i].Twitter" id="crew1_player@{@i}__Twitter" />
+
+            
+        </div>
+        <div class="col-md-2">
+            <input type="text" class="form-control" name="Crew1.Players[@i].Name" id="crew1_player@{@i}__Name" />
+        </div>
+
+        <div class="col-md-2">
+            <input type="text" class="form-control" name="Crew2.Players[@i].Name" id="crew2_player@{@i}__Name" />
+            
+        </div>
+        <div class="col-md-2">
+            <input type="text" class="form-control" name="Crew2.Players[@i].Twitter" id="crew2_player@{@i}__Twitter" />
+        </div>
+        <div class="col-md-1">
+            <input type="checkbox" class="checkbox-inline big-checkbox" value="true" name="Crew2.Players[@i].Active" id="crew2_player@{@i}_Active" />
+        </div>
+        <div class="col-md-1">
+            <input type="checkbox" class="checkbox-inline big-checkbox" value="true" name="Crew2.Players[@i].Eliminated" id="crew2_player@{@i}_Eliminated" />
+        </div>
+    </div>
+}
+
+

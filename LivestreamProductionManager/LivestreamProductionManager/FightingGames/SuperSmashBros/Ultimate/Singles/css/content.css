@@ -1,0 +1,55 @@
+#player1NameText:before {
+    content: "Tempo | ZeRo";
+}
+
+#player1TwitterText:before {
+    content: "@zerowondering";
+}
+
+#player1ScoreText:before {
+    content: "0";
+}
+
+#player1Character {
+    background-image: url('../../CharacterIcons/diddykong.png');
+}
+
+#player1Port {
+    background-image: url('../../PlayerPorts/playerPort5.png');
+}
+
+#player2NameText:before {
+    content: "NRG | Nairo";
+}
+
+#player2TwitterText:before {
+    content: "@nairomk";
+}
+
+#player2ScoreText:before {
+    content: "0";
+}
+
+#player2Character {
+    background-image: url('../../CharacterIcons/zerosuitsamus.png');
+}
+
+#player2Port {
+    background-image: url('../../PlayerPorts/playerPort6.png');
+}
+
+#tournamentText:before {
+    content: "Fight Night 32";
+}
+
+#extraText:before {
+    content: "Super Smash Bros. Wii U ";
+}
+
+#roundText:before {
+    content: "Winners Round 2";
+}
+
+#bestOfText:before {
+    content: "Best of 3";
+}

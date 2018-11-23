@@ -1,0 +1,110 @@
+[
+  {
+    "CharacterName": "Bowser",
+    "CssValue": "../../CharacterIcons/bowser.png"
+  },
+  {
+    "CharacterName": "Captain Falcon",
+    "CssValue": "../../CharacterIcons/captainfalcon.png"
+  },
+  {
+    "CharacterName": "Donkey Kong",
+    "CssValue": "../../CharacterIcons/donkeykong.png"
+  },
+  {
+    "CharacterName": "Dr. Mario",
+    "CssValue": "../../CharacterIcons/drmario.png"
+  },
+  {
+    "CharacterName": "Falco",
+    "CssValue": "../../CharacterIcons/falco.png"
+  },
+  {
+    "CharacterName": "Fox",
+    "CssValue": "../../CharacterIcons/fox.png"
+  },
+  {
+    "CharacterName": "Ganondorf",
+    "CssValue": "../../CharacterIcons/ganondorf.png"
+  },
+  {
+    "CharacterName": "Ice Climbers",
+    "CssValue": "../../CharacterIcons/iceclimbers.png"
+  },
+  {
+    "CharacterName": "Jigglypuff",
+    "CssValue": "../../CharacterIcons/jigglypuff.png"
+  },
+  {
+    "CharacterName": "Kirby",
+    "CssValue": "../../CharacterIcons/kirby.png"
+  },
+  {
+    "CharacterName": "Link",
+    "CssValue": "../../CharacterIcons/link.png"
+  },
+  {
+    "CharacterName": "Luigi",
+    "CssValue": "../../CharacterIcons/luigi.png"
+  },
+  {
+    "CharacterName": "Mario",
+    "CssValue": "../../CharacterIcons/mario.png"
+  },
+  {
+    "CharacterName": "Marth",
+    "CssValue": "../../CharacterIcons/marth.png"
+  },
+  {
+    "CharacterName": "Mewtwo",
+    "CssValue": "../../CharacterIcons/mewtwo.png"
+  },
+  {
+    "CharacterName": "Mr. Game & Watch",
+    "CssValue": "../../CharacterIcons/mrgamewatch.png"
+  },
+  {
+    "CharacterName": "Ness",
+    "CssValue": "../../CharacterIcons/ness.png"
+  },
+  {
+    "CharacterName": "Peach",
+    "CssValue": "../../CharacterIcons/peach.png"
+  },
+  {
+    "CharacterName": "Pichu",
+    "CssValue": "../../CharacterIcons/pichu.png"
+  },
+  {
+    "CharacterName": "Pikachu",
+    "CssValue": "../../CharacterIcons/pikachu.png"
+  },
+  {
+    "CharacterName": "Random",
+    "CssValue": "../../CharacterIcons/random.png"
+  },
+  {
+    "CharacterName": "Roy",
+    "CssValue": "../../CharacterIcons/roy.png"
+  },
+  {
+    "CharacterName": "Samus",
+    "CssValue": "../../CharacterIcons/samus.png"
+  },
+  {
+    "CharacterName": "Sheik",
+    "CssValue": "../../CharacterIcons/sheik.png"
+  },
+  {
+    "CharacterName": "Yoshi",
+    "CssValue": "../../CharacterIcons/yoshi.png"
+  },
+  {
+    "CharacterName": "Young Link",
+    "CssValue": "../../CharacterIcons/younglink.png"
+  },
+  {
+    "CharacterName": "Zelda",
+    "CssValue": "../../CharacterIcons/zelda.png"
+  }
+]

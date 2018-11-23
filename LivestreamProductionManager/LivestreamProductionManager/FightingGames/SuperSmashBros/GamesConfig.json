@@ -1,0 +1,27 @@
+[
+  {
+    "GameName": "Super Smash Bros. (64)",
+    "GAME":  "Smash64",
+    "PathToGame": "~/FightingGames/SuperSmashBros/Smash64/"
+  },
+  {
+    "GameName": "Super Smash Bros. Melee",
+    "GAME": "Melee",
+    "PathToGame": "~/FightingGames/SuperSmashBros/Melee/"
+  },
+  {
+    "GameName": "Super Smash Bros. Brawl",
+    "GAME": "Brawl",
+    "PathToGame": "~/FightingGames/SuperSmashBros/Brawl/"
+  },
+  {
+    "GameName": "Super Smash Bros. for Nintendo Wii U",
+    "GAME": "WiiU",
+    "PathToGame": "~/FightingGames/SuperSmashBros/WiiU/"
+  },
+  {
+    "GameName": "Super Smash Bros. Ultimate",
+    "GAME": "Ultimate",
+    "PathToGame": "~/FightingGames/SuperSmashBros/Ultimate/"
+  }
+]

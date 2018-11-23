@@ -1,0 +1,12 @@
+[
+  {
+    "SeriesName": "Super Smash Bros.",
+    "SERIES": "SuperSmashBros",
+    "PathToSeries": "~/FightingGames/SuperSmashBros/"
+  },
+  {
+    "SeriesName": "Street Fighter",
+    "SERIES": "StreetFighterController",
+    "PathToSeries": "~/FightingGames/StreetFighter/"
+  }
+]

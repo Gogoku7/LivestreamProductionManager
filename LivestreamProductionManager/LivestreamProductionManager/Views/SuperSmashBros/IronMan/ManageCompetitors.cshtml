@@ -1,0 +1,112 @@
+﻿@using System.Text;
+@model LivestreamProductionManager.ViewModels.FightingGames.SuperSmashBros.SuperSmashBrosBaseViewModel
+
+@{
+    var characterOptionsStringBuilder = new StringBuilder();
+    foreach (var character in Model.Characters)
+    {
+        characterOptionsStringBuilder.AppendLine($"<option value='{character.CssValue}'>{character.CharacterName}</option>");
+    }
+
+    var portOptionsStringBuilder = new StringBuilder();
+    foreach (var port in Model.Ports)
+    {
+        portOptionsStringBuilder.AppendLine($"<option value='{port.CssValue}'>{port.PortName}</option>");
+    }
+
+    Layout = null;
+}
+
+<form action="/SuperSmashBros/UpdateSingles" method="post" id="manageCompetitorsForm">
+    <input type="hidden" name="Tournament" value="" />
+    <input type="hidden" name="Round" value="" />
+    <input type="hidden" name="BestOf" value="" />
+    <input type="hidden" name="Extra" value="" />
+    <input type="hidden" name="Series" value="@Model.Series" />
+    <input type="hidden" name="Game" value="@Model.Game" />
+    <input type="hidden" name="Format" value="@Model.Format" />
+    <input type="hidden" name="PathToSeries" value="@Model.PathToSeries" />
+    <input type="hidden" name="PathToGame" value="@Model.PathToGame" />
+    <input type="hidden" name="PathToFormat" value="@Model.PathToFormat" />
+
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <label>Player 1</label>
+        </div>
+        <div class="col-md-6  text-center">
+            <label>Player 2</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <label>Name</label>
+            <input type="text" class="form-control" name="Player1.Name" id="player1Name" />
+        </div>
+        <div class="col-md-6 text-center">
+            <label>Name</label>
+            <input type="text" class="form-control" name="Player2.Name" id="player2Name" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <label>Sponsor (acr)</label>
+            <input type="text" class="form-control" name="Player1.Sponsor" id="player1Sponsor" />
+        </div>
+        <div class="col-md-6 text-center">
+            <label>Sponsor (acr)</label>
+            <input type="text" class="form-control" name="Player2.Sponsor" id="player2Sponsor" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <label>Twitter</label>
+            <input type="text" class="form-control" name="Player1.Twitter" id="player1Twitter" />
+        </div>
+        <div class="col-md-6 text-center">
+            <label>Twitter</label>
+            <input type="text" class="form-control" name="Player2.Twitter" id="player2Twitter" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <label>Stocks left</label>
+            <input type="text" class="form-control" name="Player1.Score" id="player1Score" />
+        </div>
+        <div class="col-md-6 text-center">
+            <label>Stocks left</label>
+            <input type="text" class="form-control" name="Player2.Score" id="player2Score" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <label>Character</label>
+            <select class="form-control" name="Player1.Character" id="player1Character">
+                <option value="" selected disabled hidden>Choose character</option>
+                @Html.Raw(characterOptionsStringBuilder.ToString())
+            </select>
+        </div>
+        <div class="col-md-6 text-center">
+            <label>Character</label>
+            <select class="form-control" name="Player2.Character" id="player2Character">
+                <option value="" selected disabled hidden>Choose character</option>
+                @Html.Raw(characterOptionsStringBuilder.ToString())
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <label>Port</label>
+            <select class="form-control" name="Player1.Port" id="player1Port">
+                <option value="" selected disabled hidden>Choose port</option>
+                @Html.Raw(portOptionsStringBuilder.ToString())
+            </select>
+        </div>
+        <div class="col-md-6 text-center">
+            <label>Port</label>
+            <select class="form-control" name="Player2.Port" id="player2Port">
+                <option value="" selected disabled hidden>Choose port</option>
+                @Html.Raw(portOptionsStringBuilder.ToString())
+            </select>
+        </div>
+    </div>
+</form>

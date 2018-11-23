@@ -1,0 +1,17 @@
+﻿@model int
+
+@{
+    Layout = null;
+}
+
+<div class="row" id="commentator-row-@Model">
+    <div class="col-md-5 form-group">
+        <input type="text" class="form-control" name="commentatorViewModels[@Model].Name" id="commentatorViewModels_@{@Model}_Name" />
+    </div>
+    <div class="col-md-5 form-group">
+        <input type="text" class="form-control" name="commentatorViewModels[@Model].Twitter" id="commentatorViewModels_@{@Model}_Twitter" />
+    </div>
+    <div class="col-md-2 form-group">
+        <button class="btn btn-danger" onclick="removeCommentator(@Model)" id="deleteCommentator-@Model"><span class="glyphicon glyphicon-remove"></span></button>
+    </div>
+</div>
