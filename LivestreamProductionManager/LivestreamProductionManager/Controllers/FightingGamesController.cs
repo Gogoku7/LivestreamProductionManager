@@ -40,7 +40,6 @@ namespace LivestreamProductionManager.Controllers
             {
                 Console.WriteLine(ex);
                 throw;
-
             }
             catch (Exception ex)
             {

@@ -25,12 +25,12 @@ namespace LivestreamProductionManager.Controllers
 
                 //Save files
 
-                return Json(new SnackbarViewModel(true, "Successfully saved commentator files"), JsonRequestBehavior.DenyGet);
+                return SuccessSnackbar("Successfully saved commentator files");
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
-                return Json(new SnackbarViewModel(false, "Something went wrong while saving commentator files, see the console for details", ex.Message), JsonRequestBehavior.DenyGet);
+                return ErrorSnackbar(ex, "Something went wrong while saving commentator files, see the console for details");
             }
         }
     }

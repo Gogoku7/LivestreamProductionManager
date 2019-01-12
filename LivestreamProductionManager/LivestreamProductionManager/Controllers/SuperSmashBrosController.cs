@@ -44,12 +44,11 @@ namespace LivestreamProductionManager.Controllers
             {
                 _smashOverlayManager.UpdateSinglesOverlay(singlesViewModel);
 
-                return Json(new SnackbarViewModel(true, "Successfully saved competitor files"), JsonRequestBehavior.DenyGet);
+                return SuccessSnackbar("Successfully saved competitor files");
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
-                return Json(new SnackbarViewModel(false, "Something went wrong while saving competitor files, see the console for details", ex.Message), JsonRequestBehavior.DenyGet);
+                return ErrorSnackbar(ex, "Something went wrong while saving competitor files, see the console for details");
             }
         }
 
@@ -60,12 +59,11 @@ namespace LivestreamProductionManager.Controllers
             {
                 _smashOverlayManager.UpdateDoublesOverlay(doublesViewModel);
 
-                return Json(new SnackbarViewModel(true, "Successfully saved competitor files"), JsonRequestBehavior.DenyGet);
+                return SuccessSnackbar("Successfully saved competitor files");
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
-                return Json(new SnackbarViewModel(false, "Something went wrong while saving competitor files, see the console for details", ex.Message), JsonRequestBehavior.DenyGet);
+                return ErrorSnackbar(ex, "Something went wrong while saving competitor files, see the console for details");
             }
         }
 
@@ -81,14 +79,12 @@ namespace LivestreamProductionManager.Controllers
 
                 //Save files
 
-                return Json(new SnackbarViewModel(true, "Successfully saved competitor files"), JsonRequestBehavior.DenyGet);
+                return SuccessSnackbar("Successfully saved competitor files");
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
-                return Json(new SnackbarViewModel(false, "Something went wrong while saving competitor files, see the console for details", ex.Message), JsonRequestBehavior.DenyGet);
+                return ErrorSnackbar(ex, "Something went wrong while saving competitor files, see the console for details");
             }
         }
-
     }
 }
