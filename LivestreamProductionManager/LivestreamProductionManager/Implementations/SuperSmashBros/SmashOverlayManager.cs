@@ -97,18 +97,5 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 throw;
             }
         }
-
-        public void UpdateQueu(string pathToFormat, string queuData)
-        {
-            try
-            {
-                _fileWriter.WriteQueuFile(pathToFormat, queuData);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                throw;
-            }
-        }
     }
 }

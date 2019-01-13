@@ -107,10 +107,30 @@
 @section Scripts{
 <script type="text/javascript">
     var competitorFormJsonData = null;
-
     $(document).ready(function () {
+        InitializeWebsocket();
         GetSeries();
     });
+
+    function InitializeWebsocket() {
+        var uri = "ws://localhost:56613/Socket/Queu";
+
+        websocket = new WebSocket(uri);
+
+        websocket.onopen = function () {
+            showSnackbar("Connected to websocket.");
+        };
+
+        websocket.onerror = function (event) {
+            showSnackbar("Something went wrong with the websocket.");
+            console.log(event);
+            console.log(event.data);
+        };
+
+        websocket.onmessage = function (event) {
+            console.log(event.data);
+        };
+    }
 
     function GetSeries() {
         $.ajax({
@@ -120,7 +140,7 @@
             success: function (data) {
                 $("#Series").append("<option value='' selected disabled hidden>Choose series</option>");
                 for (var i = 0; i < data.length; i++) {
-                    $("#Series").append("<option data-series='" + data[i].SERIES + "' update-queu-url='" + data[i].UpdateQueuUrl + "' value='" + data[i].PathToSeries + "'>" + data[i].SeriesName + "</option>");
+                    $("#Series").append("<option data-series='" + data[i].SERIES + "' value='" + data[i].PathToSeries + "'>" + data[i].SeriesName + "</option>");
                 }
             },
             error: function () {
@@ -277,33 +297,7 @@
             competitorFormJsonData = newCompetitorFormJsonData;
 
             if (queuData.length > 0) {
-                var selectedSeries = $("#Series option:selected");
-                var selectedFormat = $("#Format option:selected");
-                queuData.push({ "timestamp": Date.now() })
-
-                $.ajax({
-                    type: "POST",
-                    url: selectedSeries.attr("update-queu-url"),
-                    data: {
-                        "pathToFormat": selectedFormat.attr("value"),
-                        "queuData": JSON.stringify(queuData)
-                    },
-                    dataType: "json",
-                    success: function (data) {
-                        setTimeout(function () {
-                            showSnackbar(data.Message);
-                        }, 3000);
-
-                        if (data.Success == "True") {
-                        }
-                        else {
-                            console.log(data.ErrorMessage);
-                        }
-                    },
-                    error: function (ex) {
-                        console.log(ex);
-                    }
-                });
+                websocket.send(JSON.stringify(queuData));
             }
         }
     }
@@ -419,7 +413,9 @@
     function showSnackbar(message) {
         $("#snackbar").html(message);
         $("#snackbar").addClass("show");
-        setTimeout(function () { $("#snackbar").removeClass("show"); }, 3000);
+        setTimeout(function () {
+            $("#snackbar").removeClass("show");
+        }, 3000);
     }
 </script>
 }
