@@ -8,7 +8,7 @@ namespace LivestreamProductionManager.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Fight Games";
+            ViewBag.Title = "Fighting Games";
 
             return View();
         }

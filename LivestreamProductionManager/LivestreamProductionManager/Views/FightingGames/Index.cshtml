@@ -106,6 +106,8 @@
 
 @section Scripts{
 <script type="text/javascript">
+    var competitorFormJsonData = null;
+
     $(document).ready(function () {
         GetSeries();
     });
@@ -118,7 +120,7 @@
             success: function (data) {
                 $("#Series").append("<option value='' selected disabled hidden>Choose series</option>");
                 for (var i = 0; i < data.length; i++) {
-                    $("#Series").append("<option data-series='" + data[i].SERIES + "' value='" + data[i].PathToSeries + "'>" + data[i].SeriesName + "</option>");
+                    $("#Series").append("<option data-series='" + data[i].SERIES + "' update-queu-url='" + data[i].UpdateQueuUrl + "' value='" + data[i].PathToSeries + "'>" + data[i].SeriesName + "</option>");
                 }
             },
             error: function () {
@@ -186,6 +188,7 @@
             success: function (data) {
                 $("#manageCompetitors").empty();
                 $("#manageCompetitors").append(data);
+                competitorFormJsonData = null;
             },
             error: function (ex) {
                 alert(ex)
@@ -217,7 +220,11 @@
                 return;
             }
         }
-        
+
+        SubmitCompetitorForm(manageCompetitorsForm);
+    });
+
+    function SubmitCompetitorForm(manageCompetitorsForm) {
         $.ajax({
             type: "POST",
             url: manageCompetitorsForm.attr("action"),
@@ -231,6 +238,8 @@
                         $("#submitCompetitorsButton").removeClass("btn-danger");
                         $("#submitCompetitorsButton").addClass("btn-success");
                     }
+
+                    SubmitQueuUpdate();
                 }
                 else {
                     console.log(data.ErrorMessage);
@@ -240,7 +249,64 @@
                 console.log(ex);
             }
         });
-    });
+    }
+
+    function SubmitQueuUpdate() {
+        var competitorsFormInputs = $("#manageCompetitorsForm :input[data-id]");
+
+        if (competitorFormJsonData == null) {
+            competitorFormJsonData = {};
+
+            $(competitorsFormInputs).each(function () {
+                competitorFormJsonData[$(this).attr("data-id")] = $(this).val();
+            });
+        }
+        else {
+            var newCompetitorFormJsonData = {};
+            $(competitorsFormInputs).each(function () {
+                newCompetitorFormJsonData[$(this).attr("data-id")] = $(this).val();
+            });
+
+            var queuData = [];
+            $.each(newCompetitorFormJsonData, function (key, value) {
+                if (competitorFormJsonData[key] != value) {
+                    queuData.push(key);
+                }
+            });
+
+            competitorFormJsonData = newCompetitorFormJsonData;
+
+            if (queuData.length > 0) {
+                var selectedSeries = $("#Series option:selected");
+                var selectedFormat = $("#Format option:selected");
+                queuData.push({ "timestamp": Date.now() })
+
+                $.ajax({
+                    type: "POST",
+                    url: selectedSeries.attr("update-queu-url"),
+                    data: {
+                        "pathToFormat": selectedFormat.attr("value"),
+                        "queuData": JSON.stringify(queuData)
+                    },
+                    dataType: "json",
+                    success: function (data) {
+                        setTimeout(function () {
+                            showSnackbar(data.Message);
+                        }, 3000);
+
+                        if (data.Success == "True") {
+                        }
+                        else {
+                            console.log(data.ErrorMessage);
+                        }
+                    },
+                    error: function (ex) {
+                        console.log(ex);
+                    }
+                });
+            }
+        }
+    }
 
     function GetCrewPlayers() {
         if ($("#crewsCount").val() < 1) {

@@ -286,6 +286,19 @@ body
 	100% {width:67.70833333333333%}
 }
 
+.changing
+{
+	transition-duration: 0.5s;
+	transition-property: opacity;
+	opacity: 0 !important;
+}
+
+.changed
+{
+	transition-duration: 0.5s;
+	transition-property: opacity;
+}
+
 /* animations END */
 
 

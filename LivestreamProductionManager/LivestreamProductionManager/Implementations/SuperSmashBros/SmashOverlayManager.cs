@@ -11,7 +11,7 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
     {
         private readonly ITemplateFileReader _templatefileReader = new CssTemplateFileReader();
         private readonly ITextReplacer _textReplacer = new TextReplacer();
-        private readonly SmashCssFileWriter _fileWriter = new SmashCssFileWriter();
+        private readonly SmashFileWriter _fileWriter = new SmashFileWriter();
 
         private readonly string _textTemplateCss;
         private readonly string _imageTemplateCss;
@@ -90,6 +90,19 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
             try
             {
 
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
+        }
+
+        public void UpdateQueu(string pathToFormat, string queuData)
+        {
+            try
+            {
+                _fileWriter.WriteQueuFile(pathToFormat, queuData);
             }
             catch (Exception ex)
             {

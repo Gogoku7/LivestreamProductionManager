@@ -2,11 +2,13 @@
   {
     "SeriesName": "Super Smash Bros.",
     "SERIES": "SuperSmashBros",
-    "PathToSeries": "~/FightingGames/SuperSmashBros/"
+    "PathToSeries": "~/FightingGames/SuperSmashBros/",
+    "UpdateQueuUrl": "/SuperSmashBros/UpdateQueu"
   },
   {
     "SeriesName": "Street Fighter",
     "SERIES": "StreetFighterController",
-    "PathToSeries": "~/FightingGames/StreetFighter/"
+    "PathToSeries": "~/FightingGames/StreetFighter/",
+    "UpdateQueuUrl": "/StreetFighter/UpdateQueu"
   }
 ]

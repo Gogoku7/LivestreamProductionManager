@@ -1,5 +1,4 @@
 ﻿using LivestreamProductionManager.Implementations.SuperSmashBros;
-using LivestreamProductionManager.ViewModels.FightingGames;
 using LivestreamProductionManager.ViewModels.FightingGames.SuperSmashBros;
 using LivestreamProductionManager.ViewModels.SuperSmashBros;
 using System;
@@ -84,6 +83,30 @@ namespace LivestreamProductionManager.Controllers
             catch (Exception ex)
             {
                 return ErrorSnackbar(ex, "Something went wrong while saving competitor files, see the console for details");
+            }
+        }
+
+        [HttpPost]
+        public JsonResult UpdateQueu(string pathToFormat, string queuData)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(pathToFormat))
+                {
+                    throw new ArgumentNullException(nameof(pathToFormat));
+                }
+                if (string.IsNullOrEmpty(queuData))
+                {
+                    throw new ArgumentNullException(nameof(queuData));
+                }
+
+                _smashOverlayManager.UpdateQueu(pathToFormat, queuData);
+
+                return SuccessSnackbar("Successfully saved queu update file");
+            }
+            catch (Exception ex)
+            {
+                return ErrorSnackbar(ex, "Something went wrong while saving queu file, see the console for details");
             }
         }
     }

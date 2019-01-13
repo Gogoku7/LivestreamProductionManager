@@ -5,6 +5,7 @@
 		<link rel="stylesheet" type="text/css" href="css/content.css">
 		<script src="javascript/jQuery.js"></script>
 		<script src="javascript/fitty.js"></script>
+		<script src=".js"></script>
 	</head>
 	<body>
 		<div id="wrapper">
@@ -67,22 +68,39 @@
 	</body>
 </html>
 
-<script>
-	$( document ).ready(function() {
+<script type="text/javascript">
+	$(document).ready(function() {
 		fitty('.playerName', { minSize: 8, maxSize: 40, multiLine: false });
 		fitty('.playerScore', { minSize: 8, maxSize: 25, multiLine: false });
 	});
 	
 	function onTimerTick() {
-        var queryString = '?reload=' + new Date().getTime();
-        $('link[rel="stylesheet"]').not('link[href="css/styles.css"]').each(function () {
-            this.href = this.href.replace(/\?.*|$/, queryString);
-        });
 		
-		fitty('.playerName', { minSize: 8, maxSize: 40, multiLine: false });
-		fitty('.playerScore', { minSize: 8, maxSize: 25, multiLine: false });
+		
+		
+		<!-- $("#player1NameText").addClass("changing"); -->
+		
+		<!-- setTimeout(function () { -->
+			<!-- var queryString = '?reload=' + new Date().getTime(); -->
+			<!-- $('link[rel="stylesheet"]').not('link[href="css/styles.css"]').each(function () { -->
+				<!-- this.href = this.href.replace(/\?.*|$/, queryString); -->
+			<!-- }); -->
+			
+			<!-- setTimeout(function () { -->
+				<!-- setTimeout(function () { -->
+					<!-- fitty('.playerName', { minSize: 8, maxSize: 40, multiLine: false }); -->
+					<!-- fitty('.playerScore', { minSize: 8, maxSize: 25, multiLine: false }); -->
+					<!-- setTimeout(function () { -->
+						<!-- $("#player1NameText").removeClass("changing").addClass("changed"); -->
+						<!-- setTimeout(function () { -->
+							<!-- $("#player1NameText").removeClass("changed"); -->
+						<!-- }, 1000); -->
+					<!-- }, 1000); -->
+				<!-- }, 1000); -->
+			<!-- }, 1000); -->
+		<!-- }, 1000); -->
     }
-
+	
     setInterval(function () {
         onTimerTick();
     }, 10000);

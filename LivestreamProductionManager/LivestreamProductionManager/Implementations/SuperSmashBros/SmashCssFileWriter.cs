@@ -6,7 +6,7 @@ using System.Web;
 
 namespace LivestreamProductionManager.Implementations.SuperSmashBros
 {
-    public class SmashCssFileWriter
+    public class SmashFileWriter
     {
         private readonly ITemplateFileReader _templateFileReader = new CssTemplateFileReader();
         private readonly SmashTextReplacer _smashTextReplacer = new SmashTextReplacer();
@@ -35,6 +35,19 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 var cssFileContent = _smashTextReplacer.ReplaceCssForDoubles(templateCssFile, doublesCssModel);
 
                 File.WriteAllText(HttpContext.Current.Server.MapPath(pathToFormat + "css/content.css"), cssFileContent);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
+        }
+
+        public void WriteQueuFile(string pathToFormat, string queuData)
+        {
+            try
+            {
+                File.WriteAllText(HttpContext.Current.Server.MapPath(pathToFormat + "queuData.js"), "var queuData = " + queuData);
             }
             catch (Exception ex)
             {

@@ -5,5 +5,6 @@
         public string SeriesName { get; set; }
         public string SERIES { get; set; }
         public string PathToSeries { get; set; }
+        public string UpdateQueuUrl { get; set; }
     }
 }

@@ -1,5 +1,5 @@
 #player1NameText:before {
-    content: "Cinnovate | Gogoku7";
+    content: "Gogoku7";
 }
 
 #player1TwitterText:before {
@@ -7,11 +7,11 @@
 }
 
 #player1ScoreText:before {
-    content: "1";
+    content: "2";
 }
 
 #player1Character {
-    background-image: url('../../CharacterIcons/fox.png');
+    background-image: url('../../CharacterIcons/falco.png');
 }
 
 #player1Port {
@@ -23,15 +23,15 @@
 }
 
 #player2TwitterText:before {
-    content: "";
+    content: "@median4";
 }
 
 #player2ScoreText:before {
-    content: "0";
+    content: "1";
 }
 
 #player2Character {
-    background-image: url('../../CharacterIcons/littlemac.png');
+    background-image: url('../../CharacterIcons/greninja.png');
 }
 
 #player2Port {
@@ -39,17 +39,17 @@
 }
 
 #tournamentText:before {
-    content: "Fight Night 32";
+    content: "";
 }
 
 #extraText:before {
-    content: "Super Smash Bros. Wii U ";
+    content: "";
 }
 
 #roundText:before {
-    content: "Winners Round 2";
+    content: "";
 }
 
 #bestOfText:before {
-    content: "Best of 3";
+    content: "";
 }
