@@ -72,7 +72,7 @@
 		fitty('.playerName', { minSize: 8, maxSize: 40, multiLine: false });
 		fitty('.playerScore', { minSize: 8, maxSize: 25, multiLine: false });
 		
-		var uri = "ws://localhost:56613/Socket/Queu";
+		var uri = "ws://localhost:56613/WebSocket/Queu";
 
 		websocket = new WebSocket(uri);
 
@@ -98,23 +98,20 @@
 					this.href = this.href.replace(/\?.*|$/, queryString);
 				});
 
-				setTimeout(function () {
-					setTimeout(function () {
-						fitty('.playerName', { minSize: 8, maxSize: 40, multiLine: false });
-						fitty('.playerScore', { minSize: 8, maxSize: 25, multiLine: false });
-						setTimeout(function () {
-							$.each(queuData, function (i) {
-								$("#" + queuData[i]).removeClass("changing").addClass("changed");
-							});
-							setTimeout(function () {
-								$.each(queuData, function (i) {
-									$("#" + queuData[i]).removeClass("changed");
-								});
-							}, 1000);
-						}, 1000);
-					}, 1000);
-				}, 1000);
-			}, 1000);
+                fitty('.playerName', { minSize: 8, maxSize: 40, multiLine: false });
+                fitty('.playerScore', { minSize: 8, maxSize: 25, multiLine: false });
+
+                $.each(queuData, function (i) {
+                    $("#" + queuData[i]).removeClass("changing").addClass("changed");
+				});
+                
+
+                setTimeout(function () {
+                    $.each(queuData, function (i) {
+                        $("#" + queuData[i]).removeClass("changed");
+                    });
+                }, 500);
+			}, 500);
 		};
 	});
 </script>

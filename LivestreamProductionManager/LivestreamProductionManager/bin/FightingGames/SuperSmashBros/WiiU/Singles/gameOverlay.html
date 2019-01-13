@@ -68,69 +68,53 @@
 </html>
 
 <script type="text/javascript">
-	var lastTimestamp = Date.now();
-	
-	$(document).ready(function() {
-		var uri = "ws://localhost:56613/Socket/Queu";
-        
-		websocket = new WebSocket(uri);
+	$(document).ready(function () {
+		fitty('.playerName', { minSize: 8, maxSize: 40, multiLine: false });
+		fitty('.playerScore', { minSize: 8, maxSize: 25, multiLine: false });
 		
+		var uri = "ws://localhost:56613/WebSocket/Queu";
+
+		websocket = new WebSocket(uri);
+
 		websocket.onopen = function () {
 			console.log("Connected to server.");
 		};
-		
+
 		websocket.onerror = function (event) {
 			console.log("Something went wrong");
 		};
-		
-		websocket.onmessage = function (event) {
-			console.log("received message");
-			
-			var queuData = JSON.parse(event.data);
-		};
-		
-		
-		
-		
-		
-		
-		
-		fitty('.playerName', { minSize: 8, maxSize: 40, multiLine: false });
-		fitty('.playerScore', { minSize: 8, maxSize: 25, multiLine: false });
-	});
-	
-	function onTimerTick() {
 
-		var queryString = '?reload=' + new Date().getTime();
-		$('script[src="queuData.js"]').each(function () {
-			this.src = this.src.replace(/\?.*|$/, queryString);
-		});
-		
-		
-		<!-- $("#player1NameText").addClass("changing"); -->
-		
-		<!-- setTimeout(function () { -->
-			<!-- var queryString = '?reload=' + new Date().getTime(); -->
-			<!-- $('link[rel="stylesheet"]').not('link[href="css/styles.css"]').each(function () { -->
-				<!-- this.href = this.href.replace(/\?.*|$/, queryString); -->
-			<!-- }); -->
-			
-			<!-- setTimeout(function () { -->
-				<!-- setTimeout(function () { -->
-					<!-- fitty('.playerName', { minSize: 8, maxSize: 40, multiLine: false }); -->
-					<!-- fitty('.playerScore', { minSize: 8, maxSize: 25, multiLine: false }); -->
-					<!-- setTimeout(function () { -->
-						<!-- $("#player1NameText").removeClass("changing").addClass("changed"); -->
-						<!-- setTimeout(function () { -->
-							<!-- $("#player1NameText").removeClass("changed"); -->
-						<!-- }, 1000); -->
-					<!-- }, 1000); -->
-				<!-- }, 1000); -->
-			<!-- }, 1000); -->
-		<!-- }, 1000); -->
-    }
-	
-    setInterval(function () {
-        onTimerTick();
-    }, 10000);
+		websocket.onmessage = function (event) {
+			console.log(event.data);
+
+			var queuData = JSON.parse(event.data);
+			$.each(queuData, function (i) {
+				$("#" + queuData[i]).addClass("changing");
+			});
+
+			setTimeout(function () {
+				var queryString = '?reload=' + new Date().getTime();
+				$('link[rel="stylesheet"]').not('link[href="css/styles.css"]').each(function () {
+					this.href = this.href.replace(/\?.*|$/, queryString);
+				});
+
+				setTimeout(function () {
+					setTimeout(function () {
+						fitty('.playerName', { minSize: 8, maxSize: 40, multiLine: false });
+						fitty('.playerScore', { minSize: 8, maxSize: 25, multiLine: false });
+						setTimeout(function () {
+							$.each(queuData, function (i) {
+								$("#" + queuData[i]).removeClass("changing").addClass("changed");
+							});
+							setTimeout(function () {
+								$.each(queuData, function (i) {
+									$("#" + queuData[i]).removeClass("changed");
+								});
+							}, 1000);
+						}, 1000);
+					}, 1000);
+				}, 1000);
+			}, 1000);
+		};
+	});
 </script>

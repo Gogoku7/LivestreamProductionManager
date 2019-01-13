@@ -1,5 +1,5 @@
 #player1NameText:before {
-    content: "ZeRo";
+    content: "Tempo | ZeRo";
 }
 
 #player1TwitterText:before {
@@ -23,11 +23,11 @@
 }
 
 #player2TwitterText:before {
-    content: "@nairomk";
+    content: "@nairowondering";
 }
 
 #player2ScoreText:before {
-    content: "2";
+    content: "0";
 }
 
 #player2Character {
@@ -39,7 +39,7 @@
 }
 
 #tournamentText:before {
-    content: "Fight Night 33";
+    content: "Fight Night 32";
 }
 
 #extraText:before {
@@ -47,9 +47,9 @@
 }
 
 #roundText:before {
-    content: "Winners Round 2";
+    content: "Winners Round 3";
 }
 
 #bestOfText:before {
-    content: "Best of 3";
+    content: "Best of 5";
 }
