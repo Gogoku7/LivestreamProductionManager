@@ -6,6 +6,6 @@ This project is to help tournament streamers that are just starting out.
 
 Public update 1 video: https://www.youtube.com/watch?v=AkOS91s7fuM
 
-Unlisted developer update video playlist: TODO.
+Unlisted developer update video playlist: https://www.youtube.com/playlist?list=PL6cEqU9AFK4stzRthYa29YwrK3gIbWA04
 
 Follow me on Twitter to see how I progress with this project as well as other things I do in my free time: http://www.twitter.com/gogoku7
