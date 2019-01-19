@@ -18,10 +18,10 @@
 }
 
 <form action="/SuperSmashBros/UpdateDoubles" method="post" id="manageCompetitorsForm">
-    <input type="hidden" name="Tournament" value="" />
-    <input type="hidden" name="Round" value="" />
-    <input type="hidden" name="BestOf" value="" />
-    <input type="hidden" name="Extra" value="" />
+    <input type="hidden" name="Tournament" value="" data-id="#tournamentText" />
+    <input type="hidden" name="Round" value="" data-id="#roundText" />
+    <input type="hidden" name="BestOf" value="" data-id="#bestOfText" />
+    <input type="hidden" name="Extra" value="" data-id="#extraText" />
     <input type="hidden" name="Series" value="@Model.Series" />
     <input type="hidden" name="Game" value="@Model.Game" />
     <input type="hidden" name="Format" value="@Model.Format" />
@@ -41,22 +41,22 @@
     <div class="row">
         <div class="col-md-6 text-center">
             <label>Name</label>
-            <input type="text" class="form-control" name="Team1.Name" id="team1Name" />
+            <input type="text" class="form-control" name="Team1.Name" id="team1Name" data-id="#team1NameText" />
         </div>
         <div class="col-md-6 text-center">
             <label>Name</label>
-            <input type="text" class="form-control" name="Team2.Name" id="team2Name" />
+            <input type="text" class="form-control" name="Team2.Name" id="team2Name" data-id="#team2NameText" />
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-6 text-center">
             <label>Score</label>
-            <input type="text" class="form-control" name="Team1.Score" id="team1Score" />
+            <input type="text" class="form-control" name="Team1.Score" id="team1Score" data-id="#team1ScoreText" />
         </div>
         <div class="col-md-6 text-center">
             <label>Score</label>
-            <input type="text" class="form-control" name="Team2.Score" id="team2Score" />
+            <input type="text" class="form-control" name="Team2.Score" id="team2Score" data-id="#team1ScoreText" />
         </div>
     </div>
 
@@ -77,64 +77,64 @@
     <div class="row">
         <div class="col-md-3 text-center">
             <label>Name</label>
-            <input type="text" class="form-control" name="Team1.Players[0].Name" id="team1player1Name" />
+            <input type="text" class="form-control" name="Team1.Players[0].Name" id="team1Player1Name" data-id="#team1Player1NameText" />
         </div>
         <div class="col-md-3 text-center">
             <label>Name</label>
-            <input type="text" class="form-control" name="Team1.Players[1].Name" id="team1player2Name" />
+            <input type="text" class="form-control" name="Team1.Players[1].Name" id="team1Player2Name" data-id="#team1Player2NameText" />
         </div>
         <div class="col-md-3 text-center">
             <label>Name</label>
-            <input type="text" class="form-control" name="Team2.Players[0].Name" id="team2player1Name" />
+            <input type="text" class="form-control" name="Team2.Players[0].Name" id="team2Player1Name" data-id="#team2Player1NameText" />
         </div>
         <div class="col-md-3 text-center">
             <label>Name</label>
-            <input type="text" class="form-control" name="Team2.Players[1].Name" id="team2player2Name" />
+            <input type="text" class="form-control" name="Team2.Players[1].Name" id="team2Player2Name" data-id="#team2Player2NameText" />
         </div>
     </div>
     <div class="row">
         <div class="col-md-3 text-center">
             <label>Sponsor (acr)</label>
-            <input type="text" class="form-control" name="Team1.Players[0].Sponsor" id="team1player1Sponsor" />
+            <input type="text" class="form-control" name="Team1.Players[0].Sponsor" id="team1Player1Sponsor" data-id="#team1Player1NameText" />
         </div>
         <div class="col-md-3 text-center">
             <label>Sponsor (acr)</label>
-            <input type="text" class="form-control" name="Team1.Players[1].Sponsor" id="team1player2Sponsor" />
+            <input type="text" class="form-control" name="Team1.Players[1].Sponsor" id="team1Player2Sponsor" data-id="#team1Player2NameText" />
         </div>
         <div class="col-md-3 text-center">
             <label>Sponsor (acr)</label>
-            <input type="text" class="form-control" name="Team2.Players[0].Sponsor" id="team2player1Sponsor" />
+            <input type="text" class="form-control" name="Team2.Players[0].Sponsor" id="team2Player1Sponsor" data-id="#team2Player1NameText" />
         </div>
         <div class="col-md-3 text-center">
             <label>Sponsor (acr)</label>
-            <input type="text" class="form-control" name="Team2.Players[1].Sponsor" id="team2player2Sponsor" />
+            <input type="text" class="form-control" name="Team2.Players[1].Sponsor" id="team2Player2Sponsor" data-id="#team2Player2NameText" />
         </div>
     </div>
     <div class="row">
         <div class="col-md-3 text-center">
             <label>Character</label>
-            <select class="form-control" name="Team1.Players[0].Character" id="team1player1Character">
+            <select class="form-control" name="Team1.Players[0].Character" id="team1Player1Character" data-id="#team1Player1Character" >
                 <option value="" selected disabled hidden>Choose character</option>
                 @Html.Raw(characterOptionsStringBuilder.ToString())
             </select>
         </div>
         <div class="col-md-3 text-center">
             <label>Character</label>
-            <select class="form-control" name="Team1.Players[1].Character" id="team1player2Character">
+            <select class="form-control" name="Team1.Players[1].Character" id="team1Player2Character" data-id="#team1Player2Character" >
                 <option value="" selected disabled hidden>Choose character</option>
                 @Html.Raw(characterOptionsStringBuilder.ToString())
             </select>
         </div>
         <div class="col-md-3 text-center">
             <label>Character</label>
-            <select class="form-control" name="Team2.Players[0].Character" id="team2player1Character">
+            <select class="form-control" name="Team2.Players[0].Character" id="team2Player1Character" data-id="#team2Player1Character" >
                 <option value="" selected disabled hidden>Choose character</option>
                 @Html.Raw(characterOptionsStringBuilder.ToString())
             </select>
         </div>
         <div class="col-md-3 text-center">
             <label>Character</label>
-            <select class="form-control" name="Team2.Players[1].Character" id="team2player2Character">
+            <select class="form-control" name="Team2.Players[1].Character" id="team2Player2Character" data-id="#team2Player2Character" >
                 <option value="" selected disabled hidden>Choose character</option>
                 @Html.Raw(characterOptionsStringBuilder.ToString())
             </select>
@@ -143,28 +143,28 @@
     <div class="row">
         <div class="col-md-3 text-center">
             <label>Port</label>
-            <select class="form-control" name="Team1.Players[0].Port" id="team1player1Port">
+            <select class="form-control" name="Team1.Players[0].Port" id="team1Player1Port" data-id="#team1Player1Port" >
                 <option value="" selected disabled hidden>Choose port</option>
                 @Html.Raw(portOptionsStringBuilder.ToString())
             </select>
         </div>
         <div class="col-md-3 text-center">
             <label>Port</label>
-            <select class="form-control" name="Team1.Players[1].Port" id="team1player2Port">
+            <select class="form-control" name="Team1.Players[1].Port" id="team1Player2Port" data-id="#team1Player2Port" >
                 <option value="" selected disabled hidden>Choose port</option>
                 @Html.Raw(portOptionsStringBuilder.ToString())
             </select>
         </div>
         <div class="col-md-3 text-center">
             <label>Port</label>
-            <select class="form-control" name="Team2.Players[0].Port" id="team2player1Port">
+            <select class="form-control" name="Team2.Players[0].Port" id="team2Player1Port" data-id="#team2Player1Port" >
                 <option value="" selected disabled hidden>Choose port</option>
                 @Html.Raw(portOptionsStringBuilder.ToString())
             </select>
         </div>
         <div class="col-md-3 text-center">
             <label>Port</label>
-            <select class="form-control" name="Team2.Players[1].Port" id="team2player2Port">
+            <select class="form-control" name="Team2.Players[1].Port" id="team2Player2Port" data-id="#team2Player2Port" >
                 <option value="" selected disabled hidden>Choose port</option>
                 @Html.Raw(portOptionsStringBuilder.ToString())
             </select>

@@ -67,12 +67,13 @@ body
 
 /* teamScoreBox */
 
-.teamScoreBox
+.teamScoreBox 
 {
-	width: 20px;
-	height: 50px;
-	display: flex;
-	align-items: center;
+    width: 20px;
+    height: 50px;
+    line-height: 50px;
+    align-items: center;
+    overflow: hidden;
 }
 
 #team1ScoreBox
@@ -143,51 +144,76 @@ body
 
 
 
-/* teamNameBox */
+/* teamPlayerNamesBox */
 
-.teamNameBox
+.teamPlayerNamesBox 
 {
-	width: 250px;
-	height: 50px;
-	display: flex;
-	align-items: center;
-	overflow: hidden;
+    width: 250px;
+    height: 50px;
 }
 
-#team1NameBox
+#team1PlayerNamesBox
 {
 	float: left;
 	margin-left: 10px;
 }
 
-#team2NameBox
+#team2PlayerNamesBox
 {
 	float: right;
 	margin-right: 10px;
 }
 
-/* teamNameBox END */
+/* teamPlayerNamesBox END */
 
 
-/* teamNames */
 
-.teamNames
+/* teamPlayerNamesContainer */
+
+.teamPlayerNamesContainer 
 {
-	color: white;
-	margin: 0;
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
 }
 
-/* teamNames END*/
+#team1PlayerNamesContainer 
+{
+    float: left;
+    text-align: center;
+}
+
+#team2PlayerNamesContainer 
+{
+    float: right;
+    text-align: center;
+}
+
+/* teamPlayerNamesContainer END */
+
+
+
+/* teamPlayerNames */
+
+.teamPlayerNames 
+{
+    color: white;
+    margin: 0;
+}
+
+/* teamPlayerNames END*/
 
 
 
 /* teamPlayer2Port */
 
-.teamPlayer2Port
+.teamPlayer2Port 
 {
-	width: 90px;
-	height: 50px;
-	display:inline-block;
+    width: 90px;
+    height: 50px;
+    display: inline-block;
+    background-repeat: no-repeat;
 }
 
 #team1Player2Port
@@ -215,6 +241,8 @@ body
 }
 
 /* tournamentInfo END */
+
+
 
 /* info */
 
@@ -247,7 +275,7 @@ body
 	padding-left: 40px;
 	padding-right: 40px;
 	text-align: center;
-	background-image: url('..\\boxBackground\\infoBoxBackground.png');
+	background-image: url('../boxBackground/infoBoxBackground.png');
 }
 
 #infoRoundBox
@@ -282,8 +310,21 @@ body
 
 @keyframes showPlayerBox
 {
-	0% {width:0%}
-	100% {width:67.70833333333333%}
+	0% { width:0% }
+	100% { width:67.70833333333333% }
+}
+
+.changing 
+{
+    transition-duration: 0.5s;
+    transition-property: opacity;
+    opacity: 0 !important;
+}
+
+.changed 
+{
+    transition-duration: 0.5s;
+    transition-property: opacity;
 }
 
 /* animations END */

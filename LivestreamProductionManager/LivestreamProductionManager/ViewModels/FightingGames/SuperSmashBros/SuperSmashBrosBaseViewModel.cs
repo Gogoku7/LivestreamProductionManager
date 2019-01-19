@@ -4,7 +4,6 @@ namespace LivestreamProductionManager.ViewModels.FightingGames.SuperSmashBros
 {
     public class SuperSmashBrosBaseViewModel : BasePlayersViewModel
     {
-        //TODO: Improve the inheritance, it's currently not good...
         public List<CharacterViewModel> Characters { get; set; }
         public List<PortViewModel> Ports { get; set; }
 

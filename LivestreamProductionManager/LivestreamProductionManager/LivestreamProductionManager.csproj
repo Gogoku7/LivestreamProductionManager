@@ -540,7 +540,7 @@
     <Content Include="FightingGames\SuperSmashBros\WiiU\CharacterIcons\drmario.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\CharacterIcons\duckhuntduo.png">
+    <Content Include="FightingGames\SuperSmashBros\WiiU\CharacterIcons\duckhunt.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="FightingGames\SuperSmashBros\WiiU\CharacterIcons\falco.png">

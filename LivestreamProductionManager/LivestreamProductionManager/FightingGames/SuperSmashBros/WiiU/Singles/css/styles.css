@@ -51,27 +51,29 @@ body
 
 #player1Box
 {
-	float: right;
-	background-image: url('..\\playerBackgrounds\\player1Background.png');
+    float: right;
+    background-image: url('../playerBackgrounds/player1Background.png');
 }
 
 #player2Box
 {
-	float: left;
-	background-image: url('..\\playerBackgrounds\\player2Background.png');
+    float: left;
+    background-image: url('../playerBackgrounds/player2Background.png');
 }
 
 /* playerBox END */
 
 
+
 /* playerScoreBox */
 
-.playerScoreBox
+.playerScoreBox 
 {
-	width: 20px;
-	height: 50px;
-	display: flex;
-	align-items: center;
+    width: 20px;
+    height: 50px;
+    line-height: 50px;
+    align-items: center;
+    overflow: hidden;
 }
 
 #player1ScoreBox
@@ -108,7 +110,7 @@ body
 {
 	width: 50px;
 	height: 50px;
-	display:inline-block;
+	display: inline-block;
 	background-repeat: no-repeat;
 }
 
@@ -141,6 +143,7 @@ body
 /* playerCharacterEnd */
 
 
+
 /* playerNameBox */
 
 .playerNameBox
@@ -152,15 +155,13 @@ body
 #player1NameBox
 {
 	float: left;
-	margin-left: 150px;
-	text-align: center;
+	margin-left: 100px;
 }
 
 #player2NameBox
 {
 	float: right;
-	margin-right: 150px;
-	text-align: center;
+	margin-right: 100px;
 }
 
 /* playerNameBox END */
@@ -169,24 +170,24 @@ body
 
 /* playerNameContainer */
 
-.playerNameContainer
+.playerNameContainer 
 {
-	min-width: 100px;
-	max-width: 250px;
-	height: 50px;
-	display: flex;
-	align-items: center;
-	overflow: hidden;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
 }
 
 #player1NameContainer
 {
 	float: left; 
+    text-align: left;
 }
 
-#player2NameContainer
+#player2NameContainer 
 {
-	float: right;
+    float: right;
+    text-align: right;
 }
 
 /* playerNameContainer END */
@@ -195,10 +196,10 @@ body
 
 /* playerName */
 
-.playerName
+.playerName 
 {
-	color: white;
-	margin: 0;
+    color: white;
+    margin: 0;
 }
 
 /* playerName END*/
@@ -247,7 +248,7 @@ body
 	padding-left: 40px;
 	padding-right: 40px;
 	text-align: center;
-	background-image: url('..\\boxBackground\\infoBoxBackground.png');
+	background-image: url('../boxBackground/infoBoxBackground.png');
 }
 
 #infoRoundBox
@@ -282,8 +283,8 @@ body
 
 @keyframes showPlayerBox
 {
-	0% {width:0%}
-	100% {width:67.70833333333333%}
+	0% { width:0% }
+	100% { width:67.70833333333333% }
 }
 
 .changing
@@ -300,69 +301,3 @@ body
 }
 
 /* animations END */
-
-
-
-/* content */
-
-#player1Character
-{
-	background-image: url('..\\characterIcons\\Bowser.png');
-}
-
-#player1Port
-{
-	background-image: url('..\\playerPorts\\playerPort1.png');
-}
-
-#player1NameText:before
-{
-	content:"Gogoku7";
-}
-
-#player1ScoreText:before
-{
-	content:"1";
-}
-
-#player2Character
-{
-	background-image: url('..\\characterIcons\\Bowser.png');
-}
-
-#player2Port
-{
-	background-image: url('..\\playerPorts\\playerPort2.png');
-}
-
-#player2NameText:before
-{
-	content:"ZeRo";
-}
-
-#player2ScoreText:before
-{
-	content:"1";
-}
-
-#roundText:before
-{
-	content:"Round 1";
-}
-
-#bestOfText:before
-{
-	content:"Best of 3";
-}
-
-#tournamentText:before
-{
-	content:"Syndicate 2018";
-}
-
-#extraText:before
-{
-	content:"Wii U Singles";
-}
-
-/* content END */

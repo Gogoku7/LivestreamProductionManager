@@ -7,15 +7,15 @@
 }
 
 #player1ScoreText:before {
-    content: "1";
+    content: "2";
 }
 
 #player1Character {
-    background-image: url('../../CharacterIcons/diddykong.png');
+    background-image: url('../../CharacterIcons/fox.png');
 }
 
 #player1Port {
-    background-image: url('../../PlayerPorts/playerPort1.png');
+    background-image: url('../../PlayerPorts/playerPort2.png');
 }
 
 #player2NameText:before {
@@ -23,11 +23,11 @@
 }
 
 #player2TwitterText:before {
-    content: "@nairowondering";
+    content: "@nairomk";
 }
 
 #player2ScoreText:before {
-    content: "0";
+    content: "3";
 }
 
 #player2Character {
@@ -39,17 +39,17 @@
 }
 
 #tournamentText:before {
-    content: "Fight Night 32";
+    content: "";
 }
 
 #extraText:before {
-    content: "Smash Wii U";
+    content: "";
 }
 
 #roundText:before {
-    content: "Winners Round 3";
+    content: "";
 }
 
 #bestOfText:before {
-    content: "Best of 5";
+    content: "";
 }

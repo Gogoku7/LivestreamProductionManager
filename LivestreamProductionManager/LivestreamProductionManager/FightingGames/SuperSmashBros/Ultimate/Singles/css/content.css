@@ -1,9 +1,9 @@
 #player1NameText:before {
-    content: "Tempo | ZeRo";
+    content: "Cinnovate | Gogoku7";
 }
 
 #player1TwitterText:before {
-    content: "@zerowondering";
+    content: "@gogoku7";
 }
 
 #player1ScoreText:before {
@@ -11,19 +11,19 @@
 }
 
 #player1Character {
-    background-image: url('../../CharacterIcons/diddykong.png');
+    background-image: url('../../CharacterIcons/fox.png');
 }
 
 #player1Port {
-    background-image: url('../../PlayerPorts/playerPort5.png');
+    background-image: url('../../PlayerPorts/playerPort1.png');
 }
 
 #player2NameText:before {
-    content: "NRG | Nairo";
+    content: "Median4";
 }
 
 #player2TwitterText:before {
-    content: "@nairomk";
+    content: "";
 }
 
 #player2ScoreText:before {
@@ -31,23 +31,23 @@
 }
 
 #player2Character {
-    background-image: url('../../CharacterIcons/zerosuitsamus.png');
+    background-image: url('../../CharacterIcons/littlemac.png');
 }
 
 #player2Port {
-    background-image: url('../../PlayerPorts/playerPort6.png');
+    background-image: url('../../PlayerPorts/playerPort2.png');
 }
 
 #tournamentText:before {
-    content: "Fight Night 32";
+    content: "Elysium: Yggdrasil";
 }
 
 #extraText:before {
-    content: "Super Smash Bros. Wii U ";
+    content: "Ultimate Singles";
 }
 
 #roundText:before {
-    content: "Winners Round 2";
+    content: "Pools R1";
 }
 
 #bestOfText:before {

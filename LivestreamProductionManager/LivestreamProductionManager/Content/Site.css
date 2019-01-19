@@ -27,7 +27,6 @@ textarea {
 #snackbar {
     visibility: hidden; /* Hidden by default. Visible on click */
     min-width: 250px; /* Set a default minimum width */
-    margin-left: -125px; /* Divide value of min-width by 2 */
     background-color: #333; /* Black background color */
     color: #fff; /* White text color */
     text-align: center; /* Centered text */
@@ -35,7 +34,6 @@ textarea {
     padding: 16px; /* Padding */
     position: fixed; /* Sit on top of the screen */
     z-index: 1; /* Add a z-index if needed */
-    left: 50%; /* Center the snackbar */
     bottom: 30px; /* 30px from the bottom */
 }
 
@@ -97,27 +95,23 @@ textarea {
 
 /* END Snackbar */
 
+div.panel {
+    margin-bottom: 0px;
+}
+
 .half-horizontal-width {
     width: 50% !important;
 }
 
-.full-horizontal-width{
+.full-horizontal-width {
     width: 100% !important;
 }
 
-#addCommentatorButton {
+.panelButton {
     padding: 0px 12px !important;
 }
 
-#submitCompetitorsButton {
-    padding: 0px 12px !important;
-}
-
-#submitCommentatorsButton {
-    padding: 0px 12px !important;
-}
-
-#manageCommentators > .row{
+#manageCommentators > .row {
     margin-bottom: 4px;
 }
 

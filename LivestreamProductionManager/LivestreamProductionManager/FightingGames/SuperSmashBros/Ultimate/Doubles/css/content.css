@@ -1,5 +1,5 @@
 #team1NameText:before {
-    content: "Team America";
+    content: "Team Saiyan";
 }
 
 #team1ScoreText:before {
@@ -7,18 +7,18 @@
 }
 
 #team1Player1NameText:before {
-    content: "Tempo | ZeRo";
+    content: "Cinnovate | Gogoku7";
 }
 #team1Player2NameText:before {
-    content: "Nairo";
+    content: "Median4";
 }
 
 
 #team1Player1Character {
-    background-image: url('../../CharacterIcons/diddykong.png');
+    background-image: url('../../CharacterIcons/falco.png');
 }
 #team1Player2Character {
-    background-image: url('../../CharacterIcons/zerosuitsamus.png');
+    background-image: url('../../CharacterIcons/littlemac.png');
 }
 
 
@@ -31,26 +31,26 @@
 
 
 #team2NameText:before {
-    content: "Team Europe";
+    content: "Team NaRo";
 }
 
 #team2ScoreText:before {
-    content: "1";
+    content: "2";
 }
 
 #team2Player1NameText:before {
-    content: "Sheik";
+    content: "Tempo | ZeRo";
 }
 #team2Player2NameText:before {
-    content: "Gluttony";
+    content: "NRG | Nairo";
 }
 
 
 #team2Player1Character {
-    background-image: url('../../CharacterIcons/sheik.png');
+    background-image: url('../../CharacterIcons/diddykong.png');
 }
 #team2Player2Character {
-    background-image: url('../../CharacterIcons/wario.png');
+    background-image: url('../../CharacterIcons/zerosuitsamus.png');
 }
 
 
@@ -63,17 +63,17 @@
 
 
 #tournamentText:before {
-    content: "Fight Night 32";
+    content: "";
 }
 
 #extraText:before {
-    content: "Super Smash Bros. Wii U ";
+    content: "";
 }
 
 #roundText:before {
-    content: "Winners Round 2";
+    content: "";
 }
 
 #bestOfText:before {
-    content: "Best of 3";
+    content: "";
 }

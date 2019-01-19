@@ -12,7 +12,7 @@
 				<div class="player" id="player1">
 					<div class="playerBox" id="player1Box">
 						<div class="playerScoreBox" id="player1ScoreBox">
-							<p class="playerScore" id="player1ScoreText"></p>
+							<span class="playerScore" id="player1ScoreText"></span>
 						</div>
 						<div class="playerPort" id="player1Port">
 							<div class="playerCharacter" id="player1Character"></div>
@@ -28,7 +28,7 @@
 				<div class="player" id="player2">
 					<div class="playerBox" id="player2Box">
 						<div class="playerScoreBox" id="player2ScoreBox">
-							<p class="playerScore" id="player2ScoreText"></p>
+							<span class="playerScore" id="player2ScoreText"></span>
 						</div>
 						<div class="playerPort" id="player2Port">
 							<div class="playerCharacter" id="player2Character"></div>
@@ -77,44 +77,51 @@
 		websocket = new WebSocket(uri);
 
 		websocket.onopen = function () {
-			console.log("Connected to server.");
-		};
+            console.log("Connected to server.");
+            var jsonData = { "type": "overlayConnected", "data": window.location.href };
+            websocket.send(JSON.stringify(jsonData));
+        };
 
-		websocket.onerror = function (event) {
-			console.log("Something went wrong");
-		};
+        websocket.onerror = function (event) {
+            console.log("Something went wrong");
+        };
 
 		websocket.onmessage = function (event) {
 			console.log(event.data);
 
-			var queuData = JSON.parse(event.data);
-			$.each(queuData, function (i) {
-				$("#" + queuData[i]).addClass("changing");
-			});
+            var jsonData = JSON.parse(event.data);
 
-			setTimeout(function () {
-				var queryString = '?reload=' + new Date().getTime();
-				$('link[rel="stylesheet"]').not('link[href="css/styles.css"]').each(function () {
-					this.href = this.href.replace(/\?.*|$/, queryString);
-				});
+            if (jsonData.type == "queu") {
+                $.each(jsonData.data, function (i) {
+                    $(jsonData.data[i]).addClass("changing");
+                });
 
-				setTimeout(function () {
-					setTimeout(function () {
-						fitty('.playerName', { minSize: 8, maxSize: 40, multiLine: false });
-						fitty('.playerScore', { minSize: 8, maxSize: 25, multiLine: false });
-						setTimeout(function () {
-							$.each(queuData, function (i) {
-								$("#" + queuData[i]).removeClass("changing").addClass("changed");
-							});
-							setTimeout(function () {
-								$.each(queuData, function (i) {
-									$("#" + queuData[i]).removeClass("changed");
-								});
-							}, 1000);
-						}, 1000);
-					}, 1000);
-				}, 1000);
-			}, 1000);
+                setTimeout(function () {
+                    var queryString = '?reload=' + new Date().getTime();
+                    $('link[rel="stylesheet"]').not('link[href="css/styles.css"]').each(function () {
+                        this.href = this.href.replace(/\?.*|$/, queryString);
+                    });
+
+                    fitty('.playerName', { minSize: 8, maxSize: 40, multiLine: false });
+                    fitty('.playerScore', { minSize: 8, maxSize: 25, multiLine: false });
+
+                    $.each(jsonData.data, function (i) {
+                        $(jsonData.data[i]).removeClass("changing").addClass("changed");
+                    });
+
+                    setTimeout(function () {
+                        $.each(jsonData.data, function (i) {
+                            $(jsonData.data[i]).removeClass("changed");
+                        });
+                    }, 500);
+                }, 500);
+            }
 		};
-	});
+    });
+
+    $(window).on("beforeunload", function () {
+        var jsonData = { "type": "overlayDisconnected", "data": window.location.href };
+        websocket.send(JSON.stringify(jsonData));
+        websocket.close();
+    });
 </script>

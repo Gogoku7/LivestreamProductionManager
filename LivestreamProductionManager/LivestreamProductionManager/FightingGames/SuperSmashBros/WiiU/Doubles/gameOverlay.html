@@ -12,17 +12,19 @@
 				<div class="team" id="team1">
 					<div class="teamBox" id="team1Box">
 						<div class="teamScoreBox" id="team1ScoreBox">
-							<p class="teamScore" id="team1ScoreText"></p>
+							<span class="teamScore" id="team1ScoreText"></span>
 						</div>
 						<div class="teamPlayer1Port" id="team1Player1Port">
 							<div class="teamPlayerCharacter" id="team1Player1Character"></div>
 						</div>
-						<div class="teamNameBox" id="team1NameBox">
-							<span class="teamNames" id="team1Names">
-								<span id="team1Player1NameText"></span>
-								<span> + </span>
-								<span id="team1Player2NameText"></span>
-							</span>
+						<div class="teamPlayerNamesBox" id="team1PlayerNamesBox">
+                            <div class="teamPlayerNamesContainer" id="team1PlayerNamesContainer">
+                                <span class="teamPlayerNames" id="team1PlayerNames">
+                                    <span id="team1Player1NameText"></span>
+                                    <span> + </span>
+                                    <span id="team1Player2NameText"></span>
+                                </span>
+                            </div>
 						</div>
 						<div class="teamPlayer2Port" id="team1Player2Port">
 							<div class="teamPlayerCharacter" id="team1Player2Character"></div>
@@ -33,22 +35,24 @@
 				<div class="team" id="team2">
 					<div class="teamBox" id="team2Box">
 						<div class="teamScoreBox" id="team2ScoreBox">
-							<p class="teamScore" id="team2ScoreText"></p>
+							<span class="teamScore" id="team2ScoreText"></span>
 						</div>
 						<div class="teamPlayer1Port" id="team2Player1Port">
 							<div class="teamPlayerCharacter" id="team2Player1Character"></div>
 						</div>
-						<div class="teamNameBox" id="team2NameBox">
-							<span class="teamNames" id="team2Names">
-								<span id="team2Player2NameText"></span>
-								<span> + </span>
-								<span id="team2Player1NameText"></span>
-							</span>
-						</div>
-						<div class="teamPlayer2Port" id="team2Player2Port">
-							<div class="teamPlayerCharacter" id="team2Player2Character"></div>
-						</div>
-					</div>
+                        <div class="teamPlayerNamesBox" id="team2PlayerNamesBox">
+                            <div class="teamPlayerNamesContainer" id="team2PlayerNamesContainer">
+                                <span class="teamPlayerNames" id="team2PlayerNames">
+                                    <span id="team2Player2NameText"></span>
+                                    <span> + </span>
+                                    <span id="team2Player1NameText"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="teamPlayer2Port" id="team2Player2Port">
+                            <div class="teamPlayerCharacter" id="team2Player2Character"></div>
+                        </div>
+                    </div>
 				</div>
 			</div>
 			
@@ -78,22 +82,76 @@
 </html>
 
 <script>
-	$( document ).ready(function() {
-		fitty('.teamNames', { minSize: 8, maxSize: 40, multiLine: false });
-		fitty('.teamScore', { minSize: 8, maxSize: 25, multiLine: false });
-	});
-	
-	function onTimerTick() {
-        var queryString = '?reload=' + new Date().getTime();
-        $('link[rel="stylesheet"]').not('link[href="css/styles.css"]').each(function () {
-            this.href = this.href.replace(/\?.*|$/, queryString);
-        });
-		
-		fitty('.teamNames', { minSize: 8, maxSize: 40, multiLine: false });
-		fitty('.teamScore', { minSize: 8, maxSize: 25, multiLine: false });
-    }
+    $(document).ready(function () {
+        fitty('.teamPlayerNames', { minSize: 8, maxSize: 40, multiLine: false });
+        fitty('.teamScore', { minSize: 8, maxSize: 25, multiLine: false });
 
-    setInterval(function () {
-        onTimerTick();
-    }, 10000);
+        var uri = "ws://localhost:56613/WebSocket/Queu";
+
+        websocket = new WebSocket(uri);
+
+        websocket.onopen = function () {
+            console.log("Connected to server.");
+            var jsonData = { "type": "overlayConnected", "data": window.location.href };
+            websocket.send(JSON.stringify(jsonData));
+        };
+
+        websocket.onerror = function (event) {
+            console.log("Something went wrong");
+        };
+
+        websocket.onmessage = function (event) {
+            console.log(event.data);
+
+            var jsonData = JSON.parse(event.data);
+
+            if (jsonData.type == "queu") {
+                $.each(jsonData.data, function (i) {
+                    $(jsonData.data[i]).addClass("changing");
+                });
+
+                setTimeout(function () {
+                    var queryString = '?reload=' + new Date().getTime();
+                    $('link[rel="stylesheet"]').not('link[href="css/styles.css"]').each(function () {
+                        this.href = this.href.replace(/\?.*|$/, queryString);
+                    });
+
+                    fitty('.teamPlayerNames', { minSize: 8, maxSize: 40, multiLine: false });
+                    fitty('.teamScore', { minSize: 8, maxSize: 25, multiLine: false });
+
+                    $.each(jsonData.data, function (i) {
+                        $(jsonData.data[i]).removeClass("changing").addClass("changed");
+                    });
+
+                    setTimeout(function () {
+                        $.each(jsonData.data, function (i) {
+                            $(jsonData.data[i]).removeClass("changed");
+                        });
+                    }, 500);
+                }, 500);
+            }
+            else if (jsonData.type == "forceResize") {
+                $(".teamPlayerNames").addClass("changing");
+                $(".teamScore").addClass("changing");
+                setTimeout(function () {
+                    fitty('.teamPlayerNames', { minSize: 8, maxSize: 40, multiLine: false });
+                    fitty('.teamScore', { minSize: 8, maxSize: 25, multiLine: false });
+
+                    $(".teamPlayerNames").removeClass("changing").addClass("changed");
+                    $(".teamScore").removeClass("changing").addClass("changed");
+
+                    setTimeout(function () {
+                        $(".teamPlayerNames").removeClass("changed");
+                        $(".playerScore").removeClass("changed");
+                    }, 500);
+                }, 500);
+            }
+        };
+    });
+
+    $(window).on("beforeunload", function () {
+        var jsonData = { "type": "overlayDisconnected", "data": window.location.href };
+        websocket.send(JSON.stringify(jsonData));
+        websocket.close();
+    });
 </script>

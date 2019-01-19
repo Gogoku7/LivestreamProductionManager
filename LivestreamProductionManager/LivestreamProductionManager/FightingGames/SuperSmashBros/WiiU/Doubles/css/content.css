@@ -18,7 +18,7 @@
     background-image: url('../../CharacterIcons/fox.png');
 }
 #team1Player2Character {
-    background-image: url('../../CharacterIcons/darkpit.png');
+    background-image: url('../../CharacterIcons/littlemac.png');
 }
 
 
@@ -26,7 +26,7 @@
     background-image: url('../../PlayerPorts/playerPort1.png');
 }
 #team1Player2Port {
-    background-image: url('../../PlayerPorts/playerPort2.png');
+    background-image: url('../../PlayerPorts/playerPort3.png');
 }
 
 
@@ -47,15 +47,15 @@
 
 
 #team2Player1Character {
-    background-image: url('../../CharacterIcons/sheik.png');
+    background-image: url('../../CharacterIcons/cloud.png');
 }
 #team2Player2Character {
-    background-image: url('../../CharacterIcons/bowser.png');
+    background-image: url('../../CharacterIcons/zerosuitsamus.png');
 }
 
 
 #team2Player1Port {
-    background-image: url('../../PlayerPorts/playerPort3.png');
+    background-image: url('../../PlayerPorts/playerPort2.png');
 }
 #team2Player2Port {
     background-image: url('../../PlayerPorts/playerPort4.png');
@@ -63,17 +63,17 @@
 
 
 #tournamentText:before {
-    content: "Fight Night 32";
+    content: "";
 }
 
 #extraText:before {
-    content: "Super Smash Bros. Wii U ";
+    content: "";
 }
 
 #roundText:before {
-    content: "Winners Round 2";
+    content: "";
 }
 
 #bestOfText:before {
-    content: "Best of 3";
+    content: "";
 }
