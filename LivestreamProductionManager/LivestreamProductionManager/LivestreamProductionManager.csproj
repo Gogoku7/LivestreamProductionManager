@@ -219,6 +219,8 @@
     <Content Include="FightingGames\CssTemplates\TextTemplateFile.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="FightingGames\SuperSmashBros\JavaScript\fitty.js" />
+    <Content Include="FightingGames\SuperSmashBros\JavaScript\jQuery.js" />
     <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\bayonetta.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -441,70 +443,58 @@
     <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\zerosuitsamus.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\Doubles\boxBackground\infoBoxBackground.png">
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Doubles\BoxBackground\InfoBoxBackground.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\Doubles\css\styles.css">
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Doubles\CSS\Styles.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\Doubles\gameOverlay.html">
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Doubles\GameOverlay.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\Doubles\javascript\fitty.js">
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Doubles\TeamBackgrounds\Team1Background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\Doubles\javascript\jQuery.js">
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Doubles\TeamBackgrounds\Team2Background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\Doubles\teamBackgrounds\team1Background.png">
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\PlayerPorts\PlayerPort1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\Doubles\teamBackgrounds\team2Background.png">
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\PlayerPorts\PlayerPort2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\PlayerPorts\playerPort1.png">
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\PlayerPorts\PlayerPort3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\PlayerPorts\playerPort2.png">
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\PlayerPorts\PlayerPort4.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\PlayerPorts\playerPort3.png">
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\PlayerPorts\PlayerPort5.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\PlayerPorts\playerPort4.png">
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\PlayerPorts\PlayerPort6.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\PlayerPorts\playerPort5.png">
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\PlayerPorts\PlayerPort7.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\PlayerPorts\playerPort6.png">
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\PlayerPorts\PlayerPort8.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\PlayerPorts\playerPort7.png">
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Singles\BoxBackground\InfoBoxBackground.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\PlayerPorts\playerPort8.png">
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Singles\CSS\Styles.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\Singles\boxBackground\infoBoxBackground.png">
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Singles\GameOverlay.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\Singles\css\styles.css">
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Singles\PlayerBackgrounds\Player1Background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\Singles\gameOverlay.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\Singles\javascript\fitty.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\Singles\javascript\jQuery.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\Singles\playerBackgrounds\player1Background.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\Singles\playerBackgrounds\player2Background.png">
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Singles\PlayerBackgrounds\Player2Background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="FightingGames\SuperSmashBros\WiiU\CharacterIcons\bayonetta.png">
@@ -684,94 +674,58 @@
     <Content Include="FightingGames\SuperSmashBros\WiiU\CharacterIcons\zerosuitsamus.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\boxBackground\infoBoxBackground.png">
+    <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\BoxBackground\InfoBoxBackground.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\css\styles.css">
+    <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\CSS\Styles.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\gameOverlay.html">
+    <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\GameOverlay.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\javascript\fitty.js">
+    <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\TeamBackgrounds\Team1Background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\javascript\jQuery.js">
+    <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\TeamBackgrounds\Team2Background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\playerPorts\playerPort1.png">
+    <Content Include="FightingGames\SuperSmashBros\WiiU\PlayerPorts\PlayerPort1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\playerPorts\playerPort2.png">
+    <Content Include="FightingGames\SuperSmashBros\WiiU\PlayerPorts\PlayerPort2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\playerPorts\playerPort3.png">
+    <Content Include="FightingGames\SuperSmashBros\WiiU\PlayerPorts\PlayerPort3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\playerPorts\playerPort4.png">
+    <Content Include="FightingGames\SuperSmashBros\WiiU\PlayerPorts\PlayerPort4.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\playerPorts\playerPort5.png">
+    <Content Include="FightingGames\SuperSmashBros\WiiU\PlayerPorts\PlayerPort5.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\playerPorts\playerPort6.png">
+    <Content Include="FightingGames\SuperSmashBros\WiiU\PlayerPorts\PlayerPort6.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\playerPorts\playerPort7.png">
+    <Content Include="FightingGames\SuperSmashBros\WiiU\PlayerPorts\PlayerPort7.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\playerPorts\playerPort8.png">
+    <Content Include="FightingGames\SuperSmashBros\WiiU\PlayerPorts\PlayerPort8.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\teamBackgrounds\team1Background.png">
+    <Content Include="FightingGames\SuperSmashBros\WiiU\Singles\BoxBackground\InfoBoxBackground.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\teamBackgrounds\team2Background.png">
+    <Content Include="FightingGames\SuperSmashBros\WiiU\Singles\CSS\Styles.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\PlayerPorts\playerPort1.png">
+    <Content Include="FightingGames\SuperSmashBros\WiiU\Singles\GameOverlay.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\PlayerPorts\playerPort2.png">
+    <Content Include="FightingGames\SuperSmashBros\WiiU\Singles\PlayerBackgrounds\Player1Background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\PlayerPorts\playerPort3.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\PlayerPorts\playerPort4.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\PlayerPorts\playerPort5.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\PlayerPorts\playerPort6.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\PlayerPorts\playerPort7.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\PlayerPorts\playerPort8.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\Singles\boxBackground\infoBoxBackground.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\Singles\css\styles.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\Singles\gameOverlay.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\Singles\javascript\fitty.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\Singles\javascript\jQuery.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\Singles\playerBackgrounds\player1Background.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\Singles\playerBackgrounds\player2Background.png">
+    <Content Include="FightingGames\SuperSmashBros\WiiU\Singles\PlayerBackgrounds\Player2Background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

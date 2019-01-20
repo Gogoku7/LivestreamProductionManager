@@ -1,55 +1,55 @@
 #player1NameText:before {
-    content: "Tempo | ZeRo";
+    content: "Cinnovate | Gogoku7";
 }
 
 #player1TwitterText:before {
-    content: "@zerowondering";
+    content: "@gogoku7";
 }
 
 #player1ScoreText:before {
-    content: "2";
+    content: "0";
 }
 
 #player1Character {
-    background-image: url('../../CharacterIcons/fox.png');
+    background-image: url('../../CharacterIcons/falco.png');
 }
 
 #player1Port {
-    background-image: url('../../PlayerPorts/playerPort2.png');
+    background-image: url('../../PlayerPorts/PlayerPort1.png');
 }
 
 #player2NameText:before {
-    content: "NRG | Nairo";
+    content: "Tempo | ZeRo";
 }
 
 #player2TwitterText:before {
-    content: "@nairomk";
+    content: "@zerowondering";
 }
 
 #player2ScoreText:before {
-    content: "3";
+    content: "1";
 }
 
 #player2Character {
-    background-image: url('../../CharacterIcons/zerosuitsamus.png');
+    background-image: url('../../CharacterIcons/darkpit.png');
 }
 
 #player2Port {
-    background-image: url('../../PlayerPorts/playerPort2.png');
+    background-image: url('../../PlayerPorts/PlayerPort2.png');
 }
 
 #tournamentText:before {
-    content: "";
+    content: "Fight Night 34";
 }
 
 #extraText:before {
-    content: "";
+    content: "Smash Wii U";
 }
 
 #roundText:before {
-    content: "";
+    content: "Winners Round 2";
 }
 
 #bestOfText:before {
-    content: "";
+    content: "Best of 3";
 }

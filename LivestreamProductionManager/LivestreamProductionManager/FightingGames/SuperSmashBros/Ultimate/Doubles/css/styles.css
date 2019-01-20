@@ -52,13 +52,13 @@ body
 #team1Box
 {
 	float: right;
-	background-image: url('..\\teamBackgrounds\\team1Background.png');
+	background-image: url('../TeamBackgrounds/Team1Background.png');
 }
 
 #team2Box
 {
 	float: left;
-	background-image: url('..\\teamBackgrounds\\team2Background.png');
+	background-image: url('../TeamBackgrounds/Team2Background.png');
 }
 
 /* teamBox END */
@@ -275,7 +275,7 @@ body
 	padding-left: 40px;
 	padding-right: 40px;
 	text-align: center;
-	background-image: url('../boxBackground/infoBoxBackground.png');
+	background-image: url('../BoxBackground/InfoBoxBackground.png');
 }
 
 #infoRoundBox

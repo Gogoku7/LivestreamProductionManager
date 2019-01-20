@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="css/styles.css">
-		<link rel="stylesheet" type="text/css" href="css/content.css">
-		<script src="javascript/jQuery.js"></script>
-		<script src="javascript/fitty.js"></script>
+		<link rel="stylesheet" type="text/css" href="CSS/Styles.css">
+		<link rel="stylesheet" type="text/css" href="CSS/Content.css">
+		<script src="../../JavaScript/jQuery.js"></script>
+		<script src="../../JavaScript/fitty.js"></script>
 	</head>
 	<body>
 		<div id="wrapper">
@@ -127,6 +127,22 @@
                         $.each(jsonData.data, function (i) {
                             $(jsonData.data[i]).removeClass("changed");
                         });
+                    }, 500);
+                }, 500);
+            }
+            else if (jsonData.type == "forceResize") {
+                $(".teamPlayerNames").addClass("changing");
+                $(".teamScore").addClass("changing");
+                setTimeout(function () {
+                    fitty('.teamPlayerNames', { minSize: 8, maxSize: 40, multiLine: false });
+                    fitty('.teamScore', { minSize: 8, maxSize: 25, multiLine: false });
+
+                    $(".teamPlayerNames").removeClass("changing").addClass("changed");
+                    $(".teamScore").removeClass("changing").addClass("changed");
+
+                    setTimeout(function () {
+                        $(".teamPlayerNames").removeClass("changed");
+                        $(".playerScore").removeClass("changed");
                     }, 500);
                 }, 500);
             }

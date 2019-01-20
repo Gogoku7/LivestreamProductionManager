@@ -18,7 +18,7 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 var templateCssFile = _templateFileReader.ReadTemplateFile("SuperSmashBros/SuperSmashBrosSinglesTemplate.css");
                 var cssFileContent = _smashTextReplacer.ReplaceCssForSingles(templateCssFile, singlesCssModel);
 
-                File.WriteAllText(HttpContext.Current.Server.MapPath(pathToFormat + "css/content.css"), cssFileContent);
+                File.WriteAllText(HttpContext.Current.Server.MapPath(pathToFormat + "CSS/Content.css"), cssFileContent);
             }
             catch (Exception ex)
             {
@@ -34,20 +34,7 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 var templateCssFile = _templateFileReader.ReadTemplateFile("SuperSmashBros/SuperSmashBrosDoublesTemplate.css");
                 var cssFileContent = _smashTextReplacer.ReplaceCssForDoubles(templateCssFile, doublesCssModel);
 
-                File.WriteAllText(HttpContext.Current.Server.MapPath(pathToFormat + "css/content.css"), cssFileContent);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                throw;
-            }
-        }
-
-        public void WriteQueuFile(string pathToFormat, string queuData)
-        {
-            try
-            {
-                File.WriteAllText(HttpContext.Current.Server.MapPath(pathToFormat + "queuData.js"), "var queuData = " + queuData);
+                File.WriteAllText(HttpContext.Current.Server.MapPath(pathToFormat + "CSS/Content.css"), cssFileContent);
             }
             catch (Exception ex)
             {

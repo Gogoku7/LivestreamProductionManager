@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="css/styles.css">
-		<link rel="stylesheet" type="text/css" href="css/content.css">
-		<script src="javascript/jQuery.js"></script>
-		<script src="javascript/fitty.js"></script>
+		<link rel="stylesheet" type="text/css" href="CSS/Styles.css">
+		<link rel="stylesheet" type="text/css" href="CSS/Content.css">
+		<script src="../../JavaScript/jQuery.js"></script>
+		<script src="../../JavaScript/fitty.js"></script>
 	</head>
 	<body>
 		<div id="wrapper">
@@ -113,6 +113,22 @@
                         $.each(jsonData.data, function (i) {
                             $(jsonData.data[i]).removeClass("changed");
                         });
+                    }, 500);
+                }, 500);
+            }
+            else if (jsonData.type == "forceResize") {
+                $(".playerName").addClass("changing");
+                $(".playerScore").addClass("changing");
+                setTimeout(function () {
+                    fitty('.playerName', { minSize: 8, maxSize: 40, multiLine: false });
+                    fitty('.playerScore', { minSize: 8, maxSize: 25, multiLine: false });
+
+                    $(".playerName").removeClass("changing").addClass("changed");
+                    $(".playerScore").removeClass("changing").addClass("changed");
+
+                    setTimeout(function () {
+                        $(".playerName").removeClass("changed");
+                        $(".playerScore").removeClass("changed");
                     }, 500);
                 }, 500);
             }

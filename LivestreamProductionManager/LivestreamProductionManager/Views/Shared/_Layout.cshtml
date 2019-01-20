@@ -29,11 +29,18 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>Livestream Production Manager - Made by Gogoku7</p>
+            <p>Livestream Production Manager V0.2 - Made by Gogoku7</p>
         </footer>
     </div>
 
-    <div id="snackbar"></div>
+    <div class="snackbar" id="manageCompetitorsSnackbar"></div>
+    <div class="snackbar" id="manageCommentatorsSnackbar"></div>
+    <div class="snackbar" id="managerConnectedSnackbar"></div>
+    <div class="snackbar" id="managerFailedToConnectSnackbar"></div>
+    <div class="snackbar" id="queuSnackbar"></div>
+    <div class="snackbar" id="overlayConnectedSnackbar"></div>
+    <div class="snackbar" id="overlayDisconnectedSnackbar"></div>
+    <div class="snackbar" id="forceResizeSnackbar"></div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

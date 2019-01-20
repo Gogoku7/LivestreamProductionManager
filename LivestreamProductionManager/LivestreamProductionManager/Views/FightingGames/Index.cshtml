@@ -132,11 +132,11 @@
             websocket = new WebSocket(uri);
 
             websocket.onopen = function () {
-                showSnackbar("Connected to websocket.");
+                showSnackbar("#managerConnectedSnackbar", "Connected to websocket.");
             };
 
             websocket.onerror = function (event) {
-                showSnackbar("Something went wrong with the websocket.");
+                showSnackbar("#managerFailedToConnectSnackbar", "Something went wrong with the websocket.");
                 console.log(event);
                 console.log(event.data);
             };
@@ -147,24 +147,16 @@
                 var jsonData = JSON.parse(event.data);
 
                 if (jsonData.type == "queu") {
-                    setTimeout(function () {
-                        showSnackbar("A queu command has been broadcast.");
-                    }, 5000);
+                    showSnackbar("#queuSnackbar", "A queu command has been broadcast.");
                 }
                 else if (jsonData.type == "overlayConnected") {
-                    setTimeout(function () {
-                        showSnackbar("An overlay has connected to the WebSocket: " + jsonData.data);
-                    }, 5000);
+                    showSnackbar("#overlayConnectedSnackbar", "An overlay has connected to the WebSocket: " + jsonData.data);
                 }
                 else if (jsonData.type == "overlayDisconnected") {
-                    setTimeout(function () {
-                        showSnackbar("An overlay has disconnected from the WebSocket: " + jsonData.data);
-                    }, 5000);
+                    showSnackbar("#overlayDisconnectedSnackbar", "An overlay has disconnected from the WebSocket: " + jsonData.data);
                 }
                 else if (jsonData.type == "forceResize") {
-                    setTimeout(function () {
-                        showSnackbar("A resize command has been broadcast");
-                    }, 5000);
+                    showSnackbar("#forceResizeSnackbar", "A resize command has been broadcast");
                 }
             };
         }
@@ -278,7 +270,7 @@
                     $("input[name^='Crew1.Players['][name$='].Active']:checked").length == 0 ||
                     $("input[name^='Crew2.Players['][name$='].Active']:checked").length > 1 ||
                     $("input[name^='Crew2.Players['][name$='].Active']:checked").length == 0) {
-                    showSnackbar("One or both crews do not have the appropriate amount of one active player");
+                    showSnackbar("#manageCompetitorsSnackbar", "One or both crews do not have the appropriate amount of one active player");
                     return;
                 }
             }
@@ -293,7 +285,7 @@
                 data: manageCompetitorsForm.serialize(),
                 dataType: "json",
                 success: function (data) {
-                    showSnackbar(data.Message);
+                    showSnackbar("#manageCompetitorsSnackbar", data.Message);
 
                     if (data.Success == "True") {
                         if ($("#submitCompetitorsButton").hasClass("btn-danger")) {
@@ -304,6 +296,7 @@
                         SubmitQueuUpdate();
                     }
                     else {
+                        manageCompetitorsSnackbar("#manageCompetitorsSnackbar", "Something went wrong with saving the competitor files, see the log for details.")
                         console.log(data.ErrorMessage);
                     }
                 },
@@ -445,7 +438,7 @@
                 data: manageCommentatorsForm.serialize(),
                 dataType: "json",
                 success: function (data) {
-                    showSnackbar(data.Message);
+                    showSnackbar("#manageCommentatorsSnackbar", data.Message);
 
                     if (data.Success == "True") {
                         if ($("#submitCommentatorsButton").hasClass("btn-danger")) {
@@ -475,18 +468,16 @@
             websocket.send(JSON.stringify(jsonData));
         });
 
-        //TODO: Think about second and third snackbar for Websockets.
-
         //Snackbar
-        function showSnackbar(message) {
-            $("#snackbar").html(message);
+        function showSnackbar(snackbarId, message) {
+            $(snackbarId).html(message);
 
-            var marginLeft = ($(window).width() - $("#snackbar").outerWidth()) / 2;
-            $("#snackbar").css("left", marginLeft >= 0 ? marginLeft : 0);
+            var marginLeft = ($(window).width() - $(snackbarId).outerWidth()) / 2;
+            $(snackbarId).css("left", marginLeft >= 0 ? marginLeft : 0);
 
-            $("#snackbar").addClass("show");
+            $(snackbarId).addClass("show");
             setTimeout(function () {
-                $("#snackbar").removeClass("show");
+                $(snackbarId).removeClass("show");
             }, 3000);
         }
     </script>

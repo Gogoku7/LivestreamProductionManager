@@ -52,13 +52,13 @@ body
 #player1Box
 {
 	float: right;
-	background-image: url('..\\playerBackgrounds\\player1Background.png');
+	background-image: url('../PlayerBackgrounds/Player1Background.png');
 }
 
 #player2Box
 {
 	float: left;
-	background-image: url('..\\playerBackgrounds\\player2Background.png');
+	background-image: url('../PlayerBackgrounds/Player2Background.png');
 }
 
 /* playerBox END */
@@ -248,7 +248,7 @@ body
 	padding-left: 40px;
 	padding-right: 40px;
 	text-align: center;
-	background-image: url('..\\boxBackground\\infoBoxBackground.png');
+	background-image: url('../BoxBackground/InfoBoxBackground.png');
 }
 
 #infoRoundBox
