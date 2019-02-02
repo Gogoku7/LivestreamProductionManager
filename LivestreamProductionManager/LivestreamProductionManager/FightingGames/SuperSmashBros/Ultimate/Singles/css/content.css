@@ -1,9 +1,9 @@
 #player1NameText:before {
-    content: "Tempo | ZeRo";
+    content: "Temp0 | ZeR0";
 }
 
 #player1TwitterText:before {
-    content: "@zerowondering";
+    content: "";
 }
 
 #player1ScoreText:before {
@@ -23,11 +23,11 @@
 }
 
 #player2TwitterText:before {
-    content: "@nairmk";
+    content: "";
 }
 
 #player2ScoreText:before {
-    content: "1";
+    content: "2";
 }
 
 #player2Character {
@@ -39,15 +39,15 @@
 }
 
 #tournamentText:before {
-    content: "Fight Night 34";
+    content: "Fight Night 36";
 }
 
 #extraText:before {
-    content: "Ultimate Singles";
+    content: "Smash Ultimate";
 }
 
 #roundText:before {
-    content: "Winners Round 2";
+    content: "Winners Round 1";
 }
 
 #bestOfText:before {

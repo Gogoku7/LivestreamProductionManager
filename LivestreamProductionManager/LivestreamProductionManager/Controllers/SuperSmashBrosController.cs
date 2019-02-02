@@ -43,11 +43,11 @@ namespace LivestreamProductionManager.Controllers
             {
                 _smashOverlayManager.UpdateSinglesOverlay(singlesViewModel);
 
-                return SuccessSnackbar("Successfully saved competitor files");
+                return SuccessSnackbar("Successfully saved competitor files.");
             }
             catch (Exception ex)
             {
-                return ErrorSnackbar(ex, "Something went wrong while saving competitor files, see the console for details");
+                return ErrorSnackbar(ex, "Something went wrong while saving competitor files, see the console for details.");
             }
         }
 
@@ -58,11 +58,11 @@ namespace LivestreamProductionManager.Controllers
             {
                 _smashOverlayManager.UpdateDoublesOverlay(doublesViewModel);
 
-                return SuccessSnackbar("Successfully saved competitor files");
+                return SuccessSnackbar("Successfully saved competitor files.");
             }
             catch (Exception ex)
             {
-                return ErrorSnackbar(ex, "Something went wrong while saving competitor files, see the console for details");
+                return ErrorSnackbar(ex, "Something went wrong while saving competitor files, see the console for details.");
             }
         }
 
@@ -78,11 +78,11 @@ namespace LivestreamProductionManager.Controllers
 
                 //Save files
 
-                return SuccessSnackbar("Successfully saved competitor files");
+                return SuccessSnackbar("Successfully saved competitor files.");
             }
             catch (Exception ex)
             {
-                return ErrorSnackbar(ex, "Something went wrong while saving competitor files, see the console for details");
+                return ErrorSnackbar(ex, "Something went wrong while saving competitor files, see the console for details.");
             }
         }
     }

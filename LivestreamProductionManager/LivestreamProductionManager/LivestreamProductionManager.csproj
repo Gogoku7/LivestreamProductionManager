@@ -160,6 +160,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CommentatorsController.cs" />
     <Compile Include="Controllers\FightingGamesController.cs" />
@@ -825,6 +826,7 @@
     <Content Include="Views\SuperSmashBros\IronMan\ManageCompetitors.cshtml" />
     <Content Include="Views\Commentators\CommentatorRow.cshtml" />
     <Content Include="Views\SuperSmashBros\Crews\CrewPlayerRow.cshtml" />
+    <Content Include="Views\About\Version.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -857,7 +859,6 @@
     <Folder Include="FightingGames\SuperSmashBros\WiiU\BigTeams\css\" />
     <Folder Include="FightingGames\SuperSmashBros\WiiU\Crews\css\" />
     <Folder Include="FightingGames\SuperSmashBros\WiiU\IronMan\css\" />
-    <Folder Include="Views\FightingGames\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

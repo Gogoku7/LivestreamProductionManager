@@ -275,10 +275,10 @@
                 }
             }
 
-            SubmitCompetitorForm(manageCompetitorsForm);
+            SubmitCompetitorsForm(manageCompetitorsForm);
         });
 
-        function SubmitCompetitorForm(manageCompetitorsForm) {
+        function SubmitCompetitorsForm(manageCompetitorsForm) {
             $.ajax({
                 type: "POST",
                 url: manageCompetitorsForm.attr("action"),
@@ -296,7 +296,7 @@
                         SubmitQueuUpdate();
                     }
                     else {
-                        manageCompetitorsSnackbar("#manageCompetitorsSnackbar", "Something went wrong with saving the competitor files, see the log for details.")
+                        showSnackbar("#manageCompetitorsSnackbar", data.Message)
                         console.log(data.ErrorMessage);
                     }
                 },
@@ -447,6 +447,7 @@
                         }
                     }
                     else {
+                        showSnackbar("#manageCommentatorsSnackbar", data.Message);
                         console.log(data.ErrorMessage);
                     }
                 },

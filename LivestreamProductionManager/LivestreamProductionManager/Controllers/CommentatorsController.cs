@@ -25,12 +25,12 @@ namespace LivestreamProductionManager.Controllers
 
                 //Save files
 
-                return SuccessSnackbar("Successfully saved commentator files");
+                return SuccessSnackbar("Successfully saved commentator files.");
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
-                return ErrorSnackbar(ex, "Something went wrong while saving commentator files, see the console for details");
+                return ErrorSnackbar(ex, "Something went wrong while saving commentator files, see the console for details.");
             }
         }
     }

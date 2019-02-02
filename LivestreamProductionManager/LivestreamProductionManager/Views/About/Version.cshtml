@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Version information";
+}
+
+<div class="container">
+    <h1>Version information</h1>
+
+    <hr />
+
+    <h2>Version 0.2</h2>
+    <p>02/02/2019</p>
+    <p>Public update video: <a href="https://www.youtube.com/watch?v=5sjFVE-0rIo">Livestream Production Manager - Tournament Streaming (Open Source) - Public Update 2 (Version 0.2)</a></p>
+    <ul>
+        <li>Implemented WebSockets in the Fighting Games overlay manager, which allows the following, if implemented correctly in non-default overlays and overlay managers:</li>
+        <ul>
+            <li>Queu a fade out of outdated elements and fade in of updated elements in an overlay, no more sudden change of content</li>
+            <li>Force fitty to resize incorrectly sized text in an overlay again, through a click on the Force resize button in the Fighting Games overlay manager</li>
+            <li>Get a snackbar notification when the following events happen:</li>
+            <ul>
+                <li>A queu command has been broadcast</li>
+                <li>A force resize command has been broadcast</li>
+                <li>An overlay has connected to the WebSocket</li>
+                <li>An overlay has disconnected from the WebSocket</li>
+            </ul>
+        </ul>
+        <li>
+            Improved all the default overlays in the following ways:
+        </li>
+        <ul>
+            <li>Improved styling</li>
+            <li>Implemented WebSockets, which allows the following:</li>
+            <ul>
+                <li>Fading out of outdated elementsm and fading in of updated elements, no more sudden change of content</li>
+                <li>Force fitty to resize incorrectly sized text again, through a click on the Force resize button in the Fighting Games overlay manager</li>
+            </ul>
+        </ul>
+        <li>
+            Renamed a bunch of files in the (root)/FightingGames folder of the project to be more in line with the rest of the ASP.NET MVC application
+        </li>
+        <li>
+            Implemented previewing of the overlay selected in the dropdown through an iframe
+        </li>
+        <li>
+            Improved the following about the Snackbar implementation:
+        </li>
+        <ul>
+            <li>Improved dynamic styling, making them always pop up in the center horizontally and near the bottom of the screen</li>
+            <li>Added multiple snackbars, separating them based on different functionalities of the overlay manager</li>
+        </ul>
+        <li>
+            Refactoring: improved the inheritance of ViewModels
+        </li>
+        <li>
+            Made a version information page
+        </li>
+    </ul>
+
+    <h2>Version 0.1</h2>
+    <p>Release date: 23/11/2019</p>
+    <p>Public update video: <a href="https://www.youtube.com/watch?v=AkOS91s7fuM">Livestream Production Manager - Tournament Streaming (Open Source) - Public Update 1 (Version 0.1)</a></p>
+    <ul>
+        <li>Developed the front end and back end of managing competitors for the following formats:</li>
+        <ul>
+            <li>Super Smash Bros. Singles</li>
+            <li>Super Smash Bros. Doubles</li>
+        </ul>
+
+        <li>Developed the following default overlays:</li>
+        <ul>
+            <li>Super Smash Bros. for Nintendo Wii U - Singles</li>
+            <li>Super Smash Bros. for Nintendo Wii U - Doubles</li>
+            <li>Super Smash Bros. Ultimate - Singles</li>
+            <li>Super Smash Bros. Ultimate - Doubles</li>
+            <li>More will be made in a future version</li>
+        </ul>
+
+        <li>Developed the front end for managing commentators</li>
+        <ul>
+            <li>The back end wil be done in a future version</li>
+        </ul>
+
+        <li>Implemented a snackbar</li>
+    </ul>
+</div>
+
+
