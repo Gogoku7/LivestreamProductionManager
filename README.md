@@ -4,7 +4,7 @@ An ASP.NET MVC application to manage the overlay of any fighting game for Tourna
 
 This project is to help tournament streamers that are just starting out.
 
-Public update 1 video: https://www.youtube.com/watch?v=AkOS91s7fuM
+Public update video playlist: https://www.youtube.com/playlist?list=PL6cEqU9AFK4twE-ntoLi0xGvnBUyOVs-6
 
 Unlisted developer update video playlist: https://www.youtube.com/playlist?list=PL6cEqU9AFK4stzRthYa29YwrK3gIbWA04
 
