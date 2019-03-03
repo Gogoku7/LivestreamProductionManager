@@ -77,17 +77,17 @@
 }
 
 #tournamentText:before {
-    content: "";
+    content: "Elysium 3";
 }
 
 #extraText:before {
-    content: "";
+    content: "Ultimate Crews";
 }
 
 #roundText:before {
-    content: "";
+    content: "Round 1";
 }
 
 #bestOfText:before {
-    content: "";
+    content: "Best of 1";
 }

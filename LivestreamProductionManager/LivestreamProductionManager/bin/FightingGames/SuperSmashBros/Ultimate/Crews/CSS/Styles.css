@@ -180,3 +180,96 @@ body
 }
 
 /* crewPlayerBox END */
+
+
+
+/* tournamentInfo */
+
+.tournamentInfo
+{
+    width: 1920px;
+    height: 18px;
+}
+
+/* tournamentInfo END */
+
+
+
+/* info */
+
+.info
+{
+    width: 960px;
+    height: 18px;
+}
+
+#infoRound
+{
+    float: left;
+}
+
+#infoTournament
+{
+    float: right;
+}
+
+/* info END */
+
+
+
+/* infoBox */
+
+.infoBox
+{
+    width: auto;
+    height: 18px;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: center;
+    background-image: url('../BoxBackground/InfoBoxBackground.png');
+}
+
+#infoRoundBox
+{
+    float: left;
+}
+
+#infoTournamentBox
+{
+    float: right;
+}
+
+/* infoBox END */
+
+
+
+/* boxText */
+
+.boxText
+{
+    width: auto;
+    margin: 0px;
+    white-space: nowrap;
+    color: white;
+}
+
+/* BoxText END */
+
+
+
+/* animations */
+
+.changing 
+{
+    transition-duration: 0.5s;
+    transition-property: opacity;
+    opacity: 0 !important;
+}
+
+.changed 
+{
+    transition-duration: 0.5s;
+    transition-property: opacity;
+}
+
+/* animations END */
