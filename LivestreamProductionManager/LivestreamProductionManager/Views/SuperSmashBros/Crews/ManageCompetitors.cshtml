@@ -18,10 +18,10 @@
 }
 
 <form action="/SuperSmashBros/UpdateCrews" method="post" id="manageCompetitorsForm">
-    <input type="hidden" name="Tournament" value="" />
-    <input type="hidden" name="Round" value="" />
-    <input type="hidden" name="BestOf" value="" />
-    <input type="hidden" name="Extra" value="" />
+    <input type="hidden" name="Tournament" value="" data-id="#tournamentText" />
+    <input type="hidden" name="Round" value="" data-id="#roundText" />
+    <input type="hidden" name="BestOf" value="" data-id="#bestOfText" />
+    <input type="hidden" name="Extra" value="" data-id="#extraText" />
     <input type="hidden" name="Series" value="@Model.Series" />
     <input type="hidden" name="Game" value="@Model.Game" />
     <input type="hidden" name="Format" value="@Model.Format" />
@@ -41,36 +41,36 @@
     <div class="row">
         <div class="col-md-6 text-center">
             <label>Name</label>
-            <input type="text" class="form-control" name="Crew1.Name" id="crew1Name" />
+            <input type="text" class="form-control" name="Crew1.Name" id="crew1Name" data-id="#crew1NameText" />
         </div>
         <div class="col-md-6 text-center">
             <label>Name</label>
-            <input type="text" class="form-control" name="Crew2.Name" id="crew2Name" />
+            <input type="text" class="form-control" name="Crew2.Name" id="crew2Name" data-id="#crew2NameText" />
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-6 text-center">
             <label>Stocks left</label>
-            <input type="text" class="form-control" name="Crew1.StocksLeft" id="crew1StocksLeft" />
+            <input type="text" class="form-control" name="Crew1.StocksLeft" id="crew1StocksLeft" data-id="#crew1StocksLeftText" />
         </div>
         <div class="col-md-6 text-center">
             <label>Stocks left</label>
-            <input type="text" class="form-control" name="Crew2.StocksLeft" id="crew2StocksLeft" />
+            <input type="text" class="form-control" name="Crew2.StocksLeft" id="crew2StocksLeft" data-id="#crew2StocksLeftText" />
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-6 text-center">
             <label>Character</label>
-            <select class="form-control" name="Crew1.Character" id="crew1Character">
+            <select class="form-control" name="Crew1.Character" id="crew1Character" data-id="#crew1Character" >
                 <option value="" selected disabled hidden>Choose character</option>
                 @Html.Raw(characterOptionsStringBuilder.ToString())
             </select>
         </div>
         <div class="col-md-6 text-center">
             <label>Character</label>
-            <select class="form-control" name="Crew2.Character" id="crew2Character">
+            <select class="form-control" name="Crew2.Character" id="crew2Character" data-id="#crew2Character" >
                 <option value="" selected disabled hidden>Choose character</option>
                 @Html.Raw(characterOptionsStringBuilder.ToString())
             </select>
@@ -80,14 +80,14 @@
     <div class="row">
         <div class="col-md-6 text-center">
             <label>Port</label>
-            <select class="form-control" name="crew1.Port" id="crew1Port">
+            <select class="form-control" name="crew1.Port" id="crew1Port" data-id="#crew1Port" >
                 <option value="" selected disabled hidden>Choose port</option>
                 @Html.Raw(portOptionsStringBuilder.ToString())
             </select>
         </div>
         <div class="col-md-6 text-center">
             <label>Port</label>
-            <select class="form-control" name="crew2.Port" id="crew1Port">
+            <select class="form-control" name="crew2.Port" id="crew1Port" data-id="#crew2Port" >
                 <option value="" selected disabled hidden>Choose port</option>
                 @Html.Raw(portOptionsStringBuilder.ToString())
             </select>
@@ -116,8 +116,7 @@
     </div>
 
     <div id="crewPlayersContainer">
-        
-    </div>
 
+    </div>
 </form>
 

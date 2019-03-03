@@ -1,0 +1,93 @@
+#crew1NameText:before {
+    content: "World";
+}
+
+#crew1Player1NameText:before {
+    content: "VoiD";
+    text-shadow: 0 0 2px yellow;
+}
+
+#crew1Player2NameText:before {
+    content: "Larry Lurr";
+    opacity: 0.4;
+}
+#crew1Player3NameText:before {
+    content: "MKLeo";
+    opacity: 0.4;
+}
+#crew1Player4NameText:before {
+    content: "ZeRo";
+}
+#crew1Player5NameText:before {
+    content: "Nairo";
+}
+
+
+
+
+#crew1StocksLeftText:before {
+    content: "9";
+}
+
+#crew1Character {
+    background-image: url('../../CharacterIcons/pichu.png');
+}
+
+#crew1Port {
+    background-image: url('../../PlayerPorts/PlayerPort1.png');
+}
+
+#crew2NameText:before {
+    content: "Europe";
+}
+
+#crew2Player1NameText:before {
+    content: "Gogoku7";
+    text-shadow: 0 0 2px yellow;
+}
+
+#crew2Player2NameText:before {
+    content: "Glutonny";
+    opacity: 0.4;
+}
+#crew2Player3NameText:before {
+    content: "Mr. R";
+    opacity: 0.4;
+}
+#crew2Player4NameText:before {
+    content: "G-danzee";
+}
+#crew2Player5NameText:before {
+    content: "Sodrek";
+}
+
+
+
+
+#crew2StocksLeftText:before {
+    content: "9";
+}
+
+#crew2Character {
+    background-image: url('../../CharacterIcons/falco.png');
+}
+
+#crew2Port {
+    background-image: url('../../PlayerPorts/PlayerPort2.png');
+}
+
+#tournamentText:before {
+    content: "";
+}
+
+#extraText:before {
+    content: "";
+}
+
+#roundText:before {
+    content: "";
+}
+
+#bestOfText:before {
+    content: "";
+}

@@ -1,0 +1,201 @@
+body
+{
+	width: 1920px;
+	height: 360px;
+	margin: 0px;
+	padding: 0px;
+}
+
+/* crews */
+
+.crews
+{
+	width: 1920px;
+	height: 360px;
+}
+
+/* crews END*/
+
+
+
+/* crew */
+
+.crew
+{
+	width: 960px;
+	height: 360px;
+}
+
+#crew1
+{
+	float: left;
+}
+
+#crew2
+{
+	float: right;
+}
+
+/* crew END */
+
+
+
+/* crewBox */
+
+.crewBox
+{
+	width: 300px;
+	height: 360px;
+}
+
+#crew1Box
+{
+	float: left;
+	background-image: url('../CrewBackgrounds/Crew1Background.png');
+}
+
+#crew2Box
+{
+	float: right;
+	background-image: url('../CrewBackgrounds/Crew2Background.png');
+}
+
+/* crewBox END */
+
+
+/* crewRow */
+
+.crewRow
+{
+	width: 290px;
+	height: 50px;
+	padding: 5px;
+}
+
+/* crewRow END */
+
+
+
+/* crewScoreBox */
+
+.crewScoreBox
+{
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+    overflow: hidden;
+	text-align: center;
+}
+
+#crew1ScoreBox
+{
+	float: left;
+}
+
+#crew2ScoreBox
+{
+	float: right;
+}
+
+/* crewScoreBox END */
+
+
+
+/* crewNameBox */
+
+.crewNameBox
+{
+	width: 140px;
+	height: 50px;
+	line-height: 50px;
+    overflow: hidden;
+	text-align: center;
+}
+
+#crew1NameBox
+{
+	float: left;
+	margin-left: 5px;
+}
+
+#crew2NameBox
+{
+	float: right;
+	margin-right: 5px;
+}
+
+/* crewNameBox END */
+
+
+
+/* crewPort */
+
+.crewPort
+{
+	width: 90px;
+	height: 50px;
+	display: inline-block;
+	background-repeat: no-repeat;
+}
+
+#crew1Port
+{
+	float: left;
+	margin-left: 5px;
+}
+
+#crew2Port
+{
+	float: right;
+	margin-right: 5px;
+}
+
+/* crewPortEND */
+
+
+
+/* crewCharacter */
+
+.crewCharacter
+{
+	width: 90px;
+	height: 50px;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+/* crewCharacter END */
+
+
+
+/* crewPlayerBox */
+
+.crewPlayerBox
+{
+	width: 290px;
+	height: 50px;
+	line-height: 50px;
+    overflow: hidden;
+	text-align: center;
+}
+
+/* crewPlayerBox END */
+
+
+
+/* animations */
+
+.changing 
+{
+    transition-duration: 0.5s;
+    transition-property: opacity;
+    opacity: 0 !important;
+}
+
+.changed 
+{
+    transition-duration: 0.5s;
+    transition-property: opacity;
+}
+
+/* animations END */

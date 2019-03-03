@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <link rel="stylesheet" type="text/css" href="CSS/Styles.css">
+        <link rel="stylesheet" type="text/css" href="CSS/Content.css">
+		<script src="../../JavaScript/jQuery.js"></script>
+        <script src="../../JavaScript/fitty.js"></script>
+    </head>
+	<body>
+		<div id="wrapper">
+			<div class="crews">
+				<div class="crew" id="crew1">
+					<div class="crewBox" id="crew1Box">
+						<div class="crewRow" id="crew1Row0">
+							<div class="crewScoreBox" id="crew1ScoreBox">
+								<span class="crewStockLeft" id="crew1StocksLeftText"></span>
+							</div>
+							<div class="crewNameBox" id="crew1NameBox">
+								<span class="crewName" id="crew1NameText"></span>
+							</div>
+							<div class="crewPort" id="crew1Port">
+								<div class="crewCharacter" id="crew1Character"></div>
+							</div>
+						</div>
+						<div class="crewRow" id="crew1Row1">
+							<div class="crewPlayerBox" id="crew1Player1Box">
+								<span class="crewPlayerName" id="crew1Player1NameText"></span>
+							</div>
+						</div>
+						<div class="crewRow" id="crew1Row2">
+							<div class="crewPlayerBox" id="crew1Player2Box">
+								<span class="crewPlayerName" id="crew1Player2NameText"></span>
+							</div>
+						</div>
+						<div class="crewRow" id="crew1Row3">
+							<div class="crewPlayerBox" id="crew1Player3Box">
+								<span class="crewPlayerName" id="crew1Player3NameText"></span>
+							</div>
+						</div>
+						<div class="crewRow" id="crew1Row4">
+							<div class="crewPlayerBox" id="crew1Player4Box">
+								<span class="crewPlayerName" id="crew1Player4NameText"></span>
+							</div>
+						</div>
+						<div class="crewRow" id="crew1Row5">
+							<div class="crewPlayerBox" id="crew1Player5Box">
+								<span class="crewPlayerName" id="crew1Player5NameText"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="crew" id="crew2">
+					<div class="crewBox" id="crew2Box">
+						<div class="crewRow" id="crew2Row0">
+							<div class="crewScoreBox" id="crew2ScoreBox">
+								<span class="crewStockLeft" id="crew2StocksLeftText"></span>
+							</div>
+							<div class="crewNameBox" id="crew2NameBox">
+								<span class="crewName" id="crew2NameText"></span>
+							</div>
+							<div class="crewPort" id="crew2Port">
+								<div class="crewCharacter" id="crew2Character"></div>
+							</div>
+						</div>
+						<div class="crewRow" id="crew2Row1">
+							<div class="crewPlayerBox" id="crew2Player1Box">
+								<span class="crewPlayerName" id="crew2Player1NameText"></span>
+							</div>
+						</div>
+						<div class="crewRow" id="crew2Row2">
+							<div class="crewPlayerBox" id="crew2Player2Box">
+								<span class="crewPlayerName" id="crew2Player2NameText"></span>
+							</div>
+						</div>
+						<div class="crewRow" id="crew2Row3">
+							<div class="crewPlayerBox" id="crew2Player3Box">
+								<span class="crewPlayerName" id="crew2Player3NameText"></span>
+							</div>
+						</div>
+						<div class="crewRow" id="crew2Row4">
+							<div class="crewPlayerBox" id="crew2Player4Box">
+								<span class="crewPlayerName" id="crew2Player4NameText"></span>
+							</div>
+						</div>
+						<div class="crewRow" id="crew2Row5">
+							<div class="crewPlayerBox" id="crew2Player5Box">
+								<span class="crewPlayerName" id="crew2Player5NameText"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        fitty('.crewStockLeft', { minSize: 8, maxSize: 40, multiLine: false });
+        fitty('.crewName', { minSize: 8, maxSize: 25, multiLine: false });
+        fitty('.crewPlayerName', { minSize: 8, maxSize: 25, multiLine: false });
+
+        var uri = "ws://localhost:56613/WebSocket/Queu";
+
+        websocket = new WebSocket(uri);
+
+        websocket.onopen = function () {
+            console.log("Connected to server.");
+            var jsonData = { "type": "overlayConnected", "data": window.location.href };
+            websocket.send(JSON.stringify(jsonData));
+        };
+
+        websocket.onerror = function (event) {
+            console.log("Something went wrong");
+        };
+
+        websocket.onmessage = function (event) {
+            console.log(event.data);
+
+            var jsonData = JSON.parse(event.data);
+
+            if (jsonData.type == "queu") {
+                $.each(jsonData.data, function (i) {
+                    $(jsonData.data[i]).addClass("changing");
+                });
+
+                setTimeout(function () {
+                    var queryString = '?reload=' + new Date().getTime();
+                    $('link[rel="stylesheet"]').not('link[href="css/styles.css"]').each(function () {
+                        this.href = this.href.replace(/\?.*|$/, queryString);
+                    });
+
+                    fitty('.crewStockLeft', { minSize: 8, maxSize: 35, multiLine: false });
+                    fitty('.crewName', { minSize: 8, maxSize: 40, multiLine: false });
+                    fitty('.crewPlayerName', { minSize: 8, maxSize: 40, multiLine: false });
+
+                    $.each(jsonData.data, function (i) {
+                        $(jsonData.data[i]).removeClass("changing").addClass("changed");
+                    });
+
+                    setTimeout(function () {
+                        $.each(jsonData.data, function (i) {
+                            $(jsonData.data[i]).removeClass("changed");
+                        });
+                    }, 500);
+                }, 500);
+            }
+            else if (jsonData.type == "forceResize") {
+                $(".crewStockLeft").addClass("changing");
+                $(".crewName").addClass("changing");
+                $(".crewPlayerName").addClass("changing");
+                setTimeout(function () {
+                    fitty('.crewStockLeft', { minSize: 8, maxSize: 35, multiLine: false });
+                    fitty('.crewName', { minSize: 8, maxSize: 40, multiLine: false });
+                    fitty('.crewPlayerName', { minSize: 8, maxSize: 40, multiLine: false });
+
+                    $(".crewStockLeft").removeClass("changing").addClass("changed");
+                    $(".crewName").removeClass("changing").addClass("changed");
+                    $(".crewPlayerName").removeClass("changing").addClass("changed");
+
+                    setTimeout(function () {
+                        $(".crewStockLeft").removeClass("changed");
+                        $(".crewName").removeClass("changed");
+                        $(".crewPlayerName").removeClass("changed");
+                    }, 500);
+                }, 500);
+            }
+        };
+    });
+
+    $(window).on("beforeunload", function () {
+        var jsonData = { "type": "overlayDisconnected", "data": window.location.href };
+        websocket.send(JSON.stringify(jsonData));
+        websocket.close();
+    });
+</script>

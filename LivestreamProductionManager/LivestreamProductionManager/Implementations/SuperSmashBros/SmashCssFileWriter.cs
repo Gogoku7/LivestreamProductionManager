@@ -42,5 +42,21 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 throw;
             }
         }
+
+        public void WriteCrewsCssFile(string pathToFormat, CrewsCssModel crewsCssModel)
+        {
+            try
+            {
+                var templateCssFile = _templateFileReader.ReadTemplateFile("SuperSmashBros/SuperSmashBrosCrewsTemplate.css");
+                var cssFileContent = _smashTextReplacer.ReplaceCssForCrews(templateCssFile, crewsCssModel);
+
+                File.WriteAllText(HttpContext.Current.Server.MapPath(pathToFormat + "CSS/Content.css"), cssFileContent);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
+        }
     }
 }

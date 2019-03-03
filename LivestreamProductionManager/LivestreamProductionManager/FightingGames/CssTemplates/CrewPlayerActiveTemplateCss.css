@@ -1,0 +1,4 @@
+﻿#IDPLACEHOLDER:before {
+    content: "VALUEPLACEHOLDER";
+    text-shadow: 0 0 2px yellow;
+}

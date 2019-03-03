@@ -15,11 +15,15 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
 
         private readonly string _textTemplateCss;
         private readonly string _imageTemplateCss;
+        private readonly string _crewPlayerActiveTemplateCss;
+        private readonly string _crewPlayerEliminatedTemplateCss;
 
         public SmashOverlayManager()
         {
             _textTemplateCss = _templatefileReader.ReadTemplateFile("TextTemplateFile.css");
             _imageTemplateCss = _templatefileReader.ReadTemplateFile("ImageTemplateFile.css");
+            _crewPlayerActiveTemplateCss = _templatefileReader.ReadTemplateFile("CrewPlayerActiveTemplateCss.css");
+            _crewPlayerEliminatedTemplateCss = _templatefileReader.ReadTemplateFile("CrewPlayerEliminatedTemplateCss.css");
         }
 
         public void UpdateSinglesOverlay(SinglesViewModel singlesViewModel)
@@ -89,7 +93,56 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
         {
             try
             {
+                var crewsCssModel = new CrewsCssModel();
 
+                crewsCssModel.Crew1.Name = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "crew1NameText", crewsViewModel.Crew1.Name ?? "");
+                crewsCssModel.Crew1.CharacterPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "crew1Character", crewsViewModel.Crew1.Character ?? "../../CharacterIcons/random.png");
+                crewsCssModel.Crew1.PortPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "crew1Port", crewsViewModel.Crew1.Port ?? "../../PlayerPorts/playerPortNo.png");
+                crewsCssModel.Crew1.StocksLeft = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "crew1StocksLeftText", crewsViewModel.Crew1.StocksLeft ?? "?");
+
+                for (var i = 0; i < crewsViewModel.Crew1.Players.Count; i++)
+                {
+                    if (crewsViewModel.Crew1.Players[i].Active)
+                    {
+                        crewsCssModel.Crew1.PlayerNamesAndSponsors += _textReplacer.ReplaceIdAndValue(_crewPlayerActiveTemplateCss, $"crew1Player{i+1}NameText", crewsViewModel.Crew1.Players[i].Name) + "\r\n";
+                    }
+                    else if (crewsViewModel.Crew1.Players[i].Eliminated)
+                    {
+                        crewsCssModel.Crew1.PlayerNamesAndSponsors += _textReplacer.ReplaceIdAndValue(_crewPlayerEliminatedTemplateCss, $"crew1Player{i+1}NameText", crewsViewModel.Crew1.Players[i].Name) + "\r\n";
+                    }
+                    else
+                    {
+                        crewsCssModel.Crew1.PlayerNamesAndSponsors += _textReplacer.ReplaceIdAndValue(_textTemplateCss, $"crew1Player{i+1}NameText", crewsViewModel.Crew1.Players[i].Name) + "\r\n";
+                    }
+                }
+
+                crewsCssModel.Crew2.Name = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "crew2NameText", crewsViewModel.Crew2.Name ?? "");
+                crewsCssModel.Crew2.CharacterPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "crew2Character", crewsViewModel.Crew2.Character ?? "../../CharacterIcons/random.png");
+                crewsCssModel.Crew2.PortPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "crew2Port", crewsViewModel.Crew2.Port ?? "../../PlayerPorts/playerPortNo.png");
+                crewsCssModel.Crew2.StocksLeft = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "crew2StocksLeftText", crewsViewModel.Crew2.StocksLeft ?? "?");
+
+                for (var i = 0; i < crewsViewModel.Crew2.Players.Count; i++)
+                {
+                    if (crewsViewModel.Crew2.Players[i].Active)
+                    {
+                        crewsCssModel.Crew2.PlayerNamesAndSponsors += _textReplacer.ReplaceIdAndValue(_crewPlayerActiveTemplateCss, $"crew2Player{i + 1}NameText", crewsViewModel.Crew2.Players[i].Name) + "\r\n";
+                    }
+                    else if (crewsViewModel.Crew2.Players[i].Eliminated)
+                    {
+                        crewsCssModel.Crew2.PlayerNamesAndSponsors += _textReplacer.ReplaceIdAndValue(_crewPlayerEliminatedTemplateCss, $"crew2Player{i + 1}NameText", crewsViewModel.Crew2.Players[i].Name) + "\r\n";
+                    }
+                    else
+                    {
+                        crewsCssModel.Crew2.PlayerNamesAndSponsors += _textReplacer.ReplaceIdAndValue(_textTemplateCss, $"crew2Player{i + 1}NameText", crewsViewModel.Crew2.Players[i].Name) + "\r\n";
+                    }
+                }
+
+                crewsCssModel.Tournament = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "tournamentText", crewsViewModel.Tournament ?? "");
+                crewsCssModel.Extra = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "extraText", crewsViewModel.Extra ?? "");
+                crewsCssModel.Round = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "roundText", crewsViewModel.Round ?? "");
+                crewsCssModel.BestOf = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "bestOfText", crewsViewModel.BestOf ?? "");
+
+                _fileWriter.WriteCrewsCssFile(crewsViewModel.PathToFormat, crewsCssModel);
             }
             catch (Exception ex)
             {

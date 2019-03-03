@@ -12,7 +12,7 @@ namespace LivestreamProductionManager.WebSockets
         }
 
         public override void OnMessage(string queuData)
-        {
+         {
             _clients.Broadcast(queuData);
         }
     }

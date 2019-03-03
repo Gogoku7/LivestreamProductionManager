@@ -33,7 +33,15 @@ namespace LivestreamProductionManager.Controllers
         [HttpPost]
         public PartialViewResult GetCrewPlayers(int count, string series, string game, string format)
         {
-            return PartialView($"~/Views/{series}/{format}/CrewPlayerRow.cshtml", count);
+            try
+            {
+                return PartialView($"~/Views/{series}/{format}/CrewPlayerRow.cshtml", count);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
         }
 
         [HttpPost]
@@ -76,7 +84,7 @@ namespace LivestreamProductionManager.Controllers
                     throw new ArgumentNullException("One of the players is null");
                 }
 
-                //Save files
+                _smashOverlayManager.UpdateCrewsOverlay(crewsViewModel);
 
                 return SuccessSnackbar("Successfully saved competitor files.");
             }
