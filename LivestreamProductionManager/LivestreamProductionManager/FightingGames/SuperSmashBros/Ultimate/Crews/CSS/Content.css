@@ -1,25 +1,27 @@
 #crew1NameText:before {
-    content: "World";
+    content: "Europe";
 }
 
 #crew1Player1NameText:before {
-    content: "VoiD";
-    text-shadow: 0 0 2px yellow;
+    content: "Glutonny";
+    color: yellow;
 }
 
 #crew1Player2NameText:before {
-    content: "Larry Lurr";
-    opacity: 0.4;
+    content: "Mr. R";
+    color: lightgray;
 }
+
 #crew1Player3NameText:before {
-    content: "MKLeo";
-    opacity: 0.4;
+    content: "Sodrek";
+    color: lightgray;
 }
+
 #crew1Player4NameText:before {
-    content: "ZeRo";
+    content: "iStudying";
 }
 #crew1Player5NameText:before {
-    content: "Nairo";
+    content: "G-danzee";
 }
 
 
@@ -30,7 +32,7 @@
 }
 
 #crew1Character {
-    background-image: url('../../CharacterIcons/pichu.png');
+    background-image: url('../../CharacterIcons/wario.png');
 }
 
 #crew1Port {
@@ -38,27 +40,29 @@
 }
 
 #crew2NameText:before {
-    content: "Europe";
+    content: "USA";
 }
 
 #crew2Player1NameText:before {
-    content: "Gogoku7";
-    text-shadow: 0 0 2px yellow;
+    content: "VoiD";
+    color: yellow;
 }
 
 #crew2Player2NameText:before {
-    content: "Glutonny";
-    opacity: 0.4;
+    content: "Larry lurr";
+    color: lightgray;
 }
+
 #crew2Player3NameText:before {
-    content: "Mr. R";
-    opacity: 0.4;
+    content: "ZeRo";
 }
 #crew2Player4NameText:before {
-    content: "G-danzee";
+    content: "Nairo";
+    color: lightgray;
 }
+
 #crew2Player5NameText:before {
-    content: "Sodrek";
+    content: "Esam";
 }
 
 
@@ -69,7 +73,7 @@
 }
 
 #crew2Character {
-    background-image: url('../../CharacterIcons/falco.png');
+    background-image: url('../../CharacterIcons/pichu.png');
 }
 
 #crew2Port {
@@ -77,17 +81,17 @@
 }
 
 #tournamentText:before {
-    content: "Elysium 3";
+    content: "";
 }
 
 #extraText:before {
-    content: "Ultimate Crews";
+    content: "";
 }
 
 #roundText:before {
-    content: "Round 1";
+    content: "";
 }
 
 #bestOfText:before {
-    content: "Best of 1";
+    content: "";
 }

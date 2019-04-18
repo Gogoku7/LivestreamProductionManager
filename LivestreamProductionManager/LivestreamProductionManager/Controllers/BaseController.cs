@@ -17,7 +17,6 @@ namespace LivestreamProductionManager.Controllers
 
         public JsonResult ErrorSnackbar(Exception ex, string message)
         {
-            Console.WriteLine(ex);
             return Json(new SnackbarViewModel(false, message, ex.Message), JsonRequestBehavior.DenyGet);
         }
     }

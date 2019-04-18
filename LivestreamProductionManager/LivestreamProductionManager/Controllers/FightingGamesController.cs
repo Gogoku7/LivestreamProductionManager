@@ -1,4 +1,7 @@
-﻿using System;
+﻿using LivestreamProductionManager.Implementations;
+using LivestreamProductionManager.Interfaces;
+using Serilog;
+using System;
 using System.IO;
 using System.Web.Mvc;
 
@@ -6,10 +9,10 @@ namespace LivestreamProductionManager.Controllers
 {
     public class FightingGamesController : BaseController
     {
+        private readonly IFileReader _fileReader = new FileReader();
+
         public ActionResult Index()
         {
-            ViewBag.Title = "Fighting Games";
-
             return View();
         }
 
@@ -23,7 +26,7 @@ namespace LivestreamProductionManager.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Log.Error(ex, ex.Message);
                 throw;
             }
         }
@@ -38,12 +41,12 @@ namespace LivestreamProductionManager.Controllers
             }
             catch (FileNotFoundException ex)
             {
-                Console.WriteLine(ex);
+                Log.Error(ex, ex.Message);
                 throw;
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Log.Error(ex, ex.Message);
                 throw;
             }
         }
@@ -58,7 +61,20 @@ namespace LivestreamProductionManager.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Log.Error(ex, ex.Message);
+                throw;
+            }
+        }
+
+        public string GetCssFileContent(string pathToFormat)
+        {
+            try
+            {
+                return _fileReader.ReadCssFile(pathToFormat);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
                 throw;
             }
         }

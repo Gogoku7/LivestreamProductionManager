@@ -1,6 +1,6 @@
 ﻿namespace LivestreamProductionManager.ViewModels.FightingGames
 {
-    public class TournamentViewModel
+    public class TournamentViewModel : PathsViewModel
     {
         public string Tournament { get; set; }
         public string Extra { get; set; }

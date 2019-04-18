@@ -1,4 +1,5 @@
 ﻿using LivestreamProductionManager.Interfaces;
+using Serilog;
 using System;
 using System.IO;
 using System.Web;
@@ -32,7 +33,7 @@ namespace LivestreamProductionManager.Implementations
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Log.Error(ex, ex.Message);
                 throw;
             }
         }

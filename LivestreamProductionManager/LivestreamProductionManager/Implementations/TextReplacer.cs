@@ -1,4 +1,5 @@
 ﻿using LivestreamProductionManager.Interfaces;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -28,7 +29,7 @@ namespace LivestreamProductionManager.Implementations
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Log.Error(ex, ex.Message);
                 throw;
             }
         }
@@ -65,7 +66,7 @@ namespace LivestreamProductionManager.Implementations
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Log.Error(ex, ex.Message);
                 throw;
             }
         }
@@ -93,7 +94,7 @@ namespace LivestreamProductionManager.Implementations
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Log.Error(ex, ex.Message);
                 throw;
             }
         }
@@ -125,7 +126,7 @@ namespace LivestreamProductionManager.Implementations
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Log.Error(ex, ex.Message);
                 throw;
             }
         }

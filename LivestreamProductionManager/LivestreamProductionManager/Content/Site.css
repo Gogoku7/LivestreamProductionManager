@@ -23,21 +23,25 @@ textarea {
     max-width: 100%;
 }
 
-/* The snackbar - position it at the bottom and in the middle of the screen */
-.snackbar {
-    visibility: hidden; /* Hidden by default. Visible on click */
-    min-width: 250px; /* Set a default minimum width */
-    background-color: #333; /* Black background color */
-    color: #fff; /* White text color */
-    text-align: center; /* Centered text */
-    border-radius: 2px; /* Rounded borders */
-    padding: 16px; /* Padding */
-    position: fixed; /* Sit on top of the screen */
-    z-index: 1; /* Add a z-index if needed */
-    bottom: 30px; /* 30px from the bottom */
+#manageCompetitors{
+    min-height: 55px;
 }
 
 /* Snackbar */
+.snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    bottom: 30px;
+}
+
+
 .snackbar.show {
     visibility: visible;
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
@@ -99,6 +103,10 @@ div.panel {
     margin-bottom: 0px;
 }
 
+.quarter-horizontal-width {
+    width: 25% !important;
+}
+
 .half-horizontal-width {
     width: 50% !important;
 }
@@ -122,8 +130,80 @@ div.panel {
 .big-checkbox {
     width: 35px;
     height: 35px;
-    margin-left: 10px !important;
+    margin-left: 0px !important;
     margin-top: 0px !important;
     margin-right: 0px !important;
     margin-bottom: 0px !important;
+    max-width: initial;
 }
+
+#previewOverlay {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+#previewOverlayIframe {
+    width: 100%;
+    height: 1080px;
+    overflow: hidden;
+    border: 0;
+}
+
+/* Monitor */
+
+.monitorPanelBody {
+    padding: 0;
+    margin: 0;
+    height: 187px;
+}
+
+/* WebSocket monitor */
+.monitorPre {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    overflow-y: hidden;
+}
+
+.monitorCode {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    padding: 5px;
+}
+
+.string {
+    color: green;
+}
+
+.number {
+    color: darkorange;
+}
+
+.boolean {
+    color: blue;
+}
+
+.null {
+    color: magenta;
+}
+
+.key {
+    color: red;
+}
+
+/* WebSocket client monitor */
+webSocketDataMonitorTable {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* END Monitor */

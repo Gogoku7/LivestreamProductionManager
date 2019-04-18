@@ -2,6 +2,7 @@
 using LivestreamProductionManager.ViewModels.FightingGames;
 using LivestreamProductionManager.ViewModels.FightingGames.SuperSmashBros;
 using Newtonsoft.Json;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -22,7 +23,7 @@ namespace LivestreamProductionManager.Implementations
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Log.Error(ex, ex.Message);
                 throw;
             }
         }
@@ -38,7 +39,7 @@ namespace LivestreamProductionManager.Implementations
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Log.Error(ex, ex.Message);
                 throw;
             }
         }
@@ -54,7 +55,7 @@ namespace LivestreamProductionManager.Implementations
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Log.Error(ex, ex.Message);
                 throw;
             }
         }
@@ -70,7 +71,7 @@ namespace LivestreamProductionManager.Implementations
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Log.Error(ex, ex.Message);
                 throw;
             }
         }
@@ -86,7 +87,7 @@ namespace LivestreamProductionManager.Implementations
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Log.Error(ex, ex.Message);
                 throw;
             }
         }

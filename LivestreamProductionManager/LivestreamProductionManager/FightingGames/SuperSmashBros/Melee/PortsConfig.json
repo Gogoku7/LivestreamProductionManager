@@ -1,18 +1,18 @@
 [
   {
     "PortName": "Port 1",
-    "CssValue": "../../PlayerPorts/playerPort1.png"
+    "CssValue": "../../PlayerPorts/PlayerPort1.png"
   },
   {
     "PortName": "Port 2",
-    "CssValue": "../../PlayerPorts/playerPort2.png"
+    "CssValue": "../../PlayerPorts/PlayerPort2.png"
   },
   {
     "PortName": "Port 3",
-    "CssValue": "../../PlayerPorts/playerPort3.png"
+    "CssValue": "../../PlayerPorts/PlayerPort3.png"
   },
   {
     "PortName": "Port 4",
-    "CssValue": "../../PlayerPorts/playerPort4.png"
+    "CssValue": "../../PlayerPorts/PlayerPort4.png"
   }
 ]

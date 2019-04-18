@@ -1,6 +1,9 @@
 ﻿using LivestreamProductionManager.Implementations.SuperSmashBros;
+using LivestreamProductionManager.ViewModels.FightingGames;
 using LivestreamProductionManager.ViewModels.FightingGames.SuperSmashBros;
 using LivestreamProductionManager.ViewModels.SuperSmashBros;
+using Newtonsoft.Json;
+using Serilog;
 using System;
 using System.Web.Mvc;
 
@@ -11,35 +14,30 @@ namespace LivestreamProductionManager.Controllers
         private readonly SmashOverlayManager _smashOverlayManager = new SmashOverlayManager();
 
         [HttpPost]
-        public PartialViewResult GetManageCompetitors(string series, string game, string format, string pathToSeries, string pathToGame, string pathToFormat)
+        public PartialViewResult GetManageCompetitors(PathsViewModel pathsViewModel)
         {
             try
             {
-                var superSmashBrosBaseViewModel = new SuperSmashBrosBaseViewModel(series, game, format, pathToSeries, pathToGame, pathToFormat)
+                Log.Information($"Submitted data: { JsonConvert.SerializeObject(pathsViewModel) }");
+
+                var superSmashBrosBaseViewModel = new SuperSmashBrosBaseViewModel
                 {
-                    Characters = _configReader.GetCharactersFromConfig(pathToGame),
-                    Ports = _configReader.GetPortsFromConfig(pathToGame)
+                    Series = pathsViewModel.Series,
+                    Game = pathsViewModel.Game,
+                    Format = pathsViewModel.Format,
+                    PathToSeries = pathsViewModel.PathToSeries,
+                    PathToGame = pathsViewModel.PathToGame,
+                    PathToFormat = pathsViewModel.PathToFormat
                 };
 
-                return PartialView($"~/Views/{series}/{format}/ManageCompetitors.cshtml", superSmashBrosBaseViewModel);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                throw;
-            }
-        }
+                superSmashBrosBaseViewModel.Characters = _configReader.GetCharactersFromConfig(superSmashBrosBaseViewModel.PathToGame);
+                superSmashBrosBaseViewModel.Ports = _configReader.GetPortsFromConfig(superSmashBrosBaseViewModel.PathToGame);
 
-        [HttpPost]
-        public PartialViewResult GetCrewPlayers(int count, string series, string game, string format)
-        {
-            try
-            {
-                return PartialView($"~/Views/{series}/{format}/CrewPlayerRow.cshtml", count);
+                return PartialView($"~/Views/{pathsViewModel.Series}/{pathsViewModel.Format}/ManageCompetitors.cshtml", superSmashBrosBaseViewModel);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Log.Error(ex, ex.Message);
                 throw;
             }
         }
@@ -49,6 +47,8 @@ namespace LivestreamProductionManager.Controllers
         {
             try
             {
+                Log.Information($"Submitted data: { JsonConvert.SerializeObject(singlesViewModel) }");
+
                 _smashOverlayManager.UpdateSinglesOverlay(singlesViewModel);
 
                 return SuccessSnackbar("Successfully saved competitor files.");
@@ -64,6 +64,8 @@ namespace LivestreamProductionManager.Controllers
         {
             try
             {
+                Log.Information($"Submitted data: { JsonConvert.SerializeObject(doublesViewModel) }");
+
                 _smashOverlayManager.UpdateDoublesOverlay(doublesViewModel);
 
                 return SuccessSnackbar("Successfully saved competitor files.");
@@ -79,6 +81,8 @@ namespace LivestreamProductionManager.Controllers
         {
             try
             {
+                Log.Information($"Submitted data: { JsonConvert.SerializeObject(crewsViewModel) }");
+
                 if (crewsViewModel.Crew1.Players == null || crewsViewModel.Crew2.Players == null)
                 {
                     throw new ArgumentNullException("One of the players is null");
@@ -91,6 +95,20 @@ namespace LivestreamProductionManager.Controllers
             catch (Exception ex)
             {
                 return ErrorSnackbar(ex, "Something went wrong while saving competitor files, see the console for details.");
+            }
+        }
+
+        [HttpPost]
+        public PartialViewResult GetCrewPlayers(int count, PathsViewModel pathsViewModel)
+        {
+            try
+            {
+                return PartialView($"~/Views/{pathsViewModel.Series}/{pathsViewModel.Format}/CrewPlayerRow.cshtml", count);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+                throw;
             }
         }
     }

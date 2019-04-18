@@ -6,17 +6,17 @@
 		<script src="../../JavaScript/jQuery.js"></script>
 		<script src="../../JavaScript/fitty.js"></script>
 	</head>
-	<body>
-		<div id="wrapper">
-			<div class="teams">
-				<div class="team" id="team1">
-					<div class="teamBox" id="team1Box">
-						<div class="teamScoreBox" id="team1ScoreBox">
-							<span class="teamScore" id="team1ScoreText"></span>
-						</div>
-						<div class="teamPlayer1Port" id="team1Player1Port">
-							<div class="teamPlayerCharacter" id="team1Player1Character"></div>
-						</div>
+    <body>
+        <div id="wrapper">
+            <div class="teams">
+                <div class="team" id="team1">
+                    <div class="teamBox" id="team1Box">
+                        <div class="teamScoreBox" id="team1ScoreBox">
+                            <span class="teamScore" id="team1ScoreText"></span>
+                        </div>
+                        <div class="teamPlayer1Port" id="team1Player1Port">
+                            <div class="teamPlayerCharacter" id="team1Player1Character"></div>
+                        </div>
                         <div class="teamPlayerNamesBox" id="team1PlayerNamesBox">
                             <div class="teamPlayerNamesContainer" id="team1PlayerNamesContainer">
                                 <span class="teamPlayerNames" id="team1PlayerNames">
@@ -30,16 +30,16 @@
                             <div class="teamPlayerCharacter" id="team1Player2Character"></div>
                         </div>
                     </div>
-				</div>
-				
-				<div class="team" id="team2">
-					<div class="teamBox" id="team2Box">
-						<div class="teamScoreBox" id="team2ScoreBox">
-							<span class="teamScore" id="team2ScoreText"></span>
-						</div>
-						<div class="teamPlayer1Port" id="team2Player1Port">
-							<div class="teamPlayerCharacter" id="team2Player1Character"></div>
-						</div>
+                </div>
+
+                <div class="team" id="team2">
+                    <div class="teamBox" id="team2Box">
+                        <div class="teamScoreBox" id="team2ScoreBox">
+                            <span class="teamScore" id="team2ScoreText"></span>
+                        </div>
+                        <div class="teamPlayer1Port" id="team2Player1Port">
+                            <div class="teamPlayerCharacter" id="team2Player1Character"></div>
+                        </div>
                         <div class="teamPlayerNamesBox" id="team2PlayerNamesBox">
                             <div class="teamPlayerNamesContainer" id="team2PlayerNamesContainer">
                                 <span class="teamPlayerNames" id="team2PlayerNames">
@@ -53,32 +53,34 @@
                             <div class="teamPlayerCharacter" id="team2Player2Character"></div>
                         </div>
                     </div>
-				</div>
-			</div>
-			
-			<div class="tournamentInfo">
-				<div class="info" id="infoRound">
-					<div class="infoBox" id="infoRoundBox">
-						<span class="boxText" >
-							<span id="roundText"></span>
-							<span> / </span>
-							<span id="bestOfText"></span>
-						</span>
-					</div>
-				</div>
-				
-				<div class="info" id="infoTournament">
-					<div class="infoBox" id="infoTournamentBox">
-						<span class="boxText">
-							<span id="tournamentText"></span>
-							<span> / </span>
-							<span id="extraText"></span>
-						</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</body>
+                </div>
+            </div>
+
+            <div class="tournamentInfo">
+                <div class="info" id="infoRound">
+                    <div class="infoBox" id="infoRoundBox">
+                        <span class="boxText">
+                            <span id="roundText"></span>
+                            <span> / </span>
+                            <span id="bestOfText"></span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="info" id="infoTournament">
+                    <div class="infoBox" id="infoTournamentBox">
+                        <span class="boxText">
+                            <span id="tournamentText"></span>
+                            <span> / </span>
+                            <span id="extraText"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="snackbar" id="snackbar"></div>
+    </body>
 </html>
 
 <script>
@@ -97,7 +99,10 @@
         };
 
         websocket.onerror = function (event) {
-            console.log("Something went wrong");
+            showSnackbar("Something went wrong with the connection to the Queu WebSocket to receive live updates. If Livestream Production Manager is deployed to IIS, make sure there's no port like ':56613' defined after 'localhost' and IIS has WebSockets enabled.");
+
+            console.log("Something went wrong with the WebSocket connection:");
+            console.log(event);
         };
 
         websocket.onmessage = function (event) {
@@ -154,4 +159,16 @@
         websocket.send(JSON.stringify(jsonData));
         websocket.close();
     });
+
+    function showSnackbar(message) {
+        $("#snackbar").html(message);
+
+        var marginLeft = ($(window).width() - $("#snackbar").outerWidth()) / 2;
+        $("#snackbar").css("left", marginLeft >= 0 ? marginLeft : 0);
+
+        $("#snackbar").addClass("show");
+        setTimeout(function () {
+            $("#snackbar").removeClass("show");
+        }, 9000);
+    }
 </script>

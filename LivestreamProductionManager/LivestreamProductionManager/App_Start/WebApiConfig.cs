@@ -12,8 +12,7 @@ namespace LivestreamProductionManager.App_Start
         {
             config.Routes.MapHttpRoute(
                 name: "SocketApi",
-                routeTemplate: "WebSocket/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                routeTemplate: "WebSocket/{controller}"
             );
         }
     }

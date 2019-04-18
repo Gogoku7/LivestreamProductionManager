@@ -1,50 +1,78 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Livestream Production Manager</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-</head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Livestream Production Manager", "Index", "FightingGames", null,  new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Fighting games", "Index", "FightingGames")</li>
-                </ul>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - Livestream Production Manager</title>
+
+        <link id="bootstrap" href="/Content/bootstrap.css" rel="stylesheet">
+        <link id="highlight" href="/Content/highlight.css" rel="stylesheet">
+        <link href="/Content/site.css" rel="stylesheet">
+
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Livestream Production Manager", "Index", "FightingGames", null, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Fighting games", "Index", "FightingGames")</li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                Themes
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a onclick="switchTheme('/Content/bootstrap.css', '/Content/highlight.css')" href="#">Default</a></li>
+                                <li><a onclick="switchTheme('/Content/bootstrap.dark.css', '/Content/highlight.dark.css')" href="#">Custom Darkly</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container-fluid body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p class="text-left">Livestream Production Manager - Made by Gogoku7</p>
-            <p class="text-right">Version 0.2.1 - see <a href="@Url.Action("Version", "About")">version information</a></p>
-        </footer>
-    </div>
+        <div class="container-fluid body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <text class="pull-left">Livestream Production Manager - Made by Gogoku7</text>
+                <text class="pull-right">Version 0.3 - see <a href="@Url.Action("Version", "About")">version information</a></text>
+            </footer>
+        </div>
 
-    <div class="snackbar" id="manageCompetitorsSnackbar"></div>
-    <div class="snackbar" id="manageCommentatorsSnackbar"></div>
-    <div class="snackbar" id="managerConnectedSnackbar"></div>
-    <div class="snackbar" id="managerFailedToConnectSnackbar"></div>
-    <div class="snackbar" id="queuSnackbar"></div>
-    <div class="snackbar" id="overlayConnectedSnackbar"></div>
-    <div class="snackbar" id="overlayDisconnectedSnackbar"></div>
-    <div class="snackbar" id="forceResizeSnackbar"></div>
+        <div class="snackbar" id="manageCompetitorsSnackbar"></div>
+        <div class="snackbar" id="manageCommentatorsSnackbar"></div>
+        <div class="snackbar" id="managerConnectedSnackbar"></div>
+        <div class="snackbar" id="managerFailedToConnectSnackbar"></div>
+        <div class="snackbar" id="queuSnackbar"></div>
+        <div class="snackbar" id="overlayConnectedSnackbar"></div>
+        <div class="snackbar" id="overlayDisconnectedSnackbar"></div>
+        <div class="snackbar" id="forceResizeSnackbar"></div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-</body>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/highlight")
+        @Scripts.Render("~/bundles/bootstrap")
+
+        @RenderSection("scripts", required: false)
+    </body>
 </html>
+
+
+<script type="text/javascript">
+    function switchTheme(bootstrapFileUrl, highlightFileUrl) {
+        $("#highlight").attr("href", highlightFileUrl);
+        $("#bootstrap").attr("href", bootstrapFileUrl);
+    }
+</script>

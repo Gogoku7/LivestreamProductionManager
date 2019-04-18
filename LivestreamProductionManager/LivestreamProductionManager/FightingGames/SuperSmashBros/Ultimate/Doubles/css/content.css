@@ -3,35 +3,35 @@
 }
 
 #team1ScoreText:before {
-    content: "0";
+    content: "2";
 }
 
 #team1Player1NameText:before {
-    content: "ZeRo";
+    content: "NRG | Nairo";
 }
 #team1Player2NameText:before {
-    content: "Nairo";
+    content: "Tempo | ZeRo";
 }
 
 
 #team1Player1Character {
-    background-image: url('../../CharacterIcons/cloud.png');
+    background-image: url('../../CharacterIcons/palutena.png');
 }
 #team1Player2Character {
-    background-image: url('../../CharacterIcons/zelda.png');
+    background-image: url('../../CharacterIcons/cloud.png');
 }
 
 
 #team1Player1Port {
-    background-image: url('../../PlayerPorts/PlayerPort1.png');
+    background-image: url('../../PlayerPorts/PlayerPort3.png');
 }
 #team1Player2Port {
-    background-image: url('../../PlayerPorts/PlayerPort2.png');
+    background-image: url('../../PlayerPorts/PlayerPort4.png');
 }
 
 
 #team2NameText:before {
-    content: "Team Saiyan";
+    content: "Team SaiYan";
 }
 
 #team2ScoreText:before {
@@ -39,7 +39,7 @@
 }
 
 #team2Player1NameText:before {
-    content: "Gogoku7";
+    content: "Cinnovate | Gogoku7";
 }
 #team2Player2NameText:before {
     content: "Median4";
@@ -47,33 +47,33 @@
 
 
 #team2Player1Character {
-    background-image: url('../../CharacterIcons/falco.png');
+    background-image: url('../../CharacterIcons/fox.png');
 }
 #team2Player2Character {
-    background-image: url('../../CharacterIcons/ganondorf.png');
+    background-image: url('../../CharacterIcons/littlemac.png');
 }
 
 
 #team2Player1Port {
-    background-image: url('../../PlayerPorts/PlayerPort3.png');
+    background-image: url('../../PlayerPorts/PlayerPort1.png');
 }
 #team2Player2Port {
-    background-image: url('../../PlayerPorts/PlayerPort4.png');
+    background-image: url('../../PlayerPorts/PlayerPort2.png');
 }
 
 
 #tournamentText:before {
-    content: "Fight Night 34";
+    content: "";
 }
 
 #extraText:before {
-    content: "Ultimate Doubles";
+    content: "";
 }
 
 #roundText:before {
-    content: "Winners Round 2";
+    content: "";
 }
 
 #bestOfText:before {
-    content: "Best of 3";
+    content: "";
 }

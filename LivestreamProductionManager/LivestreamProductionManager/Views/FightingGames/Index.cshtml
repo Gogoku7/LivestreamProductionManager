@@ -7,7 +7,7 @@
     <div class="full-horizontal-width">
         <div class="panel panel-warning">
             <div class="panel-heading text-center">
-                <text>Manage tournament</text>
+                <text class="panel-title">Manage tournament</text>
             </div>
             <div class="panel-body" id="manageTournament">
                 <div class="row" id="manageTournamentValues">
@@ -52,32 +52,159 @@
 
 <div class="row">
     <!--Manage players-->
-    <div class="half-horizontal-width" style="float: left">
+    <div class="full-horizontal-width">
         <div class="panel panel-primary">
             <div class="panel-heading text-center">
                 <div class="pull-left">
                     <button class="btn btn-success panelButton" id="submitCompetitorsButton">Update</button>
                 </div>
 
-                <text>Manage competitors</text>
+                <text class="panel-title">Manage competitors</text>
+
+                <div class="pull-right">
+                    <button class="btn btn-info panelButton" id="switchCompetitorsButton"><span class="glyphicon glyphicon-retweet" style="font-size: 12px;"></span> Switch</button>
+                </div>
             </div>
             <div class="panel-body" id="manageCompetitors">
             </div>
         </div>
     </div>
+</div>
 
+<div class="row">
+    <!--WebSocket Data monitor-->
+    <div class="quarter-horizontal-width" style="float: left">
+        <div class="panel panel-info">
+            <div class="panel-heading text-center">
+                <div class="pull-left">
+                    <button class="btn btn-danger panelButton" id="clearWebSocketDataMonitorButton"><span class="glyphicon glyphicon-remove" style="font-size: 12px;"></span> Clear</button>
+                </div>
+
+                <text class="panel-title">WebSocket data monitor</text>
+
+                <div class="pull-right">
+                    <button class="btn btn-success panelButton toggleMonitorButton" id="toggleWebSocketDataMonitorButton" data-monitor-id="#webSocketDataMonitor"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
+                </div>
+            </div>
+            <div class="panel-body monitorPanelBody">
+                <pre class="monitorPre">
+                    <code id="webSocketDataMonitor" class="monitorCode json" data-enabled="True">
+                        
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <!--Websocket Client monitor-->
+    <div class="quarter-horizontal-width" style="float: left">
+        <div class="panel panel-warning">
+            <div class="panel-heading text-center">
+                <div class="pull-left">
+                    <button class="btn btn-danger panelButton" id="clearWebSocketClientMonitorButton"><span class="glyphicon glyphicon-remove" style="font-size: 12px;"></span> Clear</button>
+                </div>
+
+                <text class="panel-title">WebSocket clients monitor</text>
+
+                <div class="pull-right">
+                    <button class="btn btn-success panelButton toggleMonitorButton" id="toggleWebSocketClientMonitorButton" data-monitor-id="#webSocketClientMonitorTableBody"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
+                </div>
+            </div>
+            <div class="panel-body monitorPanelBody" style="overflow-y:scroll;">
+                <table class="table table-bordered" id="webSocketClientMonitorTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Path</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="webSocketClientMonitorTableBody" data-enabled="True" data-client-monitor="True"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!--CSS monitor-->
+    <div class="quarter-horizontal-width" style="float: left">
+        <div class="panel panel-primary">
+            <div class="panel-heading text-center">
+                <div class="pull-left">
+                    <button class="btn btn-danger panelButton" id="clearCssMonitorButton"><span class="glyphicon glyphicon-remove" style="font-size: 12px;"></span> Clear</button>
+                </div>
+
+                <text class="panel-title">CSS monitor</text>
+
+                <div class="pull-right">
+                    <button class="btn btn-success panelButton toggleMonitorButton" id="toggleCssMonitorButton" data-monitor-id="#cssMonitor"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
+                </div>
+            </div>
+            <div class="panel-body monitorPanelBody">
+                <pre class="monitorPre">
+                    <code class="monitorCode css" id="cssMonitor" data-enabled="True">
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <!--Error monitor-->
+    <div class="quarter-horizontal-width" style="float: left">
+        <div class="panel panel-default">
+            <div class="panel-heading text-center">
+                <div class="pull-left">
+                    <button class="btn btn-danger panelButton" id="clearErrorMonitorButton"><span class="glyphicon glyphicon-remove" style="font-size: 12px;"></span> Clear</button>
+                </div>
+
+                <text class="panel-title">Error monitor</text>
+
+                <div class="pull-right">
+                    <button class="btn btn-success panelButton toggleMonitorButton" id="toggleErrorMonitorButton" data-monitor-id="#errorMonitor"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
+                </div>
+            </div>
+            <div class="panel-body monitorPanelBody">
+                <pre class="monitorPre" id="errorMonitor" data-enabled="True"></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!--Preview overlay-->
+    <div class="full-horizontal-width">
+        <div class="panel panel-danger">
+            <div class="panel-heading text-center">
+                <div class="pull-left">
+                    <button class="btn btn-danger panelButton" id="forceResizeButton">Force resize</button>
+                </div>
+
+                <text class="panel-title">Preview overlay</text>
+
+                <div class="pull-right">
+                    <button class="btn btn-success panelButton togglePreviewOverlayButton" id="togglePreviewOverlayButton" data-preview-id="#previewOverlayIframe" data-panel-id="#previewOverlay"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
+                </div>
+            </div>
+            <div class="panel-body" id="previewOverlay">
+                <iframe id="previewOverlayIframe" data-enabled="True"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
     <!--Manage commentators-->
-    <div class="half-horizontal-width" style="float: right">
+    <div class="full-horizontal-width">
         <div class="panel panel-success">
             <div class="panel-heading text-center">
                 <div class="pull-left">
                     <button class="btn btn-primary panelButton" id="submitCommentatorsButton">Update</button>
                 </div>
 
-                <text>Manage commentators</text>
+                <text class="panel-title">Manage commentators</text>
 
                 <div class="pull-right">
-                    <button class="btn btn-default panelButton" id="addCommentatorButton"><span class="glypicon glyphicon-plus"></span></button>
+                    <button class="btn btn-info panelButton" id="addCommentatorButton"><span style="font-weight: bold;" class="glypicon glyphicon-plus"></span> Add</button>
                 </div>
             </div>
             <div class="panel-body" id="manageCommentators">
@@ -100,60 +227,66 @@
 </div>
 
 
-<div class="row">
-    <!--Preview overlay-->
-    <div class="full-horizontal-width">
-        <div class="panel panel-danger">
-            <div class="panel-heading text-center">
-                <div class="pull-left">
-                    <button class="btn btn-danger panelButton" id="forceResizeButton">Force resize</button>
-                </div>
-
-                <text>Preview overlay</text>
-            </div>
-            <div class="panel-body" id="previewOverlay" style="padding: 0px;">
-                <iframe id="previewOverlayIframe" frameBorder="0" style="width:100%;height:1080px;overflow: hidden" scrolling="no"></iframe>
-            </div>
-        </div>
-    </div>
-</div>
-
-@section Scripts{
+@section Scripts {
     <script type="text/javascript">
+        /* Global variables */
+        var baseUrl = "@System.Configuration.ConfigurationManager.AppSettings["BaseUrl"]";
         var competitorFormJsonData = null;
         var crewBattlePlayerCount = 0;
+        var clientsConnectedCount = 0;
+
+        // Summary:
+        // On: ready
+        // Initialize WebSocket.
+        // Get series.
         $(document).ready(function () {
-            InitializeWebsocket();
+            hljs.initHighlightingOnLoad();
+            InitializeWebSocket();
             GetSeries();
         });
 
-        function InitializeWebsocket() {
-            var uri = "ws://localhost:56613/WebSocket/Queu";
+        /* WebSocket */
+
+        // Summary:
+        // Initialize the WebSocket and events.
+        function InitializeWebSocket() {
+            var uri = "ws://" + baseUrl + "/WebSocket/Queu";
 
             websocket = new WebSocket(uri);
 
+            // Summary:
+            // On: Opening the WebSocket connection.
+            // Update the client WebSocket monitor, add one to the clients connected count, then show a snackbar message.
             websocket.onopen = function () {
-                showSnackbar("#managerConnectedSnackbar", "Connected to websocket.");
+                $("#webSocketClientMonitorTableBody").append("<tr><td>1</td><td>Livestream Production Manager</td><td>Connected</td></tr>");
+                clientsConnectedCount++;
+                showSnackbar("#managerConnectedSnackbar", "Connected to WebSocket.");
             };
 
+            // Summary:
+            // On: Error occurring with the WebSocket connection.
+            // Show a Snackbar message and update the error log monitor.
             websocket.onerror = function (event) {
-                showSnackbar("#managerFailedToConnectSnackbar", "Something went wrong with the websocket.");
-                console.log(event);
-                console.log(event.data);
+                showSnackbar("#managerFailedToConnectSnackbar", "Something went wrong with the WebSocket connection.");
+                UpdateErrorMonitor(event);
             };
 
+            // Summary:
+            // On: Receiving a message from the WebSocket.
+            //
             websocket.onmessage = function (event) {
-                console.log(event.data);
-
                 var jsonData = JSON.parse(event.data);
 
                 if (jsonData.type == "queu") {
+                    UpdateWebSocketDataMonitor(jsonData.data);
                     showSnackbar("#queuSnackbar", "A queu command has been broadcast.");
                 }
                 else if (jsonData.type == "overlayConnected") {
+                    UpdateWebSocketClientMonitor(jsonData);
                     showSnackbar("#overlayConnectedSnackbar", "An overlay has connected to the WebSocket: " + jsonData.data);
                 }
                 else if (jsonData.type == "overlayDisconnected") {
+                    UpdateWebSocketClientMonitor(jsonData);
                     showSnackbar("#overlayDisconnectedSnackbar", "An overlay has disconnected from the WebSocket: " + jsonData.data);
                 }
                 else if (jsonData.type == "forceResize") {
@@ -162,6 +295,11 @@
             };
         }
 
+        /* Tournament */
+
+        // Summary:
+        // Retrieve the series using AJAX.
+        // Add the series to the series dropdown.
         function GetSeries() {
             $.ajax({
                 type: "GET",
@@ -174,13 +312,17 @@
                     }
                 },
                 error: function (ex) {
-                    alert(ex);
+                    UpdateErrorMonitor(ex);
                     console.log(ex);
                 }
             });
         }
 
-        //Tournament
+        // Summary:
+        // On: Selecting a series from the series dropdown.
+        // Retrieve the games using AJAX.
+        // Empty the games and formats dropdown.
+        // Add the games to the games dropdown.
         $("#Series").change(function () {
             var selectedSeries = $("#Series option:selected");
             $.ajax({
@@ -196,12 +338,17 @@
                     }
                 },
                 error: function (ex) {
-                    alert(ex);
+                    UpdateErrorMonitor(ex);
                     console.log(ex);
                 }
             });
         });
 
+        // Summary:
+        // On: Selecting a game from the games dropdown.
+        // Retrieve the formats using AJAX.
+        // Empty the games and formats dropdown.
+        // Add the formats to the formats dropdown.
         $("#Game").change(function () {
             var selectedGame = $("#Game option:selected");
             $.ajax({
@@ -216,12 +363,18 @@
                     }
                 },
                 error: function (ex) {
-                    alert(ex);
+                    UpdateErrorMonitor(ex);
                     console.log(ex);
                 }
             });
         });
 
+        // Summary:
+        // On: Selecting a format from the formats dropdown.
+        // Retrieve the manage competitors partial view using AJAX.
+        // Insert the partial view into the manage competitors panel.
+        // Change the preview overlay iframe source to the GameOverlay.html.
+        // Set the variable competitorFormJsonData to null, so it can be constructed again when a new update is submitted.
         $("#Format").change(function () {
             var selectedSeries = $("#Series option:selected");
             var selectedGame = $("#Game option:selected");
@@ -239,18 +392,25 @@
                 },
                 dataType: "html",
                 success: function (data) {
-                    $("#manageCompetitors").empty();
-                    $("#manageCompetitors").append(data);
-                    $("#previewOverlayIframe").attr("src", "http://localhost:56613" + selectedFormat.val().replace("~", "") + "gameOverlay.html")
+                    $("#manageCompetitors").html(data);
+                    if ($("#previewOverlayIframe").attr("data-enabled") == "True") {
+                        $("#previewOverlayIframe").attr("src", "http://" + baseUrl + selectedFormat.val().replace("~", "") + "GameOverlay.html");
+                        $("#previewOverlay").css("height", "1080px");
+                        $("#previewOverlayIframe").css("height", "1080px");
+                    }
+
                     competitorFormJsonData = null;
                 },
                 error: function (ex) {
-                    alert(ex)
+                    UpdateErrorMonitor(ex);
                     console.log(ex);
                 }
             });
         });
 
+        // Summary:
+        // On: Changing values of a tournament information input.
+        // Replace the btn-success class on the submit update button by the btn-danger class, resulting in the button becoming red.
         $("#manageTournamentValues").on("change input", "input", function () {
             if (!$("#submitCompetitorsButton").hasClass("btn-danger")) {
                 $("#submitCompetitorsButton").removeClass("btn-success");
@@ -258,7 +418,41 @@
             }
         });
 
-        //Competitors
+        /* Competitors */
+
+        // Summary:
+        // On: Clicking the switch competitors button.
+        // Switch the values of the competitors around.
+        // Supports singles and more complex formats with correct html of the manage competitors partial view.
+        $("#switchCompetitorsButton").click(function () {
+            var manageCompetitorsForm = $("#manageCompetitorsForm");
+            var side1Inputs = manageCompetitorsForm.find(":input[data-side='1']");
+
+            if (side1Inputs.length != 0) {
+                side1Inputs.each(function () {
+                    if ($(this).attr("type") == "checkbox") {
+                        var side2Input = $($(this).attr("data-opposite-id"));
+                        var side2InputCheckedValue = side2Input.prop("checked");
+                        side2Input.prop("checked", $(this).prop("checked"));
+                        $(this).prop("checked", side2InputCheckedValue);
+                    }
+                    else {
+                        var side2Input = $($(this).attr("data-opposite-id"));
+                        var side2InputValue = side2Input.val();
+                        side2Input.val($(this).val());
+                        $(this).val(side2InputValue);
+                    }
+                });
+
+                $("#submitCompetitorsButton").removeClass("btn-success");
+                $("#submitCompetitorsButton").addClass("btn-danger");
+            }
+        });
+
+        // Summary:
+        // On: Clicking the submit competitors button.
+        // Copy the tournament values to the manage competitors form.
+        // Submit the competitors form.
         $("#submitCompetitorsButton").click(function () {
             $("input[name='Tournament']").val($("#tournament").val());
             $("input[name='Round']").val($("#round").val());
@@ -266,19 +460,20 @@
             $("input[name='Extra']").val($("#extra").val());
             var manageCompetitorsForm = $("#manageCompetitorsForm");
 
-            if ($("#crewsCountButton").length == 1) {
-                if ($("input[name^='Crew1.Players['][name$='].Active']:checked").length > 1 ||
-                    $("input[name^='Crew1.Players['][name$='].Active']:checked").length == 0 ||
-                    $("input[name^='Crew2.Players['][name$='].Active']:checked").length > 1 ||
-                    $("input[name^='Crew2.Players['][name$='].Active']:checked").length == 0) {
-                    showSnackbar("#manageCompetitorsSnackbar", "One or both crews do not have the appropriate amount of one active player");
-                    return;
-                }
-            }
-
             SubmitCompetitorsForm(manageCompetitorsForm);
         });
 
+        // Summary:
+        // Submit the competitors form using AJAX.
+        // if > The update was successful.
+        // Replace the btn-danger class on the submit update button by the btn-success class, resulting in the button becoming green.
+        // Show a snackbar message.
+        // Send a queu update through the WebSocket.
+        // Update the CSS monitor.
+        // else > The update was unsuccessful.
+        // Show a snackbar message.
+        // PARAMETERS
+        // manageCompetitorsForm
         function SubmitCompetitorsForm(manageCompetitorsForm) {
             $.ajax({
                 type: "POST",
@@ -294,21 +489,38 @@
                             $("#submitCompetitorsButton").addClass("btn-success");
                         }
 
-                        SubmitQueuUpdate();
+                        showSnackbar("#manageCompetitorsSnackbar", data.Message);
+
+                        SendQueuUpdate("#manageCompetitorsForm");
+                        UpdateCSSMonitor("/FightingGames/GetCssFileContent?pathToFormat=" + $("input[name='PathToFormat']").val().replace("~", ""));
                     }
                     else {
-                        showSnackbar("#manageCompetitorsSnackbar", data.Message)
+                        showSnackbar("#manageCompetitorsSnackbar", data.Message);
+                        UpdateErrorMonitor(data.ErrorMessage);
                         console.log(data.ErrorMessage);
                     }
                 },
                 error: function (ex) {
+                    UpdateErrorMonitor(ex);
                     console.log(ex);
                 }
             });
         }
 
-        function SubmitQueuUpdate() {
-            var competitorsFormInputs = $("#manageCompetitorsForm :input[data-id]");
+        // Summary:
+        //
+        //
+        // if > competitorFormJsonData variable is null, no update has been submitted so far.
+        //
+        // else > competitorFormJsonData variable is not null, an update has been submitted.
+        //
+        //
+        // if > jsonData.data has any queu data.
+        // Send the queu through the WebSocket
+        // PARAMETERS
+        // formId: The id attribute of the form to be parsed.
+        function SendQueuUpdate(formId) {
+            var competitorsFormInputs = $(formId + " :input[data-id]");
             var jsonData = { "type": "queu", "data": [] };
 
             if (competitorFormJsonData == null) {
@@ -364,42 +576,52 @@
             }
         }
 
-        function GetCrewPlayers() {
-            if ($("#crewsCount").val() < 1) {
-                $("#crewsCount").val("1");
+        //Summary:
+        //On: Clicking the get crew players button.
+        // Limit the crew players count to between 1 and 99.
+        // if > The value of the crew players count is invalid.
+        // Show a snackbar message.
+        // Do not submit the competitors form.
+        // else > The value of the crew players count is valid.
+        // Retrieve the crew players partial view using AJAX.
+        // Insert the partial view into the manage crew players container.
+        $("body").on("click", "#getCrewPlayersButton", function () {
+            if ($("#crewPlayersCount").val() < 1) {
+                $("#crewPlayersCount").val("1");
             }
-            if ($("#crewsCount").val() > 99) {
-                $("#crewsCount").val("99");
+            if ($("#crewPlayersCount").val() > 99) {
+                $("#crewPlayersCount").val("99");
             }
 
-            if ($("#crewsCount").val() == null || $("#crewsCount").val() == undefined || $("#crewsCount").val() == "" || crewBattlePlayerCount.toString() == $("#crewsCount").val().toString()) {
+            if ($("#crewPlayersCount").val() == null || $("#crewPlayersCount").val() == undefined || $("#crewPlayersCount").val() == "" || crewBattlePlayerCount.toString() == $("#crewPlayersCount").val().toString()) {
                 showSnackbar("#manageCompetitorsSnackbar", "The player count value is not valid or unchanged");
+                return;
             }
             else {
-                crewBattlePlayerCount = $("#crewsCount").val();
-
                 $.ajax({
                     type: "POST",
                     url: "/SuperSmashBros/GetCrewPlayers",
                     data: {
-                        "count": $("#crewsCount").val(),
-                        "series": $("input[name = 'Series']").val(),
+                        "count": $("#crewPlayersCount").val(),
+                        "series": $("input[name='Series']").val(),
                         "game": $("input[name='Game']").val(),
                         "format": $("input[name='Format']").val()
                     },
                     dataType: "html",
                     success: function (data) {
-                        $("#crewPlayersContainer").empty();
-                        $("#crewPlayersContainer").append(data);
+                        $("#crewPlayersContainer").html(data);
                     },
                     error: function (ex) {
-                        alert(ex);
+                        UpdateErrorMonitor(data.ErrorMessage);
                         console.log(ex);
                     }
                 });
             }
-        }
+        });
 
+        // Summary:
+        // On: Changing values of a competitor information input.
+        // Replace the btn-success class on the submit update button by the btn-danger class, resulting in the button becoming red.
         $("body").on("change input", "#manageCompetitorsForm :input", function () {
             if (!$("#submitCompetitorsButton").hasClass("btn-danger")) {
                 $("#submitCompetitorsButton").removeClass("btn-success");
@@ -407,7 +629,13 @@
             }
         });
 
-        //Commentators
+        /* Commentators */
+
+        // Summary:
+        // On: Clicking the add commentator button.
+        // Retrieve the commentator partial view using AJAX.
+        // Append the partial view manage commentators form.
+        // Re-index all the commentator elements available.
         $("#addCommentatorButton").click(function () {
             var id = $("div[id*='commentator-row-']").length;
             $.ajax({
@@ -425,13 +653,20 @@
                     });
                 },
                 error: function (ex) {
+                    UpdateErrorMonitor(ex);
                     console.log(ex);
                 }
             });
         });
 
-        function removeCommentator(id) {
-            $("#commentator-row-" + id).remove();
+        // Summary:
+        // On: Clicking the remove commentator button.
+        // Remove the row of the commentator with the specified id attirbute.
+        // Re-index all the commentator elements available.
+        // PARAMETERS
+        // index: index of the element to be removed
+        function removeCommentator(index) {
+            $("#commentator-row-" + index).remove();
 
             $("div[id*='commentator-row-']").each(function (index) {
                 $(this).attr("id", "commentator-row-" + index);
@@ -441,6 +676,16 @@
             });
         }
 
+        // Summary:
+        // On: Clicking the submit commentator button.
+        // Submit the commentators form using AJAX.
+        // if > The update was successful.
+        // Replace the btn-danger class on the submit update button by the btn-primary class, resulting in the button becoming blue.
+        // Show a snackbar message.
+        // Send a queu update through the WebSocket.
+        // Update the CSS monitor.
+        // else > The update was unsuccessful.
+        // Show a snackbar message.
         $("#submitCommentatorsButton").click(function () {
             var manageCommentatorsForm = $("#manageCommentatorsForm");
             $.ajax({
@@ -456,18 +701,26 @@
                             $("#submitCommentatorsButton").removeClass("btn-danger");
                             $("#submitCommentatorsButton").addClass("btn-primary");
                         }
+
+                        // SendQueuUpdate("#manageCommentatorsForm");
+                        // UpdateCSSMonitor("/Commentators/GetCssFileContent");
                     }
                     else {
                         showSnackbar("#manageCommentatorsSnackbar", data.Message);
+                        UpdateErrorMonitor(data.ErrorMessage);
                         console.log(data.ErrorMessage);
                     }
                 },
                 error: function (ex) {
+                    UpdateErrorMonitor(ex);
                     console.log(ex);
                 }
             });
         });
 
+        // Summary:
+        // On: Changing values of a commentator input.
+        // Replace the btn-primary class on the submit update button by the btn-danger class, resulting in the button becoming red.
         $("body").on("change input", "#manageCommentatorsForm :input", function () {
             if (!$("#submitCommentatorsButton").hasClass("btn-danger")) {
                 $("#submitCommentatorsButton").removeClass("btn-primary");
@@ -475,12 +728,189 @@
             }
         });
 
+        /* Monitor */
+
+        // Summary:
+        // Update the WebSocket data monitor with the newest data received from the WebSocket.
+        // PARAMETERS
+        // data: the data received through the WebSocket
+        function UpdateWebSocketDataMonitor(data) {
+            if ($("#webSocketDataMonitor").attr("data-enabled") == "True") {
+                $("#webSocketDataMonitor").html(JSON.stringify(data));
+                hljs.initHighlighting();
+            }
+        }
+
+        // Summary:
+        // On: Clicking the clear WebSocket data monitor button
+        // Remove all data from the WebSocket data monitor
+        $("#clearWebSocketDataMonitorButton").click(function () {
+            if ($("#webSocketDataMonitor").attr("data-enabled") == "True") {
+                $("#webSocketDataMonitor").html("");
+            }
+        });
+
+        // Summary:
+        // if > The json is of type "overlayConnected".
+        // Increase clientsConnectedCount variable by 1.
+        // Add a new row to the WebSocket client monitor table body.
+        // else > The json is of type "overlayDisconnected".
+        // Decrease clientsConnectedCount variable by 1 if it's higher than 1.
+        // Remove the row from the WebSocket client monitor table body with the right data-full-path attribute value.
+        // PARAMETERS
+        // jsonData: the json data received through the WebSocket
+        function UpdateWebSocketClientMonitor(jsonData) {
+            if ($("#webSocketClientMonitorTableBody").attr("data-enabled") == "True") {
+                var splitPath = jsonData.data.split("/");
+
+                if (jsonData.type == "overlayConnected") {
+                    clientsConnectedCount++;
+                    $("#webSocketClientMonitorTableBody").append("<tr data-full-path=" + jsonData.data + "><td>" + clientsConnectedCount + "</td><td>" + splitPath[splitPath.length - 2] + "/" + splitPath[splitPath.length - 1] + "</td><td>Connected</td></tr>");
+                }
+                else if (jsonData.type == "overlayDisconnected") {
+                    if (clientsConnectedCount > 1) {
+                        clientsConnectedCount--;
+                    }
+
+                    $("#webSocketClientMonitorTableBody").find("tr[data-full-path='" + jsonData.data + "']").remove();
+                }
+            }
+        }
+
+        // Summary:
+        // On: Clicking the clear WebSocket client monitor button
+        // Remove all data from the WebSocket client monitor and reset the clientsConnectedCount
+        $("#clearWebSocketClientMonitorButton").click(function () {
+            if ($("#webSocketClientMonitorTableBody").attr("data-enabled") == "True") {
+                $("#webSocketClientMonitorTableBody").html("<tr><td>1</td><td>Livestream Production Manager</td><td>Connected</td></tr>");
+                clientsConnectedCount = 1;
+            }
+        });
+
+        // Summary:
+        // Retrieve the commentator partial view using AJAX.
+        // Append the partial view manage commentators form.
+        // PARAMETERS
+        // url: URL to retrieve the CSS file content from.
+        function UpdateCSSMonitor(url) {
+            if ($("#cssMonitor").attr("data-enabled") == "True") {
+                $.ajax({
+                    type: "GET",
+                    url: url,
+                    dataType: "text",
+                    success: function (data) {
+                        $("#cssMonitor").html(data);
+                        hljs.initHighlighting.called = false;
+                        hljs.initHighlighting();
+                    },
+                    error: function (ex) {
+                        UpdateErrorMonitor(ex);
+                        console.log(ex);
+                    }
+                });
+            }
+        }
+
+        // Summary:
+        // On: Clicking the clear CSS monitor button
+        // Remove all data from the CSS monitor
+        $("#clearCssMonitorButton").click(function () {
+            if ($("#cssMonitor").attr("data-enabled") == "True") {
+                $("#cssMonitor").html("");
+            }
+        });
+
+        // Summary:
+        // Append the error to the error monitor.
+        function UpdateErrorMonitor(error) {
+            if ($("#errorMonitor").attr("data-enabled") == "True") {
+                $("#errorMonitor").prepend(error);
+            }
+        }
+
+        // Summary:
+        // On: Clicking the clear error monitor button
+        // Remove all data from the error monitor
+        $("#clearErrorMonitorButton").click(function () {
+            if ($("#errorMonitor").attr("data-enabled") == "True") {
+                $("#errorMonitor").html("");
+            }
+        });
+
+        // Summary:
+        // On: Clicking a toggle monitor button
+        // if > The monitor associated with the button is enabled
+        // Disable the monitor associated with the button
+        // Update the clicked toggle button to show the monitor is disabled
+        // else > The monitor associated with the button is disabled
+        // Enable the monitor associated with the button
+        // Update the clicked toggle button to show the monitor is enabled
+        // if > The monitor associated to the button is the client monitor
+        // Reset the monitor to only show the the Livestream Production Manager
+        // else > The monitor associated to the button is not the client monitor
+        // Reset the monitor to completely empty
+        $(".toggleMonitorButton").click(function () {
+            if ($($(this).attr("data-monitor-id")).attr("data-enabled") == "True") {
+                $($(this).attr("data-monitor-id")).attr("data-enabled", "False");
+                $(this).removeClass("btn-success").addClass("btn-danger");
+                $(this).html("<span class='glyphicon glyphicon-remove' style='font-size: 12px;'></span> Disabled");
+                if ($($(this).attr("data-monitor-id")).attr("data-client-monitor") == "True") {
+                    $($(this).attr("data-monitor-id")).html("<tr><td>1</td><td>Livestream Production Manager</td><td>Connected</td></tr>");
+                    clientsConnectedCount = 1;
+                }
+                else {
+                    $($(this).attr("data-monitor-id")).html("");
+                }
+            }
+            else {
+                $($(this).attr("data-monitor-id")).attr("data-enabled", "True");
+                $(this).removeClass("btn-danger").addClass("btn-success");
+                $(this).html("<span class='glyphicon glyphicon-ok' style='font-size: 12px;'></span> Enabled");
+            }
+        });
+
+        /* Preview overlay */
+
+        // Summary:
+        // On: Clicking the force resize button.
+        // Send a force resize command through the WebSocket.
         $("#forceResizeButton").click(function () {
             var jsonData = { "type": "forceResize", data: {} };
             websocket.send(JSON.stringify(jsonData));
         });
 
-        //Snackbar
+        // Summary:
+        // On: Clicking a toggle preview overlay button
+        // if > The overlay preview associated with the button is enabled
+        // Disable the overlay preview associated with the button
+        // Update the clicked toggle button to show the overlay preview it is disabled
+        // else > the overlay preview associated with the button is disabled
+        // Enable the overlay previews associated with the button
+        // Update the clicked toggle button to show the overlay preview it is enabled
+        $("#togglePreviewOverlayButton").click(function () {
+            if ($($(this).attr("data-preview-id")).attr("data-enabled") == "True") {
+                $($(this).attr("data-preview-id")).attr("data-enabled", "False");
+                $($(this).attr("data-preview-id")).removeAttr("src");
+                $($(this).attr("data-panel-id")).css("height", "40px");
+                $($(this).attr("data-preview-id")).css("height", "40px");
+                $(this).removeClass("btn-success").addClass("btn-danger");
+                $(this).html("<span class='glyphicon glyphicon-remove' style='font-size: 12px;'></span> Disabled");
+            } else {
+                $($(this).attr("data-preview-id")).attr("data-enabled", "True");
+                $($(this).attr("data-panel-id")).css("height", "1080px");
+                $($(this).attr("data-preview-id")).css("height", "1080px");
+                $(this).removeClass("btn-danger").addClass("btn-success");
+                $(this).html("<span class='glyphicon glyphicon-ok' style='font-size: 12px;'></span> Enabled");
+            }
+        });
+
+        /* Snackbar */
+
+        // Summary:
+        // Show a snackbar.
+        // PARAMETERS
+        // snackbarId: The id attribute of the snackbar to be updated and shown.
+        // message: The message to be shown in the snackbar.
         function showSnackbar(snackbarId, message) {
             $(snackbarId).html(message);
 

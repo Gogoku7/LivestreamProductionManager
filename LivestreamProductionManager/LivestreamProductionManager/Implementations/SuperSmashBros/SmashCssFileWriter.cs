@@ -1,5 +1,6 @@
 ﻿using LivestreamProductionManager.Interfaces;
 using LivestreamProductionManager.Models.FightingGames.SuperSmashBros;
+using Serilog;
 using System;
 using System.IO;
 using System.Web;
@@ -22,7 +23,7 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Log.Error(ex, ex.Message);
                 throw;
             }
         }
@@ -38,7 +39,7 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Log.Error(ex, ex.Message);
                 throw;
             }
         }
@@ -54,7 +55,7 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Log.Error(ex, ex.Message);
                 throw;
             }
         }
