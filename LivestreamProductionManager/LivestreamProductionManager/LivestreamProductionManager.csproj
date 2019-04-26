@@ -317,6 +317,7 @@
     <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\jigglypuff.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\joker.png" />
     <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\ken.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

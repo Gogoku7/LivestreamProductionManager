@@ -97,6 +97,10 @@
     "CssValue": "../../CharacterIcons/jigglypuff.png"
   },
   {
+    "CharacterName": "Joker",
+    "CssValue": "../../CharacterIcons/joker.png"
+  },
+  {
     "CharacterName": "Ken",
     "CssValue": "../../CharacterIcons/ken.png"
   },
@@ -295,10 +299,6 @@
   {
     "CharacterName": "Zero Suit Samus",
     "CssValue": "../../CharacterIcons/zerosuitsamus.png"
-  },
-  {
-    "CharacterName": "DLC character 1",
-    "CssValue": "../../CharacterIcons/random.png"
   },
   {
     "CharacterName": "DLC character 2",

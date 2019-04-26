@@ -1,5 +1,5 @@
 #player1NameText:before {
-    content: "Median4";
+    content: "Gogoku7";
 }
 
 #player1TwitterText:before {
@@ -7,19 +7,19 @@
 }
 
 #player1ScoreText:before {
-    content: "2";
+    content: "1";
 }
 
 #player1Character {
-    background-image: url('../../CharacterIcons/darkpit.png');
+    background-image: url('../../CharacterIcons/joker.png');
 }
 
 #player1Port {
-    background-image: url('../../PlayerPorts/PlayerPort2.png');
+    background-image: url('../../PlayerPorts/PlayerPort1.png');
 }
 
 #player2NameText:before {
-    content: "Gogoku7";
+    content: "Median4";
 }
 
 #player2TwitterText:before {
@@ -31,25 +31,25 @@
 }
 
 #player2Character {
-    background-image: url('../../CharacterIcons/falco.png');
+    background-image: url('../../CharacterIcons/joker.png');
 }
 
 #player2Port {
-    background-image: url('../../PlayerPorts/PlayerPort1.png');
+    background-image: url('../../PlayerPorts/PlayerPort2.png');
 }
 
 #tournamentText:before {
-    content: "Fight Night";
+    content: "";
 }
 
 #extraText:before {
-    content: "Esports Game Arena";
+    content: "";
 }
 
 #roundText:before {
-    content: "Round 1";
+    content: "";
 }
 
 #bestOfText:before {
-    content: "Best of 3";
+    content: "";
 }
