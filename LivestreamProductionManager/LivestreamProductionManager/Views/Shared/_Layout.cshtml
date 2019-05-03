@@ -8,6 +8,20 @@
         <link id="bootstrap" href="/Content/bootstrap.css" rel="stylesheet">
         <link id="highlight" href="/Content/highlight.css" rel="stylesheet">
         <link href="/Content/site.css" rel="stylesheet">
+        <style>
+            .changing 
+            {
+                transition-duration: 1s;
+                transition-property: opacity;
+                opacity: 0 !important;
+            }
+
+            .changed 
+            {
+                transition-duration: 1s;
+                transition-property: opacity;
+            }
+        </style>
 
         @Scripts.Render("~/bundles/modernizr")
     </head>
@@ -72,7 +86,18 @@
 
 <script type="text/javascript">
     function switchTheme(bootstrapFileUrl, highlightFileUrl) {
-        $("#highlight").attr("href", highlightFileUrl);
-        $("#bootstrap").attr("href", bootstrapFileUrl);
+        $("body").addClass("changing");
+
+        setTimeout(function () {
+            $("#highlight").attr("href", highlightFileUrl);
+            $("#bootstrap").attr("href", bootstrapFileUrl);
+
+            setTimeout(function () {
+                $("body").removeClass("changing").addClass("changed");
+                setTimeout(function () {
+                    $("body").removeClass("changed");
+                }, 1000);
+            }, 1000);
+        }, 1000);
     }
 </script>
