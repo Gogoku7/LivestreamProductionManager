@@ -39,11 +39,6 @@ namespace LivestreamProductionManager.Controllers
 
                 return Json(games, JsonRequestBehavior.AllowGet);
             }
-            catch (FileNotFoundException ex)
-            {
-                Log.Error(ex, ex.Message);
-                throw;
-            }
             catch (Exception ex)
             {
                 Log.Error(ex, ex.Message);
@@ -71,6 +66,21 @@ namespace LivestreamProductionManager.Controllers
             try
             {
                 return _fileReader.ReadCssFile(pathToFormat);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+                throw;
+            }
+        }
+
+        [HttpPost]
+        public string GetLatestCssValues(string pathToFormat)
+        {
+            try
+            {
+                var css = _fileReader.ReadCssFile(pathToFormat);
+                throw new NotImplementedException();
             }
             catch (Exception ex)
             {

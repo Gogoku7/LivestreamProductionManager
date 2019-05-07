@@ -32,17 +32,17 @@
                 <div class="row">
                     <div class="col-md-3 form-group">
                         <label>Series</label>
-                        <select class="form-control" id="Series" name="Series"></select>
+                        <select class="form-control" id="Series"></select>
                     </div>
 
                     <div class="col-md-3 form-group">
                         <label>Game</label>
-                        <select class="form-control" id="Game" name="Game"></select>
+                        <select class="form-control" id="Game"></select>
                     </div>
 
                     <div class="col-md-3 form-group">
                         <label>Format</label>
-                        <select class="form-control" id="Format" name="Format"></select>
+                        <select class="form-control" id="Format"></select>
                     </div>
                 </div>
             </div>
@@ -56,16 +56,21 @@
         <div class="panel panel-primary">
             <div class="panel-heading text-center">
                 <div class="pull-left">
-                    <button class="btn btn-success panelButton" id="submitCompetitorsButton">Update</button>
+                    <button class="btn btn-success panelButton" id="submitCompetitorsButton"><span class="glyphicon glyphicon-arrow-up" style="font-size: 11px;"></span> Update</button>
                 </div>
 
                 <text class="panel-title">Manage competitors</text>
 
                 <div class="pull-right">
-                    <button class="btn btn-info panelButton" id="switchCompetitorsButton"><span class="glyphicon glyphicon-retweet" style="font-size: 12px;"></span> Switch</button>
+                    <button class="btn btn-default panelButton" id="setToDefaultValuesButton"><span class="glyphicon glyphicon-erase" style="font-size: 11px;"></span> Defaults</button>
+                    <button class="btn btn-warning panelButton" id="getLatestCompetitorsValuesButton"><span class="glyphicon glyphicon-download-alt" style="font-size: 11px;"></span> Get latest</button>
+                    <button class="btn btn-info panelButton" id="switchCompetitorsButton"><span class="glyphicon glyphicon-refresh" style="font-size: 11px;"></span> Switch</button>
                 </div>
             </div>
             <div class="panel-body" id="manageCompetitors">
+            </div>
+            <div class="panel-footer">
+                <text>Overlay path: </text><text id="competitorsOverlayPath"></text>
             </div>
         </div>
     </div>
@@ -171,12 +176,12 @@
 </div>
 
 <div class="row">
-    <!--Preview overlay-->
+    <!--Preview competitors overlay-->
     <div class="full-horizontal-width">
         <div class="panel panel-danger">
             <div class="panel-heading text-center">
                 <div class="pull-left">
-                    <button class="btn btn-danger panelButton" id="forceResizeButton">Force resize</button>
+                    <button class="btn btn-danger panelButton" id="forceResizeButton"><span class="glyphicon glyphicon-resize-full" style="font-size: 11px;"></span> Force resize</button>
                 </div>
 
                 <text class="panel-title">Preview overlay</text>
@@ -221,6 +226,9 @@
                         </div>
                     </div>
                 </form>
+            </div>
+            <div class="panel-footer">
+                <text>Overlay path: </text><text id="commentatorsOverlayPath"></text>
             </div>
         </div>
     </div>
@@ -393,6 +401,8 @@
                 dataType: "html",
                 success: function (data) {
                     $("#manageCompetitors").html(data);
+                    $("#competitorsOverlayPath").html(selectedFormat.attr("value") + "GameOverlay.html");
+                    $("#commentatorsOverlayPath").html(selectedGame.attr("value") + "Commentators/CommentatorsOverlay.html")
                     if ($("#previewOverlayIframe").attr("data-enabled") == "True") {
                         $("#previewOverlayIframe").attr("src", "http://" + baseUrl + selectedFormat.val().replace("~", "") + "GameOverlay.html");
                         $("#previewOverlay").css("height", "1080px");
@@ -413,8 +423,7 @@
         // Replace the btn-success class on the submit update button by the btn-danger class, resulting in the button becoming red.
         $("#manageTournamentValues").on("change input", "input", function () {
             if (!$("#submitCompetitorsButton").hasClass("btn-danger")) {
-                $("#submitCompetitorsButton").removeClass("btn-success");
-                $("#submitCompetitorsButton").addClass("btn-danger");
+                $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger");
             }
         });
 
@@ -422,56 +431,134 @@
 
         // Summary:
         // On: Clicking the switch competitors button.
-        // Switch the values of the competitors around.
-        // Supports singles and more complex formats with correct html of the manage competitors partial view.
+        // If > The manage competitors form is present.
+        //  If > There was inputs found with the data-side attribute.
+        //      Switch the values of the competitors around.
+        //  Else > There was no inputs found with the data-side attribute.
+        //      Show a snackbar message.
+        // Else > The manage competitors form is not present.
+        //  Show a snackbar message.
+        // Note: Supports singles and more complex formats with correct html of the manage competitors partial view.
         $("#switchCompetitorsButton").click(function () {
-            var manageCompetitorsForm = $("#manageCompetitorsForm");
-            var side1Inputs = manageCompetitorsForm.find(":input[data-side='1']");
+            if ($("#manageCompetitorsForm").length) {
+                var side1Inputs = $("#manageCompetitorsForm").find(":input[data-side='1']");
 
-            if (side1Inputs.length != 0) {
-                side1Inputs.each(function () {
-                    if ($(this).attr("type") == "checkbox") {
-                        var side2Input = $($(this).attr("data-opposite-id"));
-                        var side2InputCheckedValue = side2Input.prop("checked");
-                        side2Input.prop("checked", $(this).prop("checked"));
-                        $(this).prop("checked", side2InputCheckedValue);
-                    }
-                    else {
-                        var side2Input = $($(this).attr("data-opposite-id"));
-                        var side2InputValue = side2Input.val();
-                        side2Input.val($(this).val());
-                        $(this).val(side2InputValue);
+                if (side1Inputs.length) {
+                    side1Inputs.each(function () {
+                        if ($(this).attr("type") == "checkbox") {
+                            var side2Input = $($(this).attr("data-opposite-id"));
+                            var side2InputCheckedValue = side2Input.prop("checked");
+                            side2Input.prop("checked", $(this).prop("checked"));
+                            $(this).prop("checked", side2InputCheckedValue);
+                        }
+                        else {
+                            var side2Input = $($(this).attr("data-opposite-id"));
+                            var side2InputValue = side2Input.val();
+                            side2Input.val($(this).val());
+                            $(this).val(side2InputValue);
+                        }
+                    });
+
+                    $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger");
+                } else {
+                    showSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form was found, but no inputs inside have the appropriate data-side='1' attribute.");
+                }
+            } else {
+                showSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form is not present.");
+            }
+        });
+
+        //Summary: 
+        // On: Clicking the get latest values button
+        // If > The manage competitors form is present.
+        //  
+        // Else > The manage competitors form is not present.
+        //  Show a snackbar message.
+        $("#getLatestCompetitorsValuesButton").click(function () {
+            if ($("#manageCompetitorsForm").length) {
+                $.ajax({
+                    type: "POST",
+                    url: "/FightingGames/GetLatestCssValues",
+                    data: { "pathToFormat": $("input[name='PathToFormat']").val() },
+                    dataType: "json",
+                    success: function (data) {
+                        console.log("not implemented");
+                    },
+                    error: function (ex) {
+                        console.log("not implemented");
+                        UpdateErrorMonitor(ex);
+                        console.log(ex);
                     }
                 });
+            } else {
+                showSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form is not present.");
+            }
+        });
 
-                $("#submitCompetitorsButton").removeClass("btn-success");
-                $("#submitCompetitorsButton").addClass("btn-danger");
+        //Summary: 
+        // On: Clicking the get set to default values button
+        // If > The manage competitors form is present.
+        //  If > The manage competitor form has inputs with attribute 'data-default'.
+        //      Change all inputs to their default values.
+        //      Replace the btn-success class on the submit update button by the btn-danger class, resulting in the button becoming red.
+        //  Else > The manage competitor form has no inputs with attribute 'data-default'.
+        //      Show a snackbar message.
+        // Else > The manage competitors form is not present.
+        //  Show a snackbar message.
+        $("#setToDefaultValuesButton").click(function () {
+            if ($("#manageCompetitorsForm").length) {
+                if ($("#manageCompetitorsForm").find(":input[data-default]").length) {
+                    var inputsWithDefaults = $("#manageCompetitorsForm").find(":input[data-default]");
+
+                    inputsWithDefaults.each(function () {
+                        if ($(this).attr("type") == "checkbox") {
+                            $(this).prop("checked", false);
+                        }
+                        else {
+                            $(this).val($(this).data("default"));
+                        }
+                    });
+
+                    if (!$("#submitCompetitorsButton").hasClass("btn-danger")) {
+                        $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger");
+                    }
+                } else {
+                    showSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form was found, but no inputs inside have the appropriate data-default attribute.");
+                }
+            } else {
+                showSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form is not present.");
             }
         });
 
         // Summary:
         // On: Clicking the submit competitors button.
-        // Copy the tournament values to the manage competitors form.
-        // Submit the competitors form.
+        // If > The manage competitors form is present.
+        //  Copy the tournament values to the manage competitors form.
+        //  Submit the competitors form.
+        // Else > The manage competitors form is not present.
+        //  Show a snackbar message.
         $("#submitCompetitorsButton").click(function () {
-            $("input[name='Tournament']").val($("#tournament").val());
-            $("input[name='Round']").val($("#round").val());
-            $("input[name='BestOf']").val($("#bestOf").val());
-            $("input[name='Extra']").val($("#extra").val());
-            var manageCompetitorsForm = $("#manageCompetitorsForm");
+            if ($("#manageCompetitorsForm").length) {
+                $("#manageCompetitorsForm").find("input[name='Tournament']").val($("#tournament").val());
+                $("#manageCompetitorsForm").find("input[name='Round']").val($("#round").val());
+                $("#manageCompetitorsForm").find("input[name='BestOf']").val($("#bestOf").val());
+                $("#manageCompetitorsForm").find("input[name='Extra']").val($("#extra").val());
 
-            SubmitCompetitorsForm(manageCompetitorsForm);
+                SubmitCompetitorsForm($("#manageCompetitorsForm"));
+            } else {
+                showSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form is not present.");
+            }
         });
 
         // Summary:
         // Submit the competitors form using AJAX.
         // if > The update was successful.
-        // Replace the btn-danger class on the submit update button by the btn-success class, resulting in the button becoming green.
-        // Show a snackbar message.
-        // Send a queu update through the WebSocket.
-        // Update the CSS monitor.
+        //  Replace the btn-danger class on the submit update button by the btn-success class, resulting in the button becoming green.
+        //  Show a snackbar message.
+        //  Send a queu update through the WebSocket.
+        //  Update the CSS monitor.
         // else > The update was unsuccessful.
-        // Show a snackbar message.
+        //  Show a snackbar message.
         // PARAMETERS
         // manageCompetitorsForm
         function SubmitCompetitorsForm(manageCompetitorsForm) {
@@ -511,12 +598,12 @@
         //
         //
         // if > competitorFormJsonData variable is null, no update has been submitted so far.
-        //
-        // else > competitorFormJsonData variable is not null, an update has been submitted.
-        //
-        //
+        //  
+        // else > competitorFormJsonData variable is not null, an update has been submitted before.
+        //  
+        //  
         // if > jsonData.data has any queu data.
-        // Send the queu through the WebSocket
+        //  Send the queu through the WebSocket
         // PARAMETERS
         // formId: The id attribute of the form to be parsed.
         function SendQueuUpdate(formId) {
@@ -580,11 +667,11 @@
         //On: Clicking the get crew players button.
         // Limit the crew players count to between 1 and 99.
         // if > The value of the crew players count is invalid.
-        // Show a snackbar message.
-        // Do not submit the competitors form.
+        //  Show a snackbar message.
+        //  Do not submit the competitors form.
         // else > The value of the crew players count is valid.
-        // Retrieve the crew players partial view using AJAX.
-        // Insert the partial view into the manage crew players container.
+        //  Retrieve the crew players partial view using AJAX.
+        //  Insert the partial view into the manage crew players container.
         $("body").on("click", "#getCrewPlayersButton", function () {
             if ($("#crewPlayersCount").val() < 1) {
                 $("#crewPlayersCount").val("1");
@@ -603,9 +690,9 @@
                     url: "/SuperSmashBros/GetCrewPlayers",
                     data: {
                         "count": $("#crewPlayersCount").val(),
-                        "series": $("input[name='Series']").val(),
-                        "game": $("input[name='Game']").val(),
-                        "format": $("input[name='Format']").val()
+                        "series": $("#manageCompetitorsForm").find("input[name='Series']").val(),
+                        "game": $("#manageCompetitorsForm").find("input[name='Game']").val(),
+                        "format": $("#manageCompetitorsForm").find("input[name='Format']").val()
                     },
                     dataType: "html",
                     success: function (data) {
@@ -624,8 +711,7 @@
         // Replace the btn-success class on the submit update button by the btn-danger class, resulting in the button becoming red.
         $("body").on("change input", "#manageCompetitorsForm :input", function () {
             if (!$("#submitCompetitorsButton").hasClass("btn-danger")) {
-                $("#submitCompetitorsButton").removeClass("btn-success");
-                $("#submitCompetitorsButton").addClass("btn-danger");
+                $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger");
             }
         });
 
@@ -680,12 +766,12 @@
         // On: Clicking the submit commentator button.
         // Submit the commentators form using AJAX.
         // if > The update was successful.
-        // Replace the btn-danger class on the submit update button by the btn-primary class, resulting in the button becoming blue.
-        // Show a snackbar message.
-        // Send a queu update through the WebSocket.
-        // Update the CSS monitor.
+        //  Replace the btn-danger class on the submit update button by the btn-primary class, resulting in the button becoming blue.
+        //  Show a snackbar message.
+        //  Send a queu update through the WebSocket.
+        //  Update the CSS monitor.
         // else > The update was unsuccessful.
-        // Show a snackbar message.
+        //  Show a snackbar message.
         $("#submitCommentatorsButton").click(function () {
             var manageCommentatorsForm = $("#manageCommentatorsForm");
             $.ajax({
@@ -698,8 +784,7 @@
 
                     if (data.Success == "True") {
                         if ($("#submitCommentatorsButton").hasClass("btn-danger")) {
-                            $("#submitCommentatorsButton").removeClass("btn-danger");
-                            $("#submitCommentatorsButton").addClass("btn-primary");
+                            $("#submitCommentatorsButton").removeClass("btn-danger").addClass("btn-primary");
                         }
 
                         // SendQueuUpdate("#manageCommentatorsForm");
@@ -723,8 +808,7 @@
         // Replace the btn-primary class on the submit update button by the btn-danger class, resulting in the button becoming red.
         $("body").on("change input", "#manageCommentatorsForm :input", function () {
             if (!$("#submitCommentatorsButton").hasClass("btn-danger")) {
-                $("#submitCommentatorsButton").removeClass("btn-primary");
-                $("#submitCommentatorsButton").addClass("btn-danger");
+                $("#submitCommentatorsButton").removeClass("btn-primary").addClass("btn-danger");
             }
         });
 
@@ -752,11 +836,11 @@
 
         // Summary:
         // if > The json is of type "overlayConnected".
-        // Increase clientsConnectedCount variable by 1.
-        // Add a new row to the WebSocket client monitor table body.
+        //  Increase clientsConnectedCount variable by 1.
+        //  Add a new row to the WebSocket client monitor table body.
         // else > The json is of type "overlayDisconnected".
-        // Decrease clientsConnectedCount variable by 1 if it's higher than 1.
-        // Remove the row from the WebSocket client monitor table body with the right data-full-path attribute value.
+        //  Decrease clientsConnectedCount variable by 1 if it's higher than 1.
+        //  Remove the row from the WebSocket client monitor table body with the right data-full-path attribute value.
         // PARAMETERS
         // jsonData: the json data received through the WebSocket
         function UpdateWebSocketClientMonitor(jsonData) {
@@ -840,15 +924,15 @@
         // Summary:
         // On: Clicking a toggle monitor button
         // if > The monitor associated with the button is enabled
-        // Disable the monitor associated with the button
-        // Update the clicked toggle button to show the monitor is disabled
+        //  Disable the monitor associated with the button
+        //  Update the clicked toggle button to show the monitor is disabled
         // else > The monitor associated with the button is disabled
-        // Enable the monitor associated with the button
-        // Update the clicked toggle button to show the monitor is enabled
+        //  Enable the monitor associated with the button
+        //  Update the clicked toggle button to show the monitor is enabled
         // if > The monitor associated to the button is the client monitor
-        // Reset the monitor to only show the the Livestream Production Manager
+        //  Reset the monitor to only show the the Livestream Production Manager
         // else > The monitor associated to the button is not the client monitor
-        // Reset the monitor to completely empty
+        //  Reset the monitor to completely empty
         $(".toggleMonitorButton").click(function () {
             if ($($(this).attr("data-monitor-id")).attr("data-enabled") == "True") {
                 $($(this).attr("data-monitor-id")).attr("data-enabled", "False");
@@ -864,8 +948,7 @@
             }
             else {
                 $($(this).attr("data-monitor-id")).attr("data-enabled", "True");
-                $(this).removeClass("btn-danger").addClass("btn-success");
-                $(this).html("<span class='glyphicon glyphicon-ok' style='font-size: 12px;'></span> Enabled");
+                $(this).removeClass("btn-danger").addClass("btn-success").html("<span class='glyphicon glyphicon-ok' style='font-size: 12px;'></span> Enabled");
             }
         });
 
@@ -882,25 +965,23 @@
         // Summary:
         // On: Clicking a toggle preview overlay button
         // if > The overlay preview associated with the button is enabled
-        // Disable the overlay preview associated with the button
-        // Update the clicked toggle button to show the overlay preview it is disabled
+        //  Disable the overlay preview associated with the button
+        //  Update the clicked toggle button to show the overlay preview it is disabled
         // else > the overlay preview associated with the button is disabled
-        // Enable the overlay previews associated with the button
-        // Update the clicked toggle button to show the overlay preview it is enabled
+        //  Enable the overlay previews associated with the button
+        //  Update the clicked toggle button to show the overlay preview it is enabled
         $("#togglePreviewOverlayButton").click(function () {
             if ($($(this).attr("data-preview-id")).attr("data-enabled") == "True") {
                 $($(this).attr("data-preview-id")).attr("data-enabled", "False");
                 $($(this).attr("data-preview-id")).removeAttr("src");
                 $($(this).attr("data-panel-id")).css("height", "40px");
                 $($(this).attr("data-preview-id")).css("height", "40px");
-                $(this).removeClass("btn-success").addClass("btn-danger");
-                $(this).html("<span class='glyphicon glyphicon-remove' style='font-size: 12px;'></span> Disabled");
+                $(this).removeClass("btn-success").addClass("btn-danger").html("<span class='glyphicon glyphicon-remove' style='font-size: 12px;'></span> Disabled");
             } else {
                 $($(this).attr("data-preview-id")).attr("data-enabled", "True");
                 $($(this).attr("data-panel-id")).css("height", "1080px");
                 $($(this).attr("data-preview-id")).css("height", "1080px");
-                $(this).removeClass("btn-danger").addClass("btn-success");
-                $(this).html("<span class='glyphicon glyphicon-ok' style='font-size: 12px;'></span> Enabled");
+                $(this).removeClass("btn-danger").addClass("btn-success").html("<span class='glyphicon glyphicon-ok' style='font-size: 12px;'></span> Enabled");
             }
         });
 
