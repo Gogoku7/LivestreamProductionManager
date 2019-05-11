@@ -1,6 +1,6 @@
 ﻿namespace LivestreamProductionManager.Models.FightingGames.SuperSmashBros
 {
-    public class CrewPlayerCssModel
+    public class SquadPlayerCssModel
     {
         public string NameAndSponsor { get; set; }
         public string Twitter { get; set; }

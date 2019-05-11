@@ -182,6 +182,13 @@
     <Compile Include="Models\FightingGames\SuperSmashBros\CrewCssModel.cs" />
     <Compile Include="Models\FightingGames\SuperSmashBros\CrewPlayerCssModel.cs" />
     <Compile Include="Models\FightingGames\SuperSmashBros\CrewsCssModel.cs" />
+    <Compile Include="Models\FightingGames\SuperSmashBros\SquadCssModel.cs" />
+    <Compile Include="Models\FightingGames\SuperSmashBros\SquadPlayerCssModel.cs" />
+    <Compile Include="Models\FightingGames\SuperSmashBros\SquadStrikeCssModel.cs" />
+    <Compile Include="ViewModels\FightingGames\SuperSmashBros\CrewPlayerPartialViewModel.cs" />
+    <Compile Include="ViewModels\FightingGames\SuperSmashBros\SquadPlayerViewModel.cs" />
+    <Compile Include="ViewModels\FightingGames\SuperSmashBros\SquadStrikeViewModel.cs" />
+    <Compile Include="ViewModels\FightingGames\SuperSmashBros\SquadViewModel.cs" />
     <Compile Include="WebSocket\QueuSocketHandler.cs" />
     <Compile Include="Controllers\SuperSmashBrosController.cs" />
     <Compile Include="Global.asax.cs">
@@ -228,11 +235,13 @@
     <Content Include="Content\highlight.css" />
     <Content Include="Content\highlight.dark.css" />
     <Content Include="favicon.ico" />
-    <Content Include="FightingGames\CssTemplates\CrewPlayerEliminatedTemplateCss.css" />
+    <Content Include="FightingGames\CssTemplates\CrewPlayerEliminatedTemplateFile.css" />
     <Content Include="FightingGames\CssTemplates\ImageTemplateFile.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\CssTemplates\CrewPlayerActiveTemplateCss.css" />
+    <Content Include="FightingGames\CssTemplates\CrewPlayerActiveTemplateFile.css" />
+    <Content Include="FightingGames\CssTemplates\SquadCharacterEliminatedTemplateFile.css" />
+    <Content Include="FightingGames\CssTemplates\SquadPlayerActiveTemplateFile.css" />
     <Content Include="FightingGames\CssTemplates\SuperSmashBros\SuperSmashBrosCrewsTemplate.css" />
     <Content Include="FightingGames\CssTemplates\SuperSmashBros\SuperSmashBrosDoublesTemplate.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -240,6 +249,7 @@
     <Content Include="FightingGames\CssTemplates\SuperSmashBros\SuperSmashBrosSinglesTemplate.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="FightingGames\CssTemplates\SuperSmashBros\SuperSmashBrosSquadStrikeTemplate.css" />
     <Content Include="FightingGames\CssTemplates\TextTemplateFile.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -537,6 +547,7 @@
     <Content Include="FightingGames\SuperSmashBros\Ultimate\Singles\PlayerBackgrounds\Player2Background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\GameOverlay.html" />
     <Content Include="FightingGames\SuperSmashBros\WiiU\CharacterIcons\bayonetta.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -869,14 +880,13 @@
     <Content Include="Views\SuperSmashBros\SmashdownBigTeams\ManageCompetitors.cshtml" />
     <Content Include="Views\SuperSmashBros\SmashdownDoubles\ManageCompetitors.cshtml" />
     <Content Include="Views\SuperSmashBros\SmashdownSingles\ManageCompetitors.cshtml" />
-    <Content Include="Views\SuperSmashBros\SquadStrike3v3\ManageCompetitors.cshtml" />
-    <Content Include="Views\SuperSmashBros\SquadStrike5v5\ManageCompetitors.cshtml" />
     <Content Include="Views\SuperSmashBros\Crews\ManageCompetitors.cshtml" />
     <Content Include="Views\SuperSmashBros\Doubles\ManageCompetitors.cshtml" />
     <Content Include="Views\SuperSmashBros\IronMan\ManageCompetitors.cshtml" />
     <Content Include="Views\Commentators\CommentatorRow.cshtml" />
     <Content Include="Views\SuperSmashBros\Crews\CrewPlayerRow.cshtml" />
     <Content Include="Views\About\Version.cshtml" />
+    <Content Include="Views\SuperSmashBros\SquadStrike\ManageCompetitors.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -903,8 +913,9 @@
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\SmashdownBigTeams\CSS\" />
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\SmashdownDoubles\CSS\" />
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\SmashdownSingles\CSS\" />
-    <Folder Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike3v3\CSS\" />
-    <Folder Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike5v5\CSS\" />
+    <Folder Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\BoxBackground\" />
+    <Folder Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\CSS\" />
+    <Folder Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\SquadBackgrounds\" />
     <Folder Include="FightingGames\SuperSmashBros\WiiU\BigTeams\css\" />
     <Folder Include="FightingGames\SuperSmashBros\WiiU\Crews\css\" />
     <Folder Include="FightingGames\SuperSmashBros\WiiU\IronMan\css\" />

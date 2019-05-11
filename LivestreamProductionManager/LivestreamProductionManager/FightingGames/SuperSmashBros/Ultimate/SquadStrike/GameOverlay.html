@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="CSS/Styles.css">
+        <link rel="stylesheet" type="text/css" href="CSS/Content.css">
+        <script src="../../JavaScript/jQuery.js"></script>
+        <script src="../../JavaScript/fitty.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            
+        </div>
+
+        <div class="snackbar" id="snackbar"></div>
+    </body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        fitty('.squadScore', { minSize: 8, maxSize: 40, multiLine: false });
+        fitty('.squadName', { minSize: 8, maxSize: 28, multiLine: false });
+        fitty('.squadPlayerName', { minSize: 8, maxSize: 28, multiLine: false });
+
+        var uri = "ws://localhost:56613/WebSocket/Queu";
+
+        websocket = new WebSocket(uri);
+
+        websocket.onopen = function () {
+            console.log("Connected to server.");
+            var jsonData = { "type": "overlayConnected", "data": window.location.href };
+            websocket.send(JSON.stringify(jsonData));
+        };
+
+        websocket.onerror = function (event) {
+            showSnackbar("Something went wrong with the connection to the Queu WebSocket to receive live updates. If Livestream Production Manager is deployed to IIS, make sure there's no port like ':56613' defined after 'localhost' and IIS has WebSockets enabled.");
+
+            console.log("Something went wrong with the WebSocket connection:");
+            console.log(event);
+        };
+
+        websocket.onmessage = function (event) {
+            console.log(event.data);
+
+            var jsonData = JSON.parse(event.data);
+
+            if (jsonData.type == "queu") {
+                $.each(jsonData.data, function (i) {
+                    $(jsonData.data[i]).addClass("changing");
+                });
+
+                setTimeout(function () {
+                    var queryString = '?reload=' + new Date().getTime();
+                    $('link[rel="stylesheet"]').not('link[href="css/styles.css"]').each(function () {
+                        this.href = this.href.replace(/\?.*|$/, queryString);
+                    });
+
+                    fitty('.squadScore', { minSize: 8, maxSize: 35, multiLine: false });
+                    fitty('.squadName', { minSize: 8, maxSize: 28, multiLine: false });
+                    fitty('.squadPlayerName', { minSize: 8, maxSize: 28, multiLine: false });
+
+                    $.each(jsonData.data, function (i) {
+                        $(jsonData.data[i]).removeClass("changing").addClass("changed");
+                    });
+
+                    setTimeout(function () {
+                        $.each(jsonData.data, function (i) {
+                            $(jsonData.data[i]).removeClass("changed");
+                        });
+                    }, 500);
+                }, 500);
+            }
+            else if (jsonData.type == "forceResize") {
+                $(".squadScore").addClass("changing");
+                $(".squadName").addClass("changing");
+                $(".squadPlayerName").addClass("changing");
+                setTimeout(function () {
+                    fitty('.squadScore', { minSize: 8, maxSize: 35, multiLine: false });
+                    fitty('.squadName', { minSize: 8, maxSize: 28, multiLine: false });
+                    fitty('.squadPlayerName', { minSize: 8, maxSize: 28, multiLine: false });
+
+                    $(".squadScore").removeClass("changing").addClass("changed");
+                    $(".squadName").removeClass("changing").addClass("changed");
+                    $(".squadPlayerName").removeClass("changing").addClass("changed");
+
+                    setTimeout(function () {
+                        $(".squadScore").removeClass("changed");
+                        $(".squadName").removeClass("changed");
+                        $(".squadPlayerName").removeClass("changed");
+                    }, 500);
+                }, 500);
+            }
+        };
+    });
+
+    $(window).on("beforeunload", function () {
+        var jsonData = { "type": "overlayDisconnected", "data": window.location.href };
+        websocket.send(JSON.stringify(jsonData));
+        websocket.close();
+    });
+
+    function showSnackbar(message) {
+        $("#snackbar").html(message);
+
+        var marginLeft = ($(window).width() - $("#snackbar").outerWidth()) / 2;
+        $("#snackbar").css("left", marginLeft >= 0 ? marginLeft : 0);
+
+        $("#snackbar").addClass("show");
+        setTimeout(function () {
+            $("#snackbar").removeClass("show");
+        }, 9000);
+    }
+</script>

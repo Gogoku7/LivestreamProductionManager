@@ -1,6 +1,6 @@
 ﻿namespace LivestreamProductionManager.ViewModels.FightingGames.SuperSmashBros
 {
-    public class CrewPlayerViewModel
+    public class SquadPlayerViewModel
     {
         public string Name { get; set; }
         public string Twitter { get; set; }

@@ -85,7 +85,7 @@ namespace LivestreamProductionManager.Controllers
 
                 if (crewsViewModel.Crew1.Players == null || crewsViewModel.Crew2.Players == null)
                 {
-                    throw new ArgumentNullException("One of the players is null");
+                    throw new ArgumentNullException("One of the crews' players is null");
                 }
 
                 _smashOverlayManager.UpdateCrewsOverlay(crewsViewModel);
@@ -103,7 +103,36 @@ namespace LivestreamProductionManager.Controllers
         {
             try
             {
-                return PartialView($"~/Views/{pathsViewModel.Series}/{pathsViewModel.Format}/CrewPlayerRow.cshtml", count);
+                var crewPlayerPartialViewModel = new CrewPlayerPartialViewModel
+                {
+                    Count = count,
+                    Characters = _configReader.GetCharactersFromConfig(pathsViewModel.PathToGame),
+                };
+
+                return PartialView($"~/Views/{pathsViewModel.Series}/{pathsViewModel.Format}/CrewPlayerRow.cshtml", crewPlayerPartialViewModel);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+                throw;
+            }
+        }
+
+        [HttpPost]
+        public JsonResult UpdateSquadStrike(SquadStrikeViewModel squadStrikeViewModel)
+        {
+            try
+            {
+                Log.Information($"Submitted data: { JsonConvert.SerializeObject(squadStrikeViewModel) }");
+
+                if (squadStrikeViewModel.Squad1.Players == null || squadStrikeViewModel.Squad2.Players == null)
+                {
+                    throw new ArgumentNullException("One of the squad's players is null");
+                }
+
+                _smashOverlayManager.UpdateSquadStrikeOverlay(squadStrikeViewModel);
+
+                return SuccessSnackbar("Successfully saved competitor files.");
             }
             catch (Exception ex)
             {

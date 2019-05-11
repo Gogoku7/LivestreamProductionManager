@@ -48,15 +48,9 @@
     "PathToFormat": "~/FightingGames/SuperSmashBros/Ultimate/SmashdownBigTeams/"
   },
   {
-    "FormatName": "Squad Strike 3v3",
-    "FORMAT": "SquadStrike3v3",
-    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Ultimate/SquadStrike3v3",
-    "PathToFormat": "~/FightingGames/SuperSmashBros/Ultimate/SquadStrike3v3/"
-  },
-  {
-    "FormatName": "Squad Strike 5v5",
-    "FORMAT": "SquadStrike5v5",
-    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Ultimate/SquadStrike5v5",
-    "PathToFormat": "~/FightingGames/SuperSmashBros/Ultimate/SquadStrike5v5/"
+    "FormatName": "Squad Strike",
+    "FORMAT": "SquadStrike",
+    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Ultimate/SquadStrike",
+    "PathToFormat": "~/FightingGames/SuperSmashBros/Ultimate/SquadStrike/"
   }
 ]

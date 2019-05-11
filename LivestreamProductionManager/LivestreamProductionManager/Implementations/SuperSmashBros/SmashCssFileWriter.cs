@@ -59,5 +59,21 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 throw;
             }
         }
+
+        public void WriteSquadStrikeCssFile(string pathToFormat, SquadStrikeCssModel squadStrikeCssModel)
+        {
+            try
+            {
+                var templateCssFile = _templateFileReader.ReadTemplateFile("SuperSmashBros/SuperSmashBrosSquadStrikeTemplate.css");
+                var cssFileContent = _smashTextReplacer.ReplaceCssForSquadStrike(templateCssFile, squadStrikeCssModel);
+
+                File.WriteAllText(HttpContext.Current.Server.MapPath(pathToFormat + "CSS/Content.css"), cssFileContent);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+                throw;
+            }
+        }
     }
 }

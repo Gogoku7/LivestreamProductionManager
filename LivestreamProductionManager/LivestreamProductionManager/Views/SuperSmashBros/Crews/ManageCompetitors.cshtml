@@ -80,14 +80,14 @@
     <div class="row">
         <div class="col-md-6 text-center">
             <label>Port</label>
-            <select class="form-control" name="crew1.Port" id="crew1Port" data-id="#crew1Port" data-side="1" data-opposite-id="#crew2Port" data-default="" >
+            <select class="form-control" name="Crew1.Port" id="crew1Port" data-id="#crew1Port" data-side="1" data-opposite-id="#crew2Port" data-default="" >
                 <option value="" selected disabled hidden>Choose port</option>
                 @Html.Raw(portOptionsStringBuilder.ToString())
             </select>
         </div>
         <div class="col-md-6 text-center">
             <label>Port</label>
-            <select class="form-control" name="crew2.Port" id="crew2Port" data-id="#crew2Port" data-side="2" data-opposite-id="#crew1Port" data-default="" >
+            <select class="form-control" name="Crew2.Port" id="crew2Port" data-id="#crew2Port" data-side="2" data-opposite-id="#crew1Port" data-default="" >
                 <option value="" selected disabled hidden>Choose port</option>
                 @Html.Raw(portOptionsStringBuilder.ToString())
             </select>
@@ -108,7 +108,7 @@
             <input class="form-control" type="number" id="crewPlayersCount" min="1" max="99" />
         </div>
         <div class="col-md-2">
-            <a class="btn btn-primary" id="getCrewPlayersButton">Update</a>
+            <button class="btn btn-primary" type="button" id="getCrewPlayersButton"><span class="glyphicon glyphicon-arrow-down" style="font-size: 11px;"></span> Update</button>
         </div>
         <div class="col-md-3">
 

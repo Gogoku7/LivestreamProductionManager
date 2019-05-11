@@ -1,6 +1,13 @@
-﻿@model int
+﻿@using System.Text;
+@model LivestreamProductionManager.ViewModels.FightingGames.SuperSmashBros.CrewPlayerPartialViewModel
 
 @{
+    var characterOptionsStringBuilder = new StringBuilder();
+    foreach (var character in Model.Characters)
+    {
+        characterOptionsStringBuilder.AppendLine($"<option value='{character.CssValue}'>{character.CharacterName}</option>");
+    }
+
     Layout = null;
 }
 
@@ -11,19 +18,28 @@
     <div class="col-md-1 text-center">
         <label>Active</label>
     </div>
-    <div class="col-md-2 text-center">
-        <label>Twitter</label>
-    </div>
-    <div class="col-md-2 text-center">
-        <label>Name</label>
+    <div class="col-md-4">
+        <div class="col-md-4 text-center">
+            <label>Character</label>
+        </div>
+        <div class="col-md-4 text-center">
+            <label>Twitter</label>
+        </div>
+        <div class="col-md-4 text-center">
+            <label>Name</label>
+        </div>
     </div>
 
-
-    <div class="col-md-2 text-center">
-        <label>Name</label>
-    </div>
-    <div class="col-md-2 text-center">
-        <label>Twitter</label>
+    <div class="col-md-4">
+        <div class="col-md-4 text-center">
+            <label>Name</label>
+        </div>
+        <div class="col-md-4 text-center">
+            <label>Twitter</label>
+        </div>
+        <div class="col-md-4 text-center">
+            <label>Character</label>
+        </div>
     </div>
     <div class="col-md-1 text-center">
         <label>Active</label>
@@ -33,7 +49,7 @@
     </div>
 </div>
 
-@for (var i = 0; i < Model; i++)
+@for (var i = 0; i < Model.Count; i++)
 {
     <div class="row" id="crewPlayer-@i">
         <div class="col-md-1">
@@ -50,18 +66,34 @@
             </div>
             <div class="col-md-4" style="width:auto;"></div>
         </div>
-        <div class="col-md-2">
-            <input type="text" class="form-control" name="Crew1.Players[@i].Twitter" id="crew1_player@{@i}__Twitter" data-id="#crew1Player@(i+1)TwitterText" data-side="1" data-opposite-id="#crew2_player@{@i}__Twitter" data-default="" />
-        </div>
-        <div class="col-md-2">
-            <input type="text" class="form-control" name="Crew1.Players[@i].Name" id="crew1_player@{@i}__Name" data-id="#crew1Player@(i+1)NameText" data-side="1" data-opposite-id="#crew2_player@{@i}__Name" data-default="-" />
+        <div class="col-md-4">
+            <div class="col-md-4">
+                <select class="form-control" name="Crew1.Players[@i].Character" id="crew1_player@{@i}__Character" data-id="#crew1Player@(i+1)Character" data-side="1" data-opposite-id="#crew2_player@{@i}__Character" data-default="">
+                    <option value="" selected disabled hidden>Choose character</option>
+                    @Html.Raw(characterOptionsStringBuilder.ToString())
+                </select>
+            </div>
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="Crew1.Players[@i].Twitter" id="crew1_player@{@i}__Twitter" data-id="#crew1Player@(i+1)TwitterText" data-side="1" data-opposite-id="#crew2_player@{@i}__Twitter" data-default="" />
+            </div>
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="Crew1.Players[@i].Name" id="crew1_player@{@i}__Name" data-id="#crew1Player@(i+1)NameText" data-side="1" data-opposite-id="#crew2_player@{@i}__Name" data-default="-" />
+            </div>
         </div>
 
-        <div class="col-md-2">
-            <input type="text" class="form-control" name="Crew2.Players[@i].Name" id="crew2_player@{@i}__Name" data-id="#crew2Player@(i+1)NameText" data-side="2" data-opposite-id="#crew1_player@{@i}__Name" data-default="-" />
-        </div>
-        <div class="col-md-2">
-            <input type="text" class="form-control" name="Crew2.Players[@i].Twitter" id="crew2_player@{@i}__Twitter" data-id="#crew2Player@(i+1)TwitterText" data-side="2" data-opposite-id="#crew1_player@{@i}__Twitter" data-default="" />
+        <div class="col-md-4">
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="Crew2.Players[@i].Name" id="crew2_player@{@i}__Name" data-id="#crew2Player@(i+1)NameText" data-side="2" data-opposite-id="#crew1_player@{@i}__Name" data-default="-" />
+            </div>
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="Crew2.Players[@i].Twitter" id="crew2_player@{@i}__Twitter" data-id="#crew2Player@(i+1)TwitterText" data-side="2" data-opposite-id="#crew1_player@{@i}__Twitter" data-default="" />
+            </div>
+            <div class="col-md-4">
+                <select class="form-control" name="Crew2.Players[@i].Character" id="crew2_player@{@i}__Character" data-id="#crew2Player@(i+1)Character" data-side="2" data-opposite-id="#crew1_player@{@i}__Character" data-default="">
+                    <option value="" selected disabled hidden>Choose character</option>
+                    @Html.Raw(characterOptionsStringBuilder.ToString())
+                </select>
+            </div>
         </div>
         <div class="col-md-1">
             <div class="col-md-4" style="width:auto;"></div>

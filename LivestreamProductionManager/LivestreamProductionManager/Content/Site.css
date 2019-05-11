@@ -123,7 +123,7 @@ div.panel {
     margin-bottom: 4px;
 }
 
-#crewPlayersContainer > .row {
+#crewPlayersContainer > .row, #squadPlayersContainer > .row {
     margin-bottom: 4px;
 }
 
@@ -148,6 +148,14 @@ div.panel {
     height: 1080px;
     overflow: hidden;
     border: 0;
+}
+
+.previewEnabled {
+    height: 1080px;
+}
+
+.previewDisabled {
+    height: 40px;
 }
 
 /* Monitor */

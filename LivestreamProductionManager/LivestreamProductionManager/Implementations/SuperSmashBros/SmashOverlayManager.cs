@@ -18,13 +18,17 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
         private readonly string _imageTemplateCss;
         private readonly string _crewPlayerActiveTemplateCss;
         private readonly string _crewPlayerEliminatedTemplateCss;
+        private readonly string _squadPlayerActiveTemplateCss;
+        private readonly string _squadCharacterEliminatedTemplateCss;
 
         public SmashOverlayManager()
         {
             _textTemplateCss = _templatefileReader.ReadTemplateFile("TextTemplateFile.css");
             _imageTemplateCss = _templatefileReader.ReadTemplateFile("ImageTemplateFile.css");
-            _crewPlayerActiveTemplateCss = _templatefileReader.ReadTemplateFile("CrewPlayerActiveTemplateCss.css");
-            _crewPlayerEliminatedTemplateCss = _templatefileReader.ReadTemplateFile("CrewPlayerEliminatedTemplateCss.css");
+            _crewPlayerActiveTemplateCss = _templatefileReader.ReadTemplateFile("CrewPlayerActiveTemplateFile.css");
+            _crewPlayerEliminatedTemplateCss = _templatefileReader.ReadTemplateFile("CrewPlayerEliminatedTemplateFile.css");
+            _squadPlayerActiveTemplateCss = _templatefileReader.ReadTemplateFile("CrewPlayerActiveTemplateFile.css");
+            _squadCharacterEliminatedTemplateCss = _templatefileReader.ReadTemplateFile("SquadCharacterEliminatedTemplateFile.css");
         }
 
         public void UpdateSinglesOverlay(SinglesViewModel singlesViewModel)
@@ -103,18 +107,23 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
 
                 for (var i = 0; i < crewsViewModel.Crew1.Players.Count; i++)
                 {
+                    crewsCssModel.Crew1.CrewPlayerCssModels.Add(new CrewPlayerCssModel());
+
                     if (crewsViewModel.Crew1.Players[i].Active)
                     {
-                        crewsCssModel.Crew1.PlayerNamesAndSponsors += _textReplacer.ReplaceIdAndValue(_crewPlayerActiveTemplateCss, $"crew1Player{i+1}NameText", crewsViewModel.Crew1.Players[i].Name) + "\r\n";
+                        crewsCssModel.Crew1.CrewPlayerCssModels[i].NameAndSponsor = _textReplacer.ReplaceIdAndValue(_crewPlayerActiveTemplateCss, $"crew1Player{i + 1}NameText", crewsViewModel.Crew1.Players[i].Name) + "\r\n";
                     }
                     else if (crewsViewModel.Crew1.Players[i].Eliminated)
                     {
-                        crewsCssModel.Crew1.PlayerNamesAndSponsors += _textReplacer.ReplaceIdAndValue(_crewPlayerEliminatedTemplateCss, $"crew1Player{i+1}NameText", crewsViewModel.Crew1.Players[i].Name) + "\r\n";
+                        crewsCssModel.Crew1.CrewPlayerCssModels[i].NameAndSponsor = _textReplacer.ReplaceIdAndValue(_crewPlayerEliminatedTemplateCss, $"crew1Player{i + 1}NameText", crewsViewModel.Crew1.Players[i].Name) + "\r\n";
                     }
                     else
                     {
-                        crewsCssModel.Crew1.PlayerNamesAndSponsors += _textReplacer.ReplaceIdAndValue(_textTemplateCss, $"crew1Player{i+1}NameText", crewsViewModel.Crew1.Players[i].Name) + "\r\n";
+                        crewsCssModel.Crew1.CrewPlayerCssModels[i].NameAndSponsor = _textReplacer.ReplaceIdAndValue(_textTemplateCss, $"crew1Player{i + 1}NameText", crewsViewModel.Crew1.Players[i].Name) + "\r\n";
                     }
+
+                    crewsCssModel.Crew1.CrewPlayerCssModels[i].Twitter = _textReplacer.ReplaceIdAndValue(_textTemplateCss, $"crew1Player{i + 1}TwitterText", crewsViewModel.Crew1.Players[i].Twitter ?? "") + "\r\n";
+                    crewsCssModel.Crew1.CrewPlayerCssModels[i].CharacterPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, $"crew1Player{i + 1}Character", crewsViewModel.Crew1.Players[i].Character ?? "../../CharacterIcons/random.png") + "\r\n";
                 }
 
                 crewsCssModel.Crew2.Name = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "crew2NameText", crewsViewModel.Crew2.Name ?? "");
@@ -124,18 +133,23 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
 
                 for (var i = 0; i < crewsViewModel.Crew2.Players.Count; i++)
                 {
+                    crewsCssModel.Crew2.CrewPlayerCssModels.Add(new CrewPlayerCssModel());
+
                     if (crewsViewModel.Crew2.Players[i].Active)
                     {
-                        crewsCssModel.Crew2.PlayerNamesAndSponsors += _textReplacer.ReplaceIdAndValue(_crewPlayerActiveTemplateCss, $"crew2Player{i + 1}NameText", crewsViewModel.Crew2.Players[i].Name) + "\r\n";
+                        crewsCssModel.Crew2.CrewPlayerCssModels[i].NameAndSponsor = _textReplacer.ReplaceIdAndValue(_crewPlayerActiveTemplateCss, $"crew2Player{i + 1}NameText", crewsViewModel.Crew2.Players[i].Name) + "\r\n";
                     }
                     else if (crewsViewModel.Crew2.Players[i].Eliminated)
                     {
-                        crewsCssModel.Crew2.PlayerNamesAndSponsors += _textReplacer.ReplaceIdAndValue(_crewPlayerEliminatedTemplateCss, $"crew2Player{i + 1}NameText", crewsViewModel.Crew2.Players[i].Name) + "\r\n";
+                        crewsCssModel.Crew2.CrewPlayerCssModels[i].NameAndSponsor = _textReplacer.ReplaceIdAndValue(_crewPlayerEliminatedTemplateCss, $"crew2Player{i + 1}NameText", crewsViewModel.Crew2.Players[i].Name) + "\r\n";
                     }
                     else
                     {
-                        crewsCssModel.Crew2.PlayerNamesAndSponsors += _textReplacer.ReplaceIdAndValue(_textTemplateCss, $"crew2Player{i + 1}NameText", crewsViewModel.Crew2.Players[i].Name) + "\r\n";
+                        crewsCssModel.Crew2.CrewPlayerCssModels[i].NameAndSponsor = _textReplacer.ReplaceIdAndValue(_textTemplateCss, $"crew2Player{i + 1}NameText", crewsViewModel.Crew2.Players[i].Name) + "\r\n";
                     }
+
+                    crewsCssModel.Crew2.CrewPlayerCssModels[i].Twitter = _textReplacer.ReplaceIdAndValue(_textTemplateCss, $"crew2Player{i + 1}TwitterText", crewsViewModel.Crew2.Players[i].Twitter ?? "") + "\r\n";
+                    crewsCssModel.Crew2.CrewPlayerCssModels[i].CharacterPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, $"crew2Player{i + 1}Character", crewsViewModel.Crew2.Players[i].Character ?? "../../CharacterIcons/random.png") + "\r\n";
                 }
 
                 crewsCssModel.Tournament = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "tournamentText", crewsViewModel.Tournament ?? "");
@@ -144,6 +158,90 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 crewsCssModel.BestOf = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "bestOfText", crewsViewModel.BestOf ?? "");
 
                 _fileWriter.WriteCrewsCssFile(crewsViewModel.PathToFormat, crewsCssModel);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+                throw;
+            }
+        }
+
+        public void UpdateSquadStrikeOverlay(SquadStrikeViewModel squadStrikeViewModel)
+        {
+            try
+            {
+                var squadStrikeCssModel = new SquadStrikeCssModel();
+
+                squadStrikeCssModel.Squad1.Name = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "squad1NameText", squadStrikeViewModel.Squad1.Name ?? "");
+                squadStrikeCssModel.Squad1.PortPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "squad1Port", squadStrikeViewModel.Squad1.Port ?? "../../PlayerPorts/playerPortNo.png");
+                squadStrikeCssModel.Squad1.Score = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "squad1ScoreText", squadStrikeViewModel.Squad1.Score ?? "?");
+
+                for (var i = 0; i < squadStrikeViewModel.Squad1.Players.Count; i++)
+                {
+                    squadStrikeCssModel.Squad1.SquadPlayerCssModels.Add(new SquadPlayerCssModel());
+
+                    if (i < 4)
+                    {
+                        if (squadStrikeViewModel.Squad1.Players[i].Active)
+                        {
+                            squadStrikeCssModel.Squad1.SquadPlayerCssModels[i].NameAndSponsor = _textReplacer.ReplaceIdAndValue(_squadPlayerActiveTemplateCss, $"squad1Player{i + 1}NameText", squadStrikeViewModel.Squad1.Players[i].Name) + "\r\n";
+                        }
+                        else
+                        {
+                            squadStrikeCssModel.Squad1.SquadPlayerCssModels[i].NameAndSponsor = _textReplacer.ReplaceIdAndValue(_textTemplateCss, $"squad1Player{i + 1}NameText", squadStrikeViewModel.Squad1.Players[i].Name) + "\r\n";
+                        }
+
+                        squadStrikeCssModel.Squad1.SquadPlayerCssModels[i].Twitter = _textReplacer.ReplaceIdAndValue(_textTemplateCss, $"squad1Player{i + 1}TwitterText", squadStrikeViewModel.Squad1.Players[i].Twitter ?? "") + "\r\n";
+                    }
+
+                    if (squadStrikeViewModel.Squad1.Players[i].Eliminated)
+                    {
+                        squadStrikeCssModel.Squad1.SquadPlayerCssModels[i].CharacterPath = _textReplacer.ReplaceIdAndValue(_squadCharacterEliminatedTemplateCss, $"squad1Character{i + 1}", squadStrikeViewModel.Squad1.Players[i].Character ?? "../../CharacterIcons/random.png") + "\r\n";
+                    }
+                    else
+                    {
+                        squadStrikeCssModel.Squad1.SquadPlayerCssModels[i].CharacterPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, $"squad1Character{i + 1}", squadStrikeViewModel.Squad1.Players[i].Character ?? "../../CharacterIcons/random.png") + "\r\n";
+                    }
+                }
+
+                squadStrikeCssModel.Squad2.Name = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "squad2NameText", squadStrikeViewModel.Squad2.Name ?? "");
+                squadStrikeCssModel.Squad2.PortPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "squad2Port", squadStrikeViewModel.Squad2.Port ?? "../../PlayerPorts/playerPortNo.png");
+                squadStrikeCssModel.Squad2.Score = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "squad2ScoreText", squadStrikeViewModel.Squad2.Score ?? "?");
+
+                for (var i = 0; i < squadStrikeViewModel.Squad2.Players.Count; i++)
+                {
+                    squadStrikeCssModel.Squad2.SquadPlayerCssModels.Add(new SquadPlayerCssModel());
+
+                    if (i < 4)
+                    {
+                        if (squadStrikeViewModel.Squad2.Players[i].Active)
+                        {
+                            squadStrikeCssModel.Squad2.SquadPlayerCssModels[i].NameAndSponsor = _textReplacer.ReplaceIdAndValue(_squadPlayerActiveTemplateCss, $"squad2Player{i + 1}NameText", squadStrikeViewModel.Squad2.Players[i].Name) + "\r\n";
+                        }
+                        else
+                        {
+                            squadStrikeCssModel.Squad2.SquadPlayerCssModels[i].NameAndSponsor = _textReplacer.ReplaceIdAndValue(_textTemplateCss, $"squad2Player{i + 1}NameText", squadStrikeViewModel.Squad2.Players[i].Name) + "\r\n";
+                        }
+
+                        squadStrikeCssModel.Squad2.SquadPlayerCssModels[i].Twitter = _textReplacer.ReplaceIdAndValue(_textTemplateCss, $"squad2Player{i + 1}TwitterText", squadStrikeViewModel.Squad2.Players[i].Twitter ?? "") + "\r\n";
+                    }
+
+                    if (squadStrikeViewModel.Squad2.Players[i].Eliminated)
+                    {
+                        squadStrikeCssModel.Squad2.SquadPlayerCssModels[i].CharacterPath = _textReplacer.ReplaceIdAndValue(_squadCharacterEliminatedTemplateCss, $"squad2Character{i + 1}", squadStrikeViewModel.Squad2.Players[i].Character ?? "../../CharacterIcons/random.png") + "\r\n";
+                    }
+                    else
+                    {
+                        squadStrikeCssModel.Squad2.SquadPlayerCssModels[i].CharacterPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, $"squad2Character{i + 1}", squadStrikeViewModel.Squad2.Players[i].Character ?? "../../CharacterIcons/random.png") + "\r\n";
+                    }
+                }
+
+                squadStrikeCssModel.Tournament = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "tournamentText", squadStrikeViewModel.Tournament ?? "");
+                squadStrikeCssModel.Extra = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "extraText", squadStrikeViewModel.Extra ?? "");
+                squadStrikeCssModel.Round = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "roundText", squadStrikeViewModel.Round ?? "");
+                squadStrikeCssModel.BestOf = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "bestOfText", squadStrikeViewModel.BestOf ?? "");
+
+                _fileWriter.WriteSquadStrikeCssFile(squadStrikeViewModel.PathToFormat, squadStrikeCssModel);
             }
             catch (Exception ex)
             {

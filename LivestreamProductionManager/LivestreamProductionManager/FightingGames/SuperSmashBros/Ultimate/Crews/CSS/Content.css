@@ -7,23 +7,70 @@
     color: yellow;
 }
 
+
 #crew1Player2NameText:before {
-    content: "Mr. R";
+    content: "Mr .R";
     color: lightgray;
 }
+
 
 #crew1Player3NameText:before {
     content: "Sodrek";
     color: lightgray;
 }
 
+
 #crew1Player4NameText:before {
     content: "iStudying";
 }
+
 #crew1Player5NameText:before {
     content: "G-danzee";
 }
 
+
+
+#crew1Player1TwitterText:before {
+    content: "";
+}
+
+#crew1Player2TwitterText:before {
+    content: "";
+}
+
+#crew1Player3TwitterText:before {
+    content: "";
+}
+
+#crew1Player4TwitterText:before {
+    content: "";
+}
+
+#crew1Player5TwitterText:before {
+    content: "";
+}
+
+
+
+#crew1Player1Character {
+    background-image: url('../../CharacterIcons/wario.png');
+}
+
+#crew1Player2Character {
+    background-image: url('../../CharacterIcons/sheik.png');
+}
+
+#crew1Player3Character {
+    background-image: url('../../CharacterIcons/fox.png');
+}
+
+#crew1Player4Character {
+    background-image: url('../../CharacterIcons/greninja.png');
+}
+
+#crew1Player5Character {
+    background-image: url('../../CharacterIcons/sheik.png');
+}
 
 
 
@@ -48,23 +95,70 @@
     color: yellow;
 }
 
+
 #crew2Player2NameText:before {
-    content: "Larry lurr";
+    content: "Larry Lurr";
     color: lightgray;
 }
 
+
 #crew2Player3NameText:before {
     content: "ZeRo";
+    color: lightgray;
 }
+
+
 #crew2Player4NameText:before {
     content: "Nairo";
-    color: lightgray;
 }
 
 #crew2Player5NameText:before {
     content: "Esam";
 }
 
+
+
+#crew2Player1TwitterText:before {
+    content: "";
+}
+
+#crew2Player2TwitterText:before {
+    content: "";
+}
+
+#crew2Player3TwitterText:before {
+    content: "";
+}
+
+#crew2Player4TwitterText:before {
+    content: "";
+}
+
+#crew2Player5TwitterText:before {
+    content: "";
+}
+
+
+
+#crew2Player1Character {
+    background-image: url('../../CharacterIcons/pichu.png');
+}
+
+#crew2Player2Character {
+    background-image: url('../../CharacterIcons/fox.png');
+}
+
+#crew2Player3Character {
+    background-image: url('../../CharacterIcons/cloud.png');
+}
+
+#crew2Player4Character {
+    background-image: url('../../CharacterIcons/zerosuitsamus.png');
+}
+
+#crew2Player5Character {
+    background-image: url('../../CharacterIcons/pikachu.png');
+}
 
 
 

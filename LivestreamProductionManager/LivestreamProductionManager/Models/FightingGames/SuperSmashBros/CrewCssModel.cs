@@ -1,4 +1,6 @@
-﻿namespace LivestreamProductionManager.Models.FightingGames.SuperSmashBros
+﻿using System.Collections.Generic;
+
+namespace LivestreamProductionManager.Models.FightingGames.SuperSmashBros
 {
     public class CrewCssModel
     {
@@ -6,7 +8,11 @@
         public string StocksLeft { get; set; }
         public string CharacterPath { get; set; }
         public string PortPath { get; set; }
-        public string PlayerNamesAndSponsors { get; set; }
-        public string Twitters { get; set; }
+        public List<CrewPlayerCssModel> CrewPlayerCssModels { get; set; }
+
+        public CrewCssModel()
+        {
+            CrewPlayerCssModels = new List<CrewPlayerCssModel>();
+        }
     }
 }

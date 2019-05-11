@@ -1,0 +1,167 @@
+#squad1NameText:before {
+    content: "Europe";
+}
+
+#squad1Player1NameText:before {
+    content: "Gogoku7";
+    color: yellow;
+}
+
+
+#squad1Player2NameText:before {
+    content: "iStudying";
+}
+
+#squad1Player3NameText:before {
+    content: "G-danzee";
+}
+
+#squad1Player4NameText:before {
+    content: "Sodrek";
+}
+
+
+
+
+#squad1Player1TwitterText:before {
+    content: "";
+}
+
+#squad1Player2TwitterText:before {
+    content: "";
+}
+
+#squad1Player3TwitterText:before {
+    content: "";
+}
+
+#squad1Player4TwitterText:before {
+    content: "";
+}
+
+
+
+
+#squad1Character1 {
+    background-image: url('../../CharacterIcons/bayonetta.png');
+}
+
+#squad1Character2 {
+    background-image: url('../../CharacterIcons/bowser.png');
+    filter: grayscale(100%);
+}
+
+
+#squad1Character3 {
+    background-image: url('../../CharacterIcons/bowserjr.png');
+}
+
+#squad1Character4 {
+    background-image: url('../../CharacterIcons/captainfalcon.png');
+}
+
+#squad1Character5 {
+    background-image: url('../../CharacterIcons/chrom.png');
+}
+
+
+
+#squad1ScoreText:before {
+    content: "0";
+}
+
+#squad1Port {
+    background-image: url('../../PlayerPorts/PlayerPort1.png');
+}
+
+#squad2NameText:before {
+    content: "USA";
+}
+
+#squad2Player1NameText:before {
+    content: "ZeRo";
+    color: yellow;
+}
+
+
+#squad2Player2NameText:before {
+    content: "Nairo";
+}
+
+#squad2Player3NameText:before {
+    content: "VoiD";
+}
+
+#squad2Player4NameText:before {
+    content: "Larry Lurr";
+}
+
+
+
+
+#squad2Player1TwitterText:before {
+    content: "";
+}
+
+#squad2Player2TwitterText:before {
+    content: "";
+}
+
+#squad2Player3TwitterText:before {
+    content: "";
+}
+
+#squad2Player4TwitterText:before {
+    content: "";
+}
+
+
+
+
+#squad2Character1 {
+    background-image: url('../../CharacterIcons/zerosuitsamus.png');
+}
+
+#squad2Character2 {
+    background-image: url('../../CharacterIcons/zelda.png');
+    filter: grayscale(100%);
+}
+
+
+#squad2Character3 {
+    background-image: url('../../CharacterIcons/younglink.png');
+}
+
+#squad2Character4 {
+    background-image: url('../../CharacterIcons/yoshi.png');
+}
+
+#squad2Character5 {
+    background-image: url('../../CharacterIcons/wolf.png');
+}
+
+
+
+#squad2ScoreText:before {
+    content: "0";
+}
+
+#squad2Port {
+    background-image: url('../../PlayerPorts/PlayerPort2.png');
+}
+
+#tournamentText:before {
+    content: "";
+}
+
+#extraText:before {
+    content: "";
+}
+
+#roundText:before {
+    content: "";
+}
+
+#bestOfText:before {
+    content: "";
+}

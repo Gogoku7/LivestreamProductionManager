@@ -11,7 +11,7 @@ namespace LivestreamProductionManager
     {
         protected void Application_Start()
         {
-            Log.Logger = new LoggerConfiguration().MinimumLevel.Debug().WriteTo.RollingFile(pathFormat: "~/Logging/LPM.Log.{Date}.txt", retainedFileCountLimit: 10).CreateLogger();
+            Log.Logger = new LoggerConfiguration().MinimumLevel.Debug().WriteTo.RollingFile(pathFormat: "~/Logging/LPM.Log.{Date}.txt").CreateLogger();
 
             GlobalConfiguration.Configure(WebApiConfig.Register);
             AreaRegistration.RegisterAllAreas();

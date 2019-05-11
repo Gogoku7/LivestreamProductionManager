@@ -1,0 +1,194 @@
+﻿@using System.Text;
+@model LivestreamProductionManager.ViewModels.FightingGames.SuperSmashBros.SuperSmashBrosBaseViewModel
+
+@{
+    var characterOptionsStringBuilder = new StringBuilder();
+    foreach (var character in Model.Characters)
+    {
+        characterOptionsStringBuilder.AppendLine($"<option value='{character.CssValue}'>{character.CharacterName}</option>");
+    }
+
+    var portOptionsStringBuilder = new StringBuilder();
+    foreach (var port in Model.Ports)
+    {
+        portOptionsStringBuilder.AppendLine($"<option value='{port.CssValue}'>{port.PortName}</option>");
+    }
+
+    Layout = null;
+}
+
+<form action="/SuperSmashBros/UpdateSquadStrike" method="post" id="manageCompetitorsForm">
+    <input type="hidden" name="Tournament" value="" data-id="#tournamentText" />
+    <input type="hidden" name="Round" value="" data-id="#roundText" />
+    <input type="hidden" name="BestOf" value="" data-id="#bestOfText" />
+    <input type="hidden" name="Extra" value="" data-id="#extraText" />
+    <input type="hidden" name="Series" value="@Model.Series" />
+    <input type="hidden" name="Game" value="@Model.Game" />
+    <input type="hidden" name="Format" value="@Model.Format" />
+    <input type="hidden" name="PathToSeries" value="@Model.PathToSeries" />
+    <input type="hidden" name="PathToGame" value="@Model.PathToGame" />
+    <input type="hidden" name="PathToFormat" value="@Model.PathToFormat" />
+
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <label>Squad 1</label>
+        </div>
+        <div class="col-md-6  text-center">
+            <label>Squad 2</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <label>Name</label>
+            <input type="text" class="form-control" name="Squad1.Name" id="squad1Name" data-id="#squad1NameText" data-side="1" data-opposite-id="#squad2Name" data-default="-" />
+        </div>
+        <div class="col-md-6 text-center">
+            <label>Name</label>
+            <input type="text" class="form-control" name="Squad2.Name" id="squad2Name" data-id="#squad2NameText" data-side="2" data-opposite-id="#squad1Name" data-default="-" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <label>Score</label>
+            <input type="text" class="form-control" name="Squad1.Score" id="squad1Score" data-id="#squad1StocksLeftText" data-side="1" data-opposite-id="#squad2StocksLeft" data-default="0" />
+        </div>
+        <div class="col-md-6 text-center">
+            <label>Score</label>
+            <input type="text" class="form-control" name="Squad2.Score" id="2StocksLeft" data-id="#squad2StocksLeftText" data-side="2" data-opposite-id="#squad1StocksLeft" data-default="0" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <label>Port</label>
+            <select class="form-control" name="Squad1.Port" id="squad1Port" data-id="#squad1Port" data-side="1" data-opposite-id="#squad2Port" data-default="">
+                <option value="" selected disabled hidden>Choose port</option>
+                @Html.Raw(portOptionsStringBuilder.ToString())
+            </select>
+        </div>
+        <div class="col-md-6 text-center">
+            <label>Port</label>
+            <select class="form-control" name="Squad2.Port" id="squad2Port" data-id="#squad2Port" data-side="2" data-opposite-id="#squad1Port" data-default="">
+                <option value="" selected disabled hidden>Choose port</option>
+                @Html.Raw(portOptionsStringBuilder.ToString())
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-1 text-center">
+            <label>Dead</label>
+        </div>
+        <div class="col-md-1 text-center">
+            <label>Active</label>
+        </div>
+        <div class="col-md-4">
+            <div class="col-md-4 text-center">
+                <label>Character</label>
+            </div>
+            <div class="col-md-4 text-center">
+                <label>Twitter</label>
+            </div>
+            <div class="col-md-4 text-center">
+                <label>Name</label>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="col-md-4 text-center">
+                <label>Name</label>
+            </div>
+            <div class="col-md-4 text-center">
+                <label>Twitter</label>
+            </div>
+            <div class="col-md-4 text-center">
+                <label>Character</label>
+            </div>
+        </div>
+        <div class="col-md-1 text-center">
+            <label>Active</label>
+        </div>
+        <div class="col-md-1 text-center">
+            <label>Dead</label>
+        </div>
+    </div>
+
+    <div id="squadPlayersContainer">
+        @for (var i = 0; i < 5; i++)
+        {
+            <div class="row">
+                <div class="col-md-1">
+                    <div class="col-md-4" style="width:auto;"></div>
+                    <div class="col-md-4">
+                        <input type="checkbox" class="checkbox-inline big-checkbox" value="true" name="Squad1.Players[@i].Eliminated" id="squad1_player@{@i}__Eliminated" data-id=".squad1Player@(i+1)Eliminated" data-side="1" data-opposite-id="#squad2_player@{@i}__Eliminated" data-default="" />
+                    </div>
+                    <div class="col-md-4" style="width:auto;"></div>
+                </div>
+                <div class="col-md-1">
+                    <div class="col-md-4" style="width:auto;"></div>
+                    <div class="col-md-4">
+                        <input type="checkbox" class="checkbox-inline big-checkbox" value="true" name="Squad1.Players[@i].Active" id="squad1_player@{@i}__Active" data-id=".squad1Player@(i+1)Active" data-side="1" data-opposite-id="#squad2_player@{@i}__Active" data-default="" />
+                    </div>
+                    <div class="col-md-4" style="width:auto;"></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="col-md-4">
+                        <select class="form-control" name="Squad1.Players[@i].Character" id="squad1_player@{@i}__Character" data-id="#squad1Player@(i+1)Character" data-side="1" data-opposite-id="#squad2_player@{@i}__Character" data-default="">
+                            <option value="" selected disabled hidden>Choose character</option>
+                            @Html.Raw(characterOptionsStringBuilder.ToString())
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        @if (i < 4)
+                        {
+                            <input type="text" class="form-control" name="Squad1.Players[@i].Twitter" id="squad1_player@{@i}__Twitter" data-id="#squad1Player@(i+1)TwitterText" data-side="1" data-opposite-id="#squad2_player@{@i}__Twitter" data-default="" />
+                        }
+                    </div>
+                    <div class="col-md-4">
+                        @if (i < 4)
+                        {
+                            <input type="text" class="form-control" name="Squad1.Players[@i].Name" id="squad1_player@{@i}__Name" data-id="#squad1Player@(i+1)NameText" data-side="1" data-opposite-id="#squad2_player@{@i}__Name" data-default="-" />
+                        }
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="col-md-4">
+                        @if (i < 4)
+                        {
+                            <input type="text" class="form-control" name="Squad2.Players[@i].Name" id="squad2_player@{@i}__Name" data-id="#squad2Player@(i+1)NameText" data-side="2" data-opposite-id="#squad1_player@{@i}__Name" data-default="-" />
+                        }
+                    </div>
+                    <div class="col-md-4">
+                        @if (i < 4)
+                        {
+                            <input type="text" class="form-control" name="Squad2.Players[@i].Twitter" id="squad2_player@{@i}__Twitter" data-id="#squad2Player@(i+1)TwitterText" data-side="2" data-opposite-id="#squad1_player@{@i}__Twitter" data-default="" />
+                        }
+                    </div>
+                    <div class="col-md-4">
+                        <select class="form-control" name="Squad2.Players[@i].Character" id="squad2_player@{@i}__Character" data-id="#squad2Player@(i+1)Character" data-side="2" data-opposite-id="#squad1_player@{@i}__Character" data-default="">
+                            <option value="" selected disabled hidden>Choose character</option>
+                            @Html.Raw(characterOptionsStringBuilder.ToString())
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="col-md-4" style="width:auto;"></div>
+                    <div class="col-md-4">
+                        <input type="checkbox" class="checkbox-inline big-checkbox" value="true" name="Squad2.Players[@i].Active" id="squad2_player@{@i}__Active" data-id=".squad2Player@(i+1)Active" data-side="2" data-opposite-id="#squad1_player@{@i}__Active" data-default="" />
+                    </div>
+                    <div class="col-md-4" style="width:auto;"></div>
+                </div>
+                <div class="col-md-1">
+                    <div class="col-md-4" style="width:auto;"></div>
+                    <div class="col-md-4">
+                        <input type="checkbox" class="checkbox-inline big-checkbox" value="true" name="Squad2.Players[@i].Eliminated" id="Squad2_player@{@i}__Eliminated" data-id=".squad2Player@(i+1)Eliminated" data-side="2" data-opposite-id="#squad1_player@{@i}__Eliminated" data-default="" />
+                    </div>
+                    <div class="col-md-4" style="width:auto;"></div>
+                </div>
+            </div>
+        }
+    </div>
+</form>

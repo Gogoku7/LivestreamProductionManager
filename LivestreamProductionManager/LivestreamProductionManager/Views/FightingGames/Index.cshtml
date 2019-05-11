@@ -190,7 +190,7 @@
                     <button class="btn btn-success panelButton togglePreviewOverlayButton" id="togglePreviewOverlayButton" data-preview-id="#previewOverlayIframe" data-panel-id="#previewOverlay"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
                 </div>
             </div>
-            <div class="panel-body" id="previewOverlay">
+            <div class="panel-body previewEnabled" id="previewOverlay">
                 <iframe id="previewOverlayIframe" data-enabled="True"></iframe>
             </div>
         </div>
@@ -242,6 +242,8 @@
         var competitorFormJsonData = null;
         var crewBattlePlayerCount = 0;
         var clientsConnectedCount = 0;
+        var competitorsOverlayPreviewSourceUrl = null;
+        var commentatorsOverlayPreviewSourceUrl = null;
 
         // Summary:
         // On: ready
@@ -403,10 +405,10 @@
                     $("#manageCompetitors").html(data);
                     $("#competitorsOverlayPath").html(selectedFormat.attr("value") + "GameOverlay.html");
                     $("#commentatorsOverlayPath").html(selectedGame.attr("value") + "Commentators/CommentatorsOverlay.html")
+
+                    competitorsOverlayPreviewSourceUrl = "http://" + baseUrl + selectedFormat.val() + "GameOverlay.html";
                     if ($("#previewOverlayIframe").attr("data-enabled") == "True") {
-                        $("#previewOverlayIframe").attr("src", "http://" + baseUrl + selectedFormat.val().replace("~", "") + "GameOverlay.html");
-                        $("#previewOverlay").css("height", "1080px");
-                        $("#previewOverlayIframe").css("height", "1080px");
+                        $("#previewOverlayIframe").attr("src", competitorsOverlayPreviewSourceUrl);
                     }
 
                     competitorFormJsonData = null;
@@ -689,10 +691,13 @@
                     type: "POST",
                     url: "/SuperSmashBros/GetCrewPlayers",
                     data: {
-                        "count": $("#crewPlayersCount").val(),
-                        "series": $("#manageCompetitorsForm").find("input[name='Series']").val(),
-                        "game": $("#manageCompetitorsForm").find("input[name='Game']").val(),
-                        "format": $("#manageCompetitorsForm").find("input[name='Format']").val()
+                        "Count": $("#crewPlayersCount").val(),
+                        "Series": $("#manageCompetitorsForm").find("input[name='Series']").val(),
+                        "Game": $("#manageCompetitorsForm").find("input[name='Game']").val(),
+                        "Format": $("#manageCompetitorsForm").find("input[name='Format']").val(),
+                        "PathToSeries": $("#manageCompetitorsForm").find("input[name='PathToSeries']").val(),
+                        "PathToGame": $("#manageCompetitorsForm").find("input[name='PathToGame']").val(),
+                        "PathToFormat": $("#manageCompetitorsForm").find("input[name='PathToFormat']").val()
                     },
                     dataType: "html",
                     success: function (data) {
@@ -974,13 +979,21 @@
             if ($($(this).attr("data-preview-id")).attr("data-enabled") == "True") {
                 $($(this).attr("data-preview-id")).attr("data-enabled", "False");
                 $($(this).attr("data-preview-id")).removeAttr("src");
-                $($(this).attr("data-panel-id")).css("height", "40px");
-                $($(this).attr("data-preview-id")).css("height", "40px");
+
+                if (!$($(this).attr("data-panel-id")).hasClass("previewDisabled")) {
+                    $($(this).attr("data-panel-id")).removeClass("previewEnabled").addClass("previewDisabled");
+                }
+
                 $(this).removeClass("btn-success").addClass("btn-danger").html("<span class='glyphicon glyphicon-remove' style='font-size: 12px;'></span> Disabled");
+
             } else {
                 $($(this).attr("data-preview-id")).attr("data-enabled", "True");
-                $($(this).attr("data-panel-id")).css("height", "1080px");
-                $($(this).attr("data-preview-id")).css("height", "1080px");
+                $($(this).attr("data-preview-id")).attr("src", competitorsOverlayPreviewSourceUrl);
+
+                if ($($(this).attr("data-panel-id")).hasClass("previewDisabled")) {
+                    $($(this).attr("data-panel-id")).addClass("previewEnabled").removeClass("previewDisabled");
+                }
+
                 $(this).removeClass("btn-danger").addClass("btn-success").html("<span class='glyphicon glyphicon-ok' style='font-size: 12px;'></span> Enabled");
             }
         });
