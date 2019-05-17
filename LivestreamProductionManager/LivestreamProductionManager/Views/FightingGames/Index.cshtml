@@ -406,7 +406,7 @@
                     $("#competitorsOverlayPath").html(selectedFormat.attr("value") + "GameOverlay.html");
                     $("#commentatorsOverlayPath").html(selectedGame.attr("value") + "Commentators/CommentatorsOverlay.html")
 
-                    competitorsOverlayPreviewSourceUrl = "http://" + baseUrl + selectedFormat.val() + "GameOverlay.html";
+                    competitorsOverlayPreviewSourceUrl = "http://" + baseUrl + selectedFormat.val().slice(1) + "GameOverlay.html";
                     if ($("#previewOverlayIframe").attr("data-enabled") == "True") {
                         $("#previewOverlayIframe").attr("src", competitorsOverlayPreviewSourceUrl);
                     }

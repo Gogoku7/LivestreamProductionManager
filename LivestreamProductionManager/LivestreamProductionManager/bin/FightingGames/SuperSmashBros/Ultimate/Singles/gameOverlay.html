@@ -5,6 +5,8 @@
         <link rel="stylesheet" type="text/css" href="CSS/Content.css">
         <script src="../../JavaScript/jQuery.js"></script>
         <script src="../../JavaScript/fitty.js"></script>
+        <script src="../../JavaScript/Snackbar.js"></script>
+        <script src="../../JavaScript/OverlayManager.js"></script>
     </head>
     <body>
         <div id="wrapper">
@@ -71,90 +73,11 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        fitty('.playerName', { minSize: 8, maxSize: 40, multiLine: false });
-        fitty('.playerScore', { minSize: 8, maxSize: 25, multiLine: false });
-
-        var uri = "ws://localhost:56613/WebSocket/Queu";
-
-        websocket = new WebSocket(uri);
-
-        websocket.onopen = function () {
-            console.log("Connected to server.");
-            var jsonData = { "type": "overlayConnected", "data": window.location.href };
-            websocket.send(JSON.stringify(jsonData));
-        };
-
-        websocket.onerror = function (event) {
-            showSnackbar("Something went wrong with the connection to the Queu WebSocket to receive live updates. If Livestream Production Manager is deployed to IIS, make sure there's no port like ':56613' defined after 'localhost' and IIS has WebSockets enabled.");
-
-            console.log("Something went wrong with the WebSocket connection:");
-            console.log(event);
-        };
-
-        websocket.onmessage = function (event) {
-            console.log(event.data);
-
-            var jsonData = JSON.parse(event.data);
-
-            if (jsonData.type == "queu") {
-                $.each(jsonData.data, function (i) {
-                    $(jsonData.data[i]).addClass("changing");
-                });
-
-                setTimeout(function () {
-                    var queryString = '?reload=' + new Date().getTime();
-                    $('link[rel="stylesheet"]').not('link[href="css/styles.css"]').each(function () {
-                        this.href = this.href.replace(/\?.*|$/, queryString);
-                    });
-
-                    fitty('.playerName', { minSize: 8, maxSize: 40, multiLine: false });
-                    fitty('.playerScore', { minSize: 8, maxSize: 25, multiLine: false });
-
-                    $.each(jsonData.data, function (i) {
-                        $(jsonData.data[i]).removeClass("changing").addClass("changed");
-                    });
-
-                    setTimeout(function () {
-                        $.each(jsonData.data, function (i) {
-                            $(jsonData.data[i]).removeClass("changed");
-                        });
-                    }, 500);
-                }, 500);
-            }
-            else if (jsonData.type == "forceResize") {
-                $(".playerName").addClass("changing");
-                $(".playerScore").addClass("changing");
-                setTimeout(function () {
-                    fitty('.playerName', { minSize: 8, maxSize: 40, multiLine: false });
-                    fitty('.playerScore', { minSize: 8, maxSize: 25, multiLine: false });
-
-                    $(".playerName").removeClass("changing").addClass("changed");
-                    $(".playerScore").removeClass("changing").addClass("changed");
-
-                    setTimeout(function () {
-                        $(".playerName").removeClass("changed");
-                        $(".playerScore").removeClass("changed");
-                    }, 500);
-                }, 500);
-            }
-        };
+		var fittyElements = [
+			{ "selector": ".playerName", "minSize": 8, "maxSize": 40, "multiLine": false },
+			{ "selector": ".playerScore", "minSize": 8, "maxSize": 25, "multiLine": false }
+		];
+		
+		initWebSocketAndFitty(fittyElements);
     });
-
-    $(window).on("beforeunload", function () {
-        var jsonData = { "type": "overlayDisconnected", "data": window.location.href };
-        websocket.send(JSON.stringify(jsonData));
-        websocket.close();
-    });
-
-    function showSnackbar(message) {
-        $("#snackbar").html(message);
-
-        var marginLeft = ($(window).width() - $("#snackbar").outerWidth()) / 2;
-        $("#snackbar").css("left", marginLeft >= 0 ? marginLeft : 0);
-
-        $("#snackbar").addClass("show");
-        setTimeout(function () {
-            $("#snackbar").removeClass("show");
-        }, 9000);
-    }
 </script>

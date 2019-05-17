@@ -12,12 +12,6 @@
     "PathToFormat": "~/FightingGames/SuperSmashBros/WiiU/Doubles/"
   },
   {
-    "FormatName": "Big Teams",
-    "FORMAT": "BigTeams",
-    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/WiiU/BigTeams",
-    "PathToFormat": "~/FightingGames/SuperSmashBros/WiiU/BigTeams/"
-  },
-  {
     "FormatName": "Crews",
     "FORMAT": "Crews",
     "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/WiiU/Crews",
@@ -28,5 +22,11 @@
     "FORMAT": "IronMan",
     "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/WiiU/IronMan",
     "PathToFormat": "~/FightingGames/SuperSmashBros/WiiUIronMan/"
+  },
+  {
+    "FormatName": "Big Teams",
+    "FORMAT": "BigTeams",
+    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/WiiU/BigTeams",
+    "PathToFormat": "~/FightingGames/SuperSmashBros/WiiU/BigTeams/"
   }
 ]

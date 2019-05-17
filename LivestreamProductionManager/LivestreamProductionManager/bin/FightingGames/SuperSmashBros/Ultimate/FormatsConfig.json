@@ -12,16 +12,22 @@
     "PathToFormat": "~/FightingGames/SuperSmashBros/Ultimate/Doubles/"
   },
   {
-    "FormatName": "Big Teams",
-    "FORMAT": "BigTeams",
-    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Ultimate/BigTeams",
-    "PathToFormat": "~/FightingGames/SuperSmashBros/Ultimate/BigTeams/"
-  },
-  {
     "FormatName": "Crews",
     "FORMAT": "Crews",
     "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Ultimate/Crews",
     "PathToFormat": "~/FightingGames/SuperSmashBros/Ultimate/Crews/"
+  },
+  {
+    "FormatName": "Squad Strike",
+    "FORMAT": "SquadStrike",
+    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Ultimate/SquadStrike",
+    "PathToFormat": "~/FightingGames/SuperSmashBros/Ultimate/SquadStrike/"
+  },
+  {
+    "FormatName": "Big Teams",
+    "FORMAT": "BigTeams",
+    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Ultimate/BigTeams",
+    "PathToFormat": "~/FightingGames/SuperSmashBros/Ultimate/BigTeams/"
   },
   {
     "FormatName": "Iron Man",
@@ -46,11 +52,5 @@
     "FORMAT": "SmashdownBigTeams",
     "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Ultimate/SmashdownBigTeams",
     "PathToFormat": "~/FightingGames/SuperSmashBros/Ultimate/SmashdownBigTeams/"
-  },
-  {
-    "FormatName": "Squad Strike",
-    "FORMAT": "SquadStrike",
-    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Ultimate/SquadStrike",
-    "PathToFormat": "~/FightingGames/SuperSmashBros/Ultimate/SquadStrike/"
   }
 ]

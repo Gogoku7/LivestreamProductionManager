@@ -255,6 +255,8 @@
     </Content>
     <Content Include="FightingGames\SuperSmashBros\JavaScript\fitty.js" />
     <Content Include="FightingGames\SuperSmashBros\JavaScript\jQuery.js" />
+    <Content Include="FightingGames\SuperSmashBros\JavaScript\OverlayManager.js" />
+    <Content Include="FightingGames\SuperSmashBros\JavaScript\Snackbar.js" />
     <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\bayonetta.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -547,7 +549,21 @@
     <Content Include="FightingGames\SuperSmashBros\Ultimate\Singles\PlayerBackgrounds\Player2Background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\GameOverlay.html" />
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\BoxBackground\InfoBoxBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\CSS\Styles.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\GameOverlay.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\SquadBackgrounds\Squad1Background.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\SquadBackgrounds\Squad2Background.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="FightingGames\SuperSmashBros\WiiU\CharacterIcons\bayonetta.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -913,9 +929,6 @@
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\SmashdownBigTeams\CSS\" />
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\SmashdownDoubles\CSS\" />
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\SmashdownSingles\CSS\" />
-    <Folder Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\BoxBackground\" />
-    <Folder Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\CSS\" />
-    <Folder Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\SquadBackgrounds\" />
     <Folder Include="FightingGames\SuperSmashBros\WiiU\BigTeams\css\" />
     <Folder Include="FightingGames\SuperSmashBros\WiiU\Crews\css\" />
     <Folder Include="FightingGames\SuperSmashBros\WiiU\IronMan\css\" />

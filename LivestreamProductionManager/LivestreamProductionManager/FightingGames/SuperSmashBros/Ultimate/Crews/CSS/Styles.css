@@ -12,9 +12,12 @@ body
     margin-top: 702px;
 }
 
-span{
+span
+{
     color: white;
 }
+
+
 
 /* crews */
 
@@ -455,6 +458,16 @@ span{
 
 /* animations */
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 .changing 
 {
     transition-duration: 0.5s;
@@ -466,16 +479,6 @@ span{
 {
     transition-duration: 0.5s;
     transition-property: opacity;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
 }
 
 /* animations END */

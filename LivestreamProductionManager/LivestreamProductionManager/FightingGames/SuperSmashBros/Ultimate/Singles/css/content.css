@@ -1,9 +1,9 @@
 #player1NameText:before {
-    content: "Cinnovate | Gogoku7";
+    content: "Auto | Median4";
 }
 
 #player1TwitterText:before {
-    content: "";
+    content: "@median4";
 }
 
 #player1ScoreText:before {
@@ -11,7 +11,7 @@
 }
 
 #player1Character {
-    background-image: url('../../CharacterIcons/fox.png');
+    background-image: url('../../CharacterIcons/littlemac.png');
 }
 
 #player1Port {
@@ -19,11 +19,11 @@
 }
 
 #player2NameText:before {
-    content: "Median4";
+    content: "Cinnovate | Gogoku7";
 }
 
 #player2TwitterText:before {
-    content: "";
+    content: "@gogoku7";
 }
 
 #player2ScoreText:before {
@@ -31,7 +31,7 @@
 }
 
 #player2Character {
-    background-image: url('../../CharacterIcons/littlemac.png');
+    background-image: url('../../CharacterIcons/fox.png');
 }
 
 #player2Port {

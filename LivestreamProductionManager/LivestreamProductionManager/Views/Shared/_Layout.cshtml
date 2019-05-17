@@ -11,9 +11,22 @@
         <style>
             .changing
             {
+                opacity: 0 !important;
                 transition-duration: 1s;
                 transition-property: opacity;
-                opacity: 0 !important;
+            }
+
+            .bodyToDefault
+            {
+                background-color: #ffffff;
+                transition-duration: 1s;
+                transition-property: background-color;
+            }
+
+            .bodyToCustomDarkly {
+                background-color: #000000;
+                transition-duration: 1s;
+                transition-property: background-color;
             }
 
             .changed
@@ -49,8 +62,8 @@
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a onclick="switchTheme('/Content/bootstrap.css', '/Content/highlight.css')" href="#">Default</a></li>
-                                <li><a onclick="switchTheme('/Content/bootstrap.dark.css', '/Content/highlight.dark.css')" href="#">Custom Darkly</a></li>
+                                <li><a onclick="switchTheme('/Content/bootstrap.css', '/Content/highlight.css', 'bodyToDefault')" href="#">Default</a></li>
+                                <li><a onclick="switchTheme('/Content/bootstrap.dark.css', '/Content/highlight.dark.css', 'bodyToCustomDarkly')" href="#">Custom Darkly</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -85,17 +98,22 @@
 
 
 <script type="text/javascript">
-    function switchTheme(bootstrapFileUrl, highlightFileUrl) {
-        $("body").addClass("changing");
+    function switchTheme(bootstrapFileUrl, highlightFileUrl, transitionClass) {
+        $("body").addClass(transitionClass);
+        $(".body-content").addClass("changing");
+        $(".navbar").addClass("changing");
 
         setTimeout(function () {
             $("#highlight").attr("href", highlightFileUrl);
             $("#bootstrap").attr("href", bootstrapFileUrl);
 
             setTimeout(function () {
-                $("body").removeClass("changing").addClass("changed");
+                $("body").removeClass(transitionClass);
+                $(".body-content").removeClass("changing").addClass("changed");
+                $(".navbar").removeClass("changing").addClass("changed");
                 setTimeout(function () {
-                    $("body").removeClass("changed");
+                    $(".body-content").removeClass("changed");
+                    $(".navbar").removeClass("changed");
                 }, 1000);
             }, 1000);
         }, 1000);

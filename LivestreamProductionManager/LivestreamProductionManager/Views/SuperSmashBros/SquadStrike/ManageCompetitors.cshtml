@@ -122,7 +122,7 @@
                 <div class="col-md-1">
                     <div class="col-md-4" style="width:auto;"></div>
                     <div class="col-md-4">
-                        <input type="checkbox" class="checkbox-inline big-checkbox" value="true" name="Squad1.Players[@i].Eliminated" id="squad1_player@{@i}__Eliminated" data-id=".squad1Player@(i+1)Eliminated" data-side="1" data-opposite-id="#squad2_player@{@i}__Eliminated" data-default="" />
+                        <input type="checkbox" class="checkbox-inline big-checkbox" value="true" name="Squad1.Players[@i].Eliminated" id="squad1_player@{@i}__Eliminated" data-id=".squad1Character@(i+1)Eliminated" data-side="1" data-opposite-id="#squad2_player@{@i}__Eliminated" data-default="" />
                     </div>
                     <div class="col-md-4" style="width:auto;"></div>
                 </div>
@@ -135,7 +135,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="col-md-4">
-                        <select class="form-control" name="Squad1.Players[@i].Character" id="squad1_player@{@i}__Character" data-id="#squad1Player@(i+1)Character" data-side="1" data-opposite-id="#squad2_player@{@i}__Character" data-default="">
+                        <select class="form-control" name="Squad1.Players[@i].Character" id="squad1_character_@{@i}" data-id="#squad1Character@(i+1)" data-side="1" data-opposite-id="#squad2_character@{@i}" data-default="">
                             <option value="" selected disabled hidden>Choose character</option>
                             @Html.Raw(characterOptionsStringBuilder.ToString())
                         </select>
@@ -168,7 +168,7 @@
                         }
                     </div>
                     <div class="col-md-4">
-                        <select class="form-control" name="Squad2.Players[@i].Character" id="squad2_player@{@i}__Character" data-id="#squad2Player@(i+1)Character" data-side="2" data-opposite-id="#squad1_player@{@i}__Character" data-default="">
+                        <select class="form-control" name="Squad2.Players[@i].Character" id="squad2_character@{@i}" data-id="#squad2Character@(i+1)" data-side="2" data-opposite-id="#squad1_character@{@i}" data-default="">
                             <option value="" selected disabled hidden>Choose character</option>
                             @Html.Raw(characterOptionsStringBuilder.ToString())
                         </select>
@@ -184,7 +184,7 @@
                 <div class="col-md-1">
                     <div class="col-md-4" style="width:auto;"></div>
                     <div class="col-md-4">
-                        <input type="checkbox" class="checkbox-inline big-checkbox" value="true" name="Squad2.Players[@i].Eliminated" id="Squad2_player@{@i}__Eliminated" data-id=".squad2Player@(i+1)Eliminated" data-side="2" data-opposite-id="#squad1_player@{@i}__Eliminated" data-default="" />
+                        <input type="checkbox" class="checkbox-inline big-checkbox" value="true" name="Squad2.Players[@i].Eliminated" id="Squad2_player@{@i}__Eliminated" data-id=".squad2Character@(i+1)Eliminated" data-side="2" data-opposite-id="#squad1_player@{@i}__Eliminated" data-default="" />
                     </div>
                     <div class="col-md-4" style="width:auto;"></div>
                 </div>

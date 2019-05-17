@@ -43,8 +43,10 @@
 
 
 #squad1Character1 {
-    background-image: url('../../CharacterIcons/bayonetta.png');
+    background-image: url('../../CharacterIcons/bowser.png');
+    filter: grayscale(100%);
 }
+
 
 #squad1Character2 {
     background-image: url('../../CharacterIcons/bowser.png');
@@ -67,7 +69,7 @@
 
 
 #squad1ScoreText:before {
-    content: "0";
+    content: "?";
 }
 
 #squad1Port {
@@ -119,7 +121,7 @@
 
 
 #squad2Character1 {
-    background-image: url('../../CharacterIcons/zerosuitsamus.png');
+    background-image: url('../../CharacterIcons/bayonetta.png');
 }
 
 #squad2Character2 {
@@ -151,17 +153,17 @@
 }
 
 #tournamentText:before {
-    content: "";
+    content: "Fight Night 50";
 }
 
 #extraText:before {
-    content: "";
+    content: "Esports Game Arena";
 }
 
 #roundText:before {
-    content: "";
+    content: "Winners Round 1";
 }
 
 #bestOfText:before {
-    content: "";
+    content: "Best of 3";
 }
