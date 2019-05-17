@@ -99,26 +99,45 @@
 
 <script type="text/javascript">
     function switchTheme(element, bootstrapFileUrl, highlightFileUrl, transitionClass) {
-        $("body").addClass(transitionClass);
-        $(".body-content").addClass("changing");
-        $(".navbar").addClass("changing");
+        if (!$(element).parent().hasClass("active")) {
+            @if (System.Diagnostics.Debugger.IsAttached)
+            {
+                <text>
+                    $("#highlight").attr("href", highlightFileUrl);
+                    $("#bootstrap").attr("href", bootstrapFileUrl);
+                    $(".dropdown-menu > li.active").removeClass("active");
+                    $(element).parent().addClass("active");
+                </text>
+            }
+            else
+            {
+                <text>
+                
+                    $("body").addClass(transitionClass);
+                    $(".body-content").addClass("changing");
+                    $(".navbar").addClass("changing");
 
-        setTimeout(function () {
-            $("#highlight").attr("href", highlightFileUrl);
-            $("#bootstrap").attr("href", bootstrapFileUrl);
+                    setTimeout(function () {
+                        $("#highlight").attr("href", highlightFileUrl);
+                        $("#bootstrap").attr("href", bootstrapFileUrl);
 
-            $(".dropdown-menu > li.active").removeClass("active");
-            $(element).parent().addClass("active");
+                        $(".dropdown-menu > li.active").removeClass("active");
+                        $(element).parent().addClass("active");
 
-            setTimeout(function () {
-                $("body").removeClass(transitionClass);
-                $(".body-content").removeClass("changing").addClass("changed");
-                $(".navbar").removeClass("changing").addClass("changed");
-                setTimeout(function () {
-                    $(".body-content").removeClass("changed");
-                    $(".navbar").removeClass("changed");
-                }, 1000);
-            }, 1000);
-        }, 1000);
+                        setTimeout(function () {
+                            $("body").removeClass(transitionClass);
+                            $(".body-content").removeClass("changing").addClass("changed");
+                            $(".navbar").removeClass("changing").addClass("changed");
+                            setTimeout(function () {
+                                $(".body-content").removeClass("changed");
+                                $(".navbar").removeClass("changed");
+                            }, 1000);
+                        }, 1000);
+                    }, 1000);
+                
+                </text>
+            }
+        }
+        
     }
 </script>
