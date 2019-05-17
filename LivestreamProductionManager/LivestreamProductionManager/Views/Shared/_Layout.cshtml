@@ -62,8 +62,8 @@
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a onclick="switchTheme('/Content/bootstrap.css', '/Content/highlight.css', 'bodyToDefault')" href="#">Default</a></li>
-                                <li><a onclick="switchTheme('/Content/bootstrap.dark.css', '/Content/highlight.dark.css', 'bodyToCustomDarkly')" href="#">Custom Darkly</a></li>
+                                <li class="active" ><a onclick="switchTheme(this, '/Content/bootstrap.css', '/Content/highlight.css', 'bodyToDefault')" href="#">Default</a></li>
+                                <li><a onclick="switchTheme(this, '/Content/bootstrap.dark.css', '/Content/highlight.dark.css', 'bodyToCustomDarkly')" href="#">Custom Darkly</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -98,7 +98,7 @@
 
 
 <script type="text/javascript">
-    function switchTheme(bootstrapFileUrl, highlightFileUrl, transitionClass) {
+    function switchTheme(element, bootstrapFileUrl, highlightFileUrl, transitionClass) {
         $("body").addClass(transitionClass);
         $(".body-content").addClass("changing");
         $(".navbar").addClass("changing");
@@ -106,6 +106,9 @@
         setTimeout(function () {
             $("#highlight").attr("href", highlightFileUrl);
             $("#bootstrap").attr("href", bootstrapFileUrl);
+
+            $(".dropdown-menu > li.active").removeClass("active");
+            $(element).parent().addClass("active");
 
             setTimeout(function () {
                 $("body").removeClass(transitionClass);
