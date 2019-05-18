@@ -1,9 +1,9 @@
 #player1NameText:before {
-    content: "Auto | Median4";
+    content: "-";
 }
 
 #player1TwitterText:before {
-    content: "@median4";
+    content: "";
 }
 
 #player1ScoreText:before {
@@ -11,7 +11,7 @@
 }
 
 #player1Character {
-    background-image: url('../../CharacterIcons/littlemac.png');
+    background-image: url('../../CharacterIcons/darkpit.png');
 }
 
 #player1Port {
@@ -19,11 +19,11 @@
 }
 
 #player2NameText:before {
-    content: "Cinnovate | Gogoku7";
+    content: "-";
 }
 
 #player2TwitterText:before {
-    content: "@gogoku7";
+    content: "";
 }
 
 #player2ScoreText:before {
@@ -31,7 +31,7 @@
 }
 
 #player2Character {
-    background-image: url('../../CharacterIcons/fox.png');
+    background-image: url('../../CharacterIcons/diddykong.png');
 }
 
 #player2Port {
@@ -39,17 +39,17 @@
 }
 
 #tournamentText:before {
-    content: "Fight Night 50";
+    content: "";
 }
 
 #extraText:before {
-    content: "Esports Game Arena";
+    content: "";
 }
 
 #roundText:before {
-    content: "Winners Round 1";
+    content: "";
 }
 
 #bestOfText:before {
-    content: "Best of 3";
+    content: "";
 }

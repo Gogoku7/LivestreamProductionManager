@@ -1,9 +1,9 @@
 #player1NameText:before {
-    content: "Tempo | ZeRo";
+    content: "Gogoku7";
 }
 
 #player1TwitterText:before {
-    content: "@zerowondering";
+    content: "";
 }
 
 #player1ScoreText:before {
@@ -11,7 +11,7 @@
 }
 
 #player1Character {
-    background-image: url('../../CharacterIcons/diddykong.png');
+    background-image: url('../../CharacterIcons/bayonetta.png');
 }
 
 #player1Port {
@@ -19,19 +19,19 @@
 }
 
 #player2NameText:before {
-    content: "NRG | Nairo";
+    content: "Median4";
 }
 
 #player2TwitterText:before {
-    content: "@nairomk";
+    content: "";
 }
 
 #player2ScoreText:before {
-    content: "1";
+    content: "0";
 }
 
 #player2Character {
-    background-image: url('../../CharacterIcons/zerosuitsamus.png');
+    background-image: url('../../CharacterIcons/bowser.png');
 }
 
 #player2Port {
@@ -39,17 +39,17 @@
 }
 
 #tournamentText:before {
-    content: "";
+    content: "Fight Night 50";
 }
 
 #extraText:before {
-    content: "";
+    content: "Esports Game Arena";
 }
 
 #roundText:before {
-    content: "";
+    content: "Winners Round 1";
 }
 
 #bestOfText:before {
-    content: "";
+    content: "Best of 3";
 }

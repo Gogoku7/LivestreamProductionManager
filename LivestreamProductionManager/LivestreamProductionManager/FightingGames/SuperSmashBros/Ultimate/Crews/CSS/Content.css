@@ -1,31 +1,29 @@
 #crew1NameText:before {
-    content: "Europe";
+    content: "fhdfbefdg";
 }
 
 #crew1Player1NameText:before {
-    content: "Glutonny";
+    content: "rehe";
     color: yellow;
 }
 
 
 #crew1Player2NameText:before {
-    content: "Mr .R";
+    content: "-rgerg";
     color: lightgray;
 }
 
 
 #crew1Player3NameText:before {
-    content: "Sodrek";
-    color: lightgray;
+    content: "tf-d";
 }
 
-
 #crew1Player4NameText:before {
-    content: "iStudying";
+    content: "5y";
 }
 
 #crew1Player5NameText:before {
-    content: "G-danzee";
+    content: "errg";
 }
 
 
@@ -53,67 +51,65 @@
 
 
 #crew1Player1Character {
-    background-image: url('../../CharacterIcons/wario.png');
+    background-image: url('../../CharacterIcons/random.png');
 }
 
 #crew1Player2Character {
-    background-image: url('../../CharacterIcons/sheik.png');
+    background-image: url('../../CharacterIcons/random.png');
 }
 
 #crew1Player3Character {
-    background-image: url('../../CharacterIcons/fox.png');
+    background-image: url('../../CharacterIcons/random.png');
 }
 
 #crew1Player4Character {
-    background-image: url('../../CharacterIcons/greninja.png');
+    background-image: url('../../CharacterIcons/random.png');
 }
 
 #crew1Player5Character {
-    background-image: url('../../CharacterIcons/sheik.png');
+    background-image: url('../../CharacterIcons/random.png');
 }
 
 
 
 #crew1StocksLeftText:before {
-    content: "9";
+    content: "0";
 }
 
 #crew1Character {
-    background-image: url('../../CharacterIcons/wario.png');
+    background-image: url('../../CharacterIcons/bowser.png');
 }
 
 #crew1Port {
-    background-image: url('../../PlayerPorts/PlayerPort1.png');
+    background-image: url('../../PlayerPorts/PlayerPort2.png');
 }
 
 #crew2NameText:before {
-    content: "USA";
+    content: "dfbdfsb";
 }
 
 #crew2Player1NameText:before {
-    content: "VoiD";
+    content: "ergerhd";
     color: yellow;
 }
 
 
 #crew2Player2NameText:before {
-    content: "Larry Lurr";
+    content: "fber";
     color: lightgray;
 }
 
 
 #crew2Player3NameText:before {
-    content: "ZeRo";
-    color: lightgray;
+    content: "grege";
 }
 
-
 #crew2Player4NameText:before {
-    content: "Nairo";
+    content: "egred";
 }
 
 #crew2Player5NameText:before {
-    content: "Esam";
+    content: "erg";
 }
 
 
@@ -141,37 +137,37 @@
 
 
 #crew2Player1Character {
-    background-image: url('../../CharacterIcons/pichu.png');
+    background-image: url('../../CharacterIcons/random.png');
 }
 
 #crew2Player2Character {
-    background-image: url('../../CharacterIcons/fox.png');
+    background-image: url('../../CharacterIcons/random.png');
 }
 
 #crew2Player3Character {
-    background-image: url('../../CharacterIcons/cloud.png');
+    background-image: url('../../CharacterIcons/random.png');
 }
 
 #crew2Player4Character {
-    background-image: url('../../CharacterIcons/zerosuitsamus.png');
+    background-image: url('../../CharacterIcons/random.png');
 }
 
 #crew2Player5Character {
-    background-image: url('../../CharacterIcons/pikachu.png');
+    background-image: url('../../CharacterIcons/random.png');
 }
 
 
 
 #crew2StocksLeftText:before {
-    content: "9";
+    content: "0";
 }
 
 #crew2Character {
-    background-image: url('../../CharacterIcons/pichu.png');
+    background-image: url('../../CharacterIcons/bayonetta.png');
 }
 
 #crew2Port {
-    background-image: url('../../PlayerPorts/PlayerPort2.png');
+    background-image: url('../../PlayerPorts/PlayerPort1.png');
 }
 
 #tournamentText:before {

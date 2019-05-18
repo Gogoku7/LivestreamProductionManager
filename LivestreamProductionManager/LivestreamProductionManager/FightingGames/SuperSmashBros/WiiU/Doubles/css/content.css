@@ -1,79 +1,79 @@
 #team1NameText:before {
-    content: "";
+    content: "Europe";
 }
 
 #team1ScoreText:before {
-    content: "?";
+    content: "0";
 }
 
 #team1Player1NameText:before {
-    content: "???";
+    content: "Gogoku7";
 }
 #team1Player2NameText:before {
-    content: "???";
+    content: "Median4";
 }
 
 
 #team1Player1Character {
-    background-image: url('../../CharacterIcons/random.png');
+    background-image: url('../../CharacterIcons/browserjr.png');
 }
 #team1Player2Character {
-    background-image: url('../../CharacterIcons/random.png');
+    background-image: url('../../CharacterIcons/captainfalcon.png');
 }
 
 
 #team1Player1Port {
-    background-image: url('../../PlayerPorts/playerPortNo.png');
+    background-image: url('../../PlayerPorts/PlayerPort3.png');
 }
 #team1Player2Port {
-    background-image: url('../../PlayerPorts/playerPortNo.png');
+    background-image: url('../../PlayerPorts/PlayerPort4.png');
 }
 
 
 #team2NameText:before {
-    content: "";
+    content: "USA";
 }
 
 #team2ScoreText:before {
-    content: "?";
+    content: "1";
 }
 
 #team2Player1NameText:before {
-    content: "???";
+    content: "ZeRo";
 }
 #team2Player2NameText:before {
-    content: "???";
+    content: "Nairo";
 }
 
 
 #team2Player1Character {
-    background-image: url('../../CharacterIcons/random.png');
+    background-image: url('../../CharacterIcons/bayonetta.png');
 }
 #team2Player2Character {
-    background-image: url('../../CharacterIcons/random.png');
+    background-image: url('../../CharacterIcons/bowser.png');
 }
 
 
 #team2Player1Port {
-    background-image: url('../../PlayerPorts/playerPortNo.png');
+    background-image: url('../../PlayerPorts/PlayerPort1.png');
 }
 #team2Player2Port {
-    background-image: url('../../PlayerPorts/playerPortNo.png');
+    background-image: url('../../PlayerPorts/PlayerPort2.png');
 }
 
 
 #tournamentText:before {
-    content: "";
+    content: "Fight Night 50";
 }
 
 #extraText:before {
-    content: "";
+    content: "Esports Game Arena";
 }
 
 #roundText:before {
-    content: "";
+    content: "Winners Round 1";
 }
 
 #bestOfText:before {
-    content: "";
+    content: "Best of 3";
 }
