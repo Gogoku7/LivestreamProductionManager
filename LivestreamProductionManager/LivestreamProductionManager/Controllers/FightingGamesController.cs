@@ -1,8 +1,10 @@
 ﻿using LivestreamProductionManager.Implementations;
 using LivestreamProductionManager.Interfaces;
+using LivestreamProductionManager.ViewModels.FightingGames;
+using Newtonsoft.Json;
 using Serilog;
 using System;
-using System.IO;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace LivestreamProductionManager.Controllers
@@ -16,18 +18,19 @@ namespace LivestreamProductionManager.Controllers
             return View();
         }
 
+        [HttpPost]
         public JsonResult GetSeries()
         {
             try
             {
                 var series = _configReader.GetSeries();
 
-                return Json(series, JsonRequestBehavior.AllowGet);
+                return Json(series, JsonRequestBehavior.DenyGet);
             }
             catch (Exception ex)
             {
                 Log.Error(ex, ex.Message);
-                throw;
+                return ErrorSnackbar("Something went wrong with retrieving series.", ex);
             }
         }
 
@@ -42,7 +45,7 @@ namespace LivestreamProductionManager.Controllers
             catch (Exception ex)
             {
                 Log.Error(ex, ex.Message);
-                throw;
+                return ErrorSnackbar("Something went wrong with retrieving games.", ex);
             }
         }
 
@@ -57,10 +60,11 @@ namespace LivestreamProductionManager.Controllers
             catch (Exception ex)
             {
                 Log.Error(ex, ex.Message);
-                throw;
+                return ErrorSnackbar("Something went wrong with retrieving formats.", ex);
             }
         }
 
+        [HttpPost]
         public string GetCssFileContent(string pathToFormat)
         {
             try
@@ -75,17 +79,18 @@ namespace LivestreamProductionManager.Controllers
         }
 
         [HttpPost]
-        public string GetLatestCssValues(string pathToFormat)
+        public JsonResult GetLatestValues(string pathToFormat)
         {
             try
             {
-                var css = _fileReader.ReadCssFile(pathToFormat);
-                throw new NotImplementedException();
+                var json = _fileReader.ReadJsonFile(pathToFormat);
+
+                return Json(new GetLatestViewModel(true, JsonConvert.DeserializeObject<List<SelectorValueViewModel>>(json)), JsonRequestBehavior.DenyGet);
             }
             catch (Exception ex)
             {
                 Log.Error(ex, ex.Message);
-                throw;
+                return ErrorSnackbar("Something went wrong with retrieving the latest values.", ex);
             }
         }
     }

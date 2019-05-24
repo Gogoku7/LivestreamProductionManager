@@ -12,7 +12,23 @@ namespace LivestreamProductionManager.Implementations
         {
             try
             {
-                using (var streamReader = new StreamReader(HttpContext.Current.Server.MapPath(pathToFormat + "Css/Content.css")))
+                using (var streamReader = new StreamReader(HttpContext.Current.Server.MapPath(pathToFormat + "CSS/Content.css")))
+                {
+                    return streamReader.ReadToEnd();
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+                throw;
+            }
+        }
+
+        public string ReadJsonFile(string pathToFormat)
+        {
+            try
+            {
+                using (var streamReader = new StreamReader(HttpContext.Current.Server.MapPath(pathToFormat + "JSON/Content.json")))
                 {
                     return streamReader.ReadToEnd();
                 }

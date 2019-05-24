@@ -123,6 +123,10 @@ div.panel {
     margin-bottom: 4px;
 }
 
+#moveCommentatorUp-0 {
+    display: none;
+}
+
 #crewPlayersContainer > .row, #squadPlayersContainer > .row {
     margin-bottom: 4px;
 }

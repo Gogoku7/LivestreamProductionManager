@@ -1,7 +1,4 @@
-﻿using LivestreamProductionManager.ViewModels.FightingGames;
-using LivestreamProductionManager.ViewModels.FightingGames.SuperSmashBros;
-
-namespace LivestreamProductionManager.ViewModels.SuperSmashBros
+﻿namespace LivestreamProductionManager.ViewModels.FightingGames.SuperSmashBros
 {
     public class SinglesViewModel : TournamentViewModel
     {

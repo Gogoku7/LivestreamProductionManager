@@ -1,30 +1,18 @@
 #crew1NameText:before {
-    content: "fhdfbefdg";
+    content: "Europe";
 }
 
 #crew1Player1NameText:before {
-    content: "rehe";
+    content: "Mr. R";
     color: yellow;
 }
 
 
 #crew1Player2NameText:before {
-    content: "-rgerg";
+    content: "iStudying";
     color: lightgray;
 }
 
-
-#crew1Player3NameText:before {
-    content: "tf-d";
-}
-
-#crew1Player4NameText:before {
-    content: "5y";
-}
-
-#crew1Player5NameText:before {
-    content: "errg";
-}
 
 
 
@@ -36,81 +24,45 @@
     content: "";
 }
 
-#crew1Player3TwitterText:before {
-    content: "";
-}
-
-#crew1Player4TwitterText:before {
-    content: "";
-}
-
-#crew1Player5TwitterText:before {
-    content: "";
-}
-
 
 
 #crew1Player1Character {
-    background-image: url('../../CharacterIcons/random.png');
+    background-image: url('../../CharacterIcons/bayonetta.png');
 }
 
 #crew1Player2Character {
-    background-image: url('../../CharacterIcons/random.png');
-}
-
-#crew1Player3Character {
-    background-image: url('../../CharacterIcons/random.png');
-}
-
-#crew1Player4Character {
-    background-image: url('../../CharacterIcons/random.png');
-}
-
-#crew1Player5Character {
-    background-image: url('../../CharacterIcons/random.png');
+    background-image: url('../../CharacterIcons/zerosuitsamus.png');
 }
 
 
 
 #crew1StocksLeftText:before {
-    content: "0";
+    content: "3";
 }
 
 #crew1Character {
-    background-image: url('../../CharacterIcons/bowser.png');
+    background-image: url('../../CharacterIcons/bayonetta.png');
 }
 
 #crew1Port {
-    background-image: url('../../PlayerPorts/PlayerPort2.png');
+    background-image: url('../../PlayerPorts/PlayerPort1.png');
 }
 
 #crew2NameText:before {
-    content: "dfbdfsb";
+    content: "USA";
 }
 
 #crew2Player1NameText:before {
-    content: "ergerhd";
+    content: "Tweek";
     color: yellow;
 }
 
 
 #crew2Player2NameText:before {
-    content: "fber";
+    content: "MKLeo";
     color: lightgray;
 }
 
-
-#crew2Player3NameText:before {
-    content: "grege";
-}
-
-#crew2Player4NameText:before {
-    content: "egred";
-}
-
-#crew2Player5NameText:before {
-    content: "erg";
-}
 
 
 
@@ -122,66 +74,42 @@
     content: "";
 }
 
-#crew2Player3TwitterText:before {
-    content: "";
-}
-
-#crew2Player4TwitterText:before {
-    content: "";
-}
-
-#crew2Player5TwitterText:before {
-    content: "";
-}
-
 
 
 #crew2Player1Character {
-    background-image: url('../../CharacterIcons/random.png');
+    background-image: url('../../CharacterIcons/bowser.png');
 }
 
 #crew2Player2Character {
-    background-image: url('../../CharacterIcons/random.png');
-}
-
-#crew2Player3Character {
-    background-image: url('../../CharacterIcons/random.png');
-}
-
-#crew2Player4Character {
-    background-image: url('../../CharacterIcons/random.png');
-}
-
-#crew2Player5Character {
-    background-image: url('../../CharacterIcons/random.png');
+    background-image: url('../../CharacterIcons/zelda.png');
 }
 
 
 
 #crew2StocksLeftText:before {
-    content: "0";
+    content: "3";
 }
 
 #crew2Character {
-    background-image: url('../../CharacterIcons/bayonetta.png');
+    background-image: url('../../CharacterIcons/bowser.png');
 }
 
 #crew2Port {
-    background-image: url('../../PlayerPorts/PlayerPort1.png');
+    background-image: url('../../PlayerPorts/PlayerPort2.png');
 }
 
 #tournamentText:before {
-    content: "";
+    content: "Fight Night 50";
 }
 
 #extraText:before {
-    content: "";
+    content: "Esports Game Arena";
 }
 
 #roundText:before {
-    content: "";
+    content: "Winners Round 1";
 }
 
 #bestOfText:before {
-    content: "";
+    content: "Best of 3";
 }

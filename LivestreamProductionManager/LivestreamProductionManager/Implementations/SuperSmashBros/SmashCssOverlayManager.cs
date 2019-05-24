@@ -1,18 +1,18 @@
 ﻿using LivestreamProductionManager.Interfaces;
+using LivestreamProductionManager.Interfaces.SuperSmashBros;
 using LivestreamProductionManager.Models.FightingGames.SuperSmashBros;
 using LivestreamProductionManager.ViewModels.FightingGames.SuperSmashBros;
-using LivestreamProductionManager.ViewModels.SuperSmashBros;
 using Serilog;
 using System;
 using System.Linq;
 
 namespace LivestreamProductionManager.Implementations.SuperSmashBros
 {
-    public class SmashOverlayManager
+    public class SmashCssOverlayManager : ISmashOverlayManager
     {
-        private readonly ITemplateFileReader _templatefileReader = new CssTemplateFileReader();
+        private readonly ITemplateFileReader _templatefileReader = new TemplateFileReader("~/FightingGames/CssTemplates/");
         private readonly ITextReplacer _textReplacer = new TextReplacer();
-        private readonly SmashFileWriter _fileWriter = new SmashFileWriter();
+        private readonly ISmashFileWriter _fileWriter = new SmashCssFileWriter();
 
         private readonly string _textTemplateCss;
         private readonly string _imageTemplateCss;
@@ -21,7 +21,7 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
         private readonly string _squadPlayerActiveTemplateCss;
         private readonly string _squadCharacterEliminatedTemplateCss;
 
-        public SmashOverlayManager()
+        public SmashCssOverlayManager()
         {
             _textTemplateCss = _templatefileReader.ReadTemplateFile("TextTemplateFile.css");
             _imageTemplateCss = _templatefileReader.ReadTemplateFile("ImageTemplateFile.css");
@@ -53,7 +53,7 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 singlesCssModel.Round = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "roundText", singlesViewModel.Round ?? "");
                 singlesCssModel.BestOf = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "bestOfText", singlesViewModel.BestOf + "");
 
-                _fileWriter.WriteSinglesCssFile(singlesViewModel.PathToFormat, singlesCssModel);
+                _fileWriter.WriteSinglesFile(singlesViewModel.PathToFormat, singlesCssModel);
             }
             catch (Exception ex)
             {
@@ -85,7 +85,7 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 doublesCssModel.Round = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "roundText", doublesViewModel.Round ?? "");
                 doublesCssModel.BestOf = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "bestOfText", doublesViewModel.BestOf ?? "");
 
-                _fileWriter.WriteDoublesCssFile(doublesViewModel.PathToFormat, doublesCssModel);
+                _fileWriter.WriteDoublesFile(doublesViewModel.PathToFormat, doublesCssModel);
             }
             catch (Exception ex)
             {
@@ -157,7 +157,7 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 crewsCssModel.Round = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "roundText", crewsViewModel.Round ?? "");
                 crewsCssModel.BestOf = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "bestOfText", crewsViewModel.BestOf ?? "");
 
-                _fileWriter.WriteCrewsCssFile(crewsViewModel.PathToFormat, crewsCssModel);
+                _fileWriter.WriteCrewsFile(crewsViewModel.PathToFormat, crewsCssModel);
             }
             catch (Exception ex)
             {
@@ -241,7 +241,7 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 squadStrikeCssModel.Round = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "roundText", squadStrikeViewModel.Round ?? "");
                 squadStrikeCssModel.BestOf = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "bestOfText", squadStrikeViewModel.BestOf ?? "");
 
-                _fileWriter.WriteSquadStrikeCssFile(squadStrikeViewModel.PathToFormat, squadStrikeCssModel);
+                _fileWriter.WriteSquadStrikeFile(squadStrikeViewModel.PathToFormat, squadStrikeCssModel);
             }
             catch (Exception ex)
             {

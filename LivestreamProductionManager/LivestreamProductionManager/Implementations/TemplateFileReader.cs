@@ -6,9 +6,15 @@ using System.Web;
 
 namespace LivestreamProductionManager.Implementations
 {
-    public class CssTemplateFileReader : ITemplateFileReader
+    public class TemplateFileReader : ITemplateFileReader
     {
-        private readonly string _cssTemplatesFolderPath = "~/FightingGames/CssTemplates/";
+        private readonly string _templatesFolderPath = "~/FightingGames/CssTemplates/";
+        //private readonly string _cssTemplatesFolderPath = "~/FightingGames/JsonTemplates/";
+
+        public TemplateFileReader(string templatesFolderPath)
+        {
+            _templatesFolderPath = templatesFolderPath;
+        }
 
         public string ReadTemplateFile(string fileName)
         {
@@ -19,16 +25,16 @@ namespace LivestreamProductionManager.Implementations
 
             try
             {
-                if (File.Exists(HttpContext.Current.Server.MapPath(_cssTemplatesFolderPath + fileName)))
+                if (File.Exists(HttpContext.Current.Server.MapPath(_templatesFolderPath + fileName)))
                 {
-                    using (var streamReader = new StreamReader(HttpContext.Current.Server.MapPath(_cssTemplatesFolderPath + fileName)))
+                    using (var streamReader = new StreamReader(HttpContext.Current.Server.MapPath(_templatesFolderPath + fileName)))
                     {
                         return streamReader.ReadToEnd();
                     }
                 }
                 else
                 {
-                    throw new FileNotFoundException($"No file found at path: {_cssTemplatesFolderPath + fileName}.");
+                    throw new FileNotFoundException($"No file found at path: {_templatesFolderPath + fileName}.");
                 }
             }
             catch (Exception ex)

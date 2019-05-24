@@ -1,7 +1,7 @@
 ﻿using LivestreamProductionManager.Implementations.SuperSmashBros;
+using LivestreamProductionManager.Interfaces.SuperSmashBros;
 using LivestreamProductionManager.ViewModels.FightingGames;
 using LivestreamProductionManager.ViewModels.FightingGames.SuperSmashBros;
-using LivestreamProductionManager.ViewModels.SuperSmashBros;
 using Newtonsoft.Json;
 using Serilog;
 using System;
@@ -11,7 +11,8 @@ namespace LivestreamProductionManager.Controllers
 {
     public class SuperSmashBrosController : BaseController
     {
-        private readonly SmashOverlayManager _smashOverlayManager = new SmashOverlayManager();
+        private readonly ISmashOverlayManager _smashCssOverlayManager = new SmashCssOverlayManager();
+        private readonly ISmashOverlayManager _smashJsonOverlayManager = new SmashJsonOverlayManager();
 
         [HttpPost]
         public PartialViewResult GetManageCompetitors(PathsViewModel pathsViewModel)
@@ -49,13 +50,14 @@ namespace LivestreamProductionManager.Controllers
             {
                 Log.Information($"Submitted data: { JsonConvert.SerializeObject(singlesViewModel) }");
 
-                _smashOverlayManager.UpdateSinglesOverlay(singlesViewModel);
+                _smashCssOverlayManager.UpdateSinglesOverlay(singlesViewModel);
+                _smashJsonOverlayManager.UpdateSinglesOverlay(singlesViewModel);
 
                 return SuccessSnackbar("Successfully saved competitor files.");
             }
             catch (Exception ex)
             {
-                return ErrorSnackbar(ex, "Something went wrong while saving competitor files, see the console for details.");
+                return ErrorSnackbar("Something went wrong while saving competitor files, see the console for details.", ex);
             }
         }
 
@@ -66,13 +68,14 @@ namespace LivestreamProductionManager.Controllers
             {
                 Log.Information($"Submitted data: { JsonConvert.SerializeObject(doublesViewModel) }");
 
-                _smashOverlayManager.UpdateDoublesOverlay(doublesViewModel);
+                _smashCssOverlayManager.UpdateDoublesOverlay(doublesViewModel);
+                _smashJsonOverlayManager.UpdateDoublesOverlay(doublesViewModel);
 
                 return SuccessSnackbar("Successfully saved competitor files.");
             }
             catch (Exception ex)
             {
-                return ErrorSnackbar(ex, "Something went wrong while saving competitor files, see the console for details.");
+                return ErrorSnackbar("Something went wrong while saving competitor files, see the console for details.", ex);
             }
         }
 
@@ -88,13 +91,14 @@ namespace LivestreamProductionManager.Controllers
                     throw new ArgumentNullException("One of the crews' players is null");
                 }
 
-                _smashOverlayManager.UpdateCrewsOverlay(crewsViewModel);
+                _smashCssOverlayManager.UpdateCrewsOverlay(crewsViewModel);
+                _smashJsonOverlayManager.UpdateCrewsOverlay(crewsViewModel);
 
                 return SuccessSnackbar("Successfully saved competitor files.");
             }
             catch (Exception ex)
             {
-                return ErrorSnackbar(ex, "Something went wrong while saving competitor files, see the console for details.");
+                return ErrorSnackbar("Something went wrong while saving competitor files, see the console for details.", ex);
             }
         }
 
@@ -130,7 +134,8 @@ namespace LivestreamProductionManager.Controllers
                     throw new ArgumentNullException("One of the squad's players is null");
                 }
 
-                _smashOverlayManager.UpdateSquadStrikeOverlay(squadStrikeViewModel);
+                _smashCssOverlayManager.UpdateSquadStrikeOverlay(squadStrikeViewModel);
+                _smashJsonOverlayManager.UpdateSquadStrikeOverlay(squadStrikeViewModel);
 
                 return SuccessSnackbar("Successfully saved competitor files.");
             }

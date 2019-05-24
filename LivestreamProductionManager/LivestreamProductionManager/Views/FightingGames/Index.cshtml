@@ -197,6 +197,10 @@
     </div>
 </div>
 
+<style>
+    
+</style>
+
 <div class="row">
     <!--Manage commentators-->
     <div class="full-horizontal-width">
@@ -222,7 +226,7 @@
                             <label>Twitter</label>
                         </div>
                         <div class="col-md-2">
-                            <label>Delete</label>
+                            <label>Actions</label>
                         </div>
                     </div>
                 </form>
@@ -312,7 +316,7 @@
         // Add the series to the series dropdown.
         function GetSeries() {
             $.ajax({
-                type: "GET",
+                type: "POST",
                 url: "/FightingGames/GetSeries",
                 dataType: "json",
                 success: function (data) {
@@ -336,8 +340,9 @@
         $("#Series").change(function () {
             var selectedSeries = $("#Series option:selected");
             $.ajax({
-                type: "GET",
-                url: "/FightingGames/GetGames?pathToSeries=" + selectedSeries.attr("value"),
+                type: "POST",
+                url: "/FightingGames/GetGames",
+                data: { "pathToSeries": selectedSeries.attr("value") },
                 dataType: "json",
                 success: function (data) {
                     $("#Game").empty();
@@ -362,7 +367,7 @@
         $("#Game").change(function () {
             var selectedGame = $("#Game option:selected");
             $.ajax({
-                type: "GET",
+                type: "POST",
                 url: "/FightingGames/GetFormats?pathToGame=" + selectedGame.attr("value"),
                 dataType: "json",
                 success: function (data) {
@@ -393,9 +398,9 @@
                 type: "POST",
                 url: selectedFormat.attr("url"),
                 data: {
-                    "series": selectedSeries.attr("data-series"),
-                    "game": selectedGame.attr("data-game"),
-                    "format": selectedFormat.attr("data-value"),
+                    "series": selectedSeries.data("series"),
+                    "game": selectedGame.data("game"),
+                    "format": selectedFormat.data("value"),
                     "pathToSeries": selectedSeries.attr("value"),
                     "pathToGame": selectedGame.attr("value"),
                     "pathToFormat": selectedFormat.attr("value")
@@ -407,7 +412,7 @@
                     $("#commentatorsOverlayPath").html(selectedGame.attr("value") + "Commentators/CommentatorsOverlay.html")
 
                     competitorsOverlayPreviewSourceUrl = "http://" + baseUrl + selectedFormat.val().slice(1) + "GameOverlay.html";
-                    if ($("#previewOverlayIframe").attr("data-enabled") == "True") {
+                    if ($("#previewOverlayIframe").data("enabled") == "True") {
                         $("#previewOverlayIframe").attr("src", competitorsOverlayPreviewSourceUrl);
                     }
 
@@ -448,13 +453,13 @@
                 if (side1Inputs.length) {
                     side1Inputs.each(function () {
                         if ($(this).attr("type") == "checkbox") {
-                            var side2Input = $($(this).attr("data-opposite-id"));
+                            var side2Input = $($(this).data("opposite-id"));
                             var side2InputCheckedValue = side2Input.prop("checked");
                             side2Input.prop("checked", $(this).prop("checked"));
                             $(this).prop("checked", side2InputCheckedValue);
                         }
                         else {
-                            var side2Input = $($(this).attr("data-opposite-id"));
+                            var side2Input = $($(this).data("opposite-id"));
                             var side2InputValue = side2Input.val();
                             side2Input.val($(this).val());
                             $(this).val(side2InputValue);
@@ -480,11 +485,34 @@
             if ($("#manageCompetitorsForm").length) {
                 $.ajax({
                     type: "POST",
-                    url: "/FightingGames/GetLatestCssValues",
+                    url: "/FightingGames/GetLatestValues",
                     data: { "pathToFormat": $("input[name='PathToFormat']").val() },
                     dataType: "json",
                     success: function (data) {
-                        console.log("not implemented");
+                        console.log(data);
+
+                        if (data.Success === true) {
+                            $.each(data.Data, function (index) {
+                                if ($("[data-selector='" + data.Data[index].Selector + "']").attr("type") == "checkbox") {
+                                    $("[data-selector='" + data.Data[index].Selector + "']").prop("checked", JSON.parse(data.Data[index].Value.toLowerCase()));
+                                }
+                                else {
+                                    $("[data-selector='" + data.Data[index].Selector + "']").val(data.Data[index].Value);
+                                }
+                            });
+
+                            $("#tournament").val($("[name='Tournament']").val());
+                            $("#round").val($("[name='Round']").val());
+                            $("#bestOf").val($("[name='BestOf']").val());
+                            $("#extra").val($("[name='Extra']").val());
+
+                            showSnackbar("#manageCompetitorsSnackbar", "Retrieved the latest values.");
+                        }
+                        else {
+                            showSnackbar("#manageCompetitorsSnackbar", data.Message);
+                            UpdateErrorMonitor(data.ErrorMessage);
+                            console.log(data.ErrorMessage);
+                        }
                     },
                     error: function (ex) {
                         console.log("not implemented");
@@ -581,7 +609,7 @@
                         showSnackbar("#manageCompetitorsSnackbar", data.Message);
 
                         SendQueuUpdate("#manageCompetitorsForm");
-                        UpdateCSSMonitor("/FightingGames/GetCssFileContent?pathToFormat=" + $("input[name='PathToFormat']").val().replace("~", ""));
+                        UpdateCSSMonitor("/FightingGames/GetCssFileContent", $("input[name='PathToFormat']").val());
                     }
                     else {
                         showSnackbar("#manageCompetitorsSnackbar", data.Message);
@@ -609,44 +637,44 @@
         // PARAMETERS
         // formId: The id attribute of the form to be parsed.
         function SendQueuUpdate(formId) {
-            var competitorsFormInputs = $(formId + " :input[data-id]");
+            var competitorsFormInputs = $(formId + " :input[data-selector]");
             var jsonData = { "type": "queu", "data": [] };
 
             if (competitorFormJsonData == null) {
                 competitorFormJsonData = {};
 
                 $(competitorsFormInputs).each(function () {
-                    if (competitorFormJsonData.hasOwnProperty($(this).attr("data-id"))) {
+                    if (competitorFormJsonData.hasOwnProperty($(this).data("selector"))) {
                         if ($(this).val() && $(this).val() != "") {
-                            competitorFormJsonData[$(this).attr("data-id")] = $(this).val() + " | " + competitorFormJsonData[$(this).attr("data-id")];
+                            competitorFormJsonData[$(this).data("selector")] = $(this).val() + " | " + competitorFormJsonData[$(this).data("selector")];
                         }
                     }
                     else {
                         if ($(this).is(":checkbox")) {
-                            competitorFormJsonData[$(this).attr("data-id")] = $(this).is(":checked");
+                            competitorFormJsonData[$(this).data("selector")] = $(this).is(":checked");
                         } else {
-                            competitorFormJsonData[$(this).attr("data-id")] = $(this).val();
+                            competitorFormJsonData[$(this).data("selector")] = $(this).val();
                         }
                     }
 
-                    if ($.inArray($(this).attr("data-id"), jsonData.data) == -1) {
-                        jsonData.data.push($(this).attr("data-id"));
+                    if ($.inArray($(this).data("selector"), jsonData.data) == -1) {
+                        jsonData.data.push($(this).data("selector"));
                     }
                 });
             }
             else {
                 var newCompetitorFormJsonData = {};
                 $(competitorsFormInputs).each(function () {
-                    if (newCompetitorFormJsonData.hasOwnProperty($(this).attr("data-id"))) {
+                    if (newCompetitorFormJsonData.hasOwnProperty($(this).data("selector"))) {
                         if ($(this).val() && $(this).val() != "") {
-                            newCompetitorFormJsonData[$(this).attr("data-id")] = $(this).val() + " | " + newCompetitorFormJsonData[$(this).attr("data-id")];
+                            newCompetitorFormJsonData[$(this).data("selector")] = $(this).val() + " | " + newCompetitorFormJsonData[$(this).data("selector")];
                         }
                     }
                     else {
                         if ($(this).is(":checkbox")) {
-                            newCompetitorFormJsonData[$(this).attr("data-id")] = $(this).is(":checked");
+                            newCompetitorFormJsonData[$(this).data("selector")] = $(this).is(":checked");
                         } else {
-                            newCompetitorFormJsonData[$(this).attr("data-id")] = $(this).val();
+                            newCompetitorFormJsonData[$(this).data("selector")] = $(this).val();
                         }
                     }
                 });
@@ -728,10 +756,10 @@
         // Append the partial view manage commentators form.
         // Re-index all the commentator elements available.
         $("#addCommentatorButton").click(function () {
-            var id = $("div[id*='commentator-row-']").length;
             $.ajax({
-                type: "GET",
-                url: "/Commentators/GetCommentatorRow/" + id,
+                type: "POST",
+                url: "/Commentators/GetCommentatorRow",
+                data: { "index": $("div[id*='commentator-row-']").length },
                 dataType: "html",
                 success: function (data) {
                     $("#manageCommentatorsForm").append(data);
@@ -763,7 +791,70 @@
                 $(this).attr("id", "commentator-row-" + index);
                 $(this).find("input[id*='_Name']").attr({ "name": "commentatorViewModels[" + index + "].Name", "id": "commentatorViewModels_" + index + "_Name" });
                 $(this).find("input[id*='_Twitter']").attr({ "name": "commentatorViewModels[" + index + "].Twitter", "id": "commentatorViewModels_" + index + "_Twitter" });
-                $(this).find("button[id*='deleteCommentator-']").attr({ "onclick": "removeCommentator(" + index + ")", "id": "deleteCommentator-" + index });
+                $(this).find("button[id^='deleteCommentator-']").attr({ "onclick": "removeCommentator(" + index + ")", "id": "deleteCommentator-" + index });
+                $(this).find("button[id^='moveCommentatorDown-']").attr({ "onclick": "moveCommentatorDown(" + index + ")", "id": "moveCommentatorDown-" + index });
+                $(this).find("button[id^='moveCommentatorUp-']").attr({ "onclick": "moveCommentatorUp(" + index + ")", "id": "moveCommentatorUp-" + index });
+            });
+        }
+
+        // Summary:
+        // On: Clicking the move commentator down button
+
+        // PARAMETERS
+        // index: index of the element to be removed
+        function moveCommentatorDown(index) {
+            if ($("#commentator-row-" + (index + 1)).length) {
+                var row1 = $("#commentator-row-" + index)
+                var row2 = $("#commentator-row-" + (index + 1));
+
+                row1.replaceWith(row2.clone());
+                row2.replaceWith(row1.clone());
+            }
+            else {
+                //snackbar can't move it down
+            }
+
+            $("div[id*='commentator-row-']").each(function (index) {
+                $(this).attr("id", "commentator-row-" + index);
+                $(this).find("input[id*='_Name']").attr({ "name": "commentatorViewModels[" + index + "].Name", "id": "commentatorViewModels_" + index + "_Name" });
+                $(this).find("input[id*='_Twitter']").attr({ "name": "commentatorViewModels[" + index + "].Twitter", "id": "commentatorViewModels_" + index + "_Twitter" });
+                $(this).find("button[id^='deleteCommentator-']").attr({ "onclick": "removeCommentator(" + index + ")", "id": "deleteCommentator-" + index });
+                $(this).find("button[id^='moveCommentatorDown-']").attr({ "onclick": "moveCommentatorDown(" + index + ")", "id": "moveCommentatorDown-" + index });
+                $(this).find("button[id^='moveCommentatorUp-']").attr({ "onclick": "moveCommentatorUp(" + index + ")", "id": "moveCommentatorUp-" + index });
+            });
+        }
+
+        // Summary:
+        // On: Clicking the move commentator up button
+
+        // PARAMETERS
+        // index: index of the element to be removed
+        function moveCommentatorUp(index) {
+            $("#commentator-row-" + index);
+            if (index > 0) {
+                if ($("#commentator-row-" + (index - 1)).length) {
+                    var row1 = $("#commentator-row-" + index)
+                    var row2 = $("#commentator-row-" + (index - 1));
+
+                    row1.replaceWith(row2.clone());
+                    row2.replaceWith(row1.clone());
+                }
+                else {
+                    //snackbar can't move up
+                }
+            }
+            else {
+                alert("Something is not right here...");
+            }
+            
+
+            $("div[id*='commentator-row-']").each(function (index) {
+                $(this).attr("id", "commentator-row-" + index);
+                $(this).find("input[id*='_Name']").attr({ "name": "commentatorViewModels[" + index + "].Name", "id": "commentatorViewModels_" + index + "_Name" });
+                $(this).find("input[id*='_Twitter']").attr({ "name": "commentatorViewModels[" + index + "].Twitter", "id": "commentatorViewModels_" + index + "_Twitter" });
+                $(this).find("button[id^='deleteCommentator-']").attr({ "onclick": "removeCommentator(" + index + ")", "id": "deleteCommentator-" + index });
+                $(this).find("button[id^='moveCommentatorDown-']").attr({ "onclick": "moveCommentatorDown(" + index + ")", "id": "moveCommentatorDown-" + index });
+                $(this).find("button[id^='moveCommentatorUp-']").attr({ "onclick": "moveCommentatorUp(" + index + ")", "id": "moveCommentatorUp-" + index });
             });
         }
 
@@ -793,7 +884,7 @@
                         }
 
                         // SendQueuUpdate("#manageCommentatorsForm");
-                        // UpdateCSSMonitor("/Commentators/GetCssFileContent");
+                        // UpdateCSSMonitor("/Commentators/GetCssFileContent", format);
                     }
                     else {
                         showSnackbar("#manageCommentatorsSnackbar", data.Message);
@@ -824,7 +915,7 @@
         // PARAMETERS
         // data: the data received through the WebSocket
         function UpdateWebSocketDataMonitor(data) {
-            if ($("#webSocketDataMonitor").attr("data-enabled") == "True") {
+            if ($("#webSocketDataMonitor").data("enabled") == "True") {
                 $("#webSocketDataMonitor").html(JSON.stringify(data));
                 hljs.initHighlighting();
             }
@@ -834,7 +925,7 @@
         // On: Clicking the clear WebSocket data monitor button
         // Remove all data from the WebSocket data monitor
         $("#clearWebSocketDataMonitorButton").click(function () {
-            if ($("#webSocketDataMonitor").attr("data-enabled") == "True") {
+            if ($("#webSocketDataMonitor").data("enabled") == "True") {
                 $("#webSocketDataMonitor").html("");
             }
         });
@@ -849,7 +940,7 @@
         // PARAMETERS
         // jsonData: the json data received through the WebSocket
         function UpdateWebSocketClientMonitor(jsonData) {
-            if ($("#webSocketClientMonitorTableBody").attr("data-enabled") == "True") {
+            if ($("#webSocketClientMonitorTableBody").data("enabled") == "True") {
                 var splitPath = jsonData.data.split("/");
 
                 if (jsonData.type == "overlayConnected") {
@@ -870,7 +961,7 @@
         // On: Clicking the clear WebSocket client monitor button
         // Remove all data from the WebSocket client monitor and reset the clientsConnectedCount
         $("#clearWebSocketClientMonitorButton").click(function () {
-            if ($("#webSocketClientMonitorTableBody").attr("data-enabled") == "True") {
+            if ($("#webSocketClientMonitorTableBody").data("enabled") == "True") {
                 $("#webSocketClientMonitorTableBody").html("<tr><td>1</td><td>Livestream Production Manager</td><td>Connected</td></tr>");
                 clientsConnectedCount = 1;
             }
@@ -880,12 +971,14 @@
         // Retrieve the commentator partial view using AJAX.
         // Append the partial view manage commentators form.
         // PARAMETERS
-        // url: URL to retrieve the CSS file content from.
-        function UpdateCSSMonitor(url) {
-            if ($("#cssMonitor").attr("data-enabled") == "True") {
+        // url: URL to retrieve the CSS file content.
+        // pathToFormat: Path to the format
+        function UpdateCSSMonitor(url, pathToFormat) {
+            if ($("#cssMonitor").data("enabled") == "True") {
                 $.ajax({
-                    type: "GET",
+                    type: "POST",
                     url: url,
+                    data: { "pathToFormat": pathToFormat },
                     dataType: "text",
                     success: function (data) {
                         $("#cssMonitor").html(data);
@@ -904,7 +997,7 @@
         // On: Clicking the clear CSS monitor button
         // Remove all data from the CSS monitor
         $("#clearCssMonitorButton").click(function () {
-            if ($("#cssMonitor").attr("data-enabled") == "True") {
+            if ($("#cssMonitor").data("enabled") == "True") {
                 $("#cssMonitor").html("");
             }
         });
@@ -912,7 +1005,7 @@
         // Summary:
         // Append the error to the error monitor.
         function UpdateErrorMonitor(error) {
-            if ($("#errorMonitor").attr("data-enabled") == "True") {
+            if ($("#errorMonitor").data("enabled") == "True") {
                 $("#errorMonitor").prepend(error);
             }
         }
@@ -921,7 +1014,7 @@
         // On: Clicking the clear error monitor button
         // Remove all data from the error monitor
         $("#clearErrorMonitorButton").click(function () {
-            if ($("#errorMonitor").attr("data-enabled") == "True") {
+            if ($("#errorMonitor").data("enabled") == "True") {
                 $("#errorMonitor").html("");
             }
         });
@@ -939,20 +1032,20 @@
         // else > The monitor associated to the button is not the client monitor
         //  Reset the monitor to completely empty
         $(".toggleMonitorButton").click(function () {
-            if ($($(this).attr("data-monitor-id")).attr("data-enabled") == "True") {
-                $($(this).attr("data-monitor-id")).attr("data-enabled", "False");
+            if ($($(this).data("monitor-id")).data("enabled") == "True") {
+                $($(this).data("monitor-id")).data("enabled", "False");
                 $(this).removeClass("btn-success").addClass("btn-danger");
                 $(this).html("<span class='glyphicon glyphicon-remove' style='font-size: 12px;'></span> Disabled");
-                if ($($(this).attr("data-monitor-id")).attr("data-client-monitor") == "True") {
-                    $($(this).attr("data-monitor-id")).html("<tr><td>1</td><td>Livestream Production Manager</td><td>Connected</td></tr>");
+                if ($($(this).data("monitor-id")).data("client-monitor") == "True") {
+                    $($(this).data("monitor-id")).html("<tr><td>1</td><td>Livestream Production Manager</td><td>Connected</td></tr>");
                     clientsConnectedCount = 1;
                 }
                 else {
-                    $($(this).attr("data-monitor-id")).html("");
+                    $($(this).data("monitor-id")).html("");
                 }
             }
             else {
-                $($(this).attr("data-monitor-id")).attr("data-enabled", "True");
+                $($(this).data("monitor-id")).data("enabled", "True");
                 $(this).removeClass("btn-danger").addClass("btn-success").html("<span class='glyphicon glyphicon-ok' style='font-size: 12px;'></span> Enabled");
             }
         });
@@ -976,22 +1069,22 @@
         //  Enable the overlay previews associated with the button
         //  Update the clicked toggle button to show the overlay preview it is enabled
         $("#togglePreviewOverlayButton").click(function () {
-            if ($($(this).attr("data-preview-id")).attr("data-enabled") == "True") {
-                $($(this).attr("data-preview-id")).attr("data-enabled", "False");
-                $($(this).attr("data-preview-id")).removeAttr("src");
+            if ($($(this).data("preview-id")).data("enabled") == "True") {
+                $($(this).data("preview-id")).data("enabled", "False");
+                $($(this).data("preview-id")).removeAttr("src");
 
-                if (!$($(this).attr("data-panel-id")).hasClass("previewDisabled")) {
-                    $($(this).attr("data-panel-id")).removeClass("previewEnabled").addClass("previewDisabled");
+                if (!$($(this).data("panel-id")).hasClass("previewDisabled")) {
+                    $($(this).data("panel-id")).removeClass("previewEnabled").addClass("previewDisabled");
                 }
 
                 $(this).removeClass("btn-success").addClass("btn-danger").html("<span class='glyphicon glyphicon-remove' style='font-size: 12px;'></span> Disabled");
 
             } else {
-                $($(this).attr("data-preview-id")).attr("data-enabled", "True");
-                $($(this).attr("data-preview-id")).attr("src", competitorsOverlayPreviewSourceUrl);
+                $($(this).data("preview-id")).data("enabled", "True");
+                $($(this).data("preview-id")).attr("src", competitorsOverlayPreviewSourceUrl);
 
-                if ($($(this).attr("data-panel-id")).hasClass("previewDisabled")) {
-                    $($(this).attr("data-panel-id")).addClass("previewEnabled").removeClass("previewDisabled");
+                if ($($(this).data("panel-id")).hasClass("previewDisabled")) {
+                    $($(this).data("panel-id")).addClass("previewEnabled").removeClass("previewDisabled");
                 }
 
                 $(this).removeClass("btn-danger").addClass("btn-success").html("<span class='glyphicon glyphicon-ok' style='font-size: 12px;'></span> Enabled");

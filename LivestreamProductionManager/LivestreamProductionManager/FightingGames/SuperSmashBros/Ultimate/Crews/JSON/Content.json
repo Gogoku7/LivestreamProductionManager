@@ -1,0 +1,130 @@
+[
+{
+  "Selector": "#crew1NameText",
+  "Value": "Europe"
+},
+{
+  "Selector": "#crew1Character",
+  "Value": "../../CharacterIcons/bayonetta.png"
+},
+{
+  "Selector": "#crew1Port",
+  "Value": "../../PlayerPorts/PlayerPort1.png"
+},
+{
+  "Selector": "#crew1StocksLeftText",
+  "Value": "3"
+},
+{
+  "Selector": "#crew1Player1NameText",
+  "Value": "Mr. R"
+},
+{
+  "Selector": ".crew1Player1Active",
+  "Value": "True"
+},
+{
+  "Selector": ".crew1Player1Eliminated",
+  "Value": "False"
+},
+{
+  "Selector": "#crew1Player1TwitterText",
+  "Value": ""
+},
+{
+  "Selector": "#crew1Player1Character",
+  "Value": "../../CharacterIcons/bayonetta.png"
+},
+{
+  "Selector": "#crew1Player2NameText",
+  "Value": "iStudying"
+},
+{
+  "Selector": ".crew1Player2Active",
+  "Value": "False"
+},
+{
+  "Selector": ".crew1Player2Eliminated",
+  "Value": "True"
+},
+{
+  "Selector": "#crew1Player2TwitterText",
+  "Value": ""
+},
+{
+  "Selector": "#crew1Player2Character",
+  "Value": "../../CharacterIcons/zerosuitsamus.png"
+},
+{
+  "Selector": "#crew2NameText",
+  "Value": "USA"
+},
+{
+  "Selector": "#crew2Character",
+  "Value": "../../CharacterIcons/bowser.png"
+},
+{
+  "Selector": "#crew2Port",
+  "Value": "../../PlayerPorts/PlayerPort2.png"
+},
+{
+  "Selector": "#crew2StocksLeftText",
+  "Value": "3"
+},
+{
+  "Selector": "#crew2Player1NameText",
+  "Value": "Tweek"
+},
+{
+  "Selector": ".crew2Player1Active",
+  "Value": "True"
+},
+{
+  "Selector": ".crew2Player1Eliminated",
+  "Value": "False"
+},
+{
+  "Selector": "#crew2Player1TwitterText",
+  "Value": ""
+},
+{
+  "Selector": "#crew2Player1Character",
+  "Value": "../../CharacterIcons/bowser.png"
+},
+{
+  "Selector": "#crew2Player2NameText",
+  "Value": "MKLeo"
+},
+{
+  "Selector": ".crew2Player2Active",
+  "Value": "False"
+},
+{
+  "Selector": ".crew2Player2Eliminated",
+  "Value": "True"
+},
+{
+  "Selector": "#crew2Player2TwitterText",
+  "Value": ""
+},
+{
+  "Selector": "#crew2Player2Character",
+  "Value": "../../CharacterIcons/zelda.png"
+},
+{
+  "Selector": "#tournamentText",
+  "Value": "Fight Night 50"
+},
+{
+  "Selector": "#extraText",
+  "Value": "Esports Game Arena"
+},
+{
+  "Selector": "#roundText",
+  "Value": "Winners Round 1"
+},
+{
+  "Selector": "#bestOfText",
+  "Value": "Best of 3"
+}
+]

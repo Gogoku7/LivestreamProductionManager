@@ -1,4 +1,5 @@
 ﻿using LivestreamProductionManager.Interfaces;
+using LivestreamProductionManager.Interfaces.SuperSmashBros;
 using LivestreamProductionManager.Models.FightingGames.SuperSmashBros;
 using Serilog;
 using System;
@@ -7,17 +8,17 @@ using System.Web;
 
 namespace LivestreamProductionManager.Implementations.SuperSmashBros
 {
-    public class SmashFileWriter
+    public class SmashCssFileWriter : ISmashFileWriter
     {
-        private readonly ITemplateFileReader _templateFileReader = new CssTemplateFileReader();
-        private readonly SmashTextReplacer _smashTextReplacer = new SmashTextReplacer();
+        private readonly ITemplateFileReader _templateFileReader = new TemplateFileReader("~/FightingGames/CssTemplates/");
+        private readonly ISmashValuesReplacer _smashTextReplacer = new SmashCssReplacer();
 
-        public void WriteSinglesCssFile(string pathToFormat, SinglesCssModel singlesCssModel)
+        public void WriteSinglesFile(string pathToFormat, SinglesCssModel singlesCssModel)
         {
             try
             {
                 var templateCssFile = _templateFileReader.ReadTemplateFile("SuperSmashBros/SuperSmashBrosSinglesTemplate.css");
-                var cssFileContent = _smashTextReplacer.ReplaceCssForSingles(templateCssFile, singlesCssModel);
+                var cssFileContent = _smashTextReplacer.ReplaceValuesForSingles(templateCssFile, singlesCssModel);
 
                 File.WriteAllText(HttpContext.Current.Server.MapPath(pathToFormat + "CSS/Content.css"), cssFileContent);
             }
@@ -28,12 +29,12 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
             }
         }
 
-        public void WriteDoublesCssFile(string pathToFormat, DoublesCssModel doublesCssModel)
+        public void WriteDoublesFile(string pathToFormat, DoublesCssModel doublesCssModel)
         {
             try
             {
                 var templateCssFile = _templateFileReader.ReadTemplateFile("SuperSmashBros/SuperSmashBrosDoublesTemplate.css");
-                var cssFileContent = _smashTextReplacer.ReplaceCssForDoubles(templateCssFile, doublesCssModel);
+                var cssFileContent = _smashTextReplacer.ReplaceValuesForDoubles(templateCssFile, doublesCssModel);
 
                 File.WriteAllText(HttpContext.Current.Server.MapPath(pathToFormat + "CSS/Content.css"), cssFileContent);
             }
@@ -44,12 +45,12 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
             }
         }
 
-        public void WriteCrewsCssFile(string pathToFormat, CrewsCssModel crewsCssModel)
+        public void WriteCrewsFile(string pathToFormat, CrewsCssModel crewsCssModel)
         {
             try
             {
                 var templateCssFile = _templateFileReader.ReadTemplateFile("SuperSmashBros/SuperSmashBrosCrewsTemplate.css");
-                var cssFileContent = _smashTextReplacer.ReplaceCssForCrews(templateCssFile, crewsCssModel);
+                var cssFileContent = _smashTextReplacer.ReplaceValuesForCrews(templateCssFile, crewsCssModel);
 
                 File.WriteAllText(HttpContext.Current.Server.MapPath(pathToFormat + "CSS/Content.css"), cssFileContent);
             }
@@ -60,12 +61,12 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
             }
         }
 
-        public void WriteSquadStrikeCssFile(string pathToFormat, SquadStrikeCssModel squadStrikeCssModel)
+        public void WriteSquadStrikeFile(string pathToFormat, SquadStrikeCssModel squadStrikeCssModel)
         {
             try
             {
                 var templateCssFile = _templateFileReader.ReadTemplateFile("SuperSmashBros/SuperSmashBrosSquadStrikeTemplate.css");
-                var cssFileContent = _smashTextReplacer.ReplaceCssForSquadStrike(templateCssFile, squadStrikeCssModel);
+                var cssFileContent = _smashTextReplacer.ReplaceValuesForSquadStrike(templateCssFile, squadStrikeCssModel);
 
                 File.WriteAllText(HttpContext.Current.Server.MapPath(pathToFormat + "CSS/Content.css"), cssFileContent);
             }

@@ -1,79 +1,79 @@
 #team1NameText:before {
-    content: "-";
+    content: "Team Saiyan";
 }
 
 #team1ScoreText:before {
-    content: "0";
+    content: "1";
 }
 
 #team1Player1NameText:before {
-    content: "-";
+    content: "Cinnovate | Gogoku7";
 }
 #team1Player2NameText:before {
-    content: "-";
+    content: "Median4";
 }
 
 
 #team1Player1Character {
-    background-image: url('../../CharacterIcons/bayonetta.png');
+    background-image: url('../../CharacterIcons/fox.png');
 }
 #team1Player2Character {
-    background-image: url('../../CharacterIcons/bowser.png');
+    background-image: url('../../CharacterIcons/littlemac.png');
 }
 
 
 #team1Player1Port {
-    background-image: url('../../PlayerPorts/PlayerPort1.png');
+    background-image: url('../../PlayerPorts/playerPortNo.png');
 }
 #team1Player2Port {
-    background-image: url('../../PlayerPorts/PlayerPort2.png');
+    background-image: url('../../PlayerPorts/playerPortNo.png');
 }
 
 
 #team2NameText:before {
-    content: "-";
+    content: "Team NaRo";
 }
 
 #team2ScoreText:before {
-    content: "0";
+    content: "1";
 }
 
 #team2Player1NameText:before {
-    content: "-";
+    content: "Tempo | ZeRo";
 }
 #team2Player2NameText:before {
-    content: "-";
+    content: "NRG | Nairo";
 }
 
 
 #team2Player1Character {
-    background-image: url('../../CharacterIcons/bowserjr.png');
+    background-image: url('../../CharacterIcons/diddykong.png');
 }
 #team2Player2Character {
-    background-image: url('../../CharacterIcons/captainfalcon.png');
+    background-image: url('../../CharacterIcons/palutena.png');
 }
 
 
 #team2Player1Port {
-    background-image: url('../../PlayerPorts/PlayerPort3.png');
+    background-image: url('../../PlayerPorts/playerPortNo.png');
 }
 #team2Player2Port {
-    background-image: url('../../PlayerPorts/PlayerPort4.png');
+    background-image: url('../../PlayerPorts/playerPortNo.png');
 }
 
 
 #tournamentText:before {
-    content: "";
+    content: "Fight Night 50";
 }
 
 #extraText:before {
-    content: "";
+    content: "Esports Game Arena";
 }
 
 #roundText:before {
-    content: "";
+    content: "Winners Round 1";
 }
 
 #bestOfText:before {
-    content: "";
+    content: "Best of 3";
 }

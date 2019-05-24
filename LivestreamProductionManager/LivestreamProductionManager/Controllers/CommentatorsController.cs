@@ -1,4 +1,6 @@
-﻿using LivestreamProductionManager.ViewModels.Commentators;
+﻿using LivestreamProductionManager.Implementations.Commentators;
+using LivestreamProductionManager.Interfaces.Commentators;
+using LivestreamProductionManager.ViewModels.Commentators;
 using Newtonsoft.Json;
 using Serilog;
 using System;
@@ -9,13 +11,17 @@ namespace LivestreamProductionManager.Controllers
 {
     public class CommentatorsController : BaseController
     {
-        public PartialViewResult GetCommentatorRow(int id)
+        private readonly ICommentatorsOverlayManager _commentatorsCssOverlayManager = new CommentatorsCssOverlayManager();
+        private readonly ICommentatorsOverlayManager _commentatorsJsonOverlayManager = new CommentatorsJsonOverlayManager();
+
+        [HttpPost]
+        public PartialViewResult GetCommentatorRow(int index)
         {
-            return PartialView("CommentatorRow", id);
+            return PartialView("CommentatorRow", index);
         }
 
         [HttpPost]
-        public JsonResult UpdateCommentators(List<CommentatorViewModel> commentatorViewModels)
+        public JsonResult UpdateCommentators(string pathToGame, List<CommentatorViewModel> commentatorViewModels)
         {
             try
             {
@@ -26,14 +32,15 @@ namespace LivestreamProductionManager.Controllers
                     throw new ArgumentException("variable CommentatorViewModels was null, this is a bug if the commentators form is not empty.");
                 }
 
-                //Save files
+                _commentatorsCssOverlayManager.UpdateSinglesOverlay(pathToGame, commentatorViewModels);
+                _commentatorsJsonOverlayManager.UpdateSinglesOverlay(pathToGame, commentatorViewModels);
 
                 return SuccessSnackbar("Successfully saved commentator files.");
             }
             catch (Exception ex)
             {
                 Log.Error(ex, ex.Message);
-                return ErrorSnackbar(ex, "Something went wrong while saving commentator files, see the console for details.");
+                return ErrorSnackbar("Something went wrong while saving commentator files, see the console for details.", ex);
             }
         }
     }

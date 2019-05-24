@@ -1,0 +1,90 @@
+[
+{
+  "Selector": "#team1NameText",
+  "Value": "Team Saiyan"
+},
+{
+  "Selector": "#team1ScoreText",
+  "Value": "1"
+},
+{
+  "Selector": "#team1Player1NameText",
+  "Value": "Gogoku7"
+},
+{
+  "Selector": ".team1Player1Sponsor",
+  "Value": "Cinnovate"
+},
+{
+  "Selector": "#team1Player2NameText",
+  "Value": "Median4"
+},
+{
+  "Selector": ".team1Player2Sponsor",
+  "Value": ""
+},
+{
+  "Selector": "#team1Player1Character",
+  "Value": "../../CharacterIcons/fox.png"
+},
+{
+  "Selector": "#team1Player2Character",
+  "Value": "../../CharacterIcons/littlemac.png"
+},
+{
+  "Selector": "team1Player2Port",
+  "Value": "../../PlayerPorts/playerPortNo.png"
+},
+{
+  "Selector": "#team2NameText",
+  "Value": "Team NaRo"
+},
+{
+  "Selector": "#team2ScoreText",
+  "Value": "1"
+},
+{
+  "Selector": "#team2Player1NameText",
+  "Value": "ZeRo"
+},
+{
+  "Selector": ".team2Player1Sponsor",
+  "Value": "Tempo"
+},
+{
+  "Selector": "#team2Player2NameText",
+  "Value": "Nairo"
+},
+{
+  "Selector": ".team2Player2Sponsor",
+  "Value": "NRG"
+},
+{
+  "Selector": "#team2Player1Character",
+  "Value": "../../CharacterIcons/diddykong.png"
+},
+{
+  "Selector": "#team2Player2Character",
+  "Value": "../../CharacterIcons/palutena.png"
+},
+{
+  "Selector": "team2Player2Port",
+  "Value": "../../PlayerPorts/playerPortNo.png"
+},
+{
+  "Selector": "#tournamentText",
+  "Value": "Fight Night 50"
+},
+{
+  "Selector": "#extraText",
+  "Value": "Esports Game Arena"
+},
+{
+  "Selector": "#roundText",
+  "Value": "Winners Round 1"
+},
+{
+  "Selector": "#bestOfText",
+  "Value": "Best of 3"
+}
+]
