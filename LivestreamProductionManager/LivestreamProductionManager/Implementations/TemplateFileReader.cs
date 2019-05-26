@@ -9,7 +9,6 @@ namespace LivestreamProductionManager.Implementations
     public class TemplateFileReader : ITemplateFileReader
     {
         private readonly string _templatesFolderPath = "~/FightingGames/CssTemplates/";
-        //private readonly string _cssTemplatesFolderPath = "~/FightingGames/JsonTemplates/";
 
         public TemplateFileReader(string templatesFolderPath)
         {

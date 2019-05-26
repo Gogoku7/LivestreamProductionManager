@@ -32,8 +32,8 @@ namespace LivestreamProductionManager.Controllers
                     throw new ArgumentException("variable CommentatorViewModels was null, this is a bug if the commentators form is not empty.");
                 }
 
-                _commentatorsCssOverlayManager.UpdateSinglesOverlay(pathToGame, commentatorViewModels);
-                _commentatorsJsonOverlayManager.UpdateSinglesOverlay(pathToGame, commentatorViewModels);
+                _commentatorsCssOverlayManager.UpdateCommentatorsOverlay(pathToGame, commentatorViewModels);
+                _commentatorsJsonOverlayManager.UpdateCommentatorsOverlay(pathToGame, commentatorViewModels);
 
                 return SuccessSnackbar("Successfully saved commentator files.");
             }

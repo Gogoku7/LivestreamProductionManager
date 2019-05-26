@@ -1,15 +1,10 @@
 ﻿using LivestreamProductionManager.Models.Commentators;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LivestreamProductionManager.Interfaces.Commentators
 {
-
     public interface ICommentatorsFileWriter
     {
-        void WriteCommentatorsFile(string pathToFormat, CommentatorsValuesModel commentatorsValuesModel);
+        void WriteCommentatorsFile(string pathToGame, List<CommentatorsValuesModel> commentatorsValuesModels);
     }
 }

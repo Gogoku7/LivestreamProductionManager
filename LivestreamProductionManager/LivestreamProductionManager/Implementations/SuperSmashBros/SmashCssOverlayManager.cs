@@ -12,7 +12,7 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
     {
         private readonly ITemplateFileReader _templatefileReader = new TemplateFileReader("~/FightingGames/CssTemplates/");
         private readonly ITextReplacer _textReplacer = new TextReplacer();
-        private readonly ISmashFileWriter _fileWriter = new SmashCssFileWriter();
+        private readonly ISmashFileWriter _smashFileWriter = new SmashCssFileWriter();
 
         private readonly string _textTemplateCss;
         private readonly string _imageTemplateCss;
@@ -53,7 +53,7 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 singlesCssModel.Round = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "roundText", singlesViewModel.Round ?? "");
                 singlesCssModel.BestOf = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "bestOfText", singlesViewModel.BestOf + "");
 
-                _fileWriter.WriteSinglesFile(singlesViewModel.PathToFormat, singlesCssModel);
+                _smashFileWriter.WriteSinglesFile(singlesViewModel.PathToFormat, singlesCssModel);
             }
             catch (Exception ex)
             {
@@ -85,7 +85,7 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 doublesCssModel.Round = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "roundText", doublesViewModel.Round ?? "");
                 doublesCssModel.BestOf = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "bestOfText", doublesViewModel.BestOf ?? "");
 
-                _fileWriter.WriteDoublesFile(doublesViewModel.PathToFormat, doublesCssModel);
+                _smashFileWriter.WriteDoublesFile(doublesViewModel.PathToFormat, doublesCssModel);
             }
             catch (Exception ex)
             {
@@ -157,7 +157,7 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 crewsCssModel.Round = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "roundText", crewsViewModel.Round ?? "");
                 crewsCssModel.BestOf = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "bestOfText", crewsViewModel.BestOf ?? "");
 
-                _fileWriter.WriteCrewsFile(crewsViewModel.PathToFormat, crewsCssModel);
+                _smashFileWriter.WriteCrewsFile(crewsViewModel.PathToFormat, crewsCssModel);
             }
             catch (Exception ex)
             {
@@ -241,7 +241,7 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 squadStrikeCssModel.Round = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "roundText", squadStrikeViewModel.Round ?? "");
                 squadStrikeCssModel.BestOf = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "bestOfText", squadStrikeViewModel.BestOf ?? "");
 
-                _fileWriter.WriteSquadStrikeFile(squadStrikeViewModel.PathToFormat, squadStrikeCssModel);
+                _smashFileWriter.WriteSquadStrikeFile(squadStrikeViewModel.PathToFormat, squadStrikeCssModel);
             }
             catch (Exception ex)
             {

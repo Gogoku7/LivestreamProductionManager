@@ -127,6 +127,10 @@ div.panel {
     display: none;
 }
 
+#manageCommentatorsForm > div:last-child button[id^='moveCommentatorDown-']{
+    display: none;
+}
+
 #crewPlayersContainer > .row, #squadPlayersContainer > .row {
     margin-bottom: 4px;
 }

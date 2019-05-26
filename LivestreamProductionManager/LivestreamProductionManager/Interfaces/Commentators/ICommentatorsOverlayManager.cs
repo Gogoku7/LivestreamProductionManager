@@ -9,6 +9,6 @@ namespace LivestreamProductionManager.Interfaces.Commentators
 {
     public interface ICommentatorsOverlayManager
     {
-        void UpdateSinglesOverlay(string pathToGame, List<CommentatorViewModel> commentatorViewModels);
+        void UpdateCommentatorsOverlay(string pathToGame, List<CommentatorViewModel> commentatorViewModels);
     }
 }

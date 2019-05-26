@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace LivestreamProductionManager.Models.Commentators
+﻿namespace LivestreamProductionManager.Models.Commentators
 {
     public class CommentatorsValuesModel
     {
+        public string Name { get; set; }
+        public string Twitter { get; set; }
     }
 }

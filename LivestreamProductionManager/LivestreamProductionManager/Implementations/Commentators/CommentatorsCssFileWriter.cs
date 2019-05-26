@@ -1,9 +1,10 @@
 ﻿using LivestreamProductionManager.Interfaces;
 using LivestreamProductionManager.Interfaces.Commentators;
 using LivestreamProductionManager.Models.Commentators;
+using Serilog;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Web;
 
 namespace LivestreamProductionManager.Implementations.Commentators
@@ -11,11 +12,23 @@ namespace LivestreamProductionManager.Implementations.Commentators
     public class CommentatorsCssFileWriter : ICommentatorsFileWriter
     {
         private readonly ITemplateFileReader _templateFileReader = new TemplateFileReader("~/FightingGames/CssTemplates/");
-        private readonly ICommentatorsValuesReplacer _smashTextReplacer = new SmashCssReplacer();
+        private readonly ICommentatorsValuesReplacer _commentatorsValuesReplacer = new CommentatorsCssReplacer();
 
-        public void WriteCommentatorsFile(string pathToFormat, CommentatorsValuesModel commentatorsValuesModel)
+        public void WriteCommentatorsFile(string pathToGame, List<CommentatorsValuesModel> commentatorsValuesModels)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var templateCssFile = _templateFileReader.ReadTemplateFile("Commentators/CommentatorsTemplate.css");//todo: file maken
+                var cssFileContent = _commentatorsValuesReplacer.ReplaceValuesForCommentators(templateCssFile, commentatorsValuesModels);
+
+                File.WriteAllText(HttpContext.Current.Server.MapPath(pathToGame + "Commentators/Content.css"), cssFileContent);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+                throw;
+            }
+            
         }
     }
 }

@@ -218,6 +218,7 @@
             </div>
             <div class="panel-body" id="manageCommentators">
                 <form action="/Commentators/UpdateCommentators" method="post" id="manageCommentatorsForm">
+                    <input type="hidden" name="pathToGame" />
                     <div class="row">
                         <div class="col-md-5">
                             <label>Name</label>
@@ -409,7 +410,8 @@
                 success: function (data) {
                     $("#manageCompetitors").html(data);
                     $("#competitorsOverlayPath").html(selectedFormat.attr("value") + "GameOverlay.html");
-                    $("#commentatorsOverlayPath").html(selectedGame.attr("value") + "Commentators/CommentatorsOverlay.html")
+                    $("#commentatorsOverlayPath").html(selectedGame.attr("value") + "Commentators/CommentatorsOverlay.html");
+                    $("#manageCommentatorsForm > [name='pathToGame']").val(selectedGame.attr("value"));
 
                     competitorsOverlayPreviewSourceUrl = "http://" + baseUrl + selectedFormat.val().slice(1) + "GameOverlay.html";
                     if ($("#previewOverlayIframe").data("enabled") == "True") {
@@ -811,7 +813,7 @@
                 row2.replaceWith(row1.clone());
             }
             else {
-                //snackbar can't move it down
+                showSnackbar("#manageCommentatorsSnackbar", "The selected commentator can't be moved down at this time.");
             }
 
             $("div[id*='commentator-row-']").each(function (index) {
@@ -840,13 +842,9 @@
                     row2.replaceWith(row1.clone());
                 }
                 else {
-                    //snackbar can't move up
+                    showSnackbar("#manageCommentatorsSnackbar", "The selected commentator can't be moved up at this time.");
                 }
             }
-            else {
-                alert("Something is not right here...");
-            }
-            
 
             $("div[id*='commentator-row-']").each(function (index) {
                 $(this).attr("id", "commentator-row-" + index);
@@ -869,34 +867,39 @@
         // else > The update was unsuccessful.
         //  Show a snackbar message.
         $("#submitCommentatorsButton").click(function () {
-            var manageCommentatorsForm = $("#manageCommentatorsForm");
-            $.ajax({
-                type: "POST",
-                url: manageCommentatorsForm.attr("action"),
-                data: manageCommentatorsForm.serialize(),
-                dataType: "json",
-                success: function (data) {
-                    showSnackbar("#manageCommentatorsSnackbar", data.Message);
-
-                    if (data.Success == "True") {
-                        if ($("#submitCommentatorsButton").hasClass("btn-danger")) {
-                            $("#submitCommentatorsButton").removeClass("btn-danger").addClass("btn-primary");
-                        }
-
-                        // SendQueuUpdate("#manageCommentatorsForm");
-                        // UpdateCSSMonitor("/Commentators/GetCssFileContent", format);
-                    }
-                    else {
+            if ($("#Format").val()) {
+                var manageCommentatorsForm = $("#manageCommentatorsForm");
+                $.ajax({
+                    type: "POST",
+                    url: manageCommentatorsForm.attr("action"),
+                    data: manageCommentatorsForm.serialize(),
+                    dataType: "json",
+                    success: function (data) {
                         showSnackbar("#manageCommentatorsSnackbar", data.Message);
-                        UpdateErrorMonitor(data.ErrorMessage);
-                        console.log(data.ErrorMessage);
+
+                        if (data.Success == "True") {
+                            if ($("#submitCommentatorsButton").hasClass("btn-danger")) {
+                                $("#submitCommentatorsButton").removeClass("btn-danger").addClass("btn-primary");
+                            }
+
+                            // SendQueuUpdate("#manageCommentatorsForm");
+                            // UpdateCSSMonitor("/Commentators/GetCssFileContent", format);
+                        }
+                        else {
+                            showSnackbar("#manageCommentatorsSnackbar", data.Message);
+                            UpdateErrorMonitor(data.ErrorMessage);
+                            console.log(data.ErrorMessage);
+                        }
+                    },
+                    error: function (ex) {
+                        UpdateErrorMonitor(ex);
+                        console.log(ex);
                     }
-                },
-                error: function (ex) {
-                    UpdateErrorMonitor(ex);
-                    console.log(ex);
-                }
-            });
+                });
+            } else {
+                showSnackbar("#manageCommentatorsSnackbar", "No game and format have been selected.");
+            }
+            
         });
 
         // Summary:
