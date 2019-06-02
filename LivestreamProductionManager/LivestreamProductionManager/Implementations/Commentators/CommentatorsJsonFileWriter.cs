@@ -18,10 +18,10 @@ namespace LivestreamProductionManager.Implementations.Commentators
         {
             try
             {
-                var templateJsonFile = _templateFileReader.ReadTemplateFile("ContentTemplate.json");//todo: file maken
+                var templateJsonFile = _templateFileReader.ReadTemplateFile("ContentTemplate.json");
                 var jsonFileContent = _commentatorsValuesReplacer.ReplaceValuesForCommentators(templateJsonFile, commentatorsValuesModels);
 
-                File.WriteAllText(HttpContext.Current.Server.MapPath(pathToGame + "Commentators/Content.json"), jsonFileContent);
+                File.WriteAllText(HttpContext.Current.Server.MapPath(pathToGame + "Commentators/JSON/Content.json"), jsonFileContent);
             }
             catch (Exception ex)
             {

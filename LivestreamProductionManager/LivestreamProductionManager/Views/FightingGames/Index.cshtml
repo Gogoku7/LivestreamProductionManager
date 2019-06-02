@@ -3,7 +3,58 @@
 }
 
 <div class="row">
-    <!--Manage tournament-->
+    <!--WebSocket Client monitor-->
+    <div class="half-horizontal-width" style="float: left">
+        <div class="panel panel-info">
+            <div class="panel-heading text-center">
+                <div class="pull-left">
+                    <button class="btn btn-danger panelButton" id="clearWebSocketClientMonitorButton"><span class="glyphicon glyphicon-remove" style="font-size: 12px;"></span> Clear</button>
+                </div>
+
+                <text class="panel-title">WebSocket clients monitor</text>
+
+                <div class="pull-right">
+                    <button class="btn btn-success panelButton toggleMonitorButton" id="toggleWebSocketClientMonitorButton" data-monitor-id="#webSocketClientMonitorTableBody"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
+                </div>
+            </div>
+            <div class="panel-body monitorPanelBody" style="overflow-y:scroll;">
+                <table class="table table-bordered" id="webSocketClientMonitorTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Path</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="webSocketClientMonitorTableBody" data-enabled="True" data-client-monitor="True"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!--Error monitor-->
+    <div class="half-horizontal-width" style="float: left">
+        <div class="panel panel-info">
+            <div class="panel-heading text-center">
+                <div class="pull-left">
+                    <button class="btn btn-danger panelButton" id="clearErrorMonitorButton"><span class="glyphicon glyphicon-remove" style="font-size: 12px;"></span> Clear</button>
+                </div>
+
+                <text class="panel-title">Error monitor</text>
+
+                <div class="pull-right">
+                    <button class="btn btn-success panelButton toggleMonitorButton" id="toggleErrorMonitorButton" data-monitor-id="#errorMonitor"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
+                </div>
+            </div>
+            <div class="panel-body monitorPanelBody">
+                <pre class="monitorPre" id="errorMonitor" data-enabled="True"></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!--Manage Tournament-->
     <div class="full-horizontal-width">
         <div class="panel panel-warning">
             <div class="panel-heading text-center">
@@ -51,12 +102,12 @@
 </div>
 
 <div class="row">
-    <!--Manage players-->
+    <!--Manage Competitors-->
     <div class="full-horizontal-width">
         <div class="panel panel-primary">
             <div class="panel-heading text-center">
                 <div class="pull-left">
-                    <button class="btn btn-success panelButton" id="submitCompetitorsButton"><span class="glyphicon glyphicon-arrow-up" style="font-size: 11px;"></span> Update</button>
+                    <button class="btn btn-success panelButton submitButton" id="submitCompetitorsButton" data-form-id="#manageCompetitorsForm"><span class="glyphicon glyphicon-arrow-up" style="font-size: 11px;"></span> Update</button>
                 </div>
 
                 <text class="panel-title">Manage competitors</text>
@@ -77,23 +128,23 @@
 </div>
 
 <div class="row">
-    <!--WebSocket Data monitor-->
-    <div class="quarter-horizontal-width" style="float: left">
-        <div class="panel panel-info">
+    <!--Competitors WebSocket Data monitor-->
+    <div class="one-third-horizontal-width" style="float: left">
+        <div class="panel panel-primary">
             <div class="panel-heading text-center">
                 <div class="pull-left">
-                    <button class="btn btn-danger panelButton" id="clearWebSocketDataMonitorButton"><span class="glyphicon glyphicon-remove" style="font-size: 12px;"></span> Clear</button>
+                    <button class="btn btn-danger panelButton clearWebSocketDataMonitorButton" id="clearCompetitorsWebSocketDataMonitorButton" data-monitor-id="#competitorsWebSocketDataMonitor"><span class="glyphicon glyphicon-remove" style="font-size: 12px;"></span> Clear</button>
                 </div>
 
-                <text class="panel-title">WebSocket data monitor</text>
+                <text class="panel-title">Competitors data monitor</text>
 
                 <div class="pull-right">
-                    <button class="btn btn-success panelButton toggleMonitorButton" id="toggleWebSocketDataMonitorButton" data-monitor-id="#webSocketDataMonitor"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
+                    <button class="btn btn-success panelButton toggleMonitorButton toggleWebSocketDataMonitorButton" id="toggleCompetitorsWebSocketDataMonitorButton" data-monitor-id="#competitorsWebSocketDataMonitor"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
                 </div>
             </div>
             <div class="panel-body monitorPanelBody">
                 <pre class="monitorPre">
-                    <code id="webSocketDataMonitor" class="monitorCode json" data-enabled="True">
+                    <code class="monitorCode json" id="competitorsWebSocketDataMonitor" data-enabled="True">
                         
                     </code>
                 </pre>
@@ -101,52 +152,23 @@
         </div>
     </div>
 
-    <!--Websocket Client monitor-->
-    <div class="quarter-horizontal-width" style="float: left">
-        <div class="panel panel-warning">
-            <div class="panel-heading text-center">
-                <div class="pull-left">
-                    <button class="btn btn-danger panelButton" id="clearWebSocketClientMonitorButton"><span class="glyphicon glyphicon-remove" style="font-size: 12px;"></span> Clear</button>
-                </div>
-
-                <text class="panel-title">WebSocket clients monitor</text>
-
-                <div class="pull-right">
-                    <button class="btn btn-success panelButton toggleMonitorButton" id="toggleWebSocketClientMonitorButton" data-monitor-id="#webSocketClientMonitorTableBody"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
-                </div>
-            </div>
-            <div class="panel-body monitorPanelBody" style="overflow-y:scroll;">
-                <table class="table table-bordered" id="webSocketClientMonitorTable">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Path</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody id="webSocketClientMonitorTableBody" data-enabled="True" data-client-monitor="True"></tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <!--CSS monitor-->
-    <div class="quarter-horizontal-width" style="float: left">
+    <!--Competitors CSS monitor-->
+    <div class="one-third-horizontal-width" style="float: left">
         <div class="panel panel-primary">
             <div class="panel-heading text-center">
                 <div class="pull-left">
-                    <button class="btn btn-danger panelButton" id="clearCssMonitorButton"><span class="glyphicon glyphicon-remove" style="font-size: 12px;"></span> Clear</button>
+                    <button class="btn btn-danger panelButton clearCssMonitorButton" id="clearCompetitorsCssMonitorButton" data-monitor-id="#competitorsCssMonitor"><span class="glyphicon glyphicon-remove" style="font-size: 12px;"></span> Clear</button>
                 </div>
 
-                <text class="panel-title">CSS monitor</text>
+                <text class="panel-title">Competitors CSS monitor</text>
 
                 <div class="pull-right">
-                    <button class="btn btn-success panelButton toggleMonitorButton" id="toggleCssMonitorButton" data-monitor-id="#cssMonitor"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
+                    <button class="btn btn-success panelButton toggleMonitorButton toggleCssMonitorButton" id="toggleCompetitorsCssMonitorButton" data-monitor-id="#competitorsCssMonitor"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
                 </div>
             </div>
             <div class="panel-body monitorPanelBody">
                 <pre class="monitorPre">
-                    <code class="monitorCode css" id="cssMonitor" data-enabled="True">
+                    <code class="monitorCode css" id="competitorsCssMonitor" data-enabled="True">
 
                     </code>
                 </pre>
@@ -154,60 +176,60 @@
         </div>
     </div>
 
-    <!--Error monitor-->
-    <div class="quarter-horizontal-width" style="float: left">
-        <div class="panel panel-default">
+    <!--Competitors JSON monitor-->
+    <div class="one-third-horizontal-width" style="float: left">
+        <div class="panel panel-primary">
             <div class="panel-heading text-center">
                 <div class="pull-left">
-                    <button class="btn btn-danger panelButton" id="clearErrorMonitorButton"><span class="glyphicon glyphicon-remove" style="font-size: 12px;"></span> Clear</button>
+                    <button class="btn btn-danger panelButton clearJsonMonitorButton" id="clearCompetitorsJsonMonitorButton" data-monitor-id="#competitorsJsonMonitor"><span class="glyphicon glyphicon-remove" style="font-size: 12px;"></span> Clear</button>
                 </div>
 
-                <text class="panel-title">Error monitor</text>
+                <text class="panel-title">Competitors JSON monitor</text>
 
                 <div class="pull-right">
-                    <button class="btn btn-success panelButton toggleMonitorButton" id="toggleErrorMonitorButton" data-monitor-id="#errorMonitor"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
+                    <button class="btn btn-success panelButton toggleMonitorButton toggleJsonMonitorButton" id="toggleCompetitorsJsonMonitorButton" data-monitor-id="#competitorsJsonMonitor"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
                 </div>
             </div>
             <div class="panel-body monitorPanelBody">
-                <pre class="monitorPre" id="errorMonitor" data-enabled="True"></pre>
+                <pre class="monitorPre">
+                    <code class="monitorCode json" id="competitorsJsonMonitor" data-enabled="True">
+
+                    </code>
+                </pre>
             </div>
         </div>
     </div>
 </div>
 
 <div class="row">
-    <!--Preview competitors overlay-->
+    <!--Preview Competitors overlay-->
     <div class="full-horizontal-width">
-        <div class="panel panel-danger">
+        <div class="panel panel-primary">
             <div class="panel-heading text-center">
                 <div class="pull-left">
                     <button class="btn btn-danger panelButton" id="forceResizeButton"><span class="glyphicon glyphicon-resize-full" style="font-size: 11px;"></span> Force resize</button>
                 </div>
 
-                <text class="panel-title">Preview overlay</text>
+                <text class="panel-title">Preview Competitors overlay</text>
 
                 <div class="pull-right">
-                    <button class="btn btn-success panelButton togglePreviewOverlayButton" id="togglePreviewOverlayButton" data-preview-id="#previewOverlayIframe" data-panel-id="#previewOverlay"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
+                    <button class="btn btn-success panelButton togglePreviewOverlayButton" id="toggleCompetitorsPreviewOverlayButton" data-preview-id="#competitorsPreviewOverlayIframe" data-panel-id="#competitorsPreviewOverlay"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
                 </div>
             </div>
-            <div class="panel-body previewEnabled" id="previewOverlay">
-                <iframe id="previewOverlayIframe" data-enabled="True"></iframe>
+            <div class="panel-body previewEnabled" id="competitorsPreviewOverlay">
+                <iframe id="competitorsPreviewOverlayIframe" data-enabled="True"></iframe>
             </div>
         </div>
     </div>
 </div>
 
-<style>
-    
-</style>
-
 <div class="row">
-    <!--Manage commentators-->
+    <!--Manage Commentators-->
     <div class="full-horizontal-width">
         <div class="panel panel-success">
             <div class="panel-heading text-center">
                 <div class="pull-left">
-                    <button class="btn btn-primary panelButton" id="submitCommentatorsButton">Update</button>
+                    <button class="btn btn-primary panelButton submitButton" id="submitCommentatorsButton" data-form-id="#manageCommentatorsForm"><span class="glyphicon glyphicon-arrow-up" style="font-size: 11px;"></span> Update</button>
                 </div>
 
                 <text class="panel-title">Manage commentators</text>
@@ -217,8 +239,19 @@
                 </div>
             </div>
             <div class="panel-body" id="manageCommentators">
-                <form action="/Commentators/UpdateCommentators" method="post" id="manageCommentatorsForm">
-                    <input type="hidden" name="pathToGame" />
+                <form action="/Commentators/UpdateCommentators"
+                      method="post"
+                      id="manageCommentatorsForm"
+                      data-overlay-type="Commentary"
+                      data-websocket-data-monitor-id="#commentatorsWebSocketDataMonitor"
+                      data-css-monitor-url="/Commentators/GetCssFileContent"
+                      data-css-monitor-id="#commentatorsCssMonitor"
+                      data-json-monitor-url="/Commentators/GetJsonFileContent"
+                      data-json-monitor-id="#commentatorsJsonMonitor"
+                      data-overlay-preview-id="commentatorsPreviewOverlayIframe"
+                      data-snackbar-id="#manageCommentatorsSnackbar">
+
+                    <input type="hidden" name="PathToGame" />
                     <div class="row">
                         <div class="col-md-5">
                             <label>Name</label>
@@ -239,12 +272,109 @@
     </div>
 </div>
 
+<div class="row">
+    <!--Commentators WebSocket Data monitor-->
+    <div class="one-third-horizontal-width" style="float: left">
+        <div class="panel panel-success">
+            <div class="panel-heading text-center">
+                <div class="pull-left">
+                    <button class="btn btn-danger panelButton clearWebSocketDataMonitorButton" id="clearCommentatorsWebSocketDataMonitorButton" data-monitor-id="#commentatorsWebSocketDataMonitor"><span class="glyphicon glyphicon-remove" style="font-size: 12px;"></span> Clear</button>
+                </div>
+
+                <text class="panel-title">Commentators data monitor</text>
+
+                <div class="pull-right">
+                    <button class="btn btn-success panelButton toggleMonitorButton toggleWebSocketDataMonitorButton" id="toggleCommentatorsWebSocketDataMonitorButton" data-monitor-id="#commentatorsWebSocketDataMonitor"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
+                </div>
+            </div>
+            <div class="panel-body monitorPanelBody">
+                <pre class="monitorPre">
+                    <code class="monitorCode json" id="commentatorsWebSocketDataMonitor" data-enabled="True">
+                        
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <!--Commentators CSS monitor-->
+    <div class="one-third-horizontal-width" style="float: left">
+        <div class="panel panel-success">
+            <div class="panel-heading text-center">
+                <div class="pull-left">
+                    <button class="btn btn-danger panelButton clearCssMonitorButton" id="clearCommentatorsCssMonitorButton" data-monitor-id="#commentatorsCssMonitor"><span class="glyphicon glyphicon-remove" style="font-size: 12px;"></span> Clear</button>
+                </div>
+
+                <text class="panel-title">Commentators CSS monitor</text>
+
+                <div class="pull-right">
+                    <button class="btn btn-success panelButton toggleMonitorButton toggleCssMonitorButton" id="toggleCommentatorsCssMonitorButton" data-monitor-id="#commentatorsCssMonitor"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
+                </div>
+            </div>
+            <div class="panel-body monitorPanelBody">
+                <pre class="monitorPre">
+                    <code class="monitorCode css" id="commentatorsCssMonitor" data-enabled="True">
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <!--Commentators JSON monitor-->
+    <div class="one-third-horizontal-width" style="float: left">
+        <div class="panel panel-success">
+            <div class="panel-heading text-center">
+                <div class="pull-left">
+                    <button class="btn btn-danger panelButton clearJsonMonitorButton" id="clearCommentatorsJsonMonitorButton" data-monitor-id="#commentatorsJsonMonitor"><span class="glyphicon glyphicon-remove" style="font-size: 12px;"></span> Clear</button>
+                </div>
+
+                <text class="panel-title">Commentators JSON monitor</text>
+
+                <div class="pull-right">
+                    <button class="btn btn-success panelButton toggleMonitorButton toggleJsonMonitorButton" id="toggleCommentatorsJsonMonitorButton" data-monitor-id="#commentatorsJsonMonitor"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
+                </div>
+            </div>
+            <div class="panel-body monitorPanelBody">
+                <pre class="monitorPre">
+                    <code class="monitorCode json" id="commentatorsJsonMonitor" data-enabled="True">
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<div class="row">
+    <!--Preview Commentators overlay-->
+    <div class="full-horizontal-width">
+        <div class="panel panel-primary">
+            <div class="panel-heading text-center">
+                <div class="pull-left">
+                    <button class="btn btn-danger panelButton" id="forceResizeButton"><span class="glyphicon glyphicon-resize-full" style="font-size: 11px;"></span> Force resize</button>
+                </div>
+
+                <text class="panel-title">Preview Commentators overlay</text>
+
+                <div class="pull-right">
+                    <button class="btn btn-success panelButton togglePreviewOverlayButton" id="toggleCommentatorsPreviewOverlayButton" data-preview-id="#commentatorsPreviewOverlayIframe" data-panel-id="#commentatorsPreviewOverlay"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
+                </div>
+            </div>
+            <div class="panel-body previewEnabled" id="commentatorsPreviewOverlay">
+                <iframe id="commentatorsPreviewOverlayIframe" data-enabled="True"></iframe>
+            </div>
+        </div>
+    </div>
+</div>*@
+
 
 @section Scripts {
     <script type="text/javascript">
         /* Global variables */
         var baseUrl = "@System.Configuration.ConfigurationManager.AppSettings["BaseUrl"]";
-        var competitorFormJsonData = null;
+        var competitorsFormJsonData = null;
+        var commentatorsFormJsonData = null;
         var crewBattlePlayerCount = 0;
         var clientsConnectedCount = 0;
         var competitorsOverlayPreviewSourceUrl = null;
@@ -259,6 +389,8 @@
             InitializeWebSocket();
             GetSeries();
         });
+
+
 
         /* WebSocket */
 
@@ -293,7 +425,7 @@
                 var jsonData = JSON.parse(event.data);
 
                 if (jsonData.type == "queu") {
-                    UpdateWebSocketDataMonitor(jsonData.data);
+                    UpdateWebSocketDataMonitor(jsonData.data, jsonData.overlayType);
                     showSnackbar("#queuSnackbar", "A queu command has been broadcast.");
                 }
                 else if (jsonData.type == "overlayConnected") {
@@ -309,6 +441,8 @@
                 }
             };
         }
+
+
 
         /* Tournament */
 
@@ -369,7 +503,8 @@
             var selectedGame = $("#Game option:selected");
             $.ajax({
                 type: "POST",
-                url: "/FightingGames/GetFormats?pathToGame=" + selectedGame.attr("value"),
+                url: "/FightingGames/GetFormats?",
+                data: { "pathToGame": selectedGame.attr("value") },
                 dataType: "json",
                 success: function (data) {
                     $("#Format").empty();
@@ -390,7 +525,7 @@
         // Retrieve the manage competitors partial view using AJAX.
         // Insert the partial view into the manage competitors panel.
         // Change the preview overlay iframe source to the GameOverlay.html.
-        // Set the variable competitorFormJsonData to null, so it can be constructed again when a new update is submitted.
+        // Set the variable's competitorsFormJsonData and commentatorsFormJsonData to null, so it can be constructed again when a new update is submitted.
         $("#Format").change(function () {
             var selectedSeries = $("#Series option:selected");
             var selectedGame = $("#Game option:selected");
@@ -411,14 +546,15 @@
                     $("#manageCompetitors").html(data);
                     $("#competitorsOverlayPath").html(selectedFormat.attr("value") + "GameOverlay.html");
                     $("#commentatorsOverlayPath").html(selectedGame.attr("value") + "Commentators/CommentatorsOverlay.html");
-                    $("#manageCommentatorsForm > [name='pathToGame']").val(selectedGame.attr("value"));
+                    $("#manageCommentatorsForm > [name='PathToGame']").val(selectedGame.attr("value"));
 
                     competitorsOverlayPreviewSourceUrl = "http://" + baseUrl + selectedFormat.val().slice(1) + "GameOverlay.html";
-                    if ($("#previewOverlayIframe").data("enabled") == "True") {
-                        $("#previewOverlayIframe").attr("src", competitorsOverlayPreviewSourceUrl);
+                    if ($("#competitorsPreviewOverlayIframe").data("enabled") == "True") {
+                        $("#competitorsPreviewOverlayIframe").attr("src", competitorsOverlayPreviewSourceUrl);
                     }
 
-                    competitorFormJsonData = null;
+                    competitorsFormJsonData = null;
+                    commentatorsFormJsonData = null;
                 },
                 error: function (ex) {
                     UpdateErrorMonitor(ex);
@@ -428,13 +564,15 @@
         });
 
         // Summary:
-        // On: Changing values of a tournament information input.
+        // On: Changing values of a tournament information input or competitor information input.
         // Replace the btn-success class on the submit update button by the btn-danger class, resulting in the button becoming red.
-        $("#manageTournamentValues").on("change input", "input", function () {
+        $("body").on("change input", "#manageTournamentValues :input, #manageCompetitorsForm :input", function () {
             if (!$("#submitCompetitorsButton").hasClass("btn-danger")) {
                 $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger");
             }
         });
+
+
 
         /* Competitors */
 
@@ -562,146 +700,13 @@
             }
         });
 
-        // Summary:
-        // On: Clicking the submit competitors button.
-        // If > The manage competitors form is present.
-        //  Copy the tournament values to the manage competitors form.
-        //  Submit the competitors form.
-        // Else > The manage competitors form is not present.
-        //  Show a snackbar message.
-        $("#submitCompetitorsButton").click(function () {
-            if ($("#manageCompetitorsForm").length) {
-                $("#manageCompetitorsForm").find("input[name='Tournament']").val($("#tournament").val());
-                $("#manageCompetitorsForm").find("input[name='Round']").val($("#round").val());
-                $("#manageCompetitorsForm").find("input[name='BestOf']").val($("#bestOf").val());
-                $("#manageCompetitorsForm").find("input[name='Extra']").val($("#extra").val());
-
-                SubmitCompetitorsForm($("#manageCompetitorsForm"));
-            } else {
-                showSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form is not present.");
-            }
-        });
-
-        // Summary:
-        // Submit the competitors form using AJAX.
-        // if > The update was successful.
-        //  Replace the btn-danger class on the submit update button by the btn-success class, resulting in the button becoming green.
-        //  Show a snackbar message.
-        //  Send a queu update through the WebSocket.
-        //  Update the CSS monitor.
-        // else > The update was unsuccessful.
-        //  Show a snackbar message.
-        // PARAMETERS
-        // manageCompetitorsForm
-        function SubmitCompetitorsForm(manageCompetitorsForm) {
-            $.ajax({
-                type: "POST",
-                url: manageCompetitorsForm.attr("action"),
-                data: manageCompetitorsForm.serialize(),
-                dataType: "json",
-                success: function (data) {
-                    showSnackbar("#manageCompetitorsSnackbar", data.Message);
-
-                    if (data.Success == "True") {
-                        if ($("#submitCompetitorsButton").hasClass("btn-danger")) {
-                            $("#submitCompetitorsButton").removeClass("btn-danger");
-                            $("#submitCompetitorsButton").addClass("btn-success");
-                        }
-
-                        showSnackbar("#manageCompetitorsSnackbar", data.Message);
-
-                        SendQueuUpdate("#manageCompetitorsForm");
-                        UpdateCSSMonitor("/FightingGames/GetCssFileContent", $("input[name='PathToFormat']").val());
-                    }
-                    else {
-                        showSnackbar("#manageCompetitorsSnackbar", data.Message);
-                        UpdateErrorMonitor(data.ErrorMessage);
-                        console.log(data.ErrorMessage);
-                    }
-                },
-                error: function (ex) {
-                    UpdateErrorMonitor(ex);
-                    console.log(ex);
-                }
-            });
-        }
-
-        // Summary:
-        //
-        //
-        // if > competitorFormJsonData variable is null, no update has been submitted so far.
-        //  
-        // else > competitorFormJsonData variable is not null, an update has been submitted before.
-        //  
-        //  
-        // if > jsonData.data has any queu data.
-        //  Send the queu through the WebSocket
-        // PARAMETERS
-        // formId: The id attribute of the form to be parsed.
-        function SendQueuUpdate(formId) {
-            var competitorsFormInputs = $(formId + " :input[data-selector]");
-            var jsonData = { "type": "queu", "data": [] };
-
-            if (competitorFormJsonData == null) {
-                competitorFormJsonData = {};
-
-                $(competitorsFormInputs).each(function () {
-                    if (competitorFormJsonData.hasOwnProperty($(this).data("selector"))) {
-                        if ($(this).val() && $(this).val() != "") {
-                            competitorFormJsonData[$(this).data("selector")] = $(this).val() + " | " + competitorFormJsonData[$(this).data("selector")];
-                        }
-                    }
-                    else {
-                        if ($(this).is(":checkbox")) {
-                            competitorFormJsonData[$(this).data("selector")] = $(this).is(":checked");
-                        } else {
-                            competitorFormJsonData[$(this).data("selector")] = $(this).val();
-                        }
-                    }
-
-                    if ($.inArray($(this).data("selector"), jsonData.data) == -1) {
-                        jsonData.data.push($(this).data("selector"));
-                    }
-                });
-            }
-            else {
-                var newCompetitorFormJsonData = {};
-                $(competitorsFormInputs).each(function () {
-                    if (newCompetitorFormJsonData.hasOwnProperty($(this).data("selector"))) {
-                        if ($(this).val() && $(this).val() != "") {
-                            newCompetitorFormJsonData[$(this).data("selector")] = $(this).val() + " | " + newCompetitorFormJsonData[$(this).data("selector")];
-                        }
-                    }
-                    else {
-                        if ($(this).is(":checkbox")) {
-                            newCompetitorFormJsonData[$(this).data("selector")] = $(this).is(":checked");
-                        } else {
-                            newCompetitorFormJsonData[$(this).data("selector")] = $(this).val();
-                        }
-                    }
-                });
-
-                $.each(newCompetitorFormJsonData, function (key, value) {
-                    if (competitorFormJsonData[key] != value) {
-                        jsonData.data.push(key);
-                    }
-                });
-
-                competitorFormJsonData = newCompetitorFormJsonData;
-            }
-
-            if (jsonData.data.length > 0) {
-                websocket.send(JSON.stringify(jsonData));
-            }
-        }
-
         //Summary:
         //On: Clicking the get crew players button.
         // Limit the crew players count to between 1 and 99.
-        // if > The value of the crew players count is invalid.
+        // If > The value of the crew players count is invalid.
         //  Show a snackbar message.
         //  Do not submit the competitors form.
-        // else > The value of the crew players count is valid.
+        // Else > The value of the crew players count is valid.
         //  Retrieve the crew players partial view using AJAX.
         //  Insert the partial view into the manage crew players container.
         $("body").on("click", "#getCrewPlayersButton", function () {
@@ -741,14 +746,157 @@
             }
         });
 
+        /* Competitors & Commentators */
+
         // Summary:
-        // On: Changing values of a competitor information input.
-        // Replace the btn-success class on the submit update button by the btn-danger class, resulting in the button becoming red.
-        $("body").on("change input", "#manageCompetitorsForm :input", function () {
-            if (!$("#submitCompetitorsButton").hasClass("btn-danger")) {
-                $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger");
+        // On: Clicking the submit competitors or commentators button.
+        // If > The manage form is present. (only applies to competitors form)
+        //  If > A format has been selected in the format dropdown. (only applies to commentators form)
+        //      Copy the tournament values to the manage form. (only applies to competitors form)
+        //      Submit the competitors form using SubmitCompetitorsForm().
+        //  Else > A format has not been selected in the format dropdown. (only applies to commentators form)
+        //      Show a snackbar message.
+        // Else > The manage form is not present. (only applies to competitors form)
+        //  Show a snackbar message.
+        $(".submitButton").click(function () {
+            if ($($(this).data("form-id")).length) {
+                if ($("#Format").val()) {
+                    $($(this).data("form-id")).find("input[name='Tournament']").val($("#tournament").val());
+                    $($(this).data("form-id")).find("input[name='Round']").val($("#round").val());
+                    $($(this).data("form-id")).find("input[name='BestOf']").val($("#bestOf").val());
+                    $($(this).data("form-id")).find("input[name='Extra']").val($("#extra").val());
+
+                    SubmitCompetitorsForm($($(this).data("form-id")), $(this));
+                } else {
+                    showSnackbar("#manageCommentatorsSnackbar", "No game and format have been selected.");
+                }
+            } else {
+                showSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form is not present.");
             }
         });
+
+        // Summary:
+        // Submit the competitors form using AJAX.
+        // If > The update was successful.
+        //  Show a snackbar message.
+        //  Replace the btn-danger class on the submit update button by the btn-success class, resulting in the button becoming green.
+        //  If > The overlay type is game.
+        //      Build and send a competitors queu update through the WebSocket using BuildAndSendQueuUpdate().
+        //      Update the competitors CSS monitor using UpdateCSSMonitor().
+        //      Update the competitors JSON monitor using UpdateCSSMonitor().
+        //  Else If >The overlay type is commentary.
+        //      Build and send a commentators queu update through the WebSocket using BuildAndSendQueuUpdate().
+        //      Update the commentators CSS monitor using UpdateCSSMonitor().
+        //      Update the commentators JSON monitor using UpdateCSSMonitor().
+        // Else > The update was unsuccessful.
+        //  Show a snackbar message.
+        //  Update the error monitor using UpdateErrorMonitor()
+        // PARAMETERS
+        // manageForm: The manage form that is going to be submitted.
+        // submitButton: The button that was clicked to submit the form.
+        function SubmitCompetitorsForm(manageForm, submitButton) {
+            $.ajax({
+                type: "POST",
+                url: manageForm.attr("action"),
+                data: manageForm.serialize(),
+                dataType: "json",
+                success: function (data) {
+                    showSnackbar(manageForm.data("snackbar-id"), data.Message);
+
+                    if (data.Success == "True") {
+                        if (submitButton.hasClass("btn-danger")) {
+                            submitButton.removeClass("btn-danger").addClass("btn-success");
+                        }
+
+                        showSnackbar(manageForm.data("snackbar-id"), data.Message);
+
+                        if (manageForm.is("[data-overlay-type='Game']")) {
+                            competitorsFormJsonData = BuildAndSendQueuUpdate(manageForm, competitorsFormJsonData);
+                            UpdateCSSMonitor(manageForm.data("css-monitor-url"), { "pathToFormat": manageForm.find("input[name='PathToFormat']").val() }, manageForm.data("css-monitor-id"));
+                            UpdateJsonMonitor(manageForm.data("json-monitor-url"), { "pathToFormat": manageForm.find("input[name='PathToFormat']").val() }, manageForm.data("json-monitor-id"));
+                        }
+                        else if (manageForm.is("[data-overlay-type='Commentary']")) {
+                            commentatorsFormJsonData = BuildAndSendQueuUpdate(manageForm, commentatorsFormJsonData);
+                            UpdateCSSMonitor(manageForm.data("css-monitor-url"), { "pathToGame": manageForm.find("input[name='PathToGame']").val() }, manageForm.data("css-monitor-id"));
+                            UpdateJsonMonitor(manageForm.data("json-monitor-url"), { "pathToGame": manageForm.find("input[name='PathToGame']").val() }, manageForm.data("json-monitor-id"));
+                        }
+                    }
+                    else {
+                        showSnackbar(manageForm.data("snackbar-id"), data.Message);
+                        UpdateErrorMonitor(data.ErrorMessage);
+                        console.log(data.ErrorMessage);
+                    }
+                },
+                error: function (ex) {
+                    UpdateErrorMonitor(ex);
+                    console.log(ex);
+                }
+            });
+        }
+
+        // Summary:
+        //
+        //
+        // If > formJsonData variable is null, no update has been submitted so far.
+        //  
+        // Else > formJsonData variable is not null, an update has been submitted before.
+        //  
+        //  
+        // If > jsonData.data has any queu data.
+        //  Send the queu through the WebSocket
+        // Return the new json data.
+        // PARAMETERS
+        // manageForm: The manage form that that the queu is going to be build from.
+        // formJsonData: The current json data.
+        function BuildAndSendQueuUpdate(manageForm, formJsonData) {
+            var formInputs = manageForm.find(":input[data-selector]");
+            var jsonData = { "type": "queu", "overlayType": manageForm.data("overlay-type"), "data": [] };
+
+            if (formJsonData == null) {
+                formJsonData = {};
+
+                $(formInputs).each(function () {
+                    if ($(this).is(":checkbox")) {
+                        formJsonData[$(this).data("selector")] = $(this).is(":checked");
+                    } else {
+                        formJsonData[$(this).data("selector")] = $(this).val();
+                    }
+
+                    if ($.inArray($(this).data("selector"), jsonData.data) == -1) {
+                        jsonData.data.push($(this).data("selector"));
+                    }
+                });
+            }
+            else {
+                var newFormJsonData = {};
+                $(formInputs).each(function () {
+                    if ($(this).is(":checkbox")) {
+                        newFormJsonData[$(this).data("selector")] = $(this).is(":checked");
+                    } else {
+                        newFormJsonData[$(this).data("selector")] = $(this).val();
+                    }
+                });
+
+                $.each(newFormJsonData, function (key, value) {
+                    if (!(key in formJsonData)) {
+                        jsonData.data.push(key);
+                    }
+                    if (formJsonData[key] != value) {
+                        jsonData.data.push(key);
+                    }
+                });
+
+                formJsonData = newFormJsonData;
+            }
+
+            if (jsonData.data.length > 0) {
+                websocket.send(JSON.stringify(jsonData));
+            }
+
+            return formJsonData;
+        }
+
+
 
         /* Commentators */
 
@@ -766,6 +914,7 @@
                 success: function (data) {
                     $("#manageCommentatorsForm").append(data);
 
+                    reindexCommentators();
                     $("div[id*='commentator-row-']").each(function (index) {
                         $(this).attr("id", "commentator-row-" + index);
                         $(this).find("input[id*='_Name']").attr({ "name": "commentatorViewModels[" + index + "].Name", "id": "commentatorViewModels_" + index + "_Name" });
@@ -782,31 +931,28 @@
 
         // Summary:
         // On: Clicking the remove commentator button.
-        // Remove the row of the commentator with the specified id attirbute.
-        // Re-index all the commentator elements available.
+        // Remove the row of the commentator with the specified id attribute.
+        // Re-index all the commentator elements available using reindexCommentators().
         // PARAMETERS
         // index: index of the element to be removed
         function removeCommentator(index) {
             $("#commentator-row-" + index).remove();
 
-            $("div[id*='commentator-row-']").each(function (index) {
-                $(this).attr("id", "commentator-row-" + index);
-                $(this).find("input[id*='_Name']").attr({ "name": "commentatorViewModels[" + index + "].Name", "id": "commentatorViewModels_" + index + "_Name" });
-                $(this).find("input[id*='_Twitter']").attr({ "name": "commentatorViewModels[" + index + "].Twitter", "id": "commentatorViewModels_" + index + "_Twitter" });
-                $(this).find("button[id^='deleteCommentator-']").attr({ "onclick": "removeCommentator(" + index + ")", "id": "deleteCommentator-" + index });
-                $(this).find("button[id^='moveCommentatorDown-']").attr({ "onclick": "moveCommentatorDown(" + index + ")", "id": "moveCommentatorDown-" + index });
-                $(this).find("button[id^='moveCommentatorUp-']").attr({ "onclick": "moveCommentatorUp(" + index + ")", "id": "moveCommentatorUp-" + index });
-            });
+            reindexCommentators();
         }
 
         // Summary:
-        // On: Clicking the move commentator down button
-
+        // On: Clicking the move commentator down button.
+        // If > There is a commentator below the selected one.
+        //  Swap the commentators
+        // Else > There is no commentator below the selected one.
+        //  Show a snackbar message.
+        // Re-index all the commentator elements available using reindexCommentators().
         // PARAMETERS
         // index: index of the element to be removed
         function moveCommentatorDown(index) {
             if ($("#commentator-row-" + (index + 1)).length) {
-                var row1 = $("#commentator-row-" + index)
+                var row1 = $("#commentator-row-" + index);
                 var row2 = $("#commentator-row-" + (index + 1));
 
                 row1.replaceWith(row2.clone());
@@ -816,26 +962,23 @@
                 showSnackbar("#manageCommentatorsSnackbar", "The selected commentator can't be moved down at this time.");
             }
 
-            $("div[id*='commentator-row-']").each(function (index) {
-                $(this).attr("id", "commentator-row-" + index);
-                $(this).find("input[id*='_Name']").attr({ "name": "commentatorViewModels[" + index + "].Name", "id": "commentatorViewModels_" + index + "_Name" });
-                $(this).find("input[id*='_Twitter']").attr({ "name": "commentatorViewModels[" + index + "].Twitter", "id": "commentatorViewModels_" + index + "_Twitter" });
-                $(this).find("button[id^='deleteCommentator-']").attr({ "onclick": "removeCommentator(" + index + ")", "id": "deleteCommentator-" + index });
-                $(this).find("button[id^='moveCommentatorDown-']").attr({ "onclick": "moveCommentatorDown(" + index + ")", "id": "moveCommentatorDown-" + index });
-                $(this).find("button[id^='moveCommentatorUp-']").attr({ "onclick": "moveCommentatorUp(" + index + ")", "id": "moveCommentatorUp-" + index });
-            });
+            reindexCommentators();
         }
 
         // Summary:
         // On: Clicking the move commentator up button
-
+        // If > There is a commentator above the selected one.
+        //  Swap the commentators
+        // Else > There is no commentator above the selected one.
+        //  Show a snackbar message.
+        // Re-index all the commentator elements available using reindexCommentators().
         // PARAMETERS
         // index: index of the element to be removed
         function moveCommentatorUp(index) {
             $("#commentator-row-" + index);
             if (index > 0) {
                 if ($("#commentator-row-" + (index - 1)).length) {
-                    var row1 = $("#commentator-row-" + index)
+                    var row1 = $("#commentator-row-" + index);
                     var row2 = $("#commentator-row-" + (index - 1));
 
                     row1.replaceWith(row2.clone());
@@ -846,61 +989,21 @@
                 }
             }
 
+            reindexCommentators();
+        }
+
+        // Summary:
+        // Re-index all the commentator elements available
+        function reindexCommentators() {
             $("div[id*='commentator-row-']").each(function (index) {
                 $(this).attr("id", "commentator-row-" + index);
-                $(this).find("input[id*='_Name']").attr({ "name": "commentatorViewModels[" + index + "].Name", "id": "commentatorViewModels_" + index + "_Name" });
-                $(this).find("input[id*='_Twitter']").attr({ "name": "commentatorViewModels[" + index + "].Twitter", "id": "commentatorViewModels_" + index + "_Twitter" });
+                $(this).find("input[id*='_Name']").attr({ "name": "commentatorViewModels[" + index + "].Name", "id": "commentatorViewModels_" + index + "_Name", "data-selector": "#commentator" + (index + 1) + "Name" });
+                $(this).find("input[id*='_Twitter']").attr({ "name": "commentatorViewModels[" + index + "].Twitter", "id": "commentatorViewModels_" + index + "_Twitter", "data-selector": "#commentator" + (index + 1) + "Twitter" });
                 $(this).find("button[id^='deleteCommentator-']").attr({ "onclick": "removeCommentator(" + index + ")", "id": "deleteCommentator-" + index });
                 $(this).find("button[id^='moveCommentatorDown-']").attr({ "onclick": "moveCommentatorDown(" + index + ")", "id": "moveCommentatorDown-" + index });
                 $(this).find("button[id^='moveCommentatorUp-']").attr({ "onclick": "moveCommentatorUp(" + index + ")", "id": "moveCommentatorUp-" + index });
             });
         }
-
-        // Summary:
-        // On: Clicking the submit commentator button.
-        // Submit the commentators form using AJAX.
-        // if > The update was successful.
-        //  Replace the btn-danger class on the submit update button by the btn-primary class, resulting in the button becoming blue.
-        //  Show a snackbar message.
-        //  Send a queu update through the WebSocket.
-        //  Update the CSS monitor.
-        // else > The update was unsuccessful.
-        //  Show a snackbar message.
-        $("#submitCommentatorsButton").click(function () {
-            if ($("#Format").val()) {
-                var manageCommentatorsForm = $("#manageCommentatorsForm");
-                $.ajax({
-                    type: "POST",
-                    url: manageCommentatorsForm.attr("action"),
-                    data: manageCommentatorsForm.serialize(),
-                    dataType: "json",
-                    success: function (data) {
-                        showSnackbar("#manageCommentatorsSnackbar", data.Message);
-
-                        if (data.Success == "True") {
-                            if ($("#submitCommentatorsButton").hasClass("btn-danger")) {
-                                $("#submitCommentatorsButton").removeClass("btn-danger").addClass("btn-primary");
-                            }
-
-                            // SendQueuUpdate("#manageCommentatorsForm");
-                            // UpdateCSSMonitor("/Commentators/GetCssFileContent", format);
-                        }
-                        else {
-                            showSnackbar("#manageCommentatorsSnackbar", data.Message);
-                            UpdateErrorMonitor(data.ErrorMessage);
-                            console.log(data.ErrorMessage);
-                        }
-                    },
-                    error: function (ex) {
-                        UpdateErrorMonitor(ex);
-                        console.log(ex);
-                    }
-                });
-            } else {
-                showSnackbar("#manageCommentatorsSnackbar", "No game and format have been selected.");
-            }
-            
-        });
 
         // Summary:
         // On: Changing values of a commentator input.
@@ -911,33 +1014,13 @@
             }
         });
 
-        /* Monitor */
+        /* General Monitor  */
 
         // Summary:
-        // Update the WebSocket data monitor with the newest data received from the WebSocket.
-        // PARAMETERS
-        // data: the data received through the WebSocket
-        function UpdateWebSocketDataMonitor(data) {
-            if ($("#webSocketDataMonitor").data("enabled") == "True") {
-                $("#webSocketDataMonitor").html(JSON.stringify(data));
-                hljs.initHighlighting();
-            }
-        }
-
-        // Summary:
-        // On: Clicking the clear WebSocket data monitor button
-        // Remove all data from the WebSocket data monitor
-        $("#clearWebSocketDataMonitorButton").click(function () {
-            if ($("#webSocketDataMonitor").data("enabled") == "True") {
-                $("#webSocketDataMonitor").html("");
-            }
-        });
-
-        // Summary:
-        // if > The json is of type "overlayConnected".
+        // If > The json is of type "overlayConnected".
         //  Increase clientsConnectedCount variable by 1.
         //  Add a new row to the WebSocket client monitor table body.
-        // else > The json is of type "overlayDisconnected".
+        // Else > The json is of type "overlayDisconnected".
         //  Decrease clientsConnectedCount variable by 1 if it's higher than 1.
         //  Remove the row from the WebSocket client monitor table body with the right data-full-path attribute value.
         // PARAMETERS
@@ -948,7 +1031,7 @@
 
                 if (jsonData.type == "overlayConnected") {
                     clientsConnectedCount++;
-                    $("#webSocketClientMonitorTableBody").append("<tr data-full-path=" + jsonData.data + "><td>" + clientsConnectedCount + "</td><td>" + splitPath[splitPath.length - 2] + "/" + splitPath[splitPath.length - 1] + "</td><td>Connected</td></tr>");
+                    $("#webSocketClientMonitorTableBody").append("<tr data-full-path=" + jsonData.data + "><td>" + clientsConnectedCount + "</td><td>" + splitPath[splitPath.length - 3] + "/" + splitPath[splitPath.length - 2] + "/" + splitPath[splitPath.length - 1] + "</td><td>Connected</td></tr>");  // , jsonData.overlayType
                 }
                 else if (jsonData.type == "overlayDisconnected") {
                     if (clientsConnectedCount > 1) {
@@ -971,20 +1054,61 @@
         });
 
         // Summary:
-        // Retrieve the commentator partial view using AJAX.
-        // Append the partial view manage commentators form.
+        // Append the error to the error monitor.
+        function UpdateErrorMonitor(error) {
+            if ($("#errorMonitor").data("enabled") == "True") {
+                $("#errorMonitor").prepend(error);
+            }
+        }
+
+        // Summary:
+        // On: Clicking the clear error monitor button
+        // Remove all data from the error monitor
+        $("#clearErrorMonitorButton").click(function () {
+            if ($("#errorMonitor").data("enabled") == "True") {
+                $("#errorMonitor").html("");
+            }
+        });
+
+
+
+        /* Game & Commentary Monitor */
+
+        // Summary:
+        // Update the WebSocket data monitor with the newest data received from the WebSocket.
+        // PARAMETERS
+        // data: the data received through the WebSocket
+        function UpdateWebSocketDataMonitor(data, overlayType) {
+            if ($($("form[data-overlay-type='" + overlayType + "']").data("websocket-data-monitor-id")).data("enabled") == "True") {
+                $($("form[data-overlay-type='" + overlayType + "']").data("websocket-data-monitor-id")).html(JSON.stringify(data));
+                hljs.initHighlighting();
+            }
+        }
+
+        // Summary:
+        // On: Clicking the clear WebSocket data monitor button
+        // Remove all data from the WebSocket data monitor
+        $(".clearWebSocketDataMonitorButton").click(function () {
+            if ($($(this).data("monitor-id")).data("enabled") == "True") {
+                $($(this).data("monitor-id")).html("");
+            }
+        });
+
+        // Summary:
+        // Retrieve the CSS content using AJAX.
+        // Append the partial view to the CSS monitor.
         // PARAMETERS
         // url: URL to retrieve the CSS file content.
         // pathToFormat: Path to the format
-        function UpdateCSSMonitor(url, pathToFormat) {
-            if ($("#cssMonitor").data("enabled") == "True") {
+        function UpdateCSSMonitor(url, pathData, cssMonitorId) {
+            if ($(cssMonitorId).data("enabled") == "True") {
                 $.ajax({
                     type: "POST",
                     url: url,
-                    data: { "pathToFormat": pathToFormat },
+                    data: pathData,
                     dataType: "text",
                     success: function (data) {
-                        $("#cssMonitor").html(data);
+                        $(cssMonitorId).html(data);
                         hljs.initHighlighting.called = false;
                         hljs.initHighlighting();
                     },
@@ -999,26 +1123,44 @@
         // Summary:
         // On: Clicking the clear CSS monitor button
         // Remove all data from the CSS monitor
-        $("#clearCssMonitorButton").click(function () {
-            if ($("#cssMonitor").data("enabled") == "True") {
-                $("#cssMonitor").html("");
+        $(".clearCssMonitorButton").click(function () {
+            if ($($(this).data("monitor-id")).data("enabled") == "True") {
+                $($(this).data("monitor-id")).html("");
             }
         });
 
         // Summary:
-        // Append the error to the error monitor.
-        function UpdateErrorMonitor(error) {
-            if ($("#errorMonitor").data("enabled") == "True") {
-                $("#errorMonitor").prepend(error);
+        // Retrieve the JSON content using AJAX.
+        // Append the partial view to the JSON monitor.
+        // PARAMETERS
+        // url: URL to retrieve the JSON file content.
+        // pathToFormat: Path to the format
+        function UpdateJsonMonitor(url, pathData, jsonMonitorId) {
+            if ($(jsonMonitorId).data("enabled") == "True") {
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: pathData,
+                    dataType: "text",
+                    success: function (data) {
+                        $(jsonMonitorId).html(data);
+                        hljs.initHighlighting.called = false;
+                        hljs.initHighlighting();
+                    },
+                    error: function (ex) {
+                        UpdateErrorMonitor(ex);
+                        console.log(ex);
+                    }
+                });
             }
         }
 
         // Summary:
-        // On: Clicking the clear error monitor button
-        // Remove all data from the error monitor
-        $("#clearErrorMonitorButton").click(function () {
-            if ($("#errorMonitor").data("enabled") == "True") {
-                $("#errorMonitor").html("");
+        // On: Clicking the clear JSON monitor button
+        // Remove all data from the JSON monitor
+        $(".clearJsonMonitorButton").click(function () {
+            if ($($(this).data("monitor-id")).data("enabled") == "True") {
+                $($(this).data("monitor-id")).html("");
             }
         });
 

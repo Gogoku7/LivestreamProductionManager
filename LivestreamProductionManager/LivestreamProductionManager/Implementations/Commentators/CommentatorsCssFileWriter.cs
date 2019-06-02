@@ -18,10 +18,10 @@ namespace LivestreamProductionManager.Implementations.Commentators
         {
             try
             {
-                var templateCssFile = _templateFileReader.ReadTemplateFile("Commentators/CommentatorsTemplate.css");//todo: file maken
+                var templateCssFile = _templateFileReader.ReadTemplateFile("Commentators/CommentatorsTemplate.css");
                 var cssFileContent = _commentatorsValuesReplacer.ReplaceValuesForCommentators(templateCssFile, commentatorsValuesModels);
 
-                File.WriteAllText(HttpContext.Current.Server.MapPath(pathToGame + "Commentators/Content.css"), cssFileContent);
+                File.WriteAllText(HttpContext.Current.Server.MapPath(pathToGame + "Commentators/CSS/Content.css"), cssFileContent);
             }
             catch (Exception ex)
             {

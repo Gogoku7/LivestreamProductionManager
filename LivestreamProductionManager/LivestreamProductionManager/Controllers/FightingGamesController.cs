@@ -34,6 +34,7 @@ namespace LivestreamProductionManager.Controllers
             }
         }
 
+        [HttpPost]
         public JsonResult GetGames(string pathToSeries)
         {
             try
@@ -49,6 +50,7 @@ namespace LivestreamProductionManager.Controllers
             }
         }
 
+        [HttpPost]
         public JsonResult GetFormats(string pathToGame)
         {
             try
@@ -70,6 +72,20 @@ namespace LivestreamProductionManager.Controllers
             try
             {
                 return _fileReader.ReadCssFile(pathToFormat);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+                throw;
+            }
+        }
+
+        [HttpPost]
+        public string GetJsonFileContent(string pathToFormat)
+        {
+            try
+            {
+                return _fileReader.ReadJsonFile(pathToFormat);
             }
             catch (Exception ex)
             {

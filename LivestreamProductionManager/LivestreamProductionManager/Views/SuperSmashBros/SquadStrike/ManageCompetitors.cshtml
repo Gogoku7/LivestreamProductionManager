@@ -17,7 +17,17 @@
     Layout = null;
 }
 
-<form action="/SuperSmashBros/UpdateSquadStrike" method="post" id="manageCompetitorsForm">
+<form action="/SuperSmashBros/UpdateSquadStrike"
+      method="post"
+      id="manageCompetitorsForm"
+      data-overlay-type="Game"
+      data-websocket-data-monitor-id="#competitorsWebSocketDataMonitor"
+      data-css-monitor-url="/FightingGames/GetCssFileContent"
+      data-css-monitor-id="#competitorsCssMonitor"
+      data-json-monitor-url="/FightingGames/GetJsonFileContent"
+      data-json-monitor-id="#competitorsJsonMonitor"
+      data-overlay-preview-id="#competitorsPreviewOverlayIframe"
+      data-snackbar-id="#manageCompetitorsSnackbar">
     <input type="hidden" name="Tournament" value="" data-selector="#tournamentText" />
     <input type="hidden" name="Round" value="" data-selector="#roundText" />
     <input type="hidden" name="BestOf" value="" data-selector="#bestOfText" />

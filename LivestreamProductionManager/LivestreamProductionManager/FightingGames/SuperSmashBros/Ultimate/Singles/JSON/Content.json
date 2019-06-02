@@ -1,7 +1,7 @@
 [
 {
   "Selector": "#player1NameText",
-  "Value": "Gogoku7"
+  "Value": "Median4"
 },
 {
   "Selector": ".player1Sponsor",
@@ -9,7 +9,7 @@
 },
 {
   "Selector": "#player1TwitterText",
-  "Value": "@gogoku7"
+  "Value": "@median4"
 },
 {
   "Selector": "#player1ScoreText",
@@ -17,15 +17,15 @@
 },
 {
   "Selector": "#player1Character",
-  "Value": "../../CharacterIcons/fox.png"
+  "Value": "../../CharacterIcons/littlemac.png"
 },
 {
   "Selector": "#player1Port",
-  "Value": "../../PlayerPorts/PlayerPort1.png"
+  "Value": "../../PlayerPorts/PlayerPort2.png"
 },
 {
   "Selector": "#player2NameText",
-  "Value": "Median4"
+  "Value": "Gogoku7"
 },
 {
   "Selector": ".player2Sponsor",
@@ -33,7 +33,7 @@
 },
 {
   "Selector": "#player2TwitterText",
-  "Value": "@median4"
+  "Value": "@gogoku7"
 },
 {
   "Selector": "#player2ScoreText",
@@ -41,11 +41,11 @@
 },
 {
   "Selector": "#player2Character",
-  "Value": "../../CharacterIcons/littlemac.png"
+  "Value": "../../CharacterIcons/fox.png"
 },
 {
   "Selector": "#player2Port",
-  "Value": "../../PlayerPorts/PlayerPort2.png"
+  "Value": "../../PlayerPorts/PlayerPort1.png"
 },
 {
   "Selector": "#tournamentText",

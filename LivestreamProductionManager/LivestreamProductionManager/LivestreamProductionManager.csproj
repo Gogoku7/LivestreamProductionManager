@@ -962,7 +962,8 @@
     <Folder Include="FightingGames\SuperSmashBros\Smash64\Singles\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\BigTeams\CSS\" />
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\BigTeams\JSON\" />
-    <Folder Include="FightingGames\SuperSmashBros\Ultimate\Commentators\" />
+    <Folder Include="FightingGames\SuperSmashBros\Ultimate\Commentators\CSS\" />
+    <Folder Include="FightingGames\SuperSmashBros\Ultimate\Commentators\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\Crews\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\Doubles\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\IronMan\CSS\" />

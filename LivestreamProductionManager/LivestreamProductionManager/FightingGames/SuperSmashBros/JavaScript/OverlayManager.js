@@ -1,10 +1,13 @@
 ﻿var FittyElements = [];
+var OverlayType = "";
 
-function initWebSocketAndFitty(fittyElements) {
+function initWebSocketAndFitty(fittyElements, overlayType) {
     $.each(fittyElements, function (i) {
         fitty(fittyElements[i].selector, { minSize: fittyElements[i].minSize, maxSize: fittyElements[i].maxSize, multiLine: fittyElements[i].multiLine });
     });
+
     FittyElements = fittyElements;
+    OverlayType = overlayType;
 
     var uri = "ws://localhost:56613/WebSocket/Queu";
 
@@ -12,7 +15,7 @@ function initWebSocketAndFitty(fittyElements) {
 
     websocket.onopen = function () {
         console.log("Connected to server.");
-        var jsonData = { "type": "overlayConnected", "data": window.location.href };
+        var jsonData = { "type": "overlayConnected", "overlayType": OverlayType, "data": window.location.href };
         websocket.send(JSON.stringify(jsonData));
     };
 
@@ -91,7 +94,7 @@ function initWebSocketAndFitty(fittyElements) {
 }
 
 $(window).on("beforeunload", function () {
-    var jsonData = { "type": "overlayDisconnected", "data": window.location.href };
+    var jsonData = { "type": "overlayDisconnected", "overlayType": OverlayType, "data": window.location.href };
     websocket.send(JSON.stringify(jsonData));
     websocket.close();
 });

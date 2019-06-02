@@ -1,7 +1,7 @@
 [
 {
   "Selector": "commentator1NameText",
-  "Value": "Gogoku7"
+  "Value": "ParagonX9"
 },
 {
   "Selector": "commentator1TwitterText",
@@ -9,10 +9,18 @@
 },
 {
   "Selector": "commentator2NameText",
-  "Value": "Median4"
+  "Value": "Gogoku7"
 },
 {
   "Selector": "commentator2TwitterText",
+  "Value": ""
+},
+{
+  "Selector": "commentator3NameText",
+  "Value": "Median4"
+},
+{
+  "Selector": "commentator3TwitterText",
   "Value": ""
 }
 ]
