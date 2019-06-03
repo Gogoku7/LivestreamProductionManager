@@ -1,10 +1,7 @@
 #commentator1NameText:before {
-    content: "ParagonX9";
-}
-#commentator2NameText:before {
     content: "Gogoku7";
 }
-#commentator3NameText:before {
+#commentator2NameText:before {
     content: "Median4";
 }
 
@@ -13,9 +10,6 @@
     content: "";
 }
 #commentator2TwitterText:before {
-    content: "";
-}
-#commentator3TwitterText:before {
     content: "";
 }
 

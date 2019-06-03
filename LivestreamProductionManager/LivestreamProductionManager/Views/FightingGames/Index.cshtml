@@ -568,7 +568,7 @@
         // Replace the btn-success class on the submit update button by the btn-danger class, resulting in the button becoming red.
         $("body").on("change input", "#manageTournamentValues :input, #manageCompetitorsForm :input", function () {
             if (!$("#submitCompetitorsButton").hasClass("btn-danger")) {
-                $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger");
+                $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger danger-pulsate");
             }
         });
 
@@ -606,7 +606,7 @@
                         }
                     });
 
-                    $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger");
+                    $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger danger-pulsate");
                 } else {
                     showSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form was found, but no inputs inside have the appropriate data-side='1' attribute.");
                 }
@@ -690,7 +690,7 @@
                     });
 
                     if (!$("#submitCompetitorsButton").hasClass("btn-danger")) {
-                        $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger");
+                        $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger danger-pulsate");
                     }
                 } else {
                     showSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form was found, but no inputs inside have the appropriate data-default attribute.");
@@ -805,7 +805,7 @@
 
                     if (data.Success == "True") {
                         if (submitButton.hasClass("btn-danger")) {
-                            submitButton.removeClass("btn-danger").addClass("btn-success");
+                            submitButton.removeClass("btn-danger danger-pulsate").addClass("btn-success");
                         }
 
                         showSnackbar(manageForm.data("snackbar-id"), data.Message);
@@ -1010,9 +1010,11 @@
         // Replace the btn-primary class on the submit update button by the btn-danger class, resulting in the button becoming red.
         $("body").on("change input", "#manageCommentatorsForm :input", function () {
             if (!$("#submitCommentatorsButton").hasClass("btn-danger")) {
-                $("#submitCommentatorsButton").removeClass("btn-primary").addClass("btn-danger");
+                $("#submitCommentatorsButton").removeClass("btn-primary").addClass("btn-danger danger-pulsate");
             }
         });
+
+
 
         /* General Monitor  */
 
