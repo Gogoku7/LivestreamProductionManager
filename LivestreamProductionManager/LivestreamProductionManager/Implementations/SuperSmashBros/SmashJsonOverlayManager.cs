@@ -68,18 +68,18 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                     doublesCssModel.Team1.PlayerNamesAndSponsors += _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"#team1Player{i+1}NameText", doublesViewModel.Team1.Players[i].Name ?? "");
                     doublesCssModel.Team1.PlayerNamesAndSponsors += _textReplacer.ReplaceIdAndValue(_textTemplateJson, $".team1Player{i+1}Sponsor", doublesViewModel.Team1.Players[i].Sponsor ?? "");
                     doublesCssModel.Team1.CharacterPaths += _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"#team1Player{i+1}Character", doublesViewModel.Team1.Players[i].Character ?? "../../CharacterIcons/random.png");
-                    doublesCssModel.Team1.PortPaths = _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"team1Player{i+1}Port", doublesViewModel.Team1.Players[i].Port ?? "../../PlayerPorts/playerPortNo.png");
+                    doublesCssModel.Team1.PortPaths += _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"#team1Player{i+1}Port", doublesViewModel.Team1.Players[i].Port ?? "../../PlayerPorts/playerPortNo.png");
                 }
 
                 doublesCssModel.Team2.Name = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#team2NameText", doublesViewModel.Team2.Name ?? "");
                 doublesCssModel.Team2.Score = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#team2ScoreText", doublesViewModel.Team2.Score ?? "?");
 
-                for (var i = 0; i < doublesViewModel.Team1.Players.Count; i++)
+                for (var i = 0; i < doublesViewModel.Team2.Players.Count; i++)
                 {
                     doublesCssModel.Team2.PlayerNamesAndSponsors += _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"#team2Player{i + 1}NameText", doublesViewModel.Team2.Players[i].Name ?? "");
                     doublesCssModel.Team2.PlayerNamesAndSponsors += _textReplacer.ReplaceIdAndValue(_textTemplateJson, $".team2Player{i + 1}Sponsor", doublesViewModel.Team2.Players[i].Sponsor ?? "");
                     doublesCssModel.Team2.CharacterPaths += _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"#team2Player{i + 1}Character", doublesViewModel.Team2.Players[i].Character ?? "../../CharacterIcons/random.png");
-                    doublesCssModel.Team2.PortPaths = _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"team2Player{i + 1}Port", doublesViewModel.Team2.Players[i].Port ?? "../../PlayerPorts/playerPortNo.png");
+                    doublesCssModel.Team2.PortPaths += _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"#team2Player{i + 1}Port", doublesViewModel.Team2.Players[i].Port ?? "../../PlayerPorts/playerPortNo.png");
                 }
 
                 doublesCssModel.Tournament = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#tournamentText", doublesViewModel.Tournament ?? "");

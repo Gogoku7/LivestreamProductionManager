@@ -29,7 +29,7 @@
 },
 {
   "Selector": "#crew1Player1TwitterText",
-  "Value": ""
+  "Value": "@mrr"
 },
 {
   "Selector": "#crew1Player1Character",
@@ -49,7 +49,7 @@
 },
 {
   "Selector": "#crew1Player2TwitterText",
-  "Value": ""
+  "Value": "@istudying"
 },
 {
   "Selector": "#crew1Player2Character",
@@ -85,7 +85,7 @@
 },
 {
   "Selector": "#crew2Player1TwitterText",
-  "Value": ""
+  "Value": "@tweek"
 },
 {
   "Selector": "#crew2Player1Character",
@@ -105,7 +105,7 @@
 },
 {
   "Selector": "#crew2Player2TwitterText",
-  "Value": ""
+  "Value": "@mkleo"
 },
 {
   "Selector": "#crew2Player2Character",

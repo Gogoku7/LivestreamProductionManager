@@ -889,6 +889,14 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="FightingGames\JsonTemplates\TextTemplateFile.json" />
     <Content Include="FightingGames\JsonTemplates\ContentTemplate.json" />
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Singles\ReadMe.md" />
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Doubles\ReadMe.md" />
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Commentators\ReadMe.md" />
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Crews\ReadMe.md" />
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\ReadMe.md" />
+    <Content Include="FightingGames\SuperSmashBros\WiiU\Singles\ReadMe.md" />
+    <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\ReadMe.md" />
+    <Content Include="FightingGames\SuperSmashBros\WiiU\Crews\ReadMe.md" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

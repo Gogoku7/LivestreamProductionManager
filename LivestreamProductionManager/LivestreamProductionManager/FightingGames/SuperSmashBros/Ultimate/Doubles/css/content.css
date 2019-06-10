@@ -23,10 +23,10 @@
 
 
 #team1Player1Port {
-    background-image: url('../../PlayerPorts/playerPortNo.png');
+    background-image: url('../../PlayerPorts/PlayerPort1.png');
 }
 #team1Player2Port {
-    background-image: url('../../PlayerPorts/playerPortNo.png');
+    background-image: url('../../PlayerPorts/PlayerPort2.png');
 }
 
 
@@ -55,10 +55,10 @@
 
 
 #team2Player1Port {
-    background-image: url('../../PlayerPorts/playerPortNo.png');
+    background-image: url('../../PlayerPorts/PlayerPort3.png');
 }
 #team2Player2Port {
-    background-image: url('../../PlayerPorts/playerPortNo.png');
+    background-image: url('../../PlayerPorts/PlayerPort4.png');
 }
 
 
