@@ -149,13 +149,15 @@ div.panel {
     max-width: initial;
 }
 
-#competitorsPreviewOverlay {
+/* Preview overlay */
+
+.previewOverlayPanelBody {
     margin: 0px;
     padding: 0px;
     width: 100%;
 }
 
-#competitorsPreviewOverlayIframe {
+.previewOverlayIframe {
     width: 100%;
     height: 1080px;
     overflow: hidden;
@@ -179,6 +181,7 @@ div.panel {
 }
 
 /* WebSocket monitor */
+
 .monitorPre {
     width: 100%;
     height: 100%;
@@ -220,6 +223,7 @@ div.panel {
 }
 
 /* WebSocket client monitor */
+
 webSocketDataMonitorTable {
     width: 100%;
     height: 100%;
@@ -227,7 +231,7 @@ webSocketDataMonitorTable {
     margin: 0;
 }
 
-/* END Monitor */
+/* Monitor END */
 
 
 

@@ -1,0 +1,239 @@
+body
+{
+	margin: 0px;
+	padding: 0px;
+    color: white;
+}
+
+/* commentators */
+
+.commentators
+{
+    margin-top: 900px;
+	width: 1920px;
+	height: 80px;
+}
+
+/* commentators END*/
+
+
+
+/* commentator */
+
+.commentator
+{
+	width: 960px;
+	height: 80px;
+}
+
+#commentator1
+{
+	float: left;
+}
+
+#commentator2
+{
+	float: right;
+}
+
+/* commentator END */
+
+
+
+/* commentatorBox */
+
+.commentatorBox
+{
+	width: 650px;
+	height: 80px;
+	overflow: hidden;
+}
+
+#commentator1Box
+{
+	float: right;
+	
+}
+
+#commentator2Box
+{
+	float: left;
+}
+
+/* commentatorBox END */
+
+
+
+/* commentatorNameBox */
+
+.commentatorNameBox
+{
+	width: 650px;
+	height: 50px;
+    animation: showCommentatorBox 1s;
+}
+
+#commentator1NameBox
+{
+	float: left;
+    background-image: url('../CommentatorBackgrounds/Commentator1NameBackground.png');
+}
+
+#commentator2NameBox
+{
+	float: right;
+    background-image: url('../CommentatorBackgrounds/Commentator2NameBackground.png');
+}
+
+/* commentatorNameBox END */
+
+
+
+/* commentatorNameContainer */
+
+.commentatorNameContainer 
+{
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+    text-align: center;
+    animation: showCommentatorText 3s;
+}
+
+#commentator1NameContainer
+{
+    float: left;
+    margin-left: 175px;
+}
+
+#commentator2NameContainer  
+{
+    float: right;
+    margin-right: 175px;
+}
+
+/* commentatorNameContainer END */
+
+
+
+/* commentatorName */
+
+.commentatorName, .commentatorTwitter
+{
+	margin: 0;
+}
+
+/* commentatorName END*/
+
+
+
+/* commentatorTwitterBox */
+
+.commentatorTwitterBox
+{
+    width: 650px;
+    height: 30px;
+    animation: showCommentatorBox 2s;
+}
+
+#commentator1TwitterBox
+{
+    float: left;
+    clear: left;
+    background-image: url('../CommentatorBackgrounds/Commentator1TwitterBackground.png');
+}
+
+#commentator2TwitterBox
+{
+    float: right;
+    clear: right;
+    background-image: url('../CommentatorBackgrounds/Commentator2TwitterBackground.png');
+}
+
+/* commentatorTwitterBox END */
+
+
+
+/* commentatorTwitterContainer */
+
+.commentatorTwitterContainer
+{
+    width: 300px;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    text-align: center;
+    animation: showCommentatorText 3s;
+}
+
+#commentator1TwitterContainer
+{
+    float: left;
+    margin-left: 175px;
+}
+
+#commentator2TwitterContainer
+{
+    float: right;
+    margin-right: 175px;
+}
+
+/* commentatorTwitterContainer END */
+
+
+
+/* Snackbar */
+
+.snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 2px;
+    position: fixed;
+    z-index: 1;
+    bottom: 0px;
+}
+
+
+    .snackbar.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+
+/* Snackbar END */
+
+
+
+/* animations */
+
+@keyframes showCommentatorBox
+{
+	0% { width:0% }
+	100% { width: 100% }
+}
+
+@keyframes showCommentatorText
+{
+	0% { opacity: 0 }
+	100% { opacity: 1 }
+}
+
+.changing 
+{
+    transition-duration: 0.5s;
+    transition-property: opacity;
+    opacity: 0 !important;
+}
+
+.changed 
+{
+    transition-duration: 0.5s;
+    transition-property: opacity;
+}
+
+/* animations END */

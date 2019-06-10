@@ -207,7 +207,7 @@
         <div class="panel panel-primary">
             <div class="panel-heading text-center">
                 <div class="pull-left">
-                    <button class="btn btn-danger panelButton" id="forceResizeButton"><span class="glyphicon glyphicon-resize-full" style="font-size: 11px;"></span> Force resize</button>
+                    <button class="btn btn-danger panelButton forceResizeButton" id="forceCompetitorsResizeButton"><span class="glyphicon glyphicon-resize-full" style="font-size: 11px;"></span> Force resize</button>
                 </div>
 
                 <text class="panel-title">Preview Competitors overlay</text>
@@ -216,8 +216,8 @@
                     <button class="btn btn-success panelButton togglePreviewOverlayButton" id="toggleCompetitorsPreviewOverlayButton" data-preview-id="#competitorsPreviewOverlayIframe" data-panel-id="#competitorsPreviewOverlay"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
                 </div>
             </div>
-            <div class="panel-body previewEnabled" id="competitorsPreviewOverlay">
-                <iframe id="competitorsPreviewOverlayIframe" data-enabled="True"></iframe>
+            <div class="panel-body previewEnabled previewOverlayPanelBody" id="competitorsPreviewOverlay">
+                <iframe class="previewOverlayIframe" id="competitorsPreviewOverlayIframe" data-enabled="True"></iframe>
             </div>
         </div>
     </div>
@@ -346,13 +346,13 @@
     </div>
 </div>
 
-@*<div class="row">
+<div class="row">
     <!--Preview Commentators overlay-->
     <div class="full-horizontal-width">
-        <div class="panel panel-primary">
+        <div class="panel panel-success">
             <div class="panel-heading text-center">
                 <div class="pull-left">
-                    <button class="btn btn-danger panelButton" id="forceResizeButton"><span class="glyphicon glyphicon-resize-full" style="font-size: 11px;"></span> Force resize</button>
+                    <button class="btn btn-danger panelButton forceResizeButton" id="forceCommentatorsResizeButton"><span class="glyphicon glyphicon-resize-full" style="font-size: 11px;"></span> Force resize</button>
                 </div>
 
                 <text class="panel-title">Preview Commentators overlay</text>
@@ -361,12 +361,12 @@
                     <button class="btn btn-success panelButton togglePreviewOverlayButton" id="toggleCommentatorsPreviewOverlayButton" data-preview-id="#commentatorsPreviewOverlayIframe" data-panel-id="#commentatorsPreviewOverlay"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
                 </div>
             </div>
-            <div class="panel-body previewEnabled" id="commentatorsPreviewOverlay">
-                <iframe id="commentatorsPreviewOverlayIframe" data-enabled="True"></iframe>
+            <div class="panel-body previewEnabled previewOverlayPanelBody" id="commentatorsPreviewOverlay">
+                <iframe class="previewOverlayIframe" id="commentatorsPreviewOverlayIframe" data-enabled="True"></iframe>
             </div>
         </div>
     </div>
-</div>*@
+</div>
 
 
 @section Scripts {
@@ -544,13 +544,18 @@
                 dataType: "html",
                 success: function (data) {
                     $("#manageCompetitors").html(data);
-                    $("#competitorsOverlayPath").html(selectedFormat.attr("value") + "GameOverlay.html");
+                    $("#competitorsOverlayPath").html(selectedFormat.attr("value") + "GameOverlay.html"); //TODO: .attr("value") replace .val()
                     $("#commentatorsOverlayPath").html(selectedGame.attr("value") + "Commentators/CommentatorsOverlay.html");
                     $("#manageCommentatorsForm > [name='PathToGame']").val(selectedGame.attr("value"));
 
                     competitorsOverlayPreviewSourceUrl = "http://" + baseUrl + selectedFormat.val().slice(1) + "GameOverlay.html";
                     if ($("#competitorsPreviewOverlayIframe").data("enabled") == "True") {
                         $("#competitorsPreviewOverlayIframe").attr("src", competitorsOverlayPreviewSourceUrl);
+                    }
+
+                    commentatorsOverlayPreviewSourceUrl = "http://" + baseUrl + selectedGame.val().slice(1) + "Commentators/CommentaryOverlay.html";
+                    if ($("#commentatorsPreviewOverlayIframe").data("enabled") == "True") {
+                        $("#commentatorsPreviewOverlayIframe").attr("src", commentatorsOverlayPreviewSourceUrl);
                     }
 
                     competitorsFormJsonData = null;
@@ -915,12 +920,6 @@
                     $("#manageCommentatorsForm").append(data);
 
                     reindexCommentators();
-                    $("div[id*='commentator-row-']").each(function (index) {
-                        $(this).attr("id", "commentator-row-" + index);
-                        $(this).find("input[id*='_Name']").attr({ "name": "commentatorViewModels[" + index + "].Name", "id": "commentatorViewModels_" + index + "_Name" });
-                        $(this).find("input[id*='_Twitter']").attr({ "name": "commentatorViewModels[" + index + "].Twitter", "id": "commentatorViewModels_" + index + "_Twitter" });
-                        $(this).find("button[id*='deleteCommentator-']").attr({ "onclick": "removeCommentator(" + index + ")", "id": "deleteCommentator-" + index });
-                    });
                 },
                 error: function (ex) {
                     UpdateErrorMonitor(ex);
@@ -997,12 +996,16 @@
         function reindexCommentators() {
             $("div[id*='commentator-row-']").each(function (index) {
                 $(this).attr("id", "commentator-row-" + index);
-                $(this).find("input[id*='_Name']").attr({ "name": "commentatorViewModels[" + index + "].Name", "id": "commentatorViewModels_" + index + "_Name", "data-selector": "#commentator" + (index + 1) + "Name" });
-                $(this).find("input[id*='_Twitter']").attr({ "name": "commentatorViewModels[" + index + "].Twitter", "id": "commentatorViewModels_" + index + "_Twitter", "data-selector": "#commentator" + (index + 1) + "Twitter" });
+                $(this).find("input[id*='_Name']").attr({ "name": "commentatorViewModels[" + index + "].Name", "id": "commentatorViewModels_" + index + "_Name", "data-selector": "#commentator" + (index + 1) + "NameText" });
+                $(this).find("input[id*='_Twitter']").attr({ "name": "commentatorViewModels[" + index + "].Twitter", "id": "commentatorViewModels_" + index + "_Twitter", "data-selector": "#commentator" + (index + 1) + "TwitterText" });
                 $(this).find("button[id^='deleteCommentator-']").attr({ "onclick": "removeCommentator(" + index + ")", "id": "deleteCommentator-" + index });
                 $(this).find("button[id^='moveCommentatorDown-']").attr({ "onclick": "moveCommentatorDown(" + index + ")", "id": "moveCommentatorDown-" + index });
                 $(this).find("button[id^='moveCommentatorUp-']").attr({ "onclick": "moveCommentatorUp(" + index + ")", "id": "moveCommentatorUp-" + index });
             });
+
+            if (!$("#submitCommentatorsButton").hasClass("btn-danger")) {
+                $("#submitCommentatorsButton").removeClass("btn-primary").addClass("btn-danger danger-pulsate");
+            }
         }
 
         // Summary:
@@ -1202,7 +1205,7 @@
         // Summary:
         // On: Clicking the force resize button.
         // Send a force resize command through the WebSocket.
-        $("#forceResizeButton").click(function () {
+        $(".forceResizeButton").click(function () {
             var jsonData = { "type": "forceResize", data: {} };
             websocket.send(JSON.stringify(jsonData));
         });
