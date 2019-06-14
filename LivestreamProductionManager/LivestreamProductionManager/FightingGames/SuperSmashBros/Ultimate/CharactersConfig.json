@@ -5,6 +5,10 @@
     "CssValue": "../../CharacterIcons/bayonetta.png"
   },
   {
+    "CharacterName": "Banjo & Kazooie",
+    "CssValue": "../../CharacterIcons/banjokazooie.png"
+  },
+  {
     "CharacterName": "Bowser",
     "CssValue": "../../CharacterIcons/bowser.png"
   },
@@ -71,6 +75,10 @@
   {
     "CharacterName": "Greninja",
     "CssValue": "../../CharacterIcons/greninja.png"
+  },
+  {
+    "CharacterName": "Hero",
+    "CssValue": "../../CharacterIcons/hero.png"
   },
   {
     "CharacterName": "Ice Climbers",
@@ -299,14 +307,6 @@
   {
     "CharacterName": "Zero Suit Samus",
     "CssValue": "../../CharacterIcons/zerosuitsamus.png"
-  },
-  {
-    "CharacterName": "DLC character 2",
-    "CssValue": "../../CharacterIcons/random.png"
-  },
-  {
-    "CharacterName": "DLC character 3",
-    "CssValue": "../../CharacterIcons/random.png"
   },
   {
     "CharacterName": "DLC character 4",

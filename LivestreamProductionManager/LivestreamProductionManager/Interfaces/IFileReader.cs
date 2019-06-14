@@ -4,5 +4,6 @@
     {
         string ReadCssFile(string pathToFormat);
         string ReadJsonFile(string pathToFormat);
+        string ReadReadMeFile(string pathToFormat);
     }
 }

@@ -113,6 +113,7 @@
                 <text class="panel-title">Manage competitors</text>
 
                 <div class="pull-right">
+                    <button class="btn btn-danger panelButton" id="showReadMeModalButton" data-form-id="#manageCompetitorsForm"><span class="glyphicon glyphicon-question-sign" style="font-size: 11px;"></span> Info</button>
                     <button class="btn btn-default panelButton" id="setToDefaultValuesButton"><span class="glyphicon glyphicon-erase" style="font-size: 11px;"></span> Defaults</button>
                     <button class="btn btn-warning panelButton" id="getLatestCompetitorsValuesButton"><span class="glyphicon glyphicon-download-alt" style="font-size: 11px;"></span> Get latest</button>
                     <button class="btn btn-info panelButton" id="switchCompetitorsButton"><span class="glyphicon glyphicon-refresh" style="font-size: 11px;"></span> Switch</button>
@@ -1240,6 +1241,33 @@
                 $(this).removeClass("btn-danger").addClass("btn-success").html("<span class='glyphicon glyphicon-ok' style='font-size: 12px;'></span> Enabled");
             }
         });
+
+
+        /* Modal */
+        // On: Clicking a show ReadMe Modal button
+        // only works for competitors at the moment.
+        $("#showReadMeModalButton").click(function () {
+            if ($("#Format").val()) {
+                $.ajax({
+                    type: "POST",
+                    url: "FightingGames/GetReadMe",
+                    data: { "pathToFormat": $($(this).data("form-id")).find("[name='PathToFormat']").val() },
+                    dataType: "html",
+                    success: function (data) {
+                        $(".modal-content").html(data);
+                        $("#readMeModal").modal("show");
+                    },
+                    error: function (ex) {
+                        UpdateErrorMonitor(ex);
+                        console.log(ex);
+                    }
+                });
+            } else {
+                showSnackbar("#manageCommentatorsSnackbar", "No game and format have been selected.");
+            }
+        });
+
+
 
         /* Snackbar */
 

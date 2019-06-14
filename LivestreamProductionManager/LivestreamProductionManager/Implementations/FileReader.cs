@@ -39,5 +39,21 @@ namespace LivestreamProductionManager.Implementations
                 throw;
             }
         }
+
+        public string ReadReadMeFile(string pathToFormat)
+        {
+            try
+            {
+                using (var streamReader = new StreamReader(HttpContext.Current.Server.MapPath(pathToFormat + "ReadMe.html")))
+                {
+                    return streamReader.ReadToEnd();
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+                throw;
+            }
+        }
     }
 }

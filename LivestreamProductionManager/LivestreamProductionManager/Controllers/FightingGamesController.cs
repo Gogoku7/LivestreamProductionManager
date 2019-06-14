@@ -109,5 +109,21 @@ namespace LivestreamProductionManager.Controllers
                 return ErrorSnackbar("Something went wrong with retrieving the latest values.", ex);
             }
         }
+
+        [HttpPost]
+        public string GetReadMe(string pathToFormat)
+        {
+            try
+            {
+                var readMeContent = _fileReader.ReadReadMeFile(pathToFormat);
+
+                return readMeContent;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+                throw;
+            }
+        }
     }
 }

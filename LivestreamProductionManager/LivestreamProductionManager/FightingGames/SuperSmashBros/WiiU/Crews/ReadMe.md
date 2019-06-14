@@ -1,4 +1,6 @@
-﻿When deployed to IIS, change the baseUrl variable to 'localhost' or 'localhost/livestreamproductionmanager' (depending on which url Livestream Production Manager runs) in FightingGames/SuperSmashBros/JavaScript/OverlayManager.js and Web.config of the application to ensure the WebSocket connection to work.
+﻿#Wii U Crews
+
+When deployed to IIS, change the baseUrl variable to 'localhost' or 'localhost/livestreamproductionmanager' (depending on which url Livestream Production Manager runs) in FightingGames/SuperSmashBros/JavaScript/OverlayManager.js and Web.config of the application to ensure the WebSocket connection to work.
 
 To learn how to enable IIS, use: https://www.itnota.com/install-iis-windows/
 Deploying to IIS and running can be done manually or using Visual Studio tools
@@ -17,7 +19,6 @@ Deploying to IIS and running can be done manually or using Visual Studio tools
 - #extraText
 - #crew1NameText
 - #crew1Character
-- #player2NameText
 - #crew1Port
 - #crew1StocksLeftText
 - #crew1Player(number)NameText
@@ -35,4 +36,4 @@ Deploying to IIS and running can be done manually or using Visual Studio tools
 - #crew2Player(number)TwitterText
 - #crew2Player(number)Character
 
-If you have experience with HTML, CSS, JavaScript and Photoshop, you can create your own fully custom overlay using these Selectors.
+If you have experience with HTML, CSS, JavaScript and Photoshop, you can create your own fully custom overlay using these Selectors

@@ -88,6 +88,8 @@
         <div class="snackbar" id="overlayDisconnectedSnackbar"></div>
         <div class="snackbar" id="forceResizeSnackbar"></div>
 
+        @Html.Partial("_ReadMeModal")
+
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/highlight")
         @Scripts.Render("~/bundles/bootstrap")
@@ -138,6 +140,5 @@
                 </text>
             }
         }
-        
     }
 </script>
