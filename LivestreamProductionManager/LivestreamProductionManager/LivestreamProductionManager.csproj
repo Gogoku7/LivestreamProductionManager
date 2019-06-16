@@ -948,6 +948,7 @@
     <Content Include="Views\About\Version.cshtml" />
     <Content Include="Views\SuperSmashBros\SquadStrike\ManageCompetitors.cshtml" />
     <Content Include="Views\Shared\_ReadMeModal.cshtml" />
+    <Content Include="Views\Shared\_VideoModal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

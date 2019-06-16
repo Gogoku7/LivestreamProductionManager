@@ -214,7 +214,7 @@
                 <text class="panel-title">Preview Competitors overlay</text>
 
                 <div class="pull-right">
-                    <button class="btn btn-success panelButton togglePreviewOverlayButton" id="toggleCompetitorsPreviewOverlayButton" data-preview-id="#competitorsPreviewOverlayIframe" data-panel-id="#competitorsPreviewOverlay"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
+                    <button class="btn btn-success panelButton togglePreviewOverlayButton" id="toggleCompetitorsPreviewOverlayButton" data-preview-id="#competitorsPreviewOverlayIframe" data-panel-id="#competitorsPreviewOverlay" data-overlay-type="Game"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
                 </div>
             </div>
             <div class="panel-body previewEnabled previewOverlayPanelBody" id="competitorsPreviewOverlay">
@@ -359,7 +359,7 @@
                 <text class="panel-title">Preview Commentators overlay</text>
 
                 <div class="pull-right">
-                    <button class="btn btn-success panelButton togglePreviewOverlayButton" id="toggleCommentatorsPreviewOverlayButton" data-preview-id="#commentatorsPreviewOverlayIframe" data-panel-id="#commentatorsPreviewOverlay"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
+                    <button class="btn btn-success panelButton togglePreviewOverlayButton" id="toggleCommentatorsPreviewOverlayButton" data-preview-id="#commentatorsPreviewOverlayIframe" data-panel-id="#commentatorsPreviewOverlay" data-overlay-type="Commentary"><span class="glyphicon glyphicon-ok" style="font-size: 12px;"></span> Enabled</button>
                 </div>
             </div>
             <div class="panel-body previewEnabled previewOverlayPanelBody" id="commentatorsPreviewOverlay">
@@ -404,7 +404,8 @@
 
             // Summary:
             // On: Opening the WebSocket connection.
-            // Update the client WebSocket monitor, add one to the clients connected count, then show a snackbar message.
+            // Update the client WebSocket monitor, add one to the clients connected count.
+            // Show a snackbar message.
             websocket.onopen = function () {
                 $("#webSocketClientMonitorTableBody").append("<tr><td>1</td><td>Livestream Production Manager</td><td>Connected</td></tr>");
                 clientsConnectedCount++;
@@ -414,6 +415,7 @@
             // Summary:
             // On: Error occurring with the WebSocket connection.
             // Show a Snackbar message and update the error log monitor.
+            // Update the error monitor.
             websocket.onerror = function (event) {
                 showSnackbar("#managerFailedToConnectSnackbar", "Something went wrong with the WebSocket connection.");
                 UpdateErrorMonitor(event);
@@ -421,7 +423,20 @@
 
             // Summary:
             // On: Receiving a message from the WebSocket.
-            //
+            // If > The message type is "queu"
+            //  
+            //  Show a snackbar message.
+            // Else if > The message type is "overlayConnected"
+            //  
+            //  Show a snackbar message.
+            // Else if > The message type is "overlayDisconnected"
+            //  
+            //  Show a snackbar message.
+            // Else if > The message type is "forceResize"
+            //  Show a snackbar message.
+            // PARAMETERS
+            // event: The message received from the WebSocket.
+            // event.data: the data in JSON format received from the WebSocket.
             websocket.onmessage = function (event) {
                 var jsonData = JSON.parse(event.data);
 
@@ -478,7 +493,7 @@
             $.ajax({
                 type: "POST",
                 url: "/FightingGames/GetGames",
-                data: { "pathToSeries": selectedSeries.attr("value") },
+                data: { "pathToSeries": selectedSeries.val() },
                 dataType: "json",
                 success: function (data) {
                     $("#Game").empty();
@@ -505,7 +520,7 @@
             $.ajax({
                 type: "POST",
                 url: "/FightingGames/GetFormats?",
-                data: { "pathToGame": selectedGame.attr("value") },
+                data: { "pathToGame": selectedGame.val() },
                 dataType: "json",
                 success: function (data) {
                     $("#Format").empty();
@@ -538,16 +553,16 @@
                     "series": selectedSeries.data("series"),
                     "game": selectedGame.data("game"),
                     "format": selectedFormat.data("value"),
-                    "pathToSeries": selectedSeries.attr("value"),
-                    "pathToGame": selectedGame.attr("value"),
-                    "pathToFormat": selectedFormat.attr("value")
+                    "pathToSeries": selectedSeries.val(),
+                    "pathToGame": selectedGame.val(),
+                    "pathToFormat": selectedFormat.val()
                 },
                 dataType: "html",
                 success: function (data) {
                     $("#manageCompetitors").html(data);
-                    $("#competitorsOverlayPath").html(selectedFormat.attr("value") + "GameOverlay.html"); //TODO: .attr("value") replace .val()
-                    $("#commentatorsOverlayPath").html(selectedGame.attr("value") + "Commentators/CommentatorsOverlay.html");
-                    $("#manageCommentatorsForm > [name='PathToGame']").val(selectedGame.attr("value"));
+                    $("#competitorsOverlayPath").html(selectedFormat.val() + "GameOverlay.html");
+                    $("#commentatorsOverlayPath").html(selectedGame.val() + "Commentators/CommentatorsOverlay.html");
+                    $("#manageCommentatorsForm > [name='PathToGame']").val(selectedGame.val());
 
                     competitorsOverlayPreviewSourceUrl = "http://" + baseUrl + selectedFormat.val().slice(1) + "GameOverlay.html";
                     if ($("#competitorsPreviewOverlayIframe").data("enabled") == "True") {
@@ -1219,7 +1234,7 @@
         // else > the overlay preview associated with the button is disabled
         //  Enable the overlay previews associated with the button
         //  Update the clicked toggle button to show the overlay preview it is enabled
-        $("#togglePreviewOverlayButton").click(function () {
+        $(".togglePreviewOverlayButton").click(function () {
             if ($($(this).data("preview-id")).data("enabled") == "True") {
                 $($(this).data("preview-id")).data("enabled", "False");
                 $($(this).data("preview-id")).removeAttr("src");
@@ -1232,7 +1247,15 @@
 
             } else {
                 $($(this).data("preview-id")).data("enabled", "True");
-                $($(this).data("preview-id")).attr("src", competitorsOverlayPreviewSourceUrl);
+
+                if ($(this).data("overlay-type") === "Game") {
+                    $($(this).data("preview-id")).attr("src", competitorsOverlayPreviewSourceUrl);
+                }
+                if ($(this).data("overlay-type") === "Commentary") {
+                    $($(this).data("preview-id")).attr("src", commentatorsOverlayPreviewSourceUrl);
+                }
+
+                
 
                 if ($($(this).data("panel-id")).hasClass("previewDisabled")) {
                     $($(this).data("panel-id")).addClass("previewEnabled").removeClass("previewDisabled");
@@ -1250,11 +1273,11 @@
             if ($("#Format").val()) {
                 $.ajax({
                     type: "POST",
-                    url: "FightingGames/GetReadMe",
+                    url: "/FightingGames/GetReadMe",
                     data: { "pathToFormat": $($(this).data("form-id")).find("[name='PathToFormat']").val() },
                     dataType: "html",
                     success: function (data) {
-                        $(".modal-content").html(data);
+                        $("#readMeModalContent").html(data);
                         $("#readMeModal").modal("show");
                     },
                     error: function (ex) {
