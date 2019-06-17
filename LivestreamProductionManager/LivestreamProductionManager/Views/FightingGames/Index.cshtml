@@ -353,7 +353,7 @@
         <div class="panel panel-success">
             <div class="panel-heading text-center">
                 <div class="pull-left">
-                    <button class="btn btn-danger panelButton forceResizeButton" id="forceCommentatorsResizeButton"><span class="glyphicon glyphicon-resize-full" style="font-size: 11px;"></span> Force resize</button>
+                    <button class="btn btn-danger panelButton forceResizeButton" id="forceCommentatorsResizeButton"><span class="glyphicon glyphicon-resize-full" style="font-size: 11px;"></span> Force resize</button> <!--Solve not working bug-->
                 </div>
 
                 <text class="panel-title">Preview Commentators overlay</text>
@@ -666,6 +666,8 @@
                             $("#round").val($("[name='Round']").val());
                             $("#bestOf").val($("[name='BestOf']").val());
                             $("#extra").val($("[name='Extra']").val());
+
+                            $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger danger-pulsate");
 
                             showSnackbar("#manageCompetitorsSnackbar", "Retrieved the latest values.");
                         }
@@ -1243,6 +1245,10 @@
                     $($(this).data("panel-id")).removeClass("previewEnabled").addClass("previewDisabled");
                 }
 
+                if (!$($(this).data("preview-id")).hasClass("previewDisabled")) {
+                    $($(this).data("preview-id")).removeClass("previewEnabled").addClass("previewDisabled");
+                }
+
                 $(this).removeClass("btn-success").addClass("btn-danger").html("<span class='glyphicon glyphicon-remove' style='font-size: 12px;'></span> Disabled");
 
             } else {
@@ -1255,10 +1261,12 @@
                     $($(this).data("preview-id")).attr("src", commentatorsOverlayPreviewSourceUrl);
                 }
 
-                
-
                 if ($($(this).data("panel-id")).hasClass("previewDisabled")) {
                     $($(this).data("panel-id")).addClass("previewEnabled").removeClass("previewDisabled");
+                }
+
+                if ($($(this).data("preview-id")).hasClass("previewDisabled")) {
+                    $($(this).data("preview-id")).addClass("previewEnabled").removeClass("previewDisabled");
                 }
 
                 $(this).removeClass("btn-danger").addClass("btn-success").html("<span class='glyphicon glyphicon-ok' style='font-size: 12px;'></span> Enabled");
