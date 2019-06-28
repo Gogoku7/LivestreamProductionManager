@@ -1014,8 +1014,8 @@
         function reindexCommentators() {
             $("div[id*='commentator-row-']").each(function (index) {
                 $(this).attr("id", "commentator-row-" + index);
-                $(this).find("input[id*='_Name']").attr({ "name": "commentatorViewModels[" + index + "].Name", "id": "commentatorViewModels_" + index + "_Name", "data-selector": "#commentator" + (index + 1) + "NameText" });
-                $(this).find("input[id*='_Twitter']").attr({ "name": "commentatorViewModels[" + index + "].Twitter", "id": "commentatorViewModels_" + index + "_Twitter", "data-selector": "#commentator" + (index + 1) + "TwitterText" });
+                $(this).find("input[id*='_Name']").attr({ "name": "commentatorViewModels[" + index + "].Name", "id": "commentatorViewModels_" + index + "_Name", "data-selector": "#commentator" + (index + 1) + "NameText" }).data("selector", `#commentator${ index + 1 }NameText`);
+                $(this).find("input[id*='_Twitter']").attr({ "name": "commentatorViewModels[" + index + "].Twitter", "id": "commentatorViewModels_" + index + "_Twitter", "data-selector": "#commentator" + (index + 1) + "TwitterText" }).data("selector", `#commentator${ index + 1 }TwitterText`);
                 $(this).find("button[id^='deleteCommentator-']").attr({ "onclick": "removeCommentator(" + index + ")", "id": "deleteCommentator-" + index });
                 $(this).find("button[id^='moveCommentatorDown-']").attr({ "onclick": "moveCommentatorDown(" + index + ")", "id": "moveCommentatorDown-" + index });
                 $(this).find("button[id^='moveCommentatorUp-']").attr({ "onclick": "moveCommentatorUp(" + index + ")", "id": "moveCommentatorUp-" + index });

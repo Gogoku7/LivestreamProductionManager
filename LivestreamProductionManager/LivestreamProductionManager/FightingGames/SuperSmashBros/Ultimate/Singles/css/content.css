@@ -3,15 +3,15 @@
 }
 
 #player1TwitterText:before {
-    content: "@gogoku7";
+    content: "";
 }
 
 #player1ScoreText:before {
-    content: "1";
+    content: "0";
 }
 
 #player1Character {
-    background-image: url('../../CharacterIcons/fox.png');
+    background-image: url('../../CharacterIcons/joker.png');
 }
 
 #player1Port {
@@ -23,15 +23,15 @@
 }
 
 #player2TwitterText:before {
-    content: "@median4";
+    content: "";
 }
 
 #player2ScoreText:before {
-    content: "1";
+    content: "0";
 }
 
 #player2Character {
-    background-image: url('../../CharacterIcons/littlemac.png');
+    background-image: url('../../CharacterIcons/hero.png');
 }
 
 #player2Port {
@@ -39,17 +39,17 @@
 }
 
 #tournamentText:before {
-    content: "Fight Night 50";
+    content: "";
 }
 
 #extraText:before {
-    content: "Esports Game Arena";
+    content: "";
 }
 
 #roundText:before {
-    content: "Winners Round 1";
+    content: "";
 }
 
 #bestOfText:before {
-    content: "Best of 3";
+    content: "";
 }

@@ -9,15 +9,15 @@
 },
 {
   "Selector": "#player1TwitterText",
-  "Value": "@gogoku7"
+  "Value": ""
 },
 {
   "Selector": "#player1ScoreText",
-  "Value": "1"
+  "Value": "0"
 },
 {
   "Selector": "#player1Character",
-  "Value": "../../CharacterIcons/fox.png"
+  "Value": "../../CharacterIcons/joker.png"
 },
 {
   "Selector": "#player1Port",
@@ -33,15 +33,15 @@
 },
 {
   "Selector": "#player2TwitterText",
-  "Value": "@median4"
+  "Value": ""
 },
 {
   "Selector": "#player2ScoreText",
-  "Value": "1"
+  "Value": "0"
 },
 {
   "Selector": "#player2Character",
-  "Value": "../../CharacterIcons/littlemac.png"
+  "Value": "../../CharacterIcons/hero.png"
 },
 {
   "Selector": "#player2Port",
@@ -49,18 +49,18 @@
 },
 {
   "Selector": "#tournamentText",
-  "Value": "Fight Night 50"
+  "Value": ""
 },
 {
   "Selector": "#extraText",
-  "Value": "Esports Game Arena"
+  "Value": ""
 },
 {
   "Selector": "#roundText",
-  "Value": "Winners Round 1"
+  "Value": ""
 },
 {
   "Selector": "#bestOfText",
-  "Value": "Best of 3"
+  "Value": ""
 }
 ]

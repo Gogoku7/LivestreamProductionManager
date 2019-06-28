@@ -9,7 +9,16 @@
         <p>NO ETA</p>
         <p>These features are planned for the next update (0.5)</p>
         <ul>
-            <li></li>
+            <li>Move LPM repo folders closer to root /LPM/LPM/LPM is unwanted</li>
+            <li>Improve ajax.error handlers</li>
+            <li>Allow for no character and no port options</li>
+            <li>Plus and Minus button at score</li>
+            <li>General settings:</li>
+            <ul>
+                <li>Disable monitors / previews by default</li>
+                <li>Use custom Darkly theme by default</li>
+                <li>Switch between stock icon and head portrait or full portrait</li>
+            </ul>
         </ul>
 
         <hr />
@@ -21,12 +30,14 @@
             <li>Added Joker as a Character to Super Smash Bros. Ultimate</li>
             <li>Added Hero as a Character to Super Smash Bros. Ultimate</li>
             <li>Prepared the application for Banjo & Kazooie as a Character to Super Smash Bros. Ultimate</li>
+            <li>Made the default Score and Stocks Left value "0" in the existing Manage Competitors Partial Views</li>
             <li>Upgraded Bootstrap 3.3.7 to Bootstrap 3.4.1</li>
-            <li>Improved the transition between of toggling themes. At the moment, this transition when there is no Debugger attached, this will change in the next update</li>
-            <li>Minor improvements to Dark theme styling</li>
-            <li>Added path to overlay file in Manage Competitors and Manage Commentators panel footer</li>
-            <li>Implemented reset Manage Competitor form inputs to default values button</li>
-            <li>Add Character per Player in Crews</li>
+            <li>Improved the transition between of toggling themes. At the moment, this transition only happens when there is no Debugger attached, this will change in a future version</li>
+            <li>Minor improvements to Custom Darkly theme styling</li>
+            <li>Added path to overlay file in Manage Competitors and Manage Commentators panel footers</li>
+            <li>Implemented a reset Manage Competitors form inputs to default values button</li>
+            <li>Implemented a get latest Manage Competitors values from JSON file in format folder button</li>
+            <li>Added the option to add a Character per Player in Crews</li>
             <li>Improved the preview overlay toggles, it will now allow you to preview the last selected Format when it's disabled and re-enabled</li>
             <li>Developed the front end and back end of managing competitors for  Ultimate Squad Strike</li>
             <li>Developed default overlay for Super Smash Bros. Ultimate - Squad Strike</li>
@@ -35,18 +46,19 @@
                 <li>Less code re-use across all overlays</li>
                 <li>The Force resize button should be required less across the board</li>
                 <ul>
-                    <li>Only the default Doubles overlays still have frequent issues resizing text appropriately, this will be looked into in the future</li>
+                    <li>Only the default Doubles overlays still have frequent issues resizing text appropriately, this will be looked into in a future version</li>
                 </ul>
             </ul>
-            <li>Developed a get latest values from JSON file in format folder button</li>
             <li>Developed the front end and back end of managing Commentators</li>
             <ul>
-                <li>It is limit to first selecting a game and format</li>
+                <li>Submitting the form is limited to first selecting a game and format</li>
                 <li>There's a move Commentator one row up button</li>
                 <li>There's a move Commentator one row down button</li>
             </ul>
-            <li>Improved coloring of panels to make those with content about the same subject grouped together</li>
-            <li>Developed monitoring and preview overlays for commentators</li>
+            <li>Developed default overlay for Super Smash Bros. Ultimate - Commentary</li>
+            <li>Moved the panels around  to make those with content about the same subject be grouped together</li>
+            <li>Improved coloring of panels to make those with content about the same subject have a group color</li>
+            <li>Developed monitoring and preview overlay panels for commentators</li>
             <ul>
                 <li>The existing JavaScript for monitoring has been refactored to be more flexible and also facilitate commentators, resulting in less code re-use</li>
             </ul>
