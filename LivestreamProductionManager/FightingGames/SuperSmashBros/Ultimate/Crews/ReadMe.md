@@ -11,7 +11,7 @@ Deploying to IIS and running can be done manually or using Visual Studio tools
 - Check the Local file checkbox and click Browse
 - Select GameOverlay.html in this folder
 - Set the resolution and framerate. (1920 x 1080 at 60 FPS recommended)
-- Check Shutdown source when not visible and Refresh browser when scene becomes active checkbox 
+- Check Shutdown source when not visible and Refresh browser when scene becomes active checkbox
 
 **Alternatively:**
 - You can reuse the singles default overlay and omit the chosen characters

@@ -113,7 +113,7 @@
                 <text class="panel-title">Manage competitors</text>
 
                 <div class="pull-right">
-                    <button class="btn btn-danger panelButton" id="showReadMeModalButton" data-form-id="#manageCompetitorsForm"><span class="glyphicon glyphicon-question-sign" style="font-size: 11px;"></span> Info</button>
+                    <button class="btn btn-danger panelButton showReadMeModalButton" id="showCompetitorsReadMeModalButton" data-form-id="#manageCompetitorsForm"><span class="glyphicon glyphicon-question-sign" style="font-size: 11px;"></span> Info</button>
                     <button class="btn btn-default panelButton" id="setToDefaultValuesButton"><span class="glyphicon glyphicon-erase" style="font-size: 11px;"></span> Defaults</button>
                     <button class="btn btn-warning panelButton" id="getLatestCompetitorsValuesButton"><span class="glyphicon glyphicon-download-alt" style="font-size: 11px;"></span> Get latest</button>
                     <button class="btn btn-info panelButton" id="switchCompetitorsButton"><span class="glyphicon glyphicon-refresh" style="font-size: 11px;"></span> Switch</button>
@@ -236,6 +236,7 @@
                 <text class="panel-title">Manage commentators</text>
 
                 <div class="pull-right">
+                    <button class="btn btn-danger panelButton showReadMeModalButton" id="showCommentatorsReadMeModalButton" data-form-id="#manageCommentatorsForm"><span class="glyphicon glyphicon-question-sign" style="font-size: 11px;"></span> Info</button>
                     <button class="btn btn-info panelButton" id="addCommentatorButton"><span style="font-weight: bold;" class="glypicon glyphicon-plus"></span> Add</button>
                 </div>
             </div>
@@ -1279,12 +1280,21 @@
         // 
         // Note: Only works for competitors at the moment.
         // Note: 
-        $("#showReadMeModalButton").click(function () {
+        $(".showReadMeModalButton").click(function () {
+            var pathToFormat;
+            if ($($(this).data("form-id")).data("overlay-type") === "Game") {
+                pathToFormat = $($(this).data("form-id")).find("[name='PathToFormat']").val();
+            }
+
+            if ($($(this).data("form-id")).data("overlay-type") === "Commentary") {
+                pathToFormat = `${$($(this).data("form-id")).find("[name='PathToGame']").val()}Commentators/`;
+            }
+
             if ($("#Format").val()) {
                 $.ajax({
                     type: "POST",
                     url: "/FightingGames/GetReadMe",
-                    data: { "pathToFormat": $($(this).data("form-id")).find("[name='PathToFormat']").val() },
+                    data: { "pathToFormat": pathToFormat },
                     dataType: "json",
                     success: function (data) {
                         $("#readMeModalHeader").html(data.header);

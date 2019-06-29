@@ -919,6 +919,9 @@
     </Content>
     <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\ReadMe.json" />
     <Content Include="FightingGames\SuperSmashBros\WiiU\Crews\ReadMe.json" />
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Commentators\ReadMe.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
