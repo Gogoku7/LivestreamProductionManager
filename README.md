@@ -12,4 +12,4 @@ Public update video playlist: https://www.youtube.com/playlist?list=PL6cEqU9AFK4
 
 Follow me on Twitter to see how I progress with this project as well as other things I do in my free time: http://www.twitter.com/gogoku7
 
-Join the Discord server: 
+Join the Discord server: https://discord.gg/y83D8Yp
