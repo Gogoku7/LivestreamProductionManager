@@ -44,7 +44,7 @@ namespace LivestreamProductionManager.Implementations
         {
             try
             {
-                using (var streamReader = new StreamReader(HttpContext.Current.Server.MapPath(pathToFormat + "ReadMe.html")))
+                using (var streamReader = new StreamReader(HttpContext.Current.Server.MapPath(pathToFormat + "ReadMe.json")))
                 {
                     return streamReader.ReadToEnd();
                 }

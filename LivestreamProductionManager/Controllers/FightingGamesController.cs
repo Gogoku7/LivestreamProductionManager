@@ -111,18 +111,18 @@ namespace LivestreamProductionManager.Controllers
         }
 
         [HttpPost]
-        public string GetReadMe(string pathToFormat)
+        public JsonResult GetReadMe(string pathToFormat)
         {
             try
             {
-                var readMeContent = _fileReader.ReadReadMeFile(pathToFormat);
+                var readMeJsonContent = _fileReader.ReadReadMeFile(pathToFormat);
 
-                return readMeContent;
+                return Json(JsonConvert.DeserializeObject<ReadMe>(readMeJsonContent), JsonRequestBehavior.DenyGet);
             }
             catch (Exception ex)
             {
                 Log.Error(ex, ex.Message);
-                throw;
+                return ErrorSnackbar("Something went wrong with retrieving the ReadMe content.", ex);
             }
         }
     }

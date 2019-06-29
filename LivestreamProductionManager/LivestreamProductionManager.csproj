@@ -202,6 +202,7 @@
     <Compile Include="Models\FightingGames\SuperSmashBros\SquadPlayerCssModel.cs" />
     <Compile Include="Models\FightingGames\SuperSmashBros\SquadStrikeCssModel.cs" />
     <Compile Include="ViewModels\FightingGames\GetLatestViewModel.cs" />
+    <Compile Include="ViewModels\FightingGames\ReadMe.cs" />
     <Compile Include="ViewModels\FightingGames\SelectorValueViewModel.cs" />
     <Compile Include="ViewModels\FightingGames\SuperSmashBros\CrewPlayerPartialViewModel.cs" />
     <Compile Include="ViewModels\FightingGames\SuperSmashBros\SquadPlayerViewModel.cs" />
@@ -522,7 +523,6 @@
     <Content Include="FightingGames\SuperSmashBros\Ultimate\Crews\GameOverlay.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\Crews\ReadMe.html" />
     <Content Include="FightingGames\SuperSmashBros\Ultimate\Doubles\BoxBackground\InfoBoxBackground.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -532,7 +532,6 @@
     <Content Include="FightingGames\SuperSmashBros\Ultimate\Doubles\GameOverlay.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\Doubles\ReadMe.html" />
     <Content Include="FightingGames\SuperSmashBros\Ultimate\Doubles\TeamBackgrounds\Team1Background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -578,7 +577,6 @@
     <Content Include="FightingGames\SuperSmashBros\Ultimate\Singles\PlayerBackgrounds\Player2Background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\Singles\ReadMe.html" />
     <Content Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\BoxBackground\InfoBoxBackground.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -588,7 +586,6 @@
     <Content Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\GameOverlay.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\ReadMe.html" />
     <Content Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\SquadBackgrounds\Squad1Background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -782,7 +779,6 @@
     <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\GameOverlay.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\ReadMe.html" />
     <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\TeamBackgrounds\Team1Background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -828,7 +824,6 @@
     <Content Include="FightingGames\SuperSmashBros\WiiU\Singles\PlayerBackgrounds\Player2Background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\WiiU\Singles\ReadMe.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -907,6 +902,23 @@
     <Content Include="FightingGames\SuperSmashBros\WiiU\Singles\ReadMe.md" />
     <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\ReadMe.md" />
     <Content Include="FightingGames\SuperSmashBros\WiiU\Crews\ReadMe.md" />
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Singles\ReadMe.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Doubles\ReadMe.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Crews\ReadMe.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\ReadMe.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\WiiU\Singles\ReadMe.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\ReadMe.json" />
+    <Content Include="FightingGames\SuperSmashBros\WiiU\Crews\ReadMe.json" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

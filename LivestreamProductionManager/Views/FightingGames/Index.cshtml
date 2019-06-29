@@ -1276,17 +1276,25 @@
 
         /* Modal */
         // On: Clicking a show ReadMe Modal button
-        // only works for competitors at the moment.
+        // 
+        // Note: Only works for competitors at the moment.
+        // Note: 
         $("#showReadMeModalButton").click(function () {
             if ($("#Format").val()) {
                 $.ajax({
                     type: "POST",
                     url: "/FightingGames/GetReadMe",
                     data: { "pathToFormat": $($(this).data("form-id")).find("[name='PathToFormat']").val() },
-                    dataType: "html",
+                    dataType: "json",
                     success: function (data) {
-                        $("#readMeModalContent").html(data);
+                        $("#readMeModalHeader").html(data.header);
+                        $("#readMeModalBody").html(data.body);
+                        $("#readMeModalFooter").html(data.footer);
                         $("#readMeModal").modal("show");
+
+
+                        //$("#readMeModalContent").html(data);
+                       
                     },
                     error: function (ex) {
                         UpdateErrorMonitor(ex);
