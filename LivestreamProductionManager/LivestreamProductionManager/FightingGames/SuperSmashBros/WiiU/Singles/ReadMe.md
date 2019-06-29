@@ -1,4 +1,4 @@
-Wii U Singles
+# Super Smash Bros. Wii U - Singles
 
 When deployed to IIS, change the baseUrl variable to 'localhost' or 'localhost/livestreamproductionmanager' (depending on which url Livestream Production Manager runs) in FightingGames/SuperSmashBros/JavaScript/OverlayManager.js and Web.config of the application to ensure the WebSocket connection to work.
 
