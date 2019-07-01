@@ -2,12 +2,14 @@
   {
     "GameName": "Street Fighter",
     "GAME": "StreetFighter",
-    "PathToGame": "~/FightingGames/StreetFighter/SF"
+    "PathToGame": "~/FightingGames/StreetFighter/SF",
+    "PathToCommentators": "~/FightingGames/StreetFighter/SF/Commentators"
   },
 
   {
     "GameName": "Street Fighter II",
     "GAME": "StreetFighter2",
-    "PathToGame": "~/FightingGames/StreetFighter/SF2"
+    "PathToGame": "~/FightingGames/StreetFighter/SF2",
+    "PathToCommentators": "~/FightingGames/StreetFighter/SF2/Commentators"
   }
 ]

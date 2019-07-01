@@ -22,7 +22,7 @@ namespace LivestreamProductionManager.Implementations.Commentators
             _textTemplateJson = _templatefileReader.ReadTemplateFile("TextTemplateFile.json");
         }
 
-        public void UpdateCommentatorsOverlay(string pathToGame, List<CommentatorViewModel> commentatorViewModels)
+        public void UpdateCommentatorsOverlay(string pathToCommentators, List<CommentatorViewModel> commentatorViewModels)
         {
             try
             {
@@ -30,7 +30,8 @@ namespace LivestreamProductionManager.Implementations.Commentators
 
                 for (var i = 0; i < commentatorViewModels.Count(); i++)
                 {
-                    commentatorsValuesModelList.Add(
+                    commentatorsValuesModelList.Add
+                    (
                         new CommentatorsValuesModel
                         {
                             Name = _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"commentator{i + 1}NameText", commentatorViewModels[i].Name ?? ""),
@@ -39,7 +40,7 @@ namespace LivestreamProductionManager.Implementations.Commentators
                     );
                 }
 
-                _commentatorsFileWriter.WriteCommentatorsFile(pathToGame, commentatorsValuesModelList);
+                _commentatorsFileWriter.WriteCommentatorsFile(pathToCommentators, commentatorsValuesModelList);
             }
             catch (Exception ex)
             {

@@ -14,14 +14,14 @@ namespace LivestreamProductionManager.Implementations.Commentators
         private readonly ITemplateFileReader _templateFileReader = new TemplateFileReader("~/FightingGames/CssTemplates/");
         private readonly ICommentatorsValuesReplacer _commentatorsValuesReplacer = new CommentatorsCssReplacer();
 
-        public void WriteCommentatorsFile(string pathToGame, List<CommentatorsValuesModel> commentatorsValuesModels)
+        public void WriteCommentatorsFile(string pathToCommentators, List<CommentatorsValuesModel> commentatorsValuesModels)
         {
             try
             {
                 var templateCssFile = _templateFileReader.ReadTemplateFile("Commentators/CommentatorsTemplate.css");
                 var cssFileContent = _commentatorsValuesReplacer.ReplaceValuesForCommentators(templateCssFile, commentatorsValuesModels);
 
-                File.WriteAllText(HttpContext.Current.Server.MapPath(pathToGame + "Commentators/CSS/Content.css"), cssFileContent);
+                File.WriteAllText(HttpContext.Current.Server.MapPath(pathToCommentators + "CSS/Content.css"), cssFileContent);
             }
             catch (Exception ex)
             {

@@ -24,7 +24,7 @@ namespace LivestreamProductionManager.Implementations.Commentators
             _imageTemplateCss = _templatefileReader.ReadTemplateFile("ImageTemplateFile.css");
         }
 
-        public void UpdateCommentatorsOverlay(string pathToGame, List<CommentatorViewModel> commentatorViewModels)
+        public void UpdateCommentatorsOverlay(string pathToCommentators, List<CommentatorViewModel> commentatorViewModels)
         {
             try
             {
@@ -41,7 +41,7 @@ namespace LivestreamProductionManager.Implementations.Commentators
                     );
                 }
 
-                _commentatorsFileWriter.WriteCommentatorsFile(pathToGame, commentatorsValuesModelList);
+                _commentatorsFileWriter.WriteCommentatorsFile(pathToCommentators, commentatorsValuesModelList);
             }
             catch (Exception ex)
             {

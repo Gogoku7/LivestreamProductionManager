@@ -24,7 +24,7 @@ namespace LivestreamProductionManager.Controllers
         }
 
         [HttpPost]
-        public JsonResult UpdateCommentators(string pathToGame, List<CommentatorViewModel> commentatorViewModels)
+        public JsonResult UpdateCommentators(string pathToCommentators, List<CommentatorViewModel> commentatorViewModels)
         {
             try
             {
@@ -35,8 +35,8 @@ namespace LivestreamProductionManager.Controllers
                     throw new ArgumentException("variable CommentatorViewModels was null, this is a bug if the commentators form is not empty.");
                 }
 
-                _commentatorsCssOverlayManager.UpdateCommentatorsOverlay(pathToGame, commentatorViewModels);
-                _commentatorsJsonOverlayManager.UpdateCommentatorsOverlay(pathToGame, commentatorViewModels);
+                _commentatorsCssOverlayManager.UpdateCommentatorsOverlay(pathToCommentators, commentatorViewModels);
+                _commentatorsJsonOverlayManager.UpdateCommentatorsOverlay(pathToCommentators, commentatorViewModels);
 
                 return SuccessSnackbar("Successfully saved commentator files.");
             }
@@ -48,11 +48,11 @@ namespace LivestreamProductionManager.Controllers
         }
 
         [HttpPost]
-        public string GetCssFileContent(string pathToGame)
+        public string GetCssFileContent(string pathToCommentators)
         {
             try
             {
-                return _fileReader.ReadCssFile(pathToGame + "Commentators/");
+                return _fileReader.ReadCssFile(pathToCommentators);
             }
             catch (Exception ex)
             {
@@ -62,11 +62,11 @@ namespace LivestreamProductionManager.Controllers
         }
 
         [HttpPost]
-        public string GetJsonFileContent(string pathToGame)
+        public string GetJsonFileContent(string pathToCommentators)
         {
             try
             {
-                return _fileReader.ReadJsonFile(pathToGame + "Commentators/");
+                return _fileReader.ReadJsonFile(pathToCommentators);
             }
             catch (Exception ex)
             {

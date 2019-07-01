@@ -14,14 +14,14 @@ namespace LivestreamProductionManager.Implementations.Commentators
         private readonly ITemplateFileReader _templateFileReader = new TemplateFileReader("~/FightingGames/JsonTemplates/");
         private readonly ICommentatorsValuesReplacer _commentatorsValuesReplacer = new CommentatorsJsonReplacer();
 
-        public void WriteCommentatorsFile(string pathToGame, List<CommentatorsValuesModel> commentatorsValuesModels)
+        public void WriteCommentatorsFile(string pathToCommentators, List<CommentatorsValuesModel> commentatorsValuesModels)
         {
             try
             {
                 var templateJsonFile = _templateFileReader.ReadTemplateFile("ContentTemplate.json");
                 var jsonFileContent = _commentatorsValuesReplacer.ReplaceValuesForCommentators(templateJsonFile, commentatorsValuesModels);
 
-                File.WriteAllText(HttpContext.Current.Server.MapPath(pathToGame + "Commentators/JSON/Content.json"), jsonFileContent);
+                File.WriteAllText(HttpContext.Current.Server.MapPath(pathToCommentators + "JSON/Content.json"), jsonFileContent);
             }
             catch (Exception ex)
             {

@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>@ViewBag.Title - Livestream Production Manager</title>
 
-        <link id="bootstrap" href="/Content/bootstrap.css" rel="stylesheet">
-        <link id="highlight" href="/Content/highlight.css" rel="stylesheet">
-        <link href="/Content/site.css" rel="stylesheet">
+        <link id="bootstrap" href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet">
+        <link id="highlight" href="@Url.Content("~/Content/highlight.css")" rel="stylesheet">
+        <link href="@Url.Content("~/Content/site.css")" rel="stylesheet">
         <style>
             .changing
             {
@@ -72,8 +72,8 @@
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="active"><a onclick="switchTheme(this, '/Content/bootstrap.css', '/Content/highlight.css', 'bodyToDefault')" href="#">Default</a></li>
-                                <li><a onclick="switchTheme(this, '/Content/bootstrap.dark.css', '/Content/highlight.dark.css', 'bodyToCustomDarkly')" href="#">Custom Darkly</a></li>
+                                <li class="active"><a onclick="switchTheme(this, '@Url.Content("~/Content/bootstrap.css")', '@Url.Content("~/Content/highlight.css")', 'bodyToDefault')" href="#">Default</a></li>
+                                <li><a onclick="switchTheme(this, '@Url.Content("~/Content/bootstrap.dark.css")', '@Url.Content("~/Content/highlight.dark.css")', 'bodyToCustomDarkly')" href="#">Custom Darkly</a></li>
                             </ul>
                         </li>
                     </ul>

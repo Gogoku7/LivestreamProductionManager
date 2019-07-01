@@ -5,6 +5,6 @@ namespace LivestreamProductionManager.Interfaces.Commentators
 {
     public interface ICommentatorsFileWriter
     {
-        void WriteCommentatorsFile(string pathToGame, List<CommentatorsValuesModel> commentatorsValuesModels);
+        void WriteCommentatorsFile(string pathToCommentators, List<CommentatorsValuesModel> commentatorsValuesModels);
     }
 }

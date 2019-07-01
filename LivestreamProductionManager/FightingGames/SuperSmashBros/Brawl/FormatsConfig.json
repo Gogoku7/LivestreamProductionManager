@@ -2,7 +2,7 @@
   {
     "FormatName": "Singles",
     "FORMAT": "Singles",
-    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Brawl/Singles",
+    "Url": "/SuperSmashBros/GetManageCompetitors",
     "PathToFormat": "~/FightingGames/SuperSmashBros/Brawl/Singles/"
   },
   {

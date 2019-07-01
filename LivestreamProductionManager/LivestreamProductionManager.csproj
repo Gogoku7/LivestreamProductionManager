@@ -504,6 +504,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="FightingGames\SuperSmashBros\Ultimate\Commentators\CommentaryOverlay.html" />
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Commentators\CommentatorBackgrounds\Commentator1NameBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Commentators\CommentatorBackgrounds\Commentator1TwitterBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Commentators\CommentatorBackgrounds\Commentator2NameBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Commentators\CommentatorBackgrounds\Commentator2TwitterBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="FightingGames\SuperSmashBros\Ultimate\Commentators\CSS\Styles.css" />
     <Content Include="FightingGames\SuperSmashBros\Ultimate\Commentators\Logos\TournamentLogo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -1002,7 +1014,6 @@
     <Folder Include="FightingGames\SuperSmashBros\Smash64\Singles\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\BigTeams\CSS\" />
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\BigTeams\JSON\" />
-    <Folder Include="FightingGames\SuperSmashBros\Ultimate\Commentators\CommentatorBackgrounds\" />
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\Commentators\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\Crews\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\Doubles\JSON\" />

@@ -241,19 +241,19 @@
                 </div>
             </div>
             <div class="panel-body" id="manageCommentators">
-                <form action="/Commentators/UpdateCommentators"
+                <form action="@Url.Action("UpdateCommentators", "Commentators")"
                       method="post"
                       id="manageCommentatorsForm"
                       data-overlay-type="Commentary"
                       data-websocket-data-monitor-id="#commentatorsWebSocketDataMonitor"
-                      data-css-monitor-url="/Commentators/GetCssFileContent"
+                      data-css-monitor-url="@Url.Action("GetCssFileContent", "Commentators")"
                       data-css-monitor-id="#commentatorsCssMonitor"
-                      data-json-monitor-url="/Commentators/GetJsonFileContent"
+                      data-json-monitor-url="@Url.Action("GetJsonFileContent", "Commentators")"
                       data-json-monitor-id="#commentatorsJsonMonitor"
                       data-overlay-preview-id="commentatorsPreviewOverlayIframe"
                       data-snackbar-id="#manageCommentatorsSnackbar">
 
-                    <input type="hidden" name="PathToGame" />
+                    <input type="hidden" name="PathToCommentators" />
                     <div class="row">
                         <div class="col-md-5">
                             <label>Name</label>
@@ -469,7 +469,7 @@
         function GetSeries() {
             $.ajax({
                 type: "POST",
-                url: "/FightingGames/GetSeries",
+                url: "@Url.Action("GetSeries", "FightingGames")",
                 dataType: "json",
                 success: function (data) {
                     $("#Series").append("<option value='' selected disabled hidden>Choose series</option>");
@@ -493,7 +493,7 @@
             var selectedSeries = $("#Series option:selected");
             $.ajax({
                 type: "POST",
-                url: "/FightingGames/GetGames",
+                url: "@Url.Action("GetGames", "FightingGames")",
                 data: { "pathToSeries": selectedSeries.val() },
                 dataType: "json",
                 success: function (data) {
@@ -501,7 +501,7 @@
                     $("#Format").empty();
                     $("#Game").append("<option value='' selected disabled hidden>Choose game</option>");
                     for (var i = 0; i < data.length; i++) {
-                        $("#Game").append("<option data-game='" + data[i].GAME + "' value='" + data[i].PathToGame + "'>" + data[i].GameName + "</option>");
+                        $("#Game").append("<option data-game='" + data[i].GAME + "' value='" + data[i].PathToGame + "' data-path-to-commentators='" + data[i].PathToCommentators + "' >" + data[i].GameName + "</option>");
                     }
                 },
                 error: function (ex) {
@@ -520,7 +520,7 @@
             var selectedGame = $("#Game option:selected");
             $.ajax({
                 type: "POST",
-                url: "/FightingGames/GetFormats?",
+                url: "@Url.Action("GetFormats", "FightingGames")",
                 data: { "pathToGame": selectedGame.val() },
                 dataType: "json",
                 success: function (data) {
@@ -553,7 +553,7 @@
                 data: {
                     "series": selectedSeries.data("series"),
                     "game": selectedGame.data("game"),
-                    "format": selectedFormat.data("value"),
+                    "format": selectedFormat.data("format"),
                     "pathToSeries": selectedSeries.val(),
                     "pathToGame": selectedGame.val(),
                     "pathToFormat": selectedFormat.val()
@@ -563,14 +563,14 @@
                     $("#manageCompetitors").html(data);
                     $("#competitorsOverlayPath").html(selectedFormat.val() + "GameOverlay.html");
                     $("#commentatorsOverlayPath").html(selectedGame.val() + "Commentators/CommentatorsOverlay.html");
-                    $("#manageCommentatorsForm > [name='PathToGame']").val(selectedGame.val());
+                    $("#manageCommentatorsForm > [name='PathToCommentators']").val(selectedGame.data("path-to-commentators"));
 
-                    competitorsOverlayPreviewSourceUrl = "http://" + baseUrl + selectedFormat.val().slice(1) + "GameOverlay.html";
+                    competitorsOverlayPreviewSourceUrl = "http://" + baseUrl + selectedFormat.val() + "GameOverlay.html";
                     if ($("#competitorsPreviewOverlayIframe").data("enabled") == "True") {
                         $("#competitorsPreviewOverlayIframe").attr("src", competitorsOverlayPreviewSourceUrl);
                     }
 
-                    commentatorsOverlayPreviewSourceUrl = "http://" + baseUrl + selectedGame.val().slice(1) + "Commentators/CommentaryOverlay.html";
+                    commentatorsOverlayPreviewSourceUrl = "http://" + baseUrl + selectedGame.val() + "Commentators/CommentaryOverlay.html";
                     if ($("#commentatorsPreviewOverlayIframe").data("enabled") == "True") {
                         $("#commentatorsPreviewOverlayIframe").attr("src", commentatorsOverlayPreviewSourceUrl);
                     }
@@ -647,7 +647,7 @@
             if ($("#manageCompetitorsForm").length) {
                 $.ajax({
                     type: "POST",
-                    url: "/FightingGames/GetLatestValues",
+                    url: "@Url.Action("GetLatestValues", "FightingGames")",
                     data: { "pathToFormat": $("input[name='PathToFormat']").val() },
                     dataType: "json",
                     success: function (data) {
@@ -748,7 +748,7 @@
             else {
                 $.ajax({
                     type: "POST",
-                    url: "/SuperSmashBros/GetCrewPlayers",
+                    url: "@Url.Action("GetCrewPlayers", "SuperSmashBros")",
                     data: {
                         "Count": $("#crewPlayersCount").val(),
                         "Series": $("#manageCompetitorsForm").find("input[name='Series']").val(),
@@ -841,8 +841,8 @@
                         }
                         else if (manageForm.is("[data-overlay-type='Commentary']")) {
                             commentatorsFormJsonData = BuildAndSendQueuUpdate(manageForm, commentatorsFormJsonData);
-                            UpdateCSSMonitor(manageForm.data("css-monitor-url"), { "pathToGame": manageForm.find("input[name='PathToGame']").val() }, manageForm.data("css-monitor-id"));
-                            UpdateJsonMonitor(manageForm.data("json-monitor-url"), { "pathToGame": manageForm.find("input[name='PathToGame']").val() }, manageForm.data("json-monitor-id"));
+                            UpdateCSSMonitor(manageForm.data("css-monitor-url"), { "pathToCommentators": manageForm.find("input[name='PathToCommentators']").val() }, manageForm.data("css-monitor-id"));
+                            UpdateJsonMonitor(manageForm.data("json-monitor-url"), { "pathToCommentators": manageForm.find("input[name='PathToCommentators']").val() }, manageForm.data("json-monitor-id"));
                         }
                     }
                     else {
@@ -932,7 +932,7 @@
         $("#addCommentatorButton").click(function () {
             $.ajax({
                 type: "POST",
-                url: "/Commentators/GetCommentatorRow",
+                url: "@Url.Action("GetCommentatorRow", "Commentators")",
                 data: { "index": $("div[id*='commentator-row-']").length },
                 dataType: "html",
                 success: function (data) {
@@ -1277,7 +1277,7 @@
 
         /* Modal */
         // On: Clicking a show ReadMe Modal button
-        // 
+        // TODO
         // Note: Only works for competitors at the moment.
         // Note: 
         $(".showReadMeModalButton").click(function () {
@@ -1293,7 +1293,7 @@
             if ($("#Format").val()) {
                 $.ajax({
                     type: "POST",
-                    url: "/FightingGames/GetReadMe",
+                    url: "@Url.Action("GetReadMe", "FightingGames")",
                     data: { "pathToFormat": pathToFormat },
                     dataType: "json",
                     success: function (data) {
@@ -1301,10 +1301,6 @@
                         $("#readMeModalBody").html(data.body);
                         $("#readMeModalFooter").html(data.footer);
                         $("#readMeModal").modal("show");
-
-
-                        //$("#readMeModalContent").html(data);
-                       
                     },
                     error: function (ex) {
                         UpdateErrorMonitor(ex);
