@@ -399,7 +399,7 @@
         // Summary:
         // Initialize the WebSocket and events.
         function InitializeWebSocket() {
-            var uri = "ws://" + baseUrl + "/WebSocket/Queu";
+            var uri = `ws://${ baseUrl }/WebSocket/Queu`;
 
             websocket = new WebSocket(uri);
 
@@ -447,11 +447,11 @@
                 }
                 else if (jsonData.type == "overlayConnected") {
                     UpdateWebSocketClientMonitor(jsonData);
-                    showSnackbar("#overlayConnectedSnackbar", "An overlay has connected to the WebSocket: " + jsonData.data);
+                    showSnackbar("#overlayConnectedSnackbar", `An overlay has connected to the WebSocket: ${ jsonData.data }`);
                 }
                 else if (jsonData.type == "overlayDisconnected") {
                     UpdateWebSocketClientMonitor(jsonData);
-                    showSnackbar("#overlayDisconnectedSnackbar", "An overlay has disconnected from the WebSocket: " + jsonData.data);
+                    showSnackbar("#overlayDisconnectedSnackbar", `An overlay has disconnected from the WebSocket: ${ jsonData.data }`);
                 }
                 else if (jsonData.type == "forceResize") {
                     showSnackbar("#forceResizeSnackbar", "A resize command has been broadcast");
@@ -474,7 +474,7 @@
                 success: function (data) {
                     $("#Series").append("<option value='' selected disabled hidden>Choose series</option>");
                     for (var i = 0; i < data.length; i++) {
-                        $("#Series").append("<option data-series='" + data[i].SERIES + "' value='" + data[i].PathToSeries + "'>" + data[i].SeriesName + "</option>");
+                        $("#Series").append(`<option data-series='${ data[i].SERIES }' value='${ data[i].PathToSeries }'>${ data[i].SeriesName }</option>`);
                     }
                 },
                 error: function (ex) {
@@ -501,7 +501,7 @@
                     $("#Format").empty();
                     $("#Game").append("<option value='' selected disabled hidden>Choose game</option>");
                     for (var i = 0; i < data.length; i++) {
-                        $("#Game").append("<option data-game='" + data[i].GAME + "' value='" + data[i].PathToGame + "' data-path-to-commentators='" + data[i].PathToCommentators + "' >" + data[i].GameName + "</option>");
+                        $("#Game").append(`<option data-game='${ data[i].GAME }' value='${ data[i].PathToGame }' data-path-to-commentators='${ data[i].PathToCommentators }'>${ data[i].GameName }</option>`);
                     }
                 },
                 error: function (ex) {
@@ -527,7 +527,7 @@
                     $("#Format").empty();
                     $("#Format").append("<option value='' selected disabled hidden>Choose format</option>");
                     for (var i = 0; i < data.length; i++) {
-                        $("#Format").append("<option data-format='" + data[i].FORMAT + "' url='" + data[i].Url + "' value='" + data[i].PathToFormat + "'>" + data[i].FormatName + "</option>");
+                        $("#Format").append(`<option data-format='${ data[i].FORMAT }' url='${ data[i].Url }' value='${ data[i].PathToFormat }'>${ data[i].FormatName }</option>`);
                     }
                 },
                 error: function (ex) {
@@ -561,16 +561,16 @@
                 dataType: "html",
                 success: function (data) {
                     $("#manageCompetitors").html(data);
-                    $("#competitorsOverlayPath").html(selectedFormat.val() + "GameOverlay.html");
-                    $("#commentatorsOverlayPath").html(selectedGame.val() + "Commentators/CommentatorsOverlay.html");
+                    $("#competitorsOverlayPath").html(`${ selectedFormat.val() }GameOverlay.html`);
+                    $("#commentatorsOverlayPath").html(`${ selectedGame.val() }Commentators/CommentatorsOverlay.html`);
                     $("#manageCommentatorsForm > [name='PathToCommentators']").val(selectedGame.data("path-to-commentators"));
 
-                    competitorsOverlayPreviewSourceUrl = "http://" + baseUrl + selectedFormat.val() + "GameOverlay.html";
+                    competitorsOverlayPreviewSourceUrl = `http://${ baseUrl + selectedFormat.val() }GameOverlay.html`;
                     if ($("#competitorsPreviewOverlayIframe").data("enabled") == "True") {
                         $("#competitorsPreviewOverlayIframe").attr("src", competitorsOverlayPreviewSourceUrl);
                     }
 
-                    commentatorsOverlayPreviewSourceUrl = "http://" + baseUrl + selectedGame.val() + "Commentators/CommentaryOverlay.html";
+                    commentatorsOverlayPreviewSourceUrl = `http://${ baseUrl + selectedGame.val() }Commentators/CommentaryOverlay.html`;
                     if ($("#commentatorsPreviewOverlayIframe").data("enabled") == "True") {
                         $("#commentatorsPreviewOverlayIframe").attr("src", commentatorsOverlayPreviewSourceUrl);
                     }
@@ -655,11 +655,11 @@
 
                         if (data.Success === true) {
                             $.each(data.Data, function (index) {
-                                if ($("[data-selector='" + data.Data[index].Selector + "']").attr("type") == "checkbox") {
-                                    $("[data-selector='" + data.Data[index].Selector + "']").prop("checked", JSON.parse(data.Data[index].Value.toLowerCase()));
+                                if ($(`[data-selector='${ data.Data[index].Selector }']`).attr("type") == "checkbox") {
+                                    $(`[data-selector='${ data.Data[index].Selector }']`).prop("checked", JSON.parse(data.Data[index].Value.toLowerCase()));
                                 }
                                 else {
-                                    $("[data-selector='" + data.Data[index].Selector + "']").val(data.Data[index].Value);
+                                    $(`[data-selector='${ data.Data[index].Selector }']`).val(data.Data[index].Value);
                                 }
                             });
 
@@ -933,7 +933,7 @@
             $.ajax({
                 type: "POST",
                 url: "@Url.Action("GetCommentatorRow", "Commentators")",
-                data: { "index": $("div[id*='commentator-row-']").length },
+                data: { "index": $("div[id^='commentator-row-']").length },
                 dataType: "html",
                 success: function (data) {
                     $("#manageCommentatorsForm").append(data);
@@ -969,9 +969,9 @@
         // PARAMETERS
         // index: index of the element to be removed
         function moveCommentatorDown(index) {
-            if ($("#commentator-row-" + (index + 1)).length) {
-                var row1 = $("#commentator-row-" + index);
-                var row2 = $("#commentator-row-" + (index + 1));
+            if ($(`#commentator-row-${ (index + 1) }`).length) {
+                var row1 = $(`#commentator-row-${ index }`);
+                var row2 = $(`#commentator-row-${ (index + 1) }`);
 
                 row1.replaceWith(row2.clone());
                 row2.replaceWith(row1.clone());
@@ -993,11 +993,11 @@
         // PARAMETERS
         // index: index of the element to be removed
         function moveCommentatorUp(index) {
-            $("#commentator-row-" + index);
+            $(`#commentator-row-${ index }`);
             if (index > 0) {
-                if ($("#commentator-row-" + (index - 1)).length) {
-                    var row1 = $("#commentator-row-" + index);
-                    var row2 = $("#commentator-row-" + (index - 1));
+                if ($(`#commentator-row-${ (index - 1) }`).length) {
+                    var row1 = $(`#commentator-row-${ index }`);
+                    var row2 = $(`#commentator-row-${ (index - 1) }`);
 
                     row1.replaceWith(row2.clone());
                     row2.replaceWith(row1.clone());
@@ -1013,13 +1013,13 @@
         // Summary:
         // Re-index all the commentator elements available
         function reindexCommentators() {
-            $("div[id*='commentator-row-']").each(function (index) {
+            $("div[id^='commentator-row-']").each(function (index) {
                 $(this).attr("id", "commentator-row-" + index);
-                $(this).find("input[id*='_Name']").attr({ "name": "commentatorViewModels[" + index + "].Name", "id": "commentatorViewModels_" + index + "_Name", "data-selector": "#commentator" + (index + 1) + "NameText" }).data("selector", `#commentator${ index + 1 }NameText`);
-                $(this).find("input[id*='_Twitter']").attr({ "name": "commentatorViewModels[" + index + "].Twitter", "id": "commentatorViewModels_" + index + "_Twitter", "data-selector": "#commentator" + (index + 1) + "TwitterText" }).data("selector", `#commentator${ index + 1 }TwitterText`);
-                $(this).find("button[id^='deleteCommentator-']").attr({ "onclick": "removeCommentator(" + index + ")", "id": "deleteCommentator-" + index });
-                $(this).find("button[id^='moveCommentatorDown-']").attr({ "onclick": "moveCommentatorDown(" + index + ")", "id": "moveCommentatorDown-" + index });
-                $(this).find("button[id^='moveCommentatorUp-']").attr({ "onclick": "moveCommentatorUp(" + index + ")", "id": "moveCommentatorUp-" + index });
+                $(this).find("input[id$='_Name']").attr({ "name": `commentatorViewModels[${ index }].Name`, "id": `commentatorViewModels_${ index }_Name`, "data-selector": `#commentator${ (index + 1) }NameText` }).data("selector", `#commentator${ (index + 1) }NameText`);
+                $(this).find("input[id$='_Twitter']").attr({ "name": `commentatorViewModels[${ index }].Twitter`, "id": `commentatorViewModels_${ index }_Twitter`, "data-selector": `#commentator${ (index + 1) }TwitterText` }).data("selector", `#commentator${ (index + 1) }TwitterText`);
+                $(this).find("button[id^='deleteCommentator-']").attr({ "onclick": `removeCommentator(${ index })`, "id": "deleteCommentator-" + index });
+                $(this).find("button[id^='moveCommentatorDown-']").attr({ "onclick": `moveCommentatorDown(${ index })`, "id": `moveCommentatorDown-${ index }` });
+                $(this).find("button[id^='moveCommentatorUp-']").attr({ "onclick": "moveCommentatorUp(" + index + ")", "id": `moveCommentatorUp-${ index }` });
             });
 
             if (!$("#submitCommentatorsButton").hasClass("btn-danger")) {
@@ -1055,7 +1055,7 @@
 
                 if (jsonData.type == "overlayConnected") {
                     clientsConnectedCount++;
-                    $("#webSocketClientMonitorTableBody").append("<tr data-full-path=" + jsonData.data + "><td>" + clientsConnectedCount + "</td><td>" + splitPath[splitPath.length - 3] + "/" + splitPath[splitPath.length - 2] + "/" + splitPath[splitPath.length - 1] + "</td><td>Connected</td></tr>");  // , jsonData.overlayType
+                    $("#webSocketClientMonitorTableBody").append(`<tr data-full-path='${ jsonData.data }'><td>${ clientsConnectedCount }</td><td>${ splitPath[splitPath.length - 3] }/${ splitPath[splitPath.length - 2] }/${ splitPath[splitPath.length - 1] }</td><td>Connected</td></tr>`);  // , jsonData.overlayType
                 }
                 else if (jsonData.type == "overlayDisconnected") {
                     if (clientsConnectedCount > 1) {
@@ -1287,7 +1287,7 @@
             }
 
             if ($($(this).data("form-id")).data("overlay-type") === "Commentary") {
-                pathToFormat = `${$($(this).data("form-id")).find("[name='PathToGame']").val()}Commentators/`;
+                pathToFormat = $($(this).data("form-id")).find("[name='PathToCommentators']").val();
             }
 
             if ($("#Format").val()) {

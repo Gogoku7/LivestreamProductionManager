@@ -62,7 +62,7 @@
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a onclick="showVideoModal('How to use custom overlays', 'https://www.youtube.com/embed/r9wnR0RkazE')" href="#">How to use custom overlays</a></li>
+                                <li><a class="cursorPointer" onclick="showVideoModal('How to use custom overlays', 'https://www.youtube.com/embed/r9wnR0RkazE')" data-target="#">How to use custom overlays</a></li>
                             </ul>
                         </li>
 
@@ -72,8 +72,8 @@
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="active"><a onclick="switchTheme(this, '@Url.Content("~/Content/bootstrap.css")', '@Url.Content("~/Content/highlight.css")', 'bodyToDefault')" href="#">Default</a></li>
-                                <li><a onclick="switchTheme(this, '@Url.Content("~/Content/bootstrap.dark.css")', '@Url.Content("~/Content/highlight.dark.css")', 'bodyToCustomDarkly')" href="#">Custom Darkly</a></li>
+                                <li class="active"><a class="cursorPointer" onclick="switchTheme(this, '@Url.Content("~/Content/bootstrap.css")', '@Url.Content("~/Content/highlight.css")', 'bodyToDefault')" data-target="#">Default</a></li>
+                                <li><a class="cursorPointer" onclick="switchTheme(this, '@Url.Content("~/Content/bootstrap.dark.css")', '@Url.Content("~/Content/highlight.dark.css")', 'bodyToCustomDarkly')" data-target="#">Custom Darkly</a></li>
                             </ul>
                         </li>
                     </ul>
