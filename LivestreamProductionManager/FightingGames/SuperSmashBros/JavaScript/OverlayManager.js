@@ -38,7 +38,11 @@ function initWebSocketAndFitty(fittyElements, overlayType) {
 
         if (jsonData.type == "queu") {
             $.each(jsonData.data, function (i) {
-                $(jsonData.data[i]).addClass("changing");
+                if ($(jsonData.data[i]).is("[fadesIn]")) {
+                    $(jsonData.data[i]).addClass("changing-visbility");
+                } else {
+                    $(jsonData.data[i]).addClass("changing");
+                }
             });
 
             setTimeout(function () {
@@ -62,13 +66,24 @@ function initWebSocketAndFitty(fittyElements, overlayType) {
                             }
                         });
 
-                        $(jsonData.data[i]).removeClass("changing").addClass("changed");
+                        $.each(jsonData.data, function (i) {
+                            if ($(jsonData.data[i]).is("[fadesIn]")) {
+                                $(jsonData.data[i]).removeClass("changing-visbility").addClass("changed-visbility");
+                            } else {
+                                $(jsonData.data[i]).removeClass("changing").addClass("changed");
+                            }
+                        });
                     });
                 }, 500);
 
                 setTimeout(function () {
                     $.each(jsonData.data, function (i) {
-                        $(jsonData.data[i]).removeClass("changed");
+
+                        if ($(jsonData.data[i]).is("[fadesIn]")) {
+                            $(jsonData.data[i]).removeClass("changing-visbility").addClass("changed-visbility");
+                        } else {
+                            $(jsonData.data[i]).removeClass("changed");
+                        }
                     });
                 }, 500);
             }, 500);
