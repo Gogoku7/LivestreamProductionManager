@@ -273,6 +273,7 @@
     <Content Include="FightingGames\CssTemplates\TextTemplateFile.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="FightingGames\SuperSmashBros\CSS\Queu.css" />
     <Content Include="FightingGames\SuperSmashBros\JavaScript\fitty.js" />
     <Content Include="FightingGames\SuperSmashBros\JavaScript\jQuery.js" />
     <Content Include="FightingGames\SuperSmashBros\JavaScript\OverlayManager.js" />
@@ -934,6 +935,9 @@
     <Content Include="FightingGames\SuperSmashBros\Ultimate\Commentators\ReadMe.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="FightingGames\SuperSmashBros\JavaScript\ReadMe.md" />
+    <Content Include="FightingGames\SuperSmashBros\CSS\ReadMe.md" />
+    <None Include="Properties\PublishProfiles\LivestreamProductionManager.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

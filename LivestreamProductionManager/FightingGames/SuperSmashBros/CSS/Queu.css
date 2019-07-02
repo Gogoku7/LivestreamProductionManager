@@ -1,0 +1,25 @@
+﻿.changing
+{
+    transition-duration: 0.5s;
+    transition-property: opacity;
+    opacity: 0 !important;
+}
+
+.changed
+{
+    transition-duration: 0.5s;
+    transition-property: opacity;
+}
+
+.changing-visbility
+{
+    transition-duration: 0.5s;
+    transition-property: visibility;
+    visibility: hidden !important;
+}
+
+.changed-visbility
+{
+    transition-duration: 0.5s;
+    transition-property: visibility;
+}

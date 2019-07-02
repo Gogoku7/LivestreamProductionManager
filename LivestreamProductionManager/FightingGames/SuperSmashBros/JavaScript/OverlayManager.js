@@ -9,6 +9,10 @@ function initWebSocketAndFitty(fittyElements, overlayType) {
     FittyElements = fittyElements;
     OverlayType = overlayType;
 
+    // Use ws://localhost:56613/WebSocket/Queu by default
+    // Use ws://localhost/livestreamproductionmanager/WebSocket/Queu when the application is deployed to IIS and running on http://localhost/livestreamproductionmanager
+    // Use ws://localhost/WebSocket/Queu when the application is deployed to IIS and running on http://localhost
+    // Replace ws:// by wws:// when using HTTPS
     var uri = "ws://localhost:56613/WebSocket/Queu";
 
     websocket = new WebSocket(uri);
@@ -38,7 +42,7 @@ function initWebSocketAndFitty(fittyElements, overlayType) {
             });
 
             setTimeout(function () {
-                $('link[rel="stylesheet"]').not('link[href="css/styles.css"]').each(function () {
+                $('link[rel="stylesheet"]').not('link[href="css/styles.css"]').not('link[href="../../CSS/Queu.css"]').not().each(function () {
                     this.href = this.href.replace(/\?.*|$/, "?reload=" + new Date().getTime());
                 });
 

@@ -20,7 +20,15 @@ namespace LivestreamProductionManager.Controllers
         [HttpPost]
         public PartialViewResult GetCommentatorRow(int index)
         {
-            return PartialView("CommentatorRow", index);
+            try
+            {
+                return PartialView("CommentatorRow", index);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+                throw;
+            }
         }
 
         [HttpPost]

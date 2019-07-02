@@ -304,7 +304,8 @@ span
 
 /* crewPlayerNameContainer */
 
-.crewPlayerNameContainer {
+.crewPlayerNameContainer
+{
     width: 288px;
     height: 48px;
     margin: 1px;
@@ -432,7 +433,8 @@ span
 
 /* Snackbar */
 
-.snackbar {
+.snackbar
+{
     visibility: hidden;
     min-width: 250px;
     background-color: #333;
@@ -446,7 +448,8 @@ span
 }
 
 
-    .snackbar.show {
+    .snackbar.show
+    {
         visibility: visible;
         -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
         animation: fadein 0.5s, fadeout 0.5s 2.5s;
@@ -458,27 +461,16 @@ span
 
 /* animations */
 
-@keyframes fadeIn {
-    0% {
+@keyframes fadeIn
+{
+    0%
+    {
         opacity: 0;
     }
-
-    100% {
+    100%
+    {
         opacity: 1;
     }
-}
-
-.changing 
-{
-    transition-duration: 0.5s;
-    transition-property: opacity;
-    opacity: 0 !important;
-}
-
-.changed 
-{
-    transition-duration: 0.5s;
-    transition-property: opacity;
 }
 
 /* animations END */

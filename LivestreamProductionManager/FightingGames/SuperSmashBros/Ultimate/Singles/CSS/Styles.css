@@ -281,7 +281,8 @@ body
 
 /* Snackbar */
 
-.snackbar {
+.snackbar
+{
     visibility: hidden;
     min-width: 250px;
     background-color: #333;
@@ -295,7 +296,8 @@ body
 }
 
 
-    .snackbar.show {
+    .snackbar.show
+    {
         visibility: visible;
         -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
         animation: fadein 0.5s, fadeout 0.5s 2.5s;
@@ -309,21 +311,14 @@ body
 
 @keyframes showPlayerBox
 {
-	0% { width:0% }
-	100% { width:67.70833333333333% }
-}
-
-.changing 
-{
-    transition-duration: 0.5s;
-    transition-property: opacity;
-    opacity: 0 !important;
-}
-
-.changed 
-{
-    transition-duration: 0.5s;
-    transition-property: opacity;
+	0%
+    {
+        width: 0%;
+	}
+	100%
+    {
+        width: 67.70833333333333%;
+	}
 }
 
 /* animations END */
