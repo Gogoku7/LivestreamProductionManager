@@ -122,6 +122,8 @@ div.panel {
     width: 100% !important;
 }
 
+/*Do the styling of panel button's glyphicon*/
+
 .panelButton {
     padding: 0px 12px !important;
 }

@@ -112,12 +112,16 @@ function initWebSocketAndFitty(fittyElements, overlayType) {
             }
         };
     } catch (ex) {
-        console.log(ex)
+        console.log(ex);
     }
 }
 
 $(window).on("beforeunload", function () {
-    var jsonData = { "type": "overlayDisconnected", "overlayType": OverlayType, "data": window.location.href };
-    websocket.send(JSON.stringify(jsonData));
-    websocket.close();
+    try {
+        var jsonData = { "type": "overlayDisconnected", "overlayType": OverlayType, "data": window.location.href };
+        websocket.send(JSON.stringify(jsonData));
+        websocket.close();
+    } catch (ex) {
+        console.log(ex);
+    }
 });
