@@ -392,6 +392,7 @@
                 InitializeWebSocket();
                 GetSeries();
             } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred on startup.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -464,7 +465,7 @@
                     }
                 };
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -489,14 +490,16 @@
                             $("#Series").append(`<option data-series='${ data[i].SERIES }' value='${ data[i].PathToSeries }'>${ data[i].SeriesName }</option>`);
                         }
                     },
-                    error: function (ex) {
-                        ShowSnackbar("An unexpected exception occurred.");
-                        UpdateErrorMonitor(ex);
-                        console.log(ex);
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting the Series, see the log for details");
+                        UpdateErrorMonitor(jqXHR.responseText);
+                        console.log(jqXHR);
+                        console.log(`Text status: ${ textStatus }`);
+                        console.log(`Error thrown: ${ errorThrown }`);
                     }
                 });
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -523,13 +526,16 @@
                             $("#Game").append(`<option data-game='${ data[i].GAME }' value='${ data[i].PathToGame }' data-path-to-commentators='${ data[i].PathToCommentators }'>${ data[i].GameName }</option>`);
                         }
                     },
-                    error: function (ex) {
-                        UpdateErrorMonitor(ex);
-                        console.log(ex);
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting the Games. See the log for details.");
+                        UpdateErrorMonitor(jqXHR.responseText);
+                        console.log(jqXHR);
+                        console.log(`Text status: ${ textStatus }`);
+                        console.log(`Error thrown: ${ errorThrown }`);
                     }
                 });
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -555,13 +561,16 @@
                             $("#Format").append(`<option data-format='${ data[i].FORMAT }' url='${ data[i].Url }' value='${ data[i].PathToFormat }'>${ data[i].FormatName }</option>`);
                         }
                     },
-                    error: function (ex) {
-                        UpdateErrorMonitor(ex);
-                        console.log(ex);
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting the Formats. See the log for details.");
+                        UpdateErrorMonitor(jqXHR.responseText);
+                        console.log(jqXHR);
+                        console.log(`Text status: ${ textStatus }`);
+                        console.log(`Error thrown: ${ errorThrown }`);
                     }
                 });
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -609,13 +618,16 @@
                         competitorsFormJsonData = null;
                         commentatorsFormJsonData = null;
                     },
-                    error: function (ex) {
-                        UpdateErrorMonitor(ex);
-                        console.log(ex);
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting the Manage Competitors form. See the log for details.");
+                        UpdateErrorMonitor(jqXHR.responseText);
+                        console.log(jqXHR);
+                        console.log(`Text status: ${ textStatus }`);
+                        console.log(`Error thrown: ${ errorThrown }`);
                     }
                 });
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -630,7 +642,7 @@
                     $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger danger-pulsate");
                 }
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -679,7 +691,7 @@
                     ShowSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form is not present.");
                 }
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -726,17 +738,19 @@
                                 console.log(data.ErrorMessage);
                             }
                         },
-                        error: function (ex) {
-                            console.log("not implemented");
-                            UpdateErrorMonitor(ex);
-                            console.log(ex);
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting the latest values. See the log for details.");
+                            UpdateErrorMonitor(jqXHR.responseText);
+                            console.log(jqXHR);
+                            console.log(`Text status: ${ textStatus }`);
+                            console.log(`Error thrown: ${ errorThrown }`);
                         }
                     });
                 } else {
                     ShowSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form is not present.");
                 }
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -777,7 +791,7 @@
                     ShowSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form is not present.");
                 }
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -822,14 +836,17 @@
                         success: function (data) {
                             $("#crewPlayersContainer").html(data);
                         },
-                        error: function (ex) {
-                            UpdateErrorMonitor(data.ErrorMessage);
-                            console.log(ex);
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting the crew player form inputs. See the log for details.");
+                            UpdateErrorMonitor(jqXHR.responseText);
+                            console.log(jqXHR);
+                            console.log(`Text status: ${ textStatus }`);
+                            console.log(`Error thrown: ${ errorThrown }`);
                         }
                     });
                 }
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -842,7 +859,7 @@
         // If > The manage form is present. (only applies to competitors form)
         //  If > A format has been selected in the format dropdown. (only applies to commentators form)
         //      Copy the tournament values to the manage form. (only applies to competitors form)
-        //      Submit the competitors form using SubmitCompetitorsForm().
+        //      Submit the competitors form using SubmitUpdate().
         //  Else > A format has not been selected in the format dropdown. (only applies to commentators form)
         //      Show a snackbar message.
         // Else > The manage form is not present. (only applies to competitors form)
@@ -856,7 +873,7 @@
                         $($(this).data("form-id")).find("input[name='BestOf']").val($("#bestOf").val());
                         $($(this).data("form-id")).find("input[name='Extra']").val($("#extra").val());
 
-                        SubmitCompetitorsForm($($(this).data("form-id")), $(this));
+                        SubmitUpdate($($(this).data("form-id")), $(this));
                     } else {
                         ShowSnackbar("#manageCommentatorsSnackbar", "No game and format have been selected.");
                     }
@@ -864,7 +881,7 @@
                     ShowSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form is not present.");
                 }
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -889,7 +906,7 @@
         // PARAMETERS
         // manageForm: The manage form that is going to be submitted.
         // submitButton: The button that was clicked to submit the form.
-        function SubmitCompetitorsForm(manageForm, submitButton) {
+        function SubmitUpdate(manageForm, submitButton) { //TODO: rename to SubmitUpdate
             try {
                 $.ajax({
                     type: "POST",
@@ -923,13 +940,16 @@
                             console.log(data.ErrorMessage);
                         }
                     },
-                    error: function (ex) {
-                        UpdateErrorMonitor(ex);
-                        console.log(ex);
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        ShowSnackbar("#ajaxErrorSnackbar", "An error occurred submitting the latest update. See the log for details");
+                        UpdateErrorMonitor(jqXHR.responseText);
+                        console.log(jqXHR);
+                        console.log(`Text status: ${ textStatus }`);
+                        console.log(`Error thrown: ${ errorThrown }`);
                     }
                 });
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -997,7 +1017,7 @@
 
                 return formJsonData;
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -1024,13 +1044,16 @@
 
                         reindexCommentators();
                     },
-                    error: function (ex) {
-                        UpdateErrorMonitor(ex);
-                        console.log(ex);
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting the commentator form inputs. See the log for details");
+                        UpdateErrorMonitor(jqXHR.responseText);
+                        console.log(jqXHR);
+                        console.log(`Text status: ${ textStatus }`);
+                        console.log(`Error thrown: ${ errorThrown }`);
                     }
                 });
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -1048,7 +1071,7 @@
 
                 reindexCommentators();
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -1079,7 +1102,7 @@
 
                 reindexCommentators();
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -1111,7 +1134,7 @@
 
                 reindexCommentators();
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -1134,7 +1157,7 @@
                     $("#submitCommentatorsButton").removeClass("btn-primary").addClass("btn-danger danger-pulsate");
                 }
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -1149,7 +1172,7 @@
                     $("#submitCommentatorsButton").removeClass("btn-primary").addClass("btn-danger danger-pulsate");
                 }
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -1186,7 +1209,7 @@
                     }
                 }
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -1202,7 +1225,7 @@
                     clientsConnectedCount = 1;
                 }
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -1212,11 +1235,13 @@
         // Append the error to the error monitor.
         function UpdateErrorMonitor(error) {
             try {
+                var currentDateTime = new Date();
+
                 if ($("#errorMonitor").data("enabled") == "True") {
-                    $("#errorMonitor").prepend(error);
+                    $("#errorMonitor").text(`Error logged on ${currentDateTime.getHours()}:${currentDateTime.getMinutes()}:${currentDateTime.getSeconds()}.${ currentDateTime.getMilliseconds() }:\r\n${ error }\r\n${ $("#errorMonitor").text() }`);
                 }
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -1231,7 +1256,7 @@
                     $("#errorMonitor").html("");
                 }
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -1253,7 +1278,7 @@
                     hljs.initHighlighting();
                 }
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -1268,7 +1293,7 @@
                     $($(this).data("monitor-id")).html("");
                 }
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -1293,14 +1318,17 @@
                             hljs.initHighlighting.called = false;
                             hljs.initHighlighting();
                         },
-                        error: function (ex) {
-                            UpdateErrorMonitor(ex);
-                            console.log(ex);
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting the latest CSS file content. See the log for details");
+                            UpdateErrorMonitor(jqXHR.responseText);
+                            console.log(jqXHR);
+                            console.log(`Text status: ${ textStatus }`);
+                            console.log(`Error thrown: ${ errorThrown }`);
                         }
                     });
                 }
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -1315,7 +1343,7 @@
                     $($(this).data("monitor-id")).html("");
                 }
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -1340,14 +1368,17 @@
                             hljs.initHighlighting.called = false;
                             hljs.initHighlighting();
                         },
-                        error: function (ex) {
-                            UpdateErrorMonitor(ex);
-                            console.log(ex);
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting the latest JSON file content. See the log for details");
+                            UpdateErrorMonitor(jqXHR.responseText);
+                            console.log(jqXHR);
+                            console.log(`Text status: ${ textStatus }`);
+                            console.log(`Error thrown: ${ errorThrown }`);
                         }
                     });
                 }
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -1362,7 +1393,7 @@
                     $($(this).data("monitor-id")).html("");
                 }
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -1400,7 +1431,7 @@
                     $(this).removeClass("btn-danger").addClass("btn-success").html("<span class='glyphicon glyphicon-ok' style='font-size: 12px;'></span> Enabled");
                 }
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -1416,7 +1447,7 @@
                 var jsonData = { "type": "forceResize", data: {} };
                 websocket.send(JSON.stringify(jsonData));
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -1467,7 +1498,7 @@
                     $(this).removeClass("btn-danger").addClass("btn-success").html("<span class='glyphicon glyphicon-ok' style='font-size: 12px;'></span> Enabled");
                 }
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -1502,16 +1533,19 @@
                             $("#readMeModalFooter").html(data.footer);
                             $("#readMeModal").modal("show");
                         },
-                        error: function (ex) {
-                            UpdateErrorMonitor(ex);
-                            console.log(ex);
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting the modal content. See the log for details");
+                            UpdateErrorMonitor(jqXHR.responseText);
+                            console.log(jqXHR);
+                            console.log(`Text status: ${ textStatus }`);
+                            console.log(`Error thrown: ${ errorThrown }`);
                         }
                     });
                 } else {
                     ShowSnackbar("#manageCommentatorsSnackbar", "No game and format have been selected.");
                 }
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
@@ -1528,7 +1562,7 @@
         // message: The message to be shown in the snackbar.
         function ShowSnackbar(snackbarId, message) {
             try {
-                $(snackbarId).html(message);
+                $(snackbarId).text(message);
 
                 var marginLeft = ($(window).width() - $(snackbarId).outerWidth()) / 2;
                 $(snackbarId).css("left", marginLeft >= 0 ? marginLeft : 0);
@@ -1538,7 +1572,6 @@
                     $(snackbarId).removeClass("show");
                 }, 3000);
             } catch (ex) {
-                ShowSnackbar("An unexpected exception occurred, see the console for details.");
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
