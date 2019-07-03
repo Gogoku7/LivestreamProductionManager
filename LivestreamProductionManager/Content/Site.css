@@ -128,6 +128,14 @@ div.panel {
     padding: 0px 12px !important;
 }
 
+.panelButton > .glyphicon-question-sign, .glyphicon.glyphicon-erase, .glyphicon.glyphicon-download-alt, .glyphicon.glyphicon-refresh, .glyphicon.glyphicon-resize-full, .glyphicon.glyphicon-arrow-up, .glyphicon.glyphicon-arrow-down {
+    font-size: 11px;
+}
+
+.panelButton > .glyphicon.glyphicon-remove, .glyphicon.glyphicon-ok {
+    font-size: 12px;
+}
+
 #manageCommentators > .row {
     margin-bottom: 4px;
 }
