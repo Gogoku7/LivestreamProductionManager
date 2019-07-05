@@ -1,6 +1,10 @@
 //TODO: Add new Ultimate characters.
 [
   {
+    "CharacterName": "No character",
+    "CssValue": ""
+  },
+  {
     "CharacterName": "Bayonetta",
     "CssValue": "../../CharacterIcons/bayonetta.png"
   },

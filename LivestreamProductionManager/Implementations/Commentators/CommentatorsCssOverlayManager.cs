@@ -32,11 +32,12 @@ namespace LivestreamProductionManager.Implementations.Commentators
 
                 for (var i = 0; i < commentatorViewModels.Count(); i++)
                 {
-                    commentatorsValuesModelList.Add(
+                    commentatorsValuesModelList.Add
+                    (
                         new CommentatorsValuesModel
                         {
-                            Name = _textReplacer.ReplaceIdAndValue(_textTemplateCss, $"commentator{i + 1}NameText", commentatorViewModels[i].Name ?? ""),
-                            Twitter = _textReplacer.ReplaceIdAndValue(_textTemplateCss, $"commentator{i + 1}TwitterText", commentatorViewModels[i].Twitter ?? "")
+                            Name = _textReplacer.ReplaceIdAndValue(_textTemplateCss, $"commentator{i + 1}NameText", commentatorViewModels[i].Name),
+                            Twitter = _textReplacer.ReplaceIdAndValue(_textTemplateCss, $"commentator{i + 1}TwitterText", commentatorViewModels[i].Twitter)
                         }
                     );
                 }

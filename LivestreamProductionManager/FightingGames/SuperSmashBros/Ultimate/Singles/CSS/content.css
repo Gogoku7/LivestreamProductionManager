@@ -1,9 +1,9 @@
 #player1NameText:before {
-    content: "Auto | Median4";
+    content: "Cinnovate | Gogoku7";
 }
 
 #player1TwitterText:before {
-    content: "@median4";
+    content: "@gogoku7";
 }
 
 #player1ScoreText:before {
@@ -11,45 +11,45 @@
 }
 
 #player1Character {
-    background-image: url('../../CharacterIcons/littlemac.png');
-}
-
-#player1Port {
-    background-image: url('../../PlayerPorts/PlayerPort2.png');
-}
-
-#player2NameText:before {
-    content: "Cinnovate | Gogoku7";
-}
-
-#player2TwitterText:before {
-    content: "@gogoku7";
-}
-
-#player2ScoreText:before {
-    content: "0";
-}
-
-#player2Character {
     background-image: url('../../CharacterIcons/fox.png');
 }
 
-#player2Port {
+#player1Port {
     background-image: url('../../PlayerPorts/PlayerPort1.png');
 }
 
+#player2NameText:before {
+    content: "Auto | Median4";
+}
+
+#player2TwitterText:before {
+    content: "@median4";
+}
+
+#player2ScoreText:before {
+    content: "-1";
+}
+
+#player2Character {
+    background-image: url('../../CharacterIcons/littlemac.png');
+}
+
+#player2Port {
+    background-image: url('../../PlayerPorts/PlayerPort2.png');
+}
+
 #tournamentText:before {
-    content: "Fight Night 50";
+    content: "";
 }
 
 #extraText:before {
-    content: "Esports Game Arena";
+    content: "";
 }
 
 #roundText:before {
-    content: "Winners Round 1";
+    content: "";
 }
 
 #bestOfText:before {
-    content: "Best of 3";
+    content: "";
 }

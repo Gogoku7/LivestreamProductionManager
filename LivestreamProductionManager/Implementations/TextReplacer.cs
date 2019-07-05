@@ -18,10 +18,6 @@ namespace LivestreamProductionManager.Implementations
             {
                 throw new ArgumentException(nameof(id));
             }
-            if (value == null)
-            {
-                throw new ArgumentException(nameof(value));
-            }
 
             try
             {
@@ -108,10 +104,6 @@ namespace LivestreamProductionManager.Implementations
             if (string.IsNullOrEmpty(idTemplate))
             {
                 throw new ArgumentException(nameof(idTemplate));
-            }
-            if (values == null)
-            {
-                throw new ArgumentException(nameof(values));
             }
 
             try

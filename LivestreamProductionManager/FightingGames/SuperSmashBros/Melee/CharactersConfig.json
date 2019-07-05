@@ -1,5 +1,9 @@
 [
   {
+    "CharacterName": "No character",
+    "CssValue": ""
+  },
+  {
     "CharacterName": "Bowser",
     "CssValue": "../../CharacterIcons/bowser.png"
   },

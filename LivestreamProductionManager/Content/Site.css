@@ -122,7 +122,10 @@ div.panel {
     width: 100% !important;
 }
 
-/*Do the styling of panel button's glyphicon*/
+.panel-heading.row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
 
 .panelButton {
     padding: 0px 12px !important;
@@ -235,7 +238,7 @@ div.panel {
 
 /* WebSocket client monitor */
 
-webSocketDataMonitorTable {
+#webSocketDataMonitorTable {
     width: 100%;
     height: 100%;
     padding: 0;

@@ -1,5 +1,9 @@
 [
   {
+    "PortName": "No port",
+    "CssValue": ""
+  },
+  {
     "PortName": "Port 1",
     "CssValue": "../../PlayerPorts/PlayerPort1.png"
   },

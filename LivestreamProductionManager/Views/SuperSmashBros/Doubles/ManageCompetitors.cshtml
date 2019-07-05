@@ -18,16 +18,16 @@
 }
 
 <form action="@Url.Action("UpdateDoubles", "SuperSmashBros")"
-      method="post"
-      id="manageCompetitorsForm"
-      data-overlay-type="Game"
-      data-websocket-data-monitor-id="#competitorsWebSocketDataMonitor"
-      data-css-monitor-url="@Url.Action("GetCssFileContent", "FightingGames")"
-      data-css-monitor-id="#competitorsCssMonitor"
-      data-json-monitor-url="@Url.Action("GetJsonFileContent", "FightingGames")"
-      data-json-monitor-id="#competitorsJsonMonitor"
-      data-overlay-preview-id="#competitorsPreviewOverlayIframe"
-      data-snackbar-id="#manageCompetitorsSnackbar">
+        method="post"
+        id="manageCompetitorsForm"
+        data-overlay-type="Game"
+        data-websocket-data-monitor-id="#competitorsWebSocketDataMonitor"
+        data-css-monitor-url="@Url.Action("GetCssFileContent", "FightingGames")"
+        data-css-monitor-id="#competitorsCssMonitor"
+        data-json-monitor-url="@Url.Action("GetJsonFileContent", "FightingGames")"
+        data-json-monitor-id="#competitorsJsonMonitor"
+        data-overlay-preview-id="#competitorsPreviewOverlayIframe"
+        data-snackbar-id="#manageCompetitorsSnackbar">
     <input type="hidden" name="Tournament" value="" data-selector="#tournamentText" />
     <input type="hidden" name="Round" value="" data-selector="#roundText" />
     <input type="hidden" name="BestOf" value="" data-selector="#bestOfText" />
@@ -62,11 +62,37 @@
     <div class="row">
         <div class="col-md-6 text-center">
             <label>Score</label>
-            <input type="text" class="form-control" name="Team1.Score" id="team1Score" data-selector="#team1ScoreText" data-side="1" data-opposite-id="#team2Score" data-default="0" value="0" />
         </div>
         <div class="col-md-6 text-center">
             <label>Score</label>
-            <input type="text" class="form-control" name="Team2.Score" id="team2Score" data-selector="#team1ScoreText" data-side="2" data-opposite-id="#team1Score" data-default="0" value="0" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-2 text-right">
+                    <button class="btn btn-danger decrease" type="button" data-id="#team1Score"><span style="font-weight: bold;" class="glypicon glyphicon-minus"></span></button>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" name="Team1.Score" id="team1Score" data-selector="#team1ScoreText" data-side="1" data-opposite-id="#team2Score" data-default="0" value="0" />
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-primary increase" type="button" data-id="#team1Score"><span style="font-weight: bold;" class="glypicon glyphicon-plus"></span></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-2 text-right">
+                    <button class="btn btn-danger decrease" type="button" data-id="#team2Score"><span style="font-weight: bold;" class="glypicon glyphicon-minus"></span></button>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" name="Team2.Score" id="team2Score" data-selector="#team1ScoreText" data-side="2" data-opposite-id="#team1Score" data-default="0" value="0" />
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-primary increase" type="button" data-id="#team2Score"><span style="font-weight: bold;" class="glypicon glyphicon-plus"></span></button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -84,6 +110,7 @@
             <label>Player 2</label>
         </div>
     </div>
+
     <div class="row">
         <div class="col-md-3 text-center">
             <label>Name</label>
@@ -102,6 +129,7 @@
             <input type="text" class="form-control" name="Team2.Players[1].Name" id="team2Player2Name" data-selector="#team2Player2NameText" data-side="2" data-opposite-id="#team1Player2Name" data-default="-" />
         </div>
     </div>
+
     <div class="row">
         <div class="col-md-3 text-center">
             <label>Sponsor (acr)</label>
@@ -120,31 +148,32 @@
             <input type="text" class="form-control" name="Team2.Players[1].Sponsor" id="team2Player2Sponsor" data-selector=".team2Player2Sponsor" data-side="2" data-opposite-id="#team1Player2Sponsor" data-default="" />
         </div>
     </div>
+
     <div class="row">
         <div class="col-md-3 text-center">
             <label>Character</label>
-            <select class="form-control" name="Team1.Players[0].Character" id="team1Player1Character" data-selector="#team1Player1Character" data-side="1" data-opposite-id="#team2Player1Character" data-default="" >
+            <select class="form-control" name="Team1.Players[0].Character" id="team1Player1Character" data-selector="#team1Player1Character" data-side="1" data-opposite-id="#team2Player1Character" data-default="">
                 <option value="" selected disabled hidden>Choose character</option>
                 @Html.Raw(characterOptionsStringBuilder.ToString())
             </select>
         </div>
         <div class="col-md-3 text-center">
             <label>Character</label>
-            <select class="form-control" name="Team1.Players[1].Character" id="team1Player2Character" data-selector="#team1Player2Character" data-side="1" data-opposite-id="#team2Player2Character" data-default="" >
+            <select class="form-control" name="Team1.Players[1].Character" id="team1Player2Character" data-selector="#team1Player2Character" data-side="1" data-opposite-id="#team2Player2Character" data-default="">
                 <option value="" selected disabled hidden>Choose character</option>
                 @Html.Raw(characterOptionsStringBuilder.ToString())
             </select>
         </div>
         <div class="col-md-3 text-center">
             <label>Character</label>
-            <select class="form-control" name="Team2.Players[0].Character" id="team2Player1Character" data-selector="#team2Player1Character" data-side="2" data-opposite-id="#team1Player1Character" data-default="" >
+            <select class="form-control" name="Team2.Players[0].Character" id="team2Player1Character" data-selector="#team2Player1Character" data-side="2" data-opposite-id="#team1Player1Character" data-default="">
                 <option value="" selected disabled hidden>Choose character</option>
                 @Html.Raw(characterOptionsStringBuilder.ToString())
             </select>
         </div>
         <div class="col-md-3 text-center">
             <label>Character</label>
-            <select class="form-control" name="Team2.Players[1].Character" id="team2Player2Character" data-selector="#team2Player2Character" data-side="2" data-opposite-id="#team1Player2Character" data-default="" >
+            <select class="form-control" name="Team2.Players[1].Character" id="team2Player2Character" data-selector="#team2Player2Character" data-side="2" data-opposite-id="#team1Player2Character" data-default="">
                 <option value="" selected disabled hidden>Choose character</option>
                 @Html.Raw(characterOptionsStringBuilder.ToString())
             </select>
@@ -153,28 +182,28 @@
     <div class="row">
         <div class="col-md-3 text-center">
             <label>Port</label>
-            <select class="form-control" name="Team1.Players[0].Port" id="team1Player1Port" data-selector="#team1Player1Port" data-side="1" data-opposite-id="#team2Player1Port" data-default="" >
+            <select class="form-control" name="Team1.Players[0].Port" id="team1Player1Port" data-selector="#team1Player1Port" data-side="1" data-opposite-id="#team2Player1Port" data-default="">
                 <option value="" selected disabled hidden>Choose port</option>
                 @Html.Raw(portOptionsStringBuilder.ToString())
             </select>
         </div>
         <div class="col-md-3 text-center">
             <label>Port</label>
-            <select class="form-control" name="Team1.Players[1].Port" id="team1Player2Port" data-selector="#team1Player2Port" data-side="1" data-opposite-id="#team2Player2Port" data-default="" >
+            <select class="form-control" name="Team1.Players[1].Port" id="team1Player2Port" data-selector="#team1Player2Port" data-side="1" data-opposite-id="#team2Player2Port" data-default="">
                 <option value="" selected disabled hidden>Choose port</option>
                 @Html.Raw(portOptionsStringBuilder.ToString())
             </select>
         </div>
         <div class="col-md-3 text-center">
             <label>Port</label>
-            <select class="form-control" name="Team2.Players[0].Port" id="team2Player1Port" data-selector="#team2Player1Port" data-side="2" data-opposite-id="#team1Player1Port" data-default="" >
+            <select class="form-control" name="Team2.Players[0].Port" id="team2Player1Port" data-selector="#team2Player1Port" data-side="2" data-opposite-id="#team1Player1Port" data-default="">
                 <option value="" selected disabled hidden>Choose port</option>
                 @Html.Raw(portOptionsStringBuilder.ToString())
             </select>
         </div>
         <div class="col-md-3 text-center">
             <label>Port</label>
-            <select class="form-control" name="Team2.Players[1].Port" id="team2Player2Port" data-selector="#team2Player2Port" data-side="2" data-opposite-id="#team1Player2Port" data-default="" >
+            <select class="form-control" name="Team2.Players[1].Port" id="team2Player2Port" data-selector="#team2Player2Port" data-side="2" data-opposite-id="#team1Player2Port" data-default="">
                 <option value="" selected disabled hidden>Choose port</option>
                 @Html.Raw(portOptionsStringBuilder.ToString())
             </select>

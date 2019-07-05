@@ -812,6 +812,48 @@
             }
         });
 
+        //Summary: 
+        // On: Clicking the decrease score / stocks left button
+        // 
+        $("body").on("click", ".decrease", function () {
+            try {
+                if (isNaN($($(this).data("id")).val())) {
+                    $($(this).data("id")).val("0");
+                } else {
+                    $($(this).data("id")).val(parseInt($($(this).data("id")).val()) - 1);
+                }
+
+                if (!$("#submitCompetitorsButton").hasClass("btn-danger")) {
+                    $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger danger-pulsate");
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+        //Summary: 
+        // On: Clicking the increase score / stocks left button
+        // 
+        $("body").on("click", ".increase", function () {
+            try {
+                if (isNaN($($(this).data("id")).val())) {
+                    $($(this).data("id")).val("0");
+                } else {
+                    $($(this).data("id")).val(parseInt($($(this).data("id")).val()) + 1);
+                }
+
+                if (!$("#submitCompetitorsButton").hasClass("btn-danger")) {
+                    $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger danger-pulsate");
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
         //Summary:
         //On: Clicking the get crew players button.
         // Limit the crew players count to between 1 and 99.

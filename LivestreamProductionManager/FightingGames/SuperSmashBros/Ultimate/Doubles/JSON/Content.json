@@ -72,11 +72,11 @@
   "Value": "../../CharacterIcons/palutena.png"
 },
 {
-  "Selector": "team2Player1Port",
+  "Selector": "#team2Player1Port",
   "Value": "../../PlayerPorts/PlayerPort3.png"
 },
 {
-  "Selector": "team2Player2Port",
+  "Selector": "#team2Player2Port",
   "Value": "../../PlayerPorts/PlayerPort4.png"
 },
 {
