@@ -15,3 +15,18 @@ Update video playlist: https://www.youtube.com/playlist?list=PL6cEqU9AFK4twE-nto
 Follow me on Twitter to see how I progress with this project as well as other things I do in my free time: http://www.twitter.com/gogoku7
 
 Join the Discord server: https://discord.gg/y83D8Yp
+
+# Getting Started
+
+Livestream Production Manager (LPM) is in development and doesn't have a .msi installer or .exe runner yet, so here is how to use it for now:
+
+- For now, you just need to have Visual Studio 2019 (2017 is possible too, but 2019 is preferred) Community installed on your pc/laptop. When installing it for the first time, remember to install the "ASP.NET and web development" workload, so you can run LPM
+- To get LPM sourcecode on your device, download/clone/fork this repository
+- Open the .sln file with Visual Studio and run the program with F5
+
+To get an actual overlay in OBS:
+- Add a new browser source to a scene
+- Check the "Local file" checkbox and click "Browse"
+- Add a file like "/LivestreamProductionManager/FightingGames/SuperSmashBros/Ultimate/Singles/gameOverlay.html"
+- Set the resolution and framerate (1920 x 1080 at 60 frames per second recommended)
+- Check "Shutdown source when not visible" and "Refresh browser when scene becomes active checkbox"
