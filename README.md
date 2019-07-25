@@ -21,7 +21,7 @@ Join the Discord server: https://discord.gg/y83D8Yp
 Livestream Production Manager (LPM) is in development and doesn't have a .msi installer or .exe runner yet, so here is how to use it for now:
 
 - For now, you just need to have Visual Studio 2019 (2017 is possible too, but 2019 is preferred) Community installed on your pc/laptop. When installing it for the first time, remember to install the "ASP.NET and web development" workload, so you can run LPM
-- To get LPM sourcecode on your device, download/clone/fork this repository
+- To get LPM sourcecode on your device, (preferably) download or clone/fork this repository
 - Open the .sln file with Visual Studio and run the program with F5
 
 To get an actual overlay in OBS:
