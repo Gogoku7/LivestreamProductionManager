@@ -27,6 +27,6 @@ Livestream Production Manager (LPM) is in development and doesn't have a .msi in
 To get an actual overlay in OBS:
 - Add a new browser source to a scene
 - Enable "Local file" and click "Browse"
-- Add a file like "/LivestreamProductionManager/FightingGames/SuperSmashBros/Ultimate/Singles/gameOverlay.html"
+- Select a file, like "/LivestreamProductionManager/FightingGames/SuperSmashBros/Ultimate/Singles/gameOverlay.html"
 - Set the resolution and framerate (1920 x 1080 at 60 frames per second recommended)
 - Enable both "Shutdown source when not visible" and "Refresh browser when scene becomes active checkbox"
