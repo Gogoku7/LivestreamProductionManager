@@ -1,4 +1,5 @@
 ﻿using LivestreamProductionManager.Interfaces;
+using LivestreamProductionManager.Models.FightingGames.Skins;
 using LivestreamProductionManager.ViewModels.FightingGames;
 using LivestreamProductionManager.ViewModels.FightingGames.SuperSmashBros;
 using Newtonsoft.Json;
@@ -83,6 +84,22 @@ namespace LivestreamProductionManager.Implementations
                 using (var streamReader = new StreamReader(HttpContext.Current.Server.MapPath(pathToGame + "PortsConfig.json")))
                 {
                     return JsonConvert.DeserializeObject<List<PortViewModel>>(streamReader.ReadToEnd());
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+                throw;
+            }
+        }
+
+        public SkinsConfig GetSkins(string pathToGame)
+        {
+            try
+            {
+                using (var streamReader = new StreamReader(HttpContext.Current.Server.MapPath(pathToGame + "CharacterIcons/SkinsConfig.json")))
+                {
+                    return JsonConvert.DeserializeObject<SkinsConfig>(streamReader.ReadToEnd());
                 }
             }
             catch (Exception ex)

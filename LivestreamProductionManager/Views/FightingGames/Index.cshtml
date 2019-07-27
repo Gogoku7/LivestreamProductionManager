@@ -620,6 +620,8 @@
                         $("#commentatorsOverlayPath").html(`${ selectedGame.val() }Commentators/CommentatorsOverlay.html`);
                         $("#manageCommentatorsForm > [name='PathToCommentators']").val(selectedGame.data("path-to-commentators"));
 
+                        $("[data-toggle='characterSkinPopover']").popover({ html: true, placement: "bottom", trigger: "manual" });
+
                         competitorsOverlayPreviewSourceUrl = `http://${ baseUrl + selectedFormat.val() }GameOverlay.html`;
                         if ($("#competitorsPreviewOverlayIframe").data("enabled") == "True") {
                             $("#competitorsPreviewOverlayIframe").attr("src", competitorsOverlayPreviewSourceUrl);
@@ -814,7 +816,12 @@
 
         //Summary: 
         // On: Clicking the decrease score / stocks left button
-        // 
+        // If > 
+        //  
+        // Else >
+        //  
+        // If > 
+        //  
         $("body").on("click", ".decrease", function () {
             try {
                 if (isNaN($($(this).data("id")).val())) {
@@ -835,7 +842,12 @@
 
         //Summary: 
         // On: Clicking the increase score / stocks left button
-        // 
+        // If > 
+        //  
+        // Else >
+        //  
+        // If > 
+        //  
         $("body").on("click", ".increase", function () {
             try {
                 if (isNaN($($(this).data("id")).val())) {
@@ -847,6 +859,135 @@
                 if (!$("#submitCompetitorsButton").hasClass("btn-danger")) {
                     $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger danger-pulsate");
                 }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+
+
+        //Summary: 
+        // On: 
+        // If > 
+        //  
+        // Else >
+        //  
+        //  Show a snackbar message.
+        $("body").on("click", "[data-toggle='characterSkinPopover']", function () {
+            try {
+                var popoverToggle = $(this);
+
+                if (popoverToggle.data("popover-active") === false) {
+                    var characterSkinModalViewModel;
+
+                    if ($(popoverToggle.data("character-dropdown-selector")).val() !== "" && $(popoverToggle.data("character-dropdown-selector")).val() !== null) {
+                        $.ajax({
+                            type: "POST",
+                            url: "@Url.Action("GetSkins", "FightingGames")",
+                            async: false,
+                            data: {
+                                "pathToFormat": $("#manageCompetitorsForm input[name='PathToFormat']").val(),
+                                "pathToGame": $("#manageCompetitorsForm input[name='PathToGame']").val(),
+                                "selectedCharacterName": $(popoverToggle.data("character-dropdown-selector")).find("option:selected").data("name")
+                            },
+                            dataType: "json",
+                            success: function (data) {
+                                if (data.Success === true) {
+                                    if (data.SupportsSkins === true) {
+                                        characterSkinModalViewModel = data;
+                                    } else {
+                                        ShowSnackbar("#manageCompetitorsSnackbar", "These character icons do not support different skins.");
+                                        return;
+                                    }
+                                } else {
+                                    ShowSnackbar("#manageCompetitorsSnackbar", data.Message);
+                                    return;
+                                }
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting the skin data. See the log for details.");
+                                UpdateErrorMonitor(jqXHR.responseText);
+                                console.log(jqXHR);
+                                console.log(`Text status: ${ textStatus }`);
+                                console.log(`Error thrown: ${errorThrown}`);
+                                return;
+                            }
+                        });
+
+                        characterSkinModalViewModel.CharacterDropdownSelector = popoverToggle.data("character-dropdown-selector");
+                        characterSkinModalViewModel.CharacterSkinPickerToggleSelector = popoverToggle.data("skin-picker-toggle-selector");
+                        characterSkinModalViewModel.CharacterSkinPickerSelector = popoverToggle.data("skin-picker-selector");
+                        characterSkinModalViewModel.SelectedCharacterSkin = $(popoverToggle.data("character-dropdown-selector")).find("option:selected").val();                    
+
+                        $.ajax({
+                            type: "POST",
+                            url: "@Url.Action("GetSkinsPartialView", "FightingGames")",
+                            data: characterSkinModalViewModel,
+                            dataType: "html",
+                            async: false,
+                            success: function (data) {
+                                popoverToggle.popover("show");
+                                $(popoverToggle.data("skin-picker-selector")).find(".popover-content").html(data);
+                                popoverToggle.attr("data-popover-active", true).data("popover-active", true);
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting skin picker html. See the log for details.");
+                                UpdateErrorMonitor(jqXHR.responseText);
+                                console.log(jqXHR);
+                                console.log(`Text status: ${ textStatus }`);
+                                console.log(`Error thrown: ${errorThrown}`);
+                                return;
+                            }
+                        });
+                    } else {
+                        ShowSnackbar("#manageCompetitorsSnackbar", "No character has been selected to pick a skin for.");
+                        return;
+                    }
+                } else {
+                    popoverToggle.popover("hide");
+                    popoverToggle.attr("data-popover-active", false).data("popover-active", false);
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+        //Summary:
+        // On: Clicking a skin
+        // Replace the value and text in the character dropdown.
+        // Close the popover.
+        // Close the skin picker popover.
+        $("body").on("click", ".skin", function () {
+            try {
+                var characterDropdown = $($($(this).data("skin-picker-selector")).find(".characterDropdownSelector").val());
+                var characterSkinPickerToggle = $($($(this).data("skin-picker-selector")).find(".CharacterSkinPickerToggleSelector").val());
+
+                characterDropdown.find("option:selected").val($(this).data("value")).text($(this).data("name"));
+
+                $($(this).data("skin-picker-selector")).find(".skin.active").removeClass("active");
+
+                $(this).addClass("active");
+                characterSkinPickerToggle.popover("hide");
+                characterSkinPickerToggle.attr("data-popover-active", false).data("popover-active", false);
+
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+        //Summary:
+        // On: Selecting a character in a dropdown that has a skin picker
+        // Close the skin picker popover.
+        $("body").on("change", "select[data-skin-picker-toggle-selector]", function () {
+            try {
+                $($(this).data("skin-picker-toggle-selector")).popover("hide");
+                $($(this).data("skin-picker-toggle-selector")).attr("data-popover-active", false).data("popover-active", false);
             } catch (ex) {
                 ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);

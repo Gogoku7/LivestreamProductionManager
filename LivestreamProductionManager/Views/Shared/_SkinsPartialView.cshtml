@@ -1,0 +1,37 @@
+﻿@model LivestreamProductionManager.ViewModels.FightingGames.CharacterSkinModalViewModel
+
+<input type="hidden" class="characterDropdownSelector" value="@Model.CharacterDropdownSelector" />
+<input type="hidden" class="CharacterSkinPickerToggleSelector" value="@Model.CharacterSkinPickerToggleSelector" />
+
+@{
+    IEnumerable<List<LivestreamProductionManager.Models.FightingGames.Skins.Skin>> splittedCharacterSkins = null;
+    if (Model.CharacterSkins != null && Model.CharacterSkins.Any())
+    {
+        splittedCharacterSkins = Model.SplitCharacterSkins(4);
+    }
+}
+
+@if (splittedCharacterSkins != null && splittedCharacterSkins.Any())
+{
+    foreach (var characterSkinsGroup in splittedCharacterSkins)
+    {
+        <div class="row">
+            @foreach (var characterSkin in characterSkinsGroup)
+            {
+                <div class="col-md-3">
+                    <div class="skin @(characterSkin.CssValue == Model.SelectedCharacterSkin ? "active" : "")"
+                         data-value="@characterSkin.CssValue"
+                         data-name="@characterSkin.Name"
+                         style="background-image: url('@Url.Content(characterSkin.PathForPicker)')"
+                         data-skin-picker-selector="@Model.CharacterSkinPickerSelector">
+                    </div>
+                    <p class="text-center">@characterSkin.Name</p>
+                </div>
+            }
+        </div>
+    }
+}
+else
+{
+    <p class="text-danger">No skins available for this character.</p>
+}

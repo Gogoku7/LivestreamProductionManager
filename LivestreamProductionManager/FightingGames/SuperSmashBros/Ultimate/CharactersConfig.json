@@ -173,8 +173,16 @@
     "CssValue": "../../CharacterIcons/mewtwo.png"
   },
   {
-    "CharacterName": "Mii Fighter",
-    "CssValue": "../../CharacterIcons/miifighter.png"
+    "CharacterName": "Mii Brawler",
+    "CssValue": "../../CharacterIcons/miibrawler.png"
+  },
+  {
+    "CharacterName": "Mii Gunner",
+    "CssValue": "../../CharacterIcons/miigunner.png"
+  },
+  {
+    "CharacterName": "Mii Swordfighter",
+    "CssValue": "../../CharacterIcons/miiswordfighter.png"
   },
   {
     "CharacterName": "Mr. Game & Watch",

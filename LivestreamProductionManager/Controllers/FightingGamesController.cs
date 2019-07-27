@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using Serilog;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace LivestreamProductionManager.Controllers
@@ -63,6 +64,49 @@ namespace LivestreamProductionManager.Controllers
             {
                 Log.Error(ex, ex.Message);
                 return ErrorSnackbar("Something went wrong with retrieving formats.", ex);
+            }
+        }
+
+        [HttpPost]
+        public JsonResult GetSkins(string pathToFormat, string pathToGame, string selectedCharacterName)
+        {
+            try
+            {
+                if (selectedCharacterName == "No character" || string.IsNullOrEmpty(selectedCharacterName))
+                {
+                    throw new InvalidOperationException("No character with skins has been selected.");
+                }
+
+                var allSkins = _configReader.GetSkins(pathToGame);
+
+                var characterSkinModalViewModel = new CharacterSkinModalViewModel { Success = true, SupportsSkins = false };
+                if (allSkins.SupportsSkins)
+                {
+                    var character = allSkins.Characters.First(s => s.CharacterName == selectedCharacterName);
+                    characterSkinModalViewModel.SupportsSkins = true;
+                    characterSkinModalViewModel.CharacterSkins = character.Skins;
+                }
+
+                return Json(characterSkinModalViewModel, JsonRequestBehavior.DenyGet);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+                return ErrorSnackbar("Something went wrong with retrieving skins.", ex);
+            }
+        }
+
+        [HttpPost]
+        public PartialViewResult GetSkinsPartialView(CharacterSkinModalViewModel characterSkinModalViewModel)
+        {
+            try
+            {
+                return PartialView("~/Views/Shared/_SkinsPartialView.cshtml", characterSkinModalViewModel);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+                throw;
             }
         }
 

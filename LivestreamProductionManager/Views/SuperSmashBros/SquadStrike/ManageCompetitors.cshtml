@@ -5,7 +5,7 @@
     var characterOptionsStringBuilder = new StringBuilder();
     foreach (var character in Model.Characters)
     {
-        characterOptionsStringBuilder.AppendLine($"<option value='{character.CssValue}'>{character.CharacterName}</option>");
+        characterOptionsStringBuilder.AppendLine($"<option value='{character.CssValue}' data-name='{character.CharacterName}'>{character.CharacterName}</option>");
     }
 
     var portOptionsStringBuilder = new StringBuilder();

@@ -195,12 +195,16 @@
     <Compile Include="Interfaces\SuperSmashBros\ISmashOverlayManager.cs" />
     <Compile Include="Interfaces\SuperSmashBros\ISmashValuesReplacer.cs" />
     <Compile Include="Models\Commentators\CommentatorsValuesModel.cs" />
+    <Compile Include="Models\FightingGames\Skins\CharacterConfig.cs" />
+    <Compile Include="Models\FightingGames\Skins\Skin.cs" />
+    <Compile Include="Models\FightingGames\Skins\SkinsConfig.cs" />
     <Compile Include="Models\FightingGames\SuperSmashBros\CrewCssModel.cs" />
     <Compile Include="Models\FightingGames\SuperSmashBros\CrewPlayerCssModel.cs" />
     <Compile Include="Models\FightingGames\SuperSmashBros\CrewsCssModel.cs" />
     <Compile Include="Models\FightingGames\SuperSmashBros\SquadCssModel.cs" />
     <Compile Include="Models\FightingGames\SuperSmashBros\SquadPlayerCssModel.cs" />
     <Compile Include="Models\FightingGames\SuperSmashBros\SquadStrikeCssModel.cs" />
+    <Compile Include="ViewModels\FightingGames\CharacterSkinModalViewModel.cs" />
     <Compile Include="ViewModels\FightingGames\GetLatestViewModel.cs" />
     <Compile Include="ViewModels\FightingGames\ReadMe.cs" />
     <Compile Include="ViewModels\FightingGames\SelectorValueViewModel.cs" />
@@ -937,6 +941,10 @@
     </Content>
     <Content Include="FightingGames\SuperSmashBros\JavaScript\ReadMe.md" />
     <Content Include="FightingGames\SuperSmashBros\CSS\ReadMe.md" />
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\SkinsConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\WiiU\CharacterIcons\SkinsConfig.json" />
     <None Include="Properties\PublishProfiles\LivestreamProductionManager.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -980,6 +988,8 @@
     <Content Include="Views\SuperSmashBros\SquadStrike\ManageCompetitors.cshtml" />
     <Content Include="Views\Shared\_ReadMeModal.cshtml" />
     <Content Include="Views\Shared\_VideoModal.cshtml" />
+    <Content Include="Views\Shared\_SkinPickerModal.cshtml" />
+    <Content Include="Views\Shared\_SkinsPartialView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

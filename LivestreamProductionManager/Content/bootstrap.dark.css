@@ -6890,6 +6890,24 @@ button.close {
     display: none !important
 }
 
+.skin {
+    border-color: rgb(241, 241, 241);
+}
+
+.skin.active {
+    background-color: #DC143C;
+}
+
+.skin:hover {
+    border-color: #DC143C;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(220,20,60,0.6);
+}
+
+.skin:active {
+    background-color: #DC143C;
+}
+
 @media (max-width:767px) {
     .visible-xs {
         display: block !important

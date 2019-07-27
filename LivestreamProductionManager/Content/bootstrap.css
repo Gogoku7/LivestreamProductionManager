@@ -6644,6 +6644,21 @@ button.close {
 .visible-lg-inline-block {
   display: none !important;
 }
+.skin {
+    border-color: rgb(204, 204, 204);
+}
+.skin.active {
+    background-color: #66afe9;
+}
+.skin:hover {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.skin:active {
+    background-color: #66afe9;
+}
 @media (max-width: 767px) {
   .visible-xs {
     display: block !important;

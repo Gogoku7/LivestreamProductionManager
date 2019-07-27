@@ -5,7 +5,7 @@
     var characterOptionsStringBuilder = new StringBuilder();
     foreach (var character in Model.Characters)
     {
-        characterOptionsStringBuilder.AppendLine($"<option value='{character.CssValue}'>{character.CharacterName}</option>");
+        characterOptionsStringBuilder.AppendLine($"<option value='{character.CssValue}' data-name='{character.CharacterName}'>{character.CharacterName}</option>");
     }
 
     var portOptionsStringBuilder = new StringBuilder();
@@ -122,17 +122,63 @@
     <div class="row">
         <div class="col-md-6 text-center">
             <label>Character</label>
-            <select class="form-control" name="Player1.Character" id="player1Character" data-selector="#player1Character" data-side="1" data-opposite-id="#player2Character" data-default="">
-                <option value="" selected disabled hidden>Choose character</option>
-                @Html.Raw(characterOptionsStringBuilder.ToString())
-            </select>
         </div>
         <div class="col-md-6 text-center">
             <label>Character</label>
-            <select class="form-control" name="Player2.Character" id="player2Character" data-selector="#player2Character" data-side="2" data-opposite-id="#player1Character" data-default="">
-                <option value="" selected disabled hidden>Choose character</option>
-                @Html.Raw(characterOptionsStringBuilder.ToString())
-            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 text-center">
+
+            <div class="row">
+                <div class="col-md-9">
+                    <select class="form-control" name="Player1.Character" id="player1Character" data-selector="#player1Character" data-side="1" data-opposite-id="#player2Character" data-default="" data-skin-picker-toggle-selector="button[id='player1CharacterSkinPickerToggle']">
+                        <option value="" selected disabled hidden>Choose character</option>
+                        @Html.Raw(characterOptionsStringBuilder.ToString())
+                    </select>
+                </div>
+                <div class="col-md-3 text-left">
+                    <button class="btn btn-primary"
+                            id="player1CharacterSkinPickerToggle"
+                            type="button"
+                            data-popover-active="false"
+                            data-toggle="characterSkinPopover"
+                            data-title="Player 1 Character skin"
+                            data-template="<div class='popover characterSkinPopover player1CharacterSkinPicker' role='tooltip'><div class='arrow' style='left: 50%;'></div><h3 class='popover-title'></h3><div class='popover-content'></div></div>"
+                            data-skin-picker-selector=".player1CharacterSkinPicker"
+                            data-character-dropdown-selector="select[id='player1Character']"
+                            data-skin-picker-toggle-selector="button[id='player1CharacterSkinPickerToggle']">
+                        Pick skin
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 text-center">
+
+            <div class="row">
+                <div class="col-md-9">
+                    <select class="form-control" name="Player2.Character" id="player2Character" data-selector="#player2Character" data-side="2" data-opposite-id="#player1Character" data-default="" data-skin-picker-toggle-selector="button[id='player2CharacterSkinPickerToggle']">
+                        <option value="" selected disabled hidden>Choose character</option>
+                        @Html.Raw(characterOptionsStringBuilder.ToString())
+                    </select>
+                </div>
+                <div class="col-md-3 text-left">
+                    <button class="btn btn-primary"
+                            id="player2CharacterSkinPickerToggle"
+                            type="button"
+                            data-popover-active="false"
+                            data-toggle="characterSkinPopover"
+                            data-title="Player 2 Character skin"
+                            data-template="<div class='popover characterSkinPopover player2CharacterSkinPicker' role='tooltip'><div class='arrow' style='left: 50%;'></div><h3 class='popover-title'></h3><div class='popover-content'></div></div>"
+                            data-skin-picker-selector=".player2CharacterSkinPicker"
+                            data-character-dropdown-selector="select[id='player2Character']"
+                            data-skin-picker-toggle-selector="button[id='player2CharacterSkinPickerToggle']">
+                        Pick skin
+                    </button>
+                </div>
+            </div>
+            
         </div>
     </div>
 

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="CSS/Styles.css">
+        <link rel="stylesheet" type="text/css" href="CSS/Content.css">
+        <script src="../../JavaScript/jQuery.js"></script>
+        <script src="../../JavaScript/fitty.js"></script>
+        <script src="../../JavaScript/Snackbar.js"></script>
+        <script src="../../JavaScript/OverlayManager.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+			<div class="player" id="player1">
+				<div class="playerBox" id="player1Box">
+					<div class="playerScoreBox" id="player1ScoreBox">
+						<span class="playerScore" id="player1ScoreText"></span>
+					</div>
+					<div class="playerNameBox" id="player1NameBox">
+						<div class="playerNameContainer" id="player1NameContainer">
+							<span class="playerName player1Sponsor" id="player1NameText"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="roundBox" id="roundBox">
+				<div class="roundContainer" id="roundContainer">
+					<span class="roundText" id="roundText"></span>
+				</div>
+			</div>
+			
+			<div class="player" id="player2">
+				<div class="playerBox" id="player2Box">
+					<div class="playerScoreBox" id="player2ScoreBox">
+						<span class="playerScore" id="player2ScoreText"></span>
+					</div>
+					<div class="playerNameBox" id="player2NameBox">
+						<div class="playerNameContainer" id="player2NameContainer">
+							<span class="playerName player2Sponsor" id="player2NameText"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+		
+		<div class="playerCharacter" id="player1Character">
+			
+		</div>
+		
+		<div class="playerCharacter" id="player2Character">
+			
+		</div>
+		
+        <div class="snackbar" id="snackbar"></div>
+    </body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+		var fittyElements = [
+			{ "selector": ".playerName", "minSize": 8, "maxSize": 25, "multiLine": false },
+			{ "selector": ".playerScore", "minSize": 8, "maxSize": 25, "multiLine": false },
+			{ "selector": ".roundText", "minSize": 8, "maxSize": 30, "multiLine": false },
+		];
+		
+		initWebSocketAndFitty(fittyElements, "Game");
+    });
+</script>
