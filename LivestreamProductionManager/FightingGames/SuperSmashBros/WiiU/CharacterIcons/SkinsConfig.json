@@ -192,37 +192,37 @@
         {
           "Name": "Charizard_01",
           "CssValue": "../../CharacterIcons/charizard_01.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/charizard.png"
+          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/charizard_01.png"
         },
         {
           "Name": "Charizard_02",
           "CssValue": "../../CharacterIcons/charizard_02.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/charizard.png"
+          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/charizard_02.png"
         },
         {
           "Name": "Charizard_03",
           "CssValue": "../../CharacterIcons/charizard_03.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/charizard.png"
+          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/charizard_03.png"
         },
         {
           "Name": "Charizard_04",
           "CssValue": "../../CharacterIcons/charizard_04.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/charizard.png"
+          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/charizard_04.png"
         },
         {
           "Name": "Charizard_05",
           "CssValue": "../../CharacterIcons/charizard_05.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/charizard.png"
+          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/charizard_05.png"
         },
         {
           "Name": "Charizard_06",
           "CssValue": "../../CharacterIcons/charizard_06.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/charizard.png"
+          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/charizard_06.png"
         },
         {
           "Name": "Charizard_07",
           "CssValue": "../../CharacterIcons/charizard_07.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/charizard.png"
+          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/charizard_07.png"
         }
       ]
     },
@@ -1033,6 +1033,46 @@
           "Name": "Little Mac_07",
           "CssValue": "../../CharacterIcons/littlemac_07.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/littlemac_07.png"
+        },
+        {
+          "Name": "Little Mac_08",
+          "CssValue": "../../CharacterIcons/littlemac_08.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/littlemac_08.png"
+        },
+        {
+          "Name": "Little Mac_09",
+          "CssValue": "../../CharacterIcons/littlemac_09.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/littlemac_09.png"
+        },
+        {
+          "Name": "Little Mac_10",
+          "CssValue": "../../CharacterIcons/littlemac_10.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/littlemac_10.png"
+        },
+        {
+          "Name": "Little Mac_11",
+          "CssValue": "../../CharacterIcons/littlemac_11.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/littlemac_11.png"
+        },
+        {
+          "Name": "Little Mac_12",
+          "CssValue": "../../CharacterIcons/littlemac_12.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/littlemac_12.png"
+        },
+        {
+          "Name": "Little Mac_13",
+          "CssValue": "../../CharacterIcons/littlemac_13.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/littlemac_13.png"
+        },
+        {
+          "Name": "Little Mac_14",
+          "CssValue": "../../CharacterIcons/littlemac_14.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/littlemac_14.png"
+        },
+        {
+          "Name": "Little Mac_15",
+          "CssValue": "../../CharacterIcons/littlemac_15.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/littlemac_15.png"
         }
       ]
     },
@@ -1448,11 +1488,6 @@
           "Name": "Mii Brawler",
           "CssValue": "../../CharacterIcons/miibrawler.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/miibrawler.png"
-        },
-        {
-          "Name": "Mii Brawler_01",
-          "CssValue": "../../CharacterIcons/miibrawler_01.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/miibrawler_01.png"
         }
       ]
     },
@@ -1463,11 +1498,6 @@
           "Name": "Mii Gunner",
           "CssValue": "../../CharacterIcons/miigunner.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/miigunner.png"
-        },
-        {
-          "Name": "Mii Gunner_01",
-          "CssValue": "../../CharacterIcons/miigunner_01.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/miigunner_01.png"
         }
       ]
     },
@@ -1478,11 +1508,6 @@
           "Name": "Mii Swordfighter",
           "CssValue": "../../CharacterIcons/miiswordfighter.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/miiswordfighter.png"
-        },
-        {
-          "Name": "Mii Swordfighter_01",
-          "CssValue": "../../CharacterIcons/miiswordfighter_01.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/miiswordfighter_01.png"
         }
       ]
     },
@@ -1853,6 +1878,31 @@
           "Name": "Random",
           "CssValue": "../../CharacterIcons/random.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/random.png"
+        },
+        {
+          "Name": "Random_01",
+          "CssValue": "../../CharacterIcons/random_01.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/random_01.png"
+        },
+        {
+          "Name": "Random_02",
+          "CssValue": "../../CharacterIcons/random_02.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/random_02.png"
+        },
+        {
+          "Name": "Random_03",
+          "CssValue": "../../CharacterIcons/random_03.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/random_03.png"
+        },
+        {
+          "Name": "Random_04",
+          "CssValue": "../../CharacterIcons/random_04.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/random_04.png"
+        },
+        {
+          "Name": "Random_05",
+          "CssValue": "../../CharacterIcons/random_05.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/WiiU/CharacterIcons/random_05.png"
         }
       ]
     },

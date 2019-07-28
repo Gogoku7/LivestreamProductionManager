@@ -974,6 +974,9 @@
                 characterSkinPickerToggle.popover("hide");
                 characterSkinPickerToggle.attr("data-popover-active", false).data("popover-active", false);
 
+                if (!$("#submitCompetitorsButton").hasClass("btn-danger")) {
+                    $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger danger-pulsate");
+                }
             } catch (ex) {
                 ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
                 console.log(ex);
@@ -1289,7 +1292,6 @@
                 if ($(`#commentator-row-${ (index + 1) }`).length) {
                     var row1 = $(`#commentator-row-${ index }`);
                     var row2 = $(`#commentator-row-${ (index + 1) }`);
-
 
                     row1.replaceWith(row2.clone());
                     row2.replaceWith(row1.clone());
