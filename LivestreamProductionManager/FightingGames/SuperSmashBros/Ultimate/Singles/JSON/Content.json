@@ -17,7 +17,7 @@
 },
 {
   "Selector": "#player1Character",
-  "Value": "../../CharacterIcons/fox.png"
+  "Value": "../../CharacterIcons/random.png"
 },
 {
   "Selector": "#player1Port",
@@ -37,7 +37,7 @@
 },
 {
   "Selector": "#player2ScoreText",
-  "Value": "-1"
+  "Value": "1"
 },
 {
   "Selector": "#player2Character",
@@ -49,18 +49,18 @@
 },
 {
   "Selector": "#tournamentText",
-  "Value": ""
+  "Value": "Fight Night 50"
 },
 {
   "Selector": "#extraText",
-  "Value": ""
+  "Value": "Esports Game Arena"
 },
 {
   "Selector": "#roundText",
-  "Value": ""
+  "Value": "Winners Round 1"
 },
 {
   "Selector": "#bestOfText",
-  "Value": ""
+  "Value": "Best of 3"
 }
 ]

@@ -11,7 +11,7 @@
 }
 
 #player1Character {
-    background-image: url('../../CharacterIcons/fox.png');
+    background-image: url('../../CharacterIcons/random.png');
 }
 
 #player1Port {
@@ -27,7 +27,7 @@
 }
 
 #player2ScoreText:before {
-    content: "-1";
+    content: "1";
 }
 
 #player2Character {
@@ -39,17 +39,17 @@
 }
 
 #tournamentText:before {
-    content: "";
+    content: "Fight Night 50";
 }
 
 #extraText:before {
-    content: "";
+    content: "Esports Game Arena";
 }
 
 #roundText:before {
-    content: "";
+    content: "Winners Round 1";
 }
 
 #bestOfText:before {
-    content: "";
+    content: "Best of 3";
 }

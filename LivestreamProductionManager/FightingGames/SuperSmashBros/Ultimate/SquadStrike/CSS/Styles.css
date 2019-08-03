@@ -86,27 +86,7 @@ span
 
 
 
-/* squadScoreBox */
 
-.squadScoreBox
-{
-    width: 20px;
-    height: 50px;
-}
-
-#squad1ScoreBox
-{
-    float: left;
-    margin-left: 10px;
-}
-
-#squad2ScoreBox
-{
-    float: right;
-    margin-right: 10px;
-}
-
-/* squadScoreBox END */
 
 
 
@@ -126,10 +106,12 @@ span
 
 .squadPort
 {
-    width: 90px;
+    width: 100px;
     height: 50px;
     display: inline-block;
-    background-repeat: no-repeat;
+    background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
     line-height: 50px;
     align-items: center;
     overflow: hidden;
@@ -144,14 +126,6 @@ span
 #squad2Port
 {
     float: right;
-}
-
-.squadCharacter
-{
-    width: 90px;
-    height: 50px;
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 /* squadPort END */
@@ -285,8 +259,9 @@ span
 {
     width: 90px;
     height: 50px;
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
     opacity: 0;
 
     animation-name: fadeIn;

@@ -108,22 +108,24 @@ body
 
 .teamPlayer1Port
 {
-	width: 90px;
+	width: 100px;
 	height: 50px;
-	display:inline-block;
+	display: inline-block;
+	background-size: contain;
+	background-position: center;
 	background-repeat: no-repeat;
 }
 
 #team1Player1Port
 {
 	float: left;
-	margin-left: 50px;
+	margin-left: 40px;
 }
 
 #team2Player1Port
 {
 	float: right;
-	margin-right: 50px;
+	margin-right: 40px;
 }
 
 /* teamPlayer1Port END */
@@ -134,9 +136,10 @@ body
 
 .teamPlayerCharacter
 {
-	width: 90px;
+	width: 100px;
 	height: 50px;
 	background-size: contain;
+	background-position: center;
 	background-repeat: no-repeat;
 }
 
@@ -210,10 +213,12 @@ body
 
 .teamPlayer2Port 
 {
-    width: 90px;
+    width: 100px;
     height: 50px;
     display: inline-block;
-    background-repeat: no-repeat;
+    background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 #team1Player2Port
