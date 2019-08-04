@@ -25,11 +25,11 @@
 },
 {
   "Selector": "#team1Player1Character",
-  "Value": "../../CharacterIcons/fox.png"
+  "Value": "../../CharacterIcons/bayonetta.png"
 },
 {
   "Selector": "#team1Player2Character",
-  "Value": "../../CharacterIcons/littlemac.png"
+  "Value": "../../CharacterIcons/bowser.png"
 },
 {
   "Selector": "#team1Player1Port",
@@ -49,27 +49,27 @@
 },
 {
   "Selector": "#team2Player1NameText",
-  "Value": "ZeRo"
-},
-{
-  "Selector": ".team2Player1Sponsor",
-  "Value": "Tempo"
-},
-{
-  "Selector": "#team2Player2NameText",
   "Value": "Nairo"
 },
 {
-  "Selector": ".team2Player2Sponsor",
+  "Selector": ".team2Player1Sponsor",
   "Value": "NRG"
 },
 {
+  "Selector": "#team2Player2NameText",
+  "Value": "ZeRo"
+},
+{
+  "Selector": ".team2Player2Sponsor",
+  "Value": "Tempo"
+},
+{
   "Selector": "#team2Player1Character",
-  "Value": "../../CharacterIcons/diddykong.png"
+  "Value": "../../CharacterIcons/bowserjr.png"
 },
 {
   "Selector": "#team2Player2Character",
-  "Value": "../../CharacterIcons/palutena.png"
+  "Value": "../../CharacterIcons/captainfalcon.png"
 },
 {
   "Selector": "#team2Player1Port",

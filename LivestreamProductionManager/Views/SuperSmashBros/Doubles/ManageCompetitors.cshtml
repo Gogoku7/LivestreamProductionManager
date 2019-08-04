@@ -152,33 +152,144 @@
     <div class="row">
         <div class="col-xs-3 text-center">
             <label>Character</label>
+        </div>
+        <div class="col-xs-3 text-center">
+            <label>Character</label>
+        </div>
+        <div class="col-xs-3 text-center">
+            <label>Character</label>
+        </div>
+        <div class="col-xs-3 text-center">
+            <label>Character</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3 text-center">
+            <div class="row">
+                <div class="col-xs-8 text-center">
+                    <select class="form-control" name="Team1.Players[0].Character" id="team1Player1Character" data-selector="#team1Player1Character" data-side="1" data-opposite-id="#team2Player1Character" data-default="" data-skin-picker-toggle-selector="button[id='team1Player1CharacterSkinPickerToggle']">
+                        <option value="" selected disabled hidden>Choose character</option>
+                        @Html.Raw(characterOptionsStringBuilder.ToString())
+                    </select>
+                </div>
+                <div class="col-xs-4 text-left">
+                    <button class="btn btn-primary"
+                            id="team1Player1CharacterSkinPickerToggle"
+                            type="button"
+                            data-popover-active="false"
+                            data-toggle="characterSkinPopover"
+                            data-title="Team 1 Player 1 Character skin"
+                            data-template="<div class='popover characterSkinPopover team1Player1CharacterSkinPicker' role='tooltip'><div class='arrow' style='left: 50%;'></div><h3 class='popover-title'></h3><div class='popover-content'></div></div>"
+                            data-skin-picker-selector=".team1Player1CharacterSkinPicker"
+                            data-character-dropdown-selector="select[id='team1Player1Character']"
+                            data-skin-picker-toggle-selector="button[id='team1Player1CharacterSkinPickerToggle']">
+                        <span class="glyphicon glyphicon-picture"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-3 text-center">
+            <div class="row">
+                <div class="col-xs-8 text-center">
+                    <select class="form-control" name="Team1.Players[1].Character" id="team1Player2Character" data-selector="#team1Player2Character" data-side="1" data-opposite-id="#team2Player2Character" data-default="" data-skin-picker-toggle-selector="button[id='team1Player2CharacterSkinPickerToggle']">
+                        <option value="" selected disabled hidden>Choose character</option>
+                        @Html.Raw(characterOptionsStringBuilder.ToString())
+                    </select>
+                </div>
+                <div class="col-xs-4 text-left">
+                    <button class="btn btn-primary"
+                            id="team1Player2CharacterSkinPickerToggle"
+                            type="button"
+                            data-popover-active="false"
+                            data-toggle="characterSkinPopover"
+                            data-title="Team 1 Player 2 Character skin"
+                            data-template="<div class='popover characterSkinPopover team1Player2CharacterSkinPicker' role='tooltip'><div class='arrow' style='left: 50%;'></div><h3 class='popover-title'></h3><div class='popover-content'></div></div>"
+                            data-skin-picker-selector=".team1Player2CharacterSkinPicker"
+                            data-character-dropdown-selector="select[id='team1Player2Character']"
+                            data-skin-picker-toggle-selector="button[id='team1Player2CharacterSkinPickerToggle']">
+                        <span class="glyphicon glyphicon-picture"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-3 text-center">
+            <div class="row">
+                <div class="col-xs-8 text-center">
+                    <select class="form-control" name="Team2.Players[0].Character" id="team2Player1Character" data-selector="#team2Player1Character" data-side="2" data-opposite-id="#team1Player1Character" data-default="" data-skin-picker-toggle-selector="button[id='team2Player1CharacterSkinPickerToggle']">
+                        <option value="" selected disabled hidden>Choose character</option>
+                        @Html.Raw(characterOptionsStringBuilder.ToString())
+                    </select>
+                </div>
+                <div class="col-xs-4 text-left">
+                    <button class="btn btn-primary"
+                            id="team2Player1CharacterSkinPickerToggle"
+                            type="button"
+                            data-popover-active="false"
+                            data-toggle="characterSkinPopover"
+                            data-title="Team 2 Player 1 Character skin"
+                            data-template="<div class='popover characterSkinPopover team2Player1Character' role='tooltip'><div class='arrow' style='left: 50%;'></div><h3 class='popover-title'></h3><div class='popover-content'></div></div>"
+                            data-skin-picker-selector=".team2Player1Character"
+                            data-character-dropdown-selector="select[id='team2Player1Character']"
+                            data-skin-picker-toggle-selector="button[id='team2Player1CharacterSkinPickerToggle']">
+                        <span class="glyphicon glyphicon-picture"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-3 text-center">
+            <div class="row">
+                <div class="col-xs-8 text-center">
+                    <select class="form-control" name="Team2.Players[1].Character" id="team2Player2Character" data-selector="#team2Player2Character" data-side="2" data-opposite-id="#team1Player2Character" data-default="" data-skin-picker-toggle-selector="button[id='team2Player2CharacterSkinPickerToggle']">
+                        <option value="" selected disabled hidden>Choose character</option>
+                        @Html.Raw(characterOptionsStringBuilder.ToString())
+                    </select>
+                </div>
+                <div class="col-xs-4 text-left">
+                    <button class="btn btn-primary"
+                            id="team2Player2CharacterSkinPickerToggle"
+                            type="button"
+                            data-popover-active="false"
+                            data-toggle="characterSkinPopover"
+                            data-title="Team 2 Player 2 Character skin"
+                            data-template="<div class='popover characterSkinPopover team2Player2Character' role='tooltip'><div class='arrow' style='left: 50%;'></div><h3 class='popover-title'></h3><div class='popover-content'></div></div>"
+                            data-skin-picker-selector=".team2Player2Character"
+                            data-character-dropdown-selector="select[id='team2Player2Character']"
+                            data-skin-picker-toggle-selector="button[id='team2Player2CharacterSkinPickerToggle']">
+                        <span class="glyphicon glyphicon-picture"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*<div class="row">
+        <div class="col-xs-3 text-center">
             <select class="form-control" name="Team1.Players[0].Character" id="team1Player1Character" data-selector="#team1Player1Character" data-side="1" data-opposite-id="#team2Player1Character" data-default="">
                 <option value="" selected disabled hidden>Choose character</option>
                 @Html.Raw(characterOptionsStringBuilder.ToString())
             </select>
         </div>
         <div class="col-xs-3 text-center">
-            <label>Character</label>
             <select class="form-control" name="Team1.Players[1].Character" id="team1Player2Character" data-selector="#team1Player2Character" data-side="1" data-opposite-id="#team2Player2Character" data-default="">
                 <option value="" selected disabled hidden>Choose character</option>
                 @Html.Raw(characterOptionsStringBuilder.ToString())
             </select>
         </div>
         <div class="col-xs-3 text-center">
-            <label>Character</label>
             <select class="form-control" name="Team2.Players[0].Character" id="team2Player1Character" data-selector="#team2Player1Character" data-side="2" data-opposite-id="#team1Player1Character" data-default="">
                 <option value="" selected disabled hidden>Choose character</option>
                 @Html.Raw(characterOptionsStringBuilder.ToString())
             </select>
         </div>
         <div class="col-xs-3 text-center">
-            <label>Character</label>
             <select class="form-control" name="Team2.Players[1].Character" id="team2Player2Character" data-selector="#team2Player2Character" data-side="2" data-opposite-id="#team1Player2Character" data-default="">
                 <option value="" selected disabled hidden>Choose character</option>
                 @Html.Raw(characterOptionsStringBuilder.ToString())
             </select>
         </div>
-    </div>
+    </div>*@
+
     <div class="row">
         <div class="col-xs-3 text-center">
             <label>Port</label>
