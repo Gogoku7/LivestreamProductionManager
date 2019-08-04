@@ -7,14 +7,14 @@
     <div class="half-horizontal-width" style="float: left">
         <div class="panel panel-info">
             <div class="panel-heading row">
-                <div class="col-md-4">
+                <div class="col-xs-4">
                     <button class="btn btn-danger panelButton" id="clearWebSocketClientMonitorButton"><span class="glyphicon glyphicon-remove"></span> Clear</button>
                 </div>
-                <div class="col-md-4 text-center">
+                <div class="col-xs-4 text-center">
                     <text class="panel-title">WebSocket clients monitor</text>
                 </div>
 
-                <div class="col-md-4 text-right">
+                <div class="col-xs-4 text-right">
                     <button class="btn btn-success panelButton toggleMonitorButton" id="toggleWebSocketClientMonitorButton" data-monitor-id="#webSocketClientMonitorTableBody"><span class="glyphicon glyphicon-ok"></span> Enabled</button>
                 </div>
             </div>
@@ -37,14 +37,14 @@
     <div class="half-horizontal-width" style="float: left">
         <div class="panel panel-info">
             <div class="panel-heading row">
-                <div class="col-md-5">
+                <div class="col-xs-5">
                     <button class="btn btn-danger panelButton" id="clearErrorMonitorButton"><span class="glyphicon glyphicon-remove"></span> Clear</button>
                 </div>
-                <div class="col-md-2 text-center">
+                <div class="col-xs-2 text-center">
                     <text class="panel-title">Error monitor</text>
                 </div>
 
-                <div class="col-md-5 text-right">
+                <div class="col-xs-5 text-right">
                     <button class="btn btn-success panelButton toggleMonitorButton" id="toggleErrorMonitorButton" data-monitor-id="#errorMonitor"><span class="glyphicon glyphicon-ok"></span> Enabled</button>
                 </div>
             </div>
@@ -60,42 +60,42 @@
     <div class="full-horizontal-width">
         <div class="panel panel-warning">
             <div class="panel-heading row">
-                <div class="col-md-12 text-center">
+                <div class="col-xs-12 text-center">
                     <text class="panel-title">Manage tournament</text>
                 </div>
             </div>
             <div class="panel-body" id="manageTournament">
                 <div class="row" id="manageTournamentValues">
-                    <div class="col-md-3 form-group">
+                    <div class="col-xs-3 form-group">
                         <label>Tournament</label>
                         <input type="text" class="form-control" id="tournament" />
                     </div>
-                    <div class="col-md-3 form-group">
+                    <div class="col-xs-3 form-group">
                         <label>Round</label>
                         <input type="text" class="form-control" id="round" />
                     </div>
-                    <div class="col-md-3 form-group">
+                    <div class="col-xs-3 form-group">
                         <label>Best of</label>
                         <input type="text" class="form-control" id="bestOf" />
                     </div>
-                    <div class="col-md-3 form-group">
+                    <div class="col-xs-3 form-group">
                         <label>Extra</label>
                         <input type="text" class="form-control" id="extra" />
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-3 form-group">
+                    <div class="col-xs-3 form-group">
                         <label>Series</label>
                         <select class="form-control" id="Series"></select>
                     </div>
 
-                    <div class="col-md-3 form-group">
+                    <div class="col-xs-3 form-group">
                         <label>Game</label>
                         <select class="form-control" id="Game"></select>
                     </div>
 
-                    <div class="col-md-3 form-group">
+                    <div class="col-xs-3 form-group">
                         <label>Format</label>
                         <select class="form-control" id="Format"></select>
                     </div>
@@ -110,15 +110,15 @@
     <div class="full-horizontal-width">
         <div class="panel panel-primary">
             <div class="panel-heading row">
-                <div class="col-md-5">
+                <div class="col-xs-5">
                     <button class="btn btn-success panelButton submitButton" id="submitCompetitorsButton" data-form-id="#manageCompetitorsForm"><span class="glyphicon glyphicon-arrow-up"></span> Update</button>
                 </div>
 
-                <div class="col-md-2 text-center">
+                <div class="col-xs-2 text-center">
                     <text class="panel-title">Manage competitors</text>
                 </div>
 
-                <div class="col-md-5 text-right">
+                <div class="col-xs-5 text-right">
                     <button class="btn btn-danger panelButton showReadMeModalButton" id="showCompetitorsReadMeModalButton" data-form-id="#manageCompetitorsForm"><span class="glyphicon glyphicon-question-sign"></span> Info</button>
                     <button class="btn btn-default panelButton" id="setToDefaultValuesButton"><span class="glyphicon glyphicon-erase"></span> Defaults</button>
                     <button class="btn btn-warning panelButton" id="getLatestCompetitorsValuesButton"><span class="glyphicon glyphicon-download-alt"></span> Get latest</button>
@@ -139,14 +139,14 @@
     <div class="one-third-horizontal-width" style="float: left">
         <div class="panel panel-primary">
             <div class="panel-heading row">
-                <div class="col-md-3">
+                <div class="col-xs-3">
                     <button class="btn btn-danger panelButton clearWebSocketDataMonitorButton" id="clearCompetitorsWebSocketDataMonitorButton" data-monitor-id="#competitorsWebSocketDataMonitor"><span class="glyphicon glyphicon-remove"></span> Clear</button>
                 </div>
-                <div class="col-md-6 text-center">
+                <div class="col-xs-6 text-center">
                     <text class="panel-title">Competitors data monitor</text>
                 </div>
 
-                <div class="col-md-3 text-right">
+                <div class="col-xs-3 text-right">
                     <button class="btn btn-success panelButton toggleMonitorButton toggleWebSocketDataMonitorButton" id="toggleCompetitorsWebSocketDataMonitorButton" data-monitor-id="#competitorsWebSocketDataMonitor"><span class="glyphicon glyphicon-ok"></span> Enabled</button>
                 </div>                    
             </div>
@@ -164,14 +164,14 @@
     <div class="one-third-horizontal-width" style="float: left">
         <div class="panel panel-primary">
             <div class="panel-heading row">
-                <div class="col-md-3">
+                <div class="col-xs-3">
                     <button class="btn btn-danger panelButton clearCssMonitorButton" id="clearCompetitorsCssMonitorButton" data-monitor-id="#competitorsCssMonitor"><span class="glyphicon glyphicon-remove"></span> Clear</button>
                 </div>
-                <div class="col-md-6 text-center">
+                <div class="col-xs-6 text-center">
                     <text class="panel-title">Competitors CSS monitor</text>
                 </div>
 
-                <div class="col-md-3 text-right">
+                <div class="col-xs-3 text-right">
                     <button class="btn btn-success panelButton toggleMonitorButton toggleCssMonitorButton" id="toggleCompetitorsCssMonitorButton" data-monitor-id="#competitorsCssMonitor"><span class="glyphicon glyphicon-ok"></span> Enabled</button>
                 </div>
             </div>
@@ -189,14 +189,14 @@
     <div class="one-third-horizontal-width" style="float: left">
         <div class="panel panel-primary">
             <div class="panel-heading row">
-                <div class="col-md-3">
+                <div class="col-xs-3">
                     <button class="btn btn-danger panelButton clearJsonMonitorButton" id="clearCompetitorsJsonMonitorButton" data-monitor-id="#competitorsJsonMonitor"><span class="glyphicon glyphicon-remove"></span> Clear</button>
                 </div>
-                <div class="col-md-6 text-center">
+                <div class="col-xs-6 text-center">
                     <text class="panel-title">Competitors JSON monitor</text>
                 </div>
 
-                <div class="col-md-3 text-right">
+                <div class="col-xs-3 text-right">
                     <button class="btn btn-success panelButton toggleMonitorButton toggleJsonMonitorButton" id="toggleCompetitorsJsonMonitorButton" data-monitor-id="#competitorsJsonMonitor"><span class="glyphicon glyphicon-ok"></span> Enabled</button>
                 </div>
             </div>
@@ -216,14 +216,14 @@
     <div class="full-horizontal-width">
         <div class="panel panel-primary">
             <div class="panel-heading row">
-                <div class="col-md-5">
+                <div class="col-xs-5">
                     <button class="btn btn-danger panelButton forceResizeButton" id="forceCompetitorsResizeButton"><span class="glyphicon glyphicon-resize-full"></span> Force resize</button>
                 </div>
-                <div class="col-md-2 text-center">
+                <div class="col-xs-2 text-center">
                     <text class="panel-title">Preview Competitors overlay</text>
                 </div>
 
-                <div class="col-md-5 text-right">
+                <div class="col-xs-5 text-right">
                     <button class="btn btn-success panelButton togglePreviewOverlayButton" id="toggleCompetitorsPreviewOverlayButton" data-preview-id="#competitorsPreviewOverlayIframe" data-panel-id="#competitorsPreviewOverlay" data-overlay-type="Game"><span class="glyphicon glyphicon-ok"></span> Enabled</button>
                 </div>
             </div>
@@ -239,14 +239,14 @@
     <div class="full-horizontal-width">
         <div class="panel panel-success">
             <div class="panel-heading row">
-                <div class="col-md-5">
+                <div class="col-xs-5">
                     <button class="btn btn-success panelButton submitButton" id="submitCommentatorsButton" data-form-id="#manageCommentatorsForm"><span class="glyphicon glyphicon-arrow-up"></span> Update</button>
                 </div>
-                <div class="col-md-2 text-center">
+                <div class="col-xs-2 text-center">
                     <text class="panel-title">Manage commentators</text>
                 </div>
 
-                <div class="col-md-5 text-right">
+                <div class="col-xs-5 text-right">
                     <button class="btn btn-danger panelButton showReadMeModalButton" id="showCommentatorsReadMeModalButton" data-form-id="#manageCommentatorsForm"><span class="glyphicon glyphicon-question-sign"></span> Info</button>
                     <button class="btn btn-info panelButton" id="addCommentatorButton"><span style="font-weight: bold;" class="glypicon glyphicon-plus"></span> Add</button>
                 </div>
@@ -266,13 +266,13 @@
 
                     <input type="hidden" name="PathToCommentators" />
                     <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-xs-5">
                             <label>Name</label>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-xs-5">
                             <label>Twitter</label>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-xs-2">
                             <label>Actions</label>
                         </div>
                     </div>
@@ -290,14 +290,14 @@
     <div class="one-third-horizontal-width" style="float: left">
         <div class="panel panel-success">
             <div class="panel-heading row">
-                <div class="col-md-3">
+                <div class="col-xs-3">
                     <button class="btn btn-danger panelButton clearWebSocketDataMonitorButton" id="clearCommentatorsWebSocketDataMonitorButton" data-monitor-id="#commentatorsWebSocketDataMonitor"><span class="glyphicon glyphicon-remove"></span> Clear</button>
                 </div>
-                <div class="col-md-6 text-center">
+                <div class="col-xs-6 text-center">
                     <text class="panel-title">Commentators data monitor</text>
                 </div>
 
-                <div class="col-md-3 text-right">
+                <div class="col-xs-3 text-right">
                     <button class="btn btn-success panelButton toggleMonitorButton toggleWebSocketDataMonitorButton" id="toggleCommentatorsWebSocketDataMonitorButton" data-monitor-id="#commentatorsWebSocketDataMonitor"><span class="glyphicon glyphicon-ok"></span> Enabled</button>
                 </div>
             </div>
@@ -315,14 +315,14 @@
     <div class="one-third-horizontal-width" style="float: left">
         <div class="panel panel-success">
             <div class="panel-heading row">
-                <div class="col-md-3">
+                <div class="col-xs-3">
                     <button class="btn btn-danger panelButton clearCssMonitorButton" id="clearCommentatorsCssMonitorButton" data-monitor-id="#commentatorsCssMonitor"><span class="glyphicon glyphicon-remove"></span> Clear</button>
                 </div>
-                <div class="col-md-6 text-center">
+                <div class="col-xs-6 text-center">
                     <text class="panel-title">Commentators CSS monitor</text>
                 </div>
 
-                <div class="col-md-3 text-right">
+                <div class="col-xs-3 text-right">
                     <button class="btn btn-success panelButton toggleMonitorButton toggleCssMonitorButton" id="toggleCommentatorsCssMonitorButton" data-monitor-id="#commentatorsCssMonitor"><span class="glyphicon glyphicon-ok"></span> Enabled</button>
                 </div>
             </div>
@@ -340,14 +340,14 @@
     <div class="one-third-horizontal-width" style="float: left">
         <div class="panel panel-success">
             <div class="panel-heading row">
-                <div class="col-md-3">
+                <div class="col-xs-3">
                     <button class="btn btn-danger panelButton clearJsonMonitorButton" id="clearCommentatorsJsonMonitorButton" data-monitor-id="#commentatorsJsonMonitor"><span class="glyphicon glyphicon-remove"></span> Clear</button>
                 </div>
-                <div class="col-md-6 text-center">
+                <div class="col-xs-6 text-center">
                     <text class="panel-title">Commentators JSON monitor</text>
                 </div>
 
-                <div class="col-md-3 text-right">
+                <div class="col-xs-3 text-right">
                     <button class="btn btn-success panelButton toggleMonitorButton toggleJsonMonitorButton" id="toggleCommentatorsJsonMonitorButton" data-monitor-id="#commentatorsJsonMonitor"><span class="glyphicon glyphicon-ok"></span> Enabled</button>
                 </div>
             </div>
@@ -367,14 +367,14 @@
     <div class="full-horizontal-width">
         <div class="panel panel-success">
             <div class="panel-heading row">
-                <div class="col-md-5">
+                <div class="col-xs-5">
                     <button class="btn btn-danger panelButton forceResizeButton" id="forceCommentatorsResizeButton"><span class="glyphicon glyphicon-resize-full"></span> Force resize</button>
                 </div>
-                <div class="col-md-2 text-center">
+                <div class="col-xs-2 text-center">
                     <text class="panel-title">Preview Commentators overlay</text>
                 </div>
 
-                <div class="col-md-5 text-right">
+                <div class="col-xs-5 text-right">
                     <button class="btn btn-success panelButton togglePreviewOverlayButton" id="toggleCommentatorsPreviewOverlayButton" data-preview-id="#commentatorsPreviewOverlayIframe" data-panel-id="#commentatorsPreviewOverlay" data-overlay-type="Commentary"><span class="glyphicon glyphicon-ok"></span> Enabled</button>
                 </div>
             </div>
