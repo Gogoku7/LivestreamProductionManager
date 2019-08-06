@@ -39,7 +39,7 @@ function initWebSocketAndFitty(fittyElements, overlayType) {
 
             if (jsonData.type == "queu") {
                 $.each(jsonData.data, function (i) {
-                    if ($(jsonData.data[i]).is("[fadesIn]")) {
+                    if ($(jsonData.data[i]).hasClass("specialFade")) {
                         $(jsonData.data[i]).addClass("changing-visbility");
                     } else {
                         $(jsonData.data[i]).addClass("changing");
@@ -68,7 +68,7 @@ function initWebSocketAndFitty(fittyElements, overlayType) {
                             });
 
                             $.each(jsonData.data, function (i) {
-                                if ($(jsonData.data[i]).is("[fadesIn]")) {
+                                if ($(jsonData.data[i]).hasClass("specialFade")) {
                                     $(jsonData.data[i]).removeClass("changing-visbility").addClass("changed-visbility");
                                 } else {
                                     $(jsonData.data[i]).removeClass("changing").addClass("changed");
@@ -79,8 +79,7 @@ function initWebSocketAndFitty(fittyElements, overlayType) {
 
                     setTimeout(function () {
                         $.each(jsonData.data, function (i) {
-
-                            if ($(jsonData.data[i]).is("[fadesIn]")) {
+                            if ($(jsonData.data[i]).hasClass("specialFade")) {
                                 $(jsonData.data[i]).removeClass("changing-visbility").addClass("changed-visbility");
                             } else {
                                 $(jsonData.data[i]).removeClass("changed");
