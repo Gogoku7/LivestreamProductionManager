@@ -48,6 +48,7 @@ textarea {
 }
 
 /* Animations to fade the snackbar in and out */
+
 @-webkit-keyframes fadein {
     from {
         bottom: 0;
@@ -271,6 +272,15 @@ div.panel {
 
 /* Skin Picker END */
 
+
+
+/* Settings Modal */
+
+#settingsModalBody > .row:not(:first-child) {
+    margin-top: 6px;
+}
+
+/* Settings Modal END */
 
 
 /* Pulsate */

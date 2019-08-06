@@ -177,6 +177,7 @@
     <Compile Include="Controllers\CommentatorsController.cs" />
     <Compile Include="Controllers\FightingGamesController.cs" />
     <Compile Include="Controllers\QueuController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Implementations\Commentators\CommentatorsCssFileWriter.cs" />
     <Compile Include="Implementations\Commentators\CommentatorsCssOverlayManager.cs" />
     <Compile Include="Implementations\Commentators\CommentatorsCssReplacer.cs" />
@@ -184,6 +185,9 @@
     <Compile Include="Implementations\Commentators\CommentatorsJsonOverlayManager.cs" />
     <Compile Include="Implementations\Commentators\CommentatorsJsonReplacer.cs" />
     <Compile Include="Implementations\FileReader.cs" />
+    <Compile Include="Implementations\Settings\SettingsFileManager.cs" />
+    <Compile Include="Implementations\Settings\SettingsFileWriter.cs" />
+    <Compile Include="Implementations\Settings\SettingsReader.cs" />
     <Compile Include="Implementations\SuperSmashBros\SmashJsonReplacer.cs" />
     <Compile Include="Implementations\SuperSmashBros\SmashJsonOverlayManager.cs" />
     <Compile Include="Implementations\SuperSmashBros\SmashJsonFileWriter.cs" />
@@ -191,6 +195,9 @@
     <Compile Include="Interfaces\Commentators\ICommentatorsOverlayManager.cs" />
     <Compile Include="Interfaces\Commentators\ICommentatorsValuesReplacer.cs" />
     <Compile Include="Interfaces\IFileReader.cs" />
+    <Compile Include="Interfaces\Settings\ISettingsFileManager.cs" />
+    <Compile Include="Interfaces\Settings\ISettingsFileWriter.cs" />
+    <Compile Include="Interfaces\Settings\ISettingsReader.cs" />
     <Compile Include="Interfaces\SuperSmashBros\ISmashFileWriter.cs" />
     <Compile Include="Interfaces\SuperSmashBros\ISmashOverlayManager.cs" />
     <Compile Include="Interfaces\SuperSmashBros\ISmashValuesReplacer.cs" />
@@ -212,6 +219,9 @@
     <Compile Include="ViewModels\FightingGames\SuperSmashBros\SquadPlayerViewModel.cs" />
     <Compile Include="ViewModels\FightingGames\SuperSmashBros\SquadStrikeViewModel.cs" />
     <Compile Include="ViewModels\FightingGames\SuperSmashBros\SquadViewModel.cs" />
+    <Compile Include="ViewModels\Settings\Option.cs" />
+    <Compile Include="ViewModels\Settings\Setting.cs" />
+    <Compile Include="ViewModels\Settings\SettingsViewModel.cs" />
     <Compile Include="WebSocket\QueuSocketHandler.cs" />
     <Compile Include="Controllers\SuperSmashBrosController.cs" />
     <Compile Include="Global.asax.cs">
@@ -3703,6 +3713,7 @@
     <Content Include="FightingGames\SuperSmashBros\WiiU\CharacterIcons\SkinsConfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="FightingGames\GeneralSettings.json" />
     <None Include="Properties\PublishProfiles\LivestreamProductionManager.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -3748,6 +3759,8 @@
     <Content Include="Views\Shared\_VideoModal.cshtml" />
     <Content Include="Views\Shared\_SkinPickerModal.cshtml" />
     <Content Include="Views\Shared\_SkinsPartialView.cshtml" />
+    <Content Include="Views\Shared\_SettingsModal.cshtml" />
+    <Content Include="Views\Shared\_GeneralSettingsPartialView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3807,6 +3820,7 @@
     <Folder Include="FightingGames\SuperSmashBros\WiiU\IronMan\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\WiiU\Singles\JSON\" />
     <Folder Include="Logging\" />
+    <Folder Include="Views\Settings\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">

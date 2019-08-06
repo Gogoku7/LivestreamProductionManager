@@ -1,40 +1,58 @@
 ﻿<!DOCTYPE html>
+
+@{ 
+    var settingsReader = new LivestreamProductionManager.Implementations.Settings.SettingsReader();
+    var defaultTheme = settingsReader.GetSettingValue(Url.Content("~/FightingGames/GeneralSettings.json"), "DefaultTheme");
+    var useSmoothTransition = bool.Parse(settingsReader.GetSettingValue(Url.Content("~/FightingGames/GeneralSettings.json"), "UseSmoothTransition"));
+}
+
 <html>
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>@ViewBag.Title - Livestream Production Manager</title>
-
-        <link id="bootstrap" href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet">
-        <link id="highlight" href="@Url.Content("~/Content/highlight.css")" rel="stylesheet">
+        @if (defaultTheme == "Default")
+        {
+            <link id="bootstrap" href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet">
+            <link id="highlight" href="@Url.Content("~/Content/highlight.css")" rel="stylesheet">
+        }
+        else if (defaultTheme == "Custom Darkly")
+        {
+            <link id="bootstrap" href="@Url.Content("~/Content/bootstrap.dark.css")" rel="stylesheet">
+            <link id="highlight" href="@Url.Content("~/Content/highlight.dark.css")" rel="stylesheet">
+        }
         <link href="@Url.Content("~/Content/site.css")" rel="stylesheet">
-        <style>
-            .changing
-            {
-                opacity: 0 !important;
-                transition-duration: 1s;
-                transition-property: opacity;
-            }
 
-            .bodyToDefault
-            {
-                background-color: #ffffff;
-                transition-duration: 1s;
-                transition-property: background-color;
-            }
+        @if (useSmoothTransition)
+        {
+            <style>
+                .changing
+                {
+                    opacity: 0 !important;
+                    transition-duration: 1s;
+                    transition-property: opacity;
+                }
 
-            .bodyToCustomDarkly {
-                background-color: #000000;
-                transition-duration: 1s;
-                transition-property: background-color;
-            }
+                .bodyToDefault
+                {
+                    background-color: #ffffff;
+                    transition-duration: 1s;
+                    transition-property: background-color;
+                }
 
-            .changed
-            {
-                transition-duration: 1s;
-                transition-property: opacity;
-            }
-        </style>
+                .bodyToCustomDarkly {
+                    background-color: #000000;
+                    transition-duration: 1s;
+                    transition-property: background-color;
+                }
+
+                .changed
+                {
+                    transition-duration: 1s;
+                    transition-property: opacity;
+                }
+            </style>
+        }
 
         @Scripts.Render("~/bundles/modernizr")
     </head>
@@ -58,6 +76,16 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                Settings
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="cursorPointer" onclick="showGeneralSettingsModal('General Settings', '@Url.Content("~/FightingGames/GeneralSettings.json")')" data-target="#">General</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 Videos
                                 <span class="caret"></span>
                             </a>
@@ -72,8 +100,8 @@
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="active"><a class="cursorPointer" onclick="switchTheme(this, '@Url.Content("~/Content/bootstrap.css")', '@Url.Content("~/Content/highlight.css")', 'bodyToDefault')" data-target="#">Default</a></li>
-                                <li><a class="cursorPointer" onclick="switchTheme(this, '@Url.Content("~/Content/bootstrap.dark.css")', '@Url.Content("~/Content/highlight.dark.css")', 'bodyToCustomDarkly')" data-target="#">Custom Darkly</a></li>
+                                <li  @(defaultTheme == "Default" ? "class=active" : "")><a class="cursorPointer" onclick="switchTheme(this, '@Url.Content("~/Content/bootstrap.css")', '@Url.Content("~/Content/highlight.css")', 'bodyToDefault')" data-target="#">Default</a></li>
+                                <li  @(defaultTheme == "Custom Darkly" ? "class=active" : "")><a class="cursorPointer" onclick="switchTheme(this, '@Url.Content("~/Content/bootstrap.dark.css")', '@Url.Content("~/Content/highlight.dark.css")', 'bodyToCustomDarkly')" data-target="#">Custom Darkly</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -92,7 +120,7 @@
                         <text class="text-center">Join the Livestream Production Manager Discord server <a href="https://discord.gg/y83D8Yp" target="_blank">here</a></text>
                     </div>
                     <div class="col-xs-4 text-right">
-                        <text class="pull-right">Version 0.4 - see <a href="@Url.Action("Version", "About")">version information</a></text>
+                        <text class="pull-right">Version 0.5 - see <a href="@Url.Action("Version", "About")">version information</a></text>
                     </div>
                 </div>
             </footer>
@@ -109,6 +137,7 @@
         <div class="snackbar" id="overlayDisconnectedSnackbar"></div>
         <div class="snackbar" id="forceResizeSnackbar"></div>
 
+        @Html.Partial("_SettingsModal")
         @Html.Partial("_SkinPickerModal")
         @Html.Partial("_ReadMeModal")
         @Html.Partial("_VideoModal")
@@ -123,6 +152,33 @@
 
 
 <script type="text/javascript">
+    function showGeneralSettingsModal(modalTitle, pathToSettingsFile) {
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("GetGeneralSettingsPartialView", "Settings")",
+            data: { "pathToSettingsFile": pathToSettingsFile },
+            dataType: "html",
+            success: function (data) {
+                $("#settingsModalLabel").text(modalTitle);
+                $("#settingsModalBody").html(data);
+                $("#settingsModal").modal("show");
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+
+            }
+        });
+    }
+
+    $("body").on("click", "button[data-settings-form]", function () {
+        try {
+            $($(this).data("settings-form")).submit();
+        } catch (ex) {
+            ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+            console.log(ex);
+            UpdateErrorMonitor(ex.message);
+        }
+    });
+
     function showVideoModal(modalTitle, videoUrl) {
         $("#videoModalLabel").html(modalTitle);
         $("#videoModalBody").html("<iframe width='560' height='315' src='" + videoUrl + "' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>");
@@ -131,19 +187,9 @@
 
     function switchTheme(element, bootstrapFileUrl, highlightFileUrl, transitionClass) {
         if (!$(element).parent().hasClass("active")) {
-            @if (System.Diagnostics.Debugger.IsAttached)
+            @if (useSmoothTransition)
             {
                 <text>
-                    $("#highlight").attr("href", highlightFileUrl);
-                    $("#bootstrap").attr("href", bootstrapFileUrl);
-                    $(".dropdown-menu > li.active").removeClass("active");
-                    $(element).parent().addClass("active");
-                </text>
-            }
-            else
-            {
-                <text>
-                
                     $("body").addClass(transitionClass);
                     $(".body-content").addClass("changing");
                     $(".navbar").addClass("changing");
@@ -165,7 +211,15 @@
                             }, 1000);
                         }, 1000);
                     }, 1000);
-                
+                </text>
+            }
+            else
+            {
+                <text>
+                    $("#highlight").attr("href", highlightFileUrl);
+                    $("#bootstrap").attr("href", bootstrapFileUrl);
+                    $(".dropdown-menu > li.active").removeClass("active");
+                    $(element).parent().addClass("active");
                 </text>
             }
         }

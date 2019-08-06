@@ -1,6 +1,7 @@
 ﻿using LivestreamProductionManager.Models.FightingGames.Skins;
 using LivestreamProductionManager.ViewModels.FightingGames;
 using LivestreamProductionManager.ViewModels.FightingGames.SuperSmashBros;
+using LivestreamProductionManager.ViewModels.Settings;
 using System.Collections.Generic;
 
 namespace LivestreamProductionManager.Interfaces
@@ -13,5 +14,6 @@ namespace LivestreamProductionManager.Interfaces
         List<CharacterViewModel> GetCharactersFromConfig(string pathToGame);
         List<PortViewModel> GetPortsFromConfig(string pathToGame);
         SkinsConfig GetSkins(string pathToGame);
+        List<Setting> GetSettings(string pathToSettingsFile);
     }
 }

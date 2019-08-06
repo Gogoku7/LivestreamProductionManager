@@ -17,7 +17,7 @@
 },
 {
   "Selector": "#player1Character",
-  "Value": "../../CharacterIcons/random.png"
+  "Value": "../../CharacterIcons/fox.png"
 },
 {
   "Selector": "#player1Port",

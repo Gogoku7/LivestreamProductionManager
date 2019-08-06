@@ -1,6 +1,7 @@
 ﻿using LivestreamProductionManager.Implementations;
 using LivestreamProductionManager.Interfaces;
 using LivestreamProductionManager.ViewModels.FightingGames;
+using LivestreamProductionManager.ViewModels.Settings;
 using Newtonsoft.Json;
 using Serilog;
 using System;

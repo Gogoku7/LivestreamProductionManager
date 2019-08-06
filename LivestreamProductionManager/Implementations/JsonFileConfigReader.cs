@@ -2,6 +2,7 @@
 using LivestreamProductionManager.Models.FightingGames.Skins;
 using LivestreamProductionManager.ViewModels.FightingGames;
 using LivestreamProductionManager.ViewModels.FightingGames.SuperSmashBros;
+using LivestreamProductionManager.ViewModels.Settings;
 using Newtonsoft.Json;
 using Serilog;
 using System;
@@ -100,6 +101,22 @@ namespace LivestreamProductionManager.Implementations
                 using (var streamReader = new StreamReader(HttpContext.Current.Server.MapPath(pathToGame + "CharacterIcons/SkinsConfig.json")))
                 {
                     return JsonConvert.DeserializeObject<SkinsConfig>(streamReader.ReadToEnd());
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+                throw;
+            }
+        }
+
+        public List<Setting> GetSettings(string pathToSettingsFile)
+        {
+            try
+            {
+                using (var streamReader = new StreamReader(HttpContext.Current.Server.MapPath(pathToSettingsFile)))
+                {
+                    return JsonConvert.DeserializeObject<List<Setting>>(streamReader.ReadToEnd());
                 }
             }
             catch (Exception ex)
