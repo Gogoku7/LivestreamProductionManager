@@ -318,4 +318,15 @@ div.panel {
     }
 }
 
-/* Pulsate */
+/* Pulsate END */
+
+
+/* Media queries */
+
+@media only screen and (min-width: 540px) and (max-width: 1080px) {
+    .panelButton > text {
+        display: none !important;
+    }
+}
+
+/* Media queries END */
