@@ -23,6 +23,7 @@
                     <thead>
                         <tr>
                             <th>#</th>
+                            <th>Type</th>
                             <th>Path</th>
                             <th>Status</th>
                         </tr>
@@ -430,7 +431,7 @@
                 // Update the client WebSocket monitor, add one to the clients connected count.
                 // Show a snackbar message.
                 websocket.onopen = function () {
-                    $("#webSocketClientMonitorTableBody").append("<tr><td>1</td><td>Livestream Production Manager</td><td>Connected</td></tr>");
+                    $("#webSocketClientMonitorTableBody").append("<tr><td>1</td><td>Fighting Games</td><td>Livestream Production Manager</td><td>Connected</td></tr>");
                     clientsConnectedCount++;
                     ShowSnackbar("#managerConnectedSnackbar", "Connected to WebSocket.");
                 };
@@ -469,11 +470,11 @@
                     }
                     else if (jsonData.type == "overlayConnected") {
                         UpdateWebSocketClientMonitor(jsonData);
-                        ShowSnackbar("#overlayConnectedSnackbar", `An overlay has connected to the WebSocket: ${ jsonData.data }`);
+                        ShowSnackbar("#overlayConnectedSnackbar", `An overlay of type ${ jsonData.overlayType } has connected to the WebSocket: ${ jsonData.data }`);
                     }
                     else if (jsonData.type == "overlayDisconnected") {
                         UpdateWebSocketClientMonitor(jsonData);
-                        ShowSnackbar("#overlayDisconnectedSnackbar", `An overlay has disconnected from the WebSocket: ${ jsonData.data }`);
+                        ShowSnackbar("#overlayDisconnectedSnackbar", `An overlay of type ${ jsonData.overlayType } has disconnected from the WebSocket: ${ jsonData.data }`);
                     }
                     else if (jsonData.type == "forceResize") {
                         ShowSnackbar("#forceResizeSnackbar", "A resize command has been broadcast");
@@ -617,20 +618,17 @@
                     success: function (data) {
                         $("#manageCompetitors").html(data);
 
-                        $("#competitorsOverlayPath").html(`${ selectedFormat.val() }GameOverlay.html`).attr("href", `${ selectedFormat.val() }GameOverlay.html`);
-
-                        $("#commentatorsOverlayPath").html(`${selectedGame.val()}Commentators/CommentaryOverlay.html`).attr("href", `${ selectedGame.val() }Commentators/CommentaryOverlay.html`);
-
-
                         $("#manageCommentatorsForm > [name='PathToCommentators']").val(selectedGame.data("path-to-commentators"));
 
                         $("[data-toggle='characterSkinPopover']").popover({ html: true, placement: "bottom", trigger: "manual" });
 
+                        $("#competitorsOverlayPath").html(`${ selectedFormat.val() }GameOverlay.html`).attr("href", `${ selectedFormat.val() }GameOverlay.html`);
                         competitorsOverlayPreviewSourceUrl = `http://${ baseUrl + selectedFormat.val() }GameOverlay.html`;
                         if ($("#competitorsPreviewOverlayIframe").data("enabled") == "True") {
                             $("#competitorsPreviewOverlayIframe").attr("src", competitorsOverlayPreviewSourceUrl);
                         }
 
+                        $("#commentatorsOverlayPath").html(`${selectedGame.val()}Commentators/CommentaryOverlay.html`).attr("href", `${ selectedGame.val() }Commentators/CommentaryOverlay.html`);
                         commentatorsOverlayPreviewSourceUrl = `http://${ baseUrl + selectedGame.val() }Commentators/CommentaryOverlay.html`;
                         if ($("#commentatorsPreviewOverlayIframe").data("enabled") == "True") {
                             $("#commentatorsPreviewOverlayIframe").attr("src", commentatorsOverlayPreviewSourceUrl);
@@ -1402,7 +1400,7 @@
 
                     if (jsonData.type == "overlayConnected") {
                         clientsConnectedCount++;
-                        $("#webSocketClientMonitorTableBody").append(`<tr data-full-path='${ jsonData.data }'><td>${ clientsConnectedCount }</td><td>${ splitPath[splitPath.length - 3] }/${ splitPath[splitPath.length - 2] }/${ splitPath[splitPath.length - 1] }</td><td>Connected</td></tr>`);  // , jsonData.overlayType
+                        $("#webSocketClientMonitorTableBody").append(`<tr data-full-path='${ jsonData.data }'><td>${ clientsConnectedCount }</td><td>${ jsonData.overlayType }</td><td>${ splitPath[splitPath.length - 3] }/${ splitPath[splitPath.length - 2] }/${ splitPath[splitPath.length - 1] }</td><td>Connected</td></tr>`);  // , jsonData.overlayType
                     }
                     else if (jsonData.type == "overlayDisconnected") {
                         if (clientsConnectedCount > 1) {
