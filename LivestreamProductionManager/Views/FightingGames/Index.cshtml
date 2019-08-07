@@ -128,7 +128,7 @@
             <div class="panel-body" id="manageCompetitors">
             </div>
             <div class="panel-footer">
-                <text>Overlay path: </text><text id="competitorsOverlayPath"></text>
+                <text>Overlay path: </text><a target="_blank" rel="noopener noreferrer" href="" id="competitorsOverlayPath"></a>
             </div>
         </div>
     </div>
@@ -279,7 +279,7 @@
                 </form>
             </div>
             <div class="panel-footer">
-                <text>Overlay path: </text><text id="commentatorsOverlayPath"></text>
+                <text>Overlay path: </text><a target="_blank" rel="noopener noreferrer" href="" id="commentatorsOverlayPath"></a>
             </div>
         </div>
     </div>
@@ -616,8 +616,12 @@
                     dataType: "html",
                     success: function (data) {
                         $("#manageCompetitors").html(data);
-                        $("#competitorsOverlayPath").html(`${ selectedFormat.val() }GameOverlay.html`);
-                        $("#commentatorsOverlayPath").html(`${ selectedGame.val() }Commentators/CommentatorsOverlay.html`);
+
+                        $("#competitorsOverlayPath").html(`${ selectedFormat.val() }GameOverlay.html`).attr("href", `${ selectedFormat.val() }GameOverlay.html`);
+
+                        $("#commentatorsOverlayPath").html(`${selectedGame.val()}Commentators/CommentaryOverlay.html`).attr("href", `${ selectedGame.val() }Commentators/CommentaryOverlay.html`);
+
+
                         $("#manageCommentatorsForm > [name='PathToCommentators']").val(selectedGame.data("path-to-commentators"));
 
                         $("[data-toggle='characterSkinPopover']").popover({ html: true, placement: "bottom", trigger: "manual" });

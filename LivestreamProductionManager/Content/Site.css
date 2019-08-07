@@ -323,7 +323,7 @@ div.panel {
 
 /* Media queries */
 
-@media only screen and (min-width: 540px) and (max-width: 1080px) {
+@media only screen and (min-width: 540px) and (max-width: 1214px) {
     .panelButton > text {
         display: none !important;
     }
