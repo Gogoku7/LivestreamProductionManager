@@ -3,11 +3,11 @@
 }
 
 #player1TwitterText:before {
-    content: "@gogoku7";
+    content: "";
 }
 
 #player1ScoreText:before {
-    content: "0";
+    content: "1";
 }
 
 #player1Character {
@@ -23,11 +23,11 @@
 }
 
 #player2TwitterText:before {
-    content: "@median4";
+    content: "";
 }
 
 #player2ScoreText:before {
-    content: "1";
+    content: "0";
 }
 
 #player2Character {

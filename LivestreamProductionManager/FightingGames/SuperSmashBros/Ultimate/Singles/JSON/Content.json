@@ -9,11 +9,11 @@
 },
 {
   "Selector": "#player1TwitterText",
-  "Value": "@gogoku7"
+  "Value": ""
 },
 {
   "Selector": "#player1ScoreText",
-  "Value": "0"
+  "Value": "1"
 },
 {
   "Selector": "#player1Character",
@@ -33,11 +33,11 @@
 },
 {
   "Selector": "#player2TwitterText",
-  "Value": "@median4"
+  "Value": ""
 },
 {
   "Selector": "#player2ScoreText",
-  "Value": "1"
+  "Value": "0"
 },
 {
   "Selector": "#player2Character",
