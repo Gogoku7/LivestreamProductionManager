@@ -276,7 +276,7 @@ div.panel {
 
 /* Settings Modal */
 
-#settingsModalBody > .row:not(:first-child) {
+#settingsModalBody .row:not(:first-child) {
     margin-top: 6px;
 }
 
@@ -323,7 +323,7 @@ div.panel {
 
 /* Media queries */
 
-@media only screen and (min-width: 540px) and (max-width: 1214px) {
+@media only screen and (min-width: 540px) and (max-width: 1217px) {
     .panelButton > text {
         display: none !important;
     }

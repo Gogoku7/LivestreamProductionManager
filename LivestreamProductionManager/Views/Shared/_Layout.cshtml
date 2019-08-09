@@ -153,20 +153,30 @@
 
 <script type="text/javascript">
     function showGeneralSettingsModal(modalTitle, pathToSettingsFile) {
-        $.ajax({
-            type: "POST",
-            url: "@Url.Action("GetGeneralSettingsPartialView", "Settings")",
-            data: { "pathToSettingsFile": pathToSettingsFile },
-            dataType: "html",
-            success: function (data) {
-                $("#settingsModalLabel").text(modalTitle);
-                $("#settingsModalBody").html(data);
-                $("#settingsModal").modal("show");
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-
-            }
-        });
+        try {
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("GetGeneralSettingsPartialView", "Settings")",
+                data: { "pathToSettingsFile": pathToSettingsFile },
+                dataType: "html",
+                success: function (data) {
+                    $("#settingsModalLabel").text(modalTitle);
+                    $("#settingsModalBody").html(data);
+                    $("#settingsModal").modal("show");
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting settings. See the log for details");
+                    UpdateErrorMonitor(jqXHR.responseText);
+                    console.log(jqXHR);
+                    console.log(`Text status: ${ textStatus }`);
+                    console.log(`Error thrown: ${ errorThrown }`);
+                }
+            });
+        } catch (ex) {
+            ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+            console.log(ex);
+            UpdateErrorMonitor(ex.message);
+        }
     }
 
     $("body").on("click", "button[data-settings-form]", function () {
@@ -180,48 +190,60 @@
     });
 
     function showVideoModal(modalTitle, videoUrl) {
-        $("#videoModalLabel").html(modalTitle);
-        $("#videoModalBody").html("<iframe width='560' height='315' src='" + videoUrl + "' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>");
-        $("#videoModal").modal("show");
+        try {
+            $("#videoModalLabel").html(modalTitle);
+            $("#videoModalBody").html("<iframe width='560' height='315' src='" + videoUrl + "' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>");
+            $("#videoModal").modal("show");
+        } catch (ex) {
+            ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+            console.log(ex);
+            UpdateErrorMonitor(ex.message);
+        }
     }
 
     function switchTheme(element, bootstrapFileUrl, highlightFileUrl, transitionClass) {
-        if (!$(element).parent().hasClass("active")) {
-            @if (useSmoothTransition)
-            {
-                <text>
-                    $("body").addClass(transitionClass);
-                    $(".body-content").addClass("changing");
-                    $(".navbar").addClass("changing");
-
-                    setTimeout(function () {
-                        $("#highlight").attr("href", highlightFileUrl);
-                        $("#bootstrap").attr("href", bootstrapFileUrl);
-
-                        $(".dropdown-menu > li.active").removeClass("active");
-                        $(element).parent().addClass("active");
+        try {
+            if (!$(element).parent().hasClass("active")) {
+                @if (useSmoothTransition)
+                {
+                    <text>
+                        $("body").addClass(transitionClass);
+                        $(".body-content").addClass("changing");
+                        $(".navbar").addClass("changing");
 
                         setTimeout(function () {
-                            $("body").removeClass(transitionClass);
-                            $(".body-content").removeClass("changing").addClass("changed");
-                            $(".navbar").removeClass("changing").addClass("changed");
+                            $("#highlight").attr("href", highlightFileUrl);
+                            $("#bootstrap").attr("href", bootstrapFileUrl);
+
+                            $(".dropdown-menu > li.active").removeClass("active");
+                            $(element).parent().addClass("active");
+
                             setTimeout(function () {
-                                $(".body-content").removeClass("changed");
-                                $(".navbar").removeClass("changed");
+                                $("body").removeClass(transitionClass);
+                                $(".body-content").removeClass("changing").addClass("changed");
+                                $(".navbar").removeClass("changing").addClass("changed");
+                                setTimeout(function () {
+                                    $(".body-content").removeClass("changed");
+                                    $(".navbar").removeClass("changed");
+                                }, 1000);
                             }, 1000);
                         }, 1000);
-                    }, 1000);
-                </text>
+                    </text>
+                }
+                else
+                {
+                    <text>
+                        $("#highlight").attr("href", highlightFileUrl);
+                        $("#bootstrap").attr("href", bootstrapFileUrl);
+                        $(".dropdown-menu > li.active").removeClass("active");
+                        $(element).parent().addClass("active");
+                    </text>
+                }
             }
-            else
-            {
-                <text>
-                    $("#highlight").attr("href", highlightFileUrl);
-                    $("#bootstrap").attr("href", bootstrapFileUrl);
-                    $(".dropdown-menu > li.active").removeClass("active");
-                    $(element).parent().addClass("active");
-                </text>
-            }
+        } catch (ex) {
+            ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+            console.log(ex);
+            UpdateErrorMonitor(ex.message);
         }
     }
 </script>

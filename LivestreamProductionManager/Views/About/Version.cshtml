@@ -10,7 +10,15 @@
     <p>Public update video: <a href="">Livestream Production Manager - Tournament Streaming (Open Source) - Public Update 5 (Version 0.5)</a></p>
     <ul>
         <li>Moved the Solution folder one layer closer to the root of the Repo, resulting in shorter file paths</li>
-        <li>The dropdown menu's in the navigation bar at the top of the page don't add a # to the url anymore</li>
+        <li>It is now possible to submit a "No character" and "No port" option when submitting updates without it becoming a default value</li>
+        <li>A Plus and Minus button have been added to quickly increase or decrease the score by one</li>
+        <li>Skin picker has been implemented for Super Smash Bros. Wii U and Ultimate, for the formats Singles and Doubles</li>
+        <li>General settings have been implemented</li>
+        <ul>
+            <li>Select which theme the application has by default</li>
+            <li>Select whether switching themes should use a smooth transition</li>
+        </ul>
+        <li>The dropdown menu's in the navigation bar at the top of the page don't add a '#' to the url in the url bar anymore</li>
         <li>Changed the ReadMe modal backend to use JSON files instead of HTML files, this is more flexible</li>
         <li>An Info button is now available for the Commentators, which shows a modal with technical information about the Commentators default overlays</li>
         <li>Livestream Production Manager has been optimized for deployment to and running in IIS</li>
@@ -28,50 +36,39 @@
         <ul>
             <li>Implemented the new "visibility" fade out and back in, in OverlayManager.js</li>
             <ul>
-                <li>This new "visibility" fade is automatically used if the updated html element has the attribute "fadesIn"</li>
+                <li>This new "visibility" fade is automatically used if the updated html element has the class "specialFade"</li>
             </ul>
         </ul>
-
-        <li>Improved the styling of the panel-headings in the Fighting Games Main View</li>
-        <lu>
-            <li>The panel-title text should now be perfectly centered</li>
-            <li>The glyphicon inside the panel buttons don't use inline-styling as much anymore.</li>
-        </lu>
-
-        DONE, but need to expand on these
-        <li>Implemented try/catches in the Fighting Games Main View, OverlayManager.js and Snackbar.js</li>
-        <li>Improved ajax.error handlers</li>
-        <li>Improved the styling of the monitors</li>
-        <li>Improved the error monitor to facilitate the improved error handling</li>
-        <li>Added two new snackbars to facilitate the improved error handling</li>
-        <li>Allow for no character and no port options</li>
-        <li>Plus and Minus button at score</li>
-        <li>Skin picker has been implemented for Super Smash Bros. Wii U and Ultimate, for the formats Singles and Doubles</li>
-        <li>The application now works better on smaller browser window sizes</li>
+        <li>Many styling improvements have been made to the Fighting Games Main View</li>
         <ul>
-            <li>The usage of classes col-md-(number) have been replaced with col-xs-(number)</li>
-            <li>Media queries are now used to make small corrections to styling on small resolution browser window sizes</li>
-            <li>
-                The following browser window sizes have been optimized for
-            </li>
+            <li>Improved the styling of the monitors</li>
+            <li>Improved the styling of the panel-headings in the Fighting Games Main View</li>
             <ul>
-                <li>2560 x 1440 (1440p)</li>
-                <li>1920 x 1080 (1080p)</li>
-                <li>1280 x 720 (720p), or one corner of a 1440p screen</li>
-                <li>960 x 540 (540p), or one corner of a 1080p screen</li>
+                <li>The panel-title text should now be perfectly centered</li>
+                <li>The glyphicon inside the panel buttons don't use inline-styling as much anymore.</li>
+            </ul>
+            <li>The application now works better on smaller browser window sizes</li>
+            <ul>
+                <li>The usage of classes col-md-(number) have been replaced with col-xs-(number)</li>
+                <li>Media queries are now used to make small corrections to styling on small resolution browser window sizes</li>
+                <li>
+                    The following browser window sizes have been optimized for
+                </li>
+                <ul>
+                    <li>2560 x 1440 (1440p)</li>
+                    <li>1920 x 1080 (1080p)</li>
+                    <li>1280 x 720 (720p), or one corner of a 1440p screen</li>
+                    <li>960 x 540 (540p), or one corner of a 1080p screen</li>
+                </ul>
             </ul>
         </ul>
-        <li>General settings:</li>
+        <li>Improved the error handling of the Fighting Games Main View</li>
         <ul>
-            <li>Default used theme</li>
-            <li>Use smooth transition</li>
+            <li>Implemented try/catches in the Fighting Games Main View, OverlayManager.js and Snackbar.js</li>
+            <li>Improved ajax.error handlers</li>
+            <li>Improved the error monitor to facilitate the improved error handling</li>
+            <li>Added two new snackbars to facilitate the improved error handling</li>
         </ul>
-
-        IN PROGRESS
-
-
-        TODO
-
     </ul>
 
     <hr />
