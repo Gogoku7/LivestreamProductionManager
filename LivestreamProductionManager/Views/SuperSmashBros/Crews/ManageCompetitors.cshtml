@@ -1,0 +1,157 @@
+﻿@using System.Text;
+@model LivestreamProductionManager.ViewModels.FightingGames.SuperSmashBros.SuperSmashBrosBaseViewModel
+
+@{
+    var characterOptionsStringBuilder = new StringBuilder();
+    foreach (var character in Model.Characters)
+    {
+        characterOptionsStringBuilder.AppendLine($"<option value='{character.CssValue}' data-name='{character.CharacterName}'>{character.CharacterName}</option>");
+    }
+
+    var portOptionsStringBuilder = new StringBuilder();
+    foreach (var port in Model.Ports)
+    {
+        portOptionsStringBuilder.AppendLine($"<option value='{port.CssValue}'>{port.PortName}</option>");
+    }
+
+    Layout = null;
+}
+
+<form action="@Url.Action("UpdateCrews", "SuperSmashBros")"
+        method="post"
+        id="manageCompetitorsForm"
+        data-overlay-type="Game"
+        data-websocket-data-monitor-id="#competitorsWebSocketDataMonitor"
+        data-css-monitor-url="@Url.Action("GetCssFileContent", "FightingGames")"
+        data-css-monitor-id="#competitorsCssMonitor"
+        data-json-monitor-url="@Url.Action("GetJsonFileContent", "FightingGames")"
+        data-json-monitor-id="#competitorsJsonMonitor"
+        data-overlay-preview-id="#competitorsPreviewOverlayIframe"
+        data-snackbar-id="#manageCompetitorsSnackbar">
+    <input type="hidden" name="Tournament" value="" data-selector="#tournamentText" />
+    <input type="hidden" name="Round" value="" data-selector="#roundText" />
+    <input type="hidden" name="BestOf" value="" data-selector="#bestOfText" />
+    <input type="hidden" name="Extra" value="" data-selector="#extraText" />
+    <input type="hidden" name="Series" value="@Model.Series" />
+    <input type="hidden" name="Game" value="@Model.Game" />
+    <input type="hidden" name="Format" value="@Model.Format" />
+    <input type="hidden" name="PathToSeries" value="@Model.PathToSeries" />
+    <input type="hidden" name="PathToGame" value="@Model.PathToGame" />
+    <input type="hidden" name="PathToFormat" value="@Model.PathToFormat" />
+
+    <div class="row">
+        <div class="col-xs-6 text-center">
+            <label>Crew 1</label>
+        </div>
+        <div class="col-xs-6  text-center">
+            <label>Crew 2</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 text-center">
+            <label>Name</label>
+            <input type="text" class="form-control" name="Crew1.Name" id="crew1Name" data-selector="#crew1NameText" data-side="1" data-opposite-id="#crew2Name" data-default="-" />
+        </div>
+        <div class="col-xs-6 text-center">
+            <label>Name</label>
+            <input type="text" class="form-control" name="Crew2.Name" id="crew2Name" data-selector="#crew2NameText" data-side="2" data-opposite-id="#crew1Name" data-default="-" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 text-center">
+            <label>Stocks left</label>
+        </div>
+        <div class="col-xs-6 text-center">
+            <label>Stocks left</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-2 text-right">
+                    <button class="btn btn-danger decrease" type="button" data-id="#crew1StocksLeft"><span style="font-weight: bold;" class="glypicon glyphicon-minus"></span></button>
+                </div>
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" name="Crew1.StocksLeft" id="crew1StocksLeft" data-selector="#crew1StocksLeftText" data-side="1" data-opposite-id="#crew2StocksLeft" data-default="0" value="0" />
+                </div>
+                <div class="col-xs-2">
+                    <button class="btn btn-primary increase" type="button" data-id="#crew1StocksLeft"><span style="font-weight: bold;" class="glypicon glyphicon-plus"></span></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-2 text-right">
+                    <button class="btn btn-danger decrease" type="button" data-id="#crew2StocksLeft"><span style="font-weight: bold;" class="glypicon glyphicon-minus"></span></button>
+                </div>
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" name="Crew2.StocksLeft" id="crew2StocksLeft" data-selector="#crew2StocksLeftText" data-side="2" data-opposite-id="#crew1StocksLeft" data-default="0" value="0" />
+                </div>
+                <div class="col-xs-2">
+                    <button class="btn btn-primary increase" type="button" data-id="#crew2StocksLeft"><span style="font-weight: bold;" class="glypicon glyphicon-plus"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 text-center">
+            <label>Character</label>
+            <select class="form-control" name="Crew1.Character" id="crew1Character" data-selector="#crew1Character" data-side="1" data-opposite-id="#crew2Character" data-default="">
+                <option value="" selected disabled hidden>Choose character</option>
+                @Html.Raw(characterOptionsStringBuilder.ToString())
+            </select>
+        </div>
+        <div class="col-xs-6 text-center">
+            <label>Character</label>
+            <select class="form-control" name="Crew2.Character" id="crew2Character" data-selector="#crew2Character" data-side="2" data-opposite-id="#crew1Character" data-default="">
+                <option value="" selected disabled hidden>Choose character</option>
+                @Html.Raw(characterOptionsStringBuilder.ToString())
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 text-center">
+            <label>Port</label>
+            <select class="form-control" name="Crew1.Port" id="crew1Port" data-selector="#crew1Port" data-side="1" data-opposite-id="#crew2Port" data-default="">
+                <option value="" selected disabled hidden>Choose port</option>
+                @Html.Raw(portOptionsStringBuilder.ToString())
+            </select>
+        </div>
+        <div class="col-xs-6 text-center">
+            <label>Port</label>
+            <select class="form-control" name="Crew2.Port" id="crew2Port" data-selector="#crew2Port" data-side="2" data-opposite-id="#crew1Port" data-default="">
+                <option value="" selected disabled hidden>Choose port</option>
+                @Html.Raw(portOptionsStringBuilder.ToString())
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <label>How many players?</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-5">
+
+        </div>
+        <div class="col-xs-2">
+            <input class="form-control" type="number" id="crewPlayersCount" min="1" max="99" />
+        </div>
+        <div class="col-xs-2">
+            <button class="btn btn-primary" type="button" id="getCrewPlayersButton"><span class="glyphicon glyphicon-arrow-down"></span> Update</button>
+        </div>
+        <div class="col-xs-3">
+
+        </div>
+    </div>
+
+    <div id="crewPlayersContainer">
+
+    </div>
+</form>

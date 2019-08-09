@@ -1,0 +1,22 @@
+[
+  {
+    "PortName": "No port",
+    "CssValue": ""
+  },
+  {
+    "PortName": "Port 1",
+    "CssValue": "../../PlayerPorts/PlayerPort1.png"
+  },
+  {
+    "PortName": "Port 2",
+    "CssValue": "../../PlayerPorts/PlayerPort2.png"
+  },
+  {
+    "PortName": "Port 3",
+    "CssValue": "../../PlayerPorts/PlayerPort3.png"
+  },
+  {
+    "PortName": "Port 4",
+    "CssValue": "../../PlayerPorts/PlayerPort3.png"
+  }
+]

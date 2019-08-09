@@ -1,0 +1,262 @@
+﻿@{
+    ViewBag.Title = "Version information";
+}
+
+<div class="container">
+    <h1>Version information</h1>
+
+    <h2>Version 0.5</h2>
+    <p>10/08/2019</p>
+    <p>Public update video: <a href="">Livestream Production Manager - Tournament Streaming (Open Source) - Public Update 5 (Version 0.5)</a></p>
+    <ul>
+        <li>Moved the Solution folder one layer closer to the root of the Repo, resulting in shorter file paths</li>
+        <li>It is now possible to submit a "No character" and "No port" option when submitting updates without it becoming a default value</li>
+        <li>A Plus and Minus button have been added to quickly increase or decrease the score by one</li>
+        <li>Skin picker has been implemented for Super Smash Bros. Wii U and Ultimate, for the formats Singles and Doubles</li>
+        <li>General settings have been implemented</li>
+        <ul>
+            <li>Select which theme the application has by default</li>
+            <li>Select whether switching themes should use a smooth transition</li>
+        </ul>
+        <li>The dropdown menu's in the navigation bar at the top of the page don't add a '#' to the url in the url bar anymore</li>
+        <li>Changed the ReadMe modal backend to use JSON files instead of HTML files, this is more flexible</li>
+        <li>An Info button is now available for the Commentators, which shows a modal with technical information about the Commentators default overlays</li>
+        <li>Livestream Production Manager has been optimized for deployment to and running in IIS</li>
+        <ul>
+            <li>Url.Action() and Url.Content() are used as much as possible to make it more flexible to run in IIS</li>
+            <li>It has been specifically optimized to run on the url "http://localhost/livestreamproductionmanager" in IIS</li>
+            <ul>
+                <li>The included default publish profile automatically deploys to this url in IIS</li>
+                <li>It is still possible to run on the url "http://localhost" with tweaks</li>
+            </ul>
+        </ul>
+        <li>Improved the string concatenation code of the Fighting Games Manager main View, using `` instead of '' and "", resulting in shorter, easier to read concatenations</li>
+        <li>The CSS selectors in the JavaScript code for managing Commentators has been slightly improved</li>
+        <li>Created a Queu.css file for fading elements in overlays out and back in after updating, with the option to do use the "visibility" CSS attribute in special cases</li>
+        <ul>
+            <li>Implemented the new "visibility" fade out and back in, in OverlayManager.js</li>
+            <ul>
+                <li>This new "visibility" fade is automatically used if the updated html element has the class "specialFade"</li>
+            </ul>
+        </ul>
+        <li>Many styling improvements have been made to the Fighting Games Main View</li>
+        <ul>
+            <li>Improved the styling of the monitors</li>
+            <li>Improved the styling of the panel-headings in the Fighting Games Main View</li>
+            <ul>
+                <li>The panel-title text should now be perfectly centered</li>
+                <li>The glyphicon inside the panel buttons don't use inline-styling as much anymore.</li>
+            </ul>
+            <li>The application now works better on smaller browser window sizes</li>
+            <ul>
+                <li>The usage of classes col-md-(number) have been replaced with col-xs-(number)</li>
+                <li>Media queries are now used to make small corrections to styling on small resolution browser window sizes</li>
+                <li>
+                    The following browser window sizes have been optimized for
+                </li>
+                <ul>
+                    <li>2560 x 1440 (1440p)</li>
+                    <li>1920 x 1080 (1080p)</li>
+                    <li>1280 x 720 (720p), or one corner of a 1440p screen</li>
+                    <li>960 x 540 (540p), or one corner of a 1080p screen</li>
+                </ul>
+            </ul>
+        </ul>
+        <li>Improved the error handling of the Fighting Games Main View</li>
+        <ul>
+            <li>Implemented try/catches in the Fighting Games Main View, OverlayManager.js and Snackbar.js</li>
+            <li>Improved ajax.error handlers</li>
+            <li>Improved the error monitor to facilitate the improved error handling</li>
+            <li>Added two new snackbars to facilitate the improved error handling</li>
+        </ul>
+    </ul>
+
+    <hr />
+
+    <h2>Version 0.4.1 - Bugfix release</h2>
+    <p>01/07/2019</p>
+    <p>No Public update video</p>
+    <ul>
+        <li>Fixed a bug that disabled the loading of the Manage Competitors Partial View</li>
+    </ul>
+
+    <hr />
+
+    <h2>Version 0.4</h2>
+    <p>29/06/2019</p>
+    <p>Public update video: <a href="https://www.youtube.com/watch?v=BZl6_uqJ9RQ">Livestream Production Manager - Tournament Streaming (Open Source) - Public Update 4 (Version 0.4)</a></p>
+    <ul>
+        <li>Added Joker as a Character to Super Smash Bros. Ultimate</li>
+        <li>Added Hero as a Character to Super Smash Bros. Ultimate</li>
+        <li>Prepared the application for Banjo & Kazooie as a Character to Super Smash Bros. Ultimate</li>
+        <li>Made the default Score and Stocks Left value "0" in the existing Manage Competitors Partial Views</li>
+        <li>Upgraded Bootstrap 3.3.7 to Bootstrap 3.4.1</li>
+        <li>Improved the transition between of toggling themes. At the moment, this transition only happens when there is no Debugger attached, this will change in a future version</li>
+        <li>Minor improvements to Custom Darkly theme styling</li>
+        <li>Added path to overlay file in Manage Competitors and Manage Commentators panel footers</li>
+        <li>Implemented a reset Manage Competitors form inputs to default values button</li>
+        <li>Implemented a get latest Manage Competitors values from JSON file in format folder button</li>
+        <li>Added the option to add a Character per Player in Crews</li>
+        <li>Improved the preview overlay toggles, it will now allow you to preview the last selected Format when it's disabled and re-enabled</li>
+        <li>Developed the front end and back end of managing competitors for  Ultimate Squad Strike</li>
+        <li>Developed default overlay for Super Smash Bros. Ultimate - Squad Strike</li>
+        <li>Refactored the JavaScript code in all default overlay html files, this results in the following:</li>
+        <ul>
+            <li>Less code re-use across all overlays</li>
+            <li>The Force resize button should be required less across the board</li>
+            <ul>
+                <li>Only the default Doubles overlays still have frequent issues resizing text appropriately, this will be looked into in a future version</li>
+            </ul>
+        </ul>
+        <li>Developed the front end and back end of managing Commentators</li>
+        <ul>
+            <li>Submitting the form is limited to first selecting a game and format</li>
+            <li>There's a move Commentator one row up button</li>
+            <li>There's a move Commentator one row down button</li>
+        </ul>
+        <li>Developed default overlay for Super Smash Bros. Ultimate - Commentary</li>
+        <li>Moved the panels around  to make those with content about the same subject be grouped together</li>
+        <li>Improved coloring of panels to make those with content about the same subject have a group color</li>
+        <li>Developed monitoring and preview overlay panels for commentators</li>
+        <ul>
+            <li>The existing JavaScript for monitoring has been refactored to be more flexible and also facilitate commentators, resulting in less code re-use</li>
+        </ul>
+        <li>Developed default overlay for Super Smash Bros. Ultimate - Commentary</li>
+        <li>Added a pulsating effect to the submit buttons when changes have been made to the form it submits</li>
+        <li>Made a ReadMe per format with technical information about the default overlays, which is viewable in the Fighting Games Manager main View through a modal from a new Info button</li>
+        <li>Made an instructions video about how to use custom overlays, viewable through a modal from the navigation bar</li>
+        <li>Added a link to the Livestream Production Manager Discord server to the footer of all pages of the application</li>
+    </ul>
+
+    <hr />
+
+    <h2>Version 0.3</h2>
+    <p>18/04/2019</p>
+    <p>Public update video: <a href="https://www.youtube.com/watch?v=OckD8S7Nhtg">Livestream Production Manager - Tournament Streaming (Open Source) - Public Update 3 (Version 0.3)</a></p>
+    <ul>
+        <li>Improved styling of the Fighting Games Manager main View</li>
+        <ul>
+            <li>This includes the following:</li>
+            <ul>
+                <li>The Manage competitors and Manage commentators panels now use 100% of the width available</li>
+                <li>The Manage commentators panels has been moved below the competitors overlay preview</li>
+            </ul>
+        </ul>
+        <li>Implemented a toggleable Dark theme from the navigation bar, using a modified version of <a href="https://bootswatch.com/3/darkly/">Bootswatch's Bootstrap 3 Darkly theme</a></li>
+        <li>Removed some of the strict constraints of submitting a Crew Battle update</li>
+        <ul>
+            <li>It is no longer required to have one Active player before the Crew Battle update can be submitted</li>
+        </ul>
+        <li>Added new monitoring panels to the Fighting Games Manager main View to get more insight into what is happening in the backend of the application</li>
+        <ul>
+            <li>The following monitors were added:</li>
+            <ul>
+                <li>WebSocket data monitor to see the most recent data that has been sent over the WebSocket</li>
+                <li>WebSocket clients monitor to see clients connected to the WebSocket (not always 100% accurate)</li>
+                <li>CSS monitor to see the most recent CSS that has been saved to a file</li>
+                <li>Error monitor to see messages of errors that have occurred</li>
+            </ul>
+            <li>The WebSocket data monitor and CSS monitor use highlight.js for syntax highlighting</li>
+            <li>All these monitors can be cleared using the Clear button</li>
+            <li>All these monitors monitors can be disabled and enabled using the associated toggle buttons</li>
+        </ul>
+        <li>The overlay preview can now be disabled or enabled using a toggle button</li>
+        <li>Improved styling of the default overlay for Super Smash Bros. Ultimate - Crew Battles</li>
+        <li>Refactoring: further improved the inheritance of ViewModels</li>
+        <li>Implemented AppSettings from Web.config to make deploying easier</li>
+        <ul>
+            <li>Added AppSetting with key "BaseUrl" to Web.config, whose value should be changed to "localhost" when properly deployed (already set in Web.Release.config)</li>
+        </ul>
+        <li class="text-danger">Attempted to add logging to RollingFiles using Serilog, the entire log functionality stopped working after two days, to be researched and fixed later</li>
+    </ul>
+
+    <hr />
+
+    <h2>Version 0.2.1</h2>
+    <p>03/03/2019</p>
+    <p>No Public update video</p>
+    <ul>
+        <li>Developed the front end and back end of managing competitors for Super Smash Bros. Crew Battles</li>
+        <ul>
+            <li>Developed default overlay for Super Smash Bros. Ultimate - Crew Battles, to be developed further in a later version</li>
+            <li>Added new snackbar messages to facilitate the new functionality</li>
+        </ul>
+        <li>Increased the size of the overlay preview window</li>
+    </ul>
+
+    <hr />
+
+    <h2>Version 0.2</h2>
+    <p>02/02/2019</p>
+    <p>Public update video: <a href="https://www.youtube.com/watch?v=5sjFVE-0rIo">Livestream Production Manager - Tournament Streaming (Open Source) - Public Update 2 (Version 0.2)</a></p>
+    <ul>
+        <li>Implemented WebSockets in the Fighting Games overlay manager, which allows the following, if implemented correctly in non-default overlays and overlay managers:</li>
+        <ul>
+            <li>Queu a fade out of outdated elements and fade in of updated elements in an overlay, no more sudden change of content</li>
+            <li>Force fitty to resize incorrectly sized text in an overlay again, through a click on the Force resize button in the Fighting Games overlay manager</li>
+            <li>Get a snackbar notification when the following events happen:</li>
+            <ul>
+                <li>A queu command has been broadcast</li>
+                <li>A force resize command has been broadcast</li>
+                <li>An overlay has connected to the WebSocket</li>
+                <li>An overlay has disconnected from the WebSocket</li>
+            </ul>
+        </ul>
+        <li>
+            Improved all the default overlays in the following ways:
+        </li>
+        <ul>
+            <li>Improved styling</li>
+            <li>Implemented WebSockets, which allows the following:</li>
+            <ul>
+                <li>Fading out of outdated elementsm and fading in of updated elements, no more sudden change of content</li>
+                <li>Force fitty to resize incorrectly sized text again, through a click on the Force resize button in the Fighting Games overlay manager</li>
+            </ul>
+        </ul>
+        <li>
+            Renamed a bunch of files in the (root)/FightingGames folder of the project to be more in line with the rest of the ASP.NET MVC application
+        </li>
+        <li>
+            Implemented previewing of the overlay selected in the dropdown through an iframe
+        </li>
+        <li>
+            Improved the following about the Snackbar implementation:
+        </li>
+        <ul>
+            <li>Improved dynamic styling, making them always pop up in the center horizontally and near the bottom of the screen</li>
+            <li>Added multiple snackbars, separating them based on different functionalities of the overlay manager</li>
+        </ul>
+        <li>
+            Refactoring: improved the inheritance of ViewModels
+        </li>
+        <li>
+            Made a version information page
+        </li>
+    </ul>
+
+    <hr />
+
+    <h2>Version 0.1</h2>
+    <p>Release date: 23/11/2019</p>
+    <p>Public update video: <a href="https://www.youtube.com/watch?v=AkOS91s7fuM">Livestream Production Manager - Tournament Streaming (Open Source) - Public Update 1 (Version 0.1)</a></p>
+    <ul>
+        <li>Developed the front end and back end of managing competitors for the following formats:</li>
+        <ul>
+            <li>Super Smash Bros. Singles</li>
+            <li>Super Smash Bros. Doubles</li>
+        </ul>
+        <li>Developed the following default overlays:</li>
+        <ul>
+            <li>Super Smash Bros. for Nintendo Wii U - Singles</li>
+            <li>Super Smash Bros. for Nintendo Wii U - Doubles</li>
+            <li>Super Smash Bros. Ultimate - Singles</li>
+            <li>Super Smash Bros. Ultimate - Doubles</li>
+            <li>More will be made in a future version</li>
+        </ul>
+        <li>Developed the front end for managing commentators</li>
+        <ul>
+            <li>The back end wil be done in a future version</li>
+        </ul>
+        <li>Implemented a snackbar</li>
+    </ul>
+</div>

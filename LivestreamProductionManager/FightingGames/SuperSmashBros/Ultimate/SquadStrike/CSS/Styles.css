@@ -1,0 +1,546 @@
+﻿body
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+#squadsWrapper
+{
+    width: 1920px;
+    height: 98px;
+}
+
+#squadPlayersWrapper
+{
+    margin-top: 682px;
+    width: 1920px;
+    height: 300px;
+    overflow: hidden;
+}
+
+span
+{
+    color: white;
+}
+
+
+
+/* squads */
+
+.squads
+{
+    width: 1920px;
+    height: 80px;
+}
+
+/* squads END*/
+
+
+
+/* squad */
+
+.squad
+{
+    width: 960px;
+    height: 80px;
+}
+
+#squad1
+{
+    float: left;
+}
+
+#squad2
+{
+    float: right;
+}
+
+/* squad END */
+
+
+
+/* squadBox */
+
+.squadBox
+{
+    width: 650px;
+    height: 50px;
+    margin-top: 30px;
+    overflow: hidden;
+    animation: showSquadBox 1s;
+}
+
+#squad1Box
+{
+    float: right;
+    background-image: url('../SquadBackgrounds/Squad1Background.png');
+}
+
+#squad2Box
+{
+    float: left;
+    background-image: url('../SquadBackgrounds/Squad2Background.png');
+}
+
+/* squadBox END */
+
+
+
+
+
+
+
+/* squadScore */
+
+.squadScore
+{
+    color: white;
+    margin: 0;
+}
+
+/* squadScore END */
+
+
+
+/* squadPort */
+
+.squadPort
+{
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+    line-height: 50px;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+#squad1Port
+{
+    float: left;
+}
+
+#squad2Port
+{
+    float: right;
+}
+
+/* squadPort END */
+
+
+
+/* squadNameBox */
+
+.squadNameBox
+{
+    width: 250px;
+    height: 50px;
+}
+
+#squad1NameBox
+{
+    float: left;
+    margin-left: 130px;
+}
+
+#squad2NameBox
+{
+    float: right;
+    margin-right: 130px;
+}
+
+/* squadNameBox END */
+
+
+
+/* squadNameContainer */
+
+.squadNameContainer
+{
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+}
+
+#squad1NameContainer
+{
+    float: left;
+    text-align: left;
+}
+
+#squad2NameContainer
+{
+    float: right;
+    text-align: right;
+}
+
+/* squadNameContainer END */
+
+
+
+/* squadName */
+
+.squadName
+{
+    color: white;
+    margin: 0;
+}
+
+/* squadName END*/
+
+
+
+/* squadPlayers */
+
+.squadPlayers
+{
+    width: 960px;
+    height: 360px;
+}
+
+#squad1Players
+{
+    float: left;
+}
+
+#squad2Players
+{
+    float: right;
+}
+
+/* squadPlayers END */
+
+
+
+/* squadPlayersBox */
+
+.squadPlayersBox
+{
+    width: 300px;
+    height: 360px;
+}
+
+#squad1PlayersBox
+{
+    float: left;
+    background-image: url('../SquadBackgrounds/Squad1PlayersBackground.png');
+}
+
+#squad2PlayersBox
+{
+    float: right;
+    background-image: url('../SquadBackgrounds/Squad2PlayersBackground.png');
+}
+
+/* crewBox END */
+
+
+
+/* squadPlayersRow */
+
+.squadPlayersRow
+{
+    width: 290px;
+    height: 50px;
+    padding: 5px;
+}
+
+/* squadPlayersRow END */
+
+
+
+/* squadCharacter */
+
+.squadCharacter
+{
+    width: 90px;
+    height: 50px;
+    background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+    opacity: 0;
+
+    animation-name: fadeIn;
+    animation-duration: 1.2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+#squad1PlayersBox .squadCharacter
+{
+    float: left;
+}
+
+#squad2PlayersBox .squadCharacter
+{
+    float: right;
+}
+
+#squad1Character1, #squad2Character1
+{
+    animation-delay: 0.4s;
+}
+
+#squad1Character2, #squad2Character2
+{
+    animation-delay: 0.6s;
+}
+
+#squad1Character3, #squad2Character3
+{
+    animation-delay: 0.8s;
+}
+
+#squad1Character4, #squad2Character4
+{
+    animation-delay: 1.0s;
+}
+
+#squad1Character5, #squad2Character5
+{
+    animation-delay: 1.2s;
+}
+
+/* squadCharacter END */
+
+
+
+/* squadPlayerNameBox */
+
+.squadPlayerNameBox
+{
+    width: 195px;
+    height: 50px;
+    background: white;
+    opacity: 0;
+
+    animation-name: fadeIn;
+    animation-duration: 1.2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+#squad1PlayersBox .squadPlayerNameBox
+{
+    margin-left: 5px;
+    float: left;
+}
+
+#squad2PlayersBox .squadPlayerNameBox
+{
+    margin-right: 5px;
+    float: right;
+}
+
+#squad1Player1NameBox, #squad2Player1NameBox
+{
+    animation-delay: 0.6s;
+}
+
+#squad1Player2NameBox, #squad2Player2NameBox
+{
+    animation-delay: 0.8s;
+}
+
+#squad1Player3NameBox, #squad2Player3NameBox
+{
+    animation-delay: 1.0s;
+}
+
+#squad1Player4NameBox, #squad2Player4NameBox
+{
+    animation-delay: 1.2s;
+}
+
+/* squadPlayerNameBox END */
+
+
+
+/* squadPlayerNameContainer */
+
+.squadPlayerNameContainer
+{
+    width: 193px;
+    height: 48px;
+    margin: 1px;
+    line-height: 48px;
+    text-align: center;
+    opacity: 0;
+
+    animation-name: fadeIn;
+    animation-duration: 1.2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+#squad1PlayersBox .squadPlayerNameContainer
+{
+    background-image: url('../SquadBackgrounds/Squad1PlayerBackground.png');
+}
+
+#squad2PlayersBox .squadPlayerNameContainer
+{
+    background-image: url('../SquadBackgrounds/Squad2PlayerBackground.png');
+}
+
+#squad1Player1NameContainer, #squad2Player1NameContainer
+{
+    animation-delay: 0.6s;
+}
+
+#squad1Player2NameContainer, #squad2Player2NameContainer
+{
+    animation-delay: 0.8s;
+}
+
+#squad1Player3NameContainer, #squad2Player3NameContainer
+{
+    animation-delay: 1.0s;
+}
+
+#squad1Player4NameContainer, #squad2Player4NameContainer
+{
+    animation-delay: 1.2s;
+}
+
+/* squadPlayerNameContainer END */
+
+
+
+/* tournamentInfo */
+
+.tournamentInfo
+{
+    width: 1920px;
+    height: 18px;
+}
+
+/* tournamentInfo END */
+
+
+
+/* info */
+
+.info
+{
+    width: 960px;
+    height: 18px;
+}
+
+#infoRound
+{
+    float: left;
+}
+
+#infoTournament
+{
+    float: right;
+}
+
+/* info END */
+
+
+
+/* infoBox */
+
+.infoBox
+{
+    width: auto;
+    height: 18px;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: center;
+    background-image: url('../BoxBackground/InfoBoxBackground.png');
+}
+
+#infoRoundBox
+{
+    float: right;
+}
+
+#infoTournamentBox
+{
+    float: left;
+}
+
+/* infoBox END */
+
+
+
+/* boxText */
+
+.boxText
+{
+    width: auto;
+    margin: 0px;
+    white-space: nowrap;
+    color: white;
+}
+
+/* boxText END */
+
+
+/* Snackbar */
+
+.snackbar
+{
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 2px;
+    position: fixed;
+    z-index: 1;
+    bottom: 0px;
+}
+
+
+    .snackbar.show
+    {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+
+/* Snackbar END */
+
+
+
+/* animations */
+
+@keyframes showSquadBox
+{
+    0%
+    {
+        width: 0%;
+    }
+
+    100%
+    {
+        width: 67.70833333333333%;
+    }
+}
+
+@keyframes fadeIn
+{
+    0%
+    {
+        opacity: 0;
+    }
+
+    100%
+    {
+        opacity: 1;
+    }
+}
+
+/* animations END */

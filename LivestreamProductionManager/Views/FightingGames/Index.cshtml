@@ -1,0 +1,1782 @@
+﻿@{
+    ViewBag.Title = "Fighting Games";
+}
+
+<div class="row">
+    <!--WebSocket Client monitor-->
+    <div class="half-horizontal-width" style="float: left">
+        <div class="panel panel-info">
+            <div class="panel-heading row">
+                <div class="col-xs-4">
+                    <button class="btn btn-danger panelButton" id="clearWebSocketClientMonitorButton"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
+                </div>
+                <div class="col-xs-4 text-center">
+                    <text class="panel-title">WebSocket clients monitor</text>
+                </div>
+
+                <div class="col-xs-4 text-right">
+                    <button class="btn btn-success panelButton toggleMonitorButton" id="toggleWebSocketClientMonitorButton" data-monitor-id="#webSocketClientMonitorTableBody"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
+                </div>
+            </div>
+            <div class="panel-body monitorPanelBody" style="overflow-y:scroll;">
+                <table class="table table-bordered" id="webSocketClientMonitorTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Type</th>
+                            <th>Path</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="webSocketClientMonitorTableBody" data-enabled="True" data-client-monitor="True"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!--Error monitor-->
+    <div class="half-horizontal-width" style="float: left">
+        <div class="panel panel-info">
+            <div class="panel-heading row">
+                <div class="col-xs-5">
+                    <button class="btn btn-danger panelButton" id="clearErrorMonitorButton"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
+                </div>
+                <div class="col-xs-2 text-center">
+                    <text class="panel-title">Error monitor</text>
+                </div>
+
+                <div class="col-xs-5 text-right">
+                    <button class="btn btn-success panelButton toggleMonitorButton" id="toggleErrorMonitorButton" data-monitor-id="#errorMonitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
+                </div>
+            </div>
+            <div class="panel-body monitorPanelBody">
+                <pre class="monitorPre" id="errorMonitor" data-enabled="True"></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!--Manage Tournament-->
+    <div class="full-horizontal-width">
+        <div class="panel panel-warning">
+            <div class="panel-heading row">
+                <div class="col-xs-12 text-center">
+                    <text class="panel-title">Manage tournament</text>
+                </div>
+            </div>
+            <div class="panel-body" id="manageTournament">
+                <div class="row" id="manageTournamentValues">
+                    <div class="col-xs-3 form-group">
+                        <label>Tournament</label>
+                        <input type="text" class="form-control" id="tournament" />
+                    </div>
+                    <div class="col-xs-3 form-group">
+                        <label>Round</label>
+                        <input type="text" class="form-control" id="round" />
+                    </div>
+                    <div class="col-xs-3 form-group">
+                        <label>Best of</label>
+                        <input type="text" class="form-control" id="bestOf" />
+                    </div>
+                    <div class="col-xs-3 form-group">
+                        <label>Extra</label>
+                        <input type="text" class="form-control" id="extra" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-3 form-group">
+                        <label>Series</label>
+                        <select class="form-control" id="Series"></select>
+                    </div>
+
+                    <div class="col-xs-3 form-group">
+                        <label>Game</label>
+                        <select class="form-control" id="Game"></select>
+                    </div>
+
+                    <div class="col-xs-3 form-group">
+                        <label>Format</label>
+                        <select class="form-control" id="Format"></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!--Manage Competitors-->
+    <div class="full-horizontal-width">
+        <div class="panel panel-primary">
+            <div class="panel-heading row">
+                <div class="col-xs-5">
+                    <button class="btn btn-success panelButton submitButton" id="submitCompetitorsButton" data-form-id="#manageCompetitorsForm"><span class="glyphicon glyphicon-arrow-up"></span><text> Update</text></button>
+                </div>
+
+                <div class="col-xs-2 text-center">
+                    <text class="panel-title">Manage competitors</text>
+                </div>
+
+                <div class="col-xs-5 text-right">
+                    <button class="btn btn-danger panelButton showReadMeModalButton" id="showCompetitorsReadMeModalButton" data-form-id="#manageCompetitorsForm"><span class="glyphicon glyphicon-question-sign"></span><text> Info</text></button>
+                    <button class="btn btn-default panelButton" id="setToDefaultValuesButton"><span class="glyphicon glyphicon-erase"></span><text> Defaults</text></button>
+                    <button class="btn btn-warning panelButton" id="getLatestCompetitorsValuesButton"><span class="glyphicon glyphicon-download-alt"></span><text> Get latest</text></button>
+                    <button class="btn btn-info panelButton" id="switchCompetitorsButton"><span class="glyphicon glyphicon-refresh"></span><text> Switch</text></button>
+                </div>
+            </div>
+            <div class="panel-body" id="manageCompetitors">
+            </div>
+            <div class="panel-footer">
+                <text>Overlay path: </text><a target="_blank" rel="noopener noreferrer" href="" id="competitorsOverlayPath"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!--Competitors WebSocket Data monitor-->
+    <div class="one-third-horizontal-width" style="float: left">
+        <div class="panel panel-primary">
+            <div class="panel-heading row">
+                <div class="col-xs-3">
+                    <button class="btn btn-danger panelButton clearWebSocketDataMonitorButton" id="clearCompetitorsWebSocketDataMonitorButton" data-monitor-id="#competitorsWebSocketDataMonitor"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <text class="panel-title">Competitors data monitor</text>
+                </div>
+
+                <div class="col-xs-3 text-right">
+                    <button class="btn btn-success panelButton toggleMonitorButton toggleWebSocketDataMonitorButton" id="toggleCompetitorsWebSocketDataMonitorButton" data-monitor-id="#competitorsWebSocketDataMonitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
+                </div>                    
+            </div>
+            <div class="panel-body monitorPanelBody">
+                <pre class="monitorPre">
+                    <code class="monitorCode json" id="competitorsWebSocketDataMonitor" data-enabled="True">
+                        
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <!--Competitors CSS monitor-->
+    <div class="one-third-horizontal-width" style="float: left">
+        <div class="panel panel-primary">
+            <div class="panel-heading row">
+                <div class="col-xs-3">
+                    <button class="btn btn-danger panelButton clearCssMonitorButton" id="clearCompetitorsCssMonitorButton" data-monitor-id="#competitorsCssMonitor"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <text class="panel-title">Competitors CSS monitor</text>
+                </div>
+
+                <div class="col-xs-3 text-right">
+                    <button class="btn btn-success panelButton toggleMonitorButton toggleCssMonitorButton" id="toggleCompetitorsCssMonitorButton" data-monitor-id="#competitorsCssMonitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
+                </div>
+            </div>
+            <div class="panel-body monitorPanelBody">
+                <pre class="monitorPre">
+                    <code class="monitorCode css" id="competitorsCssMonitor" data-enabled="True">
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <!--Competitors JSON monitor-->
+    <div class="one-third-horizontal-width" style="float: left">
+        <div class="panel panel-primary">
+            <div class="panel-heading row">
+                <div class="col-xs-3">
+                    <button class="btn btn-danger panelButton clearJsonMonitorButton" id="clearCompetitorsJsonMonitorButton" data-monitor-id="#competitorsJsonMonitor"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <text class="panel-title">Competitors JSON monitor</text>
+                </div>
+
+                <div class="col-xs-3 text-right">
+                    <button class="btn btn-success panelButton toggleMonitorButton toggleJsonMonitorButton" id="toggleCompetitorsJsonMonitorButton" data-monitor-id="#competitorsJsonMonitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
+                </div>
+            </div>
+            <div class="panel-body monitorPanelBody">
+                <pre class="monitorPre">
+                    <code class="monitorCode json" id="competitorsJsonMonitor" data-enabled="True">
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!--Preview Competitors overlay-->
+    <div class="full-horizontal-width">
+        <div class="panel panel-primary">
+            <div class="panel-heading row">
+                <div class="col-xs-5">
+                    <button class="btn btn-danger panelButton forceResizeButton" id="forceCompetitorsResizeButton"><span class="glyphicon glyphicon-resize-full"></span><text> Force resize</text></button>
+                </div>
+                <div class="col-xs-2 text-center">
+                    <text class="panel-title">Preview Competitors overlay</text>
+                </div>
+
+                <div class="col-xs-5 text-right">
+                    <button class="btn btn-success panelButton togglePreviewOverlayButton" id="toggleCompetitorsPreviewOverlayButton" data-preview-id="#competitorsPreviewOverlayIframe" data-panel-id="#competitorsPreviewOverlay" data-overlay-type="Game"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
+                </div>
+            </div>
+            <div class="panel-body previewEnabled previewOverlayPanelBody" id="competitorsPreviewOverlay">
+                <iframe class="previewOverlayIframe" id="competitorsPreviewOverlayIframe" data-enabled="True"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!--Manage Commentators-->
+    <div class="full-horizontal-width">
+        <div class="panel panel-success">
+            <div class="panel-heading row">
+                <div class="col-xs-5">
+                    <button class="btn btn-success panelButton submitButton" id="submitCommentatorsButton" data-form-id="#manageCommentatorsForm"><span class="glyphicon glyphicon-arrow-up"></span><text> Update</text></button>
+                </div>
+                <div class="col-xs-2 text-center">
+                    <text class="panel-title">Manage commentators</text>
+                </div>
+
+                <div class="col-xs-5 text-right">
+                    <button class="btn btn-danger panelButton showReadMeModalButton" id="showCommentatorsReadMeModalButton" data-form-id="#manageCommentatorsForm"><span class="glyphicon glyphicon-question-sign"></span><text> Info</text></button>
+                    <button class="btn btn-info panelButton" id="addCommentatorButton"><span style="font-weight: bold;" class="glypicon glyphicon-plus"></span><text> Add</text></button>
+                </div>
+            </div>
+            <div class="panel-body" id="manageCommentators">
+                <form action="@Url.Action("UpdateCommentators", "Commentators")"
+                      method="post"
+                      id="manageCommentatorsForm"
+                      data-overlay-type="Commentary"
+                      data-websocket-data-monitor-id="#commentatorsWebSocketDataMonitor"
+                      data-css-monitor-url="@Url.Action("GetCssFileContent", "Commentators")"
+                      data-css-monitor-id="#commentatorsCssMonitor"
+                      data-json-monitor-url="@Url.Action("GetJsonFileContent", "Commentators")"
+                      data-json-monitor-id="#commentatorsJsonMonitor"
+                      data-overlay-preview-id="commentatorsPreviewOverlayIframe"
+                      data-snackbar-id="#manageCommentatorsSnackbar">
+
+                    <input type="hidden" name="PathToCommentators" />
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <label>Name</label>
+                        </div>
+                        <div class="col-xs-5">
+                            <label>Twitter</label>
+                        </div>
+                        <div class="col-xs-2">
+                            <label>Actions</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="panel-footer">
+                <text>Overlay path: </text><a target="_blank" rel="noopener noreferrer" href="" id="commentatorsOverlayPath"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!--Commentators WebSocket Data monitor-->
+    <div class="one-third-horizontal-width" style="float: left">
+        <div class="panel panel-success">
+            <div class="panel-heading row">
+                <div class="col-xs-3">
+                    <button class="btn btn-danger panelButton clearWebSocketDataMonitorButton" id="clearCommentatorsWebSocketDataMonitorButton" data-monitor-id="#commentatorsWebSocketDataMonitor"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <text class="panel-title">Commentators data monitor</text>
+                </div>
+
+                <div class="col-xs-3 text-right">
+                    <button class="btn btn-success panelButton toggleMonitorButton toggleWebSocketDataMonitorButton" id="toggleCommentatorsWebSocketDataMonitorButton" data-monitor-id="#commentatorsWebSocketDataMonitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
+                </div>
+            </div>
+            <div class="panel-body monitorPanelBody">
+                <pre class="monitorPre">
+                    <code class="monitorCode json" id="commentatorsWebSocketDataMonitor" data-enabled="True">
+                        
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <!--Commentators CSS monitor-->
+    <div class="one-third-horizontal-width" style="float: left">
+        <div class="panel panel-success">
+            <div class="panel-heading row">
+                <div class="col-xs-3">
+                    <button class="btn btn-danger panelButton clearCssMonitorButton" id="clearCommentatorsCssMonitorButton" data-monitor-id="#commentatorsCssMonitor"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <text class="panel-title">Commentators CSS monitor</text>
+                </div>
+
+                <div class="col-xs-3 text-right">
+                    <button class="btn btn-success panelButton toggleMonitorButton toggleCssMonitorButton" id="toggleCommentatorsCssMonitorButton" data-monitor-id="#commentatorsCssMonitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
+                </div>
+            </div>
+            <div class="panel-body monitorPanelBody">
+                <pre class="monitorPre">
+                    <code class="monitorCode css" id="commentatorsCssMonitor" data-enabled="True">
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <!--Commentators JSON monitor-->
+    <div class="one-third-horizontal-width" style="float: left">
+        <div class="panel panel-success">
+            <div class="panel-heading row">
+                <div class="col-xs-3">
+                    <button class="btn btn-danger panelButton clearJsonMonitorButton" id="clearCommentatorsJsonMonitorButton" data-monitor-id="#commentatorsJsonMonitor"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <text class="panel-title">Commentators JSON monitor</text>
+                </div>
+
+                <div class="col-xs-3 text-right">
+                    <button class="btn btn-success panelButton toggleMonitorButton toggleJsonMonitorButton" id="toggleCommentatorsJsonMonitorButton" data-monitor-id="#commentatorsJsonMonitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
+                </div>
+            </div>
+            <div class="panel-body monitorPanelBody">
+                <pre class="monitorPre">
+                    <code class="monitorCode json" id="commentatorsJsonMonitor" data-enabled="True">
+
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!--Preview Commentators overlay-->
+    <div class="full-horizontal-width">
+        <div class="panel panel-success">
+            <div class="panel-heading row">
+                <div class="col-xs-5">
+                    <button class="btn btn-danger panelButton forceResizeButton" id="forceCommentatorsResizeButton"><span class="glyphicon glyphicon-resize-full"></span><text> Force resize</text></button>
+                </div>
+                <div class="col-xs-2 text-center">
+                    <text class="panel-title">Preview Commentators overlay</text>
+                </div>
+
+                <div class="col-xs-5 text-right">
+                    <button class="btn btn-success panelButton togglePreviewOverlayButton" id="toggleCommentatorsPreviewOverlayButton" data-preview-id="#commentatorsPreviewOverlayIframe" data-panel-id="#commentatorsPreviewOverlay" data-overlay-type="Commentary"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
+                </div>
+            </div>
+            <div class="panel-body previewEnabled previewOverlayPanelBody" id="commentatorsPreviewOverlay">
+                <iframe class="previewOverlayIframe" id="commentatorsPreviewOverlayIframe" data-enabled="True"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script type="text/javascript">
+        /* Global variables */
+        var baseUrl = "@System.Configuration.ConfigurationManager.AppSettings["BaseUrl"]";
+        var competitorsFormJsonData = null;
+        var commentatorsFormJsonData = null;
+        var crewBattlePlayerCount = 0;
+        var clientsConnectedCount = 0;
+        var competitorsOverlayPreviewSourceUrl = null;
+        var commentatorsOverlayPreviewSourceUrl = null;
+
+        // Summary:
+        // On: ready
+        // Initialize WebSocket.
+        // Get series.
+        $(document).ready(function () {
+            try {
+                hljs.initHighlightingOnLoad();
+                InitializeWebSocket();
+                GetSeries();
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred on startup.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+
+
+        /* WebSocket */
+
+        // Summary:
+        // Initialize the WebSocket and events.
+        function InitializeWebSocket() {
+            try {
+                var uri = `ws://${ baseUrl }/WebSocket/Queu`;
+
+                websocket = new WebSocket(uri);
+
+                // Summary:
+                // On: Opening the WebSocket connection.
+                // Update the client WebSocket monitor, add one to the clients connected count.
+                // Show a snackbar message.
+                websocket.onopen = function () {
+                    $("#webSocketClientMonitorTableBody").append("<tr><td>1</td><td>Fighting Games</td><td>Livestream Production Manager</td><td>Connected</td></tr>");
+                    clientsConnectedCount++;
+                    ShowSnackbar("#managerConnectedSnackbar", "Connected to WebSocket.");
+                };
+
+                // Summary:
+                // On: Error occurring with the WebSocket connection.
+                // Show a Snackbar message and update the error log monitor.
+                // Update the error monitor.
+                websocket.onerror = function (event) {
+                    ShowSnackbar("#managerFailedToConnectSnackbar", "Something went wrong with the WebSocket connection.");
+                    UpdateErrorMonitor(event);
+                };
+
+                // Summary:
+                // On: Receiving a message from the WebSocket.
+                // If > The message type is "queu"
+                //  
+                //  Show a snackbar message.
+                // Else if > The message type is "overlayConnected"
+                //  
+                //  Show a snackbar message.
+                // Else if > The message type is "overlayDisconnected"
+                //  
+                //  Show a snackbar message.
+                // Else if > The message type is "forceResize"
+                //  Show a snackbar message.
+                // PARAMETERS
+                // event: The message received from the WebSocket.
+                // event.data: the data in JSON format received from the WebSocket.
+                websocket.onmessage = function (event) {
+                    var jsonData = JSON.parse(event.data);
+
+                    if (jsonData.type == "queu") {
+                        UpdateWebSocketDataMonitor(jsonData.data, jsonData.overlayType);
+                        ShowSnackbar("#queuSnackbar", "A queu command has been broadcast.");
+                    }
+                    else if (jsonData.type == "overlayConnected") {
+                        UpdateWebSocketClientMonitor(jsonData);
+                        ShowSnackbar("#overlayConnectedSnackbar", `An overlay of type ${ jsonData.overlayType } has connected to the WebSocket: ${ jsonData.data }`);
+                    }
+                    else if (jsonData.type == "overlayDisconnected") {
+                        UpdateWebSocketClientMonitor(jsonData);
+                        ShowSnackbar("#overlayDisconnectedSnackbar", `An overlay of type ${ jsonData.overlayType } has disconnected from the WebSocket: ${ jsonData.data }`);
+                    }
+                    else if (jsonData.type == "forceResize") {
+                        ShowSnackbar("#forceResizeSnackbar", "A resize command has been broadcast");
+                    }
+                };
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+
+
+
+        /* Tournament */
+
+        // Summary:
+        // Retrieve the series using AJAX.
+        // Add the series to the series dropdown.
+        function GetSeries() {
+            try {
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("GetSeries", "FightingGames")",
+                    dataType: "json",
+                    success: function (data) {
+                        $("#Series").append("<option value='' selected disabled hidden>Choose series</option>");
+                        for (var i = 0; i < data.length; i++) {
+                            $("#Series").append(`<option data-series='${ data[i].SERIES }' value='${ data[i].PathToSeries }'>${ data[i].SeriesName }</option>`);
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting the Series, see the log for details");
+                        UpdateErrorMonitor(jqXHR.responseText);
+                        console.log(jqXHR);
+                        console.log(`Text status: ${ textStatus }`);
+                        console.log(`Error thrown: ${ errorThrown }`);
+                    }
+                });
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+
+        // Summary:
+        // On: Selecting a series from the series dropdown.
+        // Retrieve the games using AJAX.
+        // Empty the games and formats dropdown.
+        // Add the games to the games dropdown.
+        $("#Series").change(function () {
+            try {
+                var selectedSeries = $("#Series option:selected");
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("GetGames", "FightingGames")",
+                    data: { "pathToSeries": selectedSeries.val() },
+                    dataType: "json",
+                    success: function (data) {
+                        $("#Game").empty();
+                        $("#Format").empty();
+                        $("#Game").append("<option value='' selected disabled hidden>Choose game</option>");
+                        for (var i = 0; i < data.length; i++) {
+                            $("#Game").append(`<option data-game='${ data[i].GAME }' value='${ data[i].PathToGame }' data-path-to-commentators='${ data[i].PathToCommentators }'>${ data[i].GameName }</option>`);
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting the Games. See the log for details.");
+                        UpdateErrorMonitor(jqXHR.responseText);
+                        console.log(jqXHR);
+                        console.log(`Text status: ${ textStatus }`);
+                        console.log(`Error thrown: ${ errorThrown }`);
+                    }
+                });
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+        // Summary:
+        // On: Selecting a game from the games dropdown.
+        // Retrieve the formats using AJAX.
+        // Empty the games and formats dropdown.
+        // Add the formats to the formats dropdown.
+        $("#Game").change(function () {
+            try {
+                var selectedGame = $("#Game option:selected");
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("GetFormats", "FightingGames")",
+                    data: { "pathToGame": selectedGame.val() },
+                    dataType: "json",
+                    success: function (data) {
+                        $("#Format").empty();
+                        $("#Format").append("<option value='' selected disabled hidden>Choose format</option>");
+                        for (var i = 0; i < data.length; i++) {
+                            $("#Format").append(`<option data-format='${ data[i].FORMAT }' url='${ data[i].Url }' value='${ data[i].PathToFormat }'>${ data[i].FormatName }</option>`);
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting the Formats. See the log for details.");
+                        UpdateErrorMonitor(jqXHR.responseText);
+                        console.log(jqXHR);
+                        console.log(`Text status: ${ textStatus }`);
+                        console.log(`Error thrown: ${ errorThrown }`);
+                    }
+                });
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+        // Summary:
+        // On: Selecting a format from the formats dropdown.
+        // Retrieve the manage competitors partial view using AJAX.
+        // Insert the partial view into the manage competitors panel.
+        // Change the preview overlay iframe source to the GameOverlay.html.
+        // Set the variable's competitorsFormJsonData and commentatorsFormJsonData to null, so it can be constructed again when a new update is submitted.
+        $("#Format").change(function () {
+            try {
+                var selectedSeries = $("#Series option:selected");
+                var selectedGame = $("#Game option:selected");
+                var selectedFormat = $("#Format option:selected");
+                $.ajax({
+                    type: "POST",
+                    url: selectedFormat.attr("url"),
+                    data: {
+                        "series": selectedSeries.data("series"),
+                        "game": selectedGame.data("game"),
+                        "format": selectedFormat.data("format"),
+                        "pathToSeries": selectedSeries.val(),
+                        "pathToGame": selectedGame.val(),
+                        "pathToFormat": selectedFormat.val()
+                    },
+                    dataType: "html",
+                    success: function (data) {
+                        $("#manageCompetitors").html(data);
+
+                        $("#manageCommentatorsForm > [name='PathToCommentators']").val(selectedGame.data("path-to-commentators"));
+
+                        $("[data-toggle='characterSkinPopover']").popover({ html: true, placement: "bottom", trigger: "manual" });
+
+                        $("#competitorsOverlayPath").html(`${ selectedFormat.val() }GameOverlay.html`).attr("href", `${ selectedFormat.val() }GameOverlay.html`);
+                        competitorsOverlayPreviewSourceUrl = `http://${ baseUrl + selectedFormat.val() }GameOverlay.html`;
+                        if ($("#competitorsPreviewOverlayIframe").data("enabled") == "True") {
+                            $("#competitorsPreviewOverlayIframe").attr("src", competitorsOverlayPreviewSourceUrl);
+                        }
+
+                        $("#commentatorsOverlayPath").html(`${selectedGame.val()}Commentators/CommentaryOverlay.html`).attr("href", `${ selectedGame.val() }Commentators/CommentaryOverlay.html`);
+                        commentatorsOverlayPreviewSourceUrl = `http://${ baseUrl + selectedGame.val() }Commentators/CommentaryOverlay.html`;
+                        if ($("#commentatorsPreviewOverlayIframe").data("enabled") == "True") {
+                            $("#commentatorsPreviewOverlayIframe").attr("src", commentatorsOverlayPreviewSourceUrl);
+                        }
+
+                        competitorsFormJsonData = null;
+                        commentatorsFormJsonData = null;
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting the Manage Competitors form. See the log for details.");
+                        UpdateErrorMonitor(jqXHR.responseText);
+                        console.log(jqXHR);
+                        console.log(`Text status: ${ textStatus }`);
+                        console.log(`Error thrown: ${ errorThrown }`);
+                    }
+                });
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+        // Summary:
+        // On: Changing values of a tournament information input or competitor information input.
+        // Replace the btn-success class on the submit update button by the btn-danger class, resulting in the button becoming red.
+        $("body").on("change input", "#manageTournamentValues :input, #manageCompetitorsForm :input", function () {
+            try {
+                if (!$("#submitCompetitorsButton").hasClass("btn-danger")) {
+                    $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger danger-pulsate");
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+
+
+        /* Competitors */
+
+        // Summary:
+        // On: Clicking the switch competitors button.
+        // If > The manage competitors form is present.
+        //  If > There was inputs found with the data-side attribute.
+        //      Switch the values of the competitors around.
+        //  Else > There was no inputs found with the data-side attribute.
+        //      Show a snackbar message.
+        // Else > The manage competitors form is not present.
+        //  Show a snackbar message.
+        // Note: Supports singles and more complex formats with correct html of the manage competitors partial view.
+        $("#switchCompetitorsButton").click(function () {
+            try {
+                if ($("#manageCompetitorsForm").length) {
+                    var side1Inputs = $("#manageCompetitorsForm").find(":input[data-side='1']");
+
+                    if (side1Inputs.length) {
+                        side1Inputs.each(function () {
+                            if ($(this).attr("type") == "checkbox") {
+                                var side2Input = $($(this).data("opposite-id"));
+                                var side2InputCheckedValue = side2Input.prop("checked");
+                                side2Input.prop("checked", $(this).prop("checked"));
+                                $(this).prop("checked", side2InputCheckedValue);
+                            }
+                            else {
+                                var side2Input = $($(this).data("opposite-id"));
+                                var side2InputValue = side2Input.val();
+                                side2Input.val($(this).val());
+                                $(this).val(side2InputValue);
+                            }
+                        });
+
+                        $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger danger-pulsate");
+                    } else {
+                        ShowSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form was found, but no inputs inside have the appropriate data-side='1' attribute.");
+                    }
+                } else {
+                    ShowSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form is not present.");
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+        //Summary: 
+        // On: Clicking the get latest values button
+        // If > The manage competitors form is present.
+        //  
+        // Else > The manage competitors form is not present.
+        //  Show a snackbar message.
+        $("#getLatestCompetitorsValuesButton").click(function () {
+            try {
+                if ($("#manageCompetitorsForm").length) {
+                    $.ajax({
+                        type: "POST",
+                        url: "@Url.Action("GetLatestValues", "FightingGames")",
+                        data: { "pathToFormat": $("input[name='PathToFormat']").val() },
+                        dataType: "json",
+                        success: function (data) {
+                            console.log(data);
+
+                            if (data.Success === true) {
+                                $.each(data.Data, function (index) {
+                                    if ($(`[data-selector='${ data.Data[index].Selector }']`).attr("type") == "checkbox") {
+                                        $(`[data-selector='${ data.Data[index].Selector }']`).prop("checked", JSON.parse(data.Data[index].Value.toLowerCase()));
+                                    }
+                                    else {
+                                        $(`[data-selector='${ data.Data[index].Selector }']`).val(data.Data[index].Value);
+                                    }
+                                });
+
+                                $("#tournament").val($("[name='Tournament']").val());
+                                $("#round").val($("[name='Round']").val());
+                                $("#bestOf").val($("[name='BestOf']").val());
+                                $("#extra").val($("[name='Extra']").val());
+
+                                $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger danger-pulsate");
+
+                                ShowSnackbar("#manageCompetitorsSnackbar", "Retrieved the latest values.");
+                            } else {
+                                ShowSnackbar("#manageCompetitorsSnackbar", data.Message);
+                                UpdateErrorMonitor(data.ErrorMessage);
+                                console.log(data.ErrorMessage);
+                            }
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting the latest values. See the log for details.");
+                            UpdateErrorMonitor(jqXHR.responseText);
+                            console.log(jqXHR);
+                            console.log(`Text status: ${ textStatus }`);
+                            console.log(`Error thrown: ${ errorThrown }`);
+                        }
+                    });
+                } else {
+                    ShowSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form is not present.");
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+        //Summary: 
+        // On: Clicking the get set to default values button
+        // If > The manage competitors form is present.
+        //  If > The manage competitor form has inputs with attribute 'data-default'.
+        //      Change all inputs to their default values.
+        //      Replace the btn-success class on the submit update button by the btn-danger class, resulting in the button becoming red.
+        //  Else > The manage competitor form has no inputs with attribute 'data-default'.
+        //      Show a snackbar message.
+        // Else > The manage competitors form is not present.
+        //  Show a snackbar message.
+        $("#setToDefaultValuesButton").click(function () {
+            try {
+                if ($("#manageCompetitorsForm").length) {
+                    if ($("#manageCompetitorsForm").find(":input[data-default]").length) {
+                        var inputsWithDefaults = $("#manageCompetitorsForm").find(":input[data-default]");
+
+                        inputsWithDefaults.each(function () {
+                            if ($(this).attr("type") == "checkbox") {
+                                $(this).prop("checked", false);
+                            }
+                            else {
+                                $(this).val($(this).data("default"));
+                            }
+                        });
+
+                        if (!$("#submitCompetitorsButton").hasClass("btn-danger")) {
+                            $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger danger-pulsate");
+                        }
+                    } else {
+                        ShowSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form was found, but no inputs inside have the appropriate data-default attribute.");
+                    }
+                } else {
+                    ShowSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form is not present.");
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+        //Summary: 
+        // On: Clicking the decrease score / stocks left button
+        // If > 
+        //  
+        // Else >
+        //  
+        // If > 
+        //  
+        $("body").on("click", ".decrease", function () {
+            try {
+                if (isNaN($($(this).data("id")).val())) {
+                    $($(this).data("id")).val("0");
+                } else {
+                    $($(this).data("id")).val(parseInt($($(this).data("id")).val()) - 1);
+                }
+
+                if (!$("#submitCompetitorsButton").hasClass("btn-danger")) {
+                    $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger danger-pulsate");
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+        //Summary: 
+        // On: Clicking the increase score / stocks left button
+        // If > 
+        //  
+        // Else >
+        //  
+        // If > 
+        //  
+        $("body").on("click", ".increase", function () {
+            try {
+                if (isNaN($($(this).data("id")).val())) {
+                    $($(this).data("id")).val("0");
+                } else {
+                    $($(this).data("id")).val(parseInt($($(this).data("id")).val()) + 1);
+                }
+
+                if (!$("#submitCompetitorsButton").hasClass("btn-danger")) {
+                    $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger danger-pulsate");
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+
+
+        //Summary: 
+        // On: 
+        // If > 
+        //  
+        // Else >
+        //  
+        //  Show a snackbar message.
+        $("body").on("click", "[data-toggle='characterSkinPopover']", function () {
+            try {
+                var popoverToggle = $(this);
+
+                if (popoverToggle.data("popover-active") === false) {
+                    var characterSkinModalViewModel;
+
+                    if ($(popoverToggle.data("character-dropdown-selector")).val() !== "" && $(popoverToggle.data("character-dropdown-selector")).val() !== null) {
+                        $.ajax({
+                            type: "POST",
+                            url: "@Url.Action("GetSkins", "FightingGames")",
+                            async: false,
+                            data: {
+                                "pathToFormat": $("#manageCompetitorsForm input[name='PathToFormat']").val(),
+                                "pathToGame": $("#manageCompetitorsForm input[name='PathToGame']").val(),
+                                "selectedCharacterName": $(popoverToggle.data("character-dropdown-selector")).find("option:selected").data("name")
+                            },
+                            dataType: "json",
+                            success: function (data) {
+                                if (data.Success === true) {
+                                    if (data.SupportsSkins === true) {
+                                        characterSkinModalViewModel = data;
+                                    } else {
+                                        ShowSnackbar("#manageCompetitorsSnackbar", "These character icons do not support different skins.");
+                                        return;
+                                    }
+                                } else {
+                                    ShowSnackbar("#manageCompetitorsSnackbar", data.Message);
+                                    return;
+                                }
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting the skin data. See the log for details.");
+                                UpdateErrorMonitor(jqXHR.responseText);
+                                console.log(jqXHR);
+                                console.log(`Text status: ${ textStatus }`);
+                                console.log(`Error thrown: ${errorThrown}`);
+                                return;
+                            }
+                        });
+
+                        characterSkinModalViewModel.CharacterDropdownSelector = popoverToggle.data("character-dropdown-selector");
+                        characterSkinModalViewModel.CharacterSkinPickerToggleSelector = popoverToggle.data("skin-picker-toggle-selector");
+                        characterSkinModalViewModel.CharacterSkinPickerSelector = popoverToggle.data("skin-picker-selector");
+                        characterSkinModalViewModel.SelectedCharacterSkin = $(popoverToggle.data("character-dropdown-selector")).find("option:selected").val();                    
+
+                        $.ajax({
+                            type: "POST",
+                            url: "@Url.Action("GetSkinsPartialView", "FightingGames")",
+                            data: characterSkinModalViewModel,
+                            dataType: "html",
+                            async: false,
+                            success: function (data) {
+                                popoverToggle.popover("show");
+                                $(popoverToggle.data("skin-picker-selector")).find(".popover-content").html(data);
+                                popoverToggle.attr("data-popover-active", true).data("popover-active", true);
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting skin picker html. See the log for details.");
+                                UpdateErrorMonitor(jqXHR.responseText);
+                                console.log(jqXHR);
+                                console.log(`Text status: ${ textStatus }`);
+                                console.log(`Error thrown: ${errorThrown}`);
+                                return;
+                            }
+                        });
+                    } else {
+                        ShowSnackbar("#manageCompetitorsSnackbar", "No character has been selected to pick a skin for.");
+                        return;
+                    }
+                } else {
+                    popoverToggle.popover("hide");
+                    popoverToggle.attr("data-popover-active", false).data("popover-active", false);
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+        //Summary:
+        // On: Clicking a skin
+        // Replace the value and text in the character dropdown.
+        // Close the popover.
+        // Close the skin picker popover.
+        $("body").on("click", ".skin", function () {
+            try {
+                var characterDropdown = $($($(this).data("skin-picker-selector")).find(".characterDropdownSelector").val());
+                var characterSkinPickerToggle = $($($(this).data("skin-picker-selector")).find(".CharacterSkinPickerToggleSelector").val());
+
+                characterDropdown.find("option:selected").val($(this).data("value")).text($(this).data("name"));
+
+                $($(this).data("skin-picker-selector")).find(".skin.active").removeClass("active");
+
+                $(this).addClass("active");
+                characterSkinPickerToggle.popover("hide");
+                characterSkinPickerToggle.attr("data-popover-active", false).data("popover-active", false);
+
+                if (!$("#submitCompetitorsButton").hasClass("btn-danger")) {
+                    $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger danger-pulsate");
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+        //Summary:
+        // On: Selecting a character in a dropdown that has a skin picker
+        // Close the skin picker popover.
+        $("body").on("change", "select[data-skin-picker-toggle-selector]", function () {
+            try {
+                $($(this).data("skin-picker-toggle-selector")).popover("hide");
+                $($(this).data("skin-picker-toggle-selector")).attr("data-popover-active", false).data("popover-active", false);
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+        //Summary:
+        //On: Clicking the get crew players button.
+        // Limit the crew players count to between 1 and 99.
+        // If > The value of the crew players count is invalid.
+        //  Show a snackbar message.
+        //  Do not submit the competitors form.
+        // Else > The value of the crew players count is valid.
+        //  Retrieve the crew players partial view using AJAX.
+        //  Insert the partial view into the manage crew players container.
+        $("body").on("click", "#getCrewPlayersButton", function () {
+            try {
+                if ($("#crewPlayersCount").val() < 1) {
+                    $("#crewPlayersCount").val("1");
+                }
+                if ($("#crewPlayersCount").val() > 99) {
+                    $("#crewPlayersCount").val("99");
+                }
+
+                if ($("#crewPlayersCount").val() == null || $("#crewPlayersCount").val() == undefined || $("#crewPlayersCount").val() == "" || crewBattlePlayerCount.toString() == $("#crewPlayersCount").val().toString()) {
+                    ShowSnackbar("#manageCompetitorsSnackbar", "The player count value is not valid or unchanged");
+                    return;
+                }
+                else {
+                    $.ajax({
+                        type: "POST",
+                        url: "@Url.Action("GetCrewPlayers", "SuperSmashBros")",
+                        data: {
+                            "Count": $("#crewPlayersCount").val(),
+                            "Series": $("#manageCompetitorsForm").find("input[name='Series']").val(),
+                            "Game": $("#manageCompetitorsForm").find("input[name='Game']").val(),
+                            "Format": $("#manageCompetitorsForm").find("input[name='Format']").val(),
+                            "PathToSeries": $("#manageCompetitorsForm").find("input[name='PathToSeries']").val(),
+                            "PathToGame": $("#manageCompetitorsForm").find("input[name='PathToGame']").val(),
+                            "PathToFormat": $("#manageCompetitorsForm").find("input[name='PathToFormat']").val()
+                        },
+                        dataType: "html",
+                        success: function (data) {
+                            $("#crewPlayersContainer").html(data);
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting the crew player form inputs. See the log for details.");
+                            UpdateErrorMonitor(jqXHR.responseText);
+                            console.log(jqXHR);
+                            console.log(`Text status: ${ textStatus }`);
+                            console.log(`Error thrown: ${ errorThrown }`);
+                        }
+                    });
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+        /* Competitors & Commentators */
+
+        // Summary:
+        // On: Clicking the submit competitors or commentators button.
+        // If > The manage form is present. (only applies to competitors form)
+        //  If > A format has been selected in the format dropdown. (only applies to commentators form)
+        //      Copy the tournament values to the manage form. (only applies to competitors form)
+        //      Submit the competitors form using SubmitUpdate().
+        //  Else > A format has not been selected in the format dropdown. (only applies to commentators form)
+        //      Show a snackbar message.
+        // Else > The manage form is not present. (only applies to competitors form)
+        //  Show a snackbar message.
+        $(".submitButton").click(function () {
+            try {
+                if ($($(this).data("form-id")).length) {
+                    if ($("#Format").val()) {
+                        $($(this).data("form-id")).find("input[name='Tournament']").val($("#tournament").val());
+                        $($(this).data("form-id")).find("input[name='Round']").val($("#round").val());
+                        $($(this).data("form-id")).find("input[name='BestOf']").val($("#bestOf").val());
+                        $($(this).data("form-id")).find("input[name='Extra']").val($("#extra").val());
+
+                        SubmitUpdate($($(this).data("form-id")), $(this));
+                    } else {
+                        ShowSnackbar("#manageCommentatorsSnackbar", "No game and format have been selected.");
+                    }
+                } else {
+                    ShowSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form is not present.");
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+        // Summary:
+        // Submit the competitors form using AJAX.
+        // If > The update was successful.
+        //  Show a snackbar message.
+        //  Replace the btn-danger class on the submit update button by the btn-success class, resulting in the button becoming green.
+        //  If > The overlay type is game.
+        //      Build and send a competitors queu update through the WebSocket using BuildAndSendQueuUpdate().
+        //      Update the competitors CSS monitor using UpdateCSSMonitor().
+        //      Update the competitors JSON monitor using UpdateCSSMonitor().
+        //  Else If >The overlay type is commentary.
+        //      Build and send a commentators queu update through the WebSocket using BuildAndSendQueuUpdate().
+        //      Update the commentators CSS monitor using UpdateCSSMonitor().
+        //      Update the commentators JSON monitor using UpdateCSSMonitor().
+        // Else > The update was unsuccessful.
+        //  Show a snackbar message.
+        //  Update the error monitor using UpdateErrorMonitor()
+        // PARAMETERS
+        // manageForm: The manage form that is going to be submitted.
+        // submitButton: The button that was clicked to submit the form.
+        function SubmitUpdate(manageForm, submitButton) { //TODO: rename to SubmitUpdate
+            try {
+                $.ajax({
+                    type: "POST",
+                    url: manageForm.attr("action"),
+                    data: manageForm.serialize(),
+                    dataType: "json",
+                    success: function (data) {
+                        ShowSnackbar(manageForm.data("snackbar-id"), data.Message);
+
+                        if (data.Success == "True") {
+                            if (submitButton.hasClass("btn-danger")) {
+                                submitButton.removeClass("btn-danger danger-pulsate").addClass("btn-success");
+                            }
+
+                            ShowSnackbar(manageForm.data("snackbar-id"), data.Message);
+
+                            if (manageForm.is("[data-overlay-type='Game']")) {
+                                competitorsFormJsonData = BuildAndSendQueuUpdate(manageForm, competitorsFormJsonData);
+                                UpdateCSSMonitor(manageForm.data("css-monitor-url"), { "pathToFormat": manageForm.find("input[name='PathToFormat']").val() }, manageForm.data("css-monitor-id"));
+                                UpdateJsonMonitor(manageForm.data("json-monitor-url"), { "pathToFormat": manageForm.find("input[name='PathToFormat']").val() }, manageForm.data("json-monitor-id"));
+                            }
+                            else if (manageForm.is("[data-overlay-type='Commentary']")) {
+                                commentatorsFormJsonData = BuildAndSendQueuUpdate(manageForm, commentatorsFormJsonData);
+                                UpdateCSSMonitor(manageForm.data("css-monitor-url"), { "pathToCommentators": manageForm.find("input[name='PathToCommentators']").val() }, manageForm.data("css-monitor-id"));
+                                UpdateJsonMonitor(manageForm.data("json-monitor-url"), { "pathToCommentators": manageForm.find("input[name='PathToCommentators']").val() }, manageForm.data("json-monitor-id"));
+                            }
+                        }
+                        else {
+                            ShowSnackbar(manageForm.data("snackbar-id"), data.Message);
+                            UpdateErrorMonitor(data.ErrorMessage);
+                            console.log(data.ErrorMessage);
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        ShowSnackbar("#ajaxErrorSnackbar", "An error occurred submitting the latest update. See the log for details");
+                        UpdateErrorMonitor(jqXHR.responseText);
+                        console.log(jqXHR);
+                        console.log(`Text status: ${ textStatus }`);
+                        console.log(`Error thrown: ${ errorThrown }`);
+                    }
+                });
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+
+        // Summary:
+        //
+        //
+        // If > formJsonData variable is null, no update has been submitted so far.
+        //  
+        // Else > formJsonData variable is not null, an update has been submitted before.
+        //  
+        //  
+        // If > jsonData.data has any queu data.
+        //  Send the queu through the WebSocket
+        // Return the new json data.
+        // PARAMETERS
+        // manageForm: The manage form that that the queu is going to be build from.
+        // formJsonData: The current json data.
+        function BuildAndSendQueuUpdate(manageForm, formJsonData) {
+            try {
+                var formInputs = manageForm.find(":input[data-selector]");
+                var jsonData = { "type": "queu", "overlayType": manageForm.data("overlay-type"), "data": [] };
+
+                if (formJsonData == null) {
+                    formJsonData = {};
+
+                    $(formInputs).each(function () {
+                        if ($(this).is(":checkbox")) {
+                            formJsonData[$(this).data("selector")] = $(this).is(":checked");
+                        } else {
+                            formJsonData[$(this).data("selector")] = $(this).val();
+                        }
+
+                        if ($.inArray($(this).data("selector"), jsonData.data) == -1) {
+                            jsonData.data.push($(this).data("selector"));
+                        }
+                    });
+                }
+                else {
+                    var newFormJsonData = {};
+                    $(formInputs).each(function () {
+                        if ($(this).is(":checkbox")) {
+                            newFormJsonData[$(this).data("selector")] = $(this).is(":checked");
+                        } else {
+                            newFormJsonData[$(this).data("selector")] = $(this).val();
+                        }
+                    });
+
+                    $.each(newFormJsonData, function (key, value) {
+                        if (!(key in formJsonData)) {
+                            jsonData.data.push(key);
+                        }
+                        if (formJsonData[key] != value) {
+                            jsonData.data.push(key);
+                        }
+                    });
+
+                    formJsonData = newFormJsonData;
+                }
+
+                if (jsonData.data.length > 0) {
+                    websocket.send(JSON.stringify(jsonData));
+                }
+
+                return formJsonData;
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+
+
+
+        /* Commentators */
+
+        // Summary:
+        // On: Clicking the add commentator button.
+        // Retrieve the commentator partial view using AJAX.
+        // Append the partial view manage commentators form.
+        // Re-index all the commentator elements available.
+        $("#addCommentatorButton").click(function () {
+            try {
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("GetCommentatorRow", "Commentators")",
+                    data: { "index": $("div[id^='commentator-row-']").length },
+                    dataType: "html",
+                    success: function (data) {
+                        $("#manageCommentatorsForm").append(data);
+
+                        reindexCommentators();
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting the commentator form inputs. See the log for details");
+                        UpdateErrorMonitor(jqXHR.responseText);
+                        console.log(jqXHR);
+                        console.log(`Text status: ${ textStatus }`);
+                        console.log(`Error thrown: ${ errorThrown }`);
+                    }
+                });
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+        // Summary:
+        // On: Clicking the remove commentator button.
+        // Remove the row of the commentator with the specified id attribute.
+        // Re-index all the commentator elements available using reindexCommentators().
+        // PARAMETERS
+        // index: index of the element to be removed
+        function removeCommentator(index) {
+            try {
+                $("#commentator-row-" + index).remove();
+
+                reindexCommentators();
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+
+        // Summary:
+        // On: Clicking the move commentator down button.
+        // If > There is a commentator below the selected one.
+        //  Swap the commentators
+        // Else > There is no commentator below the selected one.
+        //  Show a snackbar message.
+        // Re-index all the commentator elements available using reindexCommentators().
+        // PARAMETERS
+        // index: index of the element to be removed
+        function moveCommentatorDown(index) {
+            try {
+                if ($(`#commentator-row-${ (index + 1) }`).length) {
+                    var row1 = $(`#commentator-row-${ index }`);
+                    var row2 = $(`#commentator-row-${ (index + 1) }`);
+
+                    row1.replaceWith(row2.clone());
+                    row2.replaceWith(row1.clone());
+                }
+                else {
+                    ShowSnackbar("#manageCommentatorsSnackbar", "The selected commentator can't be moved down at this time.");
+                }
+
+                reindexCommentators();
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+
+        // Summary:
+        // On: Clicking the move commentator up button
+        // If > There is a commentator above the selected one.
+        //  Swap the commentators
+        // Else > There is no commentator above the selected one.
+        //  Show a snackbar message.
+        // Re-index all the commentator elements available using reindexCommentators().
+        // PARAMETERS
+        // index: index of the element to be removed
+        function moveCommentatorUp(index) {
+            try {
+                $(`#commentator-row-${ index }`);
+                if (index > 0) {
+                    if ($(`#commentator-row-${ (index - 1) }`).length) {
+                        var row1 = $(`#commentator-row-${ index }`);
+                        var row2 = $(`#commentator-row-${ (index - 1) }`);
+
+                        row1.replaceWith(row2.clone());
+                        row2.replaceWith(row1.clone());
+                    } else {
+                        ShowSnackbar("#manageCommentatorsSnackbar", "The selected commentator can't be moved up at this time.");
+                    }
+                }
+
+                reindexCommentators();
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+
+        // Summary:
+        // Re-index all the commentator elements available
+        function reindexCommentators() {
+            try {
+                $("div[id^='commentator-row-']").each(function (index) {
+                    $(this).attr("id", "commentator-row-" + index);
+                    $(this).find("input[id$='_Name']").attr({ "name": `commentatorViewModels[${ index }].Name`, "id": `commentatorViewModels_${ index }_Name`, "data-selector": `#commentator${ (index + 1) }NameText` }).data("selector", `#commentator${ (index + 1) }NameText`);
+                    $(this).find("input[id$='_Twitter']").attr({ "name": `commentatorViewModels[${ index }].Twitter`, "id": `commentatorViewModels_${ index }_Twitter`, "data-selector": `#commentator${ (index + 1) }TwitterText` }).data("selector", `#commentator${ (index + 1) }TwitterText`);
+                    $(this).find("button[id^='deleteCommentator-']").attr({ "onclick": `removeCommentator(${ index })`, "id": "deleteCommentator-" + index });
+                    $(this).find("button[id^='moveCommentatorDown-']").attr({ "onclick": `moveCommentatorDown(${ index })`, "id": `moveCommentatorDown-${ index }` });
+                    $(this).find("button[id^='moveCommentatorUp-']").attr({ "onclick": "moveCommentatorUp(" + index + ")", "id": `moveCommentatorUp-${ index }` });
+                });
+
+                if (!$("#submitCommentatorsButton").hasClass("btn-danger")) {
+                    $("#submitCommentatorsButton").removeClass("btn-primary").addClass("btn-danger danger-pulsate");
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+
+        // Summary:
+        // On: Changing values of a commentator input.
+        // Replace the btn-primary class on the submit update button by the btn-danger class, resulting in the button becoming red.
+        $("body").on("change input", "#manageCommentatorsForm :input", function () {
+            try {
+                if (!$("#submitCommentatorsButton").hasClass("btn-danger")) {
+                    $("#submitCommentatorsButton").removeClass("btn-primary").addClass("btn-danger danger-pulsate");
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+
+
+        /* General Monitor  */
+
+        // Summary:
+        // If > The json is of type "overlayConnected".
+        //  Increase clientsConnectedCount variable by 1.
+        //  Add a new row to the WebSocket client monitor table body.
+        // Else > The json is of type "overlayDisconnected".
+        //  Decrease clientsConnectedCount variable by 1 if it's higher than 1.
+        //  Remove the row from the WebSocket client monitor table body with the right data-full-path attribute value.
+        // PARAMETERS
+        // jsonData: the json data received through the WebSocket
+        function UpdateWebSocketClientMonitor(jsonData) {
+            try {
+                if ($("#webSocketClientMonitorTableBody").data("enabled") == "True") {
+                    var splitPath = jsonData.data.split("/");
+
+                    if (jsonData.type == "overlayConnected") {
+                        clientsConnectedCount++;
+                        $("#webSocketClientMonitorTableBody").append(`<tr data-full-path='${ jsonData.data }'><td>${ clientsConnectedCount }</td><td>${ jsonData.overlayType }</td><td>${ splitPath[splitPath.length - 3] }/${ splitPath[splitPath.length - 2] }/${ splitPath[splitPath.length - 1] }</td><td>Connected</td></tr>`);  // , jsonData.overlayType
+                    }
+                    else if (jsonData.type == "overlayDisconnected") {
+                        if (clientsConnectedCount > 1) {
+                            clientsConnectedCount--;
+                        }
+
+                        $("#webSocketClientMonitorTableBody").find("tr[data-full-path='" + jsonData.data + "']").remove();
+                    }
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+
+        // Summary:
+        // On: Clicking the clear WebSocket client monitor button
+        // Remove all data from the WebSocket client monitor and reset the clientsConnectedCount
+        $("#clearWebSocketClientMonitorButton").click(function () {
+            try {
+                if ($("#webSocketClientMonitorTableBody").data("enabled") == "True") {
+                    $("#webSocketClientMonitorTableBody").html("<tr><td>1</td><td>Livestream Production Manager</td><td>Connected</td></tr>");
+                    clientsConnectedCount = 1;
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+        // Summary:
+        // Append the error to the error monitor.
+        function UpdateErrorMonitor(error) {
+            try {
+                var currentDateTime = new Date();
+
+                if ($("#errorMonitor").data("enabled") == "True") {
+                    $("#errorMonitor").text(`Error logged on ${currentDateTime.getHours()}:${currentDateTime.getMinutes()}:${currentDateTime.getSeconds()}.${ currentDateTime.getMilliseconds() }:\r\n${ error }\r\n${ $("#errorMonitor").text() }`);
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+
+        // Summary:
+        // On: Clicking the clear error monitor button
+        // Remove all data from the error monitor
+        $("#clearErrorMonitorButton").click(function () {
+            try {
+                if ($("#errorMonitor").data("enabled") == "True") {
+                    $("#errorMonitor").html("");
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+
+
+        /* Game & Commentary Monitor */
+
+        // Summary:
+        // Update the WebSocket data monitor with the newest data received from the WebSocket.
+        // PARAMETERS
+        // data: the data received through the WebSocket
+        function UpdateWebSocketDataMonitor(data, overlayType) {
+            try {
+                if ($($(`form[data-overlay-type='${ overlayType }']`).data("websocket-data-monitor-id")).data("enabled") == "True") {
+                    $($(`form[data-overlay-type='${ overlayType }']`).data("websocket-data-monitor-id")).html(JSON.stringify(data));
+
+                    hljs.initHighlighting();
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+
+        // Summary:
+        // On: Clicking the clear WebSocket data monitor button
+        // Remove all data from the WebSocket data monitor
+        $(".clearWebSocketDataMonitorButton").click(function () {
+            try {
+                if ($($(this).data("monitor-id")).data("enabled") == "True") {
+                    $($(this).data("monitor-id")).html("");
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+        // Summary:
+        // Retrieve the CSS content using AJAX.
+        // Append the partial view to the CSS monitor.
+        // PARAMETERS
+        // url: URL to retrieve the CSS file content.
+        // pathToFormat: Path to the format
+        function UpdateCSSMonitor(url, pathData, cssMonitorId) {
+            try {
+                if ($(cssMonitorId).data("enabled") == "True") {
+                    $.ajax({
+                        type: "POST",
+                        url: url,
+                        data: pathData,
+                        dataType: "text",
+                        success: function (data) {
+                            $(cssMonitorId).html(data);
+                            hljs.initHighlighting.called = false;
+                            hljs.initHighlighting();
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting the latest CSS file content. See the log for details");
+                            UpdateErrorMonitor(jqXHR.responseText);
+                            console.log(jqXHR);
+                            console.log(`Text status: ${ textStatus }`);
+                            console.log(`Error thrown: ${ errorThrown }`);
+                        }
+                    });
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+
+        // Summary:
+        // On: Clicking the clear CSS monitor button
+        // Remove all data from the CSS monitor
+        $(".clearCssMonitorButton").click(function () {
+            try {
+                if ($($(this).data("monitor-id")).data("enabled") == "True") {
+                    $($(this).data("monitor-id")).html("");
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+        // Summary:
+        // Retrieve the JSON content using AJAX.
+        // Append the partial view to the JSON monitor.
+        // PARAMETERS
+        // url: URL to retrieve the JSON file content.
+        // pathToFormat: Path to the format
+        function UpdateJsonMonitor(url, pathData, jsonMonitorId) {
+            try {
+                if ($(jsonMonitorId).data("enabled") == "True") {
+                    $.ajax({
+                        type: "POST",
+                        url: url,
+                        data: pathData,
+                        dataType: "text",
+                        success: function (data) {
+                            $(jsonMonitorId).html(data);
+                            hljs.initHighlighting.called = false;
+                            hljs.initHighlighting();
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting the latest JSON file content. See the log for details");
+                            UpdateErrorMonitor(jqXHR.responseText);
+                            console.log(jqXHR);
+                            console.log(`Text status: ${ textStatus }`);
+                            console.log(`Error thrown: ${ errorThrown }`);
+                        }
+                    });
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+
+        // Summary:
+        // On: Clicking the clear JSON monitor button
+        // Remove all data from the JSON monitor
+        $(".clearJsonMonitorButton").click(function () {
+            try {
+                if ($($(this).data("monitor-id")).data("enabled") == "True") {
+                    $($(this).data("monitor-id")).html("");
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+        // Summary:
+        // On: Clicking a toggle monitor button
+        // if > The monitor associated with the button is enabled
+        //  Disable the monitor associated with the button
+        //  Update the clicked toggle button to show the monitor is disabled
+        // else > The monitor associated with the button is disabled
+        //  Enable the monitor associated with the button
+        //  Update the clicked toggle button to show the monitor is enabled
+        // if > The monitor associated to the button is the client monitor
+        //  Reset the monitor to only show the the Livestream Production Manager
+        // else > The monitor associated to the button is not the client monitor
+        //  Reset the monitor to completely empty
+        $(".toggleMonitorButton").click(function () {
+            try {
+                if ($($(this).data("monitor-id")).data("enabled") == "True") {
+                    $($(this).data("monitor-id")).data("enabled", "False");
+                    $(this).removeClass("btn-success").addClass("btn-danger");
+                    $(this).html("<span class='glyphicon glyphicon-remove'></span> Disabled");
+
+                    if ($($(this).data("monitor-id")).data("client-monitor") == "True") {
+                        $($(this).data("monitor-id")).html("<tr><td>1</td><td>Livestream Production Manager</td><td>Connected</td></tr>");
+                        clientsConnectedCount = 1;
+                    }
+                    else {
+                        $($(this).data("monitor-id")).html("");
+                    }
+                }
+                else {
+                    $($(this).data("monitor-id")).data("enabled", "True");
+                    $(this).removeClass("btn-danger").addClass("btn-success").html("<span class='glyphicon glyphicon-ok'></span> Enabled");
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+        /* Preview overlay */
+
+        // Summary:
+        // On: Clicking the force resize button.
+        // Send a force resize command through the WebSocket.
+        $(".forceResizeButton").click(function () {
+            try {
+                var jsonData = { "type": "forceResize", data: {} };
+                websocket.send(JSON.stringify(jsonData));
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+        // Summary:
+        // On: Clicking a toggle preview overlay button
+        // if > The overlay preview associated with the button is enabled
+        //  Disable the overlay preview associated with the button
+        //  Update the clicked toggle button to show the overlay preview it is disabled
+        // else > the overlay preview associated with the button is disabled
+        //  Enable the overlay previews associated with the button
+        //  Update the clicked toggle button to show the overlay preview it is enabled
+        $(".togglePreviewOverlayButton").click(function () {
+            try {
+                if ($($(this).data("preview-id")).data("enabled") == "True") {
+                    $($(this).data("preview-id")).data("enabled", "False");
+                    $($(this).data("preview-id")).removeAttr("src");
+
+                    if (!$($(this).data("panel-id")).hasClass("previewDisabled")) {
+                        $($(this).data("panel-id")).removeClass("previewEnabled").addClass("previewDisabled");
+                    }
+
+                    if (!$($(this).data("preview-id")).hasClass("previewDisabled")) {
+                        $($(this).data("preview-id")).removeClass("previewEnabled").addClass("previewDisabled");
+                    }
+
+                    $(this).removeClass("btn-success").addClass("btn-danger").html("<span class='glyphicon glyphicon-remove'></span> Disabled");
+
+                } else {
+                    $($(this).data("preview-id")).data("enabled", "True");
+
+                    if ($(this).data("overlay-type") === "Game") {
+                        $($(this).data("preview-id")).attr("src", competitorsOverlayPreviewSourceUrl);
+                    }
+                    if ($(this).data("overlay-type") === "Commentary") {
+                        $($(this).data("preview-id")).attr("src", commentatorsOverlayPreviewSourceUrl);
+                    }
+
+                    if ($($(this).data("panel-id")).hasClass("previewDisabled")) {
+                        $($(this).data("panel-id")).addClass("previewEnabled").removeClass("previewDisabled");
+                    }
+
+                    if ($($(this).data("preview-id")).hasClass("previewDisabled")) {
+                        $($(this).data("preview-id")).addClass("previewEnabled").removeClass("previewDisabled");
+                    }
+
+                    $(this).removeClass("btn-danger").addClass("btn-success").html("<span class='glyphicon glyphicon-ok'></span> Enabled");
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+
+        /* Modal */
+        // On: Clicking a show ReadMe Modal button
+        // TODO
+        // Note: Only works for competitors at the moment.
+        // Note: 
+        $(".showReadMeModalButton").click(function () {
+            try {
+                var pathToFormat;
+                if ($($(this).data("form-id")).data("overlay-type") === "Game") {
+                    pathToFormat = $($(this).data("form-id")).find("[name='PathToFormat']").val();
+                }
+
+                if ($($(this).data("form-id")).data("overlay-type") === "Commentary") {
+                    pathToFormat = $($(this).data("form-id")).find("[name='PathToCommentators']").val();
+                }
+
+                if ($("#Format").val()) {
+                    $.ajax({
+                        type: "POST",
+                        url: "@Url.Action("GetReadMe", "FightingGames")",
+                        data: { "pathToFormat": pathToFormat },
+                        dataType: "json",
+                        success: function (data) {
+                            $("#readMeModalHeader").html(data.header);
+                            $("#readMeModalBody").html(data.body);
+                            $("#readMeModalFooter").html(data.footer);
+                            $("#readMeModal").modal("show");
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting the modal content. See the log for details");
+                            UpdateErrorMonitor(jqXHR.responseText);
+                            console.log(jqXHR);
+                            console.log(`Text status: ${ textStatus }`);
+                            console.log(`Error thrown: ${ errorThrown }`);
+                        }
+                    });
+                } else {
+                    ShowSnackbar("#manageCommentatorsSnackbar", "No game and format have been selected.");
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+
+
+        /* Snackbar */
+
+        // Summary:
+        // Show a snackbar.
+        // PARAMETERS
+        // snackbarId: The id attribute of the snackbar to be updated and shown.
+        // message: The message to be shown in the snackbar.
+        function ShowSnackbar(snackbarId, message) {
+            try {
+                $(snackbarId).text(message);
+
+                var marginLeft = ($(window).width() - $(snackbarId).outerWidth()) / 2;
+                $(snackbarId).css("left", marginLeft >= 0 ? marginLeft : 0);
+
+                $(snackbarId).addClass("show");
+                setTimeout(function () {
+                    $(snackbarId).removeClass("show");
+                }, 3000);
+            } catch (ex) {
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+    </script>
+}

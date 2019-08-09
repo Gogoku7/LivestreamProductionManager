@@ -1,0 +1,66 @@
+[
+{
+  "Selector": "#player1NameText",
+  "Value": "Gogoku7"
+},
+{
+  "Selector": ".player1Sponsor",
+  "Value": "Cinnovate"
+},
+{
+  "Selector": "#player1TwitterText",
+  "Value": ""
+},
+{
+  "Selector": "#player1ScoreText",
+  "Value": "1"
+},
+{
+  "Selector": "#player1Character",
+  "Value": "../../CharacterIcons/fox.png"
+},
+{
+  "Selector": "#player1Port",
+  "Value": "../../PlayerPorts/PlayerPort1.png"
+},
+{
+  "Selector": "#player2NameText",
+  "Value": "Median4"
+},
+{
+  "Selector": ".player2Sponsor",
+  "Value": "Auto"
+},
+{
+  "Selector": "#player2TwitterText",
+  "Value": ""
+},
+{
+  "Selector": "#player2ScoreText",
+  "Value": "0"
+},
+{
+  "Selector": "#player2Character",
+  "Value": "../../CharacterIcons/littlemac.png"
+},
+{
+  "Selector": "#player2Port",
+  "Value": "../../PlayerPorts/PlayerPort2.png"
+},
+{
+  "Selector": "#tournamentText",
+  "Value": "Fight Night 50"
+},
+{
+  "Selector": "#extraText",
+  "Value": "Esports Game Arena"
+},
+{
+  "Selector": "#roundText",
+  "Value": "Winners Round 1"
+},
+{
+  "Selector": "#bestOfText",
+  "Value": "Best of 3"
+}
+]
