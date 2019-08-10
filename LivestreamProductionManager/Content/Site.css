@@ -31,7 +31,6 @@ textarea {
 .snackbar {
     visibility: hidden;
     min-width: 250px;
-    background-color: #333;
     color: #fff;
     text-align: center;
     border-radius: 2px;
@@ -97,7 +96,7 @@ textarea {
     }
 }
 
-/* END Snackbar */
+/* Snackbar END */
 
 .cursorPointer {
     cursor: pointer;

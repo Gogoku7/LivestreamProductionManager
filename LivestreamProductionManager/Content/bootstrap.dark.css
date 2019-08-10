@@ -6908,6 +6908,10 @@ button.close {
     background-color: #DC143C;
 }
 
+.snackbar {
+    background-color: #000;
+}
+
 @media (max-width:767px) {
     .visible-xs {
         display: block !important

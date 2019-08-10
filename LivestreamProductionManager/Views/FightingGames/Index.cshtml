@@ -623,13 +623,13 @@
                         $("[data-toggle='characterSkinPopover']").popover({ html: true, placement: "bottom", trigger: "manual" });
 
                         $("#competitorsOverlayPath").html(`${ selectedFormat.val() }GameOverlay.html`).attr("href", `${ selectedFormat.val() }GameOverlay.html`);
-                        competitorsOverlayPreviewSourceUrl = `http://${ baseUrl + selectedFormat.val() }GameOverlay.html`;
+                        competitorsOverlayPreviewSourceUrl = `${ selectedFormat.val() }GameOverlay.html`;
                         if ($("#competitorsPreviewOverlayIframe").data("enabled") == "True") {
                             $("#competitorsPreviewOverlayIframe").attr("src", competitorsOverlayPreviewSourceUrl);
                         }
 
-                        $("#commentatorsOverlayPath").html(`${selectedGame.val()}Commentators/CommentaryOverlay.html`).attr("href", `${ selectedGame.val() }Commentators/CommentaryOverlay.html`);
-                        commentatorsOverlayPreviewSourceUrl = `http://${ baseUrl + selectedGame.val() }Commentators/CommentaryOverlay.html`;
+                        $("#commentatorsOverlayPath").html(`${selectedGame.val()}Commentators/CommentaryOverlay.html`).attr("href", `${ selectedGame.data("path-to-commentators") }CommentaryOverlay.html`);
+                        commentatorsOverlayPreviewSourceUrl = `${ selectedGame.val() }Commentators/CommentaryOverlay.html`;
                         if ($("#commentatorsPreviewOverlayIframe").data("enabled") == "True") {
                             $("#commentatorsPreviewOverlayIframe").attr("src", commentatorsOverlayPreviewSourceUrl);
                         }
