@@ -22,7 +22,10 @@ Livestream Production Manager (LPM) is in development and doesn't have a .msi in
 
 - For now, you just need to have Visual Studio 2019 (2017 is possible too, but 2019 is preferred) Community installed on your pc/laptop. When installing it for the first time, remember to install the "ASP.NET and web development" workload, so you can run LPM
 - To get LPM sourcecode on your device, (preferably) download or clone/fork this repository
-- Open the .sln file with Visual Studio and run the program with F5
+- Open the .sln file with Visual Studio
+- Right click "Solution 'LivestreamProductionManager (1 project)'"
+- Select "Rebuild Solution"
+- Run the program with F5
 
 To get an actual overlay in OBS:
 - Add a new browser source to a scene
