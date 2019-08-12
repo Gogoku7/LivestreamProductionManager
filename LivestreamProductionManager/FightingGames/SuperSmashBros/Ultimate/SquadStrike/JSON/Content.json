@@ -1,19 +1,19 @@
 [
 {
   "Selector": "#squad1NameText",
-  "Value": "Europe"
+  "Value": "USA"
 },
 {
   "Selector": "#squad1Port",
-  "Value": "../../PlayerPorts/PlayerPort1.png"
+  "Value": "../../PlayerPorts/PlayerPort2.png"
 },
 {
   "Selector": "#squad1ScoreText",
-  "Value": "1"
+  "Value": "2"
 },
 {
   "Selector": "#squad1Player1NameText",
-  "Value": "Mr. R"
+  "Value": "ZeRo"
 },
 {
   "Selector": ".squad1Player1Active",
@@ -25,7 +25,7 @@
 },
 {
   "Selector": "#squad1Character1",
-  "Value": "../../CharacterIcons/bayonetta.png"
+  "Value": "../../CharacterIcons/zerosuitsamus.png"
 },
 {
   "Selector": ".squad1Character1Eliminated",
@@ -33,7 +33,7 @@
 },
 {
   "Selector": "#squad1Player2NameText",
-  "Value": "iStudying"
+  "Value": "Nairo"
 },
 {
   "Selector": ".squad1Player2Active",
@@ -45,7 +45,7 @@
 },
 {
   "Selector": "#squad1Character2",
-  "Value": "../../CharacterIcons/bowser.png"
+  "Value": "../../CharacterIcons/zelda.png"
 },
 {
   "Selector": ".squad1Character2Eliminated",
@@ -53,7 +53,7 @@
 },
 {
   "Selector": "#squad1Player3NameText",
-  "Value": "Sodrek"
+  "Value": "MKLeo"
 },
 {
   "Selector": ".squad1Player3Active",
@@ -65,7 +65,7 @@
 },
 {
   "Selector": "#squad1Character3",
-  "Value": "../../CharacterIcons/bowserjr.png"
+  "Value": "../../CharacterIcons/younglink.png"
 },
 {
   "Selector": ".squad1Character3Eliminated",
@@ -73,7 +73,7 @@
 },
 {
   "Selector": "#squad1Player4NameText",
-  "Value": "Ixis"
+  "Value": "Tweek"
 },
 {
   "Selector": ".squad1Player4Active",
@@ -85,7 +85,7 @@
 },
 {
   "Selector": "#squad1Character4",
-  "Value": "../../CharacterIcons/captainfalcon.png"
+  "Value": "../../CharacterIcons/yoshi.png"
 },
 {
   "Selector": ".squad1Character4Eliminated",
@@ -93,7 +93,7 @@
 },
 {
   "Selector": "#squad1Character5",
-  "Value": "../../CharacterIcons/chrom.png"
+  "Value": "../../CharacterIcons/wolf.png"
 },
 {
   "Selector": ".squad1Character5Eliminated",
@@ -101,19 +101,19 @@
 },
 {
   "Selector": "#squad2NameText",
-  "Value": "USA"
+  "Value": "Europe"
 },
 {
   "Selector": "#squad2Port",
-  "Value": "../../PlayerPorts/PlayerPort2.png"
+  "Value": "../../PlayerPorts/PlayerPort1.png"
 },
 {
   "Selector": "#squad2ScoreText",
-  "Value": "2"
+  "Value": "1"
 },
 {
   "Selector": "#squad2Player1NameText",
-  "Value": "ZeRo"
+  "Value": "Mr. R"
 },
 {
   "Selector": ".squad2Player1Active",
@@ -125,7 +125,7 @@
 },
 {
   "Selector": "#squad2Character1",
-  "Value": "../../CharacterIcons/zerosuitsamus.png"
+  "Value": "../../CharacterIcons/bayonetta.png"
 },
 {
   "Selector": ".squad2Character1Eliminated",
@@ -133,7 +133,7 @@
 },
 {
   "Selector": "#squad2Player2NameText",
-  "Value": "Nairo"
+  "Value": "iStudying"
 },
 {
   "Selector": ".squad2Player2Active",
@@ -145,7 +145,7 @@
 },
 {
   "Selector": "#squad2Character2",
-  "Value": "../../CharacterIcons/zelda.png"
+  "Value": "../../CharacterIcons/bowser.png"
 },
 {
   "Selector": ".squad2Character2Eliminated",
@@ -153,7 +153,7 @@
 },
 {
   "Selector": "#squad2Player3NameText",
-  "Value": "MKLeo"
+  "Value": "Sodrek"
 },
 {
   "Selector": ".squad2Player3Active",
@@ -165,7 +165,7 @@
 },
 {
   "Selector": "#squad2Character3",
-  "Value": "../../CharacterIcons/younglink.png"
+  "Value": "../../CharacterIcons/bowserjr.png"
 },
 {
   "Selector": ".squad2Character3Eliminated",
@@ -173,7 +173,7 @@
 },
 {
   "Selector": "#squad2Player4NameText",
-  "Value": "Tweek"
+  "Value": "Ixis"
 },
 {
   "Selector": ".squad2Player4Active",
@@ -185,7 +185,7 @@
 },
 {
   "Selector": "#squad2Character4",
-  "Value": "../../CharacterIcons/yoshi.png"
+  "Value": "../../CharacterIcons/captainfalcon.png"
 },
 {
   "Selector": ".squad2Character4Eliminated",
@@ -193,7 +193,7 @@
 },
 {
   "Selector": "#squad2Character5",
-  "Value": "../../CharacterIcons/wolf.png"
+  "Value": "../../CharacterIcons/chrom.png"
 },
 {
   "Selector": ".squad2Character5Eliminated",

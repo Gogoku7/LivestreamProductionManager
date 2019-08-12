@@ -1,23 +1,23 @@
 #squad1NameText:before {
-    content: "Europe";
+    content: "USA";
 }
 
 #squad1Player1NameText:before {
-    content: "Mr. R";
+    content: "ZeRo";
     color: yellow;
 }
 
 
 #squad1Player2NameText:before {
-    content: "iStudying";
+    content: "Nairo";
 }
 
 #squad1Player3NameText:before {
-    content: "Sodrek";
+    content: "MKLeo";
 }
 
 #squad1Player4NameText:before {
-    content: "Ixis";
+    content: "Tweek";
 }
 
 
@@ -43,57 +43,57 @@
 
 
 #squad1Character1 {
-    background-image: url('../../CharacterIcons/bayonetta.png');
+    background-image: url('../../CharacterIcons/zerosuitsamus.png');
 }
 
 #squad1Character2 {
-    background-image: url('../../CharacterIcons/bowser.png');
+    background-image: url('../../CharacterIcons/zelda.png');
     filter: grayscale(100%);
 }
 
 
 #squad1Character3 {
-    background-image: url('../../CharacterIcons/bowserjr.png');
+    background-image: url('../../CharacterIcons/younglink.png');
 }
 
 #squad1Character4 {
-    background-image: url('../../CharacterIcons/captainfalcon.png');
+    background-image: url('../../CharacterIcons/yoshi.png');
 }
 
 #squad1Character5 {
-    background-image: url('../../CharacterIcons/chrom.png');
+    background-image: url('../../CharacterIcons/wolf.png');
 }
 
 
 
 #squad1ScoreText:before {
-    content: "1";
+    content: "2";
 }
 
 #squad1Port {
-    background-image: url('../../PlayerPorts/PlayerPort1.png');
+    background-image: url('../../PlayerPorts/PlayerPort2.png');
 }
 
 #squad2NameText:before {
-    content: "USA";
+    content: "Europe";
 }
 
 #squad2Player1NameText:before {
-    content: "ZeRo";
+    content: "Mr. R";
     color: yellow;
 }
 
 
 #squad2Player2NameText:before {
-    content: "Nairo";
+    content: "iStudying";
 }
 
 #squad2Player3NameText:before {
-    content: "MKLeo";
+    content: "Sodrek";
 }
 
 #squad2Player4NameText:before {
-    content: "Tweek";
+    content: "Ixis";
 }
 
 
@@ -119,35 +119,35 @@
 
 
 #squad2Character1 {
-    background-image: url('../../CharacterIcons/zerosuitsamus.png');
+    background-image: url('../../CharacterIcons/bayonetta.png');
 }
 
 #squad2Character2 {
-    background-image: url('../../CharacterIcons/zelda.png');
+    background-image: url('../../CharacterIcons/bowser.png');
     filter: grayscale(100%);
 }
 
 
 #squad2Character3 {
-    background-image: url('../../CharacterIcons/younglink.png');
+    background-image: url('../../CharacterIcons/bowserjr.png');
 }
 
 #squad2Character4 {
-    background-image: url('../../CharacterIcons/yoshi.png');
+    background-image: url('../../CharacterIcons/captainfalcon.png');
 }
 
 #squad2Character5 {
-    background-image: url('../../CharacterIcons/wolf.png');
+    background-image: url('../../CharacterIcons/chrom.png');
 }
 
 
 
 #squad2ScoreText:before {
-    content: "2";
+    content: "1";
 }
 
 #squad2Port {
-    background-image: url('../../PlayerPorts/PlayerPort2.png');
+    background-image: url('../../PlayerPorts/PlayerPort1.png');
 }
 
 #tournamentText:before {
