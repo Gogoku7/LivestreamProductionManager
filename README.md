@@ -26,6 +26,10 @@ Livestream Production Manager (LPM) is in development and doesn't have a .msi in
 - Right click "Solution 'LivestreamProductionManager (1 project)'"
 - Select "Rebuild Solution"
 - Run the program with F5 OR with ctrl + F5 to run without debugger, useful for when you want to run LPM with Livestream Production Manager Blitz
+- Run the program:
+    - Press F5 to run with debugger 
+    - Press ctrl + F5 to run without debugger, gffgnfg
+        - This is useful for when you want to run Livestream Production Manager Blitz
 
 To get an actual overlay in OBS:
 - Add a new browser source to a scene
