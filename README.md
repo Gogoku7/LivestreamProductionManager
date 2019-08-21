@@ -39,4 +39,4 @@ Livestream Production Manager can be deployed to IIS. When deployed to IIS, chan
 
 To learn how to enable IIS (don't forget to enable WebSockets), use: https://www.itnota.com/install-iis-windows/ 
 
-Deploying to IIS and running can be done manually or using Visual Studio, the default Publish.xml file should work out of the box with a correct IIS installation.
+Deploying to IIS and running can be done manually or using Visual Studio, the default included "LivestreamProductionManager.pubxml" publish file should work out of the box with a correct IIS installation.
