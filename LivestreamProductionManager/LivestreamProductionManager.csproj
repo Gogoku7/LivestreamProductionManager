@@ -292,6 +292,30 @@
     <Content Include="FightingGames\SuperSmashBros\JavaScript\jQuery.js" />
     <Content Include="FightingGames\SuperSmashBros\JavaScript\OverlayManager.js" />
     <Content Include="FightingGames\SuperSmashBros\JavaScript\Snackbar.js" />
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\banjokazooie.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\banjokazooie_01.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\banjokazooie_02.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\banjokazooie_03.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\banjokazooie_04.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\banjokazooie_05.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\banjokazooie_06.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\banjokazooie_07.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\bayonetta.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

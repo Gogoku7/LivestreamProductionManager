@@ -5,12 +5,12 @@
     "CssValue": ""
   },
   {
-    "CharacterName": "Bayonetta",
-    "CssValue": "../../CharacterIcons/bayonetta.png"
-  },
-  {
     "CharacterName": "Banjo & Kazooie",
     "CssValue": "../../CharacterIcons/banjokazooie.png"
+  },
+  {
+    "CharacterName": "Bayonetta",
+    "CssValue": "../../CharacterIcons/bayonetta.png"
   },
   {
     "CharacterName": "Bowser",
@@ -285,6 +285,10 @@
     "CssValue": "../../CharacterIcons/sonic.png"
   },
   {
+    "CharacterName": "Terry",
+    "CssValue": "../../CharacterIcons/random.png"
+  },
+  {
     "CharacterName": "Toon Link",
     "CssValue": "../../CharacterIcons/toonlink.png"
   },
@@ -321,11 +325,27 @@
     "CssValue": "../../CharacterIcons/zerosuitsamus.png"
   },
   {
-    "CharacterName": "DLC character 4",
+    "CharacterName": "DLC character 5",
     "CssValue": "../../CharacterIcons/random.png"
   },
   {
-    "CharacterName": "DLC character 5",
+    "CharacterName": "DLC character 6",
+    "CssValue": "../../CharacterIcons/random.png"
+  },
+  {
+    "CharacterName": "DLC character 7",
+    "CssValue": "../../CharacterIcons/random.png"
+  },
+  {
+    "CharacterName": "DLC character 8",
+    "CssValue": "../../CharacterIcons/random.png"
+  },
+  {
+    "CharacterName": "DLC character 9",
+    "CssValue": "../../CharacterIcons/random.png"
+  },
+  {
+    "CharacterName": "DLC character 10",
     "CssValue": "../../CharacterIcons/random.png"
   }
 ]

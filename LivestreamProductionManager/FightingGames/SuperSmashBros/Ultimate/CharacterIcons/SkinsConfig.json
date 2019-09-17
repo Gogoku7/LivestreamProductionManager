@@ -2,10 +2,55 @@
   "SupportsSkins": true,
   "Characters": [
     {
+      "CharacterName": "Banjo & Kazooie",
+      "Skins": [
+        {
+          "Name": "Banjo & Kazooie",
+          "CssValue": "../../CharacterIcons/banjokazooie.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/banjokazooie.png"
+        },
+        {
+          "Name": "Banjo & Kazooie_01",
+          "CssValue": "../../CharacterIcons/banjokazooie_01.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/banjokazooie_01.png"
+        },
+        {
+          "Name": "Banjo & Kazooie_02",
+          "CssValue": "../../CharacterIcons/banjokazooie_02.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/banjokazooie_02.png"
+        },
+        {
+          "Name": "Banjo & Kazooie_03",
+          "CssValue": "../../CharacterIcons/banjokazooie_03.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/banjokazooie_03.png"
+        },
+        {
+          "Name": "Banjo & Kazooie_04",
+          "CssValue": "../../CharacterIcons/banjokazooie_04.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/banjokazooie_04.png"
+        },
+        {
+          "Name": "Banjo & Kazooie_05",
+          "CssValue": "../../CharacterIcons/banjokazooie_05.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/banjokazooie_05.png"
+        },
+        {
+          "Name": "Banjo & Kazooie_06",
+          "CssValue": "../../CharacterIcons/banjokazooie_06.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/banjokazooie_06.png"
+        },
+        {
+          "Name": "Banjo & Kazooie_07",
+          "CssValue": "../../CharacterIcons/banjokazooie_07.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/banjokazooie_07.png"
+        }
+      ]
+    },
+    {
       "CharacterName": "Bayonetta",
       "Skins": [
         {
-          "Name":  "Bayonetta",
+          "Name": "Bayonetta",
           "CssValue": "../../CharacterIcons/bayonetta.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/bayonetta.png"
         },
@@ -43,51 +88,6 @@
           "Name": "Bayonetta_07",
           "CssValue": "../../CharacterIcons/bayonetta_07.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/bayonetta_07.png"
-        }
-      ]
-    },
-    {
-      "CharacterName": "Banjo & Kazooie",
-      "Skins": [
-        {
-          "Name": "Banjo & Kazooie",
-          "CssValue": "../../CharacterIcons/banjokazooie.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/banjokazooie.png"
-        },
-        {
-          "Name": "Banjo & Kazooie_01",
-          "CssValue": "../../CharacterIcons/random.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
-        },
-        {
-          "Name": "Banjo & Kazooie_02",
-          "CssValue": "../../CharacterIcons/random.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
-        },
-        {
-          "Name": "Banjo & Kazooie_03",
-          "CssValue": "../../CharacterIcons/random.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
-        },
-        {
-          "Name": "Banjo & Kazooie_04",
-          "CssValue": "../../CharacterIcons/random.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
-        },
-        {
-          "Name": "Banjo & Kazooie_05",
-          "CssValue": "../../CharacterIcons/random.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
-        },
-        {
-          "Name": "Banjo & Kazooie_06",
-          "CssValue": "../../CharacterIcons/random.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
-        },
-        {
-          "Name": "Banjo & Kazooie_07",
-          "CssValue": "../../CharacterIcons/random.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
         }
       ]
     },
@@ -3012,6 +3012,51 @@
       ]
     },
     {
+      "CharacterName": "Terry",
+      "Skins": [
+        {
+          "Name": "Terry",
+          "CssValue": "../../CharacterIcons/random.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
+        },
+        {
+          "Name": "Terry_01",
+          "CssValue": "../../CharacterIcons/random.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
+        },
+        {
+          "Name": "Terry_02",
+          "CssValue": "../../CharacterIcons/random.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
+        },
+        {
+          "Name": "Terry_03",
+          "CssValue": "../../CharacterIcons/random.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
+        },
+        {
+          "Name": "Terry_04",
+          "CssValue": "../../CharacterIcons/random.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
+        },
+        {
+          "Name": "Terry_05",
+          "CssValue": "../../CharacterIcons/random.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
+        },
+        {
+          "Name": "Terry_06",
+          "CssValue": "../../CharacterIcons/random.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
+        },
+        {
+          "Name": "Terry_07",
+          "CssValue": "../../CharacterIcons/random.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
+        }
+      ]
+    },
+    {
       "CharacterName": "Toon Link",
       "Skins": [
         {
@@ -3417,20 +3462,60 @@
       ]
     },
     {
-      "CharacterName": "DLC character 4",
+      "CharacterName": "DLC character 5",
       "Skins": [
         {
-          "Name": "DLC character 4",
+          "Name": "DLC character 5",
           "CssValue": "../../CharacterIcons/random.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
         }
       ]
     },
     {
-      "CharacterName": "DLC character 5",
+      "CharacterName": "DLC character 6",
       "Skins": [
         {
-          "Name": "DLC character 5",
+          "Name": "DLC character 6",
+          "CssValue": "../../CharacterIcons/random.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
+        }
+      ]
+    },
+    {
+      "CharacterName": "DLC character 7",
+      "Skins": [
+        {
+          "Name": "DLC character 7",
+          "CssValue": "../../CharacterIcons/random.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
+        }
+      ]
+    },
+    {
+      "CharacterName": "DLC character 8",
+      "Skins": [
+        {
+          "Name": "DLC character 8",
+          "CssValue": "../../CharacterIcons/random.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
+        }
+      ]
+    },
+    {
+      "CharacterName": "DLC character 9",
+      "Skins": [
+        {
+          "Name": "DLC character 9",
+          "CssValue": "../../CharacterIcons/random.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
+        }
+      ]
+    },
+    {
+      "CharacterName": "DLC character 10",
+      "Skins": [
+        {
+          "Name": "DLC character 10",
           "CssValue": "../../CharacterIcons/random.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
         }
