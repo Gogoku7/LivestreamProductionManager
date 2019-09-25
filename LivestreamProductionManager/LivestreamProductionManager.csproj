@@ -3761,6 +3761,27 @@
     <Content Include="FightingGames\GeneralSettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="FightingGames\SuperSmashBros\WiiU\Doubles\JSON\ReadMe.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\WiiU\Singles\JSON\ReadMe.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Commentators\JSON\ReadMe.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Crews\JSON\ReadMe.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Doubles\JSON\ReadMe.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Singles\JSON\ReadMe.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\JSON\ReadMe.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\PublishProfiles\LivestreamProductionManager.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -3846,26 +3867,19 @@
     <Folder Include="FightingGames\SuperSmashBros\Smash64\Singles\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\BigTeams\CSS\" />
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\BigTeams\JSON\" />
-    <Folder Include="FightingGames\SuperSmashBros\Ultimate\Commentators\JSON\" />
-    <Folder Include="FightingGames\SuperSmashBros\Ultimate\Crews\JSON\" />
-    <Folder Include="FightingGames\SuperSmashBros\Ultimate\Doubles\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\IronMan\CSS\" />
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\IronMan\JSON\" />
-    <Folder Include="FightingGames\SuperSmashBros\Ultimate\Singles\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\SmashdownBigTeams\CSS\" />
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\SmashdownBigTeams\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\SmashdownDoubles\CSS\" />
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\SmashdownDoubles\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\SmashdownSingles\CSS\" />
     <Folder Include="FightingGames\SuperSmashBros\Ultimate\SmashdownSingles\JSON\" />
-    <Folder Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\WiiU\Commentators\" />
     <Folder Include="FightingGames\SuperSmashBros\WiiU\Crews\CSS\" />
     <Folder Include="FightingGames\SuperSmashBros\WiiU\Crews\JSON\" />
-    <Folder Include="FightingGames\SuperSmashBros\WiiU\Doubles\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\WiiU\IronMan\CSS\" />
     <Folder Include="FightingGames\SuperSmashBros\WiiU\IronMan\JSON\" />
-    <Folder Include="FightingGames\SuperSmashBros\WiiU\Singles\JSON\" />
     <Folder Include="Logging\" />
     <Folder Include="Views\Settings\" />
   </ItemGroup>
