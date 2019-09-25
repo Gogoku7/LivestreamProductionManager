@@ -2130,6 +2130,15 @@
     <Content Include="FightingGames\SuperSmashBros\Ultimate\Crews\CrewBackgrounds\Crew2Background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Crews\CrewBackgrounds\CrewBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Crews\CrewBackgrounds\PlayerBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Crews\CrewBackgrounds\ScoreBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="FightingGames\SuperSmashBros\Ultimate\Crews\CSS\Styles.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -2202,7 +2211,19 @@
     <Content Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\SquadBackgrounds\Squad1Background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\SquadBackgrounds\Squad1PlayerBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\SquadBackgrounds\Squad1PlayersBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\SquadBackgrounds\Squad2Background.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\SquadBackgrounds\Squad2PlayerBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\SquadBackgrounds\Squad2PlayersBackground.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="FightingGames\SuperSmashBros\WiiU\CharacterIcons\bayonetta.png">
