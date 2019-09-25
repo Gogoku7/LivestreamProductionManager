@@ -1618,7 +1618,7 @@
                 if ($($(this).data("monitor-id")).data("enabled") == "True") {
                     $($(this).data("monitor-id")).data("enabled", "False");
                     $(this).removeClass("btn-success").addClass("btn-danger");
-                    $(this).html("<span class='glyphicon glyphicon-remove'></span> Disabled");
+                    $(this).html("<span class='glyphicon glyphicon-remove'></span><text> Disabled</text>");
 
                     if ($($(this).data("monitor-id")).data("client-monitor") == "True") {
                         $($(this).data("monitor-id")).html("<tr><td>1</td><td>Livestream Production Manager</td><td>Connected</td></tr>");
@@ -1630,7 +1630,7 @@
                 }
                 else {
                     $($(this).data("monitor-id")).data("enabled", "True");
-                    $(this).removeClass("btn-danger").addClass("btn-success").html("<span class='glyphicon glyphicon-ok'></span> Enabled");
+                    $(this).removeClass("btn-danger").addClass("btn-success").html("<span class='glyphicon glyphicon-ok'></span><text> Enabled</text>");
                 }
             } catch (ex) {
                 ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
