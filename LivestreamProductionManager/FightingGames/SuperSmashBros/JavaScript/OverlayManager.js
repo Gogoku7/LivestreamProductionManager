@@ -20,7 +20,7 @@ function initWebSocketAndFitty(fittyElements, overlayType) {
 
         websocket.onopen = function () {
             console.log("Connected to server.");
-            var jsonData = { "type": "overlayConnected", "overlayType": OverlayType, "data": window.location.href };
+            var jsonData = { "type": "clientConnected", "clientType": OverlayType, "data": window.location.href };
             websocket.send(JSON.stringify(jsonData));
         };
 
@@ -117,7 +117,7 @@ function initWebSocketAndFitty(fittyElements, overlayType) {
 
 $(window).on("beforeunload", function () {
     try {
-        var jsonData = { "type": "overlayDisconnected", "overlayType": OverlayType, "data": window.location.href };
+        var jsonData = { "type": "clientDisconnected", "clientType": OverlayType, "data": window.location.href };
         websocket.send(JSON.stringify(jsonData));
         websocket.close();
     } catch (ex) {
