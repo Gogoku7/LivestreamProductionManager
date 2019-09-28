@@ -2,7 +2,7 @@
     ViewBag.Title = "Fighting Games";
 }
 
-<div class="row">
+<div class="row panelRow" id="generalMonitorsRow">
     <!--WebSocket Client monitor-->
     <div class="half-horizontal-width" style="float: left">
         <div class="panel panel-info">
@@ -56,13 +56,18 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row panelRow" id="manageTournamentRow">
     <!--Manage Tournament-->
     <div class="full-horizontal-width">
         <div class="panel panel-warning">
             <div class="panel-heading row">
-                <div class="col-xs-12 text-center">
+                <div class="col-xs-5 text-center">
+                </div>
+                <div class="col-xs-2 text-center">
                     <text class="panel-title">Manage tournament</text>
+                </div>
+                <div class="col-xs-5 text-right">
+                    <button class="btn btn-danger panelButton toggleFocusButton" id="toggleTournamentFocus" data-topic="Tournament" data-enabled="False"><span class="glyphicon glyphicon-eye-close"></span><text> Focus</text></button>
                 </div>
             </div>
             <div class="panel-body" id="manageTournament">
@@ -106,7 +111,7 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row panelRow" id="manageCompetitorsRow">
     <!--Manage Competitors-->
     <div class="full-horizontal-width">
         <div class="panel panel-primary">
@@ -120,6 +125,7 @@
                 </div>
 
                 <div class="col-xs-5 text-right">
+                    <button class="btn btn-danger panelButton toggleFocusButton" id="toggleCompetitorsFocus" data-topic="Competitors" data-enabled="False"><span class="glyphicon glyphicon-eye-close"></span><text> Focus</text></button>
                     <button class="btn btn-danger panelButton showReadMeModalButton" id="showCompetitorsReadMeModalButton" data-form-id="#manageCompetitorsForm"><span class="glyphicon glyphicon-question-sign"></span><text> Info</text></button>
                     <button class="btn btn-default panelButton" id="setToDefaultValuesButton"><span class="glyphicon glyphicon-erase"></span><text> Defaults</text></button>
                     <button class="btn btn-warning panelButton" id="getLatestCompetitorsValuesButton"><span class="glyphicon glyphicon-download-alt"></span><text> Get latest</text></button>
@@ -135,7 +141,7 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row panelRow" id="competitorsMonitorsRow">
     <!--Competitors WebSocket Data monitor-->
     <div class="one-third-horizontal-width" style="float: left">
         <div class="panel panel-primary">
@@ -212,7 +218,7 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row panelRow" id="previewCompetitorsOverlayRow">
     <!--Preview Competitors overlay-->
     <div class="full-horizontal-width">
         <div class="panel panel-primary">
@@ -235,7 +241,7 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row panelRow" id="manageCommentatorsRow">
     <!--Manage Commentators-->
     <div class="full-horizontal-width">
         <div class="panel panel-success">
@@ -248,6 +254,7 @@
                 </div>
 
                 <div class="col-xs-5 text-right">
+                    <button class="btn btn-danger panelButton toggleFocusButton" id="toggleCommentatorsFocus" data-topic="Commentators" data-enabled="False"><span class="glyphicon glyphicon-eye-close"></span><text> Focus</text></button>
                     <button class="btn btn-danger panelButton showReadMeModalButton" id="showCommentatorsReadMeModalButton" data-form-id="#manageCommentatorsForm"><span class="glyphicon glyphicon-question-sign"></span><text> Info</text></button>
                     <button class="btn btn-info panelButton" id="addCommentatorButton"><span style="font-weight: bold;" class="glypicon glyphicon-plus"></span><text> Add</text></button>
                 </div>
@@ -286,7 +293,7 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row panelRow" id="commentatorsMonitorsRow">
     <!--Commentators WebSocket Data monitor-->
     <div class="one-third-horizontal-width" style="float: left">
         <div class="panel panel-success">
@@ -363,7 +370,7 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row panelRow" id="previewCommentatorsOverlayRow">
     <!--Preview Commentators overlay-->
     <div class="full-horizontal-width">
         <div class="panel panel-success">
@@ -385,7 +392,6 @@
         </div>
     </div>
 </div>
-
 
 @section Scripts {
     <script type="text/javascript">
@@ -1424,8 +1430,8 @@
         $("#clearWebSocketClientMonitorButton").click(function () {
             try {
                 if ($("#webSocketClientMonitorTableBody").data("enabled") == "True") {
-                    $("#webSocketClientMonitorTableBody").html("<tr><td>1</td><td>Livestream Production Manager</td><td>Connected</td></tr>");
-                    clientsConnectedCount = 1;
+                    $("#webSocketClientMonitorTableBody").html("");
+                    clientsConnectedCount = 0;
                 }
             } catch (ex) {
                 ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
@@ -1622,8 +1628,8 @@
                     $(this).html("<span class='glyphicon glyphicon-remove'></span><text> Disabled</text>");
 
                     if ($($(this).data("monitor-id")).data("client-monitor") == "True") {
-                        $($(this).data("monitor-id")).html("<tr><td>1</td><td>Livestream Production Manager</td><td>Connected</td></tr>");
-                        clientsConnectedCount = 1;
+                        $($(this).data("monitor-id")).html("");
+                        clientsConnectedCount = 0;
                     }
                     else {
                         $($(this).data("monitor-id")).html("");
@@ -1709,10 +1715,10 @@
 
 
         /* Modal */
+
+        // Summary:
         // On: Clicking a show ReadMe Modal button
         // TODO
-        // Note: Only works for competitors at the moment.
-        // Note: 
         $(".showReadMeModalButton").click(function () {
             try {
                 var pathToFormat;
@@ -1754,7 +1760,178 @@
             }
         });
 
+        /* Focus */
 
+        // Summary:
+        // On: Clicking a Toggle Focus button
+        $(".toggleFocusButton").click(function () {
+            try {
+                if ($(this).data("enabled") === "False")
+                {
+                    if ($(this).data("topic") === "Tournament")
+                    {
+                        if ($("#webSocketClientMonitorTableBody").data("enabled") === "True") {
+                            $("#toggleWebSocketClientMonitorButton").trigger("click");
+                        }
+
+                        if ($("#errorMonitor").data("enabled") === "True") {
+                            $("#toggleErrorMonitorButton").trigger("click");
+                        }
+
+                        $("#generalMonitorsRow").addClass("focusOn");
+
+                        setTimeout(function (){
+                            $("#generalMonitorsRow").hide();
+                            ShowSnackbar("#focusSnackbar", "Focus for Tournament has been turned on.");
+                        }, 1000);
+                    }
+                    else if ($(this).data("topic") === "Competitors")
+                    {
+                        if ($("#competitorsWebSocketDataMonitor").data("enabled") === "True") {
+                            $("#toggleCompetitorsWebSocketDataMonitorButton").trigger("click");
+                        }
+
+                        if ($("#competitorsCssMonitor").data("enabled") === "True") {
+                            $("#toggleCompetitorsCssMonitorButton").trigger("click");
+                        }
+
+                        if ($("#competitorsJsonMonitor").data("enabled") === "True") {
+                            $("#toggleCompetitorsJsonMonitorButton").trigger("click");
+                        }
+
+                        if ($("#competitorsPreviewOverlayIframe").data("enabled") === "True") {
+                            $("#toggleCompetitorsPreviewOverlayButton").trigger("click");
+                        }
+
+                        $("#competitorsMonitorsRow").addClass("focusOn");
+                        $("#previewCompetitorsOverlayRow").addClass("focusOn");
+
+                        setTimeout(function (){
+                            $("#competitorsMonitorsRow").hide();
+                            $("#previewCompetitorsOverlayRow").hide();
+                            ShowSnackbar("#focusSnackbar", "Focus for Competitors has been turned on.");
+                        }, 1000);
+                    }
+                    else if ($(this).data("topic") === "Commentators")
+                    {
+                        if ($("#commentatorsWebSocketDataMonitor").data("enabled") === "True") {
+                            $("#toggleCommentatorsWebSocketDataMonitorButton").trigger("click");
+                        }
+
+                        if ($("#commentatorsCssMonitor").data("enabled") === "True") {
+                            $("#toggleCommentatorsCssMonitorButton").trigger("click");
+                        }
+
+                        if ($("#commentatorsJsonMonitor").data("enabled") === "True") {
+                            $("#toggleCommentatorsJsonMonitorButton").trigger("click");
+                        }
+
+                        if ($("#commentatorsPreviewOverlayIframe").data("enabled") === "True") {
+                            $("#toggleCommentatorsPreviewOverlayButton").trigger("click");
+                        }
+
+                        $("#commentatorsMonitorsRow").addClass("focusOn");
+                        $("#previewCommentatorsOverlayRow").addClass("focusOn");
+
+                        setTimeout(function (){
+                            $("#commentatorsMonitorsRow").hide();
+                            $("#previewCommentatorsOverlayRow").hide();
+                            ShowSnackbar("#focusSnackbar", "Focus for Commentators has been turned on.");
+                        }, 1000);
+                    }
+
+                    $(this).data("enabled", "True");
+                    $(this).removeClass("btn-danger").addClass("btn-success");
+                    $(this).find("span").removeClass("glyphicon-eye-close").addClass("glyphicon-eye-open");
+                }
+                else
+                {
+                    if ($(this).data("topic") === "Tournament")
+                    {
+                        if ($("#webSocketClientMonitorTableBody").data("enabled") === "False") {
+                            $("#toggleWebSocketClientMonitorButton").trigger("click");
+                        }
+
+                        if ($("#errorMonitor").data("enabled") === "False") {
+                            $("#toggleErrorMonitorButton").trigger("click");
+                        }
+
+                        $("#generalMonitorsRow").show();
+
+                        $("#generalMonitorsRow").addClass("focusOff").removeClass("focusOn");
+
+                        setTimeout(function (){
+                            ShowSnackbar("#focusSnackbar", "Focus for Tournament has been turned off.");
+                        }, 1000);
+                    }
+                    else if ($(this).data("topic") === "Competitors")
+                    {
+                        if ($("#competitorsWebSocketDataMonitor").data("enabled") === "False") {
+                            $("#toggleCompetitorsWebSocketDataMonitorButton").trigger("click");
+                        }
+
+                        if ($("#competitorsCssMonitor").data("enabled") === "False") {
+                            $("#toggleCompetitorsCssMonitorButton").trigger("click");
+                        }
+
+                        if ($("#competitorsJsonMonitor").data("enabled") === "False") {
+                            $("#toggleCompetitorsJsonMonitorButton").trigger("click");
+                        }
+
+                        if ($("#competitorsPreviewOverlayIframe").data("enabled") === "False") {
+                            $("#toggleCompetitorsPreviewOverlayButton").trigger("click");
+                        }
+
+                        $("#competitorsMonitorsRow").show();
+                        $("#previewCompetitorsOverlayRow").show();
+
+                        $("#competitorsMonitorsRow").addClass("focusOff").removeClass("focusOn");
+                        $("#previewCompetitorsOverlayRow").addClass("focusOff").removeClass("focusOn");
+
+                        setTimeout(function (){
+                            ShowSnackbar("#focusSnackbar", "Focus for Competitors has been turned off.");
+                        }, 1000);
+                    }
+                    else if ($(this).data("topic") === "Commentators")
+                    {
+                        if ($("#commentatorsWebSocketDataMonitor").data("enabled") === "False") {
+                            $("#toggleCommentatorsWebSocketDataMonitorButton").trigger("click");
+                        }
+
+                        if ($("#commentatorsCssMonitor").data("enabled") === "False") {
+                            $("#toggleCommentatorsCssMonitorButton").trigger("click");
+                        }
+
+                        if ($("#commentatorsJsonMonitor").data("enabled") === "False") {
+                            $("#toggleCommentatorsJsonMonitorButton").trigger("click");
+                        }
+
+                        if ($("#commentatorsPreviewOverlayIframe").data("enabled") === "False") {
+                            $("#toggleCommentatorsPreviewOverlayButton").trigger("click");
+                        }
+
+                        $("#commentatorsMonitorsRow").show();
+                        $("#previewCommentatorsOverlayRow").show();
+
+                        $("#commentatorsMonitorsRow").addClass("focusOff").removeClass("focusOn");
+                        $("#previewCommentatorsOverlayRow").addClass("focusOff").removeClass("focusOn");
+
+                        setTimeout(function (){
+                        
+                            ShowSnackbar("#focusSnackbar", "Focus for Commentators has been turned off.");
+                        }, 1000);
+                    }
+
+                    $(this).data("enabled", "False");
+                    $(this).removeClass("btn-success").addClass("btn-danger");
+                    $(this).find("span").removeClass("glyphicon-eye-open").addClass("glyphicon-eye-close");
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
 
         /* Snackbar */
 
