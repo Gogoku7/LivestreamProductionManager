@@ -1298,12 +1298,18 @@
         // index: index of the element to be removed
         function moveCommentatorDown(index) {
             try {
-                if ($(`#commentator-row-${ (index + 1) }`).length) {
-                    var row1 = $(`#commentator-row-${ index }`);
-                    var row2 = $(`#commentator-row-${ (index + 1) }`);
+                if ($(`#commentator-row-${(index + 1)}`).length) {
+                    var row1CommentatorName = $(`#commentatorViewModels_${ index }_Name`).val();
+                    var row1CommentatorTwitter = $(`#commentatorViewModels_${ index }_Twitter`).val();
 
-                    row1.replaceWith(row2.clone());
-                    row2.replaceWith(row1.clone());
+                    var row2CommentatorName = $(`#commentatorViewModels_${ index + 1 }_Name`).val();
+                    var row2CommentatorTwitter = $(`#commentatorViewModels_${ index + 1 }_Twitter`).val();
+
+                    $(`#commentatorViewModels_${ index }_Name`).val(row2CommentatorName);
+                    $(`#commentatorViewModels_${ index }_Twitter`).val(row2CommentatorTwitter);
+
+                    $(`#commentatorViewModels_${ index + 1 }_Name`).val(row1CommentatorName);
+                    $(`#commentatorViewModels_${ index + 1 }_Twitter`).val(row1CommentatorTwitter);
                 }
                 else {
                     ShowSnackbar("#manageCommentatorsSnackbar", "The selected commentator can't be moved down at this time.");
@@ -1331,11 +1337,17 @@
                 $(`#commentator-row-${ index }`);
                 if (index > 0) {
                     if ($(`#commentator-row-${ (index - 1) }`).length) {
-                        var row1 = $(`#commentator-row-${ index }`);
-                        var row2 = $(`#commentator-row-${ (index - 1) }`);
+                        var row1CommentatorName = $(`#commentatorViewModels_${ index }_Name`).val();
+                        var row1CommentatorTwitter = $(`#commentatorViewModels_${ index }_Twitter`).val();
 
-                        row1.replaceWith(row2.clone());
-                        row2.replaceWith(row1.clone());
+                        var row2CommentatorName = $(`#commentatorViewModels_${ index - 1 }_Name`).val();
+                        var row2CommentatorTwitter = $(`#commentatorViewModels_${ index - 1 }_Twitter`).val();
+
+                        $(`#commentatorViewModels_${ index }_Name`).val(row2CommentatorName);
+                        $(`#commentatorViewModels_${ index }_Twitter`).val(row2CommentatorTwitter);
+
+                        $(`#commentatorViewModels_${ index - 1 }_Name`).val(row1CommentatorName);
+                        $(`#commentatorViewModels_${ index - 1 }_Twitter`).val(row1CommentatorTwitter);
                     } else {
                         ShowSnackbar("#manageCommentatorsSnackbar", "The selected commentator can't be moved up at this time.");
                     }
@@ -1764,6 +1776,7 @@
 
         // Summary:
         // On: Clicking a Toggle Focus button
+        //
         $(".toggleFocusButton").click(function () {
             try {
                 if ($(this).data("enabled") === "False")
