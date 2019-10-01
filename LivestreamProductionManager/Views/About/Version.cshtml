@@ -5,20 +5,32 @@
 <div class="container">
     <h1>Version information</h1>
 
-    <h2>Version 0.5.2</h2>
-    <p>XX/10/2019</p>
+    <h2>Version 0.5.2 - Minor improvements release</h2>
+    <p>01/10/2019</p>
     <p>No Public update video</p>
     <ul>
-        <li>Focus toggles</li>
-        <li>Enabled/Disabled buttons toggled overflowing on small window sizes trhough media query fixed</li>
-        <li>Added ReadMe's</li>
-        <li>Improved styling around Crews and Squad Strike Checkboxes, they are now always properly centered under the Label</li>
-        <li>Changed WebSocket communication</li>
+        <li>Implemented Focus toggles</li>
         <ul>
-            <li>Added Fighting Games Manager through the WebSocket</li>
-            <li>overlayType has been renamed to clientType through most of the application</li>
+            <li>Focus toggles allows you to disable and hide UI elements that the user does not interact with in the Fighting Games Manager user interface</li>
+            <ul>
+                <li>The Focus toggle on the Manage Tournament panel disables and hides the WebSocket clients monitor and Error monitor</li>
+                <ul>
+                    <li>It's recommended to only toggle these off when you are sure of security and bugs</li>
+                </ul>
+                <li>The Focus toggle on the Manage Competitors panel disables and hides the Competitors data monitor, CSS monitor and JSON monitor</li>
+                <li>The Focus toggle on the Manage Commentators panel disables and hides the Commentators data monitor, CSS monitor and JSON monitor</li>
+            </ul>
         </ul>
-        <li>Improved moving Commentators up and down code, should perform very slightly better</li>
+        <li>Enabling or disabling monitors while having small browser window sizes no longer causes the button to overflow</li>
+        <li>Added ReadMe.md's to JSON folders of overlays, this helps deploying to IIS</li>
+        <li>Improved styling around Crews and Squad Strike Checkboxes, they are now always properly centered under the label text</li>
+        <li>Changed the WebSocket communication</li>
+        <ul>
+            <li>The Fighting Games Manager is now properly added to the WebSocket clients monitor through the WebSocket</li>
+            <li>"overlayType" has been renamed to "clientType" in the WebSocket communication and through most of the application</li>
+        </ul>
+        <li>Improved the code of moving Commentators up and down</li>
+        <li>Added the missing image files used in the Super Smash Bros. Ultimate Crews and Squad Strike Overlays to the Solution file, this helps deploying to IIS</li>
     </ul>
 
     <hr />
