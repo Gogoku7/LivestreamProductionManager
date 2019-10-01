@@ -1,5 +1,5 @@
 #player1NameText:before {
-    content: "Cinnovate | Gogoku7";
+    content: "Auto | Median4";
 }
 
 #player1TwitterText:before {
@@ -7,19 +7,19 @@
 }
 
 #player1ScoreText:before {
-    content: "1";
+    content: "0";
 }
 
 #player1Character {
-    background-image: url('../../CharacterIcons/fox.png');
+    background-image: url('../../CharacterIcons/littlemac.png');
 }
 
 #player1Port {
-    background-image: url('../../PlayerPorts/PlayerPort1.png');
+    background-image: url('../../PlayerPorts/PlayerPort2.png');
 }
 
 #player2NameText:before {
-    content: "Auto | Median4";
+    content: "Cinnovate | Gogoku7";
 }
 
 #player2TwitterText:before {
@@ -27,15 +27,15 @@
 }
 
 #player2ScoreText:before {
-    content: "0";
+    content: "1";
 }
 
 #player2Character {
-    background-image: url('../../CharacterIcons/littlemac.png');
+    background-image: url('../../CharacterIcons/fox.png');
 }
 
 #player2Port {
-    background-image: url('../../PlayerPorts/PlayerPort2.png');
+    background-image: url('../../PlayerPorts/PlayerPort1.png');
 }
 
 #tournamentText:before {

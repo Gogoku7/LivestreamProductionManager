@@ -4,9 +4,6 @@
 #commentator2NameText:before {
     content: "Gogoku7";
 }
-#commentator3NameText:before {
-    content: "ParagonX9";
-}
 
 
 #commentator1TwitterText:before {
@@ -14,8 +11,5 @@
 }
 #commentator2TwitterText:before {
     content: "@gogoku7";
-}
-#commentator3TwitterText:before {
-    content: "@paragonx9";
 }
 

@@ -14,13 +14,5 @@
 {
   "Selector": "#commentator2TwitterText",
   "Value": "@gogoku7"
-},
-{
-  "Selector": "#commentator3NameText",
-  "Value": "ParagonX9"
-},
-{
-  "Selector": "#commentator3TwitterText",
-  "Value": "@paragonx9"
 }
 ]

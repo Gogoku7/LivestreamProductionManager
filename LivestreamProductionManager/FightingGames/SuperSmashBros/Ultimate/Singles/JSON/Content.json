@@ -1,11 +1,11 @@
 [
 {
   "Selector": "#player1NameText",
-  "Value": "Gogoku7"
+  "Value": "Median4"
 },
 {
   "Selector": ".player1Sponsor",
-  "Value": "Cinnovate"
+  "Value": "Auto"
 },
 {
   "Selector": "#player1TwitterText",
@@ -13,23 +13,23 @@
 },
 {
   "Selector": "#player1ScoreText",
-  "Value": "1"
+  "Value": "0"
 },
 {
   "Selector": "#player1Character",
-  "Value": "../../CharacterIcons/fox.png"
+  "Value": "../../CharacterIcons/littlemac.png"
 },
 {
   "Selector": "#player1Port",
-  "Value": "../../PlayerPorts/PlayerPort1.png"
+  "Value": "../../PlayerPorts/PlayerPort2.png"
 },
 {
   "Selector": "#player2NameText",
-  "Value": "Median4"
+  "Value": "Gogoku7"
 },
 {
   "Selector": ".player2Sponsor",
-  "Value": "Auto"
+  "Value": "Cinnovate"
 },
 {
   "Selector": "#player2TwitterText",
@@ -37,15 +37,15 @@
 },
 {
   "Selector": "#player2ScoreText",
-  "Value": "0"
+  "Value": "1"
 },
 {
   "Selector": "#player2Character",
-  "Value": "../../CharacterIcons/littlemac.png"
+  "Value": "../../CharacterIcons/fox.png"
 },
 {
   "Selector": "#player2Port",
-  "Value": "../../PlayerPorts/PlayerPort2.png"
+  "Value": "../../PlayerPorts/PlayerPort1.png"
 },
 {
   "Selector": "#tournamentText",
