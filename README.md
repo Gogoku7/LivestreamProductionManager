@@ -40,3 +40,14 @@ Livestream Production Manager can be deployed to IIS. When deployed to IIS, chan
 To learn how to enable IIS (don't forget to enable WebSockets), use: https://www.itnota.com/install-iis-windows/ 
 
 Deploying to IIS and running can be done manually or using Visual Studio, the default included "LivestreamProductionManager.pubxml" publish file should work out of the box with a correct IIS installation.
+
+# Planned features
+
+- Up next (queu up, up to 3 next sets)
+- Manage Top 8 overlays
+- Auto-update toggle
+- Creating player datasets
+- Auto complete player from dataset
+- Smash.gg integration
+- Auto complete player from Smash.gg
+- .msi installer
