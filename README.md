@@ -45,6 +45,7 @@ Deploying to IIS and running can be done manually or using Visual Studio, the de
 
 - Up next (queu up, up to 3 next sets)
 - Manage Top 8 overlays
+- Slideshow.js and Slideshow.css
 - Auto-update toggle
 - Creating player datasets
 - Auto complete player from dataset
