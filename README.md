@@ -49,6 +49,6 @@ Deploying to IIS and running can be done manually or using Visual Studio, the de
 - Auto-update toggle
 - Creating player datasets
 - Auto complete player from dataset
-- Smash.gg integration
-- Auto complete player from Smash.gg
+- Smash.gg API integration
+- Auto complete player from Smash.gg API
 - .msi installer
