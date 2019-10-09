@@ -44,11 +44,31 @@ Deploying to IIS and running can be done manually or using Visual Studio, the de
 # Planned features
 
 - Up next (queu up, up to 3 next sets)
+- Fix logging to file
 - Manage Top 8 overlays
+- Separate PlayerSponsor and PlayerName to individually style
+- Add PlayerCountry
+- Format settings
+    - Default values
+    - How to stitch together sponsor + name
+    - Disable fields
+    - Switch between stock icon and head portrait or full portrait, etc.
+    - Automatically get latest version on load of format
 - Slideshow.js and Slideshow.css
 - Auto-update toggle
 - Creating player datasets
 - Auto complete player from dataset
 - Smash.gg API integration
 - Auto complete player from Smash.gg API
+- Assist page for mobile
+    - Switch competitors / teams / squads / crews
+    - Switch player names
+    - Switch player characters
+    - Switch player ports
+    - Change name
+    - Change character
+    - Change port
+    - Force resize 
+
+- Automated tests with Selenium IDE
 - .msi installer
