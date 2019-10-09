@@ -48,7 +48,7 @@ Deploying to IIS and running can be done manually or using Visual Studio, the de
 - Manage Top 8 overlays
 - Separate PlayerSponsor and PlayerName to individually style
 - Add PlayerCountry
-- Format settings
+- Format settings:
     - Default values
     - How to stitch together sponsor + name
     - Disable fields
@@ -60,7 +60,7 @@ Deploying to IIS and running can be done manually or using Visual Studio, the de
 - Auto complete player from dataset
 - Smash.gg API integration
 - Auto complete player from Smash.gg API
-- Assist page for mobile
+- Assist page for mobile:
     - Switch competitors / teams / squads / crews
     - Switch player names
     - Switch player characters
