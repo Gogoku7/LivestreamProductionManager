@@ -66,6 +66,7 @@ Deploying to IIS and running can be done manually or using Visual Studio, the de
     - Switch player characters
     - Switch player ports
     - Change name
+    - Change sponsor
     - Change character
     - Change port
     - Force resize 
