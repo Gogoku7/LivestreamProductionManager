@@ -61,6 +61,8 @@ Deploying to IIS and running can be done manually or using Visual Studio, the de
 - Smash.gg API integration
 - Auto complete player from Smash.gg API
 - Assist page for mobile:
+    - Change scene warning
+    - Change player name
     - Switch competitors / teams / squads / crews
     - Switch player names
     - Switch player characters
