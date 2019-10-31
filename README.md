@@ -29,7 +29,7 @@ To get an actual overlay in OBS:
 - Enable "Local file" and click "Browse"
 - Select a file, like "/LivestreamProductionManager/FightingGames/SuperSmashBros/Ultimate/Singles/gameOverlay.html"
 - Set the resolution and framerate (1920 x 1080 at 60 frames per second recommended)
-- Enable both "Shutdown source when not visible" and "Refresh browser when scene becomes active checkbox"
+- Enable both "Shutdown source when not visible" and "Refresh browser when scene becomes active" checkbox
 
 
 # Deploying (IIS)
