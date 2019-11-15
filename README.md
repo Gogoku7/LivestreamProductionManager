@@ -56,9 +56,9 @@ Deploying to IIS and running can be done manually or using Visual Studio, the de
 - Slideshow.js and Slideshow.css
 - Auto-update toggle
 - Creating player datasets
-- Auto complete player from dataset
+    - Auto complete player from dataset
 - Smash.gg API integration
-- Auto complete player from Smash.gg API
+    - Auto complete player from Smash.gg API
 - Assist page for mobile:
     - Change scene warning
     - Switch competitors / teams / squads / crews
