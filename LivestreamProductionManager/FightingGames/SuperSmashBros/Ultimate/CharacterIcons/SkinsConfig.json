@@ -3016,43 +3016,43 @@
       "Skins": [
         {
           "Name": "Terry",
-          "CssValue": "../../CharacterIcons/random.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
+          "CssValue": "../../CharacterIcons/terry.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/terry.png"
         },
         {
           "Name": "Terry_01",
-          "CssValue": "../../CharacterIcons/random.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
+          "CssValue": "../../CharacterIcons/terry_01.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/terry_01.png"
         },
         {
           "Name": "Terry_02",
-          "CssValue": "../../CharacterIcons/random.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
+          "CssValue": "../../CharacterIcons/terry_02.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/terry_02.png"
         },
         {
           "Name": "Terry_03",
-          "CssValue": "../../CharacterIcons/random.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
+          "CssValue": "../../CharacterIcons/terry_03.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/terry_03.png"
         },
         {
           "Name": "Terry_04",
-          "CssValue": "../../CharacterIcons/random.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
+          "CssValue": "../../CharacterIcons/terry_04.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/terry_04.png"
         },
         {
           "Name": "Terry_05",
-          "CssValue": "../../CharacterIcons/random.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
+          "CssValue": "../../CharacterIcons/terry_05.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/terry_05.png"
         },
         {
           "Name": "Terry_06",
-          "CssValue": "../../CharacterIcons/random.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
+          "CssValue": "../../CharacterIcons/terry_06.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/terry_06.png"
         },
         {
           "Name": "Terry_07",
-          "CssValue": "../../CharacterIcons/random.png",
-          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
+          "CssValue": "../../CharacterIcons/terry_07.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/terry_07.png"
         }
       ]
     },
