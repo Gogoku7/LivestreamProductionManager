@@ -42,8 +42,6 @@ Deploying to IIS and running can be done manually or using Visual Studio, the de
 
 # Planned features
 
-- Up next (queu up, up to 3 next sets)
-- Fix logging to file
 - Manage Top 8 overlays
 - Separate PlayerSponsor and PlayerName to individually style
 - Add PlayerCountry
