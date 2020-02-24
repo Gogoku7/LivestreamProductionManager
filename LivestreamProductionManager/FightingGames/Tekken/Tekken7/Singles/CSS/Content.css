@@ -19,7 +19,7 @@
 }
 
 #player1Country {
-    background-image: url('../../../../Flags/AS.svg');
+    background-image: url('../../../../Flags/CV.svg');
 }
 
 #player2NameText:before {
@@ -43,7 +43,7 @@
 }
 
 #player2Country {
-    background-image: url('../../../../Flags/BE.svg');
+    background-image: url('../../../../Flags/JP.svg');
 }
 
 #tournamentText:before {

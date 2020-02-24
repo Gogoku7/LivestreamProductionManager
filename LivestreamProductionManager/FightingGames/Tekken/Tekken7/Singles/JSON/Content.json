@@ -25,7 +25,7 @@
   },
   {
     "Selector": "#player1Country",
-    "Value": "../../../../Flags/AS.svg"
+    "Value": "../../../../Flags/CV.svg"
   },
   {
     "Selector": "#player2NameText",
@@ -53,7 +53,7 @@
   },
   {
     "Selector": "#player2Country",
-    "Value": "../../../../Flags/BE.svg"
+    "Value": "../../../../Flags/JP.svg"
   },
   {
     "Selector": "#tournamentText",
