@@ -1,0 +1,345 @@
+body
+{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Bebas Neue', sans-serif;
+}
+
+/* players */
+
+.players
+{
+	width: 1920px;
+	height: 80px;
+}
+
+/* players END*/
+
+
+
+/* player */
+
+.player
+{
+	width: 960px;
+	height: 85px;
+}
+
+#player1
+{
+	float: left;
+}
+
+#player2
+{
+	float: right;
+}
+
+/* player END */
+
+
+
+/* playerBox */
+
+.playerBox
+{
+	width: 782px;
+	height: 50px;
+	margin-top: 35px;
+	overflow: hidden;
+	animation: showPlayerBox 1s;
+}
+
+#player1Box
+{
+	float: right;
+	background-image: url('../PlayerBackgrounds/Player1Background.png');
+}
+
+#player2Box
+{
+	float: left;
+	background-image: url('../PlayerBackgrounds/Player2Background.png');
+	background-position: right center;
+}
+
+/* playerBox END */
+
+
+
+/* playerCountry */
+
+.playerCountry 
+{
+    width: 75px;
+    height: 50px;
+	animation: opacityFadeIn;
+	animation-delay: 0s;
+	animation-duration: 5s;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#player1Country
+{
+	float: right;
+	margin-right: 157px;
+}
+
+#player2Country
+{
+	float: left;
+	margin-left: 157px;
+}
+
+/* playerScoreBox END */
+
+
+
+/* playerCountry */
+
+.playerScoreBox 
+{
+    width: 20px;
+    height: 50px;
+    line-height: 50px;
+    align-items: center;
+    overflow: hidden;
+	animation: opacityFadeIn;
+	animation-delay: 0s;
+	animation-duration: 3s;
+}
+
+#player1ScoreBox
+{
+	float: right;
+	margin-right: 50px;
+}
+
+#player2ScoreBox
+{
+	float: left;
+	margin-left: 55px;
+}
+
+/* playerScoreBox END */
+
+
+
+/* playerScore */
+
+.playerScore
+{
+	color: white;
+	margin: 0;
+}
+
+/* playerScore END */
+
+
+
+/* playerNameBox */
+
+.playerNameBox
+{
+	width: 370px;
+	height: 50px;
+}
+
+#player1NameBox
+{
+	float: right;
+	margin-right: 50px;
+}
+
+#player2NameBox
+{
+	float: left;
+	margin-left: 45px;
+}
+
+/* playerNameBox END */
+
+
+
+/* playerNameContainer */
+
+.playerNameContainer 
+{
+    width: 370px;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+	animation: opacityFadeIn;
+	animation-delay: 0s;
+	animation-duration: 2s;
+}
+
+#player1NameContainer 
+{
+    float: left;
+    text-align: center;
+}
+
+#player2NameContainer 
+{
+    float: right;
+    text-align: center;
+}
+
+/* playerNameContainer END */
+
+
+
+/* playerName */
+
+.playerName
+{
+	color: white;
+	margin: 0;	
+}
+
+/* playerName END*/
+
+
+/* tournamentInfo */
+
+.tournamentInfo
+{
+	width: 1920px;
+	height: 35px;
+}
+
+/* tournamentInfo END */
+
+
+
+/* info */
+
+.info
+{
+	width: 1920px;
+	height: 35px;
+}
+
+/* info END */
+
+
+
+/* infoBox */
+
+.infoBox
+{
+	width: 150px;
+	height: 30px;
+	margin-top: 60px;
+	margin-left: 873px;
+	padding-left: 12px;
+	padding-right: 12px;
+	text-align: center;
+	line-height: 30px;
+    align-items: center;
+	background-color: black;
+	background-position: center;
+	background-repeat: no-repeat;
+	animation: opacityFadeIn;
+	animation-delay: 0s;
+	animation-duration: 4s;
+}
+
+/* infoBox END */
+
+
+
+/* roundText */
+
+#roundText
+{
+	width: auto;
+	margin: 0px;
+	white-space: nowrap;
+	color: white;
+}
+
+/* roundText END */
+
+
+
+/* tournamentLogo */
+
+.tournamentLogo
+{
+	position: fixed;
+	top: 10px;
+	left: 920px;
+	width: 80px;
+	height: 76px;
+	background-image: url('../Logos/TournamentLogo.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/* tournamentLogo END */
+
+
+
+/* Snackbar */
+
+.snackbar
+{
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 2px;
+    position: fixed;
+    z-index: 1;
+    bottom: 0px;
+}
+
+
+    .snackbar.show
+    {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+
+/* Snackbar END */
+
+
+
+/* animations */
+
+@keyframes showPlayerBox
+{
+	0%
+    {
+        width: 0%;
+	}
+	100%
+    {
+        width: 81.45833333333333‬%;
+	}
+}
+
+@keyframes opacityFadeIn
+{
+	0%
+    {
+        opacity: 0;
+	}
+	50%
+    {
+        opacity: 0;
+	}
+	100%
+    {
+        opacity: 1;
+	}
+}
+
+/* animations END */

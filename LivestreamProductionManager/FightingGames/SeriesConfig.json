@@ -6,7 +6,12 @@
   },
   {
     "SeriesName": "Street Fighter",
-    "SERIES": "StreetFighterController",
+    "SERIES": "StreetFighter",
     "PathToSeries": "~/FightingGames/StreetFighter/"
+  },
+  {
+    "SeriesName": "Tekken",
+    "SERIES": "Tekken",
+    "PathToSeries": "~/FightingGames/Tekken/"
   }
 ]

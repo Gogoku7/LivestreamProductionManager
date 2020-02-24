@@ -11,7 +11,13 @@ namespace LivestreamProductionManager
     {
         protected void Application_Start()
         {
-            Log.Logger = new LoggerConfiguration().MinimumLevel.Debug().WriteTo.RollingFile(pathFormat: "~/Logging/LPM.Log.{Date}.txt").CreateLogger();
+            Log.Logger = new LoggerConfiguration().MinimumLevel.Debug()
+                .WriteTo.File
+                (
+                    path:  Server.MapPath("~/Logging/LPM.Log-.txt"),
+                    restrictedToMinimumLevel: Serilog.Events.LogEventLevel.Debug,
+                    rollingInterval: RollingInterval.Day
+                ).CreateLogger();
 
             GlobalConfiguration.Configure(WebApiConfig.Register);
             AreaRegistration.RegisterAllAreas();

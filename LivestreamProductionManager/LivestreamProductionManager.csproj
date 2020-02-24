@@ -52,17 +52,14 @@
     <Reference Include="Microsoft.WebSockets, Version=0.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.WebSockets.0.2.3.1\lib\net45\Microsoft.WebSockets.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
       <HintPath>..\packages\Serilog.2.8.0\lib\net45\Serilog.dll</HintPath>
     </Reference>
     <Reference Include="Serilog.Sinks.File, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
       <HintPath>..\packages\Serilog.Sinks.File.4.0.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Sinks.RollingFile, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>..\packages\Serilog.Sinks.RollingFile.3.3.0\lib\net45\Serilog.Sinks.RollingFile.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -178,6 +175,7 @@
     <Compile Include="Controllers\FightingGamesController.cs" />
     <Compile Include="Controllers\QueuController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
+    <Compile Include="Controllers\TraditionalFGController.cs" />
     <Compile Include="Implementations\Commentators\CommentatorsCssFileWriter.cs" />
     <Compile Include="Implementations\Commentators\CommentatorsCssOverlayManager.cs" />
     <Compile Include="Implementations\Commentators\CommentatorsCssReplacer.cs" />
@@ -188,9 +186,13 @@
     <Compile Include="Implementations\Settings\SettingsFileManager.cs" />
     <Compile Include="Implementations\Settings\SettingsFileWriter.cs" />
     <Compile Include="Implementations\Settings\SettingsReader.cs" />
-    <Compile Include="Implementations\SuperSmashBros\SmashJsonReplacer.cs" />
     <Compile Include="Implementations\SuperSmashBros\SmashJsonOverlayManager.cs" />
     <Compile Include="Implementations\SuperSmashBros\SmashJsonFileWriter.cs" />
+    <Compile Include="Implementations\TraditionalFG\TraditionalFGCssFileWriter.cs" />
+    <Compile Include="Implementations\TraditionalFG\TraditionalFGCssOverlayManager.cs" />
+    <Compile Include="Implementations\TraditionalFG\TraditionalFGCssReplacer.cs" />
+    <Compile Include="Implementations\TraditionalFG\TraditionalFGJsonFileWriter.cs" />
+    <Compile Include="Implementations\TraditionalFG\TraditionalFGJsonOverlayManager.cs" />
     <Compile Include="Interfaces\Commentators\ICommentatorsFileWriter.cs" />
     <Compile Include="Interfaces\Commentators\ICommentatorsOverlayManager.cs" />
     <Compile Include="Interfaces\Commentators\ICommentatorsValuesReplacer.cs" />
@@ -201,24 +203,56 @@
     <Compile Include="Interfaces\SuperSmashBros\ISmashFileWriter.cs" />
     <Compile Include="Interfaces\SuperSmashBros\ISmashOverlayManager.cs" />
     <Compile Include="Interfaces\SuperSmashBros\ISmashValuesReplacer.cs" />
+    <Compile Include="Interfaces\TraditionalFG\ITraditionalFGFileWriter.cs" />
+    <Compile Include="Interfaces\TraditionalFG\ITraditionalFGOverlayManager.cs" />
+    <Compile Include="Interfaces\TraditionalFG\ITraditionalFGValuesReplacer.cs" />
     <Compile Include="Models\Commentators\CommentatorsValuesModel.cs" />
+    <Compile Include="Models\FightingGames\SelectorValueModel.cs" />
     <Compile Include="Models\FightingGames\Skins\CharacterConfig.cs" />
     <Compile Include="Models\FightingGames\Skins\Skin.cs" />
     <Compile Include="Models\FightingGames\Skins\SkinsConfig.cs" />
     <Compile Include="Models\FightingGames\SuperSmashBros\CrewCssModel.cs" />
     <Compile Include="Models\FightingGames\SuperSmashBros\CrewPlayerCssModel.cs" />
     <Compile Include="Models\FightingGames\SuperSmashBros\CrewsCssModel.cs" />
+    <Compile Include="Models\FightingGames\SuperSmashBros\NextSet\CrewsNextSetCssModel.cs" />
+    <Compile Include="Models\FightingGames\SuperSmashBros\NextSet\DoublesNextSetCssModel.cs" />
+    <Compile Include="Models\FightingGames\SuperSmashBros\NextSet\SinglesNextSetCssModel.cs" />
+    <Compile Include="Models\FightingGames\SuperSmashBros\NextSet\SquadStrikeNextSetCssModel.cs" />
     <Compile Include="Models\FightingGames\SuperSmashBros\SquadCssModel.cs" />
     <Compile Include="Models\FightingGames\SuperSmashBros\SquadPlayerCssModel.cs" />
     <Compile Include="Models\FightingGames\SuperSmashBros\SquadStrikeCssModel.cs" />
+    <Compile Include="Models\FightingGames\TraditionalFG\CrewCssModel.cs" />
+    <Compile Include="Models\FightingGames\TraditionalFG\CrewPlayerCssModel.cs" />
+    <Compile Include="Models\FightingGames\TraditionalFG\CrewsCssModel.cs" />
+    <Compile Include="Models\FightingGames\TraditionalFG\NextSet\CrewsNextSetCssModel.cs" />
+    <Compile Include="Models\FightingGames\TraditionalFG\NextSet\SinglesNextSetCssModel.cs" />
+    <Compile Include="Models\FightingGames\TraditionalFG\PlayerCssModel.cs" />
+    <Compile Include="Models\FightingGames\TraditionalFG\SinglesCssModel.cs" />
     <Compile Include="ViewModels\FightingGames\CharacterSkinModalViewModel.cs" />
+    <Compile Include="ViewModels\FightingGames\CountryViewModel.cs" />
     <Compile Include="ViewModels\FightingGames\GetLatestViewModel.cs" />
     <Compile Include="ViewModels\FightingGames\ReadMe.cs" />
     <Compile Include="ViewModels\FightingGames\SelectorValueViewModel.cs" />
     <Compile Include="ViewModels\FightingGames\SuperSmashBros\CrewPlayerPartialViewModel.cs" />
+    <Compile Include="ViewModels\FightingGames\SuperSmashBros\NextSet\CrewsNextSetViewModel.cs" />
+    <Compile Include="ViewModels\FightingGames\SuperSmashBros\NextSet\DoublesNextSetViewModel.cs" />
+    <Compile Include="ViewModels\FightingGames\SuperSmashBros\NextSet\NextSetViewModel.cs" />
+    <Compile Include="ViewModels\FightingGames\SuperSmashBros\NextSet\SinglesNextSetViewModel.cs" />
+    <Compile Include="ViewModels\FightingGames\SuperSmashBros\NextSet\SquadStrikeNextSetViewModel.cs" />
     <Compile Include="ViewModels\FightingGames\SuperSmashBros\SquadPlayerViewModel.cs" />
     <Compile Include="ViewModels\FightingGames\SuperSmashBros\SquadStrikeViewModel.cs" />
     <Compile Include="ViewModels\FightingGames\SuperSmashBros\SquadViewModel.cs" />
+    <Compile Include="ViewModels\FightingGames\SuperSmashBros\SuperSmashBrosQueuBaseViewModel.cs" />
+    <Compile Include="ViewModels\FightingGames\TraditionalFG\CrewPlayerPartialViewModel.cs" />
+    <Compile Include="ViewModels\FightingGames\TraditionalFG\CrewPlayerViewModel.cs" />
+    <Compile Include="ViewModels\FightingGames\TraditionalFG\CrewsViewModel.cs" />
+    <Compile Include="ViewModels\FightingGames\TraditionalFG\CrewViewModel.cs" />
+    <Compile Include="ViewModels\FightingGames\TraditionalFG\NewSet\CrewsNextSetViewModel.cs" />
+    <Compile Include="ViewModels\FightingGames\TraditionalFG\NewSet\SinglesNextSetViewModel.cs" />
+    <Compile Include="ViewModels\FightingGames\TraditionalFG\PlayerViewModel.cs" />
+    <Compile Include="ViewModels\FightingGames\TraditionalFG\SinglesViewModel.cs" />
+    <Compile Include="ViewModels\FightingGames\TraditionalFG\TraditionalFGBaseViewModel.cs" />
+    <Compile Include="ViewModels\FightingGames\TraditionalFG\TraditionalFGQueuBaseViewModel.cs" />
     <Compile Include="ViewModels\Settings\Option.cs" />
     <Compile Include="ViewModels\Settings\Setting.cs" />
     <Compile Include="ViewModels\Settings\SettingsViewModel.cs" />
@@ -276,22 +310,810 @@
     <Content Include="FightingGames\CssTemplates\CrewPlayerActiveTemplateFile.css" />
     <Content Include="FightingGames\CssTemplates\SquadCharacterEliminatedTemplateFile.css" />
     <Content Include="FightingGames\CssTemplates\SquadPlayerActiveTemplateFile.css" />
+    <Content Include="FightingGames\CssTemplates\SuperSmashBros\SuperSmashBrosCrewsNextSetTemplate.css" />
     <Content Include="FightingGames\CssTemplates\SuperSmashBros\SuperSmashBrosCrewsTemplate.css" />
+    <Content Include="FightingGames\CssTemplates\SuperSmashBros\SuperSmashBrosDoublesNextSetTemplate.css" />
     <Content Include="FightingGames\CssTemplates\SuperSmashBros\SuperSmashBrosDoublesTemplate.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="FightingGames\CssTemplates\SuperSmashBros\SuperSmashBrosSinglesNextSetTemplate.css" />
     <Content Include="FightingGames\CssTemplates\SuperSmashBros\SuperSmashBrosSinglesTemplate.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="FightingGames\CssTemplates\SuperSmashBros\SuperSmashBrosSquadStrikeNextSetTemplate.css" />
     <Content Include="FightingGames\CssTemplates\SuperSmashBros\SuperSmashBrosSquadStrikeTemplate.css" />
     <Content Include="FightingGames\CssTemplates\TextTemplateFile.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\CSS\Queu.css" />
-    <Content Include="FightingGames\SuperSmashBros\JavaScript\fitty.js" />
-    <Content Include="FightingGames\SuperSmashBros\JavaScript\jQuery.js" />
-    <Content Include="FightingGames\SuperSmashBros\JavaScript\OverlayManager.js" />
-    <Content Include="FightingGames\SuperSmashBros\JavaScript\Snackbar.js" />
+    <Content Include="FightingGames\CssTemplates\TraditionalFG\TraditionalFGCrewsNextSetTemplate.css" />
+    <Content Include="FightingGames\CssTemplates\TraditionalFG\TraditionalFGCrewsTemplate.css" />
+    <Content Include="FightingGames\CssTemplates\TraditionalFG\TraditionalFGSinglesNextSetTemplate.css" />
+    <Content Include="FightingGames\CssTemplates\TraditionalFG\TraditionalFGSinglesTemplate.css" />
+    <Content Include="FightingGames\Flags\ad.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ae.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\af.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ag.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ai.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\al.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\am.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\an.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ao.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\aq.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ar.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\as.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\at.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\au.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\aw.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ax.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\az.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ba.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\bb.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\bd.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\be.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\bf.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\bg.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\bh.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\bi.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\bj.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\bl.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\bm.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\bn.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\bo.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\bq.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\br.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\bs.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\bt.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\bv.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\bw.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\by.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\bz.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ca.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\cc.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\cd.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\cf.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\cg.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ch.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ci.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ck.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\cl.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\cm.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\cn.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\co.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\cr.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\cu.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\cv.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\cw.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\cx.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\cy.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\cz.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\de.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\dj.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\dk.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\dm.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\do.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\dz.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ec.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ee.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\eg.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\eh.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\er.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\es.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\et.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\eu.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\fi.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\fj.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\fk.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\fm.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\fo.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\fr.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ga.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\gb-eng.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\gb-nir.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\gb-sct.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\gb-wls.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\gb.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\gd.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ge.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\gf.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\gg.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\gh.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\gi.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\gl.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\gm.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\gn.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\gp.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\gq.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\gr.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\gs.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\gt.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\gu.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\gw.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\gy.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\hk.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\hm.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\hn.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\hr.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ht.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\hu.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\id.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ie.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\il.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\im.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\in.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\io.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\iq.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ir.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\is.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\it.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\je.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\jm.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\jo.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\jp.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ke.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\kg.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\kh.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ki.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\km.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\kn.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\kp.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\kr.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\kw.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ky.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\kz.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\la.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\lb.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\lc.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\li.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\lk.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\lr.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ls.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\lt.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\lu.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\lv.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ly.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ma.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\mc.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\md.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\me.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\mf.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\mg.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\mh.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\mk.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ml.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\mm.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\mn.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\mo.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\mp.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\mq.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\mr.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ms.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\mt.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\mu.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\mv.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\mw.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\mx.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\my.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\mz.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\na.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\nc.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ne.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\nf.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ng.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ni.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\nl.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\no.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\np.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\nr.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\nu.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\nz.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\om.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\pa.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\pe.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\pf.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\pg.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ph.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\pk.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\pl.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\pm.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\pn.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\pr.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ps.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\pt.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\pw.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\py.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\qa.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\re.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ro.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\rs.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ru.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\rw.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\sa.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\sb.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\sc.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\sd.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\se.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\sg.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\sh.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\si.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\sj.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\sk.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\sl.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\sm.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\sn.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\so.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\sr.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ss.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\st.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\sv.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\sx.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\sy.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\sz.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\tc.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\td.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\tf.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\tg.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\th.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\tj.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\tk.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\tl.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\tm.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\tn.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\to.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\tr.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\tt.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\tv.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\tw.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\tz.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ua.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ug.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\um.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\us.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\uy.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\uz.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\va.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\vc.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ve.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\vg.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\vi.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\vn.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\vu.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\wf.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ws.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\xk.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\ye.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\yt.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\za.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\zm.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\zw.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\JavaScript\StingerManager.js" />
+    <Content Include="FightingGames\Stinger\CSS\Styles.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Stinger\Images\LPM.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Stinger\Stinger.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\CSS\Queu.css" />
+    <Content Include="FightingGames\CSS\Slideshow.css" />
+    <Content Include="FightingGames\JavaScript\fitty.js" />
+    <Content Include="FightingGames\JavaScript\jQuery.js" />
+    <Content Include="FightingGames\JavaScript\OverlayManager.js" />
+    <Content Include="FightingGames\JavaScript\Slideshow.js" />
+    <Content Include="FightingGames\JavaScript\Snackbar.js" />
     <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\banjokazooie.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -383,6 +1205,30 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\bowser_07.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\byleth.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\byleth_01.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\byleth_02.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\byleth_03.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\byleth_04.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\byleth_05.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\byleth_06.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\byleth_07.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\captainfalcon.png">
@@ -2208,6 +3054,18 @@
     <Content Include="FightingGames\SuperSmashBros\Ultimate\PlayerPorts\PlayerPort8.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\SinglesInbetween\Slides\1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\SinglesInbetween\Slides\2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\SinglesInbetween\Slides\3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\SinglesInbetween\Slides\4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="FightingGames\SuperSmashBros\Ultimate\Singles\BoxBackground\InfoBoxBackground.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -3676,6 +4534,21 @@
     <Content Include="FightingGames\SuperSmashBros\WiiU\Singles\PlayerBackgrounds\Player2Background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="FightingGames\Tekken\Tekken7\Singles\CSS\Styles.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Tekken\Tekken7\Singles\GameOverlay.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Tekken\Tekken7\Singles\Logos\TournamentLogo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Tekken\Tekken7\Singles\PlayerBackgrounds\player1Background.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Tekken\Tekken7\Singles\PlayerBackgrounds\player2Background.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -3774,8 +4647,8 @@
     <Content Include="FightingGames\SuperSmashBros\Ultimate\Commentators\ReadMe.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\JavaScript\ReadMe.md" />
-    <Content Include="FightingGames\SuperSmashBros\CSS\ReadMe.md" />
+    <Content Include="FightingGames\JavaScript\ReadMe.md" />
+    <Content Include="FightingGames\CSS\ReadMe.md" />
     <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\SkinsConfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -3806,6 +4679,20 @@
     <Content Include="FightingGames\SuperSmashBros\Ultimate\SquadStrike\JSON\ReadMe.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Logging\ReadMe.md" />
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\SinglesNextSet\ReadMe.md" />
+    <Content Include="FightingGames\Tekken\GamesConfig.json" />
+    <Content Include="FightingGames\Tekken\Tekken7\CharactersConfig.json" />
+    <Content Include="FightingGames\Tekken\Tekken7\FormatsConfig.json" />
+    <Content Include="FightingGames\Tekken\Tekken7\Singles\ReadMe.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Tekken\Tekken7\Singles\ReadMe.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\CountriesConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\PublishProfiles\LivestreamProductionManager.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -3831,18 +4718,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\FightingGames\Index.cshtml" />
     <Content Include="Views\SuperSmashBros\Singles\ManageCompetitors.cshtml" />
-    <Content Include="Views\SuperSmashBros\BigTeams\ManageCompetitors.cshtml" />
-    <Content Include="Views\SuperSmashBros\SmashdownBigTeams\ManageCompetitors.cshtml" />
-    <Content Include="Views\SuperSmashBros\SmashdownDoubles\ManageCompetitors.cshtml" />
-    <Content Include="Views\SuperSmashBros\SmashdownSingles\ManageCompetitors.cshtml" />
     <Content Include="Views\SuperSmashBros\Crews\ManageCompetitors.cshtml" />
     <Content Include="Views\SuperSmashBros\Doubles\ManageCompetitors.cshtml" />
-    <Content Include="Views\SuperSmashBros\IronMan\ManageCompetitors.cshtml" />
     <Content Include="Views\Commentators\CommentatorRow.cshtml" />
     <Content Include="Views\SuperSmashBros\Crews\CrewPlayerRow.cshtml" />
     <Content Include="Views\About\Version.cshtml" />
@@ -3853,58 +4734,88 @@
     <Content Include="Views\Shared\_SkinsPartialView.cshtml" />
     <Content Include="Views\Shared\_SettingsModal.cshtml" />
     <Content Include="Views\Shared\_GeneralSettingsPartialView.cshtml" />
+    <Content Include="Views\SuperSmashBros\Singles\NextSet.cshtml" />
+    <Content Include="Views\SuperSmashBros\Doubles\NextSet.cshtml" />
+    <Content Include="Views\SuperSmashBros\Crews\NextSet.cshtml" />
+    <Content Include="Views\SuperSmashBros\SquadStrike\NextSet.cshtml" />
+    <Content Include="Views\TraditionalFG\Singles\ManageCompetitors.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\TraditionalFG\Crews\ManageCompetitors.cshtml" />
+    <Content Include="Views\TraditionalFG\Crews\CrewPlayerRow.cshtml" />
+    <Content Include="Views\TraditionalFG\Singles\NextSet.cshtml" />
+    <Content Include="Views\TraditionalFG\Crews\NextSet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="FightingGames\SuperSmashBros\Brawl\CharacterIcons\" />
     <Folder Include="FightingGames\SuperSmashBros\Brawl\Commentators\" />
+    <Folder Include="FightingGames\SuperSmashBros\Brawl\CrewsNextSet\CSS\" />
+    <Folder Include="FightingGames\SuperSmashBros\Brawl\CrewsNextSet\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Brawl\Crews\CSS\" />
     <Folder Include="FightingGames\SuperSmashBros\Brawl\Crews\JSON\" />
+    <Folder Include="FightingGames\SuperSmashBros\Brawl\DoublesNextSet\CSS\" />
+    <Folder Include="FightingGames\SuperSmashBros\Brawl\DoublesNextSet\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Brawl\Doubles\CSS\" />
     <Folder Include="FightingGames\SuperSmashBros\Brawl\Doubles\JSON\" />
-    <Folder Include="FightingGames\SuperSmashBros\Brawl\IronMan\CSS\" />
-    <Folder Include="FightingGames\SuperSmashBros\Brawl\IronMan\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Brawl\PlayerPorts\" />
+    <Folder Include="FightingGames\SuperSmashBros\Brawl\SinglesNextSet\CSS\" />
+    <Folder Include="FightingGames\SuperSmashBros\Brawl\SinglesNextSet\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Brawl\Singles\CSS\" />
     <Folder Include="FightingGames\SuperSmashBros\Brawl\Singles\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Melee\CharacterIcons\" />
     <Folder Include="FightingGames\SuperSmashBros\Melee\Commentators\" />
+    <Folder Include="FightingGames\SuperSmashBros\Melee\CrewsNextSet\CSS\" />
+    <Folder Include="FightingGames\SuperSmashBros\Melee\CrewsNextSet\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Melee\Crews\CSS\" />
     <Folder Include="FightingGames\SuperSmashBros\Melee\Crews\JSON\" />
+    <Folder Include="FightingGames\SuperSmashBros\Melee\DoublesNextSet\CSS\" />
+    <Folder Include="FightingGames\SuperSmashBros\Melee\DoublesNextSet\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Melee\Doubles\CSS\" />
     <Folder Include="FightingGames\SuperSmashBros\Melee\Doubles\JSON\" />
-    <Folder Include="FightingGames\SuperSmashBros\Melee\IronMan\CSS\" />
-    <Folder Include="FightingGames\SuperSmashBros\Melee\IronMan\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Melee\PlayerPorts\" />
+    <Folder Include="FightingGames\SuperSmashBros\Melee\SinglesNextSet\CSS\" />
+    <Folder Include="FightingGames\SuperSmashBros\Melee\SinglesNextSet\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Melee\Singles\CSS\" />
     <Folder Include="FightingGames\SuperSmashBros\Melee\Singles\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Smash64\CharacterIcons\" />
     <Folder Include="FightingGames\SuperSmashBros\Smash64\Commentators\" />
+    <Folder Include="FightingGames\SuperSmashBros\Smash64\CrewsNextSet\CSS\" />
+    <Folder Include="FightingGames\SuperSmashBros\Smash64\CrewsNextSet\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Smash64\Crews\CSS\" />
     <Folder Include="FightingGames\SuperSmashBros\Smash64\Crews\JSON\" />
+    <Folder Include="FightingGames\SuperSmashBros\Smash64\DoublesNextSet\CSS\" />
+    <Folder Include="FightingGames\SuperSmashBros\Smash64\DoublesNextSet\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Smash64\Doubles\CSS\" />
     <Folder Include="FightingGames\SuperSmashBros\Smash64\Doubles\JSON\" />
-    <Folder Include="FightingGames\SuperSmashBros\Smash64\IronMan\CSS\" />
-    <Folder Include="FightingGames\SuperSmashBros\Smash64\IronMan\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Smash64\PlayerPorts\" />
+    <Folder Include="FightingGames\SuperSmashBros\Smash64\SinglesNextSet\CSS\" />
+    <Folder Include="FightingGames\SuperSmashBros\Smash64\SinglesNextSet\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\Smash64\Singles\CSS\" />
     <Folder Include="FightingGames\SuperSmashBros\Smash64\Singles\JSON\" />
-    <Folder Include="FightingGames\SuperSmashBros\Ultimate\BigTeams\CSS\" />
-    <Folder Include="FightingGames\SuperSmashBros\Ultimate\BigTeams\JSON\" />
-    <Folder Include="FightingGames\SuperSmashBros\Ultimate\IronMan\CSS\" />
-    <Folder Include="FightingGames\SuperSmashBros\Ultimate\IronMan\JSON\" />
-    <Folder Include="FightingGames\SuperSmashBros\Ultimate\SmashdownBigTeams\CSS\" />
-    <Folder Include="FightingGames\SuperSmashBros\Ultimate\SmashdownBigTeams\JSON\" />
-    <Folder Include="FightingGames\SuperSmashBros\Ultimate\SmashdownDoubles\CSS\" />
-    <Folder Include="FightingGames\SuperSmashBros\Ultimate\SmashdownDoubles\JSON\" />
-    <Folder Include="FightingGames\SuperSmashBros\Ultimate\SmashdownSingles\CSS\" />
-    <Folder Include="FightingGames\SuperSmashBros\Ultimate\SmashdownSingles\JSON\" />
+    <Folder Include="FightingGames\SuperSmashBros\Ultimate\CrewsNextSet\CSS\" />
+    <Folder Include="FightingGames\SuperSmashBros\Ultimate\CrewsNextSet\JSON\" />
+    <Folder Include="FightingGames\SuperSmashBros\Ultimate\DoublesNextSet\CSS\" />
+    <Folder Include="FightingGames\SuperSmashBros\Ultimate\DoublesNextSet\JSON\" />
+    <Folder Include="FightingGames\SuperSmashBros\Ultimate\SinglesNextSet\CSS\" />
+    <Folder Include="FightingGames\SuperSmashBros\Ultimate\SinglesNextSet\JSON\" />
+    <Folder Include="FightingGames\SuperSmashBros\Ultimate\SquadStrikeNextSet\CSS\" />
+    <Folder Include="FightingGames\SuperSmashBros\Ultimate\SquadStrikeNextSet\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\WiiU\Commentators\" />
+    <Folder Include="FightingGames\SuperSmashBros\WiiU\CrewsNextSet\CSS\" />
+    <Folder Include="FightingGames\SuperSmashBros\WiiU\CrewsNextSet\JSON\" />
     <Folder Include="FightingGames\SuperSmashBros\WiiU\Crews\CSS\" />
     <Folder Include="FightingGames\SuperSmashBros\WiiU\Crews\JSON\" />
-    <Folder Include="FightingGames\SuperSmashBros\WiiU\IronMan\CSS\" />
-    <Folder Include="FightingGames\SuperSmashBros\WiiU\IronMan\JSON\" />
-    <Folder Include="Logging\" />
+    <Folder Include="FightingGames\SuperSmashBros\WiiU\DoublesNextSet\CSS\" />
+    <Folder Include="FightingGames\SuperSmashBros\WiiU\DoublesNextSet\JSON\" />
+    <Folder Include="FightingGames\SuperSmashBros\WiiU\SinglesNextSet\CSS\" />
+    <Folder Include="FightingGames\SuperSmashBros\WiiU\SinglesNextSet\JSON\" />
+    <Folder Include="FightingGames\Tekken\Tekken7\CrewsNextSet\CSS\" />
+    <Folder Include="FightingGames\Tekken\Tekken7\CrewsNextSet\JSON\" />
+    <Folder Include="FightingGames\Tekken\Tekken7\Crews\CSS\" />
+    <Folder Include="FightingGames\Tekken\Tekken7\Crews\JSON\" />
+    <Folder Include="FightingGames\Tekken\Tekken7\SinglesNextSet\CSS\" />
+    <Folder Include="FightingGames\Tekken\Tekken7\SinglesNextSet\JSON\" />
+    <Folder Include="FightingGames\Tekken\Tekken7\Singles\JSON\" />
     <Folder Include="Views\Settings\" />
   </ItemGroup>
   <ItemGroup>

@@ -53,45 +53,45 @@
 {
     <div class="row" id="crewPlayer-@i">
         <div class="col-xs-1 text-center">
-            <input type="checkbox" class="checkbox-inline big-checkbox" value="true" name="Crew1.Players[@i].Eliminated" id="crew1_player@{@i}__Eliminated" data-selector=".crew1Player@(i+1)Eliminated" data-side="1" data-opposite-id="#crew2_player@{@i}__Eliminated" data-default="" />
+            <input type="checkbox" class="checkbox-inline big-checkbox" value="true" name="Crew1.Players[@i].Eliminated" id="crew1_player@{@i}__Eliminated" data-selector=".crew1Player@(i+1)Eliminated" data-side="1" data-opposite-id="#crew2_player@{@i}__Eliminated" data-default="" data-newset-highlight="False" data-newset-default="" />
         </div>
         <div class="col-xs-1 text-center">
-            <input type="checkbox" class="checkbox-inline big-checkbox" value="true" name="Crew1.Players[@i].Active" id="crew1_player@{@i}__Active" data-selector=".crew1Player@(i+1)Active" data-side="1" data-opposite-id="#crew2_player@{@i}__Active" data-default="" />
+            <input type="checkbox" class="checkbox-inline big-checkbox" value="true" name="Crew1.Players[@i].Active" id="crew1_player@{@i}__Active" data-selector=".crew1Player@(i+1)Active" data-side="1" data-opposite-id="#crew2_player@{@i}__Active" data-default="" data-newset-highlight="False" data-newset-default="" />
         </div>
         <div class="col-xs-4">
             <div class="col-xs-4">
-                <select class="form-control" name="Crew1.Players[@i].Character" id="crew1_player@{@i}__Character" data-selector="#crew1Player@(i+1)Character" data-side="1" data-opposite-id="#crew2_player@{@i}__Character" data-default="">
+                <select class="form-control" name="Crew1.Players[@i].Character" id="crew1_player@{@i}__Character" data-selector="#crew1Player@(i+1)Character" data-side="1" data-opposite-id="#crew2_player@{@i}__Character" data-default="" data-newset-highlight="False" data-newset-default="" >
                     <option value="" selected disabled hidden>Choose character</option>
                     @Html.Raw(characterOptionsStringBuilder.ToString())
                 </select>
             </div>
             <div class="col-xs-4">
-                <input type="text" class="form-control" name="Crew1.Players[@i].Twitter" id="crew1_player@{@i}__Twitter" data-selector="#crew1Player@(i+1)TwitterText" data-side="1" data-opposite-id="#crew2_player@{@i}__Twitter" data-default="" />
+                <input type="text" class="form-control" name="Crew1.Players[@i].Twitter" id="crew1_player@{@i}__Twitter" data-selector="#crew1Player@(i+1)TwitterText" data-side="1" data-opposite-id="#crew2_player@{@i}__Twitter" data-default="" data-newset-highlight="False" data-newset-default="" />
             </div>
             <div class="col-xs-4">
-                <input type="text" class="form-control" name="Crew1.Players[@i].Name" id="crew1_player@{@i}__Name" data-selector="#crew1Player@(i+1)NameText" data-side="1" data-opposite-id="#crew2_player@{@i}__Name" data-default="-" />
+                <input type="text" class="form-control" name="Crew1.Players[@i].Name" id="crew1_player@{@i}__Name" data-selector="#crew1Player@(i+1)NameText" data-side="1" data-opposite-id="#crew2_player@{@i}__Name" data-default="-" data-newset-highlight="True" data-newset-default="" />
             </div>
         </div>
 
         <div class="col-xs-4">
             <div class="col-xs-4">
-                <input type="text" class="form-control" name="Crew2.Players[@i].Name" id="crew2_player@{@i}__Name" data-selector="#crew2Player@(i+1)NameText" data-side="2" data-opposite-id="#crew1_player@{@i}__Name" data-default="-" />
+                <input type="text" class="form-control" name="Crew2.Players[@i].Name" id="crew2_player@{@i}__Name" data-selector="#crew2Player@(i+1)NameText" data-side="2" data-opposite-id="#crew1_player@{@i}__Name" data-default="-" data-newset-highlight="True" data-newset-default="" />
             </div>
             <div class="col-xs-4">
-                <input type="text" class="form-control" name="Crew2.Players[@i].Twitter" id="crew2_player@{@i}__Twitter" data-selector="#crew2Player@(i+1)TwitterText" data-side="2" data-opposite-id="#crew1_player@{@i}__Twitter" data-default="" />
+                <input type="text" class="form-control" name="Crew2.Players[@i].Twitter" id="crew2_player@{@i}__Twitter" data-selector="#crew2Player@(i+1)TwitterText" data-side="2" data-opposite-id="#crew1_player@{@i}__Twitter" data-default="" data-newset-highlight="False" data-newset-default="" />
             </div>
             <div class="col-xs-4">
-                <select class="form-control" name="Crew2.Players[@i].Character" id="crew2_player@{@i}__Character" data-selector="#crew2Player@(i+1)Character" data-side="2" data-opposite-id="#crew1_player@{@i}__Character" data-default="">
+                <select class="form-control" name="Crew2.Players[@i].Character" id="crew2_player@{@i}__Character" data-selector="#crew2Player@(i+1)Character" data-side="2" data-opposite-id="#crew1_player@{@i}__Character" data-default="" data-newset-highlight="False" data-newset-default="">
                     <option value="" selected disabled hidden>Choose character</option>
                     @Html.Raw(characterOptionsStringBuilder.ToString())
                 </select>
             </div>
         </div>
         <div class="col-xs-1 text-center">
-            <input type="checkbox" class="checkbox-inline big-checkbox" value="true" name="Crew2.Players[@i].Active" id="crew2_player@{@i}__Active" data-selector=".crew2Player@(i+1)Active" data-side="2" data-opposite-id="#crew1_player@{@i}__Active" data-default="" />
+            <input type="checkbox" class="checkbox-inline big-checkbox" value="true" name="Crew2.Players[@i].Active" id="crew2_player@{@i}__Active" data-selector=".crew2Player@(i+1)Active" data-side="2" data-opposite-id="#crew1_player@{@i}__Active" data-default="" data-newset-highlight="False" data-newset-default="" />
         </div>
         <div class="col-xs-1 text-center">
-            <input type="checkbox" class="checkbox-inline big-checkbox" value="true" name="Crew2.Players[@i].Eliminated" id="crew2_player@{@i}__Eliminated" data-selector=".crew2Player@(i+1)Eliminated" data-side="2" data-opposite-id="#crew1_player@{@i}__Eliminated" data-default="" />
+            <input type="checkbox" class="checkbox-inline big-checkbox" value="true" name="Crew2.Players[@i].Eliminated" id="crew2_player@{@i}__Eliminated" data-selector=".crew2Player@(i+1)Eliminated" data-side="2" data-opposite-id="#crew1_player@{@i}__Eliminated" data-default="" data-newset-highlight="False" data-newset-default="" />
         </div>
     </div>
 }

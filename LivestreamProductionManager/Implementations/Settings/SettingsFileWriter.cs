@@ -15,7 +15,12 @@ namespace LivestreamProductionManager.Implementations.Settings
         {
             try
             {
-                File.WriteAllText(HttpContext.Current.Server.MapPath(pathToSettingsFile), JsonConvert.SerializeObject(updatedSettings));
+                var file = new FileInfo(HttpContext.Current.Server.MapPath(pathToSettingsFile));
+                file.Directory.Create();
+
+                File.WriteAllText(file.FullName, JsonConvert.SerializeObject(updatedSettings));
+
+                //File.WriteAllText(HttpContext.Current.Server.MapPath(pathToSettingsFile), JsonConvert.SerializeObject(updatedSettings));
             }
             catch (Exception ex)
             {

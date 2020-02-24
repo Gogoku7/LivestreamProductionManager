@@ -1,0 +1,198 @@
+﻿@using System.Text;
+@model LivestreamProductionManager.ViewModels.FightingGames.SuperSmashBros.SuperSmashBrosQueuBaseViewModel
+
+@{
+    var characterOptionsStringBuilder = new StringBuilder();
+    foreach (var character in Model.Characters)
+    {
+        characterOptionsStringBuilder.AppendLine($"<option value='{character.CssValue}' data-name='{character.CharacterName}'>{character.CharacterName}</option>");
+    }
+
+    var portOptionsStringBuilder = new StringBuilder();
+    foreach (var port in Model.Ports)
+    {
+        portOptionsStringBuilder.AppendLine($"<option value='{port.CssValue}'>{port.PortName}</option>");
+    }
+
+    Layout = null;
+}
+
+<div id="nextSet-@(Model.Index)">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1 id="nextSet_@(Model.Index)_Number">Set @(Model.Index + 1)</h1>
+        </div>
+    </div>
+
+    <form action="@Url.Action("UpdateSquadStrikeNextSet", "SuperSmashBros")" method="post" id="manageQueuForm_@Model.Index">
+        <input type="hidden" name="Series" value="@Model.Series" />
+        <input type="hidden" name="Game" value="@Model.Game" />
+        <input type="hidden" name="Format" value="@Model.Format" />
+        <input type="hidden" name="PathToSeries" value="@Model.PathToSeries" />
+        <input type="hidden" name="PathToGame" value="@Model.PathToGame" />
+        <input type="hidden" name="PathToFormat" value="@Model.PathToFormat" />
+        <input type="hidden" name="PathToFormatNextSet" value="" />
+
+        <div class="row">
+            <div class="col-xs-3 text-center">
+                <label>Round</label>
+            </div>
+
+            <div class="col-xs-3 text-center">
+                <label>Best of</label>
+            </div>
+
+            <div class="col-xs-6 text-center">
+                <label>Actions</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-3 text-center">
+                <input type="text" class="form-control" name="Round" id="nextSet_@(Model.Index)_Round" data-selector="#round" data-id-template="nextSet_INDEX_Round" />
+            </div>
+
+            <div class="col-xs-3 text-center">
+                <input type="text" class="form-control" name="BestOf" id="nextSet_@(Model.Index)_BestOf" data-selector="#bestOf" data-id-template="nextSet_INDEX_BestOf" />
+            </div>
+
+            <div class="col-xs-1 text-center">
+                <button class="btn btn-success" type="button" onclick="submitSet(@Model.Index)" data-onclick-template="submitSet(INDEX)"><span class="glyphicon glyphicon-arrow-up"></span><text> Update</text></button>
+            </div>
+
+            <div class="col-xs-1 text-center">
+                <button class="btn btn-warning" type="button" onclick="importSet(@Model.Index)" data-onclick-template="importSet(INDEX)"><span class="glyphicon glyphicon-download-alt"></span><text> Import</text></button>
+            </div>
+
+            <div class="col-xs-1 text-center">
+                <button class="btn btn-danger" type="button" onclick="removeSet(@Model.Index)" data-onclick-template="removeSet(INDEX)"><span class="glyphicon glyphicon-remove"></span><text> Remove</text></button>
+            </div>
+
+            <div class="col-xs-1 text-center">
+                <button class="btn btn-info" type="button" onclick="switchCompetitorsOfSet(@Model.Index)" data-onclick-template="switchCompetitorsOfSet(INDEX)"><span class="glyphicon glyphicon-refresh"></span><text> Switch</text></button>
+            </div>
+
+            <div class="col-xs-1 text-center">
+                <button class="btn btn-primary" type="button" onclick="moveSetUp(@Model.Index)" data-onclick-template="moveSetUp(INDEX)"><span class="glyphicon glyphicon-arrow-up"></span><text> Up</text></button>
+            </div>
+
+            <div class="col-xs-1 text-center">
+                <button class="btn btn-primary" type="button" onclick="moveSetDown(@Model.Index)" data-onclick-template="moveSetDown(INDEX)"><span class="glyphicon glyphicon-arrow-down"></span><text> Down</text></button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6 text-center">
+                <label>Crew 1</label>
+            </div>
+
+            <div class="col-xs-6 text-center">
+                <label>Crew 2</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6 text-center">
+                <label>Name</label>
+                <input type="text" class="form-control" name="Squad1.Name" id="nextSet_@(Model.Index)_Squad1Name" data-selector="#squad1Name" data-side="1" data-opposite-id="#nextSet_@(Model.Index)_Squad2Name" data-id-template="nextSet_INDEX_Squad1Name" data-opposite-id-template="#nextSet_INDEX_Squad2Name" />
+            </div>
+
+            <div class="col-xs-6 text-center">
+                <label>Name</label>
+                <input type="text" class="form-control" name="Squad2.Name" id="nextSet_@(Model.Index)_Squad2Name" data-selector="#squad2Name" data-side="2" data-opposite-id="#nextSet_@(Model.Index)_Squad1Name" data-id-template="nextSet_INDEX_Squad2Name" data-opposite-id-template="#nextSet_INDEX_Squad1Name" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6 text-center">
+                <label>Port</label>
+                <select class="form-control" name="Squad1.Port" id="nextSet_@(Model.Index)_Squad1Port" data-selector="#squad1Port" data-side="1" data-opposite-id="#nextSet_@(Model.Index)_Squad2Port" data-id-template="nextSet_INDEX_Squad1Port" data-opposite-id-template="#nextSet_INDEX_Squad2Port">
+                    <option value="" selected disabled hidden>Choose port</option>
+                    @Html.Raw(portOptionsStringBuilder.ToString())
+                </select>
+            </div>
+            <div class="col-xs-6 text-center">
+                <label>Port</label>
+                <select class="form-control" name="Squad2.Port" id="nextSet_@(Model.Index)_Squad2Port" data-selector="#squad2Port" data-side="2" data-opposite-id="#nextSet_@(Model.Index)_Squad1Port" data-id-template="nextSet_INDEX_Squad2Port" data-opposite-id-template="#nextSet_INDEX_Squad1Port">
+                    <option value="" selected disabled hidden>Choose port</option>
+                    @Html.Raw(portOptionsStringBuilder.ToString())
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="col-xs-4 text-center">
+                    <label>Character</label>
+                </div>
+                <div class="col-xs-4 text-center">
+                    <label>Twitter</label>
+                </div>
+                <div class="col-xs-4 text-center">
+                    <label>Name</label>
+                </div>
+            </div>
+
+            <div class="col-xs-6">
+                <div class="col-xs-4 text-center">
+                    <label>Name</label>
+                </div>
+                <div class="col-xs-4 text-center">
+                    <label>Twitter</label>
+                </div>
+                <div class="col-xs-4 text-center">
+                    <label>Character</label>
+                </div>
+            </div>
+        </div>
+
+        <div id="nextSet_@(Model.Index)_SquadPlayersContainer">
+            @for (var i = 0; i < 5; i++)
+            {
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="col-xs-4">
+                            <select class="form-control" name="Squad1.Players[@i].Character" id="nextSet_@(Model.Index)_Squad1Character@(i)" data-selector="#squad1_character@(i)" data-side="1" data-opposite-id="#nextSet_@(Model.Index)_Squad2Character@(i)" data-id-template="nextSet_INDEX_Squad1Character@(i)" data-opposite-id-template="#nextSet_INDEX_Squad2Character@(i)">
+                                <option value="" selected disabled hidden>Choose character</option>
+                                @Html.Raw(characterOptionsStringBuilder.ToString())
+                            </select>
+                        </div>
+                        <div class="col-xs-4">
+                            @if (i < 4)
+                            {
+                                <input type="text" class="form-control" name="Squad1.Players[@i].Twitter" id="nextSet_@(Model.Index)_Squad1Player@(i)Twitter" data-selector="#squad1_player@(i)__Twitter" data-side="1" data-opposite-id="#nextSet_@(Model.Index)_Squad2Player@(i)Twitter" data-id-template="nextSet_INDEX_Squad1Player@(i)Twitter" data-opposite-id-template="#nextSet_INDEX_Squad2Player@(i)Twitter" />
+                            }
+                        </div>
+                        <div class="col-xs-4">
+                            @if (i < 4)
+                            {
+                                <input type="text" class="form-control" name="Squad1.Players[@i].Name" id="nextSet_@(Model.Index)_Squad1Player@(i)Name" data-selector="#squad1_player@(i)__Name" data-side="1" data-opposite-id="#nextSet_@(Model.Index)_Squad2Player@(i)Name" data-id-template="nextSet_INDEX_Squad1Player@(i)Name" data-opposite-id-template="#nextSet_INDEX_Squad2Player@(i)Name" />
+                            }
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6">
+                        <div class="col-xs-4">
+                            @if (i < 4)
+                            {
+                                <input type="text" class="form-control" name="Squad2.Players[@i].Name" id="nextSet_@(Model.Index)_Squad2Player@(i)Name" data-selector="#squad2_player@(i)__Name" data-side="2" data-opposite-id="#nextSet_@(Model.Index)_Squad1Player@(i)Name" data-id-template="nextSet_INDEX_Squad2Player@(i)Name" data-opposite-id-template="#nextSet_INDEX_Squad1Player@(i)Name" />
+                            }
+                        </div>
+                        <div class="col-xs-4">
+                            @if (i < 4)
+                            {
+                                <input type="text" class="form-control" name="Squad2.Players[@i].Twitter" id="nextSet_@(Model.Index)_Squad2Player@(i)Twitter" data-selector="#squad2_player@(i)__Twitter" data-side="2" data-opposite-id="#nextSet_@(Model.Index)_Squad1Player@(i)Twitter" data-id-template="nextSet_INDEX_Squad2Player@(i)Twitter" data-opposite-id-template="#nextSet_INDEX_Squad1Player@(i)Twitter" />
+                            }
+                        </div>
+                        <div class="col-xs-4">
+                            <select class="form-control" name="Squad2.Players[@i].Character" id="nextSet_@(Model.Index)_Squad2Character@(i)" data-selector="#squad2_character@(i)" data-side="2" data-opposite-id="#nextSet_@(Model.Index)_Squad1Character@(i)" data-id-template="nextSet_INDEX_Squad2Character@(i)" data-opposite-id-template="#nextSet_INDEX_Squad1Character@(i)">
+                                <option value="" selected disabled hidden>Choose character</option>
+                                @Html.Raw(characterOptionsStringBuilder.ToString())
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </form>
+</div>

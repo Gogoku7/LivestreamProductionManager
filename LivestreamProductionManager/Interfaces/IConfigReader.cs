@@ -13,6 +13,7 @@ namespace LivestreamProductionManager.Interfaces
         List<Format> GetFormats(string pathToGame);
         List<CharacterViewModel> GetCharactersFromConfig(string pathToGame);
         List<PortViewModel> GetPortsFromConfig(string pathToGame);
+        List<CountryViewModel> GetCountriesFromConfig();
         SkinsConfig GetSkins(string pathToGame);
         List<Setting> GetSettings(string pathToSettingsFile);
     }

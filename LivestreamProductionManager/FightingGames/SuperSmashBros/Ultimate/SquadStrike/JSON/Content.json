@@ -1,218 +1,218 @@
 [
-{
-  "Selector": "#squad1NameText",
-  "Value": "USA"
-},
-{
-  "Selector": "#squad1Port",
-  "Value": "../../PlayerPorts/PlayerPort2.png"
-},
-{
-  "Selector": "#squad1ScoreText",
-  "Value": "2"
-},
-{
-  "Selector": "#squad1Player1NameText",
-  "Value": "ZeRo"
-},
-{
-  "Selector": ".squad1Player1Active",
-  "Value": "True"
-},
-{
-  "Selector": "#squad1Player1TwitterText",
-  "Value": ""
-},
-{
-  "Selector": "#squad1Character1",
-  "Value": "../../CharacterIcons/zerosuitsamus.png"
-},
-{
-  "Selector": ".squad1Character1Eliminated",
-  "Value": "False"
-},
-{
-  "Selector": "#squad1Player2NameText",
-  "Value": "Nairo"
-},
-{
-  "Selector": ".squad1Player2Active",
-  "Value": "False"
-},
-{
-  "Selector": "#squad1Player2TwitterText",
-  "Value": ""
-},
-{
-  "Selector": "#squad1Character2",
-  "Value": "../../CharacterIcons/zelda.png"
-},
-{
-  "Selector": ".squad1Character2Eliminated",
-  "Value": "True"
-},
-{
-  "Selector": "#squad1Player3NameText",
-  "Value": "MKLeo"
-},
-{
-  "Selector": ".squad1Player3Active",
-  "Value": "False"
-},
-{
-  "Selector": "#squad1Player3TwitterText",
-  "Value": ""
-},
-{
-  "Selector": "#squad1Character3",
-  "Value": "../../CharacterIcons/younglink.png"
-},
-{
-  "Selector": ".squad1Character3Eliminated",
-  "Value": "False"
-},
-{
-  "Selector": "#squad1Player4NameText",
-  "Value": "Tweek"
-},
-{
-  "Selector": ".squad1Player4Active",
-  "Value": "False"
-},
-{
-  "Selector": "#squad1Player4TwitterText",
-  "Value": ""
-},
-{
-  "Selector": "#squad1Character4",
-  "Value": "../../CharacterIcons/yoshi.png"
-},
-{
-  "Selector": ".squad1Character4Eliminated",
-  "Value": "False"
-},
-{
-  "Selector": "#squad1Character5",
-  "Value": "../../CharacterIcons/wolf.png"
-},
-{
-  "Selector": ".squad1Character5Eliminated",
-  "Value": "False"
-},
-{
-  "Selector": "#squad2NameText",
-  "Value": "Europe"
-},
-{
-  "Selector": "#squad2Port",
-  "Value": "../../PlayerPorts/PlayerPort1.png"
-},
-{
-  "Selector": "#squad2ScoreText",
-  "Value": "1"
-},
-{
-  "Selector": "#squad2Player1NameText",
-  "Value": "Mr. R"
-},
-{
-  "Selector": ".squad2Player1Active",
-  "Value": "True"
-},
-{
-  "Selector": "#squad2Player1TwitterText",
-  "Value": ""
-},
-{
-  "Selector": "#squad2Character1",
-  "Value": "../../CharacterIcons/bayonetta.png"
-},
-{
-  "Selector": ".squad2Character1Eliminated",
-  "Value": "False"
-},
-{
-  "Selector": "#squad2Player2NameText",
-  "Value": "iStudying"
-},
-{
-  "Selector": ".squad2Player2Active",
-  "Value": "False"
-},
-{
-  "Selector": "#squad2Player2TwitterText",
-  "Value": ""
-},
-{
-  "Selector": "#squad2Character2",
-  "Value": "../../CharacterIcons/bowser.png"
-},
-{
-  "Selector": ".squad2Character2Eliminated",
-  "Value": "True"
-},
-{
-  "Selector": "#squad2Player3NameText",
-  "Value": "Sodrek"
-},
-{
-  "Selector": ".squad2Player3Active",
-  "Value": "False"
-},
-{
-  "Selector": "#squad2Player3TwitterText",
-  "Value": ""
-},
-{
-  "Selector": "#squad2Character3",
-  "Value": "../../CharacterIcons/bowserjr.png"
-},
-{
-  "Selector": ".squad2Character3Eliminated",
-  "Value": "False"
-},
-{
-  "Selector": "#squad2Player4NameText",
-  "Value": "Ixis"
-},
-{
-  "Selector": ".squad2Player4Active",
-  "Value": "False"
-},
-{
-  "Selector": "#squad2Player4TwitterText",
-  "Value": ""
-},
-{
-  "Selector": "#squad2Character4",
-  "Value": "../../CharacterIcons/captainfalcon.png"
-},
-{
-  "Selector": ".squad2Character4Eliminated",
-  "Value": "False"
-},
-{
-  "Selector": "#squad2Character5",
-  "Value": "../../CharacterIcons/chrom.png"
-},
-{
-  "Selector": ".squad2Character5Eliminated",
-  "Value": "False"
-},
-{
-  "Selector": "#tournamentText",
-  "Value": "Fight Night 50"
-},
-{
-  "Selector": "#extraText",
-  "Value": "Esports Game Arena"
-},
-{
-  "Selector": "#roundText",
-  "Value": "Winners Round 1"
-},
-{
-  "Selector": "#bestOfText",
-  "Value": "Best of 3"
-}
+  {
+    "Selector": "#squad1NameText",
+    "Value": "USA"
+  },
+  {
+    "Selector": "#squad1Port",
+    "Value": "../../PlayerPorts/PlayerPort2.png"
+  },
+  {
+    "Selector": "#squad1ScoreText",
+    "Value": "2"
+  },
+  {
+    "Selector": "#squad1Player1NameText",
+    "Value": "ZeRo"
+  },
+  {
+    "Selector": ".squad1Player1Active",
+    "Value": "True"
+  },
+  {
+    "Selector": "#squad1Player1TwitterText",
+    "Value": "@zerwondering"
+  },
+  {
+    "Selector": "#squad1Character1",
+    "Value": "../../CharacterIcons/zerosuitsamus.png"
+  },
+  {
+    "Selector": ".squad1Character1Eliminated",
+    "Value": "False"
+  },
+  {
+    "Selector": "#squad1Player2NameText",
+    "Value": "Nairo"
+  },
+  {
+    "Selector": ".squad1Player2Active",
+    "Value": "False"
+  },
+  {
+    "Selector": "#squad1Player2TwitterText",
+    "Value": "@nrgnairo"
+  },
+  {
+    "Selector": "#squad1Character2",
+    "Value": "../../CharacterIcons/zelda.png"
+  },
+  {
+    "Selector": ".squad1Character2Eliminated",
+    "Value": "True"
+  },
+  {
+    "Selector": "#squad1Player3NameText",
+    "Value": "MKLeo"
+  },
+  {
+    "Selector": ".squad1Player3Active",
+    "Value": "False"
+  },
+  {
+    "Selector": "#squad1Player3TwitterText",
+    "Value": "@mkleo"
+  },
+  {
+    "Selector": "#squad1Character3",
+    "Value": "../../CharacterIcons/younglink.png"
+  },
+  {
+    "Selector": ".squad1Character3Eliminated",
+    "Value": "False"
+  },
+  {
+    "Selector": "#squad1Player4NameText",
+    "Value": "Tweek"
+  },
+  {
+    "Selector": ".squad1Player4Active",
+    "Value": "False"
+  },
+  {
+    "Selector": "#squad1Player4TwitterText",
+    "Value": "@tweek"
+  },
+  {
+    "Selector": "#squad1Character4",
+    "Value": "../../CharacterIcons/yoshi.png"
+  },
+  {
+    "Selector": ".squad1Character4Eliminated",
+    "Value": "False"
+  },
+  {
+    "Selector": "#squad1Character5",
+    "Value": "../../CharacterIcons/wolf.png"
+  },
+  {
+    "Selector": ".squad1Character5Eliminated",
+    "Value": "False"
+  },
+  {
+    "Selector": "#squad2NameText",
+    "Value": "Europe"
+  },
+  {
+    "Selector": "#squad2Port",
+    "Value": "../../PlayerPorts/PlayerPort1.png"
+  },
+  {
+    "Selector": "#squad2ScoreText",
+    "Value": "3"
+  },
+  {
+    "Selector": "#squad2Player1NameText",
+    "Value": "Mr. R"
+  },
+  {
+    "Selector": ".squad2Player1Active",
+    "Value": "True"
+  },
+  {
+    "Selector": "#squad2Player1TwitterText",
+    "Value": "@mrr"
+  },
+  {
+    "Selector": "#squad2Character1",
+    "Value": "../../CharacterIcons/bayonetta.png"
+  },
+  {
+    "Selector": ".squad2Character1Eliminated",
+    "Value": "False"
+  },
+  {
+    "Selector": "#squad2Player2NameText",
+    "Value": "iStudying"
+  },
+  {
+    "Selector": ".squad2Player2Active",
+    "Value": "False"
+  },
+  {
+    "Selector": "#squad2Player2TwitterText",
+    "Value": "@istudying"
+  },
+  {
+    "Selector": "#squad2Character2",
+    "Value": "../../CharacterIcons/bowser.png"
+  },
+  {
+    "Selector": ".squad2Character2Eliminated",
+    "Value": "True"
+  },
+  {
+    "Selector": "#squad2Player3NameText",
+    "Value": "Sodrek"
+  },
+  {
+    "Selector": ".squad2Player3Active",
+    "Value": "False"
+  },
+  {
+    "Selector": "#squad2Player3TwitterText",
+    "Value": "@sodrek"
+  },
+  {
+    "Selector": "#squad2Character3",
+    "Value": "../../CharacterIcons/bowserjr.png"
+  },
+  {
+    "Selector": ".squad2Character3Eliminated",
+    "Value": "False"
+  },
+  {
+    "Selector": "#squad2Player4NameText",
+    "Value": "Ixis"
+  },
+  {
+    "Selector": ".squad2Player4Active",
+    "Value": "False"
+  },
+  {
+    "Selector": "#squad2Player4TwitterText",
+    "Value": "@ixis"
+  },
+  {
+    "Selector": "#squad2Character4",
+    "Value": "../../CharacterIcons/captainfalcon.png"
+  },
+  {
+    "Selector": ".squad2Character4Eliminated",
+    "Value": "False"
+  },
+  {
+    "Selector": "#squad2Character5",
+    "Value": "../../CharacterIcons/chrom.png"
+  },
+  {
+    "Selector": ".squad2Character5Eliminated",
+    "Value": "False"
+  },
+  {
+    "Selector": "#tournamentText",
+    "Value": "Fight Night 50"
+  },
+  {
+    "Selector": "#extraText",
+    "Value": "Esports Game Arena"
+  },
+  {
+    "Selector": "#roundText",
+    "Value": "Winners Round 1"
+  },
+  {
+    "Selector": "#bestOfText",
+    "Value": "Best of 3"
+  }
 ]

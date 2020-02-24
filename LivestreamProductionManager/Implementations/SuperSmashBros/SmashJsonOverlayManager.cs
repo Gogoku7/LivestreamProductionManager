@@ -1,51 +1,46 @@
-﻿using LivestreamProductionManager.Interfaces;
-using LivestreamProductionManager.Interfaces.SuperSmashBros;
-using LivestreamProductionManager.Models.FightingGames.SuperSmashBros;
+﻿using LivestreamProductionManager.Interfaces.SuperSmashBros;
+using LivestreamProductionManager.Models.FightingGames;
 using LivestreamProductionManager.ViewModels.FightingGames.SuperSmashBros;
+using LivestreamProductionManager.ViewModels.FightingGames.SuperSmashBros.NextSet;
 using Serilog;
 using System;
+using System.Collections.Generic;
 
 namespace LivestreamProductionManager.Implementations.SuperSmashBros
 {
     public class SmashJsonOverlayManager : ISmashOverlayManager
     {
-        private readonly ITemplateFileReader _templatefileReader = new TemplateFileReader("~/FightingGames/JsonTemplates/");
-        private readonly ITextReplacer _textReplacer = new TextReplacer();
         private readonly ISmashFileWriter _smashFileWriter = new SmashJsonFileWriter();
-
-        private readonly string _textTemplateJson;
-
-        public SmashJsonOverlayManager()
-        {
-            _textTemplateJson = _templatefileReader.ReadTemplateFile("TextTemplateFile.json");
-        }
 
         public void UpdateSinglesOverlay(SinglesViewModel singlesViewModel)
         {
             try
             {
-                var singlesCssModel = new SinglesCssModel();
+                var selectorValueModels = new List<SelectorValueModel>
+                {
+                    new SelectorValueModel("#player1NameText", singlesViewModel.Player1.Name),
+                    new SelectorValueModel(".player1Sponsor", singlesViewModel.Player1.Sponsor),
+                    new SelectorValueModel("#player1TwitterText", singlesViewModel.Player1.Twitter),
+                    new SelectorValueModel("#player1TwitchText", singlesViewModel.Player1.Twitch),
+                    new SelectorValueModel("#player1ScoreText", singlesViewModel.Player1.Score ?? "?"),
+                    new SelectorValueModel("#player1Character", singlesViewModel.Player1.Character),
+                    new SelectorValueModel("#player1Port", singlesViewModel.Player1.Port),
 
-                singlesCssModel.Player1.NameAndSponsor = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#player1NameText", singlesViewModel.Player1.Name);
-                singlesCssModel.Player1.NameAndSponsor += _textReplacer.ReplaceIdAndValue(_textTemplateJson, ".player1Sponsor", singlesViewModel.Player1.Sponsor);
-                singlesCssModel.Player1.Twitter = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#player1TwitterText", singlesViewModel.Player1.Twitter);
-                singlesCssModel.Player1.Score = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#player1ScoreText", singlesViewModel.Player1.Score ?? "?");
-                singlesCssModel.Player1.CharacterPath = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#player1Character", singlesViewModel.Player1.Character);
-                singlesCssModel.Player1.PortPath = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#player1Port", singlesViewModel.Player1.Port);
+                    new SelectorValueModel("#player2NameText", singlesViewModel.Player2.Name),
+                    new SelectorValueModel(".player2Sponsor", singlesViewModel.Player2.Sponsor),
+                    new SelectorValueModel("#player2TwitterText", singlesViewModel.Player2.Twitter),
+                    new SelectorValueModel("#player2TwitchText", singlesViewModel.Player2.Twitch),
+                    new SelectorValueModel("#player2ScoreText", singlesViewModel.Player2.Score ?? "?"),
+                    new SelectorValueModel("#player2Character", singlesViewModel.Player2.Character),
+                    new SelectorValueModel("#player2Port", singlesViewModel.Player2.Port),
 
-                singlesCssModel.Player2.NameAndSponsor = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#player2NameText", singlesViewModel.Player2.Name);
-                singlesCssModel.Player2.NameAndSponsor += _textReplacer.ReplaceIdAndValue(_textTemplateJson, ".player2Sponsor", singlesViewModel.Player2.Sponsor);
-                singlesCssModel.Player2.Twitter = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#player2TwitterText", singlesViewModel.Player2.Twitter);
-                singlesCssModel.Player2.Score = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#player2ScoreText", singlesViewModel.Player2.Score ?? "?");
-                singlesCssModel.Player2.CharacterPath = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#player2Character", singlesViewModel.Player2.Character);
-                singlesCssModel.Player2.PortPath = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#player2Port", singlesViewModel.Player2.Port);
+                    new SelectorValueModel("#tournamentText", singlesViewModel.Tournament),
+                    new SelectorValueModel("#extraText", singlesViewModel.Extra),
+                    new SelectorValueModel("#roundText", singlesViewModel.Round),
+                    new SelectorValueModel("#bestOfText", singlesViewModel.BestOf)
+                };
 
-                singlesCssModel.Tournament = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#tournamentText", singlesViewModel.Tournament);
-                singlesCssModel.Extra = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#extraText", singlesViewModel.Extra);
-                singlesCssModel.Round = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#roundText", singlesViewModel.Round);
-                singlesCssModel.BestOf = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#bestOfText", singlesViewModel.BestOf);
-
-                _smashFileWriter.WriteSinglesFile(singlesViewModel.PathToFormat, singlesCssModel);
+                _smashFileWriter.WriteJsonFile(singlesViewModel.PathToFormat, selectorValueModels);
             }
             catch (Exception ex)
             {
@@ -58,36 +53,65 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
         {
             try
             {
-                var doublesCssModel = new DoublesCssModel();
-
-                doublesCssModel.Team1.Name = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#team1NameText", doublesViewModel.Team1.Name);
-                doublesCssModel.Team1.Score = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#team1ScoreText", doublesViewModel.Team1.Score ?? "?");
+                var selectorValueModels = new List<SelectorValueModel>
+                {
+                    new SelectorValueModel("#team1NameText", doublesViewModel.Team1.Name),
+                    new SelectorValueModel("#team1ScoreText", doublesViewModel.Team1.Score ?? "?")                   
+                };
 
                 for (var i = 0; i < doublesViewModel.Team1.Players.Count; i++)
                 {
-                    doublesCssModel.Team1.PlayerNamesAndSponsors += _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"#team1Player{i+1}NameText", doublesViewModel.Team1.Players[i].Name);
-                    doublesCssModel.Team1.PlayerNamesAndSponsors += _textReplacer.ReplaceIdAndValue(_textTemplateJson, $".team1Player{i+1}Sponsor", doublesViewModel.Team1.Players[i].Sponsor);
-                    doublesCssModel.Team1.CharacterPaths += _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"#team1Player{i+1}Character", doublesViewModel.Team1.Players[i].Character);
-                    doublesCssModel.Team1.PortPaths += _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"#team1Player{i+1}Port", doublesViewModel.Team1.Players[i].Port);
+                    selectorValueModels.AddRange
+                    (
+                        new List<SelectorValueModel>
+                        {
+                            new SelectorValueModel($"#team1Player{i + 1}NameText", doublesViewModel.Team1.Players[i].Name),
+                            new SelectorValueModel($".team1Player{i + 1}Sponsor", doublesViewModel.Team1.Players[i].Sponsor),
+                            new SelectorValueModel($"#team1Player{i + 1}Twitter", doublesViewModel.Team1.Players[i].Twitter),
+                            new SelectorValueModel($"#team1Player{i + 1}Twitch", doublesViewModel.Team1.Players[i].Twitch),
+                            new SelectorValueModel($"#team1Player{i + 1}Character", doublesViewModel.Team1.Players[i].Character),
+                            new SelectorValueModel($"#team1Player{i + 1}Port", doublesViewModel.Team1.Players[i].Port)
+                        }
+                    );
                 }
 
-                doublesCssModel.Team2.Name = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#team2NameText", doublesViewModel.Team2.Name);
-                doublesCssModel.Team2.Score = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#team2ScoreText", doublesViewModel.Team2.Score ?? "?");
+                selectorValueModels.AddRange
+                (
+                    new List<SelectorValueModel>
+                    {
+                        new SelectorValueModel("#team2NameText", doublesViewModel.Team2.Name),
+                        new SelectorValueModel("#team2ScoreText", doublesViewModel.Team2.Score ?? "?")
+                    }
+                );
 
                 for (var i = 0; i < doublesViewModel.Team2.Players.Count; i++)
                 {
-                    doublesCssModel.Team2.PlayerNamesAndSponsors += _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"#team2Player{i + 1}NameText", doublesViewModel.Team2.Players[i].Name);
-                    doublesCssModel.Team2.PlayerNamesAndSponsors += _textReplacer.ReplaceIdAndValue(_textTemplateJson, $".team2Player{i + 1}Sponsor", doublesViewModel.Team2.Players[i].Sponsor);
-                    doublesCssModel.Team2.CharacterPaths += _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"#team2Player{i + 1}Character", doublesViewModel.Team2.Players[i].Character);
-                    doublesCssModel.Team2.PortPaths += _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"#team2Player{i + 1}Port", doublesViewModel.Team2.Players[i].Port);
+                    selectorValueModels.AddRange
+                    (
+                        new List<SelectorValueModel>
+                        {
+                            new SelectorValueModel($"#team2Player{i + 1}NameText", doublesViewModel.Team2.Players[i].Name),
+                            new SelectorValueModel($".team2Player{i + 1}Sponsor", doublesViewModel.Team2.Players[i].Sponsor),
+                            new SelectorValueModel($"#team2Player{i + 1}Twitter", doublesViewModel.Team2.Players[i].Twitter),
+                            new SelectorValueModel($"#team2Player{i + 1}Twitch", doublesViewModel.Team2.Players[i].Twitch),
+                            new SelectorValueModel($"#team2Player{i + 1}Character", doublesViewModel.Team2.Players[i].Character),
+                            new SelectorValueModel($"#team2Player{i + 1}Port", doublesViewModel.Team2.Players[i].Port)
+                        }
+                    );
                 }
 
-                doublesCssModel.Tournament = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#tournamentText", doublesViewModel.Tournament);
-                doublesCssModel.Extra = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#extraText", doublesViewModel.Extra);
-                doublesCssModel.Round = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#roundText", doublesViewModel.Round);
-                doublesCssModel.BestOf = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#bestOfText", doublesViewModel.BestOf);
+                selectorValueModels.AddRange
+                (
+                    new List<SelectorValueModel>
+                    {
+                        new SelectorValueModel("#tournamentText", doublesViewModel.Tournament),
+                        new SelectorValueModel("#extraText", doublesViewModel.Extra),
+                        new SelectorValueModel("#roundText", doublesViewModel.Round),
+                        new SelectorValueModel("#bestOfText", doublesViewModel.BestOf)
+                    }
+                );
 
-                _smashFileWriter.WriteDoublesFile(doublesViewModel.PathToFormat, doublesCssModel);
+                _smashFileWriter.WriteJsonFile(doublesViewModel.PathToFormat, selectorValueModels);
             }
             catch (Exception ex)
             {
@@ -100,48 +124,67 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
         {
             try
             {
-                var crewsCssModel = new CrewsCssModel();
-
-                crewsCssModel.Crew1.Name = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#crew1NameText", crewsViewModel.Crew1.Name);
-                crewsCssModel.Crew1.CharacterPath = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#crew1Character", crewsViewModel.Crew1.Character);
-                crewsCssModel.Crew1.PortPath = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#crew1Port", crewsViewModel.Crew1.Port);
-                crewsCssModel.Crew1.StocksLeft = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#crew1StocksLeftText", crewsViewModel.Crew1.StocksLeft ?? "?");
+                var selectorValueModels = new List<SelectorValueModel>
+                {
+                    new SelectorValueModel("#crew1NameText", crewsViewModel.Crew1.Name),
+                    new SelectorValueModel("#crew1Character", crewsViewModel.Crew1.Character),
+                    new SelectorValueModel("#crew1Port", crewsViewModel.Crew1.Port),
+                    new SelectorValueModel("#crew1StocksLeftText", crewsViewModel.Crew1.StocksLeft ?? "?")
+                };
 
                 for (var i = 0; i < crewsViewModel.Crew1.Players.Count; i++)
                 {
-                    crewsCssModel.Crew1.CrewPlayerCssModels.Add(new CrewPlayerCssModel());
-
-                    crewsCssModel.Crew1.CrewPlayerCssModels[i].NameAndSponsor = _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"#crew1Player{i + 1}NameText", crewsViewModel.Crew1.Players[i].Name);
-                    crewsCssModel.Crew1.CrewPlayerCssModels[i].NameAndSponsor += _textReplacer.ReplaceIdAndValue(_textTemplateJson, $".crew1Player{i + 1}Active", crewsViewModel.Crew1.Players[i].Active.ToString());
-                    crewsCssModel.Crew1.CrewPlayerCssModels[i].NameAndSponsor += _textReplacer.ReplaceIdAndValue(_textTemplateJson, $".crew1Player{i + 1}Eliminated", crewsViewModel.Crew1.Players[i].Eliminated.ToString());                    
-
-                    crewsCssModel.Crew1.CrewPlayerCssModels[i].Twitter = _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"#crew1Player{i + 1}TwitterText", crewsViewModel.Crew1.Players[i].Twitter);
-                    crewsCssModel.Crew1.CrewPlayerCssModels[i].CharacterPath = _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"#crew1Player{i + 1}Character", crewsViewModel.Crew1.Players[i].Character);
+                    selectorValueModels.AddRange
+                    (
+                        new List<SelectorValueModel>
+                        {
+                            new SelectorValueModel($"#crew1Player{i + 1}NameText", crewsViewModel.Crew1.Players[i].Name),
+                            new SelectorValueModel($".crew1Player{i + 1}Active", crewsViewModel.Crew1.Players[i].Active.ToString()),
+                            new SelectorValueModel($".crew1Player{i + 1}Eliminated", crewsViewModel.Crew1.Players[i].Eliminated.ToString()),
+                            new SelectorValueModel($"#crew1Player{i + 1}TwitterText", crewsViewModel.Crew1.Players[i].Twitter),
+                            new SelectorValueModel($"#crew1Player{i + 1}Character", crewsViewModel.Crew1.Players[i].Character)
+                        }
+                    );
                 }
 
-                crewsCssModel.Crew2.Name = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#crew2NameText", crewsViewModel.Crew2.Name);
-                crewsCssModel.Crew2.CharacterPath = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#crew2Character", crewsViewModel.Crew2.Character);
-                crewsCssModel.Crew2.PortPath = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#crew2Port", crewsViewModel.Crew2.Port);
-                crewsCssModel.Crew2.StocksLeft = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#crew2StocksLeftText", crewsViewModel.Crew2.StocksLeft ?? "?");
+                selectorValueModels.AddRange
+                (
+                    new List<SelectorValueModel>
+                    {
+                        new SelectorValueModel("#crew2NameText", crewsViewModel.Crew2.Name),
+                        new SelectorValueModel("#crew2Character", crewsViewModel.Crew2.Character),
+                        new SelectorValueModel("#crew2Port", crewsViewModel.Crew2.Port),
+                        new SelectorValueModel("#crew2StocksLeftText", crewsViewModel.Crew2.StocksLeft ?? "?")
+                    }
+                );
 
                 for (var i = 0; i < crewsViewModel.Crew2.Players.Count; i++)
                 {
-                    crewsCssModel.Crew2.CrewPlayerCssModels.Add(new CrewPlayerCssModel());
-
-                    crewsCssModel.Crew2.CrewPlayerCssModels[i].NameAndSponsor = _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"#crew2Player{i + 1}NameText", crewsViewModel.Crew2.Players[i].Name);
-                    crewsCssModel.Crew2.CrewPlayerCssModels[i].NameAndSponsor += _textReplacer.ReplaceIdAndValue(_textTemplateJson, $".crew2Player{i + 1}Active", crewsViewModel.Crew2.Players[i].Active.ToString());
-                    crewsCssModel.Crew2.CrewPlayerCssModels[i].NameAndSponsor += _textReplacer.ReplaceIdAndValue(_textTemplateJson, $".crew2Player{i + 1}Eliminated", crewsViewModel.Crew2.Players[i].Eliminated.ToString());
-
-                    crewsCssModel.Crew2.CrewPlayerCssModels[i].Twitter = _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"#crew2Player{i + 1}TwitterText", crewsViewModel.Crew2.Players[i].Twitter);
-                    crewsCssModel.Crew2.CrewPlayerCssModels[i].CharacterPath = _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"#crew2Player{i + 1}Character", crewsViewModel.Crew2.Players[i].Character);
+                    selectorValueModels.AddRange
+                    (
+                        new List<SelectorValueModel>
+                        {
+                            new SelectorValueModel($"#crew2Player{i + 1}NameText", crewsViewModel.Crew2.Players[i].Name),
+                            new SelectorValueModel($".crew2Player{i + 1}Active", crewsViewModel.Crew2.Players[i].Active.ToString()),
+                            new SelectorValueModel($".crew2Player{i + 1}Eliminated", crewsViewModel.Crew2.Players[i].Eliminated.ToString()),
+                            new SelectorValueModel($"#crew2Player{i + 1}TwitterText", crewsViewModel.Crew2.Players[i].Twitter),
+                            new SelectorValueModel($"#crew2Player{i + 1}Character", crewsViewModel.Crew2.Players[i].Character)
+                        }
+                    );
                 }
 
-                crewsCssModel.Tournament = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#tournamentText", crewsViewModel.Tournament);
-                crewsCssModel.Extra = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#extraText", crewsViewModel.Extra);
-                crewsCssModel.Round = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#roundText", crewsViewModel.Round);
-                crewsCssModel.BestOf = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#bestOfText", crewsViewModel.BestOf);
+                selectorValueModels.AddRange
+                (
+                    new List<SelectorValueModel>
+                    {
+                        new SelectorValueModel("#tournamentText", crewsViewModel.Tournament),
+                        new SelectorValueModel("#extraText", crewsViewModel.Extra),
+                        new SelectorValueModel("#roundText", crewsViewModel.Round),
+                        new SelectorValueModel("#bestOfText", crewsViewModel.BestOf)
+                    }
+                );
 
-                _smashFileWriter.WriteCrewsFile(crewsViewModel.PathToFormat, crewsCssModel);
+                _smashFileWriter.WriteJsonFile(crewsViewModel.PathToFormat, selectorValueModels);
             }
             catch (Exception ex)
             {
@@ -154,52 +197,307 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
         {
             try
             {
-                var squadStrikeCssModel = new SquadStrikeCssModel();
-
-                squadStrikeCssModel.Squad1.Name = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#squad1NameText", squadStrikeViewModel.Squad1.Name);
-                squadStrikeCssModel.Squad1.PortPath = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#squad1Port", squadStrikeViewModel.Squad1.Port);
-                squadStrikeCssModel.Squad1.Score = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#squad1ScoreText", squadStrikeViewModel.Squad1.Score ?? "?");
+                var selectorValueModels = new List<SelectorValueModel>
+                {
+                    new SelectorValueModel("#squad1NameText", squadStrikeViewModel.Squad1.Name),
+                    new SelectorValueModel("#squad1Port", squadStrikeViewModel.Squad1.Port),
+                    new SelectorValueModel("#squad1ScoreText", squadStrikeViewModel.Squad1.Score ?? "?")
+                };
 
                 for (var i = 0; i < squadStrikeViewModel.Squad1.Players.Count; i++)
                 {
-                    squadStrikeCssModel.Squad1.SquadPlayerCssModels.Add(new SquadPlayerCssModel());
-
                     if (i < 4)
                     {
-                        squadStrikeCssModel.Squad1.SquadPlayerCssModels[i].NameAndSponsor = _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"#squad1Player{i + 1}NameText", squadStrikeViewModel.Squad1.Players[i].Name);
-                        squadStrikeCssModel.Squad1.SquadPlayerCssModels[i].NameAndSponsor += _textReplacer.ReplaceIdAndValue(_textTemplateJson, $".squad1Player{i + 1}Active", squadStrikeViewModel.Squad1.Players[i].Active.ToString());
-                        squadStrikeCssModel.Squad1.SquadPlayerCssModels[i].Twitter = _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"#squad1Player{i + 1}TwitterText", squadStrikeViewModel.Squad1.Players[i].Twitter);
+                        selectorValueModels.AddRange
+                        (
+                            new List<SelectorValueModel>
+                            {
+                                new SelectorValueModel($"#squad1Player{i + 1}NameText", squadStrikeViewModel.Squad1.Players[i].Name),
+                                new SelectorValueModel($".squad1Player{i + 1}Active", squadStrikeViewModel.Squad1.Players[i].Active.ToString()),
+                                new SelectorValueModel($"#squad1Player{i + 1}TwitterText", squadStrikeViewModel.Squad1.Players[i].Twitter)
+                            }
+                        );
                     }
 
-                    squadStrikeCssModel.Squad1.SquadPlayerCssModels[i].CharacterPath = _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"#squad1Character{i + 1}", squadStrikeViewModel.Squad1.Players[i].Character);
-                    squadStrikeCssModel.Squad1.SquadPlayerCssModels[i].CharacterPath += _textReplacer.ReplaceIdAndValue(_textTemplateJson, $".squad1Character{i + 1}Eliminated", squadStrikeViewModel.Squad1.Players[i].Eliminated.ToString());
+                    selectorValueModels.AddRange
+                    (
+                        new List<SelectorValueModel>
+                        {
+                            new SelectorValueModel($"#squad1Character{i + 1}", squadStrikeViewModel.Squad1.Players[i].Character),
+                            new SelectorValueModel($".squad1Character{i + 1}Eliminated", squadStrikeViewModel.Squad1.Players[i].Eliminated.ToString())
+                        }
+                    );
                 }
 
-                squadStrikeCssModel.Squad2.Name = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#squad2NameText", squadStrikeViewModel.Squad2.Name);
-                squadStrikeCssModel.Squad2.PortPath = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#squad2Port", squadStrikeViewModel.Squad2.Port);
-                squadStrikeCssModel.Squad2.Score = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#squad2ScoreText", squadStrikeViewModel.Squad2.Score ?? "?");
+                selectorValueModels.AddRange
+                (
+                    new List<SelectorValueModel> {
+                        new SelectorValueModel("#squad2NameText", squadStrikeViewModel.Squad2.Name),
+                        new SelectorValueModel("#squad2Port", squadStrikeViewModel.Squad2.Port),
+                        new SelectorValueModel("#squad2ScoreText", squadStrikeViewModel.Squad2.Score ?? "?")
+                    }
+                );
 
                 for (var i = 0; i < squadStrikeViewModel.Squad2.Players.Count; i++)
                 {
-                    squadStrikeCssModel.Squad2.SquadPlayerCssModels.Add(new SquadPlayerCssModel());
-
                     if (i < 4)
                     {
-                        squadStrikeCssModel.Squad2.SquadPlayerCssModels[i].NameAndSponsor = _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"#squad2Player{i + 1}NameText", squadStrikeViewModel.Squad2.Players[i].Name);
-                        squadStrikeCssModel.Squad2.SquadPlayerCssModels[i].NameAndSponsor += _textReplacer.ReplaceIdAndValue(_textTemplateJson, $".squad2Player{i + 1}Active", squadStrikeViewModel.Squad2.Players[i].Active.ToString());
-                        squadStrikeCssModel.Squad2.SquadPlayerCssModels[i].Twitter = _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"#squad2Player{i + 1}TwitterText", squadStrikeViewModel.Squad2.Players[i].Twitter);
+                        selectorValueModels.AddRange
+                        (
+                            new List<SelectorValueModel>
+                            {
+                                new SelectorValueModel($"#squad2Player{i + 1}NameText", squadStrikeViewModel.Squad2.Players[i].Name),
+                                new SelectorValueModel($".squad2Player{i + 1}Active", squadStrikeViewModel.Squad2.Players[i].Active.ToString()),
+                                new SelectorValueModel($"#squad2Player{i + 1}TwitterText", squadStrikeViewModel.Squad2.Players[i].Twitter)
+                            }
+                        );
                     }
 
-                    squadStrikeCssModel.Squad2.SquadPlayerCssModels[i].CharacterPath = _textReplacer.ReplaceIdAndValue(_textTemplateJson, $"#squad2Character{i + 1}", squadStrikeViewModel.Squad2.Players[i].Character);
-                    squadStrikeCssModel.Squad2.SquadPlayerCssModels[i].CharacterPath += _textReplacer.ReplaceIdAndValue(_textTemplateJson, $".squad2Character{i + 1}Eliminated", squadStrikeViewModel.Squad2.Players[i].Eliminated.ToString());
+                    selectorValueModels.AddRange
+                    (
+                        new List<SelectorValueModel>
+                        {
+                            new SelectorValueModel($"#squad2Character{i + 1}", squadStrikeViewModel.Squad2.Players[i].Character),
+                            new SelectorValueModel($".squad2Character{i + 1}Eliminated", squadStrikeViewModel.Squad2.Players[i].Eliminated.ToString())
+                        }
+                    );
                 }
 
-                squadStrikeCssModel.Tournament = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#tournamentText", squadStrikeViewModel.Tournament);
-                squadStrikeCssModel.Extra = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#extraText", squadStrikeViewModel.Extra);
-                squadStrikeCssModel.Round = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#roundText", squadStrikeViewModel.Round);
-                squadStrikeCssModel.BestOf = _textReplacer.ReplaceIdAndValue(_textTemplateJson, "#bestOfText", squadStrikeViewModel.BestOf);
+                selectorValueModels.AddRange
+                (
+                    new List<SelectorValueModel>
+                    {
+                        new SelectorValueModel("#tournamentText", squadStrikeViewModel.Tournament),
+                        new SelectorValueModel("#extraText", squadStrikeViewModel.Extra),
+                        new SelectorValueModel("#roundText", squadStrikeViewModel.Round),
+                        new SelectorValueModel("#bestOfText", squadStrikeViewModel.BestOf)
+                    }
+                );
 
-                _smashFileWriter.WriteSquadStrikeFile(squadStrikeViewModel.PathToFormat, squadStrikeCssModel);
+                _smashFileWriter.WriteJsonFile(squadStrikeViewModel.PathToFormat, selectorValueModels);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+                throw;
+            }
+        }
+
+        public void UpdateSinglesNextSetOverlay(SinglesNextSetViewModel singlesNextSetViewModel)
+        {
+            try
+            {
+                var selectorValueModels = new List<SelectorValueModel>
+                {
+                    new SelectorValueModel("#player1NameText", singlesNextSetViewModel.Player1.Name),
+                    new SelectorValueModel(".player1Sponsor", singlesNextSetViewModel.Player1.Sponsor),
+                    new SelectorValueModel("#player1TwitterText", singlesNextSetViewModel.Player1.Twitter),
+                    new SelectorValueModel("#player1TwitchText", singlesNextSetViewModel.Player1.Twitch),
+                    new SelectorValueModel("#player1Character", singlesNextSetViewModel.Player1.Character),
+                    new SelectorValueModel("#player1Port", singlesNextSetViewModel.Player1.Port),
+
+                    new SelectorValueModel("#player2NameText", singlesNextSetViewModel.Player2.Name),
+                    new SelectorValueModel(".player2Sponsor", singlesNextSetViewModel.Player2.Sponsor),
+                    new SelectorValueModel("#player2TwitterText", singlesNextSetViewModel.Player2.Twitter),
+                    new SelectorValueModel("#player2TwitchText", singlesNextSetViewModel.Player2.Twitch),
+                    new SelectorValueModel("#player2Character", singlesNextSetViewModel.Player2.Character),
+                    new SelectorValueModel("#player2Port", singlesNextSetViewModel.Player2.Port),
+
+                    new SelectorValueModel("#roundText", singlesNextSetViewModel.Round),
+                    new SelectorValueModel("#bestOfText", singlesNextSetViewModel.BestOf)
+                };
+
+                _smashFileWriter.WriteJsonFile(singlesNextSetViewModel.PathToFormatNextSet, selectorValueModels);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+                throw;
+            }
+        }
+
+        public void UpdateDoublesNextSetOverlay(DoublesNextSetViewModel doublesNextSetViewModel)
+        {
+            try
+            {
+                var selectorValueModels = new List<SelectorValueModel>
+                {
+                    new SelectorValueModel("#team1NameText", doublesNextSetViewModel.Team1.Name)
+                };
+
+                for (var i = 0; i < doublesNextSetViewModel.Team1.Players.Count; i++)
+                {
+                    selectorValueModels.AddRange
+                    (
+                        new List<SelectorValueModel>
+                        {
+                            new SelectorValueModel($"#team1Player{i + 1}NameText", doublesNextSetViewModel.Team1.Players[i].Name),
+                            new SelectorValueModel($".team1Player{i + 1}Sponsor", doublesNextSetViewModel.Team1.Players[i].Sponsor),
+                            new SelectorValueModel($"#team1Player{i + 1}Twitter", doublesNextSetViewModel.Team1.Players[i].Twitter),
+                            new SelectorValueModel($"#team1Player{i + 1}Twitch", doublesNextSetViewModel.Team1.Players[i].Twitch),
+                            new SelectorValueModel($"#team1Player{i + 1}Character", doublesNextSetViewModel.Team1.Players[i].Character),
+                            new SelectorValueModel($"#team1Player{i + 1}Port", doublesNextSetViewModel.Team1.Players[i].Port)
+                        }
+                    );
+                }
+
+                selectorValueModels.AddRange
+                (
+                    new List<SelectorValueModel>
+                    {
+                        new SelectorValueModel("#team2NameText", doublesNextSetViewModel.Team2.Name),
+                    }
+                );
+
+                for (var i = 0; i < doublesNextSetViewModel.Team2.Players.Count; i++)
+                {
+                    selectorValueModels.AddRange
+                    (
+                        new List<SelectorValueModel>
+                        {
+                            new SelectorValueModel($"#team2Player{i + 1}NameText", doublesNextSetViewModel.Team2.Players[i].Name),
+                            new SelectorValueModel($".team2Player{i + 1}Sponsor", doublesNextSetViewModel.Team2.Players[i].Sponsor),
+                            new SelectorValueModel($"#team2Player{i + 1}Twitter", doublesNextSetViewModel.Team2.Players[i].Twitter),
+                            new SelectorValueModel($"#team2Player{i + 1}Twitch", doublesNextSetViewModel.Team2.Players[i].Twitch),
+                            new SelectorValueModel($"#team2Player{i + 1}Character", doublesNextSetViewModel.Team2.Players[i].Character),
+                            new SelectorValueModel($"#team2Player{i + 1}Port", doublesNextSetViewModel.Team2.Players[i].Port)
+                        }
+                    );
+                }
+
+                selectorValueModels.AddRange
+                (
+                    new List<SelectorValueModel>
+                    {
+                        new SelectorValueModel("#roundText", doublesNextSetViewModel.Round),
+                        new SelectorValueModel("#bestOfText", doublesNextSetViewModel.BestOf)
+                    }
+                );
+
+                _smashFileWriter.WriteJsonFile(doublesNextSetViewModel.PathToFormatNextSet, selectorValueModels);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+                throw;
+            }
+        }
+
+        public void UpdateCrewsNextSetOverlay(CrewsNextSetViewModel crewsNextSetViewModel)
+        {
+            try
+            {
+                var selectorValueModels = new List<SelectorValueModel>
+                {
+                    new SelectorValueModel("#crew1NameText", crewsNextSetViewModel.Crew1.Name),
+                    new SelectorValueModel("#crew1Character", crewsNextSetViewModel.Crew1.Character),
+                    new SelectorValueModel("#crew1Port", crewsNextSetViewModel.Crew1.Port),
+                    new SelectorValueModel("#crew1StocksLeftText", crewsNextSetViewModel.Crew1.StocksLeft ?? "?")
+                };
+
+                selectorValueModels.AddRange
+                (
+                    new List<SelectorValueModel>
+                    {
+                        new SelectorValueModel("#crew2NameText", crewsNextSetViewModel.Crew2.Name),
+                        new SelectorValueModel("#crew2Character", crewsNextSetViewModel.Crew2.Character),
+                        new SelectorValueModel("#crew2Port", crewsNextSetViewModel.Crew2.Port),
+                        new SelectorValueModel("#crew2StocksLeftText", crewsNextSetViewModel.Crew2.StocksLeft ?? "?")
+                    }
+                );
+
+                selectorValueModels.AddRange
+                (
+                    new List<SelectorValueModel>
+                    {
+                        new SelectorValueModel("#roundText", crewsNextSetViewModel.Round),
+                        new SelectorValueModel("#bestOfText", crewsNextSetViewModel.BestOf)
+                    }
+                );
+
+                _smashFileWriter.WriteJsonFile(crewsNextSetViewModel.PathToFormatNextSet, selectorValueModels);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+                throw;
+            }
+        }
+
+        public void UpdateSquadStrikeNextSetOverlay(SquadStrikeNextSetViewModel squadStrikeNextSetViewModel)
+        {
+            try
+            {
+                var selectorValueModels = new List<SelectorValueModel>
+                {
+                    new SelectorValueModel("#squad1NameText", squadStrikeNextSetViewModel.Squad1.Name),
+                    new SelectorValueModel("#squad1Port", squadStrikeNextSetViewModel.Squad1.Port)
+                };
+
+                for (var i = 0; i < squadStrikeNextSetViewModel.Squad1.Players.Count; i++)
+                {
+                    if (i < 4)
+                    {
+                        selectorValueModels.AddRange
+                        (
+                            new List<SelectorValueModel>
+                            {
+                                new SelectorValueModel($"#squad1Player{i + 1}NameText", squadStrikeNextSetViewModel.Squad1.Players[i].Name),
+                                new SelectorValueModel($"#squad1Player{i + 1}TwitterText", squadStrikeNextSetViewModel.Squad1.Players[i].Twitter)
+                            }
+                        );
+                    }
+
+                    selectorValueModels.AddRange
+                    (
+                        new List<SelectorValueModel>
+                        {
+                            new SelectorValueModel($"#squad1Character{i + 1}", squadStrikeNextSetViewModel.Squad1.Players[i].Character)
+                        }
+                    );
+                }
+
+                selectorValueModels.AddRange
+                (
+                    new List<SelectorValueModel> {
+                        new SelectorValueModel("#squad2NameText", squadStrikeNextSetViewModel.Squad2.Name),
+                        new SelectorValueModel("#squad2Port", squadStrikeNextSetViewModel.Squad2.Port)
+                    }
+                );
+
+                for (var i = 0; i < squadStrikeNextSetViewModel.Squad2.Players.Count; i++)
+                {
+                    if (i < 4)
+                    {
+                        selectorValueModels.AddRange
+                        (
+                            new List<SelectorValueModel>
+                            {
+                                new SelectorValueModel($"#squad2Player{i + 1}NameText", squadStrikeNextSetViewModel.Squad2.Players[i].Name),
+                                new SelectorValueModel($"#squad2Player{i + 1}TwitterText", squadStrikeNextSetViewModel.Squad2.Players[i].Twitter)
+                            }
+                        );
+                    }
+
+                    selectorValueModels.AddRange
+                    (
+                        new List<SelectorValueModel>
+                        {
+                            new SelectorValueModel($"#squad2Character{i + 1}", squadStrikeNextSetViewModel.Squad2.Players[i].Character)
+                        }
+                    );
+                }
+
+                selectorValueModels.AddRange
+                (
+                    new List<SelectorValueModel>
+                    {
+                        new SelectorValueModel("#roundText", squadStrikeNextSetViewModel.Round),
+                        new SelectorValueModel("#bestOfText", squadStrikeNextSetViewModel.BestOf)
+                    }
+                );
+
+                _smashFileWriter.WriteJsonFile(squadStrikeNextSetViewModel.PathToFormatNextSet, selectorValueModels);
             }
             catch (Exception ex)
             {

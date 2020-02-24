@@ -1,0 +1,63 @@
+#player1NameText:before {
+    content: "xMagnax";
+}
+
+#player1TwitterText:before {
+    content: "@xMagnax";
+}
+
+#player1TwitchText:before {
+    content: "xMagnax";
+}
+
+#player1ScoreText:before {
+    content: "1";
+}
+
+#player1Character {
+    background-image: url('../../CharacterIcons/alisa.png');
+}
+
+#player1Country {
+    background-image: url('../../../../Flags/AS.svg');
+}
+
+#player2NameText:before {
+    content: "TDB | Gogoku7";
+}
+
+#player2TwitterText:before {
+    content: "@Gogoku7";
+}
+
+#player2TwitchText:before {
+    content: "Gogoku7";
+}
+
+#player2ScoreText:before {
+    content: "2";
+}
+
+#player2Character {
+    background-image: url('../../CharacterIcons/akuma.png');
+}
+
+#player2Country {
+    background-image: url('../../../../Flags/BE.svg');
+}
+
+#tournamentText:before {
+    content: "Fight Night 50";
+}
+
+#extraText:before {
+    content: "Esports Game Arena";
+}
+
+#roundText:before {
+    content: "Winners Round 2";
+}
+
+#bestOfText:before {
+    content: "Best of 3";
+}

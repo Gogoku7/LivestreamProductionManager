@@ -1,0 +1,39 @@
+#player1NameText:before {
+    content: "TDB | Gogoku7";
+}
+
+#player1TwitterText:before {
+    content: "@Gogoku7";
+}
+
+#player1TwitchText:before {
+    content: "Gogoku7";
+}
+
+#player1Character {
+    background-image: url('../../CharacterIcons/akuma.png');
+}
+
+#player2NameText:before {
+    content: "Crucible | Draco";
+}
+
+#player2TwitterText:before {
+    content: "@Draco";
+}
+
+#player2TwitchText:before {
+    content: "Draco";
+}
+
+#player2Character {
+    background-image: url('../../CharacterIcons/zafina.png');
+}
+
+#roundText:before {
+    content: "Winners Round ";
+}
+
+#bestOfText:before {
+    content: "Best of 3";
+}

@@ -21,6 +21,10 @@
     "CssValue": "../../CharacterIcons/bowserjr.png"
   },
   {
+    "CharacterName": "Byleth",
+    "CssValue": "../../CharacterIcons/byleth.png"
+  },
+  {
     "CharacterName": "Captain Falcon",
     "CssValue": "../../CharacterIcons/captainfalcon.png"
   },
@@ -325,27 +329,27 @@
     "CssValue": "../../CharacterIcons/zerosuitsamus.png"
   },
   {
-    "CharacterName": "DLC character 5",
+    "CharacterName": "DLC character 6 (FPVol.2 1)",
     "CssValue": "../../CharacterIcons/random.png"
   },
   {
-    "CharacterName": "DLC character 6",
+    "CharacterName": "DLC character 7 (FPVol.2 2)",
     "CssValue": "../../CharacterIcons/random.png"
   },
   {
-    "CharacterName": "DLC character 7",
+    "CharacterName": "DLC character 8 (FPVol.2 3)",
     "CssValue": "../../CharacterIcons/random.png"
   },
   {
-    "CharacterName": "DLC character 8",
+    "CharacterName": "DLC character 9 (FPVol.2 4)",
     "CssValue": "../../CharacterIcons/random.png"
   },
   {
-    "CharacterName": "DLC character 9",
+    "CharacterName": "DLC character 10 (FPVol.2 5)",
     "CssValue": "../../CharacterIcons/random.png"
   },
   {
-    "CharacterName": "DLC character 10",
+    "CharacterName": "DLC character 11 (FPVol.2 6)",
     "CssValue": "../../CharacterIcons/random.png"
   }
 ]

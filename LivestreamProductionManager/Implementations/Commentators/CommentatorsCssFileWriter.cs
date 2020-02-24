@@ -21,7 +21,12 @@ namespace LivestreamProductionManager.Implementations.Commentators
                 var templateCssFile = _templateFileReader.ReadTemplateFile("Commentators/CommentatorsTemplate.css");
                 var cssFileContent = _commentatorsValuesReplacer.ReplaceValuesForCommentators(templateCssFile, commentatorsValuesModels);
 
-                File.WriteAllText(HttpContext.Current.Server.MapPath(pathToCommentators + "CSS/Content.css"), cssFileContent);
+                var file = new FileInfo(HttpContext.Current.Server.MapPath(pathToCommentators + "CSS/Content.css"));
+                file.Directory.Create();
+
+                File.WriteAllText(file.FullName, cssFileContent);
+
+                //File.WriteAllText(HttpContext.Current.Server.MapPath(pathToCommentators + "CSS/Content.css"), cssFileContent);
             }
             catch (Exception ex)
             {

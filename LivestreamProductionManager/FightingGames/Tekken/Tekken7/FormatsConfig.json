@@ -1,0 +1,16 @@
+[
+  {
+    "FormatName": "Singles",
+    "FORMAT": "Singles",
+    "Url": "/TraditionalFG/GetManageCompetitors",
+    "PathToFormat": "~/FightingGames/Tekken/Tekken7/Singles/",
+    "PathToNextSet": "~/FightingGames/Tekken/Tekken7/SinglesNextSet/"
+  },
+  {
+    "FormatName": "Crews",
+    "FORMAT": "Crews",
+    "Url": "/TraditionalFG/GetManageCompetitors",
+    "PathToFormat": "~/FightingGames/Tekken/Tekken7/Crews/",
+    "PathToNextSet": "~/FightingGames/Tekken/Tekken7/CrewsNextSet/"
+  }
+]

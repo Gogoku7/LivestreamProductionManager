@@ -3,24 +3,21 @@
     "FormatName": "Singles",
     "FORMAT": "Singles",
     "Url": "/SuperSmashBros/GetManageCompetitors",
-    "PathToFormat": "~/FightingGames/SuperSmashBros/Brawl/Singles/"
+    "PathToFormat": "~/FightingGames/SuperSmashBros/Brawl/Singles/",
+    "PathToNextSet": "~/FightingGames/SuperSmashBros/Brawl/SinglesNextSet/"
   },
   {
     "FormatName": "Doubles",
     "FORMAT": "Doubles",
-    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Brawl/Doubles",
-    "PathToFormat": "~/FightingGames/SuperSmashBros/Brawl/Doubles/"
+    "Url": "/SuperSmashBros/GetManageCompetitors",
+    "PathToFormat": "~/FightingGames/SuperSmashBros/Brawl/Doubles/",
+    "PathToNextSet": "~/FightingGames/SuperSmashBros/Brawl/DoublesNextSet/"
   },
   {
     "FormatName": "Crews",
     "FORMAT": "Crews",
-    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Brawl/Crews",
-    "PathToFormat": "~/FightingGames/SuperSmashBros/Brawl/Crews/"
-  },
-  {
-    "FormatName": "Iron Man",
-    "FORMAT": "IronMan",
-    "Url": "/SuperSmashBros/GetManageCompetitors/SuperSmashBros/Brawl/IronMan",
-    "PathToFormat": "~/FightingGames/SuperSmashBros/Brawl/IronMan/"
+    "Url": "/SuperSmashBros/GetManageCompetitors",
+    "PathToFormat": "~/FightingGames/SuperSmashBros/Brawl/Crews/",
+    "PathToNextSet": "~/FightingGames/SuperSmashBros/Brawl/CrewsNextSet/"
   }
 ]

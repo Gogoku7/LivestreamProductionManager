@@ -4,6 +4,7 @@
     {
         public string NameAndSponsor { get; set; }
         public string Twitter { get; set; }
+        public string Twitch { get; set; }
         public string Score { get; set; }
         public string CharacterPath { get; set; }
         public string PortPath { get; set; }

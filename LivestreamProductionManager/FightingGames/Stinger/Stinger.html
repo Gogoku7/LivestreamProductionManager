@@ -1,0 +1,268 @@
+<html>
+	<head>
+		<script src="../JavaScript/jQuery.js"></script>
+		<script src="../JavaScript/fitty.js"></script>
+		<script src="../JavaScript/StingerManager.js"></script>
+		<style>
+			html {
+				width: 1920px;
+				height: 1080px;
+				overflow: hidden;
+				font-family: 'Bebas Neue', sans-serif;
+				font-size: 22px;
+				color: black;
+			}
+
+			body {
+				width: 1920px;
+				height: 1080px;
+				overflow: hidden;
+			}
+
+			.delayedFadeOut {
+				animation-name: delayedFadeOut;
+				animation-duration: 5s;
+				animation-iteration-count: 1;
+				animation-timing-function: linear;
+				animation-fill-mode: forwards;
+			}
+
+			@keyframes delayedFadeOut {
+				0% {
+					opacity: 1;
+					background-color: rgba(255, 255, 255, 1);
+				}
+
+				50% {
+					opacity: 1;
+					background-color: rgba(255, 255, 255, 1);
+				}
+
+				60% {
+					opacity: 0;
+					background-color: rgba(255, 255, 255, 0);
+				}
+
+				100% {
+					opacity: 0;
+					background-color: rgba(255, 255, 255, 0);
+				}
+			}
+
+			#logo {
+				background-image: url('Images/LPM.png');
+			}
+
+			.rotate {
+				width: 64px;
+				height: 64px;
+				animation-name: rotate;
+				animation-duration: 0.6s;
+				animation-iteration-count: 1;
+				animation-timing-function: linear;
+			}
+
+			.fadeIn {
+				width: 64px;
+				height: 64px;
+				animation-name: fadeIn;
+				animation-duration: 2s;
+				animation-iteration-count: 1;
+				animation-timing-function: linear;
+			}
+
+			.bigToSmall {
+				width: 64px;
+				height: 64px;
+				left: 928px;
+				top: 508px;
+				position: fixed;
+				animation-name: bigToSmall;
+				animation-duration: 0.6s;
+				animation-iteration-count: 1;
+				animation-timing-function: linear;
+			}
+
+			@-moz-keyframes rotate {
+				100% {
+					-moz-transform: rotate(360deg);
+				}
+			}
+
+			@-webkit-keyframes rotate {
+				100% {
+					-webkit-transform: rotate(360deg);
+				}
+			}
+
+			@keyframes rotate {
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+				}
+
+				to {
+					opacity: 1;
+				}
+			}
+
+			@keyframes bigToSmall {
+				from {
+					-webkit-transform: scale(100);
+					transform: scale(100);
+				}
+
+				to {
+					-webkit-transform: scale(1);
+					transform: scale(1);
+				}
+			}
+
+			#mainTitleContainer {
+				position: fixed;
+				width: 480px;
+				height: 30px;
+				top: 612px;
+				left: 720px;
+				text-align: center;
+				line-height: 30px;
+				align-items: center;
+				animation-name: delayedFade;
+				animation-duration: 1.8s;
+				animation-iteration-count: 1;
+				animation-fill-mode: forwards;
+				animation-timing-function: linear;
+			}
+
+			@keyframes delayedFade {
+				0% {
+					opacity: 0;
+				}
+
+				33.33% {
+					opacity: 0;
+				}
+
+				100% {
+					opacity: 1;
+				}
+			}
+
+			#mainTitle {
+				font-size: 22px;
+				color: black;
+			}
+
+			#subTitleContainer {
+				position: fixed;
+				width: 480px;
+				height: 30px;
+				top: 642px;
+				left: 720px;
+				text-align: center;
+				line-height: 30px;
+				align-items: center;
+				animation-name: delayedFade;
+				animation-duration: 2.4s;
+				animation-iteration-count: 1;
+				animation-fill-mode: forwards;
+				animation-timing-function: linear;
+			}
+
+			#subTitle {
+				font-size: 18px;
+				color: darkgray;
+			}
+
+			#footnoteContainer {
+				position: fixed;
+				width: 480px;
+				height: 30px;
+				top: 672px;
+				left: 720px;
+				text-align: center;
+				line-height: 30px;
+				align-items: center;
+				animation-name: delayedFade;
+				animation-duration: 2.8s;
+				animation-iteration-count: 1;
+				animation-fill-mode: forwards;
+				animation-timing-function: linear;
+			}
+
+			#footnote {
+				font-size: 14px;
+				color: darkblue;
+			}
+
+            #tournamentLogo {
+                height: 96px;
+                width: 96px;
+                position: fixed;
+                top: 360px;
+                left: 912px;
+                background-image: url('Images/Crucible.png');
+                background-size: contain;
+                animation-name: smallToBig;
+                animation-duration: 2.2s;
+                animation-delay: 2.5s;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+                animation-timing-function: ease-in;
+            }
+
+            @keyframes smallToBig {
+                from {
+                    -webkit-transform: scale(1);
+                    transform: scale(1);
+                }
+
+                to {
+                    -webkit-transform: scale(1000);
+                    transform: scale(1000);
+                }
+            }
+		</style>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				var fittyElements = [
+					{ "selector": ".playerName", "minSize": 8, "maxSize": 40, "multiLine": false },
+					{ "selector": ".playerScore", "minSize": 8, "maxSize": 25, "multiLine": false }
+                ];
+
+                var clientIdentification = { "stingerType": "Default", "series": "", "game": "", "format": "" };
+		
+				initWebSocketAndFitty(fittyElements, "Stinger animation", clientIdentification);
+			});
+		</script>
+	</head>
+	
+	<body class="delayedFadeOut">
+		<div class="fadeIn">
+			<div id="tournamentLogo" class="delayedFadeOut" style=""></div>
+		</div>
+
+		<div class="bigToSmall">
+			<div class="fadeIn">
+				<div id="logo" class="rotate delayedFadeOut"></div>
+			</div>
+		</div>
+
+		<div id="mainTitleContainer" class="delayedFadeOut">
+			<span id="mainTitle">Livestream Production Manager</span>
+		</div>
+
+		<div id="subTitleContainer" class="delayedFadeOut">
+			<span id="subTitle">Manage all your overlays!</span>
+		</div>
+
+		<div id="footnoteContainer" class="delayedFadeOut">
+			<span id="footnote">Stream by Gogoku7</span>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="../../../CSS/Slideshow.css">
+	<script src="../../../JavaScript/jQuery.js"></script>
+	<script src="../../../JavaScript/Slideshow.js"></script>
+
+	<style>
+		#slideshow {
+			height: 200px;
+			width: 200px;
+			top: 0;
+			left: 0;
+		}
+
+		.slide {
+			height: 200px;
+			width: 200px;
+		}
+	</style>
+</head>
+
+<html>
+	<body>
+		<div id="slideshow" class="slideshow">
+			<div class="slide" style="background-image: url('slides/1.png'); z-index: 4;"></div>
+			<div class="slide" style="background-image: url('slides/2.png'); z-index: 3;"></div>
+			<div class="slide" style="background-image: url('slides/3.png'); z-index: 2;"></div>
+			<div class="slide" style="background-image: url('slides/4.png'); z-index: 1;"></div>
+		</div>
+	</body>
+</html>
+
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		initSlideshow("#slideshow", "opacityFadeIn", "opacityFadeOut", "1000ms", 3000, 0);
+	});
+</script>

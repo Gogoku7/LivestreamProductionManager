@@ -1,0 +1,151 @@
+﻿@using System.Text;
+@model LivestreamProductionManager.ViewModels.FightingGames.SuperSmashBros.SuperSmashBrosQueuBaseViewModel
+
+@{
+    var characterOptionsStringBuilder = new StringBuilder();
+    foreach (var character in Model.Characters)
+    {
+        characterOptionsStringBuilder.AppendLine($"<option value='{character.CssValue}' data-name='{character.CharacterName}'>{character.CharacterName}</option>");
+    }
+
+    var portOptionsStringBuilder = new StringBuilder();
+    foreach (var port in Model.Ports)
+    {
+        portOptionsStringBuilder.AppendLine($"<option value='{port.CssValue}'>{port.PortName}</option>");
+    }
+
+    Layout = null;
+}
+
+<div id="nextSet-@(Model.Index)">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1 id="nextSet_@(Model.Index)_Number">Set @(Model.Index + 1)</h1>
+        </div>
+    </div>
+
+    <form action="@Url.Action("UpdateCrewsNextSet", "SuperSmashBros")" method="post" id="manageQueuForm_@Model.Index">
+        <input type="hidden" name="Series" value="@Model.Series" />
+        <input type="hidden" name="Game" value="@Model.Game" />
+        <input type="hidden" name="Format" value="@Model.Format" />
+        <input type="hidden" name="PathToSeries" value="@Model.PathToSeries" />
+        <input type="hidden" name="PathToGame" value="@Model.PathToGame" />
+        <input type="hidden" name="PathToFormat" value="@Model.PathToFormat" />
+        <input type="hidden" name="PathToFormatNextSet" value="" />
+
+        <div class="row">
+            <div class="col-xs-3 text-center">
+                <label>Round</label>
+            </div>
+
+            <div class="col-xs-3 text-center">
+                <label>Best of</label>
+            </div>
+
+            <div class="col-xs-6 text-center">
+                <label>Actions</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-3 text-center">
+                <input type="text" class="form-control" name="Round" id="nextSet_@(Model.Index)_Round" data-selector="#round" data-id-template="nextSet_INDEX_Round" />
+            </div>
+
+            <div class="col-xs-3 text-center">
+                <input type="text" class="form-control" name="BestOf" id="nextSet_@(Model.Index)_BestOf" data-selector="#bestOf" data-id-template="nextSet_INDEX_BestOf" />
+            </div>
+
+            <div class="col-xs-1 text-center">
+                <button class="btn btn-success" type="button" onclick="submitSet(@Model.Index)" data-onclick-template="submitSet(INDEX)"><span class="glyphicon glyphicon-arrow-up"></span><text> Update</text></button>
+            </div>
+
+            <div class="col-xs-1 text-center">
+                <button class="btn btn-warning" type="button" onclick="importSet(@Model.Index)" data-onclick-template="importSet(INDEX)"><span class="glyphicon glyphicon-download-alt"></span><text> Import</text></button>
+            </div>
+
+            <div class="col-xs-1 text-center">
+                <button class="btn btn-danger" type="button" onclick="removeSet(@Model.Index)" data-onclick-template="removeSet(INDEX)"><span class="glyphicon glyphicon-remove"></span><text> Remove</text></button>
+            </div>
+
+            <div class="col-xs-1 text-center">
+                <button class="btn btn-info" type="button" onclick="switchCompetitorsOfSet(@Model.Index)" data-onclick-template="switchCompetitorsOfSet(INDEX)"><span class="glyphicon glyphicon-refresh"></span><text> Switch</text></button>
+            </div>
+
+            <div class="col-xs-1 text-center">
+                <button class="btn btn-primary" type="button" onclick="moveSetUp(@Model.Index)" data-onclick-template="moveSetUp(INDEX)"><span class="glyphicon glyphicon-arrow-up"></span><text> Up</text></button>
+            </div>
+
+            <div class="col-xs-1 text-center">
+                <button class="btn btn-primary" type="button" onclick="moveSetDown(@Model.Index)" data-onclick-template="moveSetDown(INDEX)"><span class="glyphicon glyphicon-arrow-down"></span><text> Down</text></button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6 text-center">
+                <label>Crew 1</label>
+            </div>
+
+            <div class="col-xs-6 text-center">
+                <label>Crew 2</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6 text-center">
+                <label>Name</label>
+                <input type="text" class="form-control" name="Crew1.Name" id="nextSet_@(Model.Index)_Crew1Name" data-selector="#crew1Name" data-side="1" data-opposite-id="#nextSet_@(Model.Index)_Crew2Name" data-id-template="nextSet_INDEX_Crew1Name" data-opposite-id-template="#nextSet_INDEX_Crew2Name" />
+            </div>
+
+            <div class="col-xs-6 text-center">
+                <label>Name</label>
+                <input type="text" class="form-control" name="Crew2.Name" id="nextSet_@(Model.Index)_Crew2Name" data-selector="#crew2Name" data-side="2" data-opposite-id="#nextSet_@(Model.Index)_Crew1Name" data-id-template="nextSet_INDEX_Crew2Name" data-opposite-id-template="#nextSet_INDEX_Crew1Name" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6 text-center">
+                <label>Starting Stocks</label>
+                <input type="text" class="form-control" name="Crew1.StocksLeft" id="nextSet_@(Model.Index)_Crew1StocksLeft" data-selector="#crew1StocksLeft" data-side="1" data-opposite-id="#nextSet_@(Model.Index)_Crew2StocksLeft" data-id-template="nextSet_INDEX_Crew1StocksLeft" data-opposite-id-template="#nextSet_INDEX_Crew2StocksLeft" />
+            </div>
+            <div class="col-xs-6 text-center">
+                <label>Starting Stocks</label>
+                <input type="text" class="form-control" name="Crew2.StocksLeft" id="nextSet_@(Model.Index)_Crew2StocksLeft" data-selector="#crew2StocksLeft" data-side="2" data-opposite-id="#nextSet_@(Model.Index)_Crew1StocksLeft" data-id-template="nextSet_INDEX_Crew2StocksLeft" data-opposite-id-template="#nextSet_INDEX_Crew1StocksLeft" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6 text-center">
+                <label>Character</label>
+                <select class="form-control" name="Crew1.Character" id="nextSet_@(Model.Index)_Crew1Character" data-selector="#crew1Character" data-side="1" data-opposite-id="#nextSet_@(Model.Index)_Crew2Character" data-id-template="nextSet_INDEX_Crew1Character" data-opposite-id-template="#nextSet_INDEX_Crew2Character">
+                    <option value="" selected disabled hidden>Choose character</option>
+                    @Html.Raw(characterOptionsStringBuilder.ToString())
+                </select>
+            </div>
+            <div class="col-xs-6 text-center">
+                <label>Character</label>
+                <select class="form-control" name="Crew2.Character" id="nextSet_@(Model.Index)_Crew2Character" data-selector="#crew2Character" data-side="2" data-opposite-id="#nextSet_@(Model.Index)_Crew1Character" data-id-template="nextSet_INDEX_Crew2Character" data-opposite-id-template="#nextSet_INDEX_Crew1Character">
+                    <option value="" selected disabled hidden>Choose character</option>
+                    @Html.Raw(characterOptionsStringBuilder.ToString())
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6 text-center">
+                <label>Port</label>
+                <select class="form-control" name="Crew1.Port" id="nextSet_@(Model.Index)_Crew1Port" data-selector="#crew1Port" data-side="1" data-opposite-id="#nextSet_@(Model.Index)_Crew2Port" data-id-template="nextSet_INDEX_Crew1Port" data-opposite-id-template="#nextSet_INDEX_Crew2Port">
+                    <option value="" selected disabled hidden>Choose port</option>
+                    @Html.Raw(portOptionsStringBuilder.ToString())
+                </select>
+            </div>
+            <div class="col-xs-6 text-center">
+                <label>Port</label>
+                <select class="form-control" name="Crew2.Port" id="nextSet_@(Model.Index)_Crew2Port" data-selector="#crew2Port" data-side="2" data-opposite-id="#nextSet_@(Model.Index)_Crew1Port" data-id-template="nextSet_INDEX_Crew2Port" data-opposite-id-template="#nextSet_INDEX_Crew1Port">
+                    <option value="" selected disabled hidden>Choose port</option>
+                    @Html.Raw(portOptionsStringBuilder.ToString())
+                </select>
+            </div>
+        </div>
+    </form>
+</div>

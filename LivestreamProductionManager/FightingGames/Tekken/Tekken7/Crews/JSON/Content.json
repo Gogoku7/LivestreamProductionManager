@@ -1,0 +1,122 @@
+[
+  {
+    "Selector": "#crew1NameText",
+    "Value": "Team Flevoland"
+  },
+  {
+    "Selector": "#crew1Character",
+    "Value": "../../CharacterIcons/akuma.png"
+  },
+  {
+    "Selector": "#crew1StocksLeftText",
+    "Value": "1"
+  },
+  {
+    "Selector": "#crew1Player1NameText",
+    "Value": "Kertia"
+  },
+  {
+    "Selector": ".crew1Player1Active",
+    "Value": "True"
+  },
+  {
+    "Selector": ".crew1Player1Eliminated",
+    "Value": "False"
+  },
+  {
+    "Selector": "#crew1Player1TwitterText",
+    "Value": "@Kertia"
+  },
+  {
+    "Selector": "#crew1Player1Character",
+    "Value": "../../CharacterIcons/akuma.png"
+  },
+  {
+    "Selector": "#crew1Player2NameText",
+    "Value": "Lil Mayo"
+  },
+  {
+    "Selector": ".crew1Player2Active",
+    "Value": "False"
+  },
+  {
+    "Selector": ".crew1Player2Eliminated",
+    "Value": "True"
+  },
+  {
+    "Selector": "#crew1Player2TwitterText",
+    "Value": "@LilMayo"
+  },
+  {
+    "Selector": "#crew1Player2Character",
+    "Value": "../../CharacterIcons/alisa.png"
+  },
+  {
+    "Selector": "#crew2NameText",
+    "Value": "Zuid-Holland"
+  },
+  {
+    "Selector": "#crew2Character",
+    "Value": "../../CharacterIcons/zafina.png"
+  },
+  {
+    "Selector": "#crew2StocksLeftText",
+    "Value": "2"
+  },
+  {
+    "Selector": "#crew2Player1NameText",
+    "Value": "KarmaKens"
+  },
+  {
+    "Selector": ".crew2Player1Active",
+    "Value": "True"
+  },
+  {
+    "Selector": ".crew2Player1Eliminated",
+    "Value": "False"
+  },
+  {
+    "Selector": "#crew2Player1TwitterText",
+    "Value": "@KarmaKens"
+  },
+  {
+    "Selector": "#crew2Player1Character",
+    "Value": "../../CharacterIcons/zafina.png"
+  },
+  {
+    "Selector": "#crew2Player2NameText",
+    "Value": "Ninjin"
+  },
+  {
+    "Selector": ".crew2Player2Active",
+    "Value": "False"
+  },
+  {
+    "Selector": ".crew2Player2Eliminated",
+    "Value": "True"
+  },
+  {
+    "Selector": "#crew2Player2TwitterText",
+    "Value": "@Ninjin"
+  },
+  {
+    "Selector": "#crew2Player2Character",
+    "Value": "../../CharacterIcons/yoshimitsu.png"
+  },
+  {
+    "Selector": "#tournamentText",
+    "Value": "Fight Night 50"
+  },
+  {
+    "Selector": "#extraText",
+    "Value": "Esports Game Arena"
+  },
+  {
+    "Selector": "#roundText",
+    "Value": "Winners Round 1"
+  },
+  {
+    "Selector": "#bestOfText",
+    "Value": "Best of 3"
+  }
+]

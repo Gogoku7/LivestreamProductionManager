@@ -1,0 +1,42 @@
+[
+  {
+    "Selector": "#crew1NameText",
+    "Value": "Dutch Brawlers"
+  },
+  {
+    "Selector": "#crew1Character",
+    "Value": "../../CharacterIcons/banjokazooie.png"
+  },
+  {
+    "Selector": "#crew1Port",
+    "Value": "../../PlayerPorts/PlayerPort1.png"
+  },
+  {
+    "Selector": "#crew1StocksLeftText",
+    "Value": "15"
+  },
+  {
+    "Selector": "#crew2NameText",
+    "Value": "Backroom"
+  },
+  {
+    "Selector": "#crew2Character",
+    "Value": "../../CharacterIcons/bayonetta.png"
+  },
+  {
+    "Selector": "#crew2Port",
+    "Value": "../../PlayerPorts/PlayerPort2.png"
+  },
+  {
+    "Selector": "#crew2StocksLeftText",
+    "Value": "15"
+  },
+  {
+    "Selector": "#roundText",
+    "Value": "Winners Round 1"
+  },
+  {
+    "Selector": "#bestOfText",
+    "Value": "Best of 3"
+  }
+]

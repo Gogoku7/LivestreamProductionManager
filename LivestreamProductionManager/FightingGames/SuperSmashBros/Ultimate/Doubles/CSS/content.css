@@ -1,5 +1,5 @@
 #team1NameText:before {
-    content: "Team Saiyan";
+    content: "Team NaRo";
 }
 
 #team1ScoreText:before {
@@ -7,31 +7,47 @@
 }
 
 #team1Player1NameText:before {
-    content: "Cinnovate | Gogoku7";
+    content: "Tempo | Zero";
 }
 #team1Player2NameText:before {
-    content: "Median4";
+    content: "NRG | Nairo";
+}
+
+
+#team1Player1TwitterText:before {
+    content: "@zerowondering";
+}
+#team1Player2TwitterText:before {
+    content: "@nairomk";
+}
+
+
+#team1Player1TwitchText:before {
+    content: "ZeroWondering";
+}
+#team1Player2TwitchText:before {
+    content: "NairoMK";
 }
 
 
 #team1Player1Character {
-    background-image: url('../../CharacterIcons/fox.png');
+    background-image: url('../../CharacterIcons/bowser.png');
 }
 #team1Player2Character {
-    background-image: url('../../CharacterIcons/littlemac.png');
+    background-image: url('../../CharacterIcons/bowserjr.png');
 }
 
 
 #team1Player1Port {
-    background-image: url('../../PlayerPorts/PlayerPort1.png');
+    background-image: url('../../PlayerPorts/PlayerPort3.png');
 }
 #team1Player2Port {
-    background-image: url('../../PlayerPorts/PlayerPort2.png');
+    background-image: url('../../PlayerPorts/PlayerPort4.png');
 }
 
 
 #team2NameText:before {
-    content: "Team NaRo";
+    content: "Team Saiyan";
 }
 
 #team2ScoreText:before {
@@ -39,26 +55,42 @@
 }
 
 #team2Player1NameText:before {
-    content: "Tempo | ZeRo";
+    content: "TDB | Gogoku7";
 }
 #team2Player2NameText:before {
-    content: "NRG | Nairo";
+    content: "C | Median4";
+}
+
+
+#team2Player1TwitterText:before {
+    content: "@gogoku7";
+}
+#team2Player2TwitterText:before {
+    content: "@median4";
+}
+
+
+#team2Player1TwitchText:before {
+    content: "Gogoku7";
+}
+#team2Player2TwitchText:before {
+    content: "Median4";
 }
 
 
 #team2Player1Character {
-    background-image: url('../../CharacterIcons/diddykong.png');
+    background-image: url('../../CharacterIcons/banjokazooie.png');
 }
 #team2Player2Character {
-    background-image: url('../../CharacterIcons/palutena.png');
+    background-image: url('../../CharacterIcons/bayonetta.png');
 }
 
 
 #team2Player1Port {
-    background-image: url('../../PlayerPorts/PlayerPort3.png');
+    background-image: url('../../PlayerPorts/PlayerPort1.png');
 }
 #team2Player2Port {
-    background-image: url('../../PlayerPorts/PlayerPort4.png');
+    background-image: url('../../PlayerPorts/PlayerPort2.png');
 }
 
 

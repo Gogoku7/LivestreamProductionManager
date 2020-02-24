@@ -1,66 +1,74 @@
 [
-{
-  "Selector": "#player1NameText",
-  "Value": "Median4"
-},
-{
-  "Selector": ".player1Sponsor",
-  "Value": "Auto"
-},
-{
-  "Selector": "#player1TwitterText",
-  "Value": ""
-},
-{
-  "Selector": "#player1ScoreText",
-  "Value": "0"
-},
-{
-  "Selector": "#player1Character",
-  "Value": "../../CharacterIcons/littlemac.png"
-},
-{
-  "Selector": "#player1Port",
-  "Value": "../../PlayerPorts/PlayerPort2.png"
-},
-{
-  "Selector": "#player2NameText",
-  "Value": "Gogoku7"
-},
-{
-  "Selector": ".player2Sponsor",
-  "Value": "Cinnovate"
-},
-{
-  "Selector": "#player2TwitterText",
-  "Value": ""
-},
-{
-  "Selector": "#player2ScoreText",
-  "Value": "1"
-},
-{
-  "Selector": "#player2Character",
-  "Value": "../../CharacterIcons/fox.png"
-},
-{
-  "Selector": "#player2Port",
-  "Value": "../../PlayerPorts/PlayerPort1.png"
-},
-{
-  "Selector": "#tournamentText",
-  "Value": "Fight Night 50"
-},
-{
-  "Selector": "#extraText",
-  "Value": "Esports Game Arena"
-},
-{
-  "Selector": "#roundText",
-  "Value": "Winners Round 1"
-},
-{
-  "Selector": "#bestOfText",
-  "Value": "Best of 3"
-}
+  {
+    "Selector": "#player1NameText",
+    "Value": "Gogoku7"
+  },
+  {
+    "Selector": ".player1Sponsor",
+    "Value": "TDB"
+  },
+  {
+    "Selector": "#player1TwitterText",
+    "Value": "@Gogoku7"
+  },
+  {
+    "Selector": "#player1TwitchText",
+    "Value": "Gogoku7"
+  },
+  {
+    "Selector": "#player1ScoreText",
+    "Value": "1"
+  },
+  {
+    "Selector": "#player1Character",
+    "Value": "../../CharacterIcons/banjokazooie.png"
+  },
+  {
+    "Selector": "#player1Port",
+    "Value": "../../PlayerPorts/PlayerPort1.png"
+  },
+  {
+    "Selector": "#player2NameText",
+    "Value": "Draco"
+  },
+  {
+    "Selector": ".player2Sponsor",
+    "Value": "Crucible"
+  },
+  {
+    "Selector": "#player2TwitterText",
+    "Value": "@Draco"
+  },
+  {
+    "Selector": "#player2TwitchText",
+    "Value": "Draco"
+  },
+  {
+    "Selector": "#player2ScoreText",
+    "Value": "2"
+  },
+  {
+    "Selector": "#player2Character",
+    "Value": "../../CharacterIcons/zerosuitsamus.png"
+  },
+  {
+    "Selector": "#player2Port",
+    "Value": "../../PlayerPorts/PlayerPort8.png"
+  },
+  {
+    "Selector": "#tournamentText",
+    "Value": "Fight Night 50"
+  },
+  {
+    "Selector": "#extraText",
+    "Value": "Esports Game Arena"
+  },
+  {
+    "Selector": "#roundText",
+    "Value": "Winners Round 1"
+  },
+  {
+    "Selector": "#bestOfText",
+    "Value": "Best of 3"
+  }
 ]

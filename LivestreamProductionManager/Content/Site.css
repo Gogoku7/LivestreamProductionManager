@@ -131,11 +131,36 @@ div.panel {
     padding: 0px 12px !important;
 }
 
-.panelButton > .glyphicon-question-sign, .glyphicon.glyphicon-erase, .glyphicon.glyphicon-download-alt, .glyphicon.glyphicon-refresh, .glyphicon.glyphicon-resize-full, .glyphicon.glyphicon-arrow-up, .glyphicon.glyphicon-arrow-down {
+.panelButton > .glyphicon-question-sign,
+.panelButton > .glyphicon.glyphicon-erase,
+.panelButton > .glyphicon.glyphicon-download-alt,
+.panelButton > .glyphicon.glyphicon-refresh,
+.panelButton > .glyphicon.glyphicon-resize-full,
+.panelButton > .glyphicon.glyphicon-arrow-up,
+.panelButton > .glyphicon.glyphicon-arrow-down,
+.panelButton > .glyphicon-repeat {
     font-size: 11px;
 }
 
-.panelButton > .glyphicon.glyphicon-remove, .glyphicon.glyphicon-ok {
+.panelButton > .glyphicon.glyphicon-remove,
+.panelButton > .glyphicon.glyphicon-ok,
+.panelButton > .glyphicon.glyphicon-play {
+    font-size: 12px;
+}
+
+#manageQueu .glyphicon-question-sign,
+#manageQueu .glyphicon.glyphicon-erase,
+#manageQueu .glyphicon.glyphicon-download-alt,
+#manageQueu .glyphicon.glyphicon-refresh,
+#manageQueu .glyphicon.glyphicon-resize-full,
+#manageQueu .glyphicon.glyphicon-arrow-up,
+#manageQueu .glyphicon.glyphicon-arrow-down,
+#manageQueu .glyphicon-repeat {
+    font-size: 11px;
+}
+
+#manageQueu .glyphicon.glyphicon-remove,
+#manageQueu .glyphicon.glyphicon-ok {
     font-size: 12px;
 }
 
@@ -147,7 +172,7 @@ div.panel {
     display: none;
 }
 
-#manageCommentatorsForm > div:last-child button[id^='moveCommentatorDown-'] {
+#manageCommentatorsForm:last-child div[id^="commentator-row-"]:last-child button[id^="moveCommentatorDown-"] {
     display: none;
 }
 
@@ -163,6 +188,20 @@ div.panel {
     margin-right: 0px !important;
     margin-bottom: 0px !important;
     max-width: initial;
+}
+
+/* Queu */
+
+button[onclick="moveSetUp(0)"] {
+    display: none;
+}
+
+#manageQueu :last-child form[id^="manageQueuForm_"] button[onclick^="moveSetDown"] {
+    display: none;
+}
+
+div[id$="_SquadPlayersContainer"] > .row, #squadPlayersContainer > .row {
+    margin-bottom: 4px;
 }
 
 /* Preview overlay */
@@ -284,14 +323,65 @@ div.panel {
 
 /* Pulsate */
 
-.danger-pulsate {
+.btn.danger-pulsate {
     box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
-    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1) !important;
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1) !important;
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1) !important;
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1) !important;
 }
 
+.btn.active.danger-pulsate {
+    box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1) !important;
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1) !important;
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1) !important;
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1) !important;
+}
+
+#newSetButton:focus > span.glyphicon.glyphicon-repeat {
+    -webkit-animation: rotate;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+
+    -moz-animation: rotate;
+    -moz-animation-duration: 0.3s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: linear;
+
+    animation: rotate;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@-moz-keyframes rotate {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+input.danger-pulsate {
+    box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1) !important;
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1) !important;
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1) !important;
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1) !important;
+}
 
 @-webkit-keyframes pulse {
     to {
@@ -324,6 +414,10 @@ div.panel {
 
 @media only screen and (min-width: 540px) and (max-width: 1217px) {
     .panelButton > text {
+        display: none !important;
+    }
+
+    form[id^="manageQueuForm_"] button > text {
         display: none !important;
     }
 }

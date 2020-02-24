@@ -133,7 +133,7 @@
                         <text class="text-center">Join the Livestream Production Manager Discord server <a href="https://discord.gg/y83D8Yp" target="_blank">here</a></text>
                     </div>
                     <div class="col-xs-4 text-right">
-                        <text class="pull-right">Version 0.5.3 - see <a href="@Url.Action("Version", "About")">version information</a></text>
+                        <text class="pull-right">Version 0.6 - see <a href="@Url.Action("Version", "About")">version information</a></text>
                     </div>
                 </div>
             </footer>
@@ -141,9 +141,11 @@
 
         <div class="snackbar" id="manageCompetitorsSnackbar"></div>
         <div class="snackbar" id="manageCommentatorsSnackbar"></div>
+        <div class="snackbar" id="manageQueuSnackbar"></div>
         <div class="snackbar" id="managerConnectedSnackbar"></div>
         <div class="snackbar" id="managerFailedToConnectSnackbar"></div>
         <div class="snackbar" id="queuSnackbar"></div>
+        <div class="snackbar" id="stingerSnackbar"></div>
         <div class="snackbar" id="ajaxErrorSnackbar"></div>
         <div class="snackbar" id="exceptionSnackbar"></div>
         <div class="snackbar" id="clientConnectedSnackbar"></div>
@@ -176,6 +178,7 @@
                 success: function (data) {
                     $("#settingsModalLabel").text(modalTitle);
                     $("#settingsModalBody").html(data);
+                    $("[data-toggle='settingTooltip']").tooltip({ placement: "top", trigger: "hover" });
                     $("#settingsModal").modal("show");
                 },
                 error: function (jqXHR, textStatus, errorThrown) {

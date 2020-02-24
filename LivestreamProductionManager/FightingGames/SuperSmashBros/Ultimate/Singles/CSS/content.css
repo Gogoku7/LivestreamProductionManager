@@ -1,41 +1,49 @@
 #player1NameText:before {
-    content: "Auto | Median4";
+    content: "TDB | Gogoku7";
 }
 
 #player1TwitterText:before {
-    content: "";
+    content: "@Gogoku7";
+}
+
+#player1TwitchText:before {
+    content: "Gogoku7";
 }
 
 #player1ScoreText:before {
-    content: "0";
-}
-
-#player1Character {
-    background-image: url('../../CharacterIcons/littlemac.png');
-}
-
-#player1Port {
-    background-image: url('../../PlayerPorts/PlayerPort2.png');
-}
-
-#player2NameText:before {
-    content: "Cinnovate | Gogoku7";
-}
-
-#player2TwitterText:before {
-    content: "";
-}
-
-#player2ScoreText:before {
     content: "1";
 }
 
+#player1Character {
+    background-image: url('../../CharacterIcons/banjokazooie.png');
+}
+
+#player1Port {
+    background-image: url('../../PlayerPorts/PlayerPort1.png');
+}
+
+#player2NameText:before {
+    content: "Crucible | Draco";
+}
+
+#player2TwitterText:before {
+    content: "@Draco";
+}
+
+#player2TwitchText:before {
+    content: "Draco";
+}
+
+#player2ScoreText:before {
+    content: "2";
+}
+
 #player2Character {
-    background-image: url('../../CharacterIcons/fox.png');
+    background-image: url('../../CharacterIcons/zerosuitsamus.png');
 }
 
 #player2Port {
-    background-image: url('../../PlayerPorts/PlayerPort1.png');
+    background-image: url('../../PlayerPorts/PlayerPort8.png');
 }
 
 #tournamentText:before {

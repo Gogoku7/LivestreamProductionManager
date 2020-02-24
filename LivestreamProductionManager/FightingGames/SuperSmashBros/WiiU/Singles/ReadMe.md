@@ -28,6 +28,8 @@ Deploying to IIS and running can be done manually or using Visual Studio tools
 - .player2Sponsor
 - #player1TwitterText
 - #player2TwitterText
+- #player1TwitchText
+- #player2TwitchText
 - #player1ScoreText
 - #player2ScoreText
 - #player1Character

@@ -64,5 +64,36 @@ namespace LivestreamProductionManager.ViewModels.FightingGames
                 }
             }
         }
+
+        /// <summary>
+        /// In order for this to work as intended, the "PathToNextSet" properties in FormatsConfig.json need to be EXACTLY formatted as "~/{Path from the root folder of the application up until the format folder}", Examples: "~/FightingGames/SuperSmashBros/Melee/SinglesNextSet/" and "~/FightingGames/SuperSmashBros/Ultimate/DoublesNextSet/"
+        /// </summary>
+        private string _pathToNextSet;
+
+        /// <summary>
+        /// In order for this to work as intended, the "PathToNextSet" properties in FormatsConfig.json need to be EXACTLY formatted as "~/{Path from the root folder of the application up until the format folder}", Examples: "~/FightingGames/SuperSmashBros/Melee/SinglesNextSet/" and "~/FightingGames/SuperSmashBros/Ultimate/DoublesNextSet/"
+        /// </summary>
+        public string PathToNextSet
+        {
+            get
+            {
+                return _pathToNextSet;
+            }
+            set
+            {
+                if (value.StartsWith("~/"))
+                {
+                    _pathToNextSet = new UrlHelper(HttpContext.Current.Request.RequestContext).Content(value);
+                }
+                else if (value.StartsWith("/"))
+                {
+                    _pathToNextSet = new UrlHelper(HttpContext.Current.Request.RequestContext).Content($"~{value}");
+                }
+                else
+                {
+                    _pathToNextSet = new UrlHelper(HttpContext.Current.Request.RequestContext).Content($"~/{value}");
+                }
+            }
+        }
     }
 }

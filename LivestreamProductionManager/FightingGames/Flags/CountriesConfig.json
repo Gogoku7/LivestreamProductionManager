@@ -1,0 +1,1030 @@
+[
+  {
+    "CountryName": "No country",
+    "CssValue": ""
+  },
+  {
+    "CountryName": "Afghanistan",
+    "CssValue": "../../../../Flags/AF.svg"
+  },
+  {
+    "CountryName": "Albania",
+    "CssValue": "../../../../Flags/AL.svg"
+  },
+  {
+    "CountryName": "Algeria",
+    "CssValue": "../../../../Flags/DZ.svg"
+  },
+  {
+    "CountryName": "American Samoa",
+    "CssValue": "../../../../Flags/AS.svg"
+  },
+  {
+    "CountryName": "Andorra",
+    "CssValue": "../../../../Flags/AD.svg"
+  },
+  {
+    "CountryName": "Angola",
+    "CssValue": "../../../../Flags/AO.svg"
+  },
+  {
+    "CountryName": "Anguilla",
+    "CssValue": "../../../../Flags/AI.svg"
+  },
+  {
+    "CountryName": "Antarctica",
+    "CssValue": "../../../../Flags/AQ.svg"
+  },
+  {
+    "CountryName": "Antigua and Barbuda",
+    "CssValue": "../../../../Flags/AG.svg"
+  },
+  {
+    "CountryName": "Argentina",
+    "CssValue": "../../../../Flags/AR.svg"
+  },
+  {
+    "CountryName": "Armenia",
+    "CssValue": "../../../../Flags/AM.svg"
+  },
+  {
+    "CountryName": "Aruba",
+    "CssValue": "../../../../Flags/AW.svg"
+  },
+  {
+    "CountryName": "Australia",
+    "CssValue": "../../../../Flags/AU.svg"
+  },
+  {
+    "CountryName": "Austria",
+    "CssValue": "../../../../Flags/AT.svg"
+  },
+  {
+    "CountryName": "Azerbaijan",
+    "CssValue": "../../../../Flags/AZ.svg"
+  },
+  {
+    "CountryName": "Bahamas",
+    "CssValue": "../../../../Flags/BS.svg"
+  },
+  {
+    "CountryName": "Bahrain",
+    "CssValue": "../../../../Flags/BH.svg"
+  },
+  {
+    "CountryName": "Bangladesh",
+    "CssValue": "../../../../Flags/BD.svg"
+  },
+  {
+    "CountryName": "Barbados",
+    "CssValue": "../../../../Flags/BB.svg"
+  },
+  {
+    "CountryName": "Belarus",
+    "CssValue": "../../../../Flags/BY.svg"
+  },
+  {
+    "CountryName": "Belgium",
+    "CssValue": "../../../../Flags/BE.svg"
+  },
+  {
+    "CountryName": "Belize",
+    "CssValue": "../../../../Flags/BZ.svg"
+  },
+  {
+    "CountryName": "Benin",
+    "CssValue": "../../../../Flags/BJ.svg"
+  },
+  {
+    "CountryName": "Bermuda",
+    "CssValue": "../../../../Flags/BM.svg"
+  },
+  {
+    "CountryName": "Bhutan",
+    "CssValue": "../../../../Flags/BT.svg"
+  },
+  {
+    "CountryName": "Bolivia, Plurinational State of",
+    "CssValue": "../../../../Flags/BO.svg"
+  },
+  {
+    "CountryName": "Bosnia and Herzegovina",
+    "CssValue": "../../../../Flags/BA.svg"
+  },
+  {
+    "CountryName": "Botswana",
+    "CssValue": "../../../../Flags/BW.svg"
+  },
+  {
+    "CountryName": "Bouvet Island",
+    "CssValue": "../../../../Flags/BV.svg"
+  },
+  {
+    "CountryName": "Brazil",
+    "CssValue": "../../../../Flags/BR.svg"
+  },
+  {
+    "CountryName": "British Indian Ocean Territory",
+    "CssValue": "../../../../Flags/IO.svg"
+  },
+  {
+    "CountryName": "Brunei Darussalam",
+    "CssValue": "../../../../Flags/BN.svg"
+  },
+  {
+    "CountryName": "Bulgaria",
+    "CssValue": "../../../../Flags/BG.svg"
+  },
+  {
+    "CountryName": "Burkina Faso",
+    "CssValue": "../../../../Flags/BF.svg"
+  },
+  {
+    "CountryName": "Burundi",
+    "CssValue": "../../../../Flags/BI.svg"
+  },
+  {
+    "CountryName": "Cambodia",
+    "CssValue": "../../../../Flags/KH.svg"
+  },
+  {
+    "CountryName": "Cameroon",
+    "CssValue": "../../../../Flags/CM.svg"
+  },
+  {
+    "CountryName": "Canada",
+    "CssValue": "../../../../Flags/CA.svg"
+  },
+  {
+    "CountryName": "Cape Verde",
+    "CssValue": "../../../../Flags/CV.svg"
+  },
+  {
+    "CountryName": "Caribbean Netherlands",
+    "CssValue": "../../../../Flags/BQ.svg"
+  },
+  {
+    "CountryName": "Cayman Islands",
+    "CssValue": "../../../../Flags/KY.svg"
+  },
+  {
+    "CountryName": "Central African Republic",
+    "CssValue": "../../../../Flags/CF.svg"
+  },
+  {
+    "CountryName": "Chad",
+    "CssValue": "../../../../Flags/TD.svg"
+  },
+  {
+    "CountryName": "Chile",
+    "CssValue": "../../../../Flags/CL.svg"
+  },
+  {
+    "CountryName": "China",
+    "CssValue": "../../../../Flags/CN.svg"
+  },
+  {
+    "CountryName": "Christmas Island",
+    "CssValue": "../../../../Flags/CX.svg"
+  },
+  {
+    "CountryName": "Cocos (Keeling) Islands",
+    "CssValue": "../../../../Flags/CC.svg"
+  },
+  {
+    "CountryName": "Colombia",
+    "CssValue": "../../../../Flags/CO.svg"
+  },
+  {
+    "CountryName": "Comoros",
+    "CssValue": "../../../../Flags/KM.svg"
+  },
+  {
+    "CountryName": "Congo",
+    "CssValue": "../../../../Flags/CG.svg"
+  },
+  {
+    "CountryName": "Congo, the Democratic Republic of the",
+    "CssValue": "../../../../Flags/CD.svg"
+  },
+  {
+    "CountryName": "Cook Islands",
+    "CssValue": "../../../../Flags/CK.svg"
+  },
+  {
+    "CountryName": "Costa Rica",
+    "CssValue": "../../../../Flags/CR.svg"
+  },
+  {
+    "CountryName": "Croatia",
+    "CssValue": "../../../../Flags/HR.svg"
+  },
+  {
+    "CountryName": "Cuba",
+    "CssValue": "../../../../Flags/CU.svg"
+  },
+  {
+    "CountryName": "Curaçao",
+    "CssValue": "../../../../Flags/CW.svg"
+  },
+  {
+    "CountryName": "Cyprus",
+    "CssValue": "../../../../Flags/CY.svg"
+  },
+  {
+    "CountryName": "Czech Republic",
+    "CssValue": "../../../../Flags/CZ.svg"
+  },
+  {
+    "CountryName": "Côte d'Ivoire",
+    "CssValue": "../../../../Flags/CI.svg"
+  },
+  {
+    "CountryName": "Denmark",
+    "CssValue": "../../../../Flags/DK.svg"
+  },
+  {
+    "CountryName": "Djibouti",
+    "CssValue": "../../../../Flags/DJ.svg"
+  },
+  {
+    "CountryName": "Dominica",
+    "CssValue": "../../../../Flags/DM.svg"
+  },
+  {
+    "CountryName": "Dominican Republic",
+    "CssValue": "../../../../Flags/DO.svg"
+  },
+  {
+    "CountryName": "Ecuador",
+    "CssValue": "../../../../Flags/EC.svg"
+  },
+  {
+    "CountryName": "Egypt",
+    "CssValue": "../../../../Flags/EG.svg"
+  },
+  {
+    "CountryName": "El Salvador",
+    "CssValue": "../../../../Flags/SV.svg"
+  },
+  {
+    "CountryName": "England",
+    "CssValue": "../../../../Flags/GB-ENG.svg"
+  },
+  {
+    "CountryName": "Equatorial Guinea",
+    "CssValue": "../../../../Flags/GQ.svg"
+  },
+  {
+    "CountryName": "Eritrea",
+    "CssValue": "../../../../Flags/ER.svg"
+  },
+  {
+    "CountryName": "Estonia",
+    "CssValue": "../../../../Flags/EE.svg"
+  },
+  {
+    "CountryName": "Ethiopia",
+    "CssValue": "../../../../Flags/ET.svg"
+  },
+  {
+    "CountryName": "Europe",
+    "CssValue": "../../../../Flags/EU.svg"
+  },
+  {
+    "CountryName": "Falkland Islands (Malvinas)",
+    "CssValue": "../../../../Flags/FK.svg"
+  },
+  {
+    "CountryName": "Faroe Islands",
+    "CssValue": "../../../../Flags/FO.svg"
+  },
+  {
+    "CountryName": "Fiji",
+    "CssValue": "../../../../Flags/FJ.svg"
+  },
+  {
+    "CountryName": "Finland",
+    "CssValue": "../../../../Flags/FI.svg"
+  },
+  {
+    "CountryName": "France",
+    "CssValue": "../../../../Flags/FR.svg"
+  },
+  {
+    "CountryName": "French Guiana",
+    "CssValue": "../../../../Flags/GF.svg"
+  },
+  {
+    "CountryName": "French Polynesia",
+    "CssValue": "../../../../Flags/PF.svg"
+  },
+  {
+    "CountryName": "French Southern Territories",
+    "CssValue": "../../../../Flags/TF.svg"
+  },
+  {
+    "CountryName": "Gabon",
+    "CssValue": "../../../../Flags/GA.svg"
+  },
+  {
+    "CountryName": "Gambia",
+    "CssValue": "../../../../Flags/GM.svg"
+  },
+  {
+    "CountryName": "Georgia",
+    "CssValue": "../../../../Flags/GE.svg"
+  },
+  {
+    "CountryName": "Germany",
+    "CssValue": "../../../../Flags/DE.svg"
+  },
+  {
+    "CountryName": "Ghana",
+    "CssValue": "../../../../Flags/GH.svg"
+  },
+  {
+    "CountryName": "Gibraltar",
+    "CssValue": "../../../../Flags/GI.svg"
+  },
+  {
+    "CountryName": "Greece",
+    "CssValue": "../../../../Flags/GR.svg"
+  },
+  {
+    "CountryName": "Greenland",
+    "CssValue": "../../../../Flags/GL.svg"
+  },
+  {
+    "CountryName": "Grenada",
+    "CssValue": "../../../../Flags/GD.svg"
+  },
+  {
+    "CountryName": "Guadeloupe",
+    "CssValue": "../../../../Flags/GP.svg"
+  },
+  {
+    "CountryName": "Guam",
+    "CssValue": "../../../../Flags/GU.svg"
+  },
+  {
+    "CountryName": "Guatemala",
+    "CssValue": "../../../../Flags/GT.svg"
+  },
+  {
+    "CountryName": "Guernsey",
+    "CssValue": "../../../../Flags/GG.svg"
+  },
+  {
+    "CountryName": "Guinea",
+    "CssValue": "../../../../Flags/GN.svg"
+  },
+  {
+    "CountryName": "Guinea-Bissau",
+    "CssValue": "../../../../Flags/GW.svg"
+  },
+  {
+    "CountryName": "Guyana",
+    "CssValue": "../../../../Flags/GY.svg"
+  },
+  {
+    "CountryName": "Haiti",
+    "CssValue": "../../../../Flags/HT.svg"
+  },
+  {
+    "CountryName": "Heard Island and McDonald Islands",
+    "CssValue": "../../../../Flags/HM.svg"
+  },
+  {
+    "CountryName": "Holy See (Vatican City State)",
+    "CssValue": "../../../../Flags/VA.svg"
+  },
+  {
+    "CountryName": "Honduras",
+    "CssValue": "../../../../Flags/HN.svg"
+  },
+  {
+    "CountryName": "Hong Kong",
+    "CssValue": "../../../../Flags/HK.svg"
+  },
+  {
+    "CountryName": "Hungary",
+    "CssValue": "../../../../Flags/HU.svg"
+  },
+  {
+    "CountryName": "Iceland",
+    "CssValue": "../../../../Flags/IS.svg"
+  },
+  {
+    "CountryName": "India",
+    "CssValue": "../../../../Flags/IN.svg"
+  },
+  {
+    "CountryName": "Indonesia",
+    "CssValue": "../../../../Flags/ID.svg"
+  },
+  {
+    "CountryName": "Iran, Islamic Republic of",
+    "CssValue": "../../../../Flags/IR.svg"
+  },
+  {
+    "CountryName": "Iraq",
+    "CssValue": "../../../../Flags/IQ.svg"
+  },
+  {
+    "CountryName": "Ireland",
+    "CssValue": "../../../../Flags/IE.svg"
+  },
+  {
+    "CountryName": "Isle of Man",
+    "CssValue": "../../../../Flags/IM.svg"
+  },
+  {
+    "CountryName": "Israel",
+    "CssValue": "../../../../Flags/IL.svg"
+  },
+  {
+    "CountryName": "Italy",
+    "CssValue": "../../../../Flags/IT.svg"
+  },
+  {
+    "CountryName": "Jamaica",
+    "CssValue": "../../../../Flags/JM.svg"
+  },
+  {
+    "CountryName": "Japan",
+    "CssValue": "../../../../Flags/JP.svg"
+  },
+  {
+    "CountryName": "Jersey",
+    "CssValue": "../../../../Flags/JE.svg"
+  },
+  {
+    "CountryName": "Jordan",
+    "CssValue": "../../../../Flags/JO.svg"
+  },
+  {
+    "CountryName": "Kazakhstan",
+    "CssValue": "../../../../Flags/KZ.svg"
+  },
+  {
+    "CountryName": "Kenya",
+    "CssValue": "../../../../Flags/KE.svg"
+  },
+  {
+    "CountryName": "Kiribati",
+    "CssValue": "../../../../Flags/KI.svg"
+  },
+  {
+    "CountryName": "Korea, Democratic People's Republic of",
+    "CssValue": "../../../../Flags/KP.svg"
+  },
+  {
+    "CountryName": "Korea, Republic of",
+    "CssValue": "../../../../Flags/KR.svg"
+  },
+  {
+    "CountryName": "Kosovo",
+    "CssValue": "../../../../Flags/XK.svg"
+  },
+  {
+    "CountryName": "Kuwait",
+    "CssValue": "../../../../Flags/KW.svg"
+  },
+  {
+    "CountryName": "Kyrgyzstan",
+    "CssValue": "../../../../Flags/KG.svg"
+  },
+  {
+    "CountryName": "Lao People's Democratic Republic",
+    "CssValue": "../../../../Flags/LA.svg"
+  },
+  {
+    "CountryName": "Latvia",
+    "CssValue": "../../../../Flags/LV.svg"
+  },
+  {
+    "CountryName": "Lebanon",
+    "CssValue": "../../../../Flags/LB.svg"
+  },
+  {
+    "CountryName": "Lesotho",
+    "CssValue": "../../../../Flags/LS.svg"
+  },
+  {
+    "CountryName": "Liberia",
+    "CssValue": "../../../../Flags/LR.svg"
+  },
+  {
+    "CountryName": "Libya",
+    "CssValue": "../../../../Flags/LY.svg"
+  },
+  {
+    "CountryName": "Liechtenstein",
+    "CssValue": "../../../../Flags/LI.svg"
+  },
+  {
+    "CountryName": "Lithuania",
+    "CssValue": "../../../../Flags/LT.svg"
+  },
+  {
+    "CountryName": "Luxembourg",
+    "CssValue": "../../../../Flags/LU.svg"
+  },
+  {
+    "CountryName": "Macao",
+    "CssValue": "../../../../Flags/MO.svg"
+  },
+  {
+    "CountryName": "Macedonia, the former Yugoslav Republic of",
+    "CssValue": "../../../../Flags/MK.svg"
+  },
+  {
+    "CountryName": "Madagascar",
+    "CssValue": "../../../../Flags/MG.svg"
+  },
+  {
+    "CountryName": "Malawi",
+    "CssValue": "../../../../Flags/MW.svg"
+  },
+  {
+    "CountryName": "Malaysia",
+    "CssValue": "../../../../Flags/MY.svg"
+  },
+  {
+    "CountryName": "Maldives",
+    "CssValue": "../../../../Flags/MV.svg"
+  },
+  {
+    "CountryName": "Mali",
+    "CssValue": "../../../../Flags/ML.svg"
+  },
+  {
+    "CountryName": "Malta",
+    "CssValue": "../../../../Flags/MT.svg"
+  },
+  {
+    "CountryName": "Marshall Islands",
+    "CssValue": "../../../../Flags/MH.svg"
+  },
+  {
+    "CountryName": "Martinique",
+    "CssValue": "../../../../Flags/MQ.svg"
+  },
+  {
+    "CountryName": "Mauritania",
+    "CssValue": "../../../../Flags/MR.svg"
+  },
+  {
+    "CountryName": "Mauritius",
+    "CssValue": "../../../../Flags/MU.svg"
+  },
+  {
+    "CountryName": "Mayotte",
+    "CssValue": "../../../../Flags/YT.svg"
+  },
+  {
+    "CountryName": "Mexico",
+    "CssValue": "../../../../Flags/MX.svg"
+  },
+  {
+    "CountryName": "Micronesia, Federated States of",
+    "CssValue": "../../../../Flags/FM.svg"
+  },
+  {
+    "CountryName": "Moldova, Republic of",
+    "CssValue": "../../../../Flags/MD.svg"
+  },
+  {
+    "CountryName": "Monaco",
+    "CssValue": "../../../../Flags/MC.svg"
+  },
+  {
+    "CountryName": "Mongolia",
+    "CssValue": "../../../../Flags/MN.svg"
+  },
+  {
+    "CountryName": "Montenegro",
+    "CssValue": "../../../../Flags/ME.svg"
+  },
+  {
+    "CountryName": "Montserrat",
+    "CssValue": "../../../../Flags/MS.svg"
+  },
+  {
+    "CountryName": "Morocco",
+    "CssValue": "../../../../Flags/MA.svg"
+  },
+  {
+    "CountryName": "Mozambique",
+    "CssValue": "../../../../Flags/MZ.svg"
+  },
+  {
+    "CountryName": "Myanmar",
+    "CssValue": "../../../../Flags/MM.svg"
+  },
+  {
+    "CountryName": "Namibia",
+    "CssValue": "../../../../Flags/NA.svg"
+  },
+  {
+    "CountryName": "Nauru",
+    "CssValue": "../../../../Flags/NR.svg"
+  },
+  {
+    "CountryName": "Nepal",
+    "CssValue": "../../../../Flags/NP.svg"
+  },
+  {
+    "CountryName": "Netherlands",
+    "CssValue": "../../../../Flags/NL.svg"
+  },
+  {
+    "CountryName": "Netherlands Antilles",
+    "CssValue": "../../../../Flags/AN.svg"
+  },
+  {
+    "CountryName": "New Caledonia",
+    "CssValue": "../../../../Flags/NC.svg"
+  },
+  {
+    "CountryName": "New Zealand",
+    "CssValue": "../../../../Flags/NZ.svg"
+  },
+  {
+    "CountryName": "Nicaragua",
+    "CssValue": "../../../../Flags/NI.svg"
+  },
+  {
+    "CountryName": "Niger",
+    "CssValue": "../../../../Flags/NE.svg"
+  },
+  {
+    "CountryName": "Nigeria",
+    "CssValue": "../../../../Flags/NG.svg"
+  },
+  {
+    "CountryName": "Niue",
+    "CssValue": "../../../../Flags/NU.svg"
+  },
+  {
+    "CountryName": "Norfolk Island",
+    "CssValue": "../../../../Flags/NF.svg"
+  },
+  {
+    "CountryName": "Northern Ireland",
+    "CssValue": "../../../../Flags/GB-NIR.svg"
+  },
+  {
+    "CountryName": "Northern Mariana Islands",
+    "CssValue": "../../../../Flags/MP.svg"
+  },
+  {
+    "CountryName": "Norway",
+    "CssValue": "../../../../Flags/NO.svg"
+  },
+  {
+    "CountryName": "Oman",
+    "CssValue": "../../../../Flags/OM.svg"
+  },
+  {
+    "CountryName": "Pakistan",
+    "CssValue": "../../../../Flags/PK.svg"
+  },
+  {
+    "CountryName": "Palau",
+    "CssValue": "../../../../Flags/PW.svg"
+  },
+  {
+    "CountryName": "Palestine",
+    "CssValue": "../../../../Flags/PS.svg"
+  },
+  {
+    "CountryName": "Panama",
+    "CssValue": "../../../../Flags/PA.svg"
+  },
+  {
+    "CountryName": "Papua New Guinea",
+    "CssValue": "../../../../Flags/PG.svg"
+  },
+  {
+    "CountryName": "Paraguay",
+    "CssValue": "../../../../Flags/PY.svg"
+  },
+  {
+    "CountryName": "Peru",
+    "CssValue": "../../../../Flags/PE.svg"
+  },
+  {
+    "CountryName": "Philippines",
+    "CssValue": "../../../../Flags/PH.svg"
+  },
+  {
+    "CountryName": "Pitcairn",
+    "CssValue": "../../../../Flags/PN.svg"
+  },
+  {
+    "CountryName": "Poland",
+    "CssValue": "../../../../Flags/PL.svg"
+  },
+  {
+    "CountryName": "Portugal",
+    "CssValue": "../../../../Flags/PT.svg"
+  },
+  {
+    "CountryName": "Puerto Rico",
+    "CssValue": "../../../../Flags/PR.svg"
+  },
+  {
+    "CountryName": "Qatar",
+    "CssValue": "../../../../Flags/QA.svg"
+  },
+  {
+    "CountryName": "Romania",
+    "CssValue": "../../../../Flags/RO.svg"
+  },
+  {
+    "CountryName": "Russian Federation",
+    "CssValue": "../../../../Flags/RU.svg"
+  },
+  {
+    "CountryName": "Rwanda",
+    "CssValue": "../../../../Flags/RW.svg"
+  },
+  {
+    "CountryName": "Réunion",
+    "CssValue": "../../../../Flags/RE.svg"
+  },
+  {
+    "CountryName": "Saint Barthélemy",
+    "CssValue": "../../../../Flags/BL.svg"
+  },
+  {
+    "CountryName": "Saint Helena, Ascension and Tristan da Cunha",
+    "CssValue": "../../../../Flags/SH.svg"
+  },
+  {
+    "CountryName": "Saint Kitts and Nevis",
+    "CssValue": "../../../../Flags/KN.svg"
+  },
+  {
+    "CountryName": "Saint Lucia",
+    "CssValue": "../../../../Flags/LC.svg"
+  },
+  {
+    "CountryName": "Saint Martin",
+    "CssValue": "../../../../Flags/MF.svg"
+  },
+  {
+    "CountryName": "Saint Pierre and Miquelon",
+    "CssValue": "../../../../Flags/PM.svg"
+  },
+  {
+    "CountryName": "Saint Vincent and the Grenadines",
+    "CssValue": "../../../../Flags/VC.svg"
+  },
+  {
+    "CountryName": "Samoa",
+    "CssValue": "../../../../Flags/WS.svg"
+  },
+  {
+    "CountryName": "San Marino",
+    "CssValue": "../../../../Flags/SM.svg"
+  },
+  {
+    "CountryName": "Sao Tome and Principe",
+    "CssValue": "../../../../Flags/ST.svg"
+  },
+  {
+    "CountryName": "Saudi Arabia",
+    "CssValue": "../../../../Flags/SA.svg"
+  },
+  {
+    "CountryName": "Scotland",
+    "CssValue": "../../../../Flags/GB-SCT.svg"
+  },
+  {
+    "CountryName": "Senegal",
+    "CssValue": "../../../../Flags/SN.svg"
+  },
+  {
+    "CountryName": "Serbia",
+    "CssValue": "../../../../Flags/RS.svg"
+  },
+  {
+    "CountryName": "Seychelles",
+    "CssValue": "../../../../Flags/SC.svg"
+  },
+  {
+    "CountryName": "Sierra Leone",
+    "CssValue": "../../../../Flags/SL.svg"
+  },
+  {
+    "CountryName": "Singapore",
+    "CssValue": "../../../../Flags/SG.svg"
+  },
+  {
+    "CountryName": "Sint Maarten (Dutch part)",
+    "CssValue": "../../../../Flags/SX.svg"
+  },
+  {
+    "CountryName": "Slovakia",
+    "CssValue": "../../../../Flags/SK.svg"
+  },
+  {
+    "CountryName": "Slovenia",
+    "CssValue": "../../../../Flags/SI.svg"
+  },
+  {
+    "CountryName": "Solomon Islands",
+    "CssValue": "../../../../Flags/SB.svg"
+  },
+  {
+    "CountryName": "Somalia",
+    "CssValue": "../../../../Flags/SO.svg"
+  },
+  {
+    "CountryName": "South Africa",
+    "CssValue": "../../../../Flags/ZA.svg"
+  },
+  {
+    "CountryName": "South Georgia and the South Sandwich Islands",
+    "CssValue": "../../../../Flags/GS.svg"
+  },
+  {
+    "CountryName": "South Sudan",
+    "CssValue": "../../../../Flags/SS.svg"
+  },
+  {
+    "CountryName": "Spain",
+    "CssValue": "../../../../Flags/ES.svg"
+  },
+  {
+    "CountryName": "Sri Lanka",
+    "CssValue": "../../../../Flags/LK.svg"
+  },
+  {
+    "CountryName": "Sudan",
+    "CssValue": "../../../../Flags/SD.svg"
+  },
+  {
+    "CountryName": "Suriname",
+    "CssValue": "../../../../Flags/SR.svg"
+  },
+  {
+    "CountryName": "Svalbard and Jan Mayen Islands",
+    "CssValue": "../../../../Flags/SJ.svg"
+  },
+  {
+    "CountryName": "Swaziland",
+    "CssValue": "../../../../Flags/SZ.svg"
+  },
+  {
+    "CountryName": "Sweden",
+    "CssValue": "../../../../Flags/SE.svg"
+  },
+  {
+    "CountryName": "Switzerland",
+    "CssValue": "../../../../Flags/CH.svg"
+  },
+  {
+    "CountryName": "Syrian Arab Republic",
+    "CssValue": "../../../../Flags/SY.svg"
+  },
+  {
+    "CountryName": "Taiwan",
+    "CssValue": "../../../../Flags/TW.svg"
+  },
+  {
+    "CountryName": "Tajikistan",
+    "CssValue": "../../../../Flags/TJ.svg"
+  },
+  {
+    "CountryName": "Tanzania, United Republic of",
+    "CssValue": "../../../../Flags/TZ.svg"
+  },
+  {
+    "CountryName": "Thailand",
+    "CssValue": "../../../../Flags/TH.svg"
+  },
+  {
+    "CountryName": "Timor-Leste",
+    "CssValue": "../../../../Flags/TL.svg"
+  },
+  {
+    "CountryName": "Togo",
+    "CssValue": "../../../../Flags/TG.svg"
+  },
+  {
+    "CountryName": "Tokelau",
+    "CssValue": "../../../../Flags/TK.svg"
+  },
+  {
+    "CountryName": "Tonga",
+    "CssValue": "../../../../Flags/TO.svg"
+  },
+  {
+    "CountryName": "Trinidad and Tobago",
+    "CssValue": "../../../../Flags/TT.svg"
+  },
+  {
+    "CountryName": "Tunisia",
+    "CssValue": "../../../../Flags/TN.svg"
+  },
+  {
+    "CountryName": "Turkey",
+    "CssValue": "../../../../Flags/TR.svg"
+  },
+  {
+    "CountryName": "Turkmenistan",
+    "CssValue": "../../../../Flags/TM.svg"
+  },
+  {
+    "CountryName": "Turks and Caicos Islands",
+    "CssValue": "../../../../Flags/TC.svg"
+  },
+  {
+    "CountryName": "Tuvalu",
+    "CssValue": "../../../../Flags/TV.svg"
+  },
+  {
+    "CountryName": "US Minor Outlying Islands",
+    "CssValue": "../../../../Flags/UM.svg"
+  },
+  {
+    "CountryName": "Uganda",
+    "CssValue": "../../../../Flags/UG.svg"
+  },
+  {
+    "CountryName": "Ukraine",
+    "CssValue": "../../../../Flags/UA.svg"
+  },
+  {
+    "CountryName": "United Arab Emirates",
+    "CssValue": "../../../../Flags/AE.svg"
+  },
+  {
+    "CountryName": "United Kingdom",
+    "CssValue": "../../../../Flags/GB.svg"
+  },
+  {
+    "CountryName": "United States",
+    "CssValue": "../../../../Flags/US.svg"
+  },
+  {
+    "CountryName": "Uruguay",
+    "CssValue": "../../../../Flags/UY.svg"
+  },
+  {
+    "CountryName": "Uzbekistan",
+    "CssValue": "../../../../Flags/UZ.svg"
+  },
+  {
+    "CountryName": "Vanuatu",
+    "CssValue": "../../../../Flags/VU.svg"
+  },
+  {
+    "CountryName": "Venezuela, Bolivarian Republic of",
+    "CssValue": "../../../../Flags/VE.svg"
+  },
+  {
+    "CountryName": "Viet Nam",
+    "CssValue": "../../../../Flags/VN.svg"
+  },
+  {
+    "CountryName": "Virgin Islands, British",
+    "CssValue": "../../../../Flags/VG.svg"
+  },
+  {
+    "CountryName": "Virgin Islands, U.S.",
+    "CssValue": "../../../../Flags/VI.svg"
+  },
+  {
+    "CountryName": "Wales",
+    "CssValue": "../../../../Flags/GB-WLS.svg"
+  },
+  {
+    "CountryName": "Wallis and Futuna Islands",
+    "CssValue": "../../../../Flags/WF.svg"
+  },
+  {
+    "CountryName": "Western Sahara",
+    "CssValue": "../../../../Flags/EH.svg"
+  },
+  {
+    "CountryName": "Yemen",
+    "CssValue": "../../../../Flags/YE.svg"
+  },
+  {
+    "CountryName": "Zambia",
+    "CssValue": "../../../../Flags/ZM.svg"
+  },
+  {
+    "CountryName": "Zimbabwe",
+    "CssValue": "../../../../Flags/ZW.svg"
+  },
+  {
+    "CountryName": "Åland Islands",
+    "CssValue": "../../../../Flags/AX.svg"
+  }
+]

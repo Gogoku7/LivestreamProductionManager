@@ -1,0 +1,203 @@
+//TODO: Add new Tekken characters
+[
+  {
+    "CharacterName": "No character",
+    "CssValue": ""
+  },
+  {
+    "CharacterName": "Akuma",
+    "CssValue": "../../CharacterIcons/akuma.png"
+  },
+  {
+    "CharacterName": "Alisa Bosconovitch",
+    "CssValue": "../../CharacterIcons/alisa.png"
+  },
+  {
+    "CharacterName": "Anna Williams",
+    "CssValue": "../../CharacterIcons/anna.png"
+  },
+  {
+    "CharacterName": "Armor King",
+    "CssValue": "../../CharacterIcons/armorking.png"
+  },
+  {
+    "CharacterName": "Asuka Kazama",
+    "CssValue": "../../CharacterIcons/asuka.png"
+  },
+  {
+    "CharacterName": "Bob Richards",
+    "CssValue": "../../CharacterIcons/bob.png"
+  },
+  {
+    "CharacterName": "Bryan Fury",
+    "CssValue": "../../CharacterIcons/bryan.png"
+  },
+  {
+    "CharacterName": "Claudio Serafino",
+    "CssValue": "../../CharacterIcons/claudio.png"
+  },
+  {
+    "CharacterName": "Devil Jin",
+    "CssValue": "../../CharacterIcons/deviljin.png"
+  },
+  {
+    "CharacterName": "Dragunov (Sergei Dragunov)",
+    "CssValue": "../../CharacterIcons/dragunov.png"
+  },
+  {
+    "CharacterName": "Eddy Gordo",
+    "CssValue": "../../CharacterIcons/eddy.png"
+  },
+  {
+    "CharacterName": "Eliza",
+    "CssValue": "../../CharacterIcons/eliza.png"
+  },
+  {
+    "CharacterName": "Fahkumram",
+    "CssValue": "../../CharacterIcons/fahkumram.png"
+  },
+  {
+    "CharacterName": "Feng Wei",
+    "CssValue": "../../CharacterIcons/feng.png"
+  },
+  {
+    "CharacterName": "Ganryu",
+    "CssValue": "../../CharacterIcons/ganryu.png"
+  },
+  {
+    "CharacterName": "Geese Howard",
+    "CssValue": "../../CharacterIcons/geese.png"
+  },
+  {
+    "CharacterName": "Gigas",
+    "CssValue": "../../CharacterIcons/gigas.png"
+  },
+  {
+    "CharacterName": "Heihachi Mishima",
+    "CssValue": "../../CharacterIcons/heihachi.png"
+  },
+  {
+    "CharacterName": "Hwoarang",
+    "CssValue": "../../CharacterIcons/hwoarang.png"
+  },
+  {
+    "CharacterName": "Jack-7",
+    "CssValue": "../../CharacterIcons/jack7.png"
+  },
+  {
+    "CharacterName": "Jin Kazama",
+    "CssValue": "../../CharacterIcons/jin.png"
+  },
+  {
+    "CharacterName": "Josie",
+    "CssValue": "../../CharacterIcons/josie.png"
+  },
+  {
+    "CharacterName": "Julia Chang",
+    "CssValue": "../../CharacterIcons/julia.png"
+  },
+  {
+    "CharacterName": "Katarina Alves",
+    "CssValue": "../../CharacterIcons/katarina.png"
+  },
+  {
+    "CharacterName": "Kazumi Mishima",
+    "CssValue": "../../CharacterIcons/kazumi.png"
+  },
+  {
+    "CharacterName": "Kazuya Mishima",
+    "CssValue": "../../CharacterIcons/kazuya.png"
+  },
+  {
+    "CharacterName": "King II",
+    "CssValue": "../../CharacterIcons/king.png"
+  },
+  {
+    "CharacterName": "Kuma II",
+    "CssValue": "../../CharacterIcons/kuma.png"
+  },
+  {
+    "CharacterName": "Lars Alexandersson",
+    "CssValue": "../../CharacterIcons/lars.png"
+  },
+  {
+    "CharacterName": "Law Marshall",
+    "CssValue": "../../CharacterIcons/law.png"
+  },
+  {
+    "CharacterName": "Lee Chaolan",
+    "CssValue": "../../CharacterIcons/lee.png"
+  },
+  {
+    "CharacterName": "Lei Wulong",
+    "CssValue": "../../CharacterIcons/lei.png"
+  },
+  {
+    "CharacterName": "Leo Kliesen",
+    "CssValue": "../../CharacterIcons/leo.png"
+  },
+  {
+    "CharacterName": "Leroy Smith",
+    "CssValue": "../../CharacterIcons/leroy.png"
+  },
+  {
+    "CharacterName": "Lili De Rochefort",
+    "CssValue": "../../CharacterIcons/iceclimbers.png"
+  },
+  {
+    "CharacterName": "Ling Xiaoyu",
+    "CssValue": "../../CharacterIcons/ling.png"
+  },
+  {
+    "CharacterName": "Lucky Chloe",
+    "CssValue": "../../CharacterIcons/luckychloe.png"
+  },
+  {
+    "CharacterName": "Marduk Craig",
+    "CssValue": "../../CharacterIcons/marduk.png"
+  },
+  {
+    "CharacterName": "Master Raven",
+    "CssValue": "../../CharacterIcons/masterraven.png"
+  },
+  {
+    "CharacterName": "Miguel Caballero Rojo",
+    "CssValue": "../../CharacterIcons/miguel.png"
+  },
+  {
+    "CharacterName": "Negan",
+    "CssValue": "../../CharacterIcons/negan.png"
+  },
+  {
+    "CharacterName": "Nina Williams",
+    "CssValue": "../../CharacterIcons/nina.png"
+  },
+  {
+    "CharacterName": "Noctis Lucis Caelum",
+    "CssValue": "../../CharacterIcons/noctis.png"
+  },
+  {
+    "CharacterName": "Panda",
+    "CssValue": "../../CharacterIcons/panda.png"
+  },
+  {
+    "CharacterName": "Paul Phoenix",
+    "CssValue": "../../CharacterIcons/paul.png"
+  },
+  {
+    "CharacterName": "Shaheen",
+    "CssValue": "../../CharacterIcons/shaheen.png"
+  },
+  {
+    "CharacterName": "Steve Fox",
+    "CssValue": "../../CharacterIcons/steve.png"
+  },
+  {
+    "CharacterName": "Yoshimitsu",
+    "CssValue": "../../CharacterIcons/yoshimitsu.png"
+  },
+  {
+    "CharacterName": "Zafina",
+    "CssValue": "../../CharacterIcons/zafina.png"
+  }
+]

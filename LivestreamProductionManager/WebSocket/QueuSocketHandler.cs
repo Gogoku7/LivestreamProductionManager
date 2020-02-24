@@ -1,12 +1,11 @@
 ﻿using Microsoft.Web.WebSockets;
-using Newtonsoft.Json;
 using Serilog;
 
 namespace LivestreamProductionManager.WebSockets
 {
     public class QueuSocketHandler : WebSocketHandler
     {
-        private static WebSocketCollection _clients = new WebSocketCollection();
+        private static readonly WebSocketCollection _clients = new WebSocketCollection();
 
         public override void OnOpen()
         {
@@ -15,7 +14,7 @@ namespace LivestreamProductionManager.WebSockets
 
         public override void OnMessage(string queuData)
         {
-            Log.Information($"Data sent through the WebSocket: { JsonConvert.SerializeObject(queuData) }");
+            Log.Information($"Data sent through the WebSocket: { queuData.Replace("\\", "") }");
 
             _clients.Broadcast(queuData);
         }

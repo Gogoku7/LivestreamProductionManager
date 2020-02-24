@@ -1,0 +1,191 @@
+﻿@using System.Text;
+@model LivestreamProductionManager.ViewModels.FightingGames.TraditionalFG.TraditionalFGBaseViewModel
+
+@{
+    var characterOptionsStringBuilder = new StringBuilder();
+    foreach (var character in Model.Characters)
+    {
+        characterOptionsStringBuilder.AppendLine($"<option value='{character.CssValue}' data-name='{character.CharacterName}'>{character.CharacterName}</option>");
+    }
+
+    var countryOptionsStringBuilder = new StringBuilder();
+    foreach (var character in Model.Countries)
+    {
+        countryOptionsStringBuilder.AppendLine($"<option value='{character.CssValue}'>{character.CountryName}</option>");
+    }
+
+    Layout = null;
+}
+
+<form action="@Url.Action("UpdateSingles", "TraditionalFG")"
+      method="post"
+      id="manageCompetitorsForm"
+      data-overlay-type="Game"
+      data-websocket-data-monitor-id="#competitorsWebSocketDataMonitor"
+      data-css-monitor-url="@Url.Action("GetCssFileContent", "FightingGames")"
+      data-css-monitor-id="#competitorsCssMonitor"
+      data-json-monitor-url="@Url.Action("GetJsonFileContent", "FightingGames")"
+      data-json-monitor-id="#competitorsJsonMonitor"
+      data-overlay-preview-id="#competitorsPreviewOverlayIframe"
+      data-snackbar-id="#manageCompetitorsSnackbar">
+
+    <input type="hidden" id="characterOptions" value="@Html.Raw(characterOptionsStringBuilder.ToString())" />
+    <input type="hidden" id="nextSetUrl" value="@Url.Action("GetNextSet", "TraditionalFG")" />
+
+    <input type="hidden" name="Tournament" value="" data-selector="#tournamentText" />
+    <input type="hidden" name="Round" value="" data-selector="#roundText" />
+    <input type="hidden" name="BestOf" value="" data-selector="#bestOfText" />
+    <input type="hidden" name="Extra" value="" data-selector="#extraText" />
+    <input type="hidden" name="Series" value="@Model.Series" />
+    <input type="hidden" name="Game" value="@Model.Game" />
+    <input type="hidden" name="Format" value="@Model.Format" />
+    <input type="hidden" name="PathToSeries" value="@Model.PathToSeries" />
+    <input type="hidden" name="PathToGame" value="@Model.PathToGame" />
+    <input type="hidden" name="PathToFormat" value="@Model.PathToFormat" />
+
+    <div class="row">
+        <div class="col-xs-6 text-center">
+            <label>Player 1</label>
+        </div>
+        <div class="col-xs-6  text-center">
+            <label>Player 2</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 text-center">
+            <label>Name</label>
+            <input type="text" class="form-control" name="Player1.Name" id="player1Name" data-selector="#player1NameText" data-side="1" data-opposite-id="#player2Name" data-default="-" data-newset-highlight="True" data-newset-default="" />
+        </div>
+        <div class="col-xs-6 text-center">
+            <label>Name</label>
+            <input type="text" class="form-control" name="Player2.Name" id="player2Name" data-selector="#player2NameText" data-side="2" data-opposite-id="#player1Name" data-default="-" data-newset-highlight="True" data-newset-default="" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 text-center">
+            <label>Sponsor (acr)</label>
+            <input type="text" class="form-control" name="Player1.Sponsor" id="player1Sponsor" data-selector=".player1Sponsor" data-side="1" data-opposite-id="#player2Sponsor" data-default="" data-newset-highlight="False" data-newset-default="" />
+        </div>
+        <div class="col-xs-6 text-center">
+            <label>Sponsor (acr)</label>
+            <input type="text" class="form-control" name="Player2.Sponsor" id="player2Sponsor" data-selector=".player2Sponsor" data-side="2" data-opposite-id="#player1Sponsor" data-default="" data-newset-highlight="False" data-newset-default="" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 text-center">
+            <label>Twitter</label>
+            <input type="text" class="form-control" name="Player1.Twitter" id="player1Twitter" data-selector="#player1TwitterText" data-side="1" data-opposite-id="#player2Twitter" data-default="" data-newset-highlight="False" data-newset-default="" />
+        </div>
+        <div class="col-xs-6 text-center">
+            <label>Twitter</label>
+            <input type="text" class="form-control" name="Player2.Twitter" id="player2Twitter" data-selector="#player2TwitterText" data-side="2" data-opposite-id="#player1Twitter" data-default="" data-newset-highlight="False" data-newset-default="" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 text-center">
+            <label>Twitch</label>
+            <input type="text" class="form-control" name="Player1.Twitch" id="player1Twitch" data-selector="#player1TwitchText" data-side="1" data-opposite-id="#player2Twitch" data-default="" data-newset-highlight="False" data-newset-default="" />
+        </div>
+        <div class="col-xs-6 text-center">
+            <label>Twitch</label>
+            <input type="text" class="form-control" name="Player2.Twitch" id="player2Twitch" data-selector="#player2TwitchText" data-side="2" data-opposite-id="#player1Twitch" data-default="" data-newset-highlight="False" data-newset-default="" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 text-center">
+            <label>Score</label>
+        </div>
+        <div class="col-xs-6 text-center">
+            <label>Score</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-2 text-right">
+                    <button class="btn btn-danger decrease" type="button" data-id="#player1Score"><span style="font-weight: bold;" class="glypicon glyphicon-minus"></span></button>
+                </div>
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" name="Player1.Score" id="player1Score" data-selector="#player1ScoreText" data-side="1" data-opposite-id="#player2Score" data-default="0" data-newset-highlight="False" data-newset-default="0" value="0" />
+                </div>
+                <div class="col-xs-2">
+                    <button class="btn btn-primary increase" type="button" data-id="#player1Score"><span style="font-weight: bold;" class="glypicon glyphicon-plus"></span></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-2 text-right">
+                    <button class="btn btn-danger decrease" type="button" data-id="#player2Score"><span style="font-weight: bold;" class="glypicon glyphicon-minus"></span></button>
+                </div>
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" name="Player2.Score" id="player2Score" data-selector="#player2ScoreText" data-side="2" data-opposite-id="#player1Score" data-default="0" data-newset-highlight="False" data-newset-default="0" value="0" />
+                </div>
+                <div class="col-xs-2">
+                    <button class="btn btn-primary increase" type="button" data-id="#player2Score"><span style="font-weight: bold;" class="glypicon glyphicon-plus"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 text-center">
+            <label>Character</label>
+        </div>
+        <div class="col-xs-6 text-center">
+            <label>Character</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 text-center">
+            <select class="form-control" name="Player1.Character" id="player1Character" data-selector="#player1Character" data-side="1" data-opposite-id="#player2Character" data-default="" data-newset-highlight="False" data-newset-default="">
+                <option value="" selected disabled hidden>Choose character</option>
+                @Html.Raw(characterOptionsStringBuilder.ToString())
+            </select>
+        </div>
+        <div class="col-xs-6 text-center">
+            <select class="form-control" name="Player2.Character" id="player2Character" data-selector="#player2Character" data-side="2" data-opposite-id="#player1Character" data-default="" data-newset-highlight="False" data-newset-default="">
+                <option value="" selected disabled hidden>Choose character</option>
+                @Html.Raw(characterOptionsStringBuilder.ToString())
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 text-center">
+            <label>Country</label>
+        </div>
+        <div class="col-xs-6 text-center">
+            <label>Country</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 text-center">
+            <div class="row">
+                <div class="col-xs-12">
+                    <select class="form-control" name="Player1.Country" id="player1Country" data-selector="#player1Country" data-side="1" data-opposite-id="#player2Country" data-default="">
+                        <option value="" selected disabled hidden>Choose country</option>
+                        @Html.Raw(countryOptionsStringBuilder.ToString())
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 text-center">
+            <div class="row">
+                <div class="col-xs-12">
+                    <select class="form-control" name="Player2.Country" id="player2Country" data-selector="#player2Country" data-side="2" data-opposite-id="#player1Country" data-default="">
+                        <option value="" selected disabled hidden>Choose country</option>
+                        @Html.Raw(countryOptionsStringBuilder.ToString())
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

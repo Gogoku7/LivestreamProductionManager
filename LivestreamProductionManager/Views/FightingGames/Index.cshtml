@@ -8,14 +8,14 @@
         <div class="panel panel-info">
             <div class="panel-heading row">
                 <div class="col-xs-4">
-                    <button class="btn btn-danger panelButton" id="clearWebSocketClientMonitorButton"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
+                    <button class="btn btn-danger panelButton" id="clearWebSocketClientMonitorButton" data-toggle="buttonTooltip" title="Clear the WebSocket clients monitor"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
                 </div>
                 <div class="col-xs-4 text-center">
                     <text class="panel-title">WebSocket clients monitor</text>
                 </div>
 
                 <div class="col-xs-4 text-right">
-                    <button class="btn btn-success panelButton toggleMonitorButton" id="toggleWebSocketClientMonitorButton" data-monitor-id="#webSocketClientMonitorTableBody"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
+                    <button class="btn btn-success panelButton toggleMonitorButton" id="toggleWebSocketClientMonitorButton" data-monitor-id="#webSocketClientMonitorTableBody" data-toggle="buttonTooltip" title="Toggle the WebSocket clients monitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
                 </div>
             </div>
             <div class="panel-body monitorPanelBody" style="overflow-y:scroll;">
@@ -39,14 +39,14 @@
         <div class="panel panel-info">
             <div class="panel-heading row">
                 <div class="col-xs-5">
-                    <button class="btn btn-danger panelButton" id="clearErrorMonitorButton"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
+                    <button class="btn btn-danger panelButton" id="clearErrorMonitorButton" data-toggle="buttonTooltip" title="Clear the Error monitor"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
                 </div>
                 <div class="col-xs-2 text-center">
                     <text class="panel-title">Error monitor</text>
                 </div>
 
                 <div class="col-xs-5 text-right">
-                    <button class="btn btn-success panelButton toggleMonitorButton" id="toggleErrorMonitorButton" data-monitor-id="#errorMonitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
+                    <button class="btn btn-success panelButton toggleMonitorButton" id="toggleErrorMonitorButton" data-monitor-id="#errorMonitor" data-toggle="buttonTooltip" title="Toggle the Error monitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
                 </div>
             </div>
             <div class="panel-body monitorPanelBody">
@@ -61,13 +61,14 @@
     <div class="full-horizontal-width">
         <div class="panel panel-warning">
             <div class="panel-heading row">
-                <div class="col-xs-5 text-center">
+                <div class="col-xs-5">
+                    <button class="btn btn-danger panelButton playStingerAnimationButton" id="playDefaultStingerAnimationButton" data-toggle="buttonTooltip" title="Replay the default stinger animation"><span class="glyphicon glyphicon-play"></span><text> Default stinger</text></button>
                 </div>
                 <div class="col-xs-2 text-center">
                     <text class="panel-title">Manage tournament</text>
                 </div>
                 <div class="col-xs-5 text-right">
-                    <button class="btn btn-danger panelButton toggleFocusButton" id="toggleTournamentFocus" data-topic="Tournament" data-enabled="False"><span class="glyphicon glyphicon-eye-close"></span><text> Focus</text></button>
+                    <button class="btn btn-danger panelButton toggleFocusButton" id="toggleTournamentFocus" data-topic="Tournament" data-enabled="False" data-toggle="buttonTooltip" title="Toggle Focus on Tournament"><span class="glyphicon glyphicon-eye-close"></span><text> Focus</text></button>
                 </div>
             </div>
             <div class="panel-body" id="manageTournament">
@@ -78,11 +79,11 @@
                     </div>
                     <div class="col-xs-3 form-group">
                         <label>Round</label>
-                        <input type="text" class="form-control" id="round" />
+                        <input type="text" class="form-control" id="round" data-newset-highlight="True" />
                     </div>
                     <div class="col-xs-3 form-group">
                         <label>Best of</label>
-                        <input type="text" class="form-control" id="bestOf" />
+                        <input type="text" class="form-control" id="bestOf" data-newset-highlight="True" />
                     </div>
                     <div class="col-xs-3 form-group">
                         <label>Extra</label>
@@ -111,13 +112,44 @@
     </div>
 </div>
 
+<div class="row panelRow" id="manageQueuRow">
+    <!--Manage Queu-->
+    <div class="full-horizontal-width">
+        <div class="panel panel-warning">
+            <div class="panel-heading row">
+                <div class="col-xs-5 text-center">
+                </div>
+                <div class="col-xs-2 text-center">
+                    <text class="panel-title">Manage queu</text>
+                </div>
+                <div class="col-xs-5 text-right">
+                    <button class="btn btn-info panelButton" id="addSetButton" data-toggle="buttonTooltip" title="Add a new Set"><span style="font-weight: bold;" class="glypicon glyphicon-plus"></span><text> Add</text></button>
+                </div>
+            </div>
+            <div class="panel-body" id="manageQueu">
+
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="row panelRow" id="manageCompetitorsRow">
     <!--Manage Competitors-->
     <div class="full-horizontal-width">
         <div class="panel panel-primary">
             <div class="panel-heading row">
                 <div class="col-xs-5">
-                    <button class="btn btn-success panelButton submitButton" id="submitCompetitorsButton" data-form-id="#manageCompetitorsForm"><span class="glyphicon glyphicon-arrow-up"></span><text> Update</text></button>
+                    <div class="row">
+                        <div class="col-xs-6 text-left">
+                            <button class="btn btn-success panelButton submitButton" id="submitCompetitorsButton" data-form-id="#manageCompetitorsForm" data-toggle="buttonTooltip" title="Submit an update"><span class="glyphicon glyphicon-arrow-up"></span><text> Update</text></button>
+                        </div>
+
+                        <div class="col-xs-6 text-right">
+                            <button class="btn btn-danger panelButton" id="newSetButton" data-toggle="buttonTooltip" title="Start a new Set"><span class="glyphicon glyphicon-repeat"></span><text> New Set</text></button>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="col-xs-2 text-center">
@@ -125,11 +157,11 @@
                 </div>
 
                 <div class="col-xs-5 text-right">
-                    <button class="btn btn-danger panelButton toggleFocusButton" id="toggleCompetitorsFocus" data-topic="Competitors" data-enabled="False"><span class="glyphicon glyphicon-eye-close"></span><text> Focus</text></button>
-                    <button class="btn btn-danger panelButton showReadMeModalButton" id="showCompetitorsReadMeModalButton" data-form-id="#manageCompetitorsForm"><span class="glyphicon glyphicon-question-sign"></span><text> Info</text></button>
-                    <button class="btn btn-default panelButton" id="setToDefaultValuesButton"><span class="glyphicon glyphicon-erase"></span><text> Defaults</text></button>
-                    <button class="btn btn-warning panelButton" id="getLatestCompetitorsValuesButton"><span class="glyphicon glyphicon-download-alt"></span><text> Get latest</text></button>
-                    <button class="btn btn-info panelButton" id="switchCompetitorsButton"><span class="glyphicon glyphicon-refresh"></span><text> Switch</text></button>
+                    <button class="btn btn-danger panelButton toggleFocusButton" id="toggleCompetitorsFocus" data-topic="Competitors" data-enabled="False" data-toggle="buttonTooltip" title="Toggle Focus on Competitors"><span class="glyphicon glyphicon-eye-close"></span><text> Focus</text></button>
+                    <button class="btn btn-danger panelButton showReadMeModalButton" id="showCompetitorsReadMeModalButton" data-form-id="#manageCompetitorsForm" data-toggle="buttonTooltip" title="Show info about default overlay"><span class="glyphicon glyphicon-question-sign"></span><text> Info</text></button>
+                    <button class="btn btn-default panelButton" id="setToDefaultValuesButton" data-toggle="buttonTooltip" title="Reset to defaults (depricating soon)"><span class="glyphicon glyphicon-erase"></span><text> Defaults</text></button>
+                    <button class="btn btn-warning panelButton" id="getLatestCompetitorsValuesButton" data-toggle="buttonTooltip" title="Get the latest values"><span class="glyphicon glyphicon-download-alt"></span><text> Get latest</text></button>
+                    <button class="btn btn-info panelButton" id="switchCompetitorsButton" data-toggle="buttonTooltip" title="Switch Competitors"><span class="glyphicon glyphicon-refresh"></span><text> Switch</text></button>
                 </div>
             </div>
             <div class="panel-body" id="manageCompetitors">
@@ -147,14 +179,14 @@
         <div class="panel panel-primary">
             <div class="panel-heading row">
                 <div class="col-xs-3">
-                    <button class="btn btn-danger panelButton clearWebSocketDataMonitorButton" id="clearCompetitorsWebSocketDataMonitorButton" data-monitor-id="#competitorsWebSocketDataMonitor"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
+                    <button class="btn btn-danger panelButton clearWebSocketDataMonitorButton" id="clearCompetitorsWebSocketDataMonitorButton" data-monitor-id="#competitorsWebSocketDataMonitor" data-toggle="buttonTooltip" title="Clear the Competitors data monitor"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
                 </div>
                 <div class="col-xs-6 text-center">
                     <text class="panel-title">Competitors data monitor</text>
                 </div>
 
                 <div class="col-xs-3 text-right">
-                    <button class="btn btn-success panelButton toggleMonitorButton toggleWebSocketDataMonitorButton" id="toggleCompetitorsWebSocketDataMonitorButton" data-monitor-id="#competitorsWebSocketDataMonitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
+                    <button class="btn btn-success panelButton toggleMonitorButton toggleWebSocketDataMonitorButton" id="toggleCompetitorsWebSocketDataMonitorButton" data-monitor-id="#competitorsWebSocketDataMonitor" data-toggle="buttonTooltip" title="Toggle the Competitors data monitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
                 </div>                    
             </div>
             <div class="panel-body monitorPanelBody">
@@ -172,14 +204,14 @@
         <div class="panel panel-primary">
             <div class="panel-heading row">
                 <div class="col-xs-3">
-                    <button class="btn btn-danger panelButton clearCssMonitorButton" id="clearCompetitorsCssMonitorButton" data-monitor-id="#competitorsCssMonitor"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
+                    <button class="btn btn-danger panelButton clearCssMonitorButton" id="clearCompetitorsCssMonitorButton" data-monitor-id="#competitorsCssMonitor" data-toggle="buttonTooltip" title="Clear the Competitors CSS monitor"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
                 </div>
                 <div class="col-xs-6 text-center">
                     <text class="panel-title">Competitors CSS monitor</text>
                 </div>
 
                 <div class="col-xs-3 text-right">
-                    <button class="btn btn-success panelButton toggleMonitorButton toggleCssMonitorButton" id="toggleCompetitorsCssMonitorButton" data-monitor-id="#competitorsCssMonitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
+                    <button class="btn btn-success panelButton toggleMonitorButton toggleCssMonitorButton" id="toggleCompetitorsCssMonitorButton" data-monitor-id="#competitorsCssMonitor" data-toggle="buttonTooltip" title="Toggle the Competitors CSS monitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
                 </div>
             </div>
             <div class="panel-body monitorPanelBody">
@@ -197,14 +229,14 @@
         <div class="panel panel-primary">
             <div class="panel-heading row">
                 <div class="col-xs-3">
-                    <button class="btn btn-danger panelButton clearJsonMonitorButton" id="clearCompetitorsJsonMonitorButton" data-monitor-id="#competitorsJsonMonitor"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
+                    <button class="btn btn-danger panelButton clearJsonMonitorButton" id="clearCompetitorsJsonMonitorButton" data-monitor-id="#competitorsJsonMonitor" data-toggle="buttonTooltip" title="Clear the Competitors JSON monitor"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
                 </div>
                 <div class="col-xs-6 text-center">
                     <text class="panel-title">Competitors JSON monitor</text>
                 </div>
 
                 <div class="col-xs-3 text-right">
-                    <button class="btn btn-success panelButton toggleMonitorButton toggleJsonMonitorButton" id="toggleCompetitorsJsonMonitorButton" data-monitor-id="#competitorsJsonMonitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
+                    <button class="btn btn-success panelButton toggleMonitorButton toggleJsonMonitorButton" id="toggleCompetitorsJsonMonitorButton" data-monitor-id="#competitorsJsonMonitor" data-toggle="buttonTooltip" title="Toggle the Competitors JSON monitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
                 </div>
             </div>
             <div class="panel-body monitorPanelBody">
@@ -224,14 +256,14 @@
         <div class="panel panel-primary">
             <div class="panel-heading row">
                 <div class="col-xs-5">
-                    <button class="btn btn-danger panelButton forceResizeButton" id="forceCompetitorsResizeButton"><span class="glyphicon glyphicon-resize-full"></span><text> Force resize</text></button>
+                    <button class="btn btn-danger panelButton forceResizeButton" id="forceCompetitorsResizeButton" data-toggle="buttonTooltip" title="Force the connected overlay(s) to resize their Fitty elements"><span class="glyphicon glyphicon-resize-full"></span><text> Force resize</text></button>
                 </div>
                 <div class="col-xs-2 text-center">
                     <text class="panel-title">Preview Competitors overlay</text>
                 </div>
 
                 <div class="col-xs-5 text-right">
-                    <button class="btn btn-success panelButton togglePreviewOverlayButton" id="toggleCompetitorsPreviewOverlayButton" data-preview-id="#competitorsPreviewOverlayIframe" data-panel-id="#competitorsPreviewOverlay" data-overlay-type="Game"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
+                    <button class="btn btn-success panelButton togglePreviewOverlayButton" id="toggleCompetitorsPreviewOverlayButton" data-preview-id="#competitorsPreviewOverlayIframe" data-panel-id="#competitorsPreviewOverlay" data-overlay-type="Game" data-toggle="buttonTooltip" title="Toggle the preview Competitors overlay"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
                 </div>
             </div>
             <div class="panel-body previewEnabled previewOverlayPanelBody" id="competitorsPreviewOverlay">
@@ -247,16 +279,16 @@
         <div class="panel panel-success">
             <div class="panel-heading row">
                 <div class="col-xs-5">
-                    <button class="btn btn-success panelButton submitButton" id="submitCommentatorsButton" data-form-id="#manageCommentatorsForm"><span class="glyphicon glyphicon-arrow-up"></span><text> Update</text></button>
+                    <button class="btn btn-success panelButton submitButton" id="submitCommentatorsButton" data-form-id="#manageCommentatorsForm" data-toggle="buttonTooltip" title="Submit an update"><span class="glyphicon glyphicon-arrow-up"></span><text> Update</text></button>
                 </div>
                 <div class="col-xs-2 text-center">
                     <text class="panel-title">Manage commentators</text>
                 </div>
 
                 <div class="col-xs-5 text-right">
-                    <button class="btn btn-danger panelButton toggleFocusButton" id="toggleCommentatorsFocus" data-topic="Commentators" data-enabled="False"><span class="glyphicon glyphicon-eye-close"></span><text> Focus</text></button>
-                    <button class="btn btn-danger panelButton showReadMeModalButton" id="showCommentatorsReadMeModalButton" data-form-id="#manageCommentatorsForm"><span class="glyphicon glyphicon-question-sign"></span><text> Info</text></button>
-                    <button class="btn btn-info panelButton" id="addCommentatorButton"><span style="font-weight: bold;" class="glypicon glyphicon-plus"></span><text> Add</text></button>
+                    <button class="btn btn-danger panelButton toggleFocusButton" id="toggleCommentatorsFocus" data-topic="Commentators" data-enabled="False" data-toggle="buttonTooltip" title="Toggle Focus on Commentators"><span class="glyphicon glyphicon-eye-close"></span><text> Focus</text></button>
+                    <button class="btn btn-danger panelButton showReadMeModalButton" id="showCommentatorsReadMeModalButton" data-form-id="#manageCommentatorsForm" data-toggle="buttonTooltip" title="Show info about default overlay"><span class="glyphicon glyphicon-question-sign"></span><text> Info</text></button>
+                    <button class="btn btn-info panelButton" id="addCommentatorButton" data-toggle="buttonTooltip" title="Add a new Commentator"><span style="font-weight: bold;" class="glypicon glyphicon-plus"></span><text> Add</text></button>
                 </div>
             </div>
             <div class="panel-body" id="manageCommentators">
@@ -299,14 +331,14 @@
         <div class="panel panel-success">
             <div class="panel-heading row">
                 <div class="col-xs-3">
-                    <button class="btn btn-danger panelButton clearWebSocketDataMonitorButton" id="clearCommentatorsWebSocketDataMonitorButton" data-monitor-id="#commentatorsWebSocketDataMonitor"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
+                    <button class="btn btn-danger panelButton clearWebSocketDataMonitorButton" id="clearCommentatorsWebSocketDataMonitorButton" data-monitor-id="#commentatorsWebSocketDataMonitor" data-toggle="buttonTooltip" title="Clear the Commentators data monitor"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
                 </div>
                 <div class="col-xs-6 text-center">
                     <text class="panel-title">Commentators data monitor</text>
                 </div>
 
                 <div class="col-xs-3 text-right">
-                    <button class="btn btn-success panelButton toggleMonitorButton toggleWebSocketDataMonitorButton" id="toggleCommentatorsWebSocketDataMonitorButton" data-monitor-id="#commentatorsWebSocketDataMonitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
+                    <button class="btn btn-success panelButton toggleMonitorButton toggleWebSocketDataMonitorButton" id="toggleCommentatorsWebSocketDataMonitorButton" data-monitor-id="#commentatorsWebSocketDataMonitor" data-toggle="buttonTooltip" title="Toggle the Commentators data monitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
                 </div>
             </div>
             <div class="panel-body monitorPanelBody">
@@ -324,14 +356,14 @@
         <div class="panel panel-success">
             <div class="panel-heading row">
                 <div class="col-xs-3">
-                    <button class="btn btn-danger panelButton clearCssMonitorButton" id="clearCommentatorsCssMonitorButton" data-monitor-id="#commentatorsCssMonitor"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
+                    <button class="btn btn-danger panelButton clearCssMonitorButton" id="clearCommentatorsCssMonitorButton" data-monitor-id="#commentatorsCssMonitor" data-toggle="buttonTooltip" title="Clear the Commentators CSS monitor"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
                 </div>
                 <div class="col-xs-6 text-center">
                     <text class="panel-title">Commentators CSS monitor</text>
                 </div>
 
                 <div class="col-xs-3 text-right">
-                    <button class="btn btn-success panelButton toggleMonitorButton toggleCssMonitorButton" id="toggleCommentatorsCssMonitorButton" data-monitor-id="#commentatorsCssMonitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
+                    <button class="btn btn-success panelButton toggleMonitorButton toggleCssMonitorButton" id="toggleCommentatorsCssMonitorButton" data-monitor-id="#commentatorsCssMonitor" data-toggle="buttonTooltip" title="Toggle the Commentators CSS monitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
                 </div>
             </div>
             <div class="panel-body monitorPanelBody">
@@ -349,14 +381,14 @@
         <div class="panel panel-success">
             <div class="panel-heading row">
                 <div class="col-xs-3">
-                    <button class="btn btn-danger panelButton clearJsonMonitorButton" id="clearCommentatorsJsonMonitorButton" data-monitor-id="#commentatorsJsonMonitor"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
+                    <button class="btn btn-danger panelButton clearJsonMonitorButton" id="clearCommentatorsJsonMonitorButton" data-monitor-id="#commentatorsJsonMonitor" data-toggle="buttonTooltip" title="Clear the Commentators JSON monitor"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
                 </div>
                 <div class="col-xs-6 text-center">
                     <text class="panel-title">Commentators JSON monitor</text>
                 </div>
 
                 <div class="col-xs-3 text-right">
-                    <button class="btn btn-success panelButton toggleMonitorButton toggleJsonMonitorButton" id="toggleCommentatorsJsonMonitorButton" data-monitor-id="#commentatorsJsonMonitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
+                    <button class="btn btn-success panelButton toggleMonitorButton toggleJsonMonitorButton" id="toggleCommentatorsJsonMonitorButton" data-monitor-id="#commentatorsJsonMonitor" data-toggle="buttonTooltip" title="Toggle the Commentators JSON monitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
                 </div>
             </div>
             <div class="panel-body monitorPanelBody">
@@ -376,14 +408,14 @@
         <div class="panel panel-success">
             <div class="panel-heading row">
                 <div class="col-xs-5">
-                    <button class="btn btn-danger panelButton forceResizeButton" id="forceCommentatorsResizeButton"><span class="glyphicon glyphicon-resize-full"></span><text> Force resize</text></button>
+                    <button class="btn btn-danger panelButton forceResizeButton" id="forceCommentatorsResizeButton" data-toggle="buttonTooltip" title="Force the connected overlay(s) to resize their Fitty elements"><span class="glyphicon glyphicon-resize-full"></span><text> Force resize</text></button>
                 </div>
                 <div class="col-xs-2 text-center">
                     <text class="panel-title">Preview Commentators overlay</text>
                 </div>
 
                 <div class="col-xs-5 text-right">
-                    <button class="btn btn-success panelButton togglePreviewOverlayButton" id="toggleCommentatorsPreviewOverlayButton" data-preview-id="#commentatorsPreviewOverlayIframe" data-panel-id="#commentatorsPreviewOverlay" data-overlay-type="Commentary"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
+                    <button class="btn btn-success panelButton togglePreviewOverlayButton" id="toggleCommentatorsPreviewOverlayButton" data-preview-id="#commentatorsPreviewOverlayIframe" data-panel-id="#commentatorsPreviewOverlay" data-overlay-type="Commentary" data-toggle="buttonTooltip" title="Toggle the preview Commentators overlay"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
                 </div>
             </div>
             <div class="panel-body previewEnabled previewOverlayPanelBody" id="commentatorsPreviewOverlay">
@@ -403,6 +435,7 @@
         var clientsConnectedCount = 0;
         var competitorsOverlayPreviewSourceUrl = null;
         var commentatorsOverlayPreviewSourceUrl = null;
+        var pathToFormatNextSet = null;
 
         // Summary:
         // On: ready
@@ -410,6 +443,7 @@
         // Get series.
         $(document).ready(function () {
             try {
+                $("[data-toggle='buttonTooltip']").tooltip({ placement: "top", trigger: "hover" });
                 hljs.initHighlightingOnLoad();
                 InitializeWebSocket();
                 GetSeries();
@@ -471,20 +505,23 @@
                 websocket.onmessage = function (event) {
                     var jsonData = JSON.parse(event.data);
 
-                    if (jsonData.type == "queu") {
+                    if (jsonData.type === "queu") {
                         UpdateWebSocketDataMonitor(jsonData.data, jsonData.clientType);
                         ShowSnackbar("#queuSnackbar", "A queu command has been broadcast.");
                     }
-                    else if (jsonData.type == "clientConnected") {
+                    else if (jsonData.type === "clientConnected") {
                         UpdateWebSocketClientMonitor(jsonData);
                         ShowSnackbar("#clientConnectedSnackbar", `A client of type ${ jsonData.clientType } has connected to the WebSocket: ${ jsonData.data }`);
                     }
-                    else if (jsonData.type == "clientDisconnected") {
+                    else if (jsonData.type === "clientDisconnected") {
                         UpdateWebSocketClientMonitor(jsonData);
                         ShowSnackbar("#clientDisconnectedSnackbar", `A client of type ${ jsonData.clientType } has disconnected from the WebSocket: ${ jsonData.data }`);
                     }
-                    else if (jsonData.type == "forceResize") {
+                    else if (jsonData.type === "forceResize") {
                         ShowSnackbar("#forceResizeSnackbar", "A resize command has been broadcast");
+                    }
+                    else if (jsonData.type === "playStingerAnimation") {
+                        ShowSnackbar("#stingerSnackbar", "A play stinger animation command has been broadcast.");
                     }
                 };
             } catch (ex) {
@@ -581,7 +618,7 @@
                         $("#Format").empty();
                         $("#Format").append("<option value='' selected disabled hidden>Choose format</option>");
                         for (var i = 0; i < data.length; i++) {
-                            $("#Format").append(`<option data-format='${ data[i].FORMAT }' url='${ data[i].Url }' value='${ data[i].PathToFormat }'>${ data[i].FormatName }</option>`);
+                            $("#Format").append(`<option data-format='${ data[i].FORMAT }' data-path-to-format-next-set='${ data[i].PathToNextSet }' url='${ data[i].Url }' value='${ data[i].PathToFormat }'>${ data[i].FormatName }</option>`);
                         }
                     },
                     error: function (jqXHR, textStatus, errorThrown) {
@@ -624,20 +661,23 @@
                     dataType: "html",
                     success: function (data) {
                         $("#manageCompetitors").html(data);
+                        $("#manageQueu").empty();
 
                         $("#manageCommentatorsForm > [name='PathToCommentators']").val(selectedGame.data("path-to-commentators"));
+
+                        pathToFormatNextSet = selectedFormat.data("path-to-format-next-set"); // continue from here
 
                         $("[data-toggle='characterSkinPopover']").popover({ html: true, placement: "bottom", trigger: "manual" });
 
                         $("#competitorsOverlayPath").html(`${ selectedFormat.val() }GameOverlay.html`).attr("href", `${ selectedFormat.val() }GameOverlay.html`);
                         competitorsOverlayPreviewSourceUrl = `${ selectedFormat.val() }GameOverlay.html`;
-                        if ($("#competitorsPreviewOverlayIframe").data("enabled") == "True") {
+                        if ($("#competitorsPreviewOverlayIframe").data("enabled") === "True") {
                             $("#competitorsPreviewOverlayIframe").attr("src", competitorsOverlayPreviewSourceUrl);
                         }
 
                         $("#commentatorsOverlayPath").html(`${selectedGame.val()}Commentators/CommentaryOverlay.html`).attr("href", `${ selectedGame.data("path-to-commentators") }CommentaryOverlay.html`);
                         commentatorsOverlayPreviewSourceUrl = `${ selectedGame.val() }Commentators/CommentaryOverlay.html`;
-                        if ($("#commentatorsPreviewOverlayIframe").data("enabled") == "True") {
+                        if ($("#commentatorsPreviewOverlayIframe").data("enabled") === "True") {
                             $("#commentatorsPreviewOverlayIframe").attr("src", commentatorsOverlayPreviewSourceUrl);
                         }
 
@@ -695,14 +735,14 @@
 
                     if (side1Inputs.length) {
                         side1Inputs.each(function () {
-                            if ($(this).attr("type") == "checkbox") {
-                                var side2Input = $($(this).data("opposite-id"));
+                            if ($(this).attr("type") === "checkbox") {
+                                var side2Input = $(`#manageCompetitorsForm ${ $(this).data("opposite-id") }`);
                                 var side2InputCheckedValue = side2Input.prop("checked");
                                 side2Input.prop("checked", $(this).prop("checked"));
                                 $(this).prop("checked", side2InputCheckedValue);
                             }
                             else {
-                                var side2Input = $($(this).data("opposite-id"));
+                                var side2Input = $(`#manageCompetitorsForm ${ $(this).data("opposite-id") }`);
                                 var side2InputValue = side2Input.val();
                                 side2Input.val($(this).val());
                                 $(this).val(side2InputValue);
@@ -735,25 +775,25 @@
                     $.ajax({
                         type: "POST",
                         url: "@Url.Action("GetLatestValues", "FightingGames")",
-                        data: { "pathToFormat": $("input[name='PathToFormat']").val() },
+                        data: { "pathToFormat": $("#manageCompetitorsForm :input[name='PathToFormat']").val() },
                         dataType: "json",
                         success: function (data) {
                             console.log(data);
 
                             if (data.Success === true) {
                                 $.each(data.Data, function (index) {
-                                    if ($(`[data-selector='${ data.Data[index].Selector }']`).attr("type") == "checkbox") {
-                                        $(`[data-selector='${ data.Data[index].Selector }']`).prop("checked", JSON.parse(data.Data[index].Value.toLowerCase()));
+                                    if ($(`#manageCompetitorsForm :input[data-selector='${ data.Data[index].Selector }']`).attr("type") === "checkbox") {
+                                        $(`#manageCompetitorsForm :input[data-selector='${ data.Data[index].Selector }']`).prop("checked", JSON.parse(data.Data[index].Value.toLowerCase()));
                                     }
                                     else {
-                                        $(`[data-selector='${ data.Data[index].Selector }']`).val(data.Data[index].Value);
+                                        $(`#manageCompetitorsForm :input[data-selector='${ data.Data[index].Selector }']`).val(data.Data[index].Value);
                                     }
                                 });
 
-                                $("#tournament").val($("[name='Tournament']").val());
-                                $("#round").val($("[name='Round']").val());
-                                $("#bestOf").val($("[name='BestOf']").val());
-                                $("#extra").val($("[name='Extra']").val());
+                                $("#manageTournamentValues :input#tournament").val($("#manageCompetitorsForm :input[name='Tournament']").val());
+                                $("#manageTournamentValues :input#round").val($("#manageCompetitorsForm :input[name='Round']").val());
+                                $("#manageTournamentValues :input#bestOf").val($("#manageCompetitorsForm :input[name='BestOf']").val());
+                                $("#manageTournamentValues :input#extra").val($("#manageCompetitorsForm :input[name='Extra']").val());
 
                                 $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger danger-pulsate");
 
@@ -799,7 +839,7 @@
                         var inputsWithDefaults = $("#manageCompetitorsForm").find(":input[data-default]");
 
                         inputsWithDefaults.each(function () {
-                            if ($(this).attr("type") == "checkbox") {
+                            if ($(this).attr("type") === "checkbox") {
                                 $(this).prop("checked", false);
                             }
                             else {
@@ -1025,14 +1065,14 @@
                     $("#crewPlayersCount").val("99");
                 }
 
-                if ($("#crewPlayersCount").val() == null || $("#crewPlayersCount").val() == undefined || $("#crewPlayersCount").val() == "" || crewBattlePlayerCount.toString() == $("#crewPlayersCount").val().toString()) {
+                if ($("#crewPlayersCount").val() === null || $("#crewPlayersCount").val() === undefined || $("#crewPlayersCount").val() === "" || crewBattlePlayerCount.toString() === $("#crewPlayersCount").val().toString()) {
                     ShowSnackbar("#manageCompetitorsSnackbar", "The player count value is not valid or unchanged");
                     return;
                 }
                 else {
                     $.ajax({
                         type: "POST",
-                        url: "@Url.Action("GetCrewPlayers", "SuperSmashBros")",
+                        url: $("#manageCompetitorsForm #getCrewPlayersButton").data("url"),
                         data: {
                             "Count": $("#crewPlayersCount").val(),
                             "Series": $("#manageCompetitorsForm").find("input[name='Series']").val(),
@@ -1116,7 +1156,7 @@
         // PARAMETERS
         // manageForm: The manage form that is going to be submitted.
         // submitButton: The button that was clicked to submit the form.
-        function SubmitUpdate(manageForm, submitButton) { //TODO: rename to SubmitUpdate
+        function SubmitUpdate(manageForm, submitButton) {
             try {
                 $.ajax({
                     type: "POST",
@@ -1126,7 +1166,7 @@
                     success: function (data) {
                         ShowSnackbar(manageForm.data("snackbar-id"), data.Message);
 
-                        if (data.Success == "True") {
+                        if (data.Success === "True") {
                             if (submitButton.hasClass("btn-danger")) {
                                 submitButton.removeClass("btn-danger danger-pulsate").addClass("btn-success");
                             }
@@ -1184,7 +1224,7 @@
                 var formInputs = manageForm.find(":input[data-selector]");
                 var jsonData = { "type": "queu", "clientType": manageForm.data("overlay-type"), "data": [] };
 
-                if (formJsonData == null) {
+                if (formJsonData === null) {
                     formJsonData = {};
 
                     $(formInputs).each(function () {
@@ -1194,7 +1234,7 @@
                             formJsonData[$(this).data("selector")] = $(this).val();
                         }
 
-                        if ($.inArray($(this).data("selector"), jsonData.data) == -1) {
+                        if ($.inArray($(this).data("selector"), jsonData.data) === -1) {
                             jsonData.data.push($(this).data("selector"));
                         }
                     });
@@ -1213,7 +1253,7 @@
                         if (!(key in formJsonData)) {
                             jsonData.data.push(key);
                         }
-                        if (formJsonData[key] != value) {
+                        if (formJsonData[key] !== value) {
                             jsonData.data.push(key);
                         }
                     });
@@ -1234,6 +1274,73 @@
         }
 
 
+
+        //Summary:
+        // On: Clicking the new set button.
+        // If > The manage competitors form is present.
+        //  Loop through all important inputs
+        //      If > The input contains the data-newset-highlight attribute
+        //          If > The data-newset-highlight attribute is True
+        //              If > The input is not empty
+        //                  Add the danger-pulsate class to the input
+        //      If > The input contains the data-newset-default attribute
+        //          If > The input is the Character dropdown
+        //              Reset the character dropdown
+        //          If > The input is a checkbox
+        //              Uncheck the checkbox
+        //          Else > The input is a regular textbox
+        //              Make the input the default value of the data-newset-default attribute
+        // Else > The manage competitors form is not present.
+        //  Show a snackbar message.
+        $("#newSetButton").click(function () {
+            try {
+                if ($("#manageCompetitorsForm").length) {
+                    $("#manageTournamentValues :input[data-newset-highlight], #manageTournamentValues :input[data-newset-default], #manageCompetitorsForm :input[data-newset-highlight], #manageCompetitorsForm :input[data-newset-default]").each(function () {
+                        if (typeof $(this).data('newset-highlight') !== 'undefined') {
+                            if ($(this).data('newset-highlight') === "True") {
+                                if ($(this).val() !== "" && $(this).val() !== null && $(this).val() !== undefined) {
+                                    $(this).addClass("danger-pulsate");
+                                }
+                            }
+                        }
+
+                        if (typeof $(this).data('newset-default') !== 'undefined') {
+                            if ($(this).is("select[name$='.Character']")) {
+                                $(this).html("<option value='' selected disabled hidden>Choose character</option>");
+                                $(this).append($("#manageCompetitorsForm input#characterOptions").val());
+                            }
+
+                            if ($(this).attr("type") === "checkbox") {
+                                $(this).prop("checked", false);
+                            } else {
+                                $(this).val($(this).data('newset-default'));
+                            }
+                        }
+                    });
+                } else {
+                    ShowSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form is not present.");
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+
+
+        //Summary:
+        // On: Focusing on a pulsating input
+        // Remove the danger-pulsate class from the input
+        $("body").on("focus", "input.danger-pulsate", function () {
+            try {
+                $(this).removeClass("danger-pulsate");
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
 
         /* Commentators */
 
@@ -1334,7 +1441,6 @@
         // index: index of the element to be removed
         function moveCommentatorUp(index) {
             try {
-                $(`#commentator-row-${ index }`);
                 if (index > 0) {
                     if ($(`#commentator-row-${ (index - 1) }`).length) {
                         var row1CommentatorName = $(`#commentatorViewModels_${ index }_Name`).val();
@@ -1401,6 +1507,238 @@
 
 
 
+        /* Queu */
+
+        // Summary:
+        // On: Clicking the add new Set button
+        // If > 
+        $("#addSetButton").click(function () {
+            if ($("#manageCompetitorsForm").length) {
+                $.ajax({
+                    type: "POST",
+                    url: $("#manageCompetitorsForm").find("#nextSetUrl").val(),
+                    async: false,
+                    data: {
+                        "Series": $("#manageCompetitorsForm").find("input[name='Series']").val(),
+                        "Game": $("#manageCompetitorsForm").find("input[name='Game']").val(),
+                        "Format": $("#manageCompetitorsForm").find("input[name='Format']").val(),
+                        "PathToSeries": $("#manageCompetitorsForm").find("input[name='PathToSeries']").val(),
+                        "PathToGame": $("#manageCompetitorsForm").find("input[name='PathToGame']").val(),
+                        "PathToFormat": $("#manageCompetitorsForm").find("input[name='PathToFormat']").val(),
+                        "Index": $("form[id^='manageQueuForm']").length
+                    },
+                    dataType: "html",
+                    success: function (data) {
+                        $("#manageQueu").append(data);
+                        reindexNextSets();
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        ShowSnackbar("#ajaxErrorSnackbar", "An error occurred getting a new Set form. See the log for details.");
+                        UpdateErrorMonitor(jqXHR.responseText);
+                        console.log(jqXHR);
+                        console.log(`Text status: ${ textStatus }`);
+                        console.log(`Error thrown: ${ errorThrown }`);
+                    }
+                });
+            } else {
+                ShowSnackbar("#manageCompetitorsSnackbar", "No Format has been selected, so no new Set can be added.");
+            }
+        });
+
+        // Summary:
+        // On: 
+        function submitSet(index) {
+            try {
+                if ($(`#nextSet-${ index }`).length) {
+                    if ($(`#manageQueuForm_${ index }`).length) {
+                        $(`#manageQueuForm_${ index } :input[name='PathToFormatNextSet']`).val(pathToFormatNextSet);
+
+                        $.ajax({
+                            type: "POST",
+                            url: $(`#manageQueuForm_${ index }`).attr("action"),
+                            async: false,
+                            data: $(`#manageQueuForm_${ index }`).serialize(),
+                            dataType: "json",
+                            success: function (data) {
+                                if (data.Success === "True") {
+                                    ShowSnackbar("#manageQueuSnackbar", data.Message);
+                                }
+                                else {
+                                    ShowSnackbar("#manageQueuSnackbar", data.Message);
+                                    UpdateErrorMonitor(data.ErrorMessage);
+                                    console.log(data.ErrorMessage);
+                                }
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                ShowSnackbar("#ajaxErrorSnackbar", "An error occurred submitting the new Set. See the log for details.");
+                                UpdateErrorMonitor(jqXHR.responseText);
+                                console.log(jqXHR);
+                                console.log(`Text status: ${ textStatus }`);
+                                console.log(`Error thrown: ${ errorThrown }`);
+                            }
+                        });
+                    } else {
+                        ShowSnackbar("#manageQueuSnackbar", "The associated Set form could not be found.");
+                    }
+                } else {
+                    ShowSnackbar("#manageQueuSnackbar", "The associated Set container could not be found.");
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+
+        // Summary:
+        // On: 
+        function importSet(index) {
+            try {
+                if ($(`#nextSet-${ index }`).length) {
+                    if ($(`#manageQueuForm_${ index }`).length) {
+                        $("#manageTournamentValues #round").val($(`#manageQueuForm_${ index } [name='Round']`).val());
+                        $("#manageTournamentValues #bestOf").val($(`#manageQueuForm_${ index } [name='BestOf']`).val());
+
+                        $(`#manageQueuForm_${ index } :input[data-selector]`).each(function () {
+                            $("#manageCompetitorsForm").find($(this).data("selector")).val($(this).val());
+                        });
+
+                        ShowSnackbar("#manageQueuSnackbar", `Imported Set ${ index + 1 }.`);
+                    } else {
+                        ShowSnackbar("#manageQueuSnackbar", "The associated Set form could not be found.");
+                    }
+                } else {
+                    ShowSnackbar("#manageQueuSnackbar", "The associated Set container could not be found.");
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+
+        // Summary:
+        // On: Clicking the remove Set button
+        // Remove the Set
+        // Reindex the remaining Sets with reindexNextSets()
+        function removeSet(index) {
+            try {
+                $(`#nextSet-${ index }`).remove();
+
+                reindexNextSets();
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+
+        // Summary:
+        // On: 
+        function switchCompetitorsOfSet(index) {
+            try {
+                if ($(`#manageQueuForm_${ index }`).length) {
+                    var side1Inputs = $(`#manageQueuForm_${ index }`).find(":input[data-side='1']");
+
+                    if (side1Inputs.length) {
+                        side1Inputs.each(function () {
+                            if ($(this).attr("type") === "checkbox") {
+                                var side2Input = $(`#manageQueuForm_${ index } ${ $(this).data("opposite-id") }`);
+                                var side2InputCheckedValue = side2Input.prop("checked");
+                                side2Input.prop("checked", $(this).prop("checked"));
+                                $(this).prop("checked", side2InputCheckedValue);
+                            }
+                            else {
+                                var side2Input = $(`#manageQueuForm_${ index } ${ $(this).data("opposite-id") }`);
+                                var side2InputValue = side2Input.val();
+                                side2Input.val($(this).val());
+                                $(this).val(side2InputValue);
+                            }
+                        });
+                    } else {
+                        ShowSnackbar("#manageQueuSnackbar", "The Manage Next Set form was found, but no inputs inside have the appropriate data-side='1' attribute.");
+                    }
+                } else {
+                    ShowSnackbar("#manageQueuSnackbar", "Something went wrong processing the Next Set form.");
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+
+        // Summary:
+        // On: 
+        function moveSetUp(index) {
+            try {
+                if (index > 0) {
+                    if ($(`#nextSet-${ ( index - 1 ) }`).length) {
+                        $(`#nextSet-${ ( index - 1 ) }`).before($(`#nextSet-${ index }`));
+                    } else {
+                        ShowSnackbar("#manageQueuSnackbar", "The selected Set can't be moved up at this time.");
+                    }
+                }
+
+                reindexNextSets();
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+
+        // Summary:
+        // On: 
+        function moveSetDown(index) {
+            try {
+                if ($(`#nextSet-${ ( index + 1 ) }`).length) {
+                    $(`#nextSet-${ ( index + 1 ) }`).after($(`#nextSet-${ index }`));
+                }
+                else {
+                    ShowSnackbar("#manageQueuSnackbar", "The selected Set can't be moved down at this time.");
+                }
+
+                reindexNextSets();
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+
+
+        // Summary:
+        // On: 
+        function reindexNextSets() {
+            try {
+                if ($("div[id^='nextSet-']").length) {
+                    $("div[id^='nextSet-']").each(function (index) {
+                        $(this).find(`[id$='_Number']`).html(`Set ${ index + 1 }`).attr("id", `nextSet_${ index }_Number`);
+
+                        $(this).find("[data-id-template]").each(function () {
+                            $(this).attr("id", $(this).data("id-template").replace("INDEX", index));
+                        });
+
+                        $(this).find("[data-opposite-id-template]").each(function () {
+                            $(this).data("opposite-id", $(this).data("opposite-id-template").replace("INDEX", index));
+                        });
+
+                        $(this).find("[data-onclick-template]").each(function () {
+                            $(this).attr("onclick", $(this).data("onclick-template").replace("INDEX", index));
+                        });
+
+                        $(this).find("form[id^='manageQueuForm_']").attr("id", `manageQueuForm_${ index }`);
+                        $(this).attr("id", `nextSet-${ index }`);
+                    });
+                }
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+
         /* General Monitor  */
 
         // Summary:
@@ -1414,14 +1752,14 @@
         // jsonData: the json data received through the WebSocket
         function UpdateWebSocketClientMonitor(jsonData) {
             try {
-                if ($("#webSocketClientMonitorTableBody").data("enabled") == "True") {
+                if ($("#webSocketClientMonitorTableBody").data("enabled") === "True") {
                     var splitPath = jsonData.data.split("/");
 
-                    if (jsonData.type == "clientConnected") {
+                    if (jsonData.type === "clientConnected") {
                         clientsConnectedCount++;
                         $("#webSocketClientMonitorTableBody").append(`<tr data-full-path='${ jsonData.data }'><td>${ clientsConnectedCount }</td><td>${ jsonData.clientType }</td><td>${ splitPath[splitPath.length - 3] }/${ splitPath[splitPath.length - 2] }/${ splitPath[splitPath.length - 1] }</td><td>Connected</td></tr>`);
                     }
-                    else if (jsonData.type == "clientDisconnected") {
+                    else if (jsonData.type === "clientDisconnected") {
                         if (clientsConnectedCount > 1) {
                             clientsConnectedCount--;
                         }
@@ -1441,7 +1779,7 @@
         // Remove all data from the WebSocket client monitor and reset the clientsConnectedCount
         $("#clearWebSocketClientMonitorButton").click(function () {
             try {
-                if ($("#webSocketClientMonitorTableBody").data("enabled") == "True") {
+                if ($("#webSocketClientMonitorTableBody").data("enabled") === "True") {
                     $("#webSocketClientMonitorTableBody").html("");
                     clientsConnectedCount = 0;
                 }
@@ -1458,7 +1796,7 @@
             try {
                 var currentDateTime = new Date();
 
-                if ($("#errorMonitor").data("enabled") == "True") {
+                if ($("#errorMonitor").data("enabled") === "True") {
                     $("#errorMonitor").text(`Error logged on ${currentDateTime.getHours()}:${currentDateTime.getMinutes()}:${currentDateTime.getSeconds()}.${ currentDateTime.getMilliseconds() }:\r\n${ error }\r\n${ $("#errorMonitor").text() }`);
                 }
             } catch (ex) {
@@ -1473,7 +1811,7 @@
         // Remove all data from the error monitor
         $("#clearErrorMonitorButton").click(function () {
             try {
-                if ($("#errorMonitor").data("enabled") == "True") {
+                if ($("#errorMonitor").data("enabled") === "True") {
                     $("#errorMonitor").html("");
                 }
             } catch (ex) {
@@ -1493,7 +1831,7 @@
         // data: the data received through the WebSocket
         function UpdateWebSocketDataMonitor(data, overlayType) {
             try {
-                if ($($(`form[data-overlay-type='${ overlayType }']`).data("websocket-data-monitor-id")).data("enabled") == "True") {
+                if ($($(`form[data-overlay-type='${ overlayType }']`).data("websocket-data-monitor-id")).data("enabled") === "True") {
                     $($(`form[data-overlay-type='${ overlayType }']`).data("websocket-data-monitor-id")).html(JSON.stringify(data));
 
                     hljs.initHighlighting();
@@ -1510,7 +1848,7 @@
         // Remove all data from the WebSocket data monitor
         $(".clearWebSocketDataMonitorButton").click(function () {
             try {
-                if ($($(this).data("monitor-id")).data("enabled") == "True") {
+                if ($($(this).data("monitor-id")).data("enabled") === "True") {
                     $($(this).data("monitor-id")).html("");
                 }
             } catch (ex) {
@@ -1528,7 +1866,7 @@
         // pathToFormat: Path to the format
         function UpdateCSSMonitor(url, pathData, cssMonitorId) {
             try {
-                if ($(cssMonitorId).data("enabled") == "True") {
+                if ($(cssMonitorId).data("enabled") === "True") {
                     $.ajax({
                         type: "POST",
                         url: url,
@@ -1560,7 +1898,7 @@
         // Remove all data from the CSS monitor
         $(".clearCssMonitorButton").click(function () {
             try {
-                if ($($(this).data("monitor-id")).data("enabled") == "True") {
+                if ($($(this).data("monitor-id")).data("enabled") === "True") {
                     $($(this).data("monitor-id")).html("");
                 }
             } catch (ex) {
@@ -1578,7 +1916,7 @@
         // pathToFormat: Path to the format
         function UpdateJsonMonitor(url, pathData, jsonMonitorId) {
             try {
-                if ($(jsonMonitorId).data("enabled") == "True") {
+                if ($(jsonMonitorId).data("enabled") === "True") {
                     $.ajax({
                         type: "POST",
                         url: url,
@@ -1610,7 +1948,7 @@
         // Remove all data from the JSON monitor
         $(".clearJsonMonitorButton").click(function () {
             try {
-                if ($($(this).data("monitor-id")).data("enabled") == "True") {
+                if ($($(this).data("monitor-id")).data("enabled") === "True") {
                     $($(this).data("monitor-id")).html("");
                 }
             } catch (ex) {
@@ -1634,12 +1972,12 @@
         //  Reset the monitor to completely empty
         $(".toggleMonitorButton").click(function () {
             try {
-                if ($($(this).data("monitor-id")).data("enabled") == "True") {
+                if ($($(this).data("monitor-id")).data("enabled") === "True") {
                     $($(this).data("monitor-id")).data("enabled", "False");
                     $(this).removeClass("btn-success").addClass("btn-danger");
                     $(this).html("<span class='glyphicon glyphicon-remove'></span><text> Disabled</text>");
 
-                    if ($($(this).data("monitor-id")).data("client-monitor") == "True") {
+                    if ($($(this).data("monitor-id")).data("client-monitor") === "True") {
                         $($(this).data("monitor-id")).html("");
                         clientsConnectedCount = 0;
                     }
@@ -1684,7 +2022,7 @@
         //  Update the clicked toggle button to show the overlay preview it is enabled
         $(".togglePreviewOverlayButton").click(function () {
             try {
-                if ($($(this).data("preview-id")).data("enabled") == "True") {
+                if ($($(this).data("preview-id")).data("enabled") === "True") {
                     $($(this).data("preview-id")).data("enabled", "False");
                     $($(this).data("preview-id")).removeAttr("src");
 
@@ -1696,7 +2034,7 @@
                         $($(this).data("preview-id")).removeClass("previewEnabled").addClass("previewDisabled");
                     }
 
-                    $(this).removeClass("btn-success").addClass("btn-danger").html("<span class='glyphicon glyphicon-remove'></span> Disabled");
+                    $(this).removeClass("btn-success").addClass("btn-danger").html("<span class='glyphicon glyphicon-remove'></span><text> Disabled</text>");
 
                 } else {
                     $($(this).data("preview-id")).data("enabled", "True");
@@ -1716,7 +2054,7 @@
                         $($(this).data("preview-id")).addClass("previewEnabled").removeClass("previewDisabled");
                     }
 
-                    $(this).removeClass("btn-danger").addClass("btn-success").html("<span class='glyphicon glyphicon-ok'></span> Enabled");
+                    $(this).removeClass("btn-danger").addClass("btn-success").html("<span class='glyphicon glyphicon-ok'></span><text> Enabled</text>");
                 }
             } catch (ex) {
                 ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
@@ -1968,6 +2306,241 @@
                 console.log(ex);
                 UpdateErrorMonitor(ex.message);
             }
+        }
+
+        /* Stinger */
+
+        $("#playDefaultStingerAnimationButton").click(function () {
+            try {
+                var jsonData = { "type": "playStingerAnimation", data: { "stingerType": "Default", "series": "", "game": "", "format": "" } };
+                websocket.send(JSON.stringify(jsonData));
+            } catch (ex) {
+                ShowSnackbar("#exceptionSnackbar", "An unexpected exception occurred, see the console for details.");
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        });
+
+        /* Elgato Stream Deck */
+        
+        function clickSubmitCompetitorsButton() {
+            try {
+                if ($("#manageCompetitorsForm").length) {
+                    $("#submitCompetitorsButton").click();
+                } else {
+                    ShowSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form is not present.");
+                }
+            } catch (ex) {
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+        
+        function clickNewSetButton() {
+            try {
+                $("#newSetButton").click();
+            } catch (ex) {
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+        
+        function clickIncreaseScoreButton(side) {
+            try {
+                if ($("#manageCompetitorsForm").length) {
+                    // Singles
+                    if ($(`#manageCompetitorsForm button[data-id="#player${ side }Score"].increase`).length) {
+                        $(`#manageCompetitorsForm button[data-id="#player${ side }Score"].increase`).click();
+                    }
+                
+                    // Doubles
+                    if ($(`#manageCompetitorsForm button[data-id="#team${ side }Score"].increase`).length) {
+                        $(`#manageCompetitorsForm button[data-id="#team${ side }Score"].increase`).click();
+                    }
+                
+                    // Crews Stocks
+                    if ($(`#manageCompetitorsForm button[data-id="#crew${ side }StocksLeft"].increase`).length) {
+                        $(`#manageCompetitorsForm button[data-id="#crew${ side }StocksLeft"].increase`).click();
+                    }
+
+                    // Crews Score
+                    if ($(`#manageCompetitorsForm button[data-id="#crew${ side }Score"].increase`).length) {
+                        $(`#manageCompetitorsForm button[data-id="#crew${ side }Score"].increase`).click();
+                    }
+                
+                    // Squads
+                    if ($(`#manageCompetitorsForm button[data-id="#squad${ side }Score"].increase`).length) {
+                        $(`#manageCompetitorsForm button[data-id="#squad${ side }Score"].increase`).click();
+                    }
+                } else {
+                    ShowSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form is not present.");
+                }
+            } catch (ex) {
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+        
+        function clickSwitchCompetitorsButton() {
+            try {
+                if ($("#manageCompetitorsForm").length) {
+                    $("#switchCompetitorsButton").click();
+                } else {
+                    ShowSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form is not present.");
+                }
+            } catch (ex) {
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+        
+        function clickResetToDefaultsButton() {
+            try {
+                if ($("#manageCompetitorsForm").length) {
+                    $("#setToDefaultValuesButton").click();
+                } else {
+                    ShowSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form is not present.");
+                }
+            } catch (ex) {
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+        
+        function clickGetLatestCompetitorsValuesButton() {
+            try {
+                $("#getLatestCompetitorsValuesButton").click();
+            } catch (ex) {
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+        
+        function clickPlayDefaultStingerButton() {
+            try {
+                $("#playDefaultStingerAnimationButton").click();
+            } catch (ex) {
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+        
+        function clickPlayFormatStingerButton() {
+            try {
+                if ($("#manageCompetitorsForm").length) {
+                    //not implemented
+                    //$("").click();
+                } else {
+                    ShowSnackbar("#manageCompetitorsSnackbar", "The Manage Competitors form is not present.");
+                }
+            } catch (ex) {
+                console.log(ex);
+                UpdateErrorMonitor(ex.message);
+            }
+        }
+        
+        function elgatoStreamDeckButton(functionName) {
+            console.log(`Received command from Elgato Stream Deck: ${ functionName }`);
+
+            if (functionName === "SubmitCompetitors") {
+                clickSubmitCompetitorsButton();
+            }
+			else if (functionName === "NewSet") {
+                clickNewSetButton();
+            }
+			else if (functionName === "LeftPlusOne") {
+                clickIncreaseScoreButton(1);
+            }
+            else if (functionName === "RightPlusOne") {
+                clickIncreaseScoreButton(2);
+            }
+            else if (functionName === "ResetToDefaults") {
+                clickResetToDefaultsButton();
+            }
+            else if (functionName === "GetLatestCompetitors") {
+                clickGetLatestCompetitorsValuesButton();
+            }
+            else if (functionName === "SwitchCompetitors") {
+                clickSwitchCompetitorsButton();
+            }
+            else if (functionName === "PlayDefaultStinger") {
+                clickPlayDefaultStingerButton();
+            }
+            else if (functionName === "PlayFormatStinger") {
+				clickPlayFormatStingerButton();
+            }
+            else if (functionName === 9) {
+
+            }
+            else if (functionName === 10) {
+                
+            }
+            else if (functionName === 11) {
+                
+            }
+            else if (functionName === 12) {
+                
+            }
+            else if (functionName === 13) {
+                
+            }
+            else if (functionName === 14) {
+                
+            }
+            else if (functionName === 15) {
+                
+            }
+            else if (functionName === 16) {
+                
+            }
+            else if (functionName === 17) {
+                
+            }
+            else if (functionName === 18) {
+                
+            }
+            else if (functionName === 19) {
+                
+            }
+            else if (functionName === 20) {
+                
+            }
+            else if (functionName === 21) {
+                
+            }
+            else if (functionName === 22) {
+                
+            }
+            else if (functionName === 23) {
+                
+            }
+            else if (functionName === 24) {
+                
+            }
+            else if (functionName === 25) {
+                
+            }
+            else if (functionName === 26) {
+                
+            }
+            else if (functionName === 27) {
+                
+            }
+            else if (functionName === 28) {
+                
+            }
+            else if (functionName === 29) {
+                
+            }
+            else if (functionName === 30) {
+                
+            }
+            else if (functionName === 31) {
+                
+            }
+			else {
+				console.log("Invalid command has been received from the Stream Deck.");
+			}
         }
     </script>
 }

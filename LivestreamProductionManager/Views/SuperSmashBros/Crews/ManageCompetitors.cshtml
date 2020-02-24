@@ -28,6 +28,11 @@
         data-json-monitor-id="#competitorsJsonMonitor"
         data-overlay-preview-id="#competitorsPreviewOverlayIframe"
         data-snackbar-id="#manageCompetitorsSnackbar">
+
+    <input type="hidden" id="characterOptions" value="@Html.Raw(characterOptionsStringBuilder.ToString())" />
+    <input type="hidden" id="portOptions" value="@Html.Raw(portOptionsStringBuilder.ToString())" />
+    <input type="hidden" id="nextSetUrl" value="@Url.Action("GetNextSet", "SuperSmashBros")" />
+
     <input type="hidden" name="Tournament" value="" data-selector="#tournamentText" />
     <input type="hidden" name="Round" value="" data-selector="#roundText" />
     <input type="hidden" name="BestOf" value="" data-selector="#bestOfText" />
@@ -51,11 +56,11 @@
     <div class="row">
         <div class="col-xs-6 text-center">
             <label>Name</label>
-            <input type="text" class="form-control" name="Crew1.Name" id="crew1Name" data-selector="#crew1NameText" data-side="1" data-opposite-id="#crew2Name" data-default="-" />
+            <input type="text" class="form-control" name="Crew1.Name" id="crew1Name" data-selector="#crew1NameText" data-side="1" data-opposite-id="#crew2Name" data-default="-" data-newset-highlight="False" data-newset-default="" />
         </div>
         <div class="col-xs-6 text-center">
             <label>Name</label>
-            <input type="text" class="form-control" name="Crew2.Name" id="crew2Name" data-selector="#crew2NameText" data-side="2" data-opposite-id="#crew1Name" data-default="-" />
+            <input type="text" class="form-control" name="Crew2.Name" id="crew2Name" data-selector="#crew2NameText" data-side="2" data-opposite-id="#crew1Name" data-default="-" data-newset-highlight="False" data-newset-default="" />
         </div>
     </div>
 
@@ -74,7 +79,7 @@
                     <button class="btn btn-danger decrease" type="button" data-id="#crew1StocksLeft"><span style="font-weight: bold;" class="glypicon glyphicon-minus"></span></button>
                 </div>
                 <div class="col-xs-8">
-                    <input type="text" class="form-control" name="Crew1.StocksLeft" id="crew1StocksLeft" data-selector="#crew1StocksLeftText" data-side="1" data-opposite-id="#crew2StocksLeft" data-default="0" value="0" />
+                    <input type="text" class="form-control" name="Crew1.StocksLeft" id="crew1StocksLeft" data-selector="#crew1StocksLeftText" data-side="1" data-opposite-id="#crew2StocksLeft" data-default="0" value="0" data-newset-highlight="False" data-newset-default="0" />
                 </div>
                 <div class="col-xs-2">
                     <button class="btn btn-primary increase" type="button" data-id="#crew1StocksLeft"><span style="font-weight: bold;" class="glypicon glyphicon-plus"></span></button>
@@ -87,7 +92,7 @@
                     <button class="btn btn-danger decrease" type="button" data-id="#crew2StocksLeft"><span style="font-weight: bold;" class="glypicon glyphicon-minus"></span></button>
                 </div>
                 <div class="col-xs-8">
-                    <input type="text" class="form-control" name="Crew2.StocksLeft" id="crew2StocksLeft" data-selector="#crew2StocksLeftText" data-side="2" data-opposite-id="#crew1StocksLeft" data-default="0" value="0" />
+                    <input type="text" class="form-control" name="Crew2.StocksLeft" id="crew2StocksLeft" data-selector="#crew2StocksLeftText" data-side="2" data-opposite-id="#crew1StocksLeft" data-default="0" value="0" data-newset-highlight="False" data-newset-default="0" />
                 </div>
                 <div class="col-xs-2">
                     <button class="btn btn-primary increase" type="button" data-id="#crew2StocksLeft"><span style="font-weight: bold;" class="glypicon glyphicon-plus"></span></button>
@@ -99,14 +104,14 @@
     <div class="row">
         <div class="col-xs-6 text-center">
             <label>Character</label>
-            <select class="form-control" name="Crew1.Character" id="crew1Character" data-selector="#crew1Character" data-side="1" data-opposite-id="#crew2Character" data-default="">
+            <select class="form-control" name="Crew1.Character" id="crew1Character" data-selector="#crew1Character" data-side="1" data-opposite-id="#crew2Character" data-default="" data-newset-highlight="False" data-newset-default="">
                 <option value="" selected disabled hidden>Choose character</option>
                 @Html.Raw(characterOptionsStringBuilder.ToString())
             </select>
         </div>
         <div class="col-xs-6 text-center">
             <label>Character</label>
-            <select class="form-control" name="Crew2.Character" id="crew2Character" data-selector="#crew2Character" data-side="2" data-opposite-id="#crew1Character" data-default="">
+            <select class="form-control" name="Crew2.Character" id="crew2Character" data-selector="#crew2Character" data-side="2" data-opposite-id="#crew1Character" data-default="" data-newset-highlight="False" data-newset-default="">
                 <option value="" selected disabled hidden>Choose character</option>
                 @Html.Raw(characterOptionsStringBuilder.ToString())
             </select>
@@ -116,14 +121,14 @@
     <div class="row">
         <div class="col-xs-6 text-center">
             <label>Port</label>
-            <select class="form-control" name="Crew1.Port" id="crew1Port" data-selector="#crew1Port" data-side="1" data-opposite-id="#crew2Port" data-default="">
+            <select class="form-control" name="Crew1.Port" id="crew1Port" data-selector="#crew1Port" data-side="1" data-opposite-id="#crew2Port" data-default="" data-newset-highlight="False" data-newset-default="">
                 <option value="" selected disabled hidden>Choose port</option>
                 @Html.Raw(portOptionsStringBuilder.ToString())
             </select>
         </div>
         <div class="col-xs-6 text-center">
             <label>Port</label>
-            <select class="form-control" name="Crew2.Port" id="crew2Port" data-selector="#crew2Port" data-side="2" data-opposite-id="#crew1Port" data-default="">
+            <select class="form-control" name="Crew2.Port" id="crew2Port" data-selector="#crew2Port" data-side="2" data-opposite-id="#crew1Port" data-default="" data-newset-highlight="False" data-newset-default="">
                 <option value="" selected disabled hidden>Choose port</option>
                 @Html.Raw(portOptionsStringBuilder.ToString())
             </select>
@@ -144,7 +149,7 @@
             <input class="form-control" type="number" id="crewPlayersCount" min="1" max="99" />
         </div>
         <div class="col-xs-2">
-            <button class="btn btn-primary" type="button" id="getCrewPlayersButton"><span class="glyphicon glyphicon-arrow-down"></span> Update</button>
+            <button class="btn btn-primary" type="button" id="getCrewPlayersButton" data-url="@Url.Action("GetCrewPlayers", "SuperSmashBros")"><span class="glyphicon glyphicon-arrow-down"></span> Update</button>
         </div>
         <div class="col-xs-3">
 

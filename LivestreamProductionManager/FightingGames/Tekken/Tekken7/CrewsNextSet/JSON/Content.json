@@ -1,0 +1,34 @@
+[
+  {
+    "Selector": "#crew1NameText",
+    "Value": "Team Flevo"
+  },
+  {
+    "Selector": "#crew1Character",
+    "Value": "../../CharacterIcons/akuma.png"
+  },
+  {
+    "Selector": "#crew1StocksLeftText",
+    "Value": "15"
+  },
+  {
+    "Selector": "#crew2NameText",
+    "Value": "Team Rotter"
+  },
+  {
+    "Selector": "#crew2Character",
+    "Value": "../../CharacterIcons/alisa.png"
+  },
+  {
+    "Selector": "#crew2StocksLeftText",
+    "Value": "15"
+  },
+  {
+    "Selector": "#roundText",
+    "Value": "Winners Round 1"
+  },
+  {
+    "Selector": "#bestOfText",
+    "Value": "Best of 1"
+  }
+]

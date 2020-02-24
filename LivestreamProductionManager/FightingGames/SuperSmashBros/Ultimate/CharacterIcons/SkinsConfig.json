@@ -182,6 +182,51 @@
       ]
     },
     {
+      "CharacterName": "Byleth",
+      "Skins": [
+        {
+          "Name": "Byleth",
+          "CssValue": "../../CharacterIcons/byleth.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/byleth.png"
+        },
+        {
+          "Name": "Byleth_01",
+          "CssValue": "../../CharacterIcons/byleth_01.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/byleth_01.png"
+        },
+        {
+          "Name": "Byleth_02",
+          "CssValue": "../../CharacterIcons/byleth_02.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/byleth_02.png"
+        },
+        {
+          "Name": "Byleth_03",
+          "CssValue": "../../CharacterIcons/byleth_03.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/byleth_03.png"
+        },
+        {
+          "Name": "Byleth_04",
+          "CssValue": "../../CharacterIcons/byleth_04.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/byleth_04.png"
+        },
+        {
+          "Name": "Byleth_05",
+          "CssValue": "../../CharacterIcons/byleth_05.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/byleth_05.png"
+        },
+        {
+          "Name": "Byleth_06",
+          "CssValue": "../../CharacterIcons/byleth_06.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/byleth_06.png"
+        },
+        {
+          "Name": "Byleth_07",
+          "CssValue": "../../CharacterIcons/byleth_07.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/byleth_07.png"
+        }
+      ]
+    },
+    {
       "CharacterName": "Captain Falcon",
       "Skins": [
         {
@@ -275,42 +320,42 @@
       "CharacterName": "Cloud",
       "Skins": [
         {
-          "Name": "Chrom",
+          "Name": "Cloud",
           "CssValue": "../../CharacterIcons/cloud.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/cloud.png"
         },
         {
-          "Name": "cloud_01",
+          "Name": "Cloud_01",
           "CssValue": "../../CharacterIcons/cloud_01.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/cloud_01.png"
         },
         {
-          "Name": "cloud_01",
+          "Name": "Cloud_01",
           "CssValue": "../../CharacterIcons/cloud_02.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/cloud_02.png"
         },
         {
-          "Name": "cloud_03",
+          "Name": "Cloud_03",
           "CssValue": "../../CharacterIcons/cloud_03.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/cloud_03.png"
         },
         {
-          "Name": "cloud_03",
+          "Name": "Cloud_04",
           "CssValue": "../../CharacterIcons/cloud_04.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/cloud_04.png"
         },
         {
-          "Name": "cloud_05",
+          "Name": "Cloud_05",
           "CssValue": "../../CharacterIcons/cloud_05.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/cloud_05.png"
         },
         {
-          "Name": "cloud_05",
+          "Name": "Cloud_06",
           "CssValue": "../../CharacterIcons/cloud_06.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/cloud_06.png"
         },
         {
-          "Name": "cloud_05",
+          "Name": "Cloud_07",
           "CssValue": "../../CharacterIcons/cloud_07.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/cloud_07.png"
         }
@@ -3462,60 +3507,60 @@
       ]
     },
     {
-      "CharacterName": "DLC character 5",
+      "CharacterName": "DLC character 6  (FPVol.2 1)",
       "Skins": [
         {
-          "Name": "DLC character 5",
+          "Name": "DLC character 6  (FPVol.2 1)",
           "CssValue": "../../CharacterIcons/random.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
         }
       ]
     },
     {
-      "CharacterName": "DLC character 6",
+      "CharacterName": "DLC character 7  (FPVol.2 2)",
       "Skins": [
         {
-          "Name": "DLC character 6",
+          "Name": "DLC character 7  (FPVol.2 2)",
           "CssValue": "../../CharacterIcons/random.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
         }
       ]
     },
     {
-      "CharacterName": "DLC character 7",
+      "CharacterName": "DLC character 8  (FPVol.2 3)",
       "Skins": [
         {
-          "Name": "DLC character 7",
+          "Name": "DLC character 8  (FPVol.2 3)",
           "CssValue": "../../CharacterIcons/random.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
         }
       ]
     },
     {
-      "CharacterName": "DLC character 8",
+      "CharacterName": "DLC character 9  (FPVol.2 4)",
       "Skins": [
         {
-          "Name": "DLC character 8",
+          "Name": "DLC character 9  (FPVol.2 4)",
           "CssValue": "../../CharacterIcons/random.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
         }
       ]
     },
     {
-      "CharacterName": "DLC character 9",
+      "CharacterName": "DLC character 10  (FPVol.2 5)",
       "Skins": [
         {
-          "Name": "DLC character 9",
+          "Name": "DLC character 10  (FPVol.2 5)",
           "CssValue": "../../CharacterIcons/random.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
         }
       ]
     },
     {
-      "CharacterName": "DLC character 10",
+      "CharacterName": "DLC character 11  (FPVol.2 6)",
       "Skins": [
         {
-          "Name": "DLC character 10",
+          "Name": "DLC character 11  (FPVol.2 6)",
           "CssValue": "../../CharacterIcons/random.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/random.png"
         }

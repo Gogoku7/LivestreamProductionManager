@@ -34,6 +34,8 @@ Deploying to IIS and running can be done manually or using Visual Studio tools
 - .team2Player1Sponsor
 - #team2Player2NameText
 - .team2Player2Sponsor
+- #team2Player1TwitterText
+- #team2Player2TwitterText
 - #team2Player1Character
 - #team2Player2Character
 - #team2Player1Port

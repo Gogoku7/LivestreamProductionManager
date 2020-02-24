@@ -1,0 +1,143 @@
+#squad1NameText:before {
+    content: "Europe";
+}
+
+#squad1Player1NameText:before {
+    content: "Mr. R";
+}
+
+#squad1Player2NameText:before {
+    content: "iStudying";
+}
+
+#squad1Player3NameText:before {
+    content: "Sodrek";
+}
+
+#squad1Player4NameText:before {
+    content: "Ixis";
+}
+
+
+
+
+#squad1Player1TwitterText:before {
+    content: "@mrr";
+}
+
+#squad1Player2TwitterText:before {
+    content: "@istudying";
+}
+
+#squad1Player3TwitterText:before {
+    content: "@sodrek";
+}
+
+#squad1Player4TwitterText:before {
+    content: "@ixis";
+}
+
+
+
+
+#squad1Character1 {
+    background-image: url('../../CharacterIcons/banjokazooie.png');
+}
+
+#squad1Character2 {
+    background-image: url('../../CharacterIcons/bayonetta.png');
+}
+
+#squad1Character3 {
+    background-image: url('../../CharacterIcons/bowser.png');
+}
+
+#squad1Character4 {
+    background-image: url('../../CharacterIcons/bowserjr.png');
+}
+
+#squad1Character5 {
+    background-image: url('../../CharacterIcons/captainfalcon.png');
+}
+
+
+
+#squad1Port {
+    background-image: url('../../PlayerPorts/PlayerPort1.png');
+}
+
+#squad2NameText:before {
+    content: "USA";
+}
+
+#squad2Player1NameText:before {
+    content: "ZeRo";
+}
+
+#squad2Player2NameText:before {
+    content: "Nairo";
+}
+
+#squad2Player3NameText:before {
+    content: "MKLeo";
+}
+
+#squad2Player4NameText:before {
+    content: "Tweek";
+}
+
+
+
+
+#squad2Player1TwitterText:before {
+    content: "@zerwondering";
+}
+
+#squad2Player2TwitterText:before {
+    content: "@nrgnairo";
+}
+
+#squad2Player3TwitterText:before {
+    content: "@mkleo";
+}
+
+#squad2Player4TwitterText:before {
+    content: "@tweek";
+}
+
+
+
+
+#squad2Character1 {
+    background-image: url('../../CharacterIcons/zerosuitsamus.png');
+}
+
+#squad2Character2 {
+    background-image: url('../../CharacterIcons/zelda.png');
+}
+
+#squad2Character3 {
+    background-image: url('../../CharacterIcons/younglink.png');
+}
+
+#squad2Character4 {
+    background-image: url('../../CharacterIcons/yoshi.png');
+}
+
+#squad2Character5 {
+    background-image: url('../../CharacterIcons/wolf.png');
+}
+
+
+
+#squad2Port {
+    background-image: url('../../PlayerPorts/PlayerPort2.png');
+}
+
+#roundText:before {
+    content: "Winners Round 1";
+}
+
+#bestOfText:before {
+    content: "Best of 3";
+}

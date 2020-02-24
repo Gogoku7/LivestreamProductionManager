@@ -1,0 +1,107 @@
+#crew1NameText:before {
+    content: "Team Flevoland";
+}
+
+#crew1Player1NameText:before {
+    content: "Kertia";
+    color: yellow;
+}
+
+
+#crew1Player2NameText:before {
+    content: "Lil Mayo";
+    color: lightgray;
+}
+
+
+
+
+#crew1Player1TwitterText:before {
+    content: "@Kertia";
+}
+
+#crew1Player2TwitterText:before {
+    content: "@LilMayo";
+}
+
+
+
+#crew1Player1Character {
+    background-image: url('../../CharacterIcons/akuma.png');
+}
+
+#crew1Player2Character {
+    background-image: url('../../CharacterIcons/alisa.png');
+}
+
+
+
+#crew1StocksLeftText:before {
+    content: "1";
+}
+
+#crew1Character {
+    background-image: url('../../CharacterIcons/akuma.png');
+}
+
+#crew2NameText:before {
+    content: "Zuid-Holland";
+}
+
+#crew2Player1NameText:before {
+    content: "KarmaKens";
+    color: yellow;
+}
+
+
+#crew2Player2NameText:before {
+    content: "Ninjin";
+    color: lightgray;
+}
+
+
+
+
+#crew2Player1TwitterText:before {
+    content: "@KarmaKens";
+}
+
+#crew2Player2TwitterText:before {
+    content: "@Ninjin";
+}
+
+
+
+#crew2Player1Character {
+    background-image: url('../../CharacterIcons/zafina.png');
+}
+
+#crew2Player2Character {
+    background-image: url('../../CharacterIcons/yoshimitsu.png');
+}
+
+
+
+#crew2StocksLeftText:before {
+    content: "2";
+}
+
+#crew2Character {
+    background-image: url('../../CharacterIcons/zafina.png');
+}
+
+#tournamentText:before {
+    content: "Fight Night 50";
+}
+
+#extraText:before {
+    content: "Esports Game Arena";
+}
+
+#roundText:before {
+    content: "Winners Round 1";
+}
+
+#bestOfText:before {
+    content: "Best of 3";
+}

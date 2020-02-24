@@ -7,7 +7,7 @@
     {
         <div class="row" id="settingsRow-@i">
             <div class="col-xs-4">
-                <label>@Model.Settings[i].SettingKey</label>
+                <span class="glyphicon glyphicon-info-sign" data-toggle="settingTooltip" title="@Model.Settings[i].Description"></span> <label>@Model.Settings[i].SettingKey</label>
             </div>
             <div class="col-xs-8">
                 <input type="hidden" name="Settings[@i].SettingKey" value="@Model.Settings[i].SettingKey" />

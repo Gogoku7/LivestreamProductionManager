@@ -1,0 +1,31 @@
+#crew1NameText:before {
+    content: "Team Flevo";
+}
+
+#crew1StocksLeftText:before {
+    content: "15";
+}
+
+#crew1Character {
+    background-image: url('../../CharacterIcons/akuma.png');
+}
+
+#crew2NameText:before {
+    content: "Team Rotter";
+}
+
+#crew2StocksLeftText:before {
+    content: "15";
+}
+
+#crew2Character {
+    background-image: url('../../CharacterIcons/alisa.png');
+}
+
+#roundText:before {
+    content: "Winners Round 1";
+}
+
+#bestOfText:before {
+    content: "Best of 1";
+}

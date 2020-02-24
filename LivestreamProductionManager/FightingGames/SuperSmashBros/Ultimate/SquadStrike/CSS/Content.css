@@ -24,19 +24,19 @@
 
 
 #squad1Player1TwitterText:before {
-    content: "";
+    content: "@zerwondering";
 }
 
 #squad1Player2TwitterText:before {
-    content: "";
+    content: "@nrgnairo";
 }
 
 #squad1Player3TwitterText:before {
-    content: "";
+    content: "@mkleo";
 }
 
 #squad1Player4TwitterText:before {
-    content: "";
+    content: "@tweek";
 }
 
 
@@ -100,19 +100,19 @@
 
 
 #squad2Player1TwitterText:before {
-    content: "";
+    content: "@mrr";
 }
 
 #squad2Player2TwitterText:before {
-    content: "";
+    content: "@istudying";
 }
 
 #squad2Player3TwitterText:before {
-    content: "";
+    content: "@sodrek";
 }
 
 #squad2Player4TwitterText:before {
-    content: "";
+    content: "@ixis";
 }
 
 
@@ -143,7 +143,7 @@
 
 
 #squad2ScoreText:before {
-    content: "1";
+    content: "3";
 }
 
 #squad2Port {

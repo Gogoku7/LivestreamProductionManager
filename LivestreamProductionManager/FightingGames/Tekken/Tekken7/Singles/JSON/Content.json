@@ -1,0 +1,74 @@
+[
+  {
+    "Selector": "#player1NameText",
+    "Value": "xMagnax"
+  },
+  {
+    "Selector": ".player1Sponsor",
+    "Value": null
+  },
+  {
+    "Selector": "#player1TwitterText",
+    "Value": "@xMagnax"
+  },
+  {
+    "Selector": "#player1TwitchText",
+    "Value": "xMagnax"
+  },
+  {
+    "Selector": "#player1ScoreText",
+    "Value": "1"
+  },
+  {
+    "Selector": "#player1Character",
+    "Value": "../../CharacterIcons/alisa.png"
+  },
+  {
+    "Selector": "#player1Country",
+    "Value": "../../../../Flags/AS.svg"
+  },
+  {
+    "Selector": "#player2NameText",
+    "Value": "Gogoku7"
+  },
+  {
+    "Selector": ".player2Sponsor",
+    "Value": "TDB"
+  },
+  {
+    "Selector": "#player2TwitterText",
+    "Value": "@Gogoku7"
+  },
+  {
+    "Selector": "#player2TwitchText",
+    "Value": "Gogoku7"
+  },
+  {
+    "Selector": "#player2ScoreText",
+    "Value": "2"
+  },
+  {
+    "Selector": "#player2Character",
+    "Value": "../../CharacterIcons/akuma.png"
+  },
+  {
+    "Selector": "#player2Country",
+    "Value": "../../../../Flags/BE.svg"
+  },
+  {
+    "Selector": "#tournamentText",
+    "Value": "Fight Night 50"
+  },
+  {
+    "Selector": "#extraText",
+    "Value": "Esports Game Arena"
+  },
+  {
+    "Selector": "#roundText",
+    "Value": "Winners Round 2"
+  },
+  {
+    "Selector": "#bestOfText",
+    "Value": "Best of 3"
+  }
+]

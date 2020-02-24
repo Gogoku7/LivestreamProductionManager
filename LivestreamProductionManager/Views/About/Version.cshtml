@@ -5,6 +5,104 @@
 <div class="container">
     <h1>Version information</h1>
 
+    <h2>Version 0.6</h2>
+    <p>??/02/2020 - <a href="https://github.com/Gogoku7/LivestreamProductionManager/projects/3">GitHub Version Project</a></p>
+    <p>Public update video: <a href="">Livestream Production Manager - Tournament Streaming (Open Source) - Public Update 6 (Version 0.6)</a></p>
+    <ul>
+        <li>Added Byleth as a Character to Super Smash Bros. Ultimate</li>
+        <li>Prepared the application for all six characters of the Fighters Pass Vol. 2</li>
+        <li>Removed unused Super Smash Bros. formats</li>
+        <ul>
+            <li>Iron Man</li>
+            <li>Big Teams</li>
+            <li>Smashdown</li>
+        </ul>
+        <li>Added Tekken to the Fighting Games Manager</li>
+        <ul>
+            <li>Tekken 7 is available, with the following formats supported</li>
+            <ul>
+                <li>Singles</li>
+                <li>Crews</li>
+            </ul>
+            <li>A default Tekken 7 Singles overlay has been created</li>
+            <li>A default Tekken 7 Crews overlay will be available in a future version</li>
+        </ul>
+        <li>Developed a Queu upcoming Sets functionality in the Fighting Games Manager</li>
+        <ul>
+            <li>Create a list upcoming Sets on stream for formats:</li>
+            <ul>
+                <li>Super Smash Bros. Singles</li>
+                <li>Super Smash Bros. Doubles</li>
+                <li>Super Smash Bros. Crews</li>
+                <li>Super Smash Bros. Squad Strike</li>
+                <li>Tekken 7 Singles</li>
+                <li>Tekken 7 Crews</li>
+            </ul>
+            <li>Submit a Set, so it can be used in a "Upcoming match" type of overlay</li>
+            <ul>
+                <li>A future version will have default overlays to display the upcoming match</li>
+            </ul>
+            <li>Import a Set into the Competitors Manager using the Import button</li>
+            <li>Move a Set up using the Move up button</li>
+            <li>Move a Set down using the Move down button</li>
+            <li>Remove a set using the Remove button</li>
+        </ul>
+        <li>JavaScript and CSS files used by overlays have been moved because they were applicable to overlays of other Fighting Games as well</li>
+        <ul>
+            <li>The JavaScript files were moved from /FightingGames/SuperSmashBros/JavaScript to /FightingGames/JavaScript</li>
+            <li>The CSS files were moved from /FightingGames/SuperSmashBros/CSS to /FightingGames/CSS</li>
+            <li>These are more central locations where overlays of other Fighting Games can reach them easier</li>
+        </ul>
+        <li>A timing issue in OverlayManager.js has been resolved that prevent smooth fade-in animations after updating content</li>
+        <li>Added Player.Twitch to Super Smash Bros. Singles</li>
+        <li>Added Player.Twitter and Player.Twitter to Super Smash Bros. Doubles</li>
+        <li>The "Reset to defaults" button has been repurposed into a "New set" button, with its own behaviour</li>
+        <ul>
+            <li>The button resets inputs to a default value</li>
+            <li>The button puts a pulsating effect over important inputs, so you don't forget to adjust them for the next set</li>
+        </ul>
+        <li>Added a default Stinger animation for transitioning between scenes</li>
+        <ul>
+            <li>A button has been added to the Fighting Games Manager that uses the WebSocket to replay the default Stinger animation</li>
+            <li>Managing the text content of the Stinger animation will be available in a future version</li>
+        </ul>
+        <li>Info icons <span class="glyphicon glyphicon-info-sign"></span> have been added next to settings</li>
+        <ul>
+            <li>Hovering over the icon <span class="glyphicon glyphicon-info-sign"></span> gives a small explanation about the setting</li>
+        </ul>
+        <li>Added a tooltip, showing on hover of panel buttons, containing a small explanation of important buttons</li>
+        <li>The Update button will now always pulsate on changes in the associated forms, this didn't happen on rare occasions before</li>
+        <li>Improved media query implementation on panel buttons</li>
+        <ul>
+            <li>The buttons should no longer overflow in reasonable window sizes</li>
+        </ul>
+        <li>Refactoring: changed the usage of == to === to prevent ceorcion of values</li>
+        <li>Refactoring: changed the code that generates Content.json files to use Newtonsoft.Json</li>
+        <ul>
+            <li>This will very slightly speed up the submitting Updates process</li>
+            <li>This fixes bugs regarding the Get latest values button</li>
+        </ul>
+        <li>Fixed a bug where Super Smash Bros. Doubles Scores wouldn't properly update through the WebSocket</li>
+        <li>The application now checks whether a file's directory exists, and creates it if it doesn't, before writing to a Content.css and Content.json file</li>
+        <li>Added basic support for Elgato Stream Deck when using Livestream Production Manager Blitz</li>
+        <ul>
+            <li>The following Elgato Stream Deck functionalities are currently configurable</li>
+            <ul>
+                <li>Submit Competitors</li>
+                <li>Get the latest competitors values</li>
+                <li>Increase the left side score by 1</li>
+                <li>Increase the right side score by 1</li>
+                <li>Reset the competitors to defaults</li>
+                <li>Add a new Set</li>
+                <li>Play default stinger animation</li>
+                <li>More will be implemented in a later release</li>
+            </ul>
+        </ul>
+        <li class="text-success">The logging functionality to files using Serilog has been fixed</li>
+    </ul>
+
+    <hr />
+
     <h2>Version 0.5.3 - Terry release</h2>
     <p>17/11/2019</p>
     <p>No Public update video</p>
@@ -15,7 +113,7 @@
     <hr />
 
     <h2>Version 0.5.2 - Minor improvements release</h2>
-    <p>01/10/2019</p>
+    <p>01/10/2019 <a href="https://github.com/Gogoku7/LivestreamProductionManager/projects/4">GitHub Version Project</a></p>
     <p>No Public update video</p>
     <ul>
         <li>Implemented Focus toggles</li>
@@ -58,7 +156,7 @@
     <hr />
 
     <h2>Version 0.5</h2>
-    <p>11/08/2019</p>
+    <p>11/08/2019 - <a href="https://github.com/Gogoku7/LivestreamProductionManager/projects/2">GitHub Version Project</a></p>
     <p>Public update video: <a href="https://www.youtube.com/watch?v=39qSgfExyx0">Livestream Production Manager - Tournament Streaming (Open Source) - Public Update 5 (Version 0.5)</a></p>
     <ul>
         <li>Moved the Solution folder one layer closer to the root of the Repo, resulting in shorter file paths</li>
@@ -133,7 +231,7 @@
     <hr />
 
     <h2>Version 0.4</h2>
-    <p>29/06/2019</p>
+    <p>29/06/2019 - <a href="https://github.com/Gogoku7/LivestreamProductionManager/projects/1">GitHub Version Project</a></p>
     <p>Public update video: <a href="https://www.youtube.com/watch?v=BZl6_uqJ9RQ">Livestream Production Manager - Tournament Streaming (Open Source) - Public Update 4 (Version 0.4)</a></p>
     <ul>
         <li>Added Joker as a Character to Super Smash Bros. Ultimate</li>

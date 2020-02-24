@@ -94,6 +94,22 @@ namespace LivestreamProductionManager.Implementations
             }
         }
 
+        public List<CountryViewModel> GetCountriesFromConfig()
+        {
+            try
+            {
+                using (var streamReader = new StreamReader(HttpContext.Current.Server.MapPath("~/FightingGames/Flags/CountriesConfig.json")))
+                {
+                    return JsonConvert.DeserializeObject<List<CountryViewModel>>(streamReader.ReadToEnd());
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+                throw;
+            }
+        }
+
         public SkinsConfig GetSkins(string pathToGame)
         {
             try

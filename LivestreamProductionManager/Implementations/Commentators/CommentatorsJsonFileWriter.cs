@@ -21,7 +21,12 @@ namespace LivestreamProductionManager.Implementations.Commentators
                 var templateJsonFile = _templateFileReader.ReadTemplateFile("ContentTemplate.json");
                 var jsonFileContent = _commentatorsValuesReplacer.ReplaceValuesForCommentators(templateJsonFile, commentatorsValuesModels);
 
-                File.WriteAllText(HttpContext.Current.Server.MapPath(pathToCommentators + "JSON/Content.json"), jsonFileContent);
+                var file = new FileInfo(HttpContext.Current.Server.MapPath(pathToCommentators + "JSON/Content.json"));
+                file.Directory.Create();
+
+                File.WriteAllText(file.FullName, jsonFileContent);
+
+                //File.WriteAllText(HttpContext.Current.Server.MapPath(pathToCommentators + "JSON/Content.json"), jsonFileContent);
             }
             catch (Exception ex)
             {
