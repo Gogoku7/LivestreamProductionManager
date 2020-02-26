@@ -1,0 +1,15 @@
+#commentator1NameText:before {
+    content: "Median4";
+}
+#commentator2NameText:before {
+    content: "Gogoku7";
+}
+
+
+#commentator1TwitterText:before {
+    content: "@median4";
+}
+#commentator2TwitterText:before {
+    content: "@gogoku7";
+}
+

@@ -1,6 +1,6 @@
 # Super Smash Bros. Ultimate - Squad Strike
 
-When deployed to IIS, change the baseUrl variable to 'localhost' or 'localhost/livestreamproductionmanager' (depending on which url Livestream Production Manager runs) in FightingGames/SuperSmashBros/JavaScript/OverlayManager.js and Web.config of the application to ensure the WebSocket connection to work.
+When deployed to IIS, change the baseUrl variable to 'localhost' or 'localhost/livestreamproductionmanager' (depending on which url Livestream Production Manager runs) in FightingGames/JavaScript/OverlayManager.js and Web.config of the application to ensure the WebSocket connection to work.
 
 To learn how to enable IIS, use: https://www.itnota.com/install-iis-windows/
 

@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="CSS/Styles.css">
+        <link rel="stylesheet" type="text/css" href="CSS/Content.css">
+        <script src="../../../JavaScript/jQuery.js"></script>
+        <script src="../../../JavaScript/fitty.js"></script>
+        <script src="../../../JavaScript/Snackbar.js"></script>
+        <script src="../../../JavaScript/OverlayManager.js"></script>
+    </head>
+    <body>
+        <div class="logos" style="margin: 0; padding: 0; width: 1920px; height: 1080px; position: absolute; top: 0; left: 0; z-index:2; background-image:url('Logos/TournamentLogo.png');">
+
+        </div>
+
+        <div class="wrapper">
+            <div class="commentators">
+                <div class="commentator" id="commentator1">
+                    <div class="commentatorBox" id="commentator1Box">
+                        <div class="commentatorNameBox" id="commentator1NameBox">
+                            <div class="commentatorNameContainer" id="commentator1NameContainer">
+                                <span class="commentatorName" id="commentator1NameText"></span>
+                            </div>
+                        </div>
+
+                        <div class="commentatorTwitterBox" id="commentator1TwitterBox">
+                            <div class="commentatorTwitterContainer" id="commentator1TwitterContainer">
+                                <span class="commentatorTwitter" id="commentator1TwitterText"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="commentator" id="commentator2">
+                    <div class="commentatorBox" id="commentator2Box">
+                        <div class="commentatorNameBox" id="commentator2NameBox">
+                            <div class="commentatorNameContainer" id="commentator2NameContainer">
+                                <span class="commentatorName" id="commentator2NameText"></span>
+                            </div>
+                        </div>
+
+                        <div class="commentatorTwitterBox" id="commentator2TwitterBox">
+                            <div class="commentatorTwitterContainer" id="commentator2TwitterContainer">
+                                <span class="commentatorTwitter" id="commentator2TwitterText"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="snackbar" id="snackbar"></div>
+    </body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var fittyElements = [
+            { "selector": ".commentatorName", "minSize": 8, "maxSize": 40, "multiLine": false },
+        ];
+
+        initWebSocketAndFitty(fittyElements, "Commentary overlay");
+    });
+</script>

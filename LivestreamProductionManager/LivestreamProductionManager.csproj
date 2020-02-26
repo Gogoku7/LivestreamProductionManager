@@ -2974,7 +2974,9 @@
     <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\zerosuitsamus_07.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FightingGames\SuperSmashBros\Ultimate\Commentators\CommentaryOverlay.html" />
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\Commentators\CommentaryOverlay.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="FightingGames\SuperSmashBros\Ultimate\Commentators\CommentatorBackgrounds\Commentator1NameBackground.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -4534,6 +4536,27 @@
     <Content Include="FightingGames\SuperSmashBros\WiiU\Singles\PlayerBackgrounds\Player2Background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="FightingGames\Tekken\Tekken7\Commentators\CommentaryOverlay.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Tekken\Tekken7\Commentators\CommentatorBackgrounds\Commentator1NameBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Tekken\Tekken7\Commentators\CommentatorBackgrounds\Commentator1TwitterBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Tekken\Tekken7\Commentators\CommentatorBackgrounds\Commentator2NameBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Tekken\Tekken7\Commentators\CommentatorBackgrounds\Commentator2TwitterBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Tekken\Tekken7\Commentators\CSS\Styles.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Tekken\Tekken7\Commentators\Logos\TournamentLogo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="FightingGames\Tekken\Tekken7\Singles\CSS\Styles.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -4691,6 +4714,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="FightingGames\Flags\CountriesConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Tekken\Tekken7\Commentators\ReadMe.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Tekken\Tekken7\Commentators\ReadMe.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Tekken\Tekken7\Commentators\JSON\ReadMe.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Properties\PublishProfiles\LivestreamProductionManager.pubxml" />

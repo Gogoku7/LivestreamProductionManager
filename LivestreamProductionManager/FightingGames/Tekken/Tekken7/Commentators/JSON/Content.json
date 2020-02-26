@@ -1,0 +1,18 @@
+[
+{
+  "Selector": "#commentator1NameText",
+  "Value": "Median4"
+},
+{
+  "Selector": "#commentator1TwitterText",
+  "Value": "@median4"
+},
+{
+  "Selector": "#commentator2NameText",
+  "Value": "Gogoku7"
+},
+{
+  "Selector": "#commentator2TwitterText",
+  "Value": "@gogoku7"
+}
+]
