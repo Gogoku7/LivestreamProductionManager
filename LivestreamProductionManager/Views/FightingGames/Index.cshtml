@@ -1597,11 +1597,11 @@
             try {
                 if ($(`#nextSet-${ index }`).length) {
                     if ($(`#manageQueuForm_${ index }`).length) {
-                        $("#manageTournamentValues #round").val($(`#manageQueuForm_${ index } [name='Round']`).val());
-                        $("#manageTournamentValues #bestOf").val($(`#manageQueuForm_${ index } [name='BestOf']`).val());
+                        $("#manageTournamentValues #round").val($(`#manageQueuForm_${ index } [name='Round']`).val()).removeClass("danger-pulsate");
+                        $("#manageTournamentValues #bestOf").val($(`#manageQueuForm_${ index } [name='BestOf']`).val()).removeClass("danger-pulsate");
 
                         $(`#manageQueuForm_${ index } :input[data-selector]`).each(function () {
-                            $("#manageCompetitorsForm").find($(this).data("selector")).val($(this).val());
+                            $("#manageCompetitorsForm").find($(this).data("selector")).val($(this).val()).removeClass("danger-pulsate");
                         });
 
                         ShowSnackbar("#manageQueuSnackbar", `Imported Set ${ index + 1 }.`);
