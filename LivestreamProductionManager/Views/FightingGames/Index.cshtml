@@ -56,6 +56,27 @@
     </div>
 </div>
 
+<div class="row panelRow" id="manageQueuRow">
+    <!--Manage Queu-->
+    <div class="full-horizontal-width">
+        <div class="panel panel-default">
+            <div class="panel-heading row">
+                <div class="col-xs-5 text-center">
+                </div>
+                <div class="col-xs-2 text-center">
+                    <text class="panel-title">Manage queu</text>
+                </div>
+                <div class="col-xs-5 text-right">
+                    <button class="btn btn-info panelButton" id="addSetButton" data-toggle="buttonTooltip" title="Add a new Set"><span style="font-weight: bold;" class="glypicon glyphicon-plus"></span><text> Add</text></button>
+                </div>
+            </div>
+            <div class="panel-body" id="manageQueu">
+
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="row panelRow" id="manageTournamentRow">
     <!--Manage Tournament-->
     <div class="full-horizontal-width">
@@ -107,29 +128,6 @@
                         <select class="form-control" id="Format"></select>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row panelRow" id="manageQueuRow">
-    <!--Manage Queu-->
-    <div class="full-horizontal-width">
-        <div class="panel panel-warning">
-            <div class="panel-heading row">
-                <div class="col-xs-5 text-center">
-                </div>
-                <div class="col-xs-2 text-center">
-                    <text class="panel-title">Manage queu</text>
-                </div>
-                <div class="col-xs-5 text-right">
-                    <button class="btn btn-info panelButton" id="addSetButton" data-toggle="buttonTooltip" title="Add a new Set"><span style="font-weight: bold;" class="glypicon glyphicon-plus"></span><text> Add</text></button>
-                </div>
-            </div>
-            <div class="panel-body" id="manageQueu">
-
-                
-
             </div>
         </div>
     </div>
@@ -660,12 +658,15 @@
                     },
                     dataType: "html",
                     success: function (data) {
+                        //TODO: Check if selected Series match with what's currently in the Competitors form, then empty commentators form
+
                         $("#manageCompetitors").html(data);
+
                         $("#manageQueu").empty();
 
                         $("#manageCommentatorsForm > [name='PathToCommentators']").val(selectedGame.data("path-to-commentators"));
 
-                        pathToFormatNextSet = selectedFormat.data("path-to-format-next-set"); // continue from here
+                        pathToFormatNextSet = selectedFormat.data("path-to-format-next-set");
 
                         $("[data-toggle='characterSkinPopover']").popover({ html: true, placement: "bottom", trigger: "manual" });
 
