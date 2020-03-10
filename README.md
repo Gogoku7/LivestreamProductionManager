@@ -21,6 +21,7 @@ Livestream Production Manager (LPM) is in development and doesn't have a .msi in
 - Select "Rebuild Solution"
 - Run the program with or without debugger:
     - Press F5 to run with debugger
+    - Sometimes you need to restart Visual Studio on the first time ever running
     - Press ctrl + F5 to run without debugger
         - This is useful for when you want to run Livestream Production Manager Blitz
 
