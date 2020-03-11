@@ -19,6 +19,7 @@ Livestream Production Manager (LPM) is in development and doesn't have a .msi in
 - Open the .sln file with Visual Studio
 - Right click "Solution 'LivestreamProductionManager (1 project)'"
 - Select "Rebuild Solution"
+- Sometimes you need to restart Visual Studio on the first time ever running
 - Run the program with or without debugger:
     - Press F5 to run with debugger
     - Press ctrl + F5 to run without debugger
