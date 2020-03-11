@@ -224,7 +224,7 @@
     "CssValue": "../../../../Flags/CU.svg"
   },
   {
-    "CountryName": "Curaçao",
+    "CountryName": "Cura&ccedil;ao",
     "CssValue": "../../../../Flags/CW.svg"
   },
   {
@@ -236,7 +236,7 @@
     "CssValue": "../../../../Flags/CZ.svg"
   },
   {
-    "CountryName": "Côte d'Ivoire",
+    "CountryName": "C&ocirc;te d'Ivoire",
     "CssValue": "../../../../Flags/CI.svg"
   },
   {
@@ -752,11 +752,11 @@
     "CssValue": "../../../../Flags/RW.svg"
   },
   {
-    "CountryName": "Réunion",
+    "CountryName": "R&eacute;union",
     "CssValue": "../../../../Flags/RE.svg"
   },
   {
-    "CountryName": "Saint Barthélemy",
+    "CountryName": "Saint Barth&eacute;lemy",
     "CssValue": "../../../../Flags/BL.svg"
   },
   {
@@ -1024,7 +1024,7 @@
     "CssValue": "../../../../Flags/ZW.svg"
   },
   {
-    "CountryName": "Åland Islands",
+    "CountryName": "&Aring;land Islands",
     "CssValue": "../../../../Flags/AX.svg"
   }
 ]
