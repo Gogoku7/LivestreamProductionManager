@@ -8,6 +8,12 @@
         characterOptionsStringBuilder.AppendLine($"<option value='{character.CssValue}' data-name='{character.CharacterName}'>{character.CharacterName}</option>");
     }
 
+    var countryOptionsStringBuilder = new StringBuilder();
+    foreach (var character in Model.Countries)
+    {
+        countryOptionsStringBuilder.AppendLine($"<option value='{character.CssValue}'>{character.CountryName}</option>");
+    }
+
     Layout = null;
 }
 
@@ -144,6 +150,23 @@
                 <select class="form-control" name="Player2.Character" id="nextSet_@(Model.Index)_Player2Character" data-selector="#player2Character" data-side="2" data-opposite-id="#nextSet_@(Model.Index)_Player1Character" data-id-template="nextSet_INDEX_Player2Character" data-opposite-id-template="#nextSet_INDEX_Player1Character">
                     <option value="" selected disabled hidden>Choose character</option>
                     @Html.Raw(characterOptionsStringBuilder.ToString())
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6 text-center">
+                <label>Country</label>
+                <select class="form-control" name="Player1.Country" id="nextSet_@(Model.Index)_Player1Country" data-selector="#player1Country" data-side="1" data-opposite-id="#nextSet_@(Model.Index)_Player2Country" data-id-template="nextSet_INDEX_Player1Country" data-opposite-id-template="#nextSet_INDEX_Player2Country">
+                    <option value="" selected disabled hidden>Choose country</option>
+                    @Html.Raw(countryOptionsStringBuilder.ToString())
+                </select>
+            </div>
+            <div class="col-xs-6 text-center">
+                <label>Country</label>
+                <select class="form-control" name="Player2.Country" id="nextSet_@(Model.Index)_Player2Country" data-selector="#player2Country" data-side="2" data-opposite-id="#nextSet_@(Model.Index)_Player1Country" data-id-template="nextSet_INDEX_Player2Country" data-opposite-id-template="#nextSet_INDEX_Player1Country">
+                    <option value="" selected disabled hidden>Choose country</option>
+                    @Html.Raw(countryOptionsStringBuilder.ToString())
                 </select>
             </div>
         </div>

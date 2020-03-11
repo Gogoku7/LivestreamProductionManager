@@ -1,47 +1,55 @@
 [
   {
     "Selector": "#player1NameText",
-    "Value": "Gogoku7"
+    "Value": "Draco"
   },
   {
     "Selector": ".player1Sponsor",
-    "Value": "TDB"
-  },
-  {
-    "Selector": "#player1TwitterText",
-    "Value": "@Gogoku7"
-  },
-  {
-    "Selector": "#player1TwitchText",
-    "Value": "Gogoku7"
-  },
-  {
-    "Selector": "#player1Character",
-    "Value": "../../CharacterIcons/akuma.png"
-  },
-  {
-    "Selector": "#player2NameText",
-    "Value": "Draco"
-  },
-  {
-    "Selector": ".player2Sponsor",
     "Value": "Crucible"
   },
   {
-    "Selector": "#player2TwitterText",
+    "Selector": "#player1TwitterText",
     "Value": "@Draco"
   },
   {
-    "Selector": "#player2TwitchText",
+    "Selector": "#player1TwitchText",
     "Value": "Draco"
   },
   {
+    "Selector": "#player1Character",
+    "Value": "../../CharacterIcons/alisa.png"
+  },
+  {
+    "Selector": "#player1Country",
+    "Value": "../../../../Flags/AX.svg"
+  },
+  {
+    "Selector": "#player2NameText",
+    "Value": "Gogoku7"
+  },
+  {
+    "Selector": ".player2Sponsor",
+    "Value": "TDB"
+  },
+  {
+    "Selector": "#player2TwitterText",
+    "Value": "@Gogoku7"
+  },
+  {
+    "Selector": "#player2TwitchText",
+    "Value": "Gogoku7"
+  },
+  {
     "Selector": "#player2Character",
-    "Value": "../../CharacterIcons/zafina.png"
+    "Value": "../../CharacterIcons/akuma.png"
+  },
+  {
+    "Selector": "#player2Country",
+    "Value": "../../../../Flags/AF.svg"
   },
   {
     "Selector": "#roundText",
-    "Value": "Winners Round "
+    "Value": "Winners Round 1"
   },
   {
     "Selector": "#bestOfText",

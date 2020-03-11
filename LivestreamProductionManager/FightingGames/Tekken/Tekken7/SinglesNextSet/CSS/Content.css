@@ -1,37 +1,45 @@
 #player1NameText:before {
-    content: "TDB | Gogoku7";
-}
-
-#player1TwitterText:before {
-    content: "@Gogoku7";
-}
-
-#player1TwitchText:before {
-    content: "Gogoku7";
-}
-
-#player1Character {
-    background-image: url('../../CharacterIcons/akuma.png');
-}
-
-#player2NameText:before {
     content: "Crucible | Draco";
 }
 
-#player2TwitterText:before {
+#player1TwitterText:before {
     content: "@Draco";
 }
 
-#player2TwitchText:before {
+#player1TwitchText:before {
     content: "Draco";
 }
 
+#player1Character {
+    background-image: url('../../CharacterIcons/alisa.png');
+}
+
+#player1Country {
+    background-image: url('../../../../Flags/AX.svg');
+}
+
+#player2NameText:before {
+    content: "TDB | Gogoku7";
+}
+
+#player2TwitterText:before {
+    content: "@Gogoku7";
+}
+
+#player2TwitchText:before {
+    content: "Gogoku7";
+}
+
 #player2Character {
-    background-image: url('../../CharacterIcons/zafina.png');
+    background-image: url('../../CharacterIcons/akuma.png');
+}
+
+#player2Country {
+    background-image: url('../../../../Flags/AF.svg');
 }
 
 #roundText:before {
-    content: "Winners Round ";
+    content: "Winners Round 1";
 }
 
 #bestOfText:before {

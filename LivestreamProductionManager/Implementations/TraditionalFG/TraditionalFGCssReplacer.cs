@@ -140,6 +140,8 @@ namespace LivestreamProductionManager.Implementations.TraditionalFG
 
                 fileTemplate = fileTemplate.Replace("player1CharacterPLACEHOLDER", singlesNextSetCssModel.Player1.CharacterPath);
 
+                fileTemplate = fileTemplate.Replace("player1CountryPLACEHOLDER", singlesNextSetCssModel.Player1.CountryPath);
+
                 fileTemplate = fileTemplate.Replace("player2NameTextPLACEHOLDER", singlesNextSetCssModel.Player2.NameAndSponsor);
 
                 fileTemplate = fileTemplate.Replace("player2TwitterTextPLACEHOLDER", singlesNextSetCssModel.Player2.Twitter);
@@ -147,6 +149,8 @@ namespace LivestreamProductionManager.Implementations.TraditionalFG
                 fileTemplate = fileTemplate.Replace("player2TwitchTextPLACEHOLDER", singlesNextSetCssModel.Player2.Twitch);
 
                 fileTemplate = fileTemplate.Replace("player2CharacterPLACEHOLDER", singlesNextSetCssModel.Player2.CharacterPath);
+
+                fileTemplate = fileTemplate.Replace("player2CountryPLACEHOLDER", singlesNextSetCssModel.Player2.CountryPath);
 
                 fileTemplate = fileTemplate.Replace("roundTextPLACEHOLDER", singlesNextSetCssModel.Round);
 

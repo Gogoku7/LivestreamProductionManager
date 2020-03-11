@@ -142,12 +142,14 @@ namespace LivestreamProductionManager.Implementations.TraditionalFG
                     new SelectorValueModel("#player1TwitterText", singlesNextSetViewModel.Player1.Twitter),
                     new SelectorValueModel("#player1TwitchText", singlesNextSetViewModel.Player1.Twitch),
                     new SelectorValueModel("#player1Character", singlesNextSetViewModel.Player1.Character),
+                    new SelectorValueModel("#player1Country", singlesNextSetViewModel.Player1.Country),
 
                     new SelectorValueModel("#player2NameText", singlesNextSetViewModel.Player2.Name),
                     new SelectorValueModel(".player2Sponsor", singlesNextSetViewModel.Player2.Sponsor),
                     new SelectorValueModel("#player2TwitterText", singlesNextSetViewModel.Player2.Twitter),
                     new SelectorValueModel("#player2TwitchText", singlesNextSetViewModel.Player2.Twitch),
                     new SelectorValueModel("#player2Character", singlesNextSetViewModel.Player2.Character),
+                    new SelectorValueModel("#player2Country", singlesNextSetViewModel.Player2.Country),
 
                     new SelectorValueModel("#roundText", singlesNextSetViewModel.Round),
                     new SelectorValueModel("#bestOfText", singlesNextSetViewModel.BestOf)

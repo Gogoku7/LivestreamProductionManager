@@ -63,6 +63,7 @@ namespace LivestreamProductionManager.Controllers
                 };
 
                 traditionalFGQueuBaseViewModel.Characters = _configReader.GetCharactersFromConfig(traditionalFGQueuBaseViewModel.PathToGame);
+                traditionalFGQueuBaseViewModel.Countries = _configReader.GetCountriesFromConfig();
 
                 return PartialView($"~/Views/TraditionalFG/{pathsViewModel.Format}/NextSet.cshtml", traditionalFGQueuBaseViewModel);
             }

@@ -6,5 +6,6 @@ namespace LivestreamProductionManager.ViewModels.FightingGames.TraditionalFG
     {
         public int Index { get; set; }
         public List<CharacterViewModel> Characters { get; set; }
+        public List<CountryViewModel> Countries { get; set; }
     }
 }

@@ -140,11 +140,13 @@ namespace LivestreamProductionManager.Implementations.TraditionalFG
                 singlesNextSetCssModel.Player1.Twitter = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "player1TwitterText", singlesNextSetViewModel.Player1.Twitter);
                 singlesNextSetCssModel.Player1.Twitch = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "player1TwitchText", singlesNextSetViewModel.Player1.Twitch);
                 singlesNextSetCssModel.Player1.CharacterPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "player1Character", singlesNextSetViewModel.Player1.Character);
+                singlesNextSetCssModel.Player1.CountryPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "player1Country", singlesNextSetViewModel.Player1.Country);
 
                 singlesNextSetCssModel.Player2.NameAndSponsor = _textReplacer.ReplaceIdAndValueForPlayerName(_textTemplateCss, "player2NameText", singlesNextSetViewModel.Player2.Sponsor, singlesNextSetViewModel.Player2.Name);
                 singlesNextSetCssModel.Player2.Twitter = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "player2TwitterText", singlesNextSetViewModel.Player2.Twitter);
                 singlesNextSetCssModel.Player2.Twitch = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "player2TwitchText", singlesNextSetViewModel.Player2.Twitch);
                 singlesNextSetCssModel.Player2.CharacterPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "player2Character", singlesNextSetViewModel.Player2.Character);
+                singlesNextSetCssModel.Player2.CountryPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "player2Country", singlesNextSetViewModel.Player2.Country);
 
                 singlesNextSetCssModel.Round = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "roundText", singlesNextSetViewModel.Round);
                 singlesNextSetCssModel.BestOf = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "bestOfText", singlesNextSetViewModel.BestOf);
