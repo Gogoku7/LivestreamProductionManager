@@ -1,21 +1,21 @@
 #squad1NameText:before {
-    content: "Europe";
+    content: "Team Europe";
 }
 
 #squad1Player1NameText:before {
-    content: "Mr. R";
+    content: "MR. R";
 }
 
 #squad1Player2NameText:before {
-    content: "iStudying";
+    content: "Glutonny";
 }
 
 #squad1Player3NameText:before {
-    content: "Sodrek";
+    content: "Quik";
 }
 
 #squad1Player4NameText:before {
-    content: "Ixis";
+    content: "Space";
 }
 
 
@@ -26,15 +26,15 @@
 }
 
 #squad1Player2TwitterText:before {
-    content: "@istudying";
+    content: "@glutonny";
 }
 
 #squad1Player3TwitterText:before {
-    content: "@sodrek";
+    content: "@quik";
 }
 
 #squad1Player4TwitterText:before {
-    content: "@ixis";
+    content: "@space";
 }
 
 
@@ -57,7 +57,7 @@
 }
 
 #squad1Character5 {
-    background-image: url('../../CharacterIcons/captainfalcon.png');
+    background-image: url('../../CharacterIcons/byleth.png');
 }
 
 
@@ -66,43 +66,47 @@
     background-image: url('../../PlayerPorts/PlayerPort1.png');
 }
 
+#squad1Country {
+    background-image: url('../../../../Flags/AF.svg');
+}
+
 #squad2NameText:before {
-    content: "USA";
+    content: "Team America";
 }
 
 #squad2Player1NameText:before {
-    content: "ZeRo";
-}
-
-#squad2Player2NameText:before {
     content: "Nairo";
 }
 
-#squad2Player3NameText:before {
+#squad2Player2NameText:before {
     content: "MKLeo";
 }
 
+#squad2Player3NameText:before {
+    content: "Samsora";
+}
+
 #squad2Player4NameText:before {
-    content: "Tweek";
+    content: "Marss";
 }
 
 
 
 
 #squad2Player1TwitterText:before {
-    content: "@zerwondering";
+    content: "@nairo";
 }
 
 #squad2Player2TwitterText:before {
-    content: "@nrgnairo";
-}
-
-#squad2Player3TwitterText:before {
     content: "@mkleo";
 }
 
+#squad2Player3TwitterText:before {
+    content: "@samsora";
+}
+
 #squad2Player4TwitterText:before {
-    content: "@tweek";
+    content: "@marss";
 }
 
 
@@ -131,7 +135,11 @@
 
 
 #squad2Port {
-    background-image: url('../../PlayerPorts/PlayerPort2.png');
+    background-image: url('../../PlayerPorts/PlayerPort8.png');
+}
+
+#squad2Country {
+    background-image: url('../../../../Flags/AX.svg');
 }
 
 #roundText:before {

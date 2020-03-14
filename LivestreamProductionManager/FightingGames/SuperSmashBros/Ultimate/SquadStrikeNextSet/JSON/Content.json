@@ -1,15 +1,19 @@
 [
   {
     "Selector": "#squad1NameText",
-    "Value": "Europe"
+    "Value": "Team Europe"
   },
   {
     "Selector": "#squad1Port",
     "Value": "../../PlayerPorts/PlayerPort1.png"
   },
   {
+    "Selector": "#squad1Country",
+    "Value": "../../../../Flags/AF.svg"
+  },
+  {
     "Selector": "#squad1Player1NameText",
-    "Value": "Mr. R"
+    "Value": "MR. R"
   },
   {
     "Selector": "#squad1Player1TwitterText",
@@ -21,11 +25,11 @@
   },
   {
     "Selector": "#squad1Player2NameText",
-    "Value": "iStudying"
+    "Value": "Glutonny"
   },
   {
     "Selector": "#squad1Player2TwitterText",
-    "Value": "@istudying"
+    "Value": "@glutonny"
   },
   {
     "Selector": "#squad1Character2",
@@ -33,11 +37,11 @@
   },
   {
     "Selector": "#squad1Player3NameText",
-    "Value": "Sodrek"
+    "Value": "Quik"
   },
   {
     "Selector": "#squad1Player3TwitterText",
-    "Value": "@sodrek"
+    "Value": "@quik"
   },
   {
     "Selector": "#squad1Character3",
@@ -45,11 +49,11 @@
   },
   {
     "Selector": "#squad1Player4NameText",
-    "Value": "Ixis"
+    "Value": "Space"
   },
   {
     "Selector": "#squad1Player4TwitterText",
-    "Value": "@ixis"
+    "Value": "@space"
   },
   {
     "Selector": "#squad1Character4",
@@ -57,23 +61,27 @@
   },
   {
     "Selector": "#squad1Character5",
-    "Value": "../../CharacterIcons/captainfalcon.png"
+    "Value": "../../CharacterIcons/byleth.png"
   },
   {
     "Selector": "#squad2NameText",
-    "Value": "USA"
+    "Value": "Team America"
   },
   {
     "Selector": "#squad2Port",
-    "Value": "../../PlayerPorts/PlayerPort2.png"
+    "Value": "../../PlayerPorts/PlayerPort8.png"
+  },
+  {
+    "Selector": "#squad2Country",
+    "Value": "../../../../Flags/AX.svg"
   },
   {
     "Selector": "#squad2Player1NameText",
-    "Value": "ZeRo"
+    "Value": "Nairo"
   },
   {
     "Selector": "#squad2Player1TwitterText",
-    "Value": "@zerwondering"
+    "Value": "@nairo"
   },
   {
     "Selector": "#squad2Character1",
@@ -81,11 +89,11 @@
   },
   {
     "Selector": "#squad2Player2NameText",
-    "Value": "Nairo"
+    "Value": "MKLeo"
   },
   {
     "Selector": "#squad2Player2TwitterText",
-    "Value": "@nrgnairo"
+    "Value": "@mkleo"
   },
   {
     "Selector": "#squad2Character2",
@@ -93,11 +101,11 @@
   },
   {
     "Selector": "#squad2Player3NameText",
-    "Value": "MKLeo"
+    "Value": "Samsora"
   },
   {
     "Selector": "#squad2Player3TwitterText",
-    "Value": "@mkleo"
+    "Value": "@samsora"
   },
   {
     "Selector": "#squad2Character3",
@@ -105,11 +113,11 @@
   },
   {
     "Selector": "#squad2Player4NameText",
-    "Value": "Tweek"
+    "Value": "Marss"
   },
   {
     "Selector": "#squad2Player4TwitterText",
-    "Value": "@tweek"
+    "Value": "@marss"
   },
   {
     "Selector": "#squad2Character4",

@@ -9,7 +9,7 @@
   },
   {
     "Selector": "#player1TwitterText",
-    "Value": "@Gogoku7"
+    "Value": "@gogoku7"
   },
   {
     "Selector": "#player1TwitchText",
@@ -24,6 +24,10 @@
     "Value": "../../PlayerPorts/PlayerPort1.png"
   },
   {
+    "Selector": "#player1Country",
+    "Value": "../../../../Flags/AF.svg"
+  },
+  {
     "Selector": "#player2NameText",
     "Value": "Draco"
   },
@@ -33,7 +37,7 @@
   },
   {
     "Selector": "#player2TwitterText",
-    "Value": "@Draco"
+    "Value": "@draco"
   },
   {
     "Selector": "#player2TwitchText",
@@ -41,15 +45,19 @@
   },
   {
     "Selector": "#player2Character",
-    "Value": "../../CharacterIcons/bayonetta.png"
+    "Value": "../../CharacterIcons/zerosuitsamus.png"
   },
   {
     "Selector": "#player2Port",
-    "Value": "../../PlayerPorts/PlayerPort2.png"
+    "Value": "../../PlayerPorts/PlayerPort8.png"
+  },
+  {
+    "Selector": "#player2Country",
+    "Value": "../../../../Flags/AX.svg"
   },
   {
     "Selector": "#roundText",
-    "Value": "Winners Round 2"
+    "Value": "Winners Round 1"
   },
   {
     "Selector": "#bestOfText",

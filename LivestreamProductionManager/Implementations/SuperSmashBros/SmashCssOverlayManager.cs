@@ -276,12 +276,14 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 singlesNextSetCssModel.Player1.Twitch = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "player1TwitchText", singlesNextSetViewModel.Player1.Twitch);
                 singlesNextSetCssModel.Player1.CharacterPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "player1Character", singlesNextSetViewModel.Player1.Character);
                 singlesNextSetCssModel.Player1.PortPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "player1Port", singlesNextSetViewModel.Player1.Port);
+                singlesNextSetCssModel.Player1.CountryPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "player1Country", singlesNextSetViewModel.Player1.Country);
 
                 singlesNextSetCssModel.Player2.NameAndSponsor = _textReplacer.ReplaceIdAndValueForPlayerName(_textTemplateCss, "player2NameText", singlesNextSetViewModel.Player2.Sponsor, singlesNextSetViewModel.Player2.Name);
                 singlesNextSetCssModel.Player2.Twitter = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "player2TwitterText", singlesNextSetViewModel.Player2.Twitter);
                 singlesNextSetCssModel.Player2.Twitch = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "player2TwitchText", singlesNextSetViewModel.Player2.Twitch);
                 singlesNextSetCssModel.Player2.CharacterPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "player2Character", singlesNextSetViewModel.Player2.Character);
                 singlesNextSetCssModel.Player2.PortPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "player2Port", singlesNextSetViewModel.Player2.Port);
+                singlesNextSetCssModel.Player2.CountryPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "player2Country", singlesNextSetViewModel.Player2.Country);
 
                 singlesNextSetCssModel.Round = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "roundText", singlesNextSetViewModel.Round);
                 singlesNextSetCssModel.BestOf = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "bestOfText", singlesNextSetViewModel.BestOf);
@@ -307,6 +309,7 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 doublesCssModel.Team1.Twitches = _textReplacer.ReplaceIdAndValueForTeam(_textTemplateCss, "team1Player*TwitchText", doublesNextSetViewModel.Team1.Players.Select(p => p.Twitch).ToList());
                 doublesCssModel.Team1.CharacterPaths = _textReplacer.ReplaceIdAndValueForTeam(_imageTemplateCss, "team1Player*Character", doublesNextSetViewModel.Team1.Players.Select(p => p.Character).ToList());
                 doublesCssModel.Team1.PortPaths = _textReplacer.ReplaceIdAndValueForTeam(_imageTemplateCss, "team1Player*Port", doublesNextSetViewModel.Team1.Players.Select(p => p.Port).ToList());
+                doublesCssModel.Team1.CountryPaths = _textReplacer.ReplaceIdAndValueForTeam(_imageTemplateCss, "team1Player*Country", doublesNextSetViewModel.Team1.Players.Select(p => p.Country).ToList());
 
                 doublesCssModel.Team2.Name = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "team2NameText", doublesNextSetViewModel.Team2.Name);
                 doublesCssModel.Team2.PlayerNamesAndSponsors = _textReplacer.ReplaceIdAndValueForPlayerNames(_textTemplateCss, "team2Player*NameText", doublesNextSetViewModel.Team2.Players.Select(p => p.Sponsor).ToList(), doublesNextSetViewModel.Team2.Players.Select(p => p.Name).ToList());
@@ -314,6 +317,7 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 doublesCssModel.Team2.Twitches = _textReplacer.ReplaceIdAndValueForTeam(_textTemplateCss, "team2Player*TwitchText", doublesNextSetViewModel.Team2.Players.Select(p => p.Twitch).ToList());
                 doublesCssModel.Team2.CharacterPaths = _textReplacer.ReplaceIdAndValueForTeam(_imageTemplateCss, "team2Player*Character", doublesNextSetViewModel.Team2.Players.Select(p => p.Character).ToList());
                 doublesCssModel.Team2.PortPaths = _textReplacer.ReplaceIdAndValueForTeam(_imageTemplateCss, "team2Player*Port", doublesNextSetViewModel.Team2.Players.Select(p => p.Port).ToList());
+                doublesCssModel.Team2.CountryPaths = _textReplacer.ReplaceIdAndValueForTeam(_imageTemplateCss, "team2Player*Country", doublesNextSetViewModel.Team2.Players.Select(p => p.Country).ToList());
 
                 doublesCssModel.Round = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "roundText", doublesNextSetViewModel.Round);
                 doublesCssModel.BestOf = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "bestOfText", doublesNextSetViewModel.BestOf);
@@ -336,11 +340,13 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 crewsNextSetCssModel.Crew1.Name = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "crew1NameText", crewsNextSetViewModel.Crew1.Name);
                 crewsNextSetCssModel.Crew1.CharacterPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "crew1Character", crewsNextSetViewModel.Crew1.Character);
                 crewsNextSetCssModel.Crew1.PortPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "crew1Port", crewsNextSetViewModel.Crew1.Port);
+                crewsNextSetCssModel.Crew1.CountryPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "crew1Country", crewsNextSetViewModel.Crew1.Country);
                 crewsNextSetCssModel.Crew1.StocksLeft = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "crew1StocksLeftText", crewsNextSetViewModel.Crew1.StocksLeft ?? "?");
 
                 crewsNextSetCssModel.Crew2.Name = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "crew2NameText", crewsNextSetViewModel.Crew2.Name);
                 crewsNextSetCssModel.Crew2.CharacterPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "crew2Character", crewsNextSetViewModel.Crew2.Character);
                 crewsNextSetCssModel.Crew2.PortPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "crew2Port", crewsNextSetViewModel.Crew2.Port);
+                crewsNextSetCssModel.Crew2.CountryPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "crew2Country", crewsNextSetViewModel.Crew2.Country);
                 crewsNextSetCssModel.Crew2.StocksLeft = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "crew2StocksLeftText", crewsNextSetViewModel.Crew2.StocksLeft ?? "?");
 
                 crewsNextSetCssModel.Round = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "roundText", crewsNextSetViewModel.Round);
@@ -363,6 +369,7 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
 
                 squadStrikeNextSetCssModel.Squad1.Name = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "squad1NameText", squadStrikeNextSetViewModel.Squad1.Name);
                 squadStrikeNextSetCssModel.Squad1.PortPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "squad1Port", squadStrikeNextSetViewModel.Squad1.Port);
+                squadStrikeNextSetCssModel.Squad1.CountryPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "squad1Country", squadStrikeNextSetViewModel.Squad1.Country);
 
                 for (var i = 0; i < squadStrikeNextSetViewModel.Squad1.Players.Count; i++)
                 {
@@ -380,6 +387,7 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
 
                 squadStrikeNextSetCssModel.Squad2.Name = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "squad2NameText", squadStrikeNextSetViewModel.Squad2.Name);
                 squadStrikeNextSetCssModel.Squad2.PortPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "squad2Port", squadStrikeNextSetViewModel.Squad2.Port);
+                squadStrikeNextSetCssModel.Squad2.CountryPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "squad2Country", squadStrikeNextSetViewModel.Squad2.Country);
 
                 for (var i = 0; i < squadStrikeNextSetViewModel.Squad2.Players.Count; i++)
                 {

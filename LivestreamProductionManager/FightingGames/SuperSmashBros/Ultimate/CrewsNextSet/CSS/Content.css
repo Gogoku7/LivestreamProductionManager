@@ -1,5 +1,5 @@
 #crew1NameText:before {
-    content: "Dutch Brawlers";
+    content: "Team Saiyan";
 }
 
 #crew1StocksLeftText:before {
@@ -14,8 +14,12 @@
     background-image: url('../../PlayerPorts/PlayerPort1.png');
 }
 
+#crew1Country {
+    background-image: url('../../../../Flags/AF.svg');
+}
+
 #crew2NameText:before {
-    content: "Backroom";
+    content: "Team NaRo";
 }
 
 #crew2StocksLeftText:before {
@@ -23,11 +27,15 @@
 }
 
 #crew2Character {
-    background-image: url('../../CharacterIcons/bayonetta.png');
+    background-image: url('../../CharacterIcons/zerosuitsamus.png');
 }
 
 #crew2Port {
-    background-image: url('../../PlayerPorts/PlayerPort2.png');
+    background-image: url('../../PlayerPorts/PlayerPort8.png');
+}
+
+#crew2Country {
+    background-image: url('../../../../Flags/AX.svg');
 }
 
 #roundText:before {

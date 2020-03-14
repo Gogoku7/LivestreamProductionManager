@@ -8,6 +8,12 @@
         characterOptionsStringBuilder.AppendLine($"<option value='{character.CssValue}' data-name='{character.CharacterName}'>{character.CharacterName}</option>");
     }
 
+    var countryOptionsStringBuilder = new StringBuilder();
+    foreach (var character in Model.Countries)
+    {
+        countryOptionsStringBuilder.AppendLine($"<option value='{character.CssValue}'>{character.CountryName}</option>");
+    }
+
     Layout = null;
 }
 
@@ -107,6 +113,23 @@
             <select class="form-control" name="Crew2.Character" id="crew2Character" data-selector="#crew2Character" data-side="2" data-opposite-id="#crew1Character" data-default="" data-newset-highlight="False" data-newset-default="">
                 <option value="" selected disabled hidden>Choose character</option>
                 @Html.Raw(characterOptionsStringBuilder.ToString())
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 text-center">
+            <label>Country</label>
+            <select class="form-control" name="Crew1.Country" id="crew1Country" data-selector="#crew1Country" data-side="1" data-opposite-id="#crew2Country" data-default="" data-newset-highlight="False" data-newset-default="">
+                <option value="" selected disabled hidden>Choose country</option>
+                @Html.Raw(countryOptionsStringBuilder.ToString())
+            </select>
+        </div>
+        <div class="col-xs-6 text-center">
+            <label>Country</label>
+            <select class="form-control" name="Crew2.Country" id="crew2Country" data-selector="#crew2Country" data-side="2" data-opposite-id="#crew1Country" data-default="" data-newset-highlight="False" data-newset-default="">
+                <option value="" selected disabled hidden>Choose country</option>
+                @Html.Raw(countryOptionsStringBuilder.ToString())
             </select>
         </div>
     </div>

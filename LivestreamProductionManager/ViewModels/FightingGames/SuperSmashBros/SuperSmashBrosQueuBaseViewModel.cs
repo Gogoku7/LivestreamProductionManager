@@ -7,5 +7,6 @@ namespace LivestreamProductionManager.ViewModels.FightingGames.SuperSmashBros
         public int Index { get; set; }
         public List<CharacterViewModel> Characters { get; set; }
         public List<PortViewModel> Ports { get; set; }
+        public List<CountryViewModel> Countries { get; set; }
     }
 }

@@ -6,15 +6,15 @@
     content: "TDB | Gogoku7";
 }
 #team1Player2NameText:before {
-    content: "C | Median4";
+    content: "Crucible | Draco";
 }
 
 
 #team1Player1TwitterText:before {
-    content: "@gogoku7";
+    content: "Gogoku7";
 }
 #team1Player2TwitterText:before {
-    content: "@median4";
+    content: "Draco";
 }
 
 
@@ -22,15 +22,15 @@
     content: "Gogoku7";
 }
 #team1Player2TwitchText:before {
-    content: "Median4";
+    content: "Draco";
 }
 
 
 #team1Player1Character {
-    background-image: url('../../CharacterIcons/banjokazooie.png');
+    background-image: url('');
 }
 #team1Player2Character {
-    background-image: url('../../CharacterIcons/bayonetta.png');
+    background-image: url('');
 }
 
 
@@ -42,39 +42,47 @@
 }
 
 
+#team1Player1Country {
+    background-image: url('../../../../Flags/AF.svg');
+}
+#team1Player2Country {
+    background-image: url('../../../../Flags/AL.svg');
+}
+
+
 #team2NameText:before {
     content: "Team NaRo";
 }
 
 #team2Player1NameText:before {
-    content: "Tempo | Zero";
+    content: "NRG | Nairo";
 }
 #team2Player2NameText:before {
-    content: "NRG | Nairo";
+    content: "Tempo | ZeRo";
 }
 
 
 #team2Player1TwitterText:before {
-    content: "@zerowondering";
+    content: "NairoMK";
 }
 #team2Player2TwitterText:before {
-    content: "@nairomk";
+    content: "Zeronwondering";
 }
 
 
 #team2Player1TwitchText:before {
-    content: "ZeroWondering";
+    content: "NairoMK";
 }
 #team2Player2TwitchText:before {
-    content: "NairoMK";
+    content: "Zerowondering";
 }
 
 
 #team2Player1Character {
-    background-image: url('../../CharacterIcons/bowser.png');
+    background-image: url('');
 }
 #team2Player2Character {
-    background-image: url('../../CharacterIcons/bowserjr.png');
+    background-image: url('');
 }
 
 
@@ -83,6 +91,14 @@
 }
 #team2Player2Port {
     background-image: url('../../PlayerPorts/PlayerPort4.png');
+}
+
+
+#team2Player1Country {
+    background-image: url('../../../../Flags/ZW.svg');
+}
+#team2Player2Country {
+    background-image: url('../../../../Flags/AX.svg');
 }
 
 

@@ -14,6 +14,12 @@
         portOptionsStringBuilder.AppendLine($"<option value='{port.CssValue}'>{port.PortName}</option>");
     }
 
+    var countryOptionsStringBuilder = new StringBuilder();
+    foreach (var character in Model.Countries)
+    {
+        countryOptionsStringBuilder.AppendLine($"<option value='{character.CssValue}'>{character.CountryName}</option>");
+    }
+
     Layout = null;
 }
 
@@ -144,6 +150,23 @@
                 <select class="form-control" name="Crew2.Port" id="nextSet_@(Model.Index)_Crew2Port" data-selector="#crew2Port" data-side="2" data-opposite-id="#nextSet_@(Model.Index)_Crew1Port" data-id-template="nextSet_INDEX_Crew2Port" data-opposite-id-template="#nextSet_INDEX_Crew1Port">
                     <option value="" selected disabled hidden>Choose port</option>
                     @Html.Raw(portOptionsStringBuilder.ToString())
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6 text-center">
+                <label>Country</label>
+                <select class="form-control" name="Crew1.Country" id="nextSet_@(Model.Index)_Crew1Country" data-selector="#crew1Country" data-side="1" data-opposite-id="#nextSet_@(Model.Index)_Crew2Country" data-id-template="nextSet_INDEX_Crew1Country" data-opposite-id-template="#nextSet_INDEX_Crew2Country">
+                    <option value="" selected disabled hidden>Choose country</option>
+                    @Html.Raw(countryOptionsStringBuilder.ToString())
+                </select>
+            </div>
+            <div class="col-xs-6 text-center">
+                <label>Port</label>
+                <select class="form-control" name="Crew2.Country" id="nextSet_@(Model.Index)_Crew2Country" data-selector="#crew2Country" data-side="2" data-opposite-id="#nextSet_@(Model.Index)_Crew1Country" data-id-template="nextSet_INDEX_Crew2Country" data-opposite-id-template="#nextSet_INDEX_Crew1Country">
+                    <option value="" selected disabled hidden>Choose country</option>
+                    @Html.Raw(countryOptionsStringBuilder.ToString())
                 </select>
             </div>
         </div>

@@ -303,6 +303,7 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                     new SelectorValueModel("#player1TwitchText", singlesNextSetViewModel.Player1.Twitch),
                     new SelectorValueModel("#player1Character", singlesNextSetViewModel.Player1.Character),
                     new SelectorValueModel("#player1Port", singlesNextSetViewModel.Player1.Port),
+                    new SelectorValueModel("#player1Country", singlesNextSetViewModel.Player1.Country),
 
                     new SelectorValueModel("#player2NameText", singlesNextSetViewModel.Player2.Name),
                     new SelectorValueModel(".player2Sponsor", singlesNextSetViewModel.Player2.Sponsor),
@@ -310,6 +311,7 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                     new SelectorValueModel("#player2TwitchText", singlesNextSetViewModel.Player2.Twitch),
                     new SelectorValueModel("#player2Character", singlesNextSetViewModel.Player2.Character),
                     new SelectorValueModel("#player2Port", singlesNextSetViewModel.Player2.Port),
+                    new SelectorValueModel("#player2Country", singlesNextSetViewModel.Player2.Country),
 
                     new SelectorValueModel("#roundText", singlesNextSetViewModel.Round),
                     new SelectorValueModel("#bestOfText", singlesNextSetViewModel.BestOf)
@@ -344,7 +346,8 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                             new SelectorValueModel($"#team1Player{i + 1}Twitter", doublesNextSetViewModel.Team1.Players[i].Twitter),
                             new SelectorValueModel($"#team1Player{i + 1}Twitch", doublesNextSetViewModel.Team1.Players[i].Twitch),
                             new SelectorValueModel($"#team1Player{i + 1}Character", doublesNextSetViewModel.Team1.Players[i].Character),
-                            new SelectorValueModel($"#team1Player{i + 1}Port", doublesNextSetViewModel.Team1.Players[i].Port)
+                            new SelectorValueModel($"#team1Player{i + 1}Port", doublesNextSetViewModel.Team1.Players[i].Port),
+                            new SelectorValueModel($"#team1Player{i + 1}Country", doublesNextSetViewModel.Team1.Players[i].Country)
                         }
                     );
                 }
@@ -368,7 +371,8 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                             new SelectorValueModel($"#team2Player{i + 1}Twitter", doublesNextSetViewModel.Team2.Players[i].Twitter),
                             new SelectorValueModel($"#team2Player{i + 1}Twitch", doublesNextSetViewModel.Team2.Players[i].Twitch),
                             new SelectorValueModel($"#team2Player{i + 1}Character", doublesNextSetViewModel.Team2.Players[i].Character),
-                            new SelectorValueModel($"#team2Player{i + 1}Port", doublesNextSetViewModel.Team2.Players[i].Port)
+                            new SelectorValueModel($"#team2Player{i + 1}Port", doublesNextSetViewModel.Team2.Players[i].Port),
+                            new SelectorValueModel($"#team2Player{i + 1}Country", doublesNextSetViewModel.Team2.Players[i].Country)
                         }
                     );
                 }
@@ -400,6 +404,7 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                     new SelectorValueModel("#crew1NameText", crewsNextSetViewModel.Crew1.Name),
                     new SelectorValueModel("#crew1Character", crewsNextSetViewModel.Crew1.Character),
                     new SelectorValueModel("#crew1Port", crewsNextSetViewModel.Crew1.Port),
+                    new SelectorValueModel("#crew1Country", crewsNextSetViewModel.Crew1.Country),
                     new SelectorValueModel("#crew1StocksLeftText", crewsNextSetViewModel.Crew1.StocksLeft ?? "?")
                 };
 
@@ -410,6 +415,7 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                         new SelectorValueModel("#crew2NameText", crewsNextSetViewModel.Crew2.Name),
                         new SelectorValueModel("#crew2Character", crewsNextSetViewModel.Crew2.Character),
                         new SelectorValueModel("#crew2Port", crewsNextSetViewModel.Crew2.Port),
+                        new SelectorValueModel("#crew2Country", crewsNextSetViewModel.Crew2.Country),
                         new SelectorValueModel("#crew2StocksLeftText", crewsNextSetViewModel.Crew2.StocksLeft ?? "?")
                     }
                 );
@@ -439,7 +445,8 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 var selectorValueModels = new List<SelectorValueModel>
                 {
                     new SelectorValueModel("#squad1NameText", squadStrikeNextSetViewModel.Squad1.Name),
-                    new SelectorValueModel("#squad1Port", squadStrikeNextSetViewModel.Squad1.Port)
+                    new SelectorValueModel("#squad1Port", squadStrikeNextSetViewModel.Squad1.Port),
+                    new SelectorValueModel("#squad1Country", squadStrikeNextSetViewModel.Squad1.Country)
                 };
 
                 for (var i = 0; i < squadStrikeNextSetViewModel.Squad1.Players.Count; i++)
@@ -469,7 +476,8 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 (
                     new List<SelectorValueModel> {
                         new SelectorValueModel("#squad2NameText", squadStrikeNextSetViewModel.Squad2.Name),
-                        new SelectorValueModel("#squad2Port", squadStrikeNextSetViewModel.Squad2.Port)
+                        new SelectorValueModel("#squad2Port", squadStrikeNextSetViewModel.Squad2.Port),
+                        new SelectorValueModel("#squad2Country", squadStrikeNextSetViewModel.Squad2.Country)
                     }
                 );
 
