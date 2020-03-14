@@ -28,6 +28,10 @@
     "Value": "../../PlayerPorts/PlayerPort1.png"
   },
   {
+    "Selector": "#player1Country",
+    "Value": "../../../../Flags/AF.svg"
+  },
+  {
     "Selector": "#player2NameText",
     "Value": "Draco"
   },
@@ -54,6 +58,10 @@
   {
     "Selector": "#player2Port",
     "Value": "../../PlayerPorts/PlayerPort8.png"
+  },
+  {
+    "Selector": "#player2Country",
+    "Value": "../../../../Flags/AX.svg"
   },
   {
     "Selector": "#tournamentText",

@@ -1,7 +1,7 @@
 [
   {
     "Selector": "#team1NameText",
-    "Value": "Team NaRo"
+    "Value": "Team Saiyan"
   },
   {
     "Selector": "#team1ScoreText",
@@ -9,55 +9,63 @@
   },
   {
     "Selector": "#team1Player1NameText",
-    "Value": "Zero"
+    "Value": "Gogoku7"
   },
   {
     "Selector": ".team1Player1Sponsor",
-    "Value": "Tempo"
+    "Value": "TDB"
   },
   {
     "Selector": "#team1Player1Twitter",
-    "Value": "@zerowondering"
+    "Value": "@gogoku7"
   },
   {
     "Selector": "#team1Player1Twitch",
-    "Value": "ZeroWondering"
+    "Value": "Gogoku7"
   },
   {
     "Selector": "#team1Player1Character",
-    "Value": "../../CharacterIcons/bowser.png"
+    "Value": "../../CharacterIcons/banjokazooie.png"
   },
   {
     "Selector": "#team1Player1Port",
-    "Value": "../../PlayerPorts/PlayerPort3.png"
+    "Value": "../../PlayerPorts/PlayerPort1.png"
+  },
+  {
+    "Selector": "#team1Player1Country",
+    "Value": "../../../../Flags/ZW.svg"
   },
   {
     "Selector": "#team1Player2NameText",
-    "Value": "Nairo"
+    "Value": "Median4"
   },
   {
     "Selector": ".team1Player2Sponsor",
-    "Value": "NRG"
+    "Value": "C"
   },
   {
     "Selector": "#team1Player2Twitter",
-    "Value": "@nairomk"
+    "Value": "@median4"
   },
   {
     "Selector": "#team1Player2Twitch",
-    "Value": "NairoMK"
+    "Value": "Median4"
   },
   {
     "Selector": "#team1Player2Character",
-    "Value": "../../CharacterIcons/bowserjr.png"
+    "Value": "../../CharacterIcons/bayonetta.png"
   },
   {
     "Selector": "#team1Player2Port",
-    "Value": "../../PlayerPorts/PlayerPort4.png"
+    "Value": "../../PlayerPorts/PlayerPort2.png"
+  },
+  {
+    "Selector": "#team1Player2Country",
+    "Value": "../../../../Flags/AX.svg"
   },
   {
     "Selector": "#team2NameText",
-    "Value": "Team Saiyan"
+    "Value": "Team NaRo"
   },
   {
     "Selector": "#team2ScoreText",
@@ -65,51 +73,59 @@
   },
   {
     "Selector": "#team2Player1NameText",
-    "Value": "Gogoku7"
+    "Value": "Zero"
   },
   {
     "Selector": ".team2Player1Sponsor",
-    "Value": "TDB"
+    "Value": "Tempo"
   },
   {
     "Selector": "#team2Player1Twitter",
-    "Value": "@gogoku7"
+    "Value": "@zerowondering"
   },
   {
     "Selector": "#team2Player1Twitch",
-    "Value": "Gogoku7"
+    "Value": "ZeroWondering"
   },
   {
     "Selector": "#team2Player1Character",
-    "Value": "../../CharacterIcons/banjokazooie.png"
+    "Value": "../../CharacterIcons/bowser.png"
   },
   {
     "Selector": "#team2Player1Port",
-    "Value": "../../PlayerPorts/PlayerPort1.png"
+    "Value": "../../PlayerPorts/PlayerPort3.png"
+  },
+  {
+    "Selector": "#team2Player1Country",
+    "Value": "../../../../Flags/AF.svg"
   },
   {
     "Selector": "#team2Player2NameText",
-    "Value": "Median4"
+    "Value": "Nairo"
   },
   {
     "Selector": ".team2Player2Sponsor",
-    "Value": "C"
+    "Value": "NRG"
   },
   {
     "Selector": "#team2Player2Twitter",
-    "Value": "@median4"
+    "Value": "@nairomk"
   },
   {
     "Selector": "#team2Player2Twitch",
-    "Value": "Median4"
+    "Value": "NairoMK"
   },
   {
     "Selector": "#team2Player2Character",
-    "Value": "../../CharacterIcons/bayonetta.png"
+    "Value": "../../CharacterIcons/bowserjr.png"
   },
   {
     "Selector": "#team2Player2Port",
-    "Value": "../../PlayerPorts/PlayerPort2.png"
+    "Value": "../../PlayerPorts/PlayerPort4.png"
+  },
+  {
+    "Selector": "#team2Player2Country",
+    "Value": "../../../../Flags/AL.svg"
   },
   {
     "Selector": "#tournamentText",

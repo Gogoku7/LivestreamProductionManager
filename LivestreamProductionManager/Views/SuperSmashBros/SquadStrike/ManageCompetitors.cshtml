@@ -14,6 +14,12 @@
         portOptionsStringBuilder.AppendLine($"<option value='{port.CssValue}'>{port.PortName}</option>");
     }
 
+    var countryOptionsStringBuilder = new StringBuilder();
+    foreach (var character in Model.Countries)
+    {
+        countryOptionsStringBuilder.AppendLine($"<option value='{character.CssValue}'>{character.CountryName}</option>");
+    }
+
     Layout = null;
 }
 
@@ -114,6 +120,23 @@
             <select class="form-control" name="Squad2.Port" id="squad2Port" data-selector="#squad2Port" data-side="2" data-opposite-id="#squad1Port" data-default="" data-newset-highlight="False" data-newset-default="">
                 <option value="" selected disabled hidden>Choose port</option>
                 @Html.Raw(portOptionsStringBuilder.ToString())
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 text-center">
+            <label>Country</label>
+            <select class="form-control" name="Squad1.Country" id="squad1Country" data-selector="#squad1Country" data-side="1" data-opposite-id="#squad2Country" data-default="" data-newset-highlight="False" data-newset-default="">
+                <option value="" selected disabled hidden>Choose country</option>
+                @Html.Raw(countryOptionsStringBuilder.ToString())
+            </select>
+        </div>
+        <div class="col-xs-6 text-center">
+            <label>Country</label>
+            <select class="form-control" name="Squad2.Country" id="squad2Country"" data-selector="#squad2Country" data-side="2" data-opposite-id="#squad1Country" data-default="" data-newset-highlight="False" data-newset-default="">
+                <option value="" selected disabled hidden>Choose country</option>
+                @Html.Raw(countryOptionsStringBuilder.ToString())
             </select>
         </div>
     </div>

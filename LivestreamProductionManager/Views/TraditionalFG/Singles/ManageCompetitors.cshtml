@@ -160,32 +160,17 @@
     <div class="row">
         <div class="col-xs-6 text-center">
             <label>Country</label>
+            <select class="form-control" name="Player1.Country" id="player1Country" data-selector="#player1Country" data-side="1" data-opposite-id="#player2Country" data-default="" data-newset-highlight="False" data-newset-default="">
+                <option value="" selected disabled hidden>Choose country</option>
+                @Html.Raw(countryOptionsStringBuilder.ToString())
+            </select>
         </div>
         <div class="col-xs-6 text-center">
             <label>Country</label>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-6 text-center">
-            <div class="row">
-                <div class="col-xs-12">
-                    <select class="form-control" name="Player1.Country" id="player1Country" data-selector="#player1Country" data-side="1" data-opposite-id="#player2Country" data-default="">
-                        <option value="" selected disabled hidden>Choose country</option>
-                        @Html.Raw(countryOptionsStringBuilder.ToString())
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-6 text-center">
-            <div class="row">
-                <div class="col-xs-12">
-                    <select class="form-control" name="Player2.Country" id="player2Country" data-selector="#player2Country" data-side="2" data-opposite-id="#player1Country" data-default="">
-                        <option value="" selected disabled hidden>Choose country</option>
-                        @Html.Raw(countryOptionsStringBuilder.ToString())
-                    </select>
-                </div>
-            </div>
+            <select class="form-control" name="Player2.Country" id="player2Country" data-selector="#player2Country" data-side="2" data-opposite-id="#player1Country" data-default="" data-newset-highlight="False" data-newset-default="">
+                <option value="" selected disabled hidden>Choose country</option>
+                @Html.Raw(countryOptionsStringBuilder.ToString())
+            </select>
         </div>
     </div>
 </form>

@@ -8,5 +8,6 @@
         public string Score { get; set; }
         public string CharacterPath { get; set; }
         public string PortPath { get; set; }
+        public string CountryPath { get; set; }
     }
 }

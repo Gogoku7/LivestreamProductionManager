@@ -7,6 +7,7 @@ namespace LivestreamProductionManager.ViewModels.FightingGames.SuperSmashBros
         public string Name { get; set; }
         public string Score { get; set; }
         public string Port { get; set; }
+        public string Country { get; set; }
         public List<SquadPlayerViewModel> Players { get; set; }
     }
 }

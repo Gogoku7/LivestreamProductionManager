@@ -22,6 +22,10 @@
     background-image: url('../../PlayerPorts/PlayerPort1.png');
 }
 
+#player1Country {
+    background-image: url('../../../../Flags/AF.svg');
+}
+
 #player2NameText:before {
     content: "Crucible | Draco";
 }
@@ -44,6 +48,10 @@
 
 #player2Port {
     background-image: url('../../PlayerPorts/PlayerPort8.png');
+}
+
+#player2Country {
+    background-image: url('../../../../Flags/AX.svg');
 }
 
 #tournamentText:before {

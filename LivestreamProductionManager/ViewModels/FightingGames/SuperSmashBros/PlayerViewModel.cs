@@ -9,5 +9,6 @@
         public string Score { get; set; }
         public string Character { get; set; }
         public string Port { get; set; }
+        public string Country { get; set; }
     }
 }

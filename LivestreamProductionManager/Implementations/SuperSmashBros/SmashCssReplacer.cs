@@ -24,6 +24,8 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
 
                 fileTemplate = fileTemplate.Replace("player1PortPLACEHOLDER", singlesCssModel.Player1.PortPath);
 
+                fileTemplate = fileTemplate.Replace("player1CountryPLACEHOLDER", singlesCssModel.Player1.CountryPath);
+
                 fileTemplate = fileTemplate.Replace("player2NameTextPLACEHOLDER", singlesCssModel.Player2.NameAndSponsor);
 
                 fileTemplate = fileTemplate.Replace("player2TwitterTextPLACEHOLDER", singlesCssModel.Player2.Twitter);
@@ -35,6 +37,8 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 fileTemplate = fileTemplate.Replace("player2CharacterPLACEHOLDER", singlesCssModel.Player2.CharacterPath);
 
                 fileTemplate = fileTemplate.Replace("player2PortPLACEHOLDER", singlesCssModel.Player2.PortPath);
+
+                fileTemplate = fileTemplate.Replace("player2CountryPLACEHOLDER", singlesCssModel.Player2.CountryPath);
 
                 fileTemplate = fileTemplate.Replace("tournamentTextPLACEHOLDER", singlesCssModel.Tournament);
 
@@ -71,6 +75,8 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
 
                 fileTemplate = fileTemplate.Replace("team1PortsPLACEHOLDER", doublesCssModel.Team1.PortPaths);
 
+                fileTemplate = fileTemplate.Replace("team1CountriesPLACEHOLDER", doublesCssModel.Team1.CountryPaths);
+
                 fileTemplate = fileTemplate.Replace("team2NameTextPLACEHOLDER", doublesCssModel.Team2.Name);
 
                 fileTemplate = fileTemplate.Replace("team2ScoreTextPLACEHOLDER", doublesCssModel.Team2.Score);
@@ -84,6 +90,8 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 fileTemplate = fileTemplate.Replace("team2CharactersPLACEHOLDER", doublesCssModel.Team2.CharacterPaths);
 
                 fileTemplate = fileTemplate.Replace("team2PortsPLACEHOLDER", doublesCssModel.Team2.PortPaths);
+
+                fileTemplate = fileTemplate.Replace("team2CountriesPLACEHOLDER", doublesCssModel.Team2.CountryPaths);
 
                 fileTemplate = fileTemplate.Replace("tournamentTextPLACEHOLDER", doublesCssModel.Tournament);
 
@@ -135,6 +143,8 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
 
                 fileTemplate = fileTemplate.Replace("crew1PortPLACEHOLDER", crewsCssModel.Crew1.PortPath);
 
+                fileTemplate = fileTemplate.Replace("crew1CountryPLACEHOLDER", crewsCssModel.Crew1.CountryPath);
+
                 fileTemplate = fileTemplate.Replace("crew2NameTextPLACEHOLDER", crewsCssModel.Crew2.Name);
 
                 var crew2Players = "";
@@ -163,6 +173,8 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 fileTemplate = fileTemplate.Replace("crew2CharacterPLACEHOLDER", crewsCssModel.Crew2.CharacterPath);
 
                 fileTemplate = fileTemplate.Replace("crew2PortPLACEHOLDER", crewsCssModel.Crew2.PortPath);
+
+                fileTemplate = fileTemplate.Replace("crew2CountryPLACEHOLDER", crewsCssModel.Crew2.CountryPath);
 
                 fileTemplate = fileTemplate.Replace("tournamentTextPLACEHOLDER", crewsCssModel.Tournament);
 
@@ -212,6 +224,8 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
 
                 fileTemplate = fileTemplate.Replace("squad1PortPLACEHOLDER", squadStrikeCssModel.Squad1.PortPath);
 
+                fileTemplate = fileTemplate.Replace("squad1CountryPLACEHOLDER", squadStrikeCssModel.Squad1.CountryPath);
+
                 fileTemplate = fileTemplate.Replace("squad2NameTextPLACEHOLDER", squadStrikeCssModel.Squad2.Name);
 
                 var squad2Players = "";
@@ -238,6 +252,8 @@ namespace LivestreamProductionManager.Implementations.SuperSmashBros
                 fileTemplate = fileTemplate.Replace("squad2ScoreTextPLACEHOLDER", squadStrikeCssModel.Squad2.Score);
 
                 fileTemplate = fileTemplate.Replace("squad2PortPLACEHOLDER", squadStrikeCssModel.Squad2.PortPath);
+
+                fileTemplate = fileTemplate.Replace("squad2CountryPLACEHOLDER", squadStrikeCssModel.Squad2.CountryPath);
 
                 fileTemplate = fileTemplate.Replace("tournamentTextPLACEHOLDER", squadStrikeCssModel.Tournament);
 

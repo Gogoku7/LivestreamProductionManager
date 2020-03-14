@@ -1,15 +1,19 @@
 [
   {
     "Selector": "#crew1NameText",
-    "Value": "Dutch Brawlers"
+    "Value": "Backroom"
   },
   {
     "Selector": "#crew1Character",
-    "Value": "../../CharacterIcons/banjokazooie.png"
+    "Value": "../../CharacterIcons/bayonetta.png"
   },
   {
     "Selector": "#crew1Port",
-    "Value": "../../PlayerPorts/PlayerPort1.png"
+    "Value": "../../PlayerPorts/PlayerPort2.png"
+  },
+  {
+    "Selector": "#crew1Country",
+    "Value": "../../../../Flags/AX.svg"
   },
   {
     "Selector": "#crew1StocksLeftText",
@@ -17,7 +21,7 @@
   },
   {
     "Selector": "#crew1Player1NameText",
-    "Value": null
+    "Value": "Itami"
   },
   {
     "Selector": ".crew1Player1Active",
@@ -37,7 +41,7 @@
   },
   {
     "Selector": "#crew1Player2NameText",
-    "Value": null
+    "Value": "Yatogami"
   },
   {
     "Selector": ".crew1Player2Active",
@@ -56,76 +60,20 @@
     "Value": null
   },
   {
-    "Selector": "#crew1Player3NameText",
-    "Value": null
-  },
-  {
-    "Selector": ".crew1Player3Active",
-    "Value": "False"
-  },
-  {
-    "Selector": ".crew1Player3Eliminated",
-    "Value": "False"
-  },
-  {
-    "Selector": "#crew1Player3TwitterText",
-    "Value": null
-  },
-  {
-    "Selector": "#crew1Player3Character",
-    "Value": null
-  },
-  {
-    "Selector": "#crew1Player4NameText",
-    "Value": null
-  },
-  {
-    "Selector": ".crew1Player4Active",
-    "Value": "False"
-  },
-  {
-    "Selector": ".crew1Player4Eliminated",
-    "Value": "False"
-  },
-  {
-    "Selector": "#crew1Player4TwitterText",
-    "Value": null
-  },
-  {
-    "Selector": "#crew1Player4Character",
-    "Value": null
-  },
-  {
-    "Selector": "#crew1Player5NameText",
-    "Value": null
-  },
-  {
-    "Selector": ".crew1Player5Active",
-    "Value": "False"
-  },
-  {
-    "Selector": ".crew1Player5Eliminated",
-    "Value": "False"
-  },
-  {
-    "Selector": "#crew1Player5TwitterText",
-    "Value": null
-  },
-  {
-    "Selector": "#crew1Player5Character",
-    "Value": null
-  },
-  {
     "Selector": "#crew2NameText",
-    "Value": "Backroom"
+    "Value": "Dutch Brawlers"
   },
   {
     "Selector": "#crew2Character",
-    "Value": "../../CharacterIcons/bayonetta.png"
+    "Value": "../../CharacterIcons/banjokazooie.png"
   },
   {
     "Selector": "#crew2Port",
-    "Value": "../../PlayerPorts/PlayerPort2.png"
+    "Value": "../../PlayerPorts/PlayerPort1.png"
+  },
+  {
+    "Selector": "#crew2Country",
+    "Value": "../../../../Flags/AF.svg"
   },
   {
     "Selector": "#crew2StocksLeftText",
@@ -133,7 +81,7 @@
   },
   {
     "Selector": "#crew2Player1NameText",
-    "Value": null
+    "Value": "Patrino"
   },
   {
     "Selector": ".crew2Player1Active",
@@ -153,7 +101,7 @@
   },
   {
     "Selector": "#crew2Player2NameText",
-    "Value": null
+    "Value": "Gogoku7"
   },
   {
     "Selector": ".crew2Player2Active",
@@ -169,66 +117,6 @@
   },
   {
     "Selector": "#crew2Player2Character",
-    "Value": null
-  },
-  {
-    "Selector": "#crew2Player3NameText",
-    "Value": null
-  },
-  {
-    "Selector": ".crew2Player3Active",
-    "Value": "False"
-  },
-  {
-    "Selector": ".crew2Player3Eliminated",
-    "Value": "False"
-  },
-  {
-    "Selector": "#crew2Player3TwitterText",
-    "Value": null
-  },
-  {
-    "Selector": "#crew2Player3Character",
-    "Value": null
-  },
-  {
-    "Selector": "#crew2Player4NameText",
-    "Value": null
-  },
-  {
-    "Selector": ".crew2Player4Active",
-    "Value": "False"
-  },
-  {
-    "Selector": ".crew2Player4Eliminated",
-    "Value": "False"
-  },
-  {
-    "Selector": "#crew2Player4TwitterText",
-    "Value": null
-  },
-  {
-    "Selector": "#crew2Player4Character",
-    "Value": null
-  },
-  {
-    "Selector": "#crew2Player5NameText",
-    "Value": null
-  },
-  {
-    "Selector": ".crew2Player5Active",
-    "Value": "False"
-  },
-  {
-    "Selector": ".crew2Player5Eliminated",
-    "Value": "False"
-  },
-  {
-    "Selector": "#crew2Player5TwitterText",
-    "Value": null
-  },
-  {
-    "Selector": "#crew2Player5Character",
     "Value": null
   },
   {

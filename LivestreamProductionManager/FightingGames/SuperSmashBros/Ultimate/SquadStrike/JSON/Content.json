@@ -8,6 +8,10 @@
     "Value": "../../PlayerPorts/PlayerPort2.png"
   },
   {
+    "Selector": "#squad1Country",
+    "Value": "../../../../Flags/AF.svg"
+  },
+  {
     "Selector": "#squad1ScoreText",
     "Value": "2"
   },
@@ -106,6 +110,10 @@
   {
     "Selector": "#squad2Port",
     "Value": "../../PlayerPorts/PlayerPort1.png"
+  },
+  {
+    "Selector": "#squad2Country",
+    "Value": "../../../../Flags/AL.svg"
   },
   {
     "Selector": "#squad2ScoreText",

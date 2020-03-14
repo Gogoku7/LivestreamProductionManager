@@ -74,6 +74,10 @@
     background-image: url('../../PlayerPorts/PlayerPort2.png');
 }
 
+#squad1Country {
+    background-image: url('../../../../Flags/AF.svg');
+}
+
 #squad2NameText:before {
     content: "Europe";
 }
@@ -148,6 +152,10 @@
 
 #squad2Port {
     background-image: url('../../PlayerPorts/PlayerPort1.png');
+}
+
+#squad2Country {
+    background-image: url('../../../../Flags/AL.svg');
 }
 
 #tournamentText:before {

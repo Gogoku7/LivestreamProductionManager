@@ -14,6 +14,12 @@
         portOptionsStringBuilder.AppendLine($"<option value='{port.CssValue}'>{port.PortName}</option>");
     }
 
+    var countryOptionsStringBuilder = new StringBuilder();
+    foreach (var character in Model.Countries)
+    {
+        countryOptionsStringBuilder.AppendLine($"<option value='{character.CssValue}'>{character.CountryName}</option>");
+    }
+
     Layout = null;
 }
 
@@ -333,6 +339,37 @@
             <select class="form-control" name="Team2.Players[1].Port" id="team2Player2Port" data-selector="#team2Player2Port" data-side="2" data-opposite-id="#team1Player2Port" data-default="" data-newset-highlight="False" data-newset-default="">
                 <option value="" selected disabled hidden>Choose port</option>
                 @Html.Raw(portOptionsStringBuilder.ToString())
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3 text-center">
+            <label>Country</label>
+            <select class="form-control" name="Team1.Players[0].Country" id="team1Player1Country" data-selector="#team1Player1Country" data-side="1" data-opposite-id="#team2Player1Country" data-default="" data-newset-highlight="False" data-newset-default="">
+                <option value="" selected disabled hidden>Choose country</option>
+                @Html.Raw(countryOptionsStringBuilder.ToString())
+            </select>
+        </div>
+        <div class="col-xs-3 text-center">
+            <label>Country</label>
+            <select class="form-control" name="Team1.Players[1].Country" id="team1Player2Country" data-selector="#team1Player2Country" data-side="1" data-opposite-id="#team2Player2Country" data-default="" data-newset-highlight="False" data-newset-default="">
+                <option value="" selected disabled hidden>Choose country</option>
+                @Html.Raw(countryOptionsStringBuilder.ToString())
+            </select>
+        </div>
+        <div class="col-xs-3 text-center">
+            <label>Country</label>
+            <select class="form-control" name="Team2.Players[0].Country" id="team2Player1Country" data-selector="#team2Player1Country" data-side="2" data-opposite-id="#team1Player1Country" data-default="" data-newset-highlight="False" data-newset-default="">
+                <option value="" selected disabled hidden>Choose country</option>
+                @Html.Raw(countryOptionsStringBuilder.ToString())
+            </select>
+        </div>
+        <div class="col-xs-3 text-center">
+            <label>Country</label>
+            <select class="form-control" name="Team2.Players[1].Country" id="team2Player2Country" data-selector="#team2Player2Country" data-side="2" data-opposite-id="#team1Player2Country" data-default="" data-newset-highlight="False" data-newset-default="">
+                <option value="" selected disabled hidden>Choose country</option>
+                @Html.Raw(countryOptionsStringBuilder.ToString())
             </select>
         </div>
     </div>

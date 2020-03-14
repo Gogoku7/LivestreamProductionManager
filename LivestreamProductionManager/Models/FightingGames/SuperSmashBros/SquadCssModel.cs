@@ -7,6 +7,7 @@ namespace LivestreamProductionManager.Models.FightingGames.SuperSmashBros
         public string Name { get; set; }
         public string Score { get; set; }
         public string PortPath { get; set; }
+        public string CountryPath { get; set; }
         public List<SquadPlayerCssModel> SquadPlayerCssModels { get; set; }
 
         public SquadCssModel()

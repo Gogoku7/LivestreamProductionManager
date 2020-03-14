@@ -1,25 +1,13 @@
 #crew1NameText:before {
-    content: "Dutch Brawlers";
+    content: "Backroom";
 }
 
 #crew1Player1NameText:before {
-    content: "";
+    content: "Itami";
 }
 
 #crew1Player2NameText:before {
-    content: "";
-}
-
-#crew1Player3NameText:before {
-    content: "";
-}
-
-#crew1Player4NameText:before {
-    content: "";
-}
-
-#crew1Player5NameText:before {
-    content: "";
+    content: "Yatogami";
 }
 
 
@@ -29,18 +17,6 @@
 }
 
 #crew1Player2TwitterText:before {
-    content: "";
-}
-
-#crew1Player3TwitterText:before {
-    content: "";
-}
-
-#crew1Player4TwitterText:before {
-    content: "";
-}
-
-#crew1Player5TwitterText:before {
     content: "";
 }
 
@@ -54,18 +30,6 @@
     background-image: url('');
 }
 
-#crew1Player3Character {
-    background-image: url('');
-}
-
-#crew1Player4Character {
-    background-image: url('');
-}
-
-#crew1Player5Character {
-    background-image: url('');
-}
-
 
 
 #crew1StocksLeftText:before {
@@ -73,35 +37,27 @@
 }
 
 #crew1Character {
-    background-image: url('../../CharacterIcons/banjokazooie.png');
+    background-image: url('../../CharacterIcons/bayonetta.png');
 }
 
 #crew1Port {
-    background-image: url('../../PlayerPorts/PlayerPort1.png');
+    background-image: url('../../PlayerPorts/PlayerPort2.png');
+}
+
+#crew1Country {
+    background-image: url('../../../../Flags/AX.svg');
 }
 
 #crew2NameText:before {
-    content: "Backroom";
+    content: "Dutch Brawlers";
 }
 
 #crew2Player1NameText:before {
-    content: "";
+    content: "Patrino";
 }
 
 #crew2Player2NameText:before {
-    content: "";
-}
-
-#crew2Player3NameText:before {
-    content: "";
-}
-
-#crew2Player4NameText:before {
-    content: "";
-}
-
-#crew2Player5NameText:before {
-    content: "";
+    content: "Gogoku7";
 }
 
 
@@ -111,18 +67,6 @@
 }
 
 #crew2Player2TwitterText:before {
-    content: "";
-}
-
-#crew2Player3TwitterText:before {
-    content: "";
-}
-
-#crew2Player4TwitterText:before {
-    content: "";
-}
-
-#crew2Player5TwitterText:before {
     content: "";
 }
 
@@ -136,18 +80,6 @@
     background-image: url('');
 }
 
-#crew2Player3Character {
-    background-image: url('');
-}
-
-#crew2Player4Character {
-    background-image: url('');
-}
-
-#crew2Player5Character {
-    background-image: url('');
-}
-
 
 
 #crew2StocksLeftText:before {
@@ -155,11 +87,15 @@
 }
 
 #crew2Character {
-    background-image: url('../../CharacterIcons/bayonetta.png');
+    background-image: url('../../CharacterIcons/banjokazooie.png');
 }
 
 #crew2Port {
-    background-image: url('../../PlayerPorts/PlayerPort2.png');
+    background-image: url('../../PlayerPorts/PlayerPort1.png');
+}
+
+#crew2Country {
+    background-image: url('../../../../Flags/AF.svg');
 }
 
 #tournamentText:before {

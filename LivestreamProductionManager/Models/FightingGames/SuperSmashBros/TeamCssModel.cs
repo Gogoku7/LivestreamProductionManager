@@ -9,5 +9,6 @@
         public string Twitches { get; set; }
         public string CharacterPaths { get; set; }
         public string PortPaths { get; set; }
+        public string CountryPaths { get; set; }
     }
 }

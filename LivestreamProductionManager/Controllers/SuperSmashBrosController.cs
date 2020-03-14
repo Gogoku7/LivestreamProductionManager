@@ -34,6 +34,7 @@ namespace LivestreamProductionManager.Controllers
 
                 superSmashBrosBaseViewModel.Characters = _configReader.GetCharactersFromConfig(superSmashBrosBaseViewModel.PathToGame);
                 superSmashBrosBaseViewModel.Ports = _configReader.GetPortsFromConfig(superSmashBrosBaseViewModel.PathToGame);
+                superSmashBrosBaseViewModel.Countries = _configReader.GetCountriesFromConfig();
 
                 return PartialView($"~/Views/{pathsViewModel.Series}/{pathsViewModel.Format}/ManageCompetitors.cshtml", superSmashBrosBaseViewModel);
             }
@@ -187,6 +188,8 @@ namespace LivestreamProductionManager.Controllers
             {
                 Log.Information($"Submitted data: { JsonConvert.SerializeObject(singlesNextSetViewModel) }");
 
+                //country
+
                 _smashCssOverlayManager.UpdateSinglesNextSetOverlay(singlesNextSetViewModel);
                 _smashJsonOverlayManager.UpdateSinglesNextSetOverlay(singlesNextSetViewModel);
 
@@ -205,6 +208,8 @@ namespace LivestreamProductionManager.Controllers
             try
             {
                 Log.Information($"Submitted data: { JsonConvert.SerializeObject(doublesNextSetViewModel) }");
+
+                //country
 
                 _smashCssOverlayManager.UpdateDoublesNextSetOverlay(doublesNextSetViewModel);
                 _smashJsonOverlayManager.UpdateDoublesNextSetOverlay(doublesNextSetViewModel);
@@ -225,6 +230,8 @@ namespace LivestreamProductionManager.Controllers
             {
                 Log.Information($"Submitted data: { JsonConvert.SerializeObject(crewsNextSetViewModel) }");
 
+                //country
+
                 _smashCssOverlayManager.UpdateCrewsNextSetOverlay(crewsNextSetViewModel);
                 _smashJsonOverlayManager.UpdateCrewsNextSetOverlay(crewsNextSetViewModel);
 
@@ -243,6 +250,8 @@ namespace LivestreamProductionManager.Controllers
             try
             {
                 Log.Information($"Submitted data: { JsonConvert.SerializeObject(squadStrikeNextSetViewModel) }");
+
+                //country
 
                 _smashCssOverlayManager.UpdateSquadStrikeNextSetOverlay(squadStrikeNextSetViewModel);
                 _smashJsonOverlayManager.UpdateSquadStrikeNextSetOverlay(squadStrikeNextSetViewModel);
