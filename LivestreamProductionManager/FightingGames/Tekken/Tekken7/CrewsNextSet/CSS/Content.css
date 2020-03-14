@@ -1,5 +1,5 @@
 #crew1NameText:before {
-    content: "Team Flevo";
+    content: "Gogoku7";
 }
 
 #crew1StocksLeftText:before {
@@ -10,8 +10,12 @@
     background-image: url('../../CharacterIcons/akuma.png');
 }
 
+#crew1Country {
+    background-image: url('../../../../Flags/AF.svg');
+}
+
 #crew2NameText:before {
-    content: "Team Rotter";
+    content: "Draco";
 }
 
 #crew2StocksLeftText:before {
@@ -19,7 +23,11 @@
 }
 
 #crew2Character {
-    background-image: url('../../CharacterIcons/alisa.png');
+    background-image: url('../../CharacterIcons/zafina.png');
+}
+
+#crew2Country {
+    background-image: url('../../../../Flags/AX.svg');
 }
 
 #roundText:before {
@@ -27,5 +35,5 @@
 }
 
 #bestOfText:before {
-    content: "Best of 1";
+    content: "Best of 3";
 }

@@ -84,6 +84,8 @@ namespace LivestreamProductionManager.Implementations.TraditionalFG
 
                 fileTemplate = fileTemplate.Replace("crew1CharacterPLACEHOLDER", crewsCssModel.Crew1.CharacterPath);
 
+                fileTemplate = fileTemplate.Replace("crew1CountryPLACEHOLDER", crewsCssModel.Crew1.CountryPath);
+
                 fileTemplate = fileTemplate.Replace("crew2NameTextPLACEHOLDER", crewsCssModel.Crew2.Name);
 
                 var crew2Players = "";
@@ -110,6 +112,8 @@ namespace LivestreamProductionManager.Implementations.TraditionalFG
                 fileTemplate = fileTemplate.Replace("crew2StocksLeftTextPLACEHOLDER", crewsCssModel.Crew2.StocksLeft);
 
                 fileTemplate = fileTemplate.Replace("crew2CharacterPLACEHOLDER", crewsCssModel.Crew2.CharacterPath);
+
+                fileTemplate = fileTemplate.Replace("crew2CountryPLACEHOLDER", crewsCssModel.Crew2.CountryPath);
 
                 fileTemplate = fileTemplate.Replace("tournamentTextPLACEHOLDER", crewsCssModel.Tournament);
 
@@ -175,11 +179,15 @@ namespace LivestreamProductionManager.Implementations.TraditionalFG
 
                 fileTemplate = fileTemplate.Replace("crew1CharacterPLACEHOLDER", crewsNextSetCssModel.Crew1.CharacterPath);
 
+                fileTemplate = fileTemplate.Replace("crew1CountryPLACEHOLDER", crewsNextSetCssModel.Crew1.CountryPath);
+
                 fileTemplate = fileTemplate.Replace("crew2NameTextPLACEHOLDER", crewsNextSetCssModel.Crew2.Name);
 
                 fileTemplate = fileTemplate.Replace("crew2StocksLeftTextPLACEHOLDER", crewsNextSetCssModel.Crew2.StocksLeft);
 
                 fileTemplate = fileTemplate.Replace("crew2CharacterPLACEHOLDER", crewsNextSetCssModel.Crew2.CharacterPath);
+
+                fileTemplate = fileTemplate.Replace("crew2CountryPLACEHOLDER", crewsNextSetCssModel.Crew2.CountryPath);
 
                 fileTemplate = fileTemplate.Replace("roundTextPLACEHOLDER", crewsNextSetCssModel.Round);
 

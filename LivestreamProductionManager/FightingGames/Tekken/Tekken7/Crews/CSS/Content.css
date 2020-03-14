@@ -44,6 +44,10 @@
     background-image: url('../../CharacterIcons/akuma.png');
 }
 
+#crew1Country {
+    background-image: url('../../../../Flags/AF.svg');
+}
+
 #crew2NameText:before {
     content: "Zuid-Holland";
 }
@@ -88,6 +92,10 @@
 
 #crew2Character {
     background-image: url('../../CharacterIcons/zafina.png');
+}
+
+#crew2Country {
+    background-image: url('../../../../Flags/AX.svg');
 }
 
 #tournamentText:before {

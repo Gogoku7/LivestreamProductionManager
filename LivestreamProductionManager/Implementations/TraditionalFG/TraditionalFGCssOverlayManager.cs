@@ -69,6 +69,7 @@ namespace LivestreamProductionManager.Implementations.TraditionalFG
 
                 crewsCssModel.Crew1.Name = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "crew1NameText", crewsViewModel.Crew1.Name);
                 crewsCssModel.Crew1.CharacterPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "crew1Character", crewsViewModel.Crew1.Character);
+                crewsCssModel.Crew1.CountryPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "crew1Country", crewsViewModel.Crew1.Country);
                 crewsCssModel.Crew1.StocksLeft = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "crew1StocksLeftText", crewsViewModel.Crew1.StocksLeft ?? "?");
 
                 for (var i = 0; i < crewsViewModel.Crew1.Players.Count; i++)
@@ -94,6 +95,7 @@ namespace LivestreamProductionManager.Implementations.TraditionalFG
 
                 crewsCssModel.Crew2.Name = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "crew2NameText", crewsViewModel.Crew2.Name);
                 crewsCssModel.Crew2.CharacterPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "crew2Character", crewsViewModel.Crew2.Character);
+                crewsCssModel.Crew2.CountryPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "crew2Country", crewsViewModel.Crew2.Country);
                 crewsCssModel.Crew2.StocksLeft = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "crew2StocksLeftText", crewsViewModel.Crew2.StocksLeft ?? "?");
 
                 for (var i = 0; i < crewsViewModel.Crew2.Players.Count; i++)
@@ -168,10 +170,12 @@ namespace LivestreamProductionManager.Implementations.TraditionalFG
 
                 crewsNextSetCssModel.Crew1.Name = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "crew1NameText", crewsNextSetViewModel.Crew1.Name);
                 crewsNextSetCssModel.Crew1.CharacterPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "crew1Character", crewsNextSetViewModel.Crew1.Character);
+                crewsNextSetCssModel.Crew1.CountryPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "crew1Country", crewsNextSetViewModel.Crew1.Country);
                 crewsNextSetCssModel.Crew1.StocksLeft = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "crew1StocksLeftText", crewsNextSetViewModel.Crew1.StocksLeft ?? "?");
 
                 crewsNextSetCssModel.Crew2.Name = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "crew2NameText", crewsNextSetViewModel.Crew2.Name);
                 crewsNextSetCssModel.Crew2.CharacterPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "crew2Character", crewsNextSetViewModel.Crew2.Character);
+                crewsNextSetCssModel.Crew2.CountryPath = _textReplacer.ReplaceIdAndValue(_imageTemplateCss, "crew2Country", crewsNextSetViewModel.Crew2.Country);
                 crewsNextSetCssModel.Crew2.StocksLeft = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "crew2StocksLeftText", crewsNextSetViewModel.Crew2.StocksLeft ?? "?");
 
                 crewsNextSetCssModel.Round = _textReplacer.ReplaceIdAndValue(_textTemplateCss, "roundText", crewsNextSetViewModel.Round);

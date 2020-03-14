@@ -8,6 +8,10 @@
     "Value": "../../CharacterIcons/akuma.png"
   },
   {
+    "Selector": "#crew1Country",
+    "Value": "../../../../Flags/AF.svg"
+  },
+  {
     "Selector": "#crew1StocksLeftText",
     "Value": "1"
   },
@@ -58,6 +62,10 @@
   {
     "Selector": "#crew2Character",
     "Value": "../../CharacterIcons/zafina.png"
+  },
+  {
+    "Selector": "#crew2Country",
+    "Value": "../../../../Flags/AX.svg"
   },
   {
     "Selector": "#crew2StocksLeftText",

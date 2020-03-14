@@ -7,6 +7,7 @@ namespace LivestreamProductionManager.Models.FightingGames.TraditionalFG
         public string Name { get; set; }
         public string StocksLeft { get; set; }
         public string CharacterPath { get; set; }
+        public string CountryPath { get; set; }
         public List<CrewPlayerCssModel> CrewPlayerCssModels { get; set; }
 
         public CrewCssModel()

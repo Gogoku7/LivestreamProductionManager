@@ -1,10 +1,14 @@
 [
   {
     "Selector": "#crew1NameText",
-    "Value": "Team Flevo"
+    "Value": "Gogoku7"
   },
   {
     "Selector": "#crew1Character",
+    "Value": "../../CharacterIcons/akuma.png"
+  },
+  {
+    "Selector": "#crew1Country",
     "Value": "../../CharacterIcons/akuma.png"
   },
   {
@@ -13,11 +17,15 @@
   },
   {
     "Selector": "#crew2NameText",
-    "Value": "Team Rotter"
+    "Value": "Draco"
   },
   {
     "Selector": "#crew2Character",
-    "Value": "../../CharacterIcons/alisa.png"
+    "Value": "../../CharacterIcons/zafina.png"
+  },
+  {
+    "Selector": "#crew2Country",
+    "Value": "../../../../Flags/AX.svg"
   },
   {
     "Selector": "#crew2StocksLeftText",
@@ -29,6 +37,6 @@
   },
   {
     "Selector": "#bestOfText",
-    "Value": "Best of 1"
+    "Value": "Best of 3"
   }
 ]
