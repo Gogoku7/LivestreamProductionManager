@@ -40,13 +40,13 @@ function initWebSocketAndFitty(fittyElements, clientType, clientIdentification) 
             var jsonData = JSON.parse(event.data);
 
             if (ClientIdentification.stingerType === jsonData.data.stingerType && ClientIdentification.series === jsonData.data.series && ClientIdentification.game === jsonData.data.game && ClientIdentification.format === jsonData.data.format) {
-                if (jsonData.type == "playStingerAnimation") {
+                if (jsonData.type === "playStingerAnimation") {
                     var body = $("body");
 
                     $("body").remove();
                     $("html").append(body);
                 }
-                else if (jsonData.type == "queu") {
+                else if (jsonData.type === "queu") {
                     $('link[rel="stylesheet"]').not('link[href="css/styles.css"]').not('link[href="../../CSS/Queu.css"]').not().each(function () {
                         this.href = this.href.replace(/\?.*|$/, "?reload=" + new Date().getTime());
                     });
@@ -67,7 +67,7 @@ function initWebSocketAndFitty(fittyElements, clientType, clientIdentification) 
                         });
                     });
                 }
-                else if (jsonData.type == "forceResize") {
+                else if (jsonData.type === "forceResize") {
                     $.each(FittyElements, function (i) {
                         fitty(FittyElements[i].selector, { minSize: FittyElements[i].minSize, maxSize: FittyElements[i].maxSize, multiLine: FittyElements[i].multiLine });
                     });

@@ -1,21 +1,21 @@
 #player1NameText:before {
-    content: "TDB | Gogoku7";
+    content: "Crucible | Draco";
 }
 
 #player1TwitterText:before {
-    content: "@Gogoku7";
+    content: "@Draco";
 }
 
 #player1TwitchText:before {
-    content: "Gogoku7";
+    content: "Draco";
 }
 
 #player1ScoreText:before {
-    content: "1";
+    content: "2";
 }
 
 #player1Character {
-    background-image: url('../../CharacterIcons/banjokazooie.png');
+    background-image: url('../../CharacterIcons/zelda_07.png');
 }
 
 #player1Port {
@@ -23,35 +23,35 @@
 }
 
 #player1Country {
-    background-image: url('../../../../Flags/AF.svg');
+    background-image: url('../../../../Flags/AX.svg');
 }
 
 #player2NameText:before {
-    content: "Crucible | Draco";
+    content: "TDB | Gogoku7";
 }
 
 #player2TwitterText:before {
-    content: "@Draco";
+    content: "@Gogoku7";
 }
 
 #player2TwitchText:before {
-    content: "Draco";
+    content: "Gogoku7";
 }
 
 #player2ScoreText:before {
-    content: "2";
+    content: "1";
 }
 
 #player2Character {
-    background-image: url('../../CharacterIcons/zerosuitsamus.png');
+    background-image: url('../../CharacterIcons/banjokazooie.png');
 }
 
 #player2Port {
-    background-image: url('../../PlayerPorts/PlayerPort8.png');
+    background-image: url('../../PlayerPorts/PlayerPort2.png');
 }
 
 #player2Country {
-    background-image: url('../../../../Flags/AX.svg');
+    background-image: url('../../../../Flags/AF.svg');
 }
 
 #tournamentText:before {

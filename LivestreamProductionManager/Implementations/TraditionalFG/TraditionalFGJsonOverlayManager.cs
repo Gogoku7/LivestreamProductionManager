@@ -69,7 +69,7 @@ namespace LivestreamProductionManager.Implementations.TraditionalFG
                     new SelectorValueModel("#crew1NameText", crewsViewModel.Crew1.Name),
                     new SelectorValueModel("#crew1Character", crewsViewModel.Crew1.Character),
                     new SelectorValueModel("#crew1Country", crewsViewModel.Crew1.Country),
-                    new SelectorValueModel("#crew1StocksLeftText", crewsViewModel.Crew1.StocksLeft ?? "?")
+                    new SelectorValueModel("#crew1ScoreText", crewsViewModel.Crew1.Score ?? "?")
                 };
 
                 for (var i = 0; i < crewsViewModel.Crew1.Players.Count; i++)
@@ -94,7 +94,7 @@ namespace LivestreamProductionManager.Implementations.TraditionalFG
                         new SelectorValueModel("#crew2NameText", crewsViewModel.Crew2.Name),
                         new SelectorValueModel("#crew2Character", crewsViewModel.Crew2.Character),
                         new SelectorValueModel("#crew2Country", crewsViewModel.Crew2.Country),
-                        new SelectorValueModel("#crew2StocksLeftText", crewsViewModel.Crew2.StocksLeft ?? "?")
+                        new SelectorValueModel("#crew2ScoreText", crewsViewModel.Crew2.Score ?? "?")
                     }
                 );
 
@@ -175,7 +175,7 @@ namespace LivestreamProductionManager.Implementations.TraditionalFG
                     new SelectorValueModel("#crew1NameText", crewsNextSetViewModel.Crew1.Name),
                     new SelectorValueModel("#crew1Character", crewsNextSetViewModel.Crew1.Character),
                     new SelectorValueModel("#crew1Country", crewsNextSetViewModel.Crew1.Character),
-                    new SelectorValueModel("#crew1StocksLeftText", crewsNextSetViewModel.Crew1.StocksLeft ?? "?")
+                    new SelectorValueModel("#crew1ScoreText", crewsNextSetViewModel.Crew1.Score ?? "?")
                 };
 
                 selectorValueModels.AddRange
@@ -185,7 +185,7 @@ namespace LivestreamProductionManager.Implementations.TraditionalFG
                         new SelectorValueModel("#crew2NameText", crewsNextSetViewModel.Crew2.Name),
                         new SelectorValueModel("#crew2Character", crewsNextSetViewModel.Crew2.Character),
                         new SelectorValueModel("#crew2Country", crewsNextSetViewModel.Crew2.Country),
-                        new SelectorValueModel("#crew2StocksLeftText", crewsNextSetViewModel.Crew2.StocksLeft ?? "?")
+                        new SelectorValueModel("#crew2ScoreText", crewsNextSetViewModel.Crew2.Score ?? "?")
                     }
                 );
 

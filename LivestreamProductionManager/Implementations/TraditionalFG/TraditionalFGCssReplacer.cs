@@ -80,7 +80,7 @@ namespace LivestreamProductionManager.Implementations.TraditionalFG
                 }
                 fileTemplate = fileTemplate.Replace("crew1CharactersPLACEHOLDER", crew1Characters);
 
-                fileTemplate = fileTemplate.Replace("crew1StocksLeftTextPLACEHOLDER", crewsCssModel.Crew1.StocksLeft);
+                fileTemplate = fileTemplate.Replace("crew1ScoreTextPLACEHOLDER", crewsCssModel.Crew1.Score);
 
                 fileTemplate = fileTemplate.Replace("crew1CharacterPLACEHOLDER", crewsCssModel.Crew1.CharacterPath);
 
@@ -109,7 +109,7 @@ namespace LivestreamProductionManager.Implementations.TraditionalFG
                 }
                 fileTemplate = fileTemplate.Replace("crew2CharactersPLACEHOLDER", crew2Characters);
 
-                fileTemplate = fileTemplate.Replace("crew2StocksLeftTextPLACEHOLDER", crewsCssModel.Crew2.StocksLeft);
+                fileTemplate = fileTemplate.Replace("crew2ScoreTextPLACEHOLDER", crewsCssModel.Crew2.Score);
 
                 fileTemplate = fileTemplate.Replace("crew2CharacterPLACEHOLDER", crewsCssModel.Crew2.CharacterPath);
 
@@ -175,7 +175,7 @@ namespace LivestreamProductionManager.Implementations.TraditionalFG
             {
                 fileTemplate = fileTemplate.Replace("crew1NameTextPLACEHOLDER", crewsNextSetCssModel.Crew1.Name);
 
-                fileTemplate = fileTemplate.Replace("crew1StocksLeftTextPLACEHOLDER", crewsNextSetCssModel.Crew1.StocksLeft);
+                fileTemplate = fileTemplate.Replace("crew1ScoreTextPLACEHOLDER", crewsNextSetCssModel.Crew1.Score);
 
                 fileTemplate = fileTemplate.Replace("crew1CharacterPLACEHOLDER", crewsNextSetCssModel.Crew1.CharacterPath);
 
@@ -183,7 +183,7 @@ namespace LivestreamProductionManager.Implementations.TraditionalFG
 
                 fileTemplate = fileTemplate.Replace("crew2NameTextPLACEHOLDER", crewsNextSetCssModel.Crew2.Name);
 
-                fileTemplate = fileTemplate.Replace("crew2StocksLeftTextPLACEHOLDER", crewsNextSetCssModel.Crew2.StocksLeft);
+                fileTemplate = fileTemplate.Replace("crew2ScoreTextPLACEHOLDER", crewsNextSetCssModel.Crew2.Score);
 
                 fileTemplate = fileTemplate.Replace("crew2CharacterPLACEHOLDER", crewsNextSetCssModel.Crew2.CharacterPath);
 

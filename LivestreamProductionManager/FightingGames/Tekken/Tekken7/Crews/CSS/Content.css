@@ -36,8 +36,8 @@
 
 
 
-#crew1StocksLeftText:before {
-    content: "1";
+#crew1ScoreText:before {
+    content: "2";
 }
 
 #crew1Character {
@@ -86,8 +86,8 @@
 
 
 
-#crew2StocksLeftText:before {
-    content: "2";
+#crew2ScoreText:before {
+    content: "1";
 }
 
 #crew2Character {

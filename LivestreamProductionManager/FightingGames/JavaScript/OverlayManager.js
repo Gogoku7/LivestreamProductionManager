@@ -37,7 +37,7 @@ function initWebSocketAndFitty(fittyElements, clientType) {
 
             var jsonData = JSON.parse(event.data);
 
-            if (jsonData.type == "queu") {
+            if (jsonData.type === "queu") {
                 $.each(jsonData.data, function (i) {
                     if ($(jsonData.data[i]).hasClass("specialFade")) {
                         $(jsonData.data[i]).addClass("changing-visbility");
@@ -88,7 +88,7 @@ function initWebSocketAndFitty(fittyElements, clientType) {
                     }, 1000);
                 }, 500);
             }
-            else if (jsonData.type == "forceResize") {
+            else if (jsonData.type === "forceResize") {
                 $.each(FittyElements, function (i) {
                     $(FittyElements[i].selector).addClass("changing");
                 });

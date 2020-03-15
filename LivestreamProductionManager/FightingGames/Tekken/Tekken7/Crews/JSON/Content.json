@@ -12,8 +12,8 @@
     "Value": "../../../../Flags/AF.svg"
   },
   {
-    "Selector": "#crew1StocksLeftText",
-    "Value": "1"
+    "Selector": "#crew1ScoreText",
+    "Value": "2"
   },
   {
     "Selector": "#crew1Player1NameText",
@@ -68,8 +68,8 @@
     "Value": "../../../../Flags/AX.svg"
   },
   {
-    "Selector": "#crew2StocksLeftText",
-    "Value": "2"
+    "Selector": "#crew2ScoreText",
+    "Value": "1"
   },
   {
     "Selector": "#crew2Player1NameText",
