@@ -1,27 +1,27 @@
 [
   {
     "Selector": "#player1NameText",
-    "Value": "Draco"
+    "Value": "Gogoku7"
   },
   {
     "Selector": ".player1Sponsor",
-    "Value": "Crucible"
+    "Value": "TDB"
   },
   {
     "Selector": "#player1TwitterText",
-    "Value": "@Draco"
+    "Value": "@Gogoku7"
   },
   {
     "Selector": "#player1TwitchText",
-    "Value": "Draco"
+    "Value": "Gogoku7"
   },
   {
     "Selector": "#player1ScoreText",
-    "Value": "2"
+    "Value": "1"
   },
   {
     "Selector": "#player1Character",
-    "Value": "../../CharacterIcons/zelda_07.png"
+    "Value": "../../CharacterIcons/banjokazooie.png"
   },
   {
     "Selector": "#player1Port",
@@ -29,31 +29,31 @@
   },
   {
     "Selector": "#player1Country",
-    "Value": "../../../../Flags/AX.svg"
+    "Value": "../../../../Flags/AF.svg"
   },
   {
     "Selector": "#player2NameText",
-    "Value": "Gogoku7"
+    "Value": "Draco"
   },
   {
     "Selector": ".player2Sponsor",
-    "Value": "TDB"
+    "Value": "Crucible"
   },
   {
     "Selector": "#player2TwitterText",
-    "Value": "@Gogoku7"
+    "Value": "@Draco"
   },
   {
     "Selector": "#player2TwitchText",
-    "Value": "Gogoku7"
+    "Value": "Draco"
   },
   {
     "Selector": "#player2ScoreText",
-    "Value": "1"
+    "Value": "2"
   },
   {
     "Selector": "#player2Character",
-    "Value": "../../CharacterIcons/banjokazooie.png"
+    "Value": "../../CharacterIcons/bowser.png"
   },
   {
     "Selector": "#player2Port",
@@ -61,7 +61,7 @@
   },
   {
     "Selector": "#player2Country",
-    "Value": "../../../../Flags/AF.svg"
+    "Value": "../../../../Flags/AL.svg"
   },
   {
     "Selector": "#tournamentText",
@@ -73,7 +73,7 @@
   },
   {
     "Selector": "#roundText",
-    "Value": "Winners Round 1"
+    "Value": "Winners Round 3"
   },
   {
     "Selector": "#bestOfText",

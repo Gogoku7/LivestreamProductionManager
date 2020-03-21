@@ -1604,6 +1604,10 @@
                             $("#manageCompetitorsForm").find($(this).data("selector")).val($(this).val()).removeClass("danger-pulsate");
                         });
 
+                        if (!$("#submitCompetitorsButton").hasClass("btn-danger")) {
+                            $("#submitCompetitorsButton").removeClass("btn-success").addClass("btn-danger danger-pulsate");
+                        }
+
                         ShowSnackbar("#manageQueuSnackbar", `Imported Set ${ index + 1 }.`);
                     } else {
                         ShowSnackbar("#manageQueuSnackbar", "The associated Set form could not be found.");

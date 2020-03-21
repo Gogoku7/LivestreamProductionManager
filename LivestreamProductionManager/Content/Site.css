@@ -192,6 +192,11 @@ div.panel {
 
 /* Queu */
 
+#manageQueu {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
 button[onclick="moveSetUp(0)"] {
     display: none;
 }

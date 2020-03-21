@@ -1,7 +1,7 @@
 [
   {
     "Selector": "#player1NameText",
-    "Value": "xMagnax"
+    "Value": "Pagani"
   },
   {
     "Selector": ".player1Sponsor",
@@ -9,51 +9,51 @@
   },
   {
     "Selector": "#player1TwitterText",
-    "Value": "@xMagnax"
+    "Value": null
   },
   {
     "Selector": "#player1TwitchText",
-    "Value": "xMagnax"
+    "Value": null
   },
   {
     "Selector": "#player1ScoreText",
-    "Value": "1"
+    "Value": "0"
   },
   {
     "Selector": "#player1Character",
-    "Value": "../../CharacterIcons/alisa.png"
+    "Value": null
   },
   {
     "Selector": "#player1Country",
-    "Value": "../../../../Flags/CW.svg"
+    "Value": "../../../../Flags/NL.svg"
   },
   {
     "Selector": "#player2NameText",
-    "Value": "Gogoku7"
+    "Value": "KarmaKens"
   },
   {
     "Selector": ".player2Sponsor",
-    "Value": "TDB"
+    "Value": null
   },
   {
     "Selector": "#player2TwitterText",
-    "Value": "@Gogoku7"
+    "Value": null
   },
   {
     "Selector": "#player2TwitchText",
-    "Value": "Gogoku7"
+    "Value": null
   },
   {
     "Selector": "#player2ScoreText",
-    "Value": "2"
+    "Value": "1"
   },
   {
     "Selector": "#player2Character",
-    "Value": "../../CharacterIcons/akuma.png"
+    "Value": null
   },
   {
     "Selector": "#player2Country",
-    "Value": "../../../../Flags/JP.svg"
+    "Value": "../../../../Flags/NL.svg"
   },
   {
     "Selector": "#tournamentText",
@@ -65,10 +65,10 @@
   },
   {
     "Selector": "#roundText",
-    "Value": "Winners Round 2"
+    "Value": "Winners Round 3"
   },
   {
     "Selector": "#bestOfText",
-    "Value": "Best of 3"
+    "Value": "Best of 5"
   }
 ]

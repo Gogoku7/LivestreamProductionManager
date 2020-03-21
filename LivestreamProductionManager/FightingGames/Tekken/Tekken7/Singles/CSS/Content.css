@@ -1,49 +1,49 @@
 #player1NameText:before {
-    content: "xMagnax";
+    content: "Pagani";
 }
 
 #player1TwitterText:before {
-    content: "@xMagnax";
+    content: "";
 }
 
 #player1TwitchText:before {
-    content: "xMagnax";
+    content: "";
 }
 
 #player1ScoreText:before {
-    content: "1";
+    content: "0";
 }
 
 #player1Character {
-    background-image: url('../../CharacterIcons/alisa.png');
+    background-image: url('');
 }
 
 #player1Country {
-    background-image: url('../../../../Flags/CW.svg');
+    background-image: url('../../../../Flags/NL.svg');
 }
 
 #player2NameText:before {
-    content: "TDB | Gogoku7";
+    content: "KarmaKens";
 }
 
 #player2TwitterText:before {
-    content: "@Gogoku7";
+    content: "";
 }
 
 #player2TwitchText:before {
-    content: "Gogoku7";
+    content: "";
 }
 
 #player2ScoreText:before {
-    content: "2";
+    content: "1";
 }
 
 #player2Character {
-    background-image: url('../../CharacterIcons/akuma.png');
+    background-image: url('');
 }
 
 #player2Country {
-    background-image: url('../../../../Flags/JP.svg');
+    background-image: url('../../../../Flags/NL.svg');
 }
 
 #tournamentText:before {
@@ -55,9 +55,9 @@
 }
 
 #roundText:before {
-    content: "Winners Round 2";
+    content: "Winners Round 3";
 }
 
 #bestOfText:before {
-    content: "Best of 3";
+    content: "Best of 5";
 }
