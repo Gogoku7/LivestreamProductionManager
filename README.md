@@ -44,14 +44,13 @@ Deploying to IIS and running can be done manually or using Visual Studio, the de
 # Planned features
 
 - Manage Top 8 overlays
-- Separate PlayerSponsor and PlayerName to individually style
+- Separate PlayerSponsor and PlayerName to individually stylable elements
 - Format settings:
     - Default values
     - How to stitch together sponsor + name
     - Disable fields
     - Switch between stock icon and head portrait or full portrait, etc.
     - Automatically get latest version on load of format
-- Slideshow.js and Slideshow.css
 - Auto-update toggle
 - Creating player datasets
     - Auto complete player from dataset
@@ -69,5 +68,5 @@ Deploying to IIS and running can be done manually or using Visual Studio, the de
     - Change port
     - Force resize 
 
-- Automated tests with Selenium IDE
+- Automated tests with Selenium IDE / Cypress
 - .msi installer
