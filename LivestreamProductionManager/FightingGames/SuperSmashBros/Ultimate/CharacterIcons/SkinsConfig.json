@@ -1967,6 +1967,51 @@
       ]
     },
     {
+      "CharacterName": "Min Min",
+      "Skins": [
+        {
+          "Name": "Min Min",
+          "CssValue": "../../CharacterIcons/minmin.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/minmin.png"
+        },
+        {
+          "Name": "Min Min_01",
+          "CssValue": "../../CharacterIcons/minmin_01.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/minmin_01.png"
+        },
+        {
+          "Name": "Min Min_02",
+          "CssValue": "../../CharacterIcons/minmin_02.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/minmin_02.png"
+        },
+        {
+          "Name": "Min Min_03",
+          "CssValue": "../../CharacterIcons/minmin_03.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/minmin_03.png"
+        },
+        {
+          "Name": "Min Min_04",
+          "CssValue": "../../CharacterIcons/minmin_04.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/minmin_04.png"
+        },
+        {
+          "Name": "Min Min_05",
+          "CssValue": "../../CharacterIcons/minmin_05.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/minmin_05.png"
+        },
+        {
+          "Name": "Min Min_06",
+          "CssValue": "../../CharacterIcons/minmin_06.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/minmin_06.png"
+        },
+        {
+          "Name": "Min Min_07",
+          "CssValue": "../../CharacterIcons/minmin_07.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/minmin_07.png"
+        }
+      ]
+    },
+    {
       "CharacterName": "Mr. Game & Watch",
       "Skins": [
         {

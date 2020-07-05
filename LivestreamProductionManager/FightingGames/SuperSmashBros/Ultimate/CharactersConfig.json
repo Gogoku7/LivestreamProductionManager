@@ -189,6 +189,10 @@
     "CssValue": "../../CharacterIcons/miiswordfighter.png"
   },
   {
+    "CharacterName": "Min Min",
+    "CssValue": "../../CharacterIcons/minmin.png"
+  },
+  {
     "CharacterName": "Mr. Game & Watch",
     "CssValue": "../../CharacterIcons/mrgamewatch.png"
   },

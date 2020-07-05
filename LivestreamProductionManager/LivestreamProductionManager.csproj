@@ -2159,6 +2159,30 @@
     <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\miiswordfighter.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\minmin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\minmin_01.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\minmin_02.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\minmin_03.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\minmin_04.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\minmin_05.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\minmin_06.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\minmin_07.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="FightingGames\SuperSmashBros\Ultimate\CharacterIcons\mrgamewatch.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

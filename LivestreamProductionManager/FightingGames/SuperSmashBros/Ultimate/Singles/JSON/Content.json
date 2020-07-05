@@ -21,7 +21,7 @@
   },
   {
     "Selector": "#player1Character",
-    "Value": "../../CharacterIcons/banjokazooie.png"
+    "Value": "../../CharacterIcons/minmin_07.png"
   },
   {
     "Selector": "#player1Port",
