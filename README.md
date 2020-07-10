@@ -33,7 +33,7 @@ To get an actual overlay in OBS:
 - Enable both "Shutdown source when not visible" and "Refresh browser when scene becomes active" checkboxes
 
 
-# Deploying (IIS)
+# Deploying (IIS) (Not recommended at this time)
 
 Livestream Production Manager can be deployed to IIS. When deployed to IIS, change the BaseUrl AppSetting to 'localhost/livestreamproductionmanager' ('localhost' is possible too, but needs some changes) in the Web.config of the application and the baseUrl variable in FightingGames/SuperSmashBros/JavaScript/OverlayManager.js to ensure the WebSocket connection to work.
 
