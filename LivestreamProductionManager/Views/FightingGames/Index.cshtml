@@ -377,10 +377,10 @@
                         <div class="col-xs-5">
                             <label>Name</label>
                         </div>
-                        <div class="col-xs-5">
+                        <div class="col-xs-4">
                             <label>Twitter</label>
                         </div>
-                        <div class="col-xs-2">
+                        <div class="col-xs-3">
                             <label>Actions</label>
                         </div>
                     </div>
@@ -2199,6 +2199,8 @@
         // Summary:
         // On: Clicking a Toggle Focus button
         //
+        //TODO: refactor to make smaller or merge on/off 
+        // Perhaps use predetermined array of selectors
         $(".toggleFocusButton").click(function () {
             try {
                 if ($(this).data("enabled") === "False")
