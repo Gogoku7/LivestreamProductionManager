@@ -130,7 +130,8 @@
     <div class="full-horizontal-width">
         <div class="panel panel-default">
             <div class="panel-heading row">
-                <div class="col-xs-5 text-center">
+                <div class="col-xs-5 text-left">
+                    <button class="btn btn-danger panelButton toggleFocusButton" id="toggleQueuFocus" data-topic="Queu" data-enabled="False" data-toggle="buttonTooltip" title="Toggle Focus on Queu"><span class="glyphicon glyphicon-eye-close"></span><text> Focus</text></button>
                 </div>
                 <div class="col-xs-2 text-center">
                     <text class="panel-title">Manage queu</text>
@@ -2273,6 +2274,34 @@
                             ShowSnackbar("#focusSnackbar", "Focus for Commentators has been turned on.");
                         }, 1000);
                     }
+                    else if ($(this).data("topic") === "Queu") {
+                        if ($("#queuWebSocketDataMonitor").data("enabled") === "True") {
+                            $("#toggleQueuWebSocketDataMonitorButton").trigger("click");
+                        }
+
+                        if ($("#queuCssMonitor").data("enabled") === "True") {
+                            $("#toggleQueuCssMonitorButton").trigger("click");
+                        }
+
+                        if ($("#queuJsonMonitor").data("enabled") === "True") {
+                            $("#toggleQueuJsonMonitorButton").trigger("click");
+                        }
+
+                        //TODO: implement later
+                        //if ($("#queuPreviewOverlayIframe").data("enabled") === "True") {
+                        //    $("#toggleQueuPreviewOverlayButton").trigger("click");
+                        //}
+
+                        $("#queuMonitorsRow").addClass("focusOn");
+                        //TODO: implement later
+                        //$("#previewQueuOverlayRow").addClass("focusOn");
+
+                        setTimeout(function () {
+                            $("#queuMonitorsRow").hide();
+                            $("#previewQueuOverlayRow").hide();
+                            ShowSnackbar("#focusSnackbar", "Focus for Queu has been turned on.");
+                        }, 1000);
+                    }
 
                     $(this).data("enabled", "True");
                     $(this).removeClass("btn-danger").addClass("btn-success");
@@ -2353,6 +2382,35 @@
                         setTimeout(function (){
                         
                             ShowSnackbar("#focusSnackbar", "Focus for Commentators has been turned off.");
+                        }, 1000);
+                    }
+                    else if ($(this).data("topic") === "Queu") {
+                        if ($("#queuWebSocketDataMonitor").data("enabled") === "False") {
+                            $("#toggleQueuWebSocketDataMonitorButton").trigger("click");
+                        }
+
+                        if ($("#queuCssMonitor").data("enabled") === "False") {
+                            $("#toggleQueuCssMonitorButton").trigger("click");
+                        }
+
+                        if ($("#queuJsonMonitor").data("enabled") === "False") {
+                            $("#toggleQueuJsonMonitorButton").trigger("click");
+                        }
+
+                        //TODO: implement later
+                        //if ($("#queuPreviewOverlayIframe").data("enabled") === "False") {
+                        //    $("#toggleQueuPreviewOverlayButton").trigger("click");
+                        //}
+
+                        $("#queuMonitorsRow").show();
+                        //TODO: implement later
+                        //$("#previewQueuOverlayRow").show();
+
+                        $("#queuMonitorsRow").addClass("focusOff").removeClass("focusOn");
+                        $("#previewQueuOverlayRow").addClass("focusOff").removeClass("focusOn");
+
+                        setTimeout(function () {
+                            ShowSnackbar("#focusSnackbar", "Focus for Queu has been turned off.");
                         }, 1000);
                     }
 
