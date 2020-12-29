@@ -30,7 +30,18 @@
         </div>
     </div>
 
-    <form action="@Url.Action("UpdateSinglesNextSet", "SuperSmashBros")" method="post" id="manageQueuForm_@Model.Index">
+    <form action="@Url.Action("UpdateSinglesNextSet", "SuperSmashBros")"
+          method="post"
+          id="manageQueuForm_@Model.Index"
+          data-overlay-type="NextSet"
+          data-websocket-data-monitor-id="#queuWebSocketDataMonitor"
+          data-css-monitor-url="@Url.Action("GetCssFileContent", "FightingGames")"
+          data-css-monitor-id="#queuCssMonitor"
+          data-json-monitor-url="@Url.Action("GetJsonFileContent", "FightingGames")"
+          data-json-monitor-id="#queuJsonMonitor"
+          data-overlay-preview-id="#queuPreviewOverlayIframe"
+          data-snackbar-id="#manageQueuSnackbar">
+
         <input type="hidden" name="Series" value="@Model.Series" />
         <input type="hidden" name="Game" value="@Model.Game" />
         <input type="hidden" name="Format" value="@Model.Format" />
