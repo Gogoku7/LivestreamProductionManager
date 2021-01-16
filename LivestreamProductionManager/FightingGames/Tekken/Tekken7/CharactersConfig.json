@@ -117,6 +117,10 @@
     "CssValue": "../../CharacterIcons/kuma.png"
   },
   {
+    "CharacterName": "Kunimitsu II",
+    "CssValue": "../../CharacterIcons/kunimitsu.png"
+  },
+  {
     "CharacterName": "Lars Alexandersson",
     "CssValue": "../../CharacterIcons/lars.png"
   },
@@ -199,5 +203,9 @@
   {
     "CharacterName": "Zafina",
     "CssValue": "../../CharacterIcons/zafina.png"
+  },
+  {
+    "CharacterName": "Season 4, Character 2",
+    "CssValue": "../../CharacterIcons/random.png"
   }
 ]

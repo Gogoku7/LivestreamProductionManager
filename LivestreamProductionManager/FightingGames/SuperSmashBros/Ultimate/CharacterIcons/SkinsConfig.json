@@ -1967,6 +1967,51 @@
       ]
     },
     {
+      "CharacterName": "Min Min",
+      "Skins": [
+        {
+          "Name": "Min Min",
+          "CssValue": "../../CharacterIcons/minmin.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/minmin.png"
+        },
+        {
+          "Name": "Min Min_01",
+          "CssValue": "../../CharacterIcons/minmin_01.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/minmin_01.png"
+        },
+        {
+          "Name": "Min Min_02",
+          "CssValue": "../../CharacterIcons/minmin_02.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/minmin_02.png"
+        },
+        {
+          "Name": "Min Min_03",
+          "CssValue": "../../CharacterIcons/minmin_03.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/minmin_03.png"
+        },
+        {
+          "Name": "Min Min_04",
+          "CssValue": "../../CharacterIcons/minmin_04.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/minmin_04.png"
+        },
+        {
+          "Name": "Min Min_05",
+          "CssValue": "../../CharacterIcons/minmin_05.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/minmin_05.png"
+        },
+        {
+          "Name": "Min Min_06",
+          "CssValue": "../../CharacterIcons/minmin_06.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/minmin_06.png"
+        },
+        {
+          "Name": "Min Min_07",
+          "CssValue": "../../CharacterIcons/minmin_07.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/minmin_07.png"
+        }
+      ]
+    },
+    {
       "CharacterName": "Mr. Game & Watch",
       "Skins": [
         {
@@ -2832,6 +2877,51 @@
       ]
     },
     {
+      "CharacterName": "Sephiroth",
+      "Skins": [
+        {
+          "Name": "Sephiroth",
+          "CssValue": "../../CharacterIcons/sephiroth.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/sephiroth.png"
+        },
+        {
+          "Name": "Sephiroth_01",
+          "CssValue": "../../CharacterIcons/sephiroth_01.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/sephiroth_01.png"
+        },
+        {
+          "Name": "Sephiroth_02",
+          "CssValue": "../../CharacterIcons/sephiroth_02.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/sephiroth_02.png"
+        },
+        {
+          "Name": "Sephiroth_03",
+          "CssValue": "../../CharacterIcons/sephiroth_03.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/sephiroth_03.png"
+        },
+        {
+          "Name": "Sephiroth_04",
+          "CssValue": "../../CharacterIcons/sephiroth_04.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/sephiroth_04.png"
+        },
+        {
+          "Name": "Sephiroth_05",
+          "CssValue": "../../CharacterIcons/sephiroth_05.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/sephiroth_05.png"
+        },
+        {
+          "Name": "Sephiroth_06",
+          "CssValue": "../../CharacterIcons/sephiroth_06.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/sephiroth_06.png"
+        },
+        {
+          "Name": "Sephiroth_07",
+          "CssValue": "../../CharacterIcons/sephiroth_07.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/sephiroth_07.png"
+        }
+      ]
+    },
+    {
       "CharacterName": "Sheik",
       "Skins": [
         {
@@ -3053,6 +3143,51 @@
           "Name": "Sonic_07",
           "CssValue": "../../CharacterIcons/sonic_07.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/sonic_07.png"
+        }
+      ]
+    },
+    {
+      "CharacterName": "Steve",
+      "Skins": [
+        {
+          "Name": "Steve",
+          "CssValue": "../../CharacterIcons/steve.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/steve.png"
+        },
+        {
+          "Name": "Steve_01",
+          "CssValue": "../../CharacterIcons/steve_01.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/steve_01.png"
+        },
+        {
+          "Name": "Steve_02",
+          "CssValue": "../../CharacterIcons/steve_02.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/steve_02.png"
+        },
+        {
+          "Name": "Steve_03",
+          "CssValue": "../../CharacterIcons/steve_03.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/steve_03.png"
+        },
+        {
+          "Name": "Steve_04",
+          "CssValue": "../../CharacterIcons/steve_04.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/steve_04.png"
+        },
+        {
+          "Name": "Steve_05",
+          "CssValue": "../../CharacterIcons/steve_05.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/steve_05.png"
+        },
+        {
+          "Name": "Steve_06",
+          "CssValue": "../../CharacterIcons/steve_06.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/steve_06.png"
+        },
+        {
+          "Name": "Steve_07",
+          "CssValue": "../../CharacterIcons/steve_07.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/steve_07.png"
         }
       ]
     },

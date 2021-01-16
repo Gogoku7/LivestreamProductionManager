@@ -15,7 +15,7 @@
 }
 
 #player1Character {
-    background-image: url('../../CharacterIcons/banjokazooie.png');
+    background-image: url('../../CharacterIcons/steve.png');
 }
 
 #player1Port {
@@ -23,7 +23,7 @@
 }
 
 #player1Country {
-    background-image: url('../../../../Flags/AF.svg');
+    background-image: url('');
 }
 
 #player2NameText:before {
@@ -43,7 +43,7 @@
 }
 
 #player2Character {
-    background-image: url('../../CharacterIcons/bowser.png');
+    background-image: url('../../CharacterIcons/sephiroth.png');
 }
 
 #player2Port {
@@ -51,7 +51,7 @@
 }
 
 #player2Country {
-    background-image: url('../../../../Flags/AL.svg');
+    background-image: url('');
 }
 
 #tournamentText:before {

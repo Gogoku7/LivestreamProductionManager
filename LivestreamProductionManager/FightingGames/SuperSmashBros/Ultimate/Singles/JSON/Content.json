@@ -21,7 +21,7 @@
   },
   {
     "Selector": "#player1Character",
-    "Value": "../../CharacterIcons/banjokazooie.png"
+    "Value": "../../CharacterIcons/steve.png"
   },
   {
     "Selector": "#player1Port",
@@ -29,7 +29,7 @@
   },
   {
     "Selector": "#player1Country",
-    "Value": "../../../../Flags/AF.svg"
+    "Value": null
   },
   {
     "Selector": "#player2NameText",
@@ -53,7 +53,7 @@
   },
   {
     "Selector": "#player2Character",
-    "Value": "../../CharacterIcons/bowser.png"
+    "Value": "../../CharacterIcons/sephiroth.png"
   },
   {
     "Selector": "#player2Port",
@@ -61,7 +61,7 @@
   },
   {
     "Selector": "#player2Country",
-    "Value": "../../../../Flags/AL.svg"
+    "Value": null
   },
   {
     "Selector": "#tournamentText",
