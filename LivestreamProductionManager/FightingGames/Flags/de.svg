@@ -1,6 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 3">
-<desc>Flag of Germany</desc>
-<rect id="black_stripe" width="5" height="3" y="0" x="0" fill="#000"/>
-<rect id="red_stripe" width="5" height="2" y="1" x="0" fill="#D00"/>
-<rect id="gold_stripe" width="5" height="1" y="2" x="0" fill="#FFCE00"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="225" height="150" viewBox="0 0 225 150">
+  <image width="225" height="150" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAACWCAYAAAAolO8DAAABxElEQVR4nO3VQQ2AQBAEwYHgXxoO0HLI6E+VhN105tp2BmRup4eWCCEmQoiJEGIihJgIISZCiIkQYiKEmAghJkKIiRBiIoSYCCEmQoiJEGIihJgIISZCiIkQYiKEmAghJkKIiRBiIoSYCCEmQoiJEGIihJgIISZCiIkQYiKEmAghJkKIiRBiIoSYCCEmQoiJEGIihJgIISZCiIkQYiKEmAghJkKIiRBiIoTY8/kApCwhxEQIMRFCTIQQEyHERAgxEUJMhBATIcRECDERQkyEEBMhxEQIMRFCTIQQEyHERAgxEUJMhBATIcRECDERQkyEEBMhxEQIMRFCTIQQEyHERAgxEUJMhBATIcRECDERQkyEEBMhxEQIMRFCTIQQEyHERAgxEUJMhBATIcRECDERQkyEEBMhxK7z7ngCdCwhxEQIMRFCTIQQEyHERAgxEUJMhBATIcRECDERQkyEEBMhxEQIMRFCTIQQEyHERAgxEUJMhBATIcRECDERQkyEEBMhxEQIMRFCTIQQEyHERAgxEUJMhBATIcRECDERQkyEEBMhxEQIMRFCTIQQEyHERAgxEUJMhBATIcRECDERQkyEEBMhlLb9rJsF1Ss545QAAAAASUVORK5CYII="/>
 </svg>
