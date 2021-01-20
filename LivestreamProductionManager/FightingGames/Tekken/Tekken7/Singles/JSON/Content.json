@@ -1,7 +1,7 @@
 [
   {
     "Selector": "#player1NameText",
-    "Value": "Pagani"
+    "Value": "Roddy"
   },
   {
     "Selector": ".player1Sponsor",
@@ -25,11 +25,11 @@
   },
   {
     "Selector": "#player1Country",
-    "Value": "../../../../Flags/NL.svg"
+    "Value": "../../../../Flags/AX.svg"
   },
   {
     "Selector": "#player2NameText",
-    "Value": "KarmaKens"
+    "Value": "Thien"
   },
   {
     "Selector": ".player2Sponsor",
@@ -53,7 +53,7 @@
   },
   {
     "Selector": "#player2Country",
-    "Value": "../../../../Flags/NL.svg"
+    "Value": null
   },
   {
     "Selector": "#tournamentText",

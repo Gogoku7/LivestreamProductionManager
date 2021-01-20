@@ -1,49 +1,49 @@
 #player1NameText:before {
-    content: "TDB | Gogoku7";
+    content: "BYOC | Lonpos";
 }
 
 #player1TwitterText:before {
-    content: "@gogoku7";
+    content: "";
 }
 
 #player1TwitchText:before {
-    content: "Gogoku7";
+    content: "";
 }
 
 #player1Character {
-    background-image: url('../../CharacterIcons/banjokazooie.png');
+    background-image: url('');
 }
 
 #player1Port {
-    background-image: url('../../PlayerPorts/PlayerPort1.png');
+    background-image: url('');
 }
 
 #player1Country {
-    background-image: url('../../../../Flags/AF.svg');
+    background-image: url('');
 }
 
 #player2NameText:before {
-    content: "Crucible | Draco";
+    content: "TDB | Gogoku7";
 }
 
 #player2TwitterText:before {
-    content: "@draco";
+    content: "";
 }
 
 #player2TwitchText:before {
-    content: "Draco";
+    content: "";
 }
 
 #player2Character {
-    background-image: url('../../CharacterIcons/zerosuitsamus.png');
+    background-image: url('');
 }
 
 #player2Port {
-    background-image: url('../../PlayerPorts/PlayerPort8.png');
+    background-image: url('');
 }
 
 #player2Country {
-    background-image: url('../../../../Flags/AX.svg');
+    background-image: url('');
 }
 
 #roundText:before {

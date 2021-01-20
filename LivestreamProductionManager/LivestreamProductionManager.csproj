@@ -1047,6 +1047,12 @@
     <Content Include="FightingGames\Flags\um.svg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="FightingGames\Flags\unknownearth.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FightingGames\Flags\unknownquestionmark.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="FightingGames\Flags\us.svg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

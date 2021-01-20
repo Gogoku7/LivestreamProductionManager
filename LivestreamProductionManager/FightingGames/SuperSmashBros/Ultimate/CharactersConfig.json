@@ -273,6 +273,10 @@
     "CssValue": "../../CharacterIcons/samus.png"
   },
   {
+    "CharacterName": "Sephiroth",
+    "CssValue": "../../CharacterIcons/sephiroth.png"
+  },
+  {
     "CharacterName": "Sheik",
     "CssValue": "../../CharacterIcons/sheik.png"
   },
@@ -291,6 +295,10 @@
   {
     "CharacterName": "Sonic",
     "CssValue": "../../CharacterIcons/sonic.png"
+  },
+  {
+    "CharacterName": "Steve",
+    "CssValue": "../../CharacterIcons/steve.png"
   },
   {
     "CharacterName": "Terry",

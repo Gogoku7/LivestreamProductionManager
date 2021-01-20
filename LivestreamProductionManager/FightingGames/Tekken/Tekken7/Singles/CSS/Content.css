@@ -1,5 +1,5 @@
 #player1NameText:before {
-    content: "Pagani";
+    content: "Roddy";
 }
 
 #player1TwitterText:before {
@@ -19,11 +19,11 @@
 }
 
 #player1Country {
-    background-image: url('../../../../Flags/NL.svg');
+    background-image: url('../../../../Flags/AX.svg');
 }
 
 #player2NameText:before {
-    content: "KarmaKens";
+    content: "Thien";
 }
 
 #player2TwitterText:before {
@@ -43,7 +43,7 @@
 }
 
 #player2Country {
-    background-image: url('../../../../Flags/NL.svg');
+    background-image: url('');
 }
 
 #tournamentText:before {

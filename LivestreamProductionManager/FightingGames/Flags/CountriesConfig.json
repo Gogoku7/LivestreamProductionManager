@@ -4,6 +4,14 @@
     "CssValue": ""
   },
   {
+    "CountryName": "Unknown (Earth)",
+    "CssValue": "../../../../Flags/unknownearth.svg"
+  },
+  {
+    "CountryName": "Unknown (Question mark)",
+    "CssValue": "../../../../Flags/unknownquestionmark.svg"
+  },
+  {
     "CountryName": "Afghanistan",
     "CssValue": "../../../../Flags/AF.svg"
   },
@@ -988,7 +996,7 @@
     "CssValue": "../../../../Flags/VE.svg"
   },
   {
-    "CountryName": "Viet Nam",
+    "CountryName": "Vietnam",
     "CssValue": "../../../../Flags/VN.svg"
   },
   {

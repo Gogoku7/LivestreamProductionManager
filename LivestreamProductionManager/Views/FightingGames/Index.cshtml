@@ -56,12 +56,82 @@
     </div>
 </div>
 
+<div class="row panelRow" id="queuMonitorsRow">
+    <!--Queu WebSocket Data monitor-->
+    <div class="one-third-horizontal-width" style="float: left">
+        <div class="panel panel-default">
+            <div class="panel-heading row">
+                <div class="col-xs-3">
+                    <button class="btn btn-danger panelButton clearWebSocketDataMonitorButton" id="clearQueuWebSocketDataMonitorButton" data-monitor-id="#queuWebSocketDataMonitor" data-toggle="buttonTooltip" title="Clear the Queu data monitor"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <text class="panel-title">Queu data monitor</text>
+                </div>
+                <div class="col-xs-3 text-right">
+                    <button class="btn btn-success panelButton toggleMonitorButton toggleWebSocketDataMonitorButton" id="toggleQueuWebSocketDataMonitorButton" data-monitor-id="#queuWebSocketDataMonitor" data-toggle="buttonTooltip" title="Toggle the Queu data monitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
+                </div>
+            </div>
+            <div class="panel-body monitorPanelBody">
+                <pre class="monitorPre">
+                    <code class="monitorCode json" id="queuWebSocketDataMonitor" data-enabled="True">
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+    <!--Queu CSS monitor-->
+    <div class="one-third-horizontal-width" style="float: left">
+        <div class="panel panel-default">
+            <div class="panel-heading row">
+                <div class="col-xs-3">
+                    <button class="btn btn-danger panelButton clearCssMonitorButton" id="clearQueuCssMonitorButton" data-monitor-id="#queuCssMonitor" data-toggle="buttonTooltip" title="Clear the Queu CSS monitor"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <text class="panel-title">Queu CSS monitor</text>
+                </div>
+                <div class="col-xs-3 text-right">
+                    <button class="btn btn-success panelButton toggleMonitorButton toggleCssMonitorButton" id="toggleQueuCssMonitorButton" data-monitor-id="#queuCssMonitor" data-toggle="buttonTooltip" title="Toggle the Queu CSS monitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
+                </div>
+            </div>
+            <div class="panel-body monitorPanelBody">
+                <pre class="monitorPre">
+                    <code class="monitorCode css" id="queuCssMonitor" data-enabled="True">
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+    <!--Queu JSON monitor-->
+    <div class="one-third-horizontal-width" style="float: left">
+        <div class="panel panel-default">
+            <div class="panel-heading row">
+                <div class="col-xs-3">
+                    <button class="btn btn-danger panelButton clearJsonMonitorButton" id="clearQueuJsonMonitorButton" data-monitor-id="#queuJsonMonitor" data-toggle="buttonTooltip" title="Clear the Queu JSON monitor"><span class="glyphicon glyphicon-remove"></span><text> Clear</text></button>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <text class="panel-title">Queu JSON monitor</text>
+                </div>
+                <div class="col-xs-3 text-right">
+                    <button class="btn btn-success panelButton toggleMonitorButton toggleJsonMonitorButton" id="toggleQueuJsonMonitorButton" data-monitor-id="#queuJsonMonitor" data-toggle="buttonTooltip" title="Toggle the Queu JSON monitor"><span class="glyphicon glyphicon-ok"></span><text> Enabled</text></button>
+                </div>
+            </div>
+            <div class="panel-body monitorPanelBody">
+                <pre class="monitorPre">
+                    <code class="monitorCode json" id="queuJsonMonitor" data-enabled="True">
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="row panelRow" id="manageQueuRow">
     <!--Manage Queu-->
     <div class="full-horizontal-width">
         <div class="panel panel-default">
             <div class="panel-heading row">
-                <div class="col-xs-5 text-center">
+                <div class="col-xs-5 text-left">
+                    <button class="btn btn-danger panelButton toggleFocusButton" id="toggleQueuFocus" data-topic="Queu" data-enabled="False" data-toggle="buttonTooltip" title="Toggle Focus on Queu"><span class="glyphicon glyphicon-eye-close"></span><text> Focus</text></button>
                 </div>
                 <div class="col-xs-2 text-center">
                     <text class="panel-title">Manage queu</text>
@@ -307,10 +377,10 @@
                         <div class="col-xs-5">
                             <label>Name</label>
                         </div>
-                        <div class="col-xs-5">
+                        <div class="col-xs-4">
                             <label>Twitter</label>
                         </div>
-                        <div class="col-xs-2">
+                        <div class="col-xs-3">
                             <label>Actions</label>
                         </div>
                     </div>
@@ -429,6 +499,7 @@
         var baseUrl = "@System.Configuration.ConfigurationManager.AppSettings["BaseUrl"]";
         var competitorsFormJsonData = null;
         var commentatorsFormJsonData = null;
+        var nextSetFormJsonData = null;
         var crewBattlePlayerCount = 0;
         var clientsConnectedCount = 0;
         var competitorsOverlayPreviewSourceUrl = null;
@@ -1526,6 +1597,7 @@
                         "PathToSeries": $("#manageCompetitorsForm").find("input[name='PathToSeries']").val(),
                         "PathToGame": $("#manageCompetitorsForm").find("input[name='PathToGame']").val(),
                         "PathToFormat": $("#manageCompetitorsForm").find("input[name='PathToFormat']").val(),
+                        //"PathToFormatNextSet": $("#manageCompetitorsForm").find("#pathToFormatNextSet").val(), //TODO: implement
                         "Index": $("form[id^='manageQueuForm']").length
                     },
                     dataType: "html",
@@ -1550,6 +1622,7 @@
         // On: 
         function submitSet(index) {
             try {
+                var manageForm = $(`#manageQueuForm_${ index }`);
                 if ($(`#nextSet-${ index }`).length) {
                     if ($(`#manageQueuForm_${ index }`).length) {
                         $(`#manageQueuForm_${ index } :input[name='PathToFormatNextSet']`).val(pathToFormatNextSet);
@@ -1563,6 +1636,12 @@
                             success: function (data) {
                                 if (data.Success === "True") {
                                     ShowSnackbar("#manageQueuSnackbar", data.Message);
+
+                                    if (manageForm.is("[data-overlay-type='NextSet']")) {
+                                        nextSetFormJsonData = BuildAndSendQueuUpdate(manageForm, nextSetFormJsonData);
+                                        UpdateCSSMonitor(manageForm.data("css-monitor-url"), { "PathToFormat": manageForm.find("input[name='PathToFormatNextSet']").val() }, manageForm.data("css-monitor-id"));
+                                        UpdateJsonMonitor(manageForm.data("json-monitor-url"), { "PathToFormat": manageForm.find("input[name='PathToFormatNextSet']").val() }, manageForm.data("json-monitor-id"));
+                                    }
                                 }
                                 else {
                                     ShowSnackbar("#manageQueuSnackbar", data.Message);
@@ -2120,6 +2199,8 @@
         // Summary:
         // On: Clicking a Toggle Focus button
         //
+        //TODO: refactor to make smaller or merge on/off 
+        // Perhaps use predetermined array of selectors
         $(".toggleFocusButton").click(function () {
             try {
                 if ($(this).data("enabled") === "False")
@@ -2193,6 +2274,34 @@
                             $("#commentatorsMonitorsRow").hide();
                             $("#previewCommentatorsOverlayRow").hide();
                             ShowSnackbar("#focusSnackbar", "Focus for Commentators has been turned on.");
+                        }, 1000);
+                    }
+                    else if ($(this).data("topic") === "Queu") {
+                        if ($("#queuWebSocketDataMonitor").data("enabled") === "True") {
+                            $("#toggleQueuWebSocketDataMonitorButton").trigger("click");
+                        }
+
+                        if ($("#queuCssMonitor").data("enabled") === "True") {
+                            $("#toggleQueuCssMonitorButton").trigger("click");
+                        }
+
+                        if ($("#queuJsonMonitor").data("enabled") === "True") {
+                            $("#toggleQueuJsonMonitorButton").trigger("click");
+                        }
+
+                        //TODO: implement later
+                        //if ($("#queuPreviewOverlayIframe").data("enabled") === "True") {
+                        //    $("#toggleQueuPreviewOverlayButton").trigger("click");
+                        //}
+
+                        $("#queuMonitorsRow").addClass("focusOn");
+                        //TODO: implement later
+                        //$("#previewQueuOverlayRow").addClass("focusOn");
+
+                        setTimeout(function () {
+                            $("#queuMonitorsRow").hide();
+                            $("#previewQueuOverlayRow").hide();
+                            ShowSnackbar("#focusSnackbar", "Focus for Queu has been turned on.");
                         }, 1000);
                     }
 
@@ -2275,6 +2384,35 @@
                         setTimeout(function (){
                         
                             ShowSnackbar("#focusSnackbar", "Focus for Commentators has been turned off.");
+                        }, 1000);
+                    }
+                    else if ($(this).data("topic") === "Queu") {
+                        if ($("#queuWebSocketDataMonitor").data("enabled") === "False") {
+                            $("#toggleQueuWebSocketDataMonitorButton").trigger("click");
+                        }
+
+                        if ($("#queuCssMonitor").data("enabled") === "False") {
+                            $("#toggleQueuCssMonitorButton").trigger("click");
+                        }
+
+                        if ($("#queuJsonMonitor").data("enabled") === "False") {
+                            $("#toggleQueuJsonMonitorButton").trigger("click");
+                        }
+
+                        //TODO: implement later
+                        //if ($("#queuPreviewOverlayIframe").data("enabled") === "False") {
+                        //    $("#toggleQueuPreviewOverlayButton").trigger("click");
+                        //}
+
+                        $("#queuMonitorsRow").show();
+                        //TODO: implement later
+                        //$("#previewQueuOverlayRow").show();
+
+                        $("#queuMonitorsRow").addClass("focusOff").removeClass("focusOn");
+                        $("#previewQueuOverlayRow").addClass("focusOff").removeClass("focusOn");
+
+                        setTimeout(function () {
+                            ShowSnackbar("#focusSnackbar", "Focus for Queu has been turned off.");
                         }, 1000);
                     }
 

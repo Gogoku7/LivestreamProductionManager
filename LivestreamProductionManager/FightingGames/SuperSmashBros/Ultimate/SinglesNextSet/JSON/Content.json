@@ -1,59 +1,59 @@
 [
   {
     "Selector": "#player1NameText",
-    "Value": "Gogoku7"
+    "Value": "Lonpos"
   },
   {
     "Selector": ".player1Sponsor",
-    "Value": "TDB"
+    "Value": "BYOC"
   },
   {
     "Selector": "#player1TwitterText",
-    "Value": "@gogoku7"
+    "Value": null
   },
   {
     "Selector": "#player1TwitchText",
-    "Value": "Gogoku7"
+    "Value": null
   },
   {
     "Selector": "#player1Character",
-    "Value": "../../CharacterIcons/banjokazooie.png"
+    "Value": null
   },
   {
     "Selector": "#player1Port",
-    "Value": "../../PlayerPorts/PlayerPort1.png"
+    "Value": null
   },
   {
     "Selector": "#player1Country",
-    "Value": "../../../../Flags/AF.svg"
+    "Value": null
   },
   {
     "Selector": "#player2NameText",
-    "Value": "Draco"
+    "Value": "Gogoku7"
   },
   {
     "Selector": ".player2Sponsor",
-    "Value": "Crucible"
+    "Value": "TDB"
   },
   {
     "Selector": "#player2TwitterText",
-    "Value": "@draco"
+    "Value": null
   },
   {
     "Selector": "#player2TwitchText",
-    "Value": "Draco"
+    "Value": null
   },
   {
     "Selector": "#player2Character",
-    "Value": "../../CharacterIcons/zerosuitsamus.png"
+    "Value": null
   },
   {
     "Selector": "#player2Port",
-    "Value": "../../PlayerPorts/PlayerPort8.png"
+    "Value": null
   },
   {
     "Selector": "#player2Country",
-    "Value": "../../../../Flags/AX.svg"
+    "Value": null
   },
   {
     "Selector": "#roundText",
