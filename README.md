@@ -8,6 +8,8 @@ After (too) much hesitation, I have finally made the decision to move all develo
 
 LPM Blitz will be a desktop application, much easier to run/install/release/deploy to users, while also including the performance improvements I had been planning for LPM version 0.7, and more! Initial few releases of LPM Blitz will start as a small application where a few minimal overlay properties can be edited, until it has the exact features that LPM 0.6.3 has, and beyond!
 
+# Info
+
 An ASP.NET MVC application to manage the overlay of any fighting game for Tournament streams!
 
 This project is to help tournament streamers that are just starting out.
