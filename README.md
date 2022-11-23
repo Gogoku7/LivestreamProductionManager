@@ -1,5 +1,13 @@
 # Livestream Production Manager
 
+Discontinued 23/11/2022
+
+Livestream Production Manager is a Microsoft ASP.NET MVC application (.NET Framework 4.5 to 4.8), and this technology has rapidly been put to the side for more modern Microsoft technologies, like .NET MAUI and Blazor.
+
+After (too) much hesitation, I have finally made the decision to move all development efforts to turning LPM into a .NET MAUI Blazor application, called "Livestream Production Manager Blitz".
+
+LPM Blitz will be a desktop application, much easier to run/install/release/deploy to users, while also including the performance improvements I had been planning for LPM version 0.7, and more! Initial few releases of LPM Blitz will start as a small application where a few minimal overlay properties can be edited, until it has the exact features that LPM 0.6.3 has, and beyond!
+
 An ASP.NET MVC application to manage the overlay of any fighting game for Tournament streams!
 
 This project is to help tournament streamers that are just starting out.
