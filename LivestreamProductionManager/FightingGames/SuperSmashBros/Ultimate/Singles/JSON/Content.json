@@ -21,7 +21,7 @@
   },
   {
     "Selector": "#player1Character",
-    "Value": "../../CharacterIcons/minmin_07.png"
+    "Value": "../../CharacterIcons/minmin.png"
   },
   {
     "Selector": "#player1Port",
