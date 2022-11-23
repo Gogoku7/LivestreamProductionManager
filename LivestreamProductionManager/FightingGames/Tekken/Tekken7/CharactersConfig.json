@@ -1,4 +1,3 @@
-//TODO: Add new Tekken characters
 [
   {
     "CharacterName": "No character",
@@ -17,7 +16,7 @@
     "CssValue": "../../CharacterIcons/anna.png"
   },
   {
-    "CharacterName": "Armor King",
+    "CharacterName": "Armor King II",
     "CssValue": "../../CharacterIcons/armorking.png"
   },
   {
@@ -143,6 +142,10 @@
   {
     "CharacterName": "Leroy Smith",
     "CssValue": "../../CharacterIcons/leroy.png"
+  },
+  {
+    "CharacterName": "Lidia Sobieska",
+    "CssValue": "../../CharacterIcons/lidia.png"
   },
   {
     "CharacterName": "Lili De Rochefort",

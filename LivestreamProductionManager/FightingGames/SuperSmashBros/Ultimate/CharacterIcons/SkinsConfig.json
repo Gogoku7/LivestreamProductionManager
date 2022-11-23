@@ -1262,6 +1262,51 @@
       ]
     },
     {
+      "CharacterName": "Kazuya",
+      "Skins": [
+        {
+          "Name": "Kazuya",
+          "CssValue": "../../CharacterIcons/kazuya.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/kazuya.png"
+        },
+        {
+          "Name": "Kazuya_01",
+          "CssValue": "../../CharacterIcons/kazuya_01.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/kazuya_01.png"
+        },
+        {
+          "Name": "Kazuya_02",
+          "CssValue": "../../CharacterIcons/kazuya_02.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/kazuya_02.png"
+        },
+        {
+          "Name": "Kazuya_03",
+          "CssValue": "../../CharacterIcons/kazuya_03.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/kazuya_03.png"
+        },
+        {
+          "Name": "Kazuya_04",
+          "CssValue": "../../CharacterIcons/kazuya_04.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/kazuya_04.png"
+        },
+        {
+          "Name": "Kazuya_05",
+          "CssValue": "../../CharacterIcons/kazuya_05.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/kazuya_05.png"
+        },
+        {
+          "Name": "Kazuya_06",
+          "CssValue": "../../CharacterIcons/kazuya_06.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/kazuya_06.png"
+        },
+        {
+          "Name": "Kazuya_07",
+          "CssValue": "../../CharacterIcons/kazuya_07.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/kazuya_07.png"
+        }
+      ]
+    },
+    {
       "CharacterName": "Ken",
       "Skins": [
         {
@@ -2507,6 +2552,91 @@
       ]
     },
     {
+      "CharacterName": "Pyra/Mythra",
+      "Skins": [
+        {
+          "Name": "Pyra/Mythra",
+          "CssValue": "../../CharacterIcons/pyramythra.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/pyramythra.png"
+        },
+        {
+          "Name": "Pyra/Mythra_01",
+          "CssValue": "../../CharacterIcons/pyramythra_01.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/pyramythra_01.png"
+        },
+        {
+          "Name": "Pyra/Mythra_02",
+          "CssValue": "../../CharacterIcons/pyramythra_02.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/pyramythra_02.png"
+        },
+        {
+          "Name": "Pyra/Mythra_03",
+          "CssValue": "../../CharacterIcons/pyramythra_03.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/pyramythra_03.png"
+        },
+        {
+          "Name": "Pyra/Mythra_04",
+          "CssValue": "../../CharacterIcons/pyramythra_04.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/pyramythra_04.png"
+        },
+        {
+          "Name": "Pyra/Mythra_05",
+          "CssValue": "../../CharacterIcons/pyramythra_05.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/pyramythra_05.png"
+        },
+        {
+          "Name": "Pyra/Mythra_06",
+          "CssValue": "../../CharacterIcons/pyramythra_06.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/pyramythra_06.png"
+        },
+        {
+          "Name": "Pyra/Mythra_07",
+          "CssValue": "../../CharacterIcons/pyramythra_07.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/pyramythra_07.png"
+        },
+        {
+          "Name": "Pyra/Mythra_08",
+          "CssValue": "../../CharacterIcons/pyramythra_08.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/pyramythra_08.png"
+        },
+        {
+          "Name": "Pyra/Mythra_09",
+          "CssValue": "../../CharacterIcons/pyramythra_09.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/pyramythra_09.png"
+        },
+        {
+          "Name": "Pyra/Mythra_10",
+          "CssValue": "../../CharacterIcons/pyramythra_10.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/pyramythra_10.png"
+        },
+        {
+          "Name": "Pyra/Mythra_11",
+          "CssValue": "../../CharacterIcons/pyramythra_11.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/pyramythra_11.png"
+        },
+        {
+          "Name": "Pyra/Mythra_12",
+          "CssValue": "../../CharacterIcons/pyramythra_12.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/pyramythra_12.png"
+        },
+        {
+          "Name": "Pyra/Mythra_13",
+          "CssValue": "../../CharacterIcons/pyramythra_13.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/pyramythra_13.png"
+        },
+        {
+          "Name": "Pyra/Mythra_14",
+          "CssValue": "../../CharacterIcons/pyramythra_14.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/pyramythra_14.png"
+        },
+        {
+          "Name": "Pyra/Mythra_15",
+          "CssValue": "../../CharacterIcons/pyramythra_15.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/pyramythra_15.png"
+        }
+      ]
+    },
+    {
       "CharacterName": "Random",
       "Skins": [
         {
@@ -3143,6 +3273,51 @@
           "Name": "Sonic_07",
           "CssValue": "../../CharacterIcons/sonic_07.png",
           "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/sonic_07.png"
+        }
+      ]
+    },
+    {
+      "CharacterName": "Sora",
+      "Skins": [
+        {
+          "Name": "Sora",
+          "CssValue": "../../CharacterIcons/sora.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/sora.png"
+        },
+        {
+          "Name": "Sora_01",
+          "CssValue": "../../CharacterIcons/sora_01.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/sora_01.png"
+        },
+        {
+          "Name": "Sora_02",
+          "CssValue": "../../CharacterIcons/sora_02.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/sora_02.png"
+        },
+        {
+          "Name": "Sora_03",
+          "CssValue": "../../CharacterIcons/sora_03.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/sora_03.png"
+        },
+        {
+          "Name": "Sora_04",
+          "CssValue": "../../CharacterIcons/sora_04.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/sora_04.png"
+        },
+        {
+          "Name": "Sora_05",
+          "CssValue": "../../CharacterIcons/sora_05.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/sora_05.png"
+        },
+        {
+          "Name": "Sora_06",
+          "CssValue": "../../CharacterIcons/sora_06.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/sora_06.png"
+        },
+        {
+          "Name": "Sora_07",
+          "CssValue": "../../CharacterIcons/sora_07.png",
+          "PathForPicker": "~/FightingGames/SuperSmashBros/Ultimate/CharacterIcons/sora_07.png"
         }
       ]
     },

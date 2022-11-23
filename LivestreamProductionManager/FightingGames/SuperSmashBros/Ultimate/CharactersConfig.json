@@ -1,4 +1,3 @@
-//TODO: Add new Ultimate characters.
 [
   {
     "CharacterName": "No character",
@@ -117,6 +116,10 @@
     "CssValue": "../../CharacterIcons/joker.png"
   },
   {
+    "CharacterName": "Kazuya",
+    "CssValue": "../../CharacterIcons/kazuya.png"
+  },
+  {
     "CharacterName": "Ken",
     "CssValue": "../../CharacterIcons/ken.png"
   },
@@ -233,6 +236,10 @@
     "CssValue": "../../CharacterIcons/pit.png"
   },
   {
+    "CharacterName": "Pyra/Mythra",
+    "CssValue": "../../CharacterIcons/pyramythra.png"
+  },
+  {
     "CharacterName": "Pokemon Trainer",
     "CssValue": "../../CharacterIcons/pokemontrainer.png"
   },
@@ -297,6 +304,10 @@
     "CssValue": "../../CharacterIcons/sonic.png"
   },
   {
+    "CharacterName": "Sora",
+    "CssValue": "../../CharacterIcons/sora.png"
+  },
+  {
     "CharacterName": "Steve",
     "CssValue": "../../CharacterIcons/steve.png"
   },
@@ -339,29 +350,5 @@
   {
     "CharacterName": "Zero Suit Samus",
     "CssValue": "../../CharacterIcons/zerosuitsamus.png"
-  },
-  {
-    "CharacterName": "DLC character 6 (FPVol.2 1)",
-    "CssValue": "../../CharacterIcons/random.png"
-  },
-  {
-    "CharacterName": "DLC character 7 (FPVol.2 2)",
-    "CssValue": "../../CharacterIcons/random.png"
-  },
-  {
-    "CharacterName": "DLC character 8 (FPVol.2 3)",
-    "CssValue": "../../CharacterIcons/random.png"
-  },
-  {
-    "CharacterName": "DLC character 9 (FPVol.2 4)",
-    "CssValue": "../../CharacterIcons/random.png"
-  },
-  {
-    "CharacterName": "DLC character 10 (FPVol.2 5)",
-    "CssValue": "../../CharacterIcons/random.png"
-  },
-  {
-    "CharacterName": "DLC character 11 (FPVol.2 6)",
-    "CssValue": "../../CharacterIcons/random.png"
   }
 ]
